@@ -1,8 +1,8 @@
 # Knowledge extraction for assisted curation of summaries of bacterial transcription factor properties
 
 Here, we publish an effective approach for knowledge extraction to assist curation 
-of summaries describing bacterial TF properties. This approach is based on an automatic text 
-summarization strategy. 
+of summaries describing bacterial TF properties. 
+This approach is based on an automatic text summarization strategy. 
 We aim to extend our initial approach published on 2017 
 where we generated summaries by focusing on two particular properties: structural domain and 
 biological processed of regulated genes
@@ -10,8 +10,7 @@ biological processed of regulated genes
 Marco-Polo Castillo-Villalba, Luis-José Muñiz-Rascado, Julio Collado-Vides. 
 (2017) First steps in automatic summarization of transcription factor properties 
 for RegulonDB: classification of sentences about structural domains and regulated 
-processes, Oxford University Press.
-- https://academic.oup.com/database/article/doi/10.1093/database/bax070/4237584
+processes, Oxford University Press. <a href="https://academic.oup.com/database/article/doi/10.1093/database/bax070/4237584" target="_blank">Link</a>
 On this ocassion, we decided to employ a more comprehensive and detailed set of seven properties of the TF and its regulation:
 1.	The biological processes in which the regulated genes are involved.
 2.	The number, name, and size of the structural domains constituting the TF.
