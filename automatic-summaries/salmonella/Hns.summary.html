@@ -1,0 +1,939 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Hns</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Hns</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Hns transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>` wild-type ' , S. typhimurium ATCC 14028 ; plasmid , ATCC 14028 P ; pefI , 2 2 11 DL2363 ; pefI , DL3063 ; dam , DL3067 ; lrp , DL2714 ; hns , 2 2 2 2 DL3517 ; rpoS , DL3164 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Hns binds tightly to double-stranded DNA , increases its thermal stability , and inhibits transcription ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>Part of this negative regulation seems to be played by HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>The hns mutants required PCN minimal medium for growth and are thus not directly comparable with supplemental Fig. 1 where RNA was harvested after growth in N9 minimal medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>Thus , Fur indirectly activates SPI1 via its repression of hns , demonstrating that iron metabolism can influence genes regulated by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>A direct connection between increased hns transcription and increased DsrA activity remains to be established in future experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>Three proteins involved in stress response or global gene regulation again demonstrated increased expression in all three triclosan-resistant mutants ( Table 2 ) including HNS , HtrA ( involved in response to heat-shock ) and CspC ( involved in response to cold-shock ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18388111" target="_blank">18388111</a>]<br></li>
+<li>Interestingly , we found hns levels to increase in a subtle but reproducible manner in accordance with what has already been reported ( Lease et al. , 1998 ) , while hilA and several effector levels were repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+<li>Second , their expression is negatively affected by the H-NS nucleoid protein ; i.e. , they are activated when hns is mutated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>expression is heavily regulated by presence of nucleation sites for HNS silencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Global regulation of gene expression by HNS and Fur Since SPI1 is a foreign fragment of DNA acquired by Salmonella during its evolution , it is understandable that it is subject to a heavy negative regulation [ 89 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>In conclusion , we provided , for the ﬁrst time , evidence that Fur represses hns expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Mutants defective in hns exhibited high , constitutive levels of OmpR not subject to further induction by acid shock ( Fig. 8A , lanes 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12080060" target="_blank">12080060</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12068808" target="_blank">12068808</a>]<br></li>
+<li>These included the cold-shock-responsive hns gene previously shown to be activated by Fis ( Dersch et al. , 1994 ; Falconi et al. , 1996 ) , the hha gene whose product can form heteromeric complexes with H-NS and ( like H-NS ) regulates several virulence genes in response to temperature ( Madrid et al. , 2002 ; Nieto et al. , 2002 ) , and the stpA gene that encodes a paralogue of H-NS and can also form heteromers with it ( Deighan et al. , 2003 ; Free et al. , 2001 ; Johansson et al. , 2001 ; Williams et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+<li>Mutations in the hns structural gene cause pleiotropic phenotypes in both Salmonella and E. coli , many of which are linked to adaptation to environmental changes such as increased resistance to osmotic and cold-shock in Salmonella ( Hinton et al. , 1992 ) , carbon source utilization ( Atlung and Ingmer , 1997 ) , homologous recombination and genome stability in E. coli ( Lejeune and Danchin , 1990 ; Dri et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>For example , levels of the H-NS-like protein StpA are increased in an hns mutant , and StpA can compensate for certain hns phenotypes ( Sondén and Uhlin , 1996 ; Zhang et al. , 1996 ; Free and Dorman , 1997 ; Sonnenﬁeld et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630976" target="_blank">17630976</a>]<br></li>
+<li>However , as the expression of the ompS1 -- lacZ pRO310 fusion was still partially repressed in a Salmonella hns mutant ( Flores-Valdez et al. , 2003 ; Fig. 2A ) , the possibility of StpA also acting as a repressor was explored as StpA is increased in a mutant hns background ( Sondén and Uhlin , 1996 ; Zhang et al. , 1996 ; Sonnenﬁeld et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>However , when ompS1 expression was derepressed in the hns mutants , in either serovar Typhi or serovar Typhimurium , it was negatively regulated in high-osmolarity medium ( Fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>StpA repressed ompS1 expression in a mutant hns background H-NS negatively regulates ompS1 expression in both S. Typhi and S. Typhimurium ( Flores-Valdez et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In low osmolarity conditions the single hns and hha mutants increase hilA expression three to ﬁvefold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>Recently , in E. coli , DsrA has been shown to negatively regulate mreB by binding to the transcription initiation region with additional repression mediated through rpoS and hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28302471" target="_blank">28302471</a>]<br></li>
+<li>This again suggests a mechanism where Fur binding might relieve HNS-dependent transcription repression , or HNS binding might initiate nucleation of the protein , and repress Fur-dependent activation of gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Negative Osmoregulation of the Salmonella ompS1 Porin Gene Independently of OmpR in an hns Background Mario Alberto Flores-Valdez , José Luis Puente , and Edmundo Calva * Departamento de Microbiología Molecular , Instituto de Biotecnología , Universidad Nacional Autónoma de México , Cuernavaca , Morelos , Mexico Received 14 May 2003/Accepted 15 August 2003 The ompS1 gene encodes a quiescent porin in Salmonella enterica serovars Typhi and Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_24">
+Fernandez-Mora M , Puente JL & Calva E ( 2004 ) OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi Flores-Valdez MA , Puente JL & Calva E ( 2003 ) Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19187206" target="_blank">19187206</a>]<br></label>
+<input id="act_similarity_24", type="checkbox">
+<div class="ACT_similar">
+<li>Flores-Valdez , M.A. , Puente , J.L. , and Calva , E. ( 2003 ) Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Flores-Valdez MA , Puente JL , Calva E. Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19443540" target="_blank">19443540</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li></div>
+<li>We speculate that a primary role of RstA activation of Fur in acidic conditions is to reduce ferrous iron transport , repress hns , and promote Furmediated hydroperoxidase activity ( 64 , 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Fis has been implicated in many other processes such as stimulation of excision and integration of lambda ( 4 , 5 , 20 , 67 ) , DNA replication at oriC ( 24 , 26 , 58 ) , transposition ( 70 ) , invasion of HEp-2 cells ( 71 ) , and transcriptional activation and repression of several genes , including hns , leuV , gyr , tyrT , proP , nuo , osmE , and rRNA operons ( 3 , 12 , 21 , 33 , 56 , 68 , 72 , 74 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716427" target="_blank">15716427</a>]<br></li>
+<li>H - NS Modulates Multidrug Resistance of Salmonella enterica Serovar Typhimurium by Repressing Multidrug Efﬂux Genes acrEF Kunihiko Nishino ,1,3 * Mitsuko Hayashi-Nishino ,2 and Akihito Yamaguchi2 ,4 Laboratory of Microbiology and Infectious Diseases1 and Department of Cell Membrane Biology ,2 Institute of Scientiﬁc and Industrial Research , Osaka University , Osaka 567-0047 , Japan ; PRESTO , Japan Science and Technology Corporation , Tokyo 102-0075 , Japan3 ; and Graduate School of Pharmaceutical Sciences , Osaka University , Osaka 565-0871 , Japan4 Received 18 March 2009/Returned for modiﬁcation 29 April 2009/Accepted 1 June 2009 Screening of Salmonella mutants for the ability to increase - lactam resistance has led to the identiﬁcation of a mutation in hns , which codes for the histone-like nucleoid structuring protein ( H-NS ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>f Fur Negatively Regulates hns and Is Required for the Expression o HilA and Virulence in Salmonella enterica Serovar Typhimurium † Bryan Troxell ,1 ‡ Michael L. Sikes ,1 Ryan C. Fink ,1 ¶ Andres Vazquez-Torres ,2 Jessica Jones-Carson ,2,3 and Hosni M. Hassan1 * Department of Microbiology , North Carolina State University , Raleigh , North Carolina 27695-7615 ,1 and Departments of Microbiology2 and Medicine ,3 University of Colorado Denver , Aurora , Colorado 80045 Received 11 August 2010/Accepted 29 October 2010 Iron is an essential element for the survival of living cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Therefore , we propose that the positive regulation ftnB by Fur is mediated by the negative regulation of hns by Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Thus , under Fur active conditions ( left panel ) , hns is repressed by Fur thereby blocking H-NS repression of ftnB and the tdc operon ( signified by the circle with an `` X '' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In conclusion , Fur activates hilA by repressing the expression of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Collectively , these data demonstrate that Fur-depen-dent activation of hilA-lacZ during anaerobic-growth is due to the repression of hns by Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Although the number of meat samples analyzed is limited ( n = 100 ) , the results obtained by microarray detection agreed well with the reference figures , hns sdf STM 16S hipO CeuE hns sdf STM 16S hipO CeuE 1 + + - - -- 2 + + + - -- 3 + - - - -- 4 - - - + -- 5 - - - + + -6 - - - + + -7 - - - + + -8 - - - + + -9 + + + + + -10 - - - + + -11 - - - + + -12 - - - + + + 13 - - - + + + 14 - - - + + -15 - - - + + -16 - - - + + -17 - - - + -- 18 - - - + - + 19 - - - + - + 20 - - - + + -21 - - - + + -22 - - - + + -23 - - - + + -24 + - + - -- 25 + + - - -- Fig. 5 Results for 25 poultry samples with positive presence of pathogens .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26198111" target="_blank">26198111</a>]<br></li>
+<li>Even though some increase was observed in the hns strains , this effect was much lower than the 10-fold observed for pRO310 ( Fig. 2A and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>The overexpression of H-NS repressed SPI-2 gene expression ( comparing `` rpoE hns uninduced '' to `` rpoE hns induced '' ) , however when σE was present , the repression of H-NS on SPI-2 was relieved ( compare `` WT hns induced '' to `` rpoE hns induced '' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>We quantified the extent of hns repression of SPI-2 co-regulated genes using qRT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>A. Western blot analysis of OmpR was used to examine the effect of hns on the acid shock induction of ompR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12080060" target="_blank">12080060</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12068808" target="_blank">12068808</a>]<br></li>
+<li>To quantify the repression of sifA , sifB , and sseJ by hns , we used qRT-PCR to compare transcript levels in an hns mutant under SPI-2-inducing ( pH 5.8 ; Fig. 2 , solid bars ) and noninducing conditions ( pH 7.4 ; Fig. 2 , open bars ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>In the absence of hns , a significant de-repression of sifA , sifB , and sseJ transcription under noninducing conditions , pH 7.4 , was observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>Although the connection between decreased H-NS protein and increased dsbA transcription was established , it was not clear how transposons inserted either 377 or 580 bases upstream of the hns coding region could cause a decrease in H-NS protein levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>This increase in StpA expression in an hns mutant strain appears to compensate for the lack of H-NS and allows repression of many H-NS-regulated genes ( 45 ) , although not all H-NS-repressed loci can be regulated by StpA ( 10 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>The effects of H-NS on SPI-2 gene expression in LPM 20 h condition was examined by over-producing H-NS instead of deleting hns , as it is required for viability in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>An hns mutant , lacking the abundant DNA-binding protein H-NS , has an increased level of RpoS in exponential phase , and this effect is remarkable because it occurs through increases in both translation and protein stability ( 2 , 65 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006017" target="_blank">9006017</a>]<br></li>
+<li>Support for this is provided in Fig. 8B , showing that an hns mutant loses most , if not all , pH control of ompR and produces constitutively high levels of OmpR protein even in the absence of OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12080060" target="_blank">12080060</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12068808" target="_blank">12068808</a>]<br></li>
+<li>The level of rtsA-lac was equally elevated in hns and hha mutants and was further enhanced in the hns hha double mutant under low-osmolarity conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>The combination of hha and hns mutations resulted in an 11-fold increase in rtsA expression under low-osmolarity conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>Strikingly , the combination of hha and hns mutations resulted in a dramatic 26-fold increase in hilA expression under low osmolarity conditions ( line 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>Cultures of strains M182 and M182 hns transformed with pGS1065 were grown under anaerobic conditions in the presence and absenc of glucose at 37 ° C for 16 h .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Interestingly , when S. typhimurium is grown under the normally repressing low osmolarity condition , a null mutation in hns results in high hilA expression , even in the absence of HilC and HilD ( L. Schechter and C. Lee , unpublished observations ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>One likely candidate , hns , appears to be required for repression of hilA under low-osmolarity conditions , even in the absence of hilC and hilD ( Schechter and Lee , unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>One mechanism that maintains the imbalance in levels of the two proteins is mediated by the negative cross-regulation that both proteins exert on each other ; H-NS represses stpA transcription more strongly than StpA controls hns ( Zhang et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>Nevertheless , we decided to test the effect on the derepressed ompS1 activity in the hns background in response to osmolarity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>These results are consistent with the idea that the hns mutation decreases the repression of hilA under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12933899" target="_blank">12933899</a>]<br></li>
+<li>This result suggests that , in addition to decreasing the repression of hilA under low-osmolarity conditions ( Fig. 1B ) , the hns mutation increases the derepression of hilA by HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12933899" target="_blank">12933899</a>]<br></li>
+<li>Comparing the induced group with the noninduced group , the results ( Fig. 3B ) indicated that temperature change led to downregulation of transcription of hns and hha genes , but no signiﬁcant inﬂuence on transcription of phoP and phoQ was found , suggesting that nucleoid protein complex Hha -- H-NS but not PhoP and PhoQ may be the predominant regulator of SPI-1 effector genes under temperature change .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23459474" target="_blank">23459474</a>]<br></li>
+<li>Effect of low temperature on the regulation of the plasmid-encoded hns gene R27 and the related pSf-R27 plasmid encode a protein related to the global modulator H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+<li>In addition , we detected increased expression of hns in Δfur ( Additional file 2 : Table S2 ) , and earlier work detected in vivo binding of Fur to the upstream region of hns [ 29 ] ; this strongly indicates that Fur directly represses hns under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Several phenotypic characteristics of the mutant , such as increased mucoidy , decreased growth rate , and decreased motility , suggested that modiﬁcation of expression of the hns locus was being affected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>Effect of deletion of hns and hha regulators on expression of chromosomal transcriptional fusion hilA080TTn5lacZY in the presence or absence of hilDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>The magnitude of osmY expression was growth medium dependent , and the activating effects of hns and low temperature were not as pronounced in K-tryp-tone medium that had been used by us for the proU P1 studies ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>This activation is , in part , indirect where Fur represses the expression of hns , which represses the expression of hilA and hilD [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>( A ) Conditions that activate Fur ( i.e. , the presence of iron ) repress the expression of hns ( solid arrow ) , and allow the expression of hilA ( blocked dotted arrows ) and increased HilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>SPI-1 expression is repressed by hns and activated by a complex positive feedback loop where the production of the HilD regulatory protein induces the expression of HilA , a transcription factor that directly activates expression of the TTSS and effector-proteins [ 70 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>hns mutant unveils the presence of a latent haemolytic activity in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The generalized DNA binding protein Hns plays a role in the repression of the proU operon in media of low osmolality , but this protein is not necessary for the osmotic induction of this operon ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16332813" target="_blank">16332813</a>]<br></li>
+<li>Such curvature could determine a structure needed for repression in the presence of H-NS or at high osmolarity in the hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>( iii ) Increase of traJ expression in the presence of an hns mutation was also observed in a Lrp background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>The transcription of hlyE in the hns strain under anaerobic conditions in the presence of glucose is presumably driven by FNR alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Under anaerobic conditions in the absence of glucose , hlyE expression in an fnr crp hns triple mutant was low compared to that of the parental strain ( Fig. 2a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>To conﬁrm the role of Fur in regulating hns , we used qRT-PCR to quantify the expression of hns in the presence or absence of Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Expression of about half of the genes that bound H-NS in LT2 were not affected by the deletion of hns , probably reﬂecting the absence of positive regulatory proteins in our culture conditions ( exponential-growth in LB ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16933988" target="_blank">16933988</a>]<br></li>
+<li>Effect of the presence of R27 in the transcriptome of an hns mutant strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>As suggested by our previous study ( 14 ) , establishing the Mg2 - responsive regulation of these loci requires the transcriptional-repressor H-NS , which antagonizes the functions of SlyA and PhoP ; thus the mRNA level is reduced greatly in the phoP or slyA mutants in PhoP-activating ( low-Mg2 ) conditions but remains high in PhoP-repressing ( high-Mg2 ) conditions in the hns mutant ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19091955" target="_blank">19091955</a>]<br></li>
+<li>IHF alleviates H-NS-mediated repression of hilA transcription The effect of ihfA or ihB mutant alleles on hilA expression in cells growing in LB medium and entering the stationary phase , the effect on hilA transcription of the H-NS antagonist in double ihf hns mutants , as well as the gel-shift data presented above suggest that the IHF protein functions as a transcriptional-regulator of the hilA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>It has been reported that StpA can negatively regulate expression of a reporter gene under the control of the hns promoter in E. coli ( Zhang et al. , 1996 ) ; although this could only be observed in the absence of hns , this raised the possibility that StpA-dependent gene expression could simply reﬂect changes in the level of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>Normalized levels of csgD transcripts were highly up-regulated in the ssrB hns double mutant compared to the ssrB null strain , indicating that the loss of H-NS repression rescued the defect in csgD expression in the absence of SsrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26880544" target="_blank">26880544</a>]<br></li>
+<li>The induction of pT6H-NS-G113D had no signiﬁcant effect on ompS1 expression in the hns background but , interestingly , in the stpA background the levels of ompS1 expression were maximum being similar to the pKFV88 fusion that lacks the negative regulatory elements ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Furthermore , expression in the hns mutant derivatives increased in the presence of LeuO , indicating that it can derepress ompS1 expression to the maximum level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_82">
+Although in the presence of the silencer hns mutations increased basal expression from the proU promoter three - to sixfold , in the absence of the silencer they did not result in a substantial increase in basal expression from the proU promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></label>
+<input id="act_similarity_82", type="checkbox">
+<div class="ACT_similar">
+<li>The hns mutations resulted in a three - to sixfold increase in the basal level of expression from the proU promoter in the presence of the intact silencer [ Table 2 , l ( proU p1s1 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></li></div>
+<li>Sequence analysis of genes regulating intracellular levels of RpoS To identify factors that inﬂuence an increase in the RpoS levels in the KLX2 strain , sequence analysis was carried out on KLX2 and the paternal strain LT2 , for the genes known to be involved in controlling intracellular levels of RpoS ( relA , spoT , hfq , hns , arcA , arcB , ﬁs , cspC , cspE , rprA , rpoE , rssA , rssB , iraP , iraD , iraM , clpX , clpP , and dnaK ) and the rpoS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23385142" target="_blank">23385142</a>]<br></li>
+<li>This enzyme has been Ntr shown to connect K homeostasis with carbon starvation through + direct interaction of nonphosphorylated IIA with KdpD Ntr References Bacterium Component Details IIA ( enzym Ntr Ntr phospho system ) Lüttmann et al. , 2009 ; Njoroge et al. , 2012 [ 25,34 ] li co ia erich Esch e IIA of the Interacts with KdpD , stimulates auto-kinase activity , and therefore - transferase Kdp pump expression ; this activity is linked to glycolytic growth Sardesai and Gowrishankar , 2001 ; Kumar et al. , 2004 ; Zeller and Klug , 2006 ; Ehrt and Schnappinger , 2009 [ 50,52 -- 54 ] trxA ( thioredoxin 1 ) , trxB ( thioredoxin reductase ) Thioredoxins control the bacterial stress response by maintaining a reducing environment in the cell , preventing ROS damage , and signalling osmotic stress and low pH ; these genes exert effects upstream of KdpD , though the precise nature of the interaction is not known ; KO of either gene results in reduced expression of the Kdp pump hns ( H-NS nucleoid protein ) Exerts effects upstream of KdpD , though the precise mechanism of the Sardesai and Gowrishankar , 2001 interaction is not known ; KO results in reduced expression of the Kdp pump [ 50 ] Binds to the Usp sub-domain of KdpD under osmotic stress conditions , scaffolding the active KdpD/phospho-KdpE/DNA complex and stimulating expression of Kdp pump structural genes UspC ( Universal stress protein C ) Heerman et al. , 2009 [ 37 ] Either protein can interact specifically with KdpD ( solely with the C-terminal region or while also forming a ternary complex with the N-terminal region ) ; appear to be involved in the phospho-relay process ; likely act as sensors or ligand-binding proteins for as-yet-unknown signals/ligands Mycobacterium LprJ , LprF ( membrane tuberculosis lipoproteins ) Steyn et at .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23555240" target="_blank">23555240</a>]<br></li>
+<li>Interestingly , in N-minimal medium , we observed that the expression values for the pKK-375 fusion in the hns and lrp single null and double hns/lrp null strains were 8,000 , 2,400 , and 14,000 activity units , respectively , supporting the negative role of H-NS and LRP in the transcriptional expression of casA in N-minimal medium ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Thus , the characterization of the state of the H-NS protein in our mutants , analysis of ompS1 expression in an hns stpA double mutant at both low and high osmolarity , and a search for other negative effectors by mutagenesis in hns mutants are experiments that should help in further deﬁning the mechanism involved in the negative regulation of ompS1 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>The ﬁndings that SlyA does not enhance hlyE expression in hns cultures grown in liquid medium under anaerobic conditions and that SlyA appears unable to activate hlyE expression in the absence of FNR and CRP and the determination of the location of the region of PhlyE occupied by SlyA ( Fig. 6 ) suggest that SlyA activates hlyE expression by antagonizing the negative action of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>This conclusion is corroborated by the observation that in the presence of the silencer , the proU promoter exhibited .20 - fold residual osmotic induction even in hns mutants ( Table 2 and references 7 , 11 , and 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></li>
+<li>Recently , Li et al. analyzed the regulatory network of RpoE in S. Typhimurium grown in conditions that mimic the intracellular environment , and they found that RpoE upregulates SPI-2 gene expression by increasing the transcription of the SPI-2 activator ssrB and decreasing the transcription of the SPI-2 repressor hns during the early stage and late stages , respectively , of intracellular infection [ 39 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27492279" target="_blank">27492279</a>]<br></li>
+<li>To evaluate the role of the activators HilD and HilC in the regulation of rtsA transcription , the single-copy rtsA-lac transcriptional fusion was tested in the hilD hilC background in the presence and absence of hha and hns mutations ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>Derepression of clyASTy expression in the hns strain YMZ16 was also observed using the construct pMWK21 , but the increase in cytolytic activity was less pronounced ( approximately twofold ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12228306" target="_blank">12228306</a>]<br></li>
+<li>Thus , in the presence of glucose , hlyE expression was enhanced in an hns mutant ( 365 Miller units ) relative to the parent ( 271 Miller units ) ( compare with Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Effect on hilA expression decrease decrease decrease decrease decrease decrease decrease Mutation1 Comments ompR envZ [ 66 ] [ 66 ] EnvZ/OmpR is a two-component system EnvZ/OmpR is a two-component system pho-24 sirA , barA pstS fadD ﬂiZ [ 19 ] [ 64 , 65 , 68 ] , unpublished2 [ 66 ] [ 66 ] [ 66 ] , unpublished3 hyperactive PhoQ sensor kinase BarA/SirA is a two-component system acts via PhoB regulator does not act via FadR regulator transposon insertions in ﬂiA are polar on ﬂiZ ; FliZ suppresses the effects of transposon insertions in ﬂiA and ﬂhCD the Csr system regulates RNA stability Fis is a small nucleoid binding protein HU , a small nucleoid binding protein , is comprised of HupA and HupB Hha is a small nucleoid binding protein amsE encodes RNase E H-NS is a small nucleoid binding protein no known homologies PhoPQ-activated gene csrB ﬁs decrease decrease decrease decrease increase increase increase increase [ 64 , 68 ] unpublished4 ,5 unpublished4 ,5 unpublished2 [ 56 ] unpublished4 ,5 [ 56 ] [ 56 ] hupA/hupB hha amsE : : Tn5-1 hns hilE pag-1 Condition high osmolarity low oxygen late log phase near-neutral pH low osmolarity low oxygen early log phase bile [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 osmolarity regulates hilA in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA induction induction induction induction repression repression repression repression late log phase induces invasion activity ; RpoS is not required not mediated by PmrAB osmolarity regulates hilA expression in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA early log phase represses invasion activity ; RpoS is not required reported to regulate invasion , prgH , invF and hilC ; effects on hilA expression not reported but very likely 1 Unless otherwise noted , the mutations are null mutations in the open reading frame listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>This indicates that under the conditions tested , StpA does not regulate gene expression by modulation of H-NS levels , and is consistent with the transcriptomic data , which do not show signiﬁcant StpA-dependent changes in hns gene expression in S. Typhimurium JH3003 at any time point .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>The level of ompS1 expression in pFV5 in such hns stpA background did not increase in the presence of LeuO ( Fig. 6A ) , which is consistent with the notion that it is acting as a derepressor antagonizing H-NS and StpA action , and where LeuO is not acting by recruiting RNA polymerase to the ompS1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Interestingly , the results presented here indicate that H-NS is a positive regulator of tpx and STY1978 ; one possibility is that in an hns mutant the levels of LeuO increase since leuO is repressed by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>On the other hand , the hns mutant effect on proU P1-lac expression from plasmids pHYD394 and pHYD395 ( which carry more than 1 kb of DNA downstream of P1 including the NRE and inactivated P2 ) is around 50-fold , which is very much more pronounced than can be accounted for by the upstream effect on s synthesis alone ; it is likely , therefore , that in this case H-NS is also acting locally , perhaps by binding to the high-afﬁnity binding sites at the NRE and around P1 ( 30 , 38 , 50 ) , to repress reporter gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>The depletion of NaCl from LB medium lead to a significant decrease in rtsA-lac expression , which is restored for the hns mutant and is further induced for the hns hha double mutant ( Fig. 1 and 8 ) , suggesting that the repression under low-osmolarity conditions is mediated by H-NS/Hha .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>It is not known why Salmonella utilizes different mechanisms to meet its need in activating SPI-2 genes , yet in late stages of infection overall protein synthesis was down-regulated by σE ( Figure 3C ) , consistent with its effect on hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>As shown in Fig. 1A , rapid efﬂux of rhoda-mine 6G from acrB hns cells was observed as an increase in ﬂuorescence intensity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>Point mutations A77D and M4T enhance StpA repression of select hns regulated loci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>H-NS confirmed binding sites and transcriptional repression [ 31 ] were compared with our microarray data and Fur repression of hns [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Both are known to regulate virulence factors in Salmonella ( Fur positively , and HNS negatively ) [ 17,22,95 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_105">
+Troxell B , et al. ( 2011 ) Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23690578" target="_blank">23690578</a>]<br></label>
+<input id="act_similarity_105", type="checkbox">
+<div class="ACT_similar">
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24643535" target="_blank">24643535</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24990908" target="_blank">24990908</a>]<br></li>
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26662614" target="_blank">26662614</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23306672" target="_blank">23306672</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li></div>
+<li>Troxell , B. , M. L. Sikes , R. C. Fink , A. Vazquez-Torres , J. Jones-Carson et al. , 2010 Fur negatively regulates hns and is required for the expression of hilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_110">
+doi :10.1007 / Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Car-son J , Hassan HM ( 2011 ) Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24970347" target="_blank">24970347</a>]<br></label>
+<input id="act_similarity_110", type="checkbox">
+<div class="ACT_similar">
+<li>[ 19 ] B. Troxell , M.L. Sikes , R.C. Fink , A. Vazquez-Torres , J. Jones-Carson , H.M. Hassan , Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Carson J , Hassan HM : Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23295139" target="_blank">23295139</a>]<br></li>
+<li>Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Carson J , Hassan HM : Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Hns protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>We also identiﬁed 28 nucleotides upstream of hns that contained the Fur binding motif responsible for the Fur-de-pendent activation of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>This binding is speciﬁc , as demonstrated by the fact that a mobility shift does not occur in the 112-bp digested hns fragment but does occur in the 267-bp fragment previously shown to contain the H-NS binding domain ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>( A ) All lanes contain a 32P-labeled 379-bp amplicon covering the promoter region of hns that has been digested to give 112 - and 267-bp fragments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>The stpA mutations altered residues in the oligomerization domain and several enhanced the ability of StpA to silence hns regulated genes without having an effect on StpA expression levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>Other single residue StpA variants , where changes mapped to helix 3 or the short linker segments that connect helix 3 to the other helices , failed to restore significant motility to the hns mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Hns evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Figure 6B shows that although the LT2 tssB-sfgfp cells present ﬂuorescence signal similar to that of WT LT2 cells , nearly 90 % of the hns tssBsfgfp population displays a high level of ﬂuorescence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>HNS belongs to a family of small nucleoid-associated proteins in gram-negative bacteria [ 29,30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Hns</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Several genes have been identiﬁed including hilC ( Schechter et al. , 1999 ) , hilD ( Schechter et al. , 1999 ) , sirA/barA ( Johnston et al. , 1996 ; Altier et al. , 2000a ) , envZ/ompR ( Lucas et al. , 2000 ) , ﬁs ( Wilson et al. , 2001 ; Schechter et al. , 2003 ) , pstS ( Lucas et al. , 2000 ) , fadD ( Lucas et al. , 2000 ) , ﬂiZ ( Iyoda et al. , 2001 ) and csrAB ( Altier et al. , 2000b ) as positive effectors , and ams ( Fahlen et al. , 2000 ) , hha ( Fahlen et al. , 2001 ) , hilE ( Fahlen et al. , 2000 ) , pag ( Fahlen et al. , 2000 ) , phoP/phoQ ( Lucas et al. , 2000 ) , hupA/hupB ( Schechter et al. , 2003 ) and hns ( Schechter et al. , 2003 ) as negative regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15661008" target="_blank">15661008</a>]<br></li>
+<li>UK1 ( wild-type SF530 ) , JF2764 ( hns mutant ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12080060" target="_blank">12080060</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12068808" target="_blank">12068808</a>]<br></li>
+<li>These predicted Fur or HNS regulated genes include genes associated with virulence as well those not related to virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Proteins involved in proteolysis ( DegQ ) , cell envelope formation ( RfbH ) , adaptation ( UspA ) , heat shock response ( DnaK ) , and broad regulatory functions ( Hns ) were found to be down-regulated following adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_5">
+Free , A. & Dorman , C. J. 1995 Coupling of Escherichia coli hns mRNA levels to DNA-synthesis by autoregulation : implications for growth phase control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></label>
+<input id="rp_similarity_5", type="checkbox">
+<div class="RP_similar">
+<li>Coupling of Escherichia coli hns mRNA levels to DNA-synthesis by autoregulation : implications for growth phase control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li></div>
+<li>We used quantitative reverse transcription polymerase chain reaction ( qRT-PCR ) to demonstrate that SsrB has a modest effect in activating transcription in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630976" target="_blank">17630976</a>]<br></li>
+<li>This analysis also shows that hilD expression is controlled by lrp activity through hns global transcription regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>FIGURE 5  σE up-regulates SPI-2 gene-expression by repressing hns transcription under LPM 20 h condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>( A ) σE down-regulates hns expression in LPM 20 h condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>In addition , there are additional HNS nucleation sites present in genes which encode for chaperones , effector proteins , and other related invasion proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>These results indicate a complex interplay between Fur and HNS in regulating cellular global behavior .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>The results suggest for a complex interplay between Fur and HNS to globally control the cellular behavior .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>A , reverse transcription qPCR was performed on samples from S. Typhimurium hns strains harboring pHNSWT , pHNSI11A , pHNSR12H , an empty plasmid control ( hns ) , and a hha strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>Hence , each array has nine replicate spots corresponding to each gene ( hns , sdf , STM4497 , 16S , hipO , and ceuE genes ) , two positive controls , and four negative controls ( immobilization and hybridization ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26198111" target="_blank">26198111</a>]<br></li>
+<li>'' They include genes associated with environmental sensing and transcriptional regulation , such as cya/crp , ompR/envZ , phoP/phoQ ( 11 , 19 , 47 ) , rpoS ( 21 ) , and rpoE ( 31 ) and genes that inﬂuence DNA supercoiling , including hns ( 28 ) and hupA ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>]<br></li>
+<li>Down-regulated proteins were those involved in ATP-synthesis ( AtpA ) , degradation ( GarR ) , energy metab-olism ( GpmA , FbaA , GapA , RpiA , Mdh , and AceK ) , adaptation ( UspA ) , broad regulatory functions ( Hns ) , proteolysis ( DegQ ) , cell envelope formation ( RfbH ) , and nutrient binding ( ArtI , MglB , and OppA ) and the chaperone protein Hsp70 ( DnaK ) FIG. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>Genes damX ( involved in bile resistance ) ( 39 ) , mig14 ( related to antimicrobial peptide resistance ) ( 56 ) , and hns ( central metabolism and stress tolerance regulator ) ( 19 ) were repressed in PT4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20562293" target="_blank">20562293</a>]<br></li>
+<li>Three proteins involved in stress response or global gene regulation again demonstrated increased expression in all three triclosan-resistant mutants ( Table 2 ) including HNS , HtrA ( involved in response-to-heat-shock ) and CspC ( involved in response-to-cold shock ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18388111" target="_blank">18388111</a>]<br></li>
+<li>Thus , CspA , which is involved in the cold shock response , might not act through hns in Salmonella sero-var Enteritidis bioﬁlms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>Modulation of acid-induced amino acid decarboxylase gene-expression by HNS in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Shi X , Waasdorp BC & Bennett GN ( 1993 ) Modulation of acid-induced amino acid decarboxylase gene-expression by hns in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>hns deletion rescues biofilm-formation in the ssrB mutant as shown by Crystal violet staining .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26880544" target="_blank">26880544</a>]<br></li>
+<li>Yamada , H. , Yoshida , T. , Tanaka , K. I. , Sasakawa , C. & Mizuno , T. 1991Molecular analysis of the Escherichia coli hns gene encoding a DNA-binding protein , which preferentially recognises curved DNA sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>A third example is the hns gene , which encodes the abundant regulatory protein H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850262" target="_blank">17850262</a>]<br></li>
+<li>Mutations in the hns ( osmZ ) gene , which encodes a pleio-tropic DNA-binding protein , confer a partially constitutive ex ¬ * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></li>
+<li>These included the cold-shock-responsive hns gene previously shown to be activated by Fis ( Dersch et al. , 1994 ; Falconi et al. , 1996 ) , the hha gene whose product can form heteromeric complexes with H-NS and ( like H-NS ) regulates several virulence genes in response to temperature ( Madrid et al. , 2002 ; Nieto et al. , 2002 ) , and the stpA gene that encodes a paralogue of H-NS and can also form heteromers with it ( Deighan et al. , 2003 ; Free et al. , 2001 ; Johansson et al. , 2001 ; Williams et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+<li>Other regulators implicated in control of ﬂhDC include catabolite gene activator protein ( 48 , 74 ) , LrhA ( 51 ) and HNS , via HdfR ( 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12923082" target="_blank">12923082</a>]<br></li>
+<li>HNS controls expression of ﬁmbriae , ﬂagella , SPI1 , SPI2 , and SPI5 loci in S. typhimurium HNS is a nucleoid binding protein that silences gene-expression by shielding DNA from RNAP and transcription factors [ 80,81 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Interplay between Fur and HNS for global regulation of Salmonella gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Interplay between Fur and HNS in controlling virulence gene-expression in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24643535" target="_blank">24643535</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27185788" target="_blank">27185788</a>]<br></li>
+<li>StpA repressed ompS1 expression in a mutant hns background H-NS negatively regulates ompS1 expression in both S. Typhi and S. Typhimurium ( Flores-Valdez et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_33">
+Troxell B , et al. ( 2011 ) Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23690578" target="_blank">23690578</a>]<br></label>
+<input id="rp_similarity_33", type="checkbox">
+<div class="RP_similar">
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24643535" target="_blank">24643535</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24990908" target="_blank">24990908</a>]<br></li>
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26662614" target="_blank">26662614</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23306672" target="_blank">23306672</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li></div>
+<li>Troxell , B. , M. L. Sikes , R. C. Fink , A. Vazquez-Torres , J. Jones-Carson et al. , 2010 Fur negatively regulates hns and is required for the expression of hilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_38">
+doi :10.1007 / Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Car-son J , Hassan HM ( 2011 ) Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24970347" target="_blank">24970347</a>]<br></label>
+<input id="rp_similarity_38", type="checkbox">
+<div class="RP_similar">
+<li>[ 19 ] B. Troxell , M.L. Sikes , R.C. Fink , A. Vazquez-Torres , J. Jones-Carson , H.M. Hassan , Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Carson J , Hassan HM : Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23295139" target="_blank">23295139</a>]<br></li>
+<li>Troxell B , Sikes ML , Fink RC , Vazquez-Torres A , Jones-Carson J , Hassan HM : Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li></div>
+<li>The global regulatory hns gene negatively affects adhesion to solid surfaces by anaerobically grown Esch-erichia coli by modulating expression of ﬂagellar genes and lipopolysaccharide production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>Experimental evolution of Salmonella hns mutants An hns gene knockout from S. Typhimurium 14028s harboring a kanamycin resistance cassette in place of hns was moved into a fresh S. Typhimurium 14028s background containing a mutated rpoS allele ( rpoS * ) via P22 phage transduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>As an additional control , competitive fitness was also tested for the mutants in hns , a gene encoding a histone-like protein that is known to be expressed in tomatoes [ 7 ] ) and aroA , a gene encoding 5-enolpyruvylshikimate 3-phosphate synthase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20824208" target="_blank">20824208</a>]<br></li>
+<li>An important ﬁnding is that σE up-regulates SPI-2 genes , which are essential for Salmonella intracellular survival , by up-regulating SPI-2 activator ssrB expression at the early stage of infection and down-regulating SPI-2 E repressor hns expression at a later stage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>We found that σE indirectly regulates ssrB and hns transcription , also counters the silencing of H-NS on SPI-2 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Construction of a hns strain requires deletion of an extra gene ( rpoS or phoP ) , which would complicate the analysis Biosynthesis of cofactors , prosthetic groups , and carriers Cell envelope Cellular processes Central intermediary-metabolism DNA-metabolism Energy metabolism Fatty acid and phospholipid-metabolism Hypothetical proteins Mobile and extrachromosomal element functions Protein fate Protein synthesis Purines , pyrimidines , nucleosides , and nucleotides Regulatory functions Signal transduction Transcription Transport and binding proteins Unclassiﬁed Unknown function 8 44 35 11 13 34 6 9 3 18 29 28 2 29 8 8 26 61 8 22 16 54 7 22 3 4 3 2 6 7 3 4 4 10 51 39 69 49 23 58 81 37 95 53 37 73 48 56 66 100 36 105 σ SPI-2 apparatus and effectors ( B ) , protein-synthesis ( C ) , and stress response ( D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Fis has been implicated in many other processes such as stimulation of excision and integration of lambda ( 4 , 5 , 20 , 67 ) , DNA-replication at oriC ( 24 , 26 , 58 ) , transposition ( 70 ) , invasion of HEp-2 cells ( 71 ) , and transcriptional activation and repression of several genes , including hns , leuV , gyr , tyrT , proP , nuo , osmE , and rRNA operons ( 3 , 12 , 21 , 33 , 56 , 68 , 72 , 74 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716427" target="_blank">15716427</a>]<br></li>
+<li>Two targets regulated by DsrA in E. coli include the stress sigma factor rpoS and the histone-like nucleoid protein hns , both of which regulate genes involved in stress response and virulence ( Nadim et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+<li>Mutations in the hns structural gene cause pleiotropic phenotypes in both Salmonella and E. coli , many of which are linked to adaptation to environmental changes such as increased resistance to osmotic and cold shock in Salmonella ( Hinton et al. , 1992 ) , carbon source utilization ( Atlung and Ingmer , 1997 ) , homologous recombination and genome stability in E. coli ( Lejeune and Danchin , 1990 ; Dri et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>Expression of ompS1 , assT , and STY3070 was induced in an hns mutant , consistent with the notion that H-NS represses these genes ; transcriptional activity was lower for tpx and STY1978 in an hns background , suggesting that this global regulatory protein has a positive effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>( F ) qRT-PCR analysis of hns and Salmonella pathogenicity island 1 ( SPI-1 ) associated genes in WT and 1DsrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+<li>Expression of b-galactosidase from lac fusions to hilA , proV ( Salmonella or E. coli ) , rcsA , and hlyA genes in wt , hns , hns ( R27 ) , and hns ( R27Dhns ) strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Results Author Summary Acquisition of R27 plasmid by an hns mutant from S. Typhimurium strain SV5015 restores wt expression of Acquisition of DNA by horizontal gene transfer ( HGT ) significantly increases bacterial genetic variability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Effect of hns deletion on efﬂux activity and of drug efﬂux gene-expression levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_56">
+Hromockyj , A.E. , Tucker , S.C. , and Maurelli , A.T. ( 2002 ) Temperature regulation of Shigella virulence : identification of the repressor gene virR , an analogue of hns , and partial complementation by tyrosyl transfer RNA ( tRNA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></label>
+<input id="rp_similarity_56", type="checkbox">
+<div class="RP_similar">
+<li>Temperature regulation of Shigella virulence , identiﬁcation of repressor gene virR , an analogue of hns , and partial complementation by tyrosyl transfer RNA ( tRNA , Tyr ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12018658" target="_blank">12018658</a>]<br></li></div>
+<li>Contents lists available at SciVerse ScienceDirect Computers in Biology and Medicine journal homepage : www.elsevier.com/locate/cbm Interplay between Fur and HNS in controlling virulence gene expression in Salmonella typhimurium Mahendra Kumar Prajapat a , Supreet Saini b , n a Chemical Engineering , Indian Institute of Technology Gandhinagar , VGEC Campus , Chandkheda , Ahmedabad , Gujarat 382424 , India b Chemical Engineering , Indian Institute of Technology Bombay , Powai , Mumbai , Maharashtra 400067 , India abstract article info Salmonella enterica is responsible for a large number of diseases in a wide-range of hosts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>In terms of pathogenesis in Salmonella , HNS is known to negatively regulate expression of the genes involved in invasion [ 31 -- 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Typhimurium wild-type strain 14028 isogenic mutant with the sdiA gene deleted 14028 isogenic mutant with the hns gene deleted 14028 isogenic mutant with the PefIP2 promoter deleted 3xFLAG tag inserted at the 3 ′ end of the rck gene of strain 14028 3xFLAG tag inserted at the 3 ′ end of the rck gene of S. Enteritidis LA5 E. coli hsdR mcrB araD139 Δ ( araABC-leu ) 7679 ΔlacX74 galU galK rpsL thi E. coli F − ompT hsdS ( r − − B B mB ) gal dcm ( DE3 ) American Type Culture Collection This work This work This work This work This work Casadaban and Cohen ( 1980 ) AMS Biotechnology 14028ΔsdiA 14028Δhns : : kan 14028ΔP2 : : kan 14028rck : :3 xFLAG LA5rck : :3 xFLAG MC1061 SoluBL21 ™ Plasmids pKD4 pKD46 Vector carrying an FRT-Kan-FRT cassette ( Cbr , Kanr ) Datsenko and Wanner ( 2000 ) Datsenko and Wanner ( 2000 ) Carries λ-Red γ , β and exo genes under the control of Para ; temperaturesensitive replication ( Cbr ) Expression of FLP recombinase and temperature-sensitive replication ( Cbr ) Template for construction of 3xFLAG-tagged genes ( Cbr , Kmr ) Cloning vector ( Cbr , Kanr ) pACYC177 containing S. Typhimurium 14028 sdiA gene and its RBS pACYC177 containing S. Enteritidis LA5 sdiA gene and its RBS pACYC177 containing S. Typhimurium 14028 hns gene and its RBS T7 promoter-driven expression vector of 6His-tagged proteins , ( Cbr ) pET-15b containing S. Typhimurium 14028 sdiA gene Promoter-probe vector ( Cmr ) Transcriptional fusion PefIP1 -- lacZ in pQF50Cm Transcriptional fusion PefIP2 -- lacZ in pQF50Cm Transcriptional fusion PefIPtot -- lacZ in pQF50Cm Transcriptional fusion PSrgA -- lacZ in pQF50Cm Transcriptional fusion PSrgC -- lacZ in pQF50Cm Transcriptional fusion PromPefI-LA5 -- lacZ in pQF50Cm pCP20 pSUB11 Cherepanov and Wackernagel ( 1995 ) Uzzau et al. ( 2001 ) Chang and Cohen ( 1978 ) This work This work This work Novagen This work Robbe-Saule et al. ( 1997 ) This work This work This work This work This work This work pACYC177 pACSdiA pACSdiASE pAChns pET-15b pETSdiA pQF50Cm pPefIP1 pPefIP2 pPefIPtot pPSrgA pPSrgC pPromPefI-LA5 a. Cbr , carbenicillin resistance ; Kanr , kanamycin resistance ; Cmr , chloramphenicol resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li>
+<li>The rcsA gene encodes the colanic acid capsular biosynthesis activation protein A. hns mutants show a mucoid phenotype as a result of the derepression of colanic acid expression [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Identiﬁcation , cloning , nucleotide sequence and chromosomal map locations of hns , the structural gene for Escherichia coli DNA-binding protein H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>[ 81 ] T. Yoshida , C. Ueguchi , H. Yamada , T. Mizuno , Function of the Escherichia coli nucleoid protein , H-NS : molecular analysis of a subset of proteins whose expression is enhanced in a hns deletion mutant , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Ueguchi , C. , Kakeda , M. , and Mizuno , T. ( 1993 ) Autoregulatory expression of the Escherichia coli hns gene encoding a nucleoid protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>Autoregulatory expression of the Escherichia coli hns gene encoding a nucleoid protein : H-NS functions as a repressor of its own transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>Role of hns in the virulence phenotype of pathogenic salmonellae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>( i ) In a wild-type background , expression of a traJ : : lac transcriptional fusion increased in the presence of an hns mutation , indicating that H-NS is a repressor of traJ ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>It seemed possible that deletion of hns might be causing the transcriptional activation of genes involved in oxacillin resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>In conclusion , Fur activates hilA by repressing the expression of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>First , the microarray data showed that Fur negatively regulates the expression of hns and has a predicted Fur binding site ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Then we investigated the susceptibility of the strain lacking hns to various drugs , including common substrates of multidrug efﬂux pumps , and found that H-NS modulates S. enterica resistance to oxacillin , cloxacillin , nafcillin , cefamandole , meth-ylene blue , and rhodamine 6G ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>Most of the genes encoding proteins that play key roles as global modulators of gene-expression and have been reported to be sensitive to H-NS modulation ( i.e. , psiF , dps , himA , stpA , rcsA , and hha ) were not sensitive to H-NSR27 modulation in hns cells ( see Table S1 and Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Interestingly , the Lrp-binding consensus II motifs are linked with several genes , ﬂhC ( affects FliZ expression ) , hns , and ompR ( data not shown ) , whose products are known to be involved in the expression of hilA ( 62 , 63 , 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>To test the effects of H-NS on SlyA-driven hlyE expression , we measured - galactosidase activities from cultures of isogenic parental and hns strains carrying the hlyE : : lacZ plasmid pGS1065 and either a multicopy S. enterica SlyA expression plasmid ( pGS1657 ; Table 1 ) or , as a control , the vector ( pBluescript ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Effect of low temperature on the regulation of the plasmid-encoded hns gene R27 and the related pSf-R27 plasmid encode a protein related to the global modulator H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_76">
+Thus , LeuO relieved silencing of the bgl operon , the operon involved in the utilization of certain - glucosides ( 52 ) ; suppressed the effect of an hns mutation on cadC , which codes for the activator of the acid-inducible lysine decarboxylase ( 50 ) ; and also suppressed the negative effect of the AT4 region , the 72-bp gene silencer region located between the leuO gene and the leuABCD leucine biosynthetic operon ( 8 , 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></label>
+<input id="rp_similarity_76", type="checkbox">
+<div class="RP_similar">
+<li>Furthermore , expression of LeuO has been found to affect the expression of several genes inﬂuenced by mutations in hns : LeuO relieved silencing of the bgl operon , the operon involved in the utilization of certain b-glucosides ( Ueguchi et al. , 1998 ) ; suppressed the effect of an hns mutation on cadC , which codes for the activator of the acid-inducible lysine decarboxylase ( Shi and Bennet , 1995 ) ; and also suppressed the negative effect of the AT4 region , the 72 bp gene silencer region located between the leuO gene and the leuABCD leucine biosynthetic operon , by delimiting the transcriptional repression by H-NS through the binding of LeuO to the promoter region ( Chen et al. , 2001 ; 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li></div>
+<li>Deletion of dsrA Altered the Expression Proﬁle of Several Genes Associated with Invasion To determine the role of DsrA in regulating SPI-1 , we analyzed the expression of DsrA target hns along with a panel of SPI-1 master regulators and effectors in the 1DsrA strain relative to the WT , under SPI-1 inducing conditions , using qRT-PCR ( Figure 2F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+<li>In E. coli , the presence of an hns mutation decreased the transcription of ﬂhD and ﬂiA genes required for the synthesis of ﬂagella ( 7 , 46 ) , a rather rare example of H-NS acting as a positive regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>The transcription of sdiA and hns in these recombinant plasmids is under the control of the promoter of the Kanr gene of the pACYC177 vector which allows a constitutive expression of SdiA or H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li>
+<li>Two of the global regulators involved in controlling gene-expression during the infection cycle of the bacterium are Fur and HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Two of the global regulators involved in control of gene-expression are Fur and HNS [ 17,18 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Sequence analysis of genes regulating intracellular levels of RpoS To identify factors that inﬂuence an increase in the RpoS levels in the KLX2 strain , sequence analysis was carried out on KLX2 and the paternal strain LT2 , for the genes known to be involved in controlling intracellular levels of RpoS ( relA , spoT , hfq , hns , arcA , arcB , ﬁs , cspC , cspE , rprA , rpoE , rssA , rssB , iraP , iraD , iraM , clpX , clpP , and dnaK ) and the rpoS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23385142" target="_blank">23385142</a>]<br></li>
+<li>A number of regulatory genes are known to be able to inﬂuence the expression of genes involved in pathogenicity or defense against host-derived factors of S. Typhimurium ; these include the two-component phoPQ ( 53 ) and pmrAB ( 42 ) systems ( involved in sensing the transition to an intracellular location and defense against host peptides ) and the regulators of SPI-1 , invF ( 9 ) , hilC ( sprA ) ( 14 ) , and hilA ( 43 ) , and of SPI-2 , ssrA ( 39 ) , as well as global regulators , including ﬁs ( 7 , 50 ) and hns ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19411325" target="_blank">19411325</a>]<br></li>
+<li>H - NS Modulates Multidrug Resistance of Salmonella enterica Serovar Typhimurium by Repressing Multidrug Efﬂux Genes acrEF Kunihiko Nishino ,1,3 * Mitsuko Hayashi-Nishino ,2 and Akihito Yamaguchi2 ,4 Laboratory of Microbiology and Infectious Diseases1 and Department of Cell Membrane Biology ,2 Institute of Scientiﬁc and Industrial Research , Osaka University , Osaka 567-0047 , Japan ; PRESTO , Japan Science and Technology Corporation , Tokyo 102-0075 , Japan3 ; and Graduate School of Pharmaceutical Sciences , Osaka University , Osaka 565-0871 , Japan4 Received 18 March 2009/Returned for modiﬁcation 29 April 2009/Accepted 1 June 2009 Screening of Salmonella mutants for the ability to increase - lactam resistance has led to the identiﬁcation of a mutation in hns , which codes for the histone-like nucleoid structuring protein ( H-NS ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>Effect of deletion of hns and hha regulators on expression of chromosomal transcriptional fusion hilA080TTn5lacZY in the presence or absence of hilDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>Antagonistic involvement of FIS and H-NS proteins in the transcriptional-control of hns expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+<li>We observed that derepression of the SPI-6 T6SS gene cluster in hns mutant cells induces assembly and function of the secretion machine and causes intoxication of E. coli prey cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>( A ) Conditions that activate Fur ( i.e. , the presence of iron ) repress the expression of hns ( solid arrow ) , and allow the expression of hilA ( blocked dotted arrows ) and increased HilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>( B ) Mutation in Fur or lack of the cofactor ( i.e. , Fe2 ) results in the expression of hns and the H-NS protein ( blocked dotted arrows ) and the reduced expression of hilA ( solid arrows ) and HilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>In order to further strengthen the evidence for a role of H-NS in ompS1 expression , we transformed either a plasmid bearing the wild-type S. enterica serovar Typhi hns gene or the pACYC184 Tc vector plasmid into the mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>Using whole genome sequencing we identified parallel adaptations in many of the hns mutant lineages including genomic deletions in the pathogenicity locus SPI-1 and non-synonomous changes in the gene encoding StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>Thus , the characterization of the state of the H-NS protein in our mutants , analysis of ompS1 expression in an hns stpA double mutant at both low and high osmolarity , and a search for other negative effectors by mutagenesis in hns mutants are experiments that should help in further deﬁning the mechanism involved in the negative regulation of ompS1 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>Changes in expression of several gene groups in the hns mutant strain ( SV5015AV ) and in the hns strain harbouring R27 plasmid ( SV5015AV ( R27 ) ) with respect to the wt strain ( SV5015 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Mutations in the H-NS paralog , StpA , provide partial complementation for the impaired growth and motility phenotypes of hns mutants The only gene that acquired mutations in all six passaged Dhns lineages encodes the H-NS paralogue StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>It has been shown that IHF plays a combination of the hns allele with a mutant allele in the gene critical role in the expression of genes required by S. Typhi - encoding the H-NS antagonist would restore hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Each of the hns mutant lineages acquired missense mutations in the gene encoding the H-NS paralog StpA encoding a poorly understood H-NS paralog , while 5 of the mutant lineages acquired deletions in the genes encoding the Salmonella Pathogenicity Island-1 ( SPI-1 ) Type 3 secretion system critical to invoke inflammation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>A null mutation in stpA , the gene encoding the H-NS-like protein StpA , which is believed to represent a molecular backup of H-NS ( 58 ) , had no effect on proU P1 expression either by itself or in combination with other mutations such as rho and hns ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>The microarray data ( 64 ) identiﬁed hns , a gene encoding the histone-like protein H-NS , as part of the Fur regulon in anaerobically grown S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>5.59 6.80 0.13 0.13 25 atpA ATP synthase - subunit 54.98 5.80 0.02 0.05 0.18 0.04 28.36 39.36 5.78 5.58 Phosphoglycerate mutase 26 27 gpmA fbaA Fructose 1,6-bisphosphate aldolase class II Glyceraldehyde-3-phosphate dehydrogenase A Malate dehydrogenase 28 0.11 0.01 35.46 6.32 gapA 29 Energy metabolism ( tricarboxylic-acid-cycle ) Energy metabolism ( nonoxidative phase of pentose-phosphate-pathway ) Energy metabolism ( glyoxylate-bypass ) Broad regulatory functions 0.02 0.02 32.48 6.01 mdh 30 rpiA Ribose-5-phosphate isomerase A 0.42 0.68 22.90 5.08 Isocitrate dehydrogenase kinase / phosphatase DNA-binding protein H-NS ( histone-like protein II ) 30S ribosomal subunit protein S1 31 aceK 46.09 5.99 0.48 0.66 32 hns 15.41 5.32 0.11 0.16 Ribosomal protein-synthesis and modiﬁcation Protein translation and modiﬁcation Cell envelope ( lipopolysaccharides ) Cell processes ( amino acidbinding proteins ) Cell processes ( carbohydratebinding proteins ) Cell processes ( binding proteins other ) Cell processes ( chaperones ) Adaptation and atypical conditions 33 rpsA 61.25 4.89 0.08 0.05 Translation elongation factor EF-Tu .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>List of genes Description iagB Invasion protein IagB ; Lytic transglycosylase , catalytic lrp DNA-binding transcriptional dual regulator , leucine-binding rcsD/yojN Phosphotransfer intermediate protein in two-component regulatory system with RcsBC hha Modulator of gene-expression , with H-NS hilD Invasion AraC family transcription regulator barA Hybrid sensory histidine kinase , in two-component regulatory system with UvrY hns Global DNA-binding transcriptional dual regulator H-NS phoR Sensory histidine kinase in two-component regulatory system with PhoB spaQ Type III secretion apparatus protein Figure 12a : Cluster 2A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Proteins with signiﬁcantly altered expression in all three triclosan-resistant mutants Expression ratio a Description Protein L700 ( LoT ) L701 ( MeT ) L702 ( HiT ) average 4.4 ( 6.7 ) b 4.1 ( 4.1 ) 4.0 3.4 2.7 ( 6.7 ) 2.3 ( 2.5 ) 2.2 2.1 2.0 ( 15.0 ) 1.9 1.8 ( 0.98 ) 1.6 1.6 ( 1.5 ) 3.0 5.6 3.6 3.0 3.7 2.0 2.0 2.5 2.3 2.1 1.7 1.8 1.7 1.6 7.0 2.2 2.3 3.3 1.5 3.0 2.4 1.6 2.1 1.4 1.3 1.6 1.3 1.4 putative arginine deiminase ( arcA ) STM4467 GcvP HtrA HemL PpS FadB HNS AhpC MaeB HemX GltA CspC GapA TktA 3.3 4.6 6.2 4.0 2.8 2.0 2.3 2.3 1.7 2.3 2.3 1.5 1.9 1.8 glycine cleavage complex protein P , glycine decarboxylase periplasmic serine protease , heat shock protein glutamate-1-semialdehyde aminotransferase phosphoenolpyruvate synthase 3-hydroxyacyl-coA dehydrogenase DNA-binding protein , pleiotropic regulator alkyl hydroperoxide reductase putative transferase uroporphyrinogen methylase citrate synthase cold shock protein , putative regulator glyceraldehyde-3-phosphate dehydrogenase A transketolase 1 isozyme 1.6 1.6 1.8 1.5 1.8 1.5 1.6 1.9 0.5 0.3 0.2 0.4 0.2 1.5 1.7 1.5 1.7 1.6 1.6 1.5 0.6 0.5 0.3 0.6 1.5 1.5 1.4 1.5 1.3 0.5 0.5 0.3 0.5 0.5 0.2 putative pectinesterase glycerol kinase YbhC GlpK MdH 1.6 ( 0.95 ) 1.6 ( 4 ) 1.6 1.5 1.3 0.8 0.4 0.4 0.4 0.3 malate dehydrogenase 30S ribosomal subunit protein S1 protein chain elongation factor regulator of length of O-antigen component of LPS phage lambda receptor protein ; maltose high-afﬁnity receptor putative methyl-accepting chemotaxis protein nucleoside-transport putative carbon starvation protein sensory histidine protein kinase RpsA TufA WzzB LamB STM3152 NupC YjiJ CheA a Expression ratio relative to L696 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18388111" target="_blank">18388111</a>]<br></li>
+<li>Selected proteins with differential expression in L700 ( LoT ) compared with L696 Expression ratio a Description Protein Function enoyl - [ acyl-carrier-protein ] reductase ( NADH ) 3-oxoacyl - [ acyl-carrier-protein ] synthase I FabI FabB Fatty acid biosynthesis/metabolism 3.8 2.2 3.0 2.4 2.1 1.6 7.0 2.2 0.3 0.3 0.2 0.2 0.3 0.2 3-hydroxyacyl-coA dehydrogenase DNA-binding protein ; pleiotropic regulator RNA chaperone , negative regulator of cspA transcription cold shock protein , putative regulator putative arginine deiminase ( arcA ) glycine cleavage complex protein P , glycine decarboxylase ﬂagellar biosynthesis ; ﬂagellin , ﬁlament structural protein putative methyl-accepting chemotaxis protein methyl-accepting chemotaxis protein I , serine sensor receptor sensory histidine protein kinase putative methyl-accepting chemotaxis protein methyl-accepting chemotaxis protein II FadB HNS CspE CspC STM4467 GcvP FliC STM3216 Tsr CheA STM3152 CheM Global regulation Cold shock Amino acid metabolism Motility/chemotaxis a Ratio indicates expression in L700 ( LoT ) relative to L696 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18388111" target="_blank">18388111</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Hns binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Primers Sequence ( 5 -- 3 ) Relevance Primer AATAAATCCCGAGTTCATCAACAATGCTTATCA AATAAATCCCGAGTTACAATATGAAAACCTTGTAC AATAAATCCCGAGGAGTATCCCCCCTGCCAA ATATAAAGCTTTTAAGCATCCAGGAAGTAAA TTGTTACCGTTACTCATACCC TACGCTTTATTAAGCACACG TAAAATTCTGAACAACATCC GATACTGTTGCAGTTTACG TGCTGCTGGCTGAAAATACC TTCAGGGTCAATGCTGTTGT CGATGTCTCTGAAGAAGTGC TTCAACCATCTCTTTCTTCG GCTTGTTCCTTGATAAAACG GACATATTCGAAGGTATGACG phns 385 phns 357 AvaIhns 385 fwd AvaIhns 357 fwd AvaIhns 190 fwd HindIIIhns rev hns fwd hns rev hns fwd hns rev rpoD fwd rpoD rev rpoD fwd rpoD rev dinP fwd dinP rev phns 190 All phns constructs ChIP ChIP qRT-PCR qRT-PCR ChIP ChIP qRT-PCR qRT-PCR ChIP ChI FIG. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>HNS box sequence HNS box location S. no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>A Species Dataset Number of Average Total % A+T Source Sequences Size Size ( bp ) ( bp ) Salmonella LeuO + Typhimurium HNS 50.5 This study Escherichia E. coli coli LeuO 59.9 Shimada et al. ( 2011 ) bits bits B 2 n = 50 R = 20.7 E. coli 1 1 2 2 A A T A T 3 3 4 5 4 5 T 6 7 8 9 A ATAT AAAT AATT A T A T AT TTTTATC AT T TA C A G C T A TA C T C GGGCT G 0 CG A A A C G A GT A G A C CC G C CGG 1 C A T 6 7 8 9 10 11 10 11 T N11 A 12 12 2 n = 36 S. Typhimurium 13 13 R = 16.8 14 14 A 15 15 A 16 16 A 1 TTATAT A A T T TAAA AA T A AA AAAGCGTGTTG GTG TA C A C AGAT T 0 GGCG CAG C G C A G A GT CCG C T G T C C TGT A TG A GC CCC A TG GT G C C GG 17 18 19 20 21 17 18 19 20 21 A. Details of the manually curated S. Typhimurium and E. coli LeuO datasets used to derive the LeuO binding motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>HNS box sequence HNS box location Strand þ þ 3006305y3006313 3010825y3010833 3011464y3011472 3012245y3012253 3013028y3013036 3018129y3018137 3018934y3018942 3019190y3019198 3019673y3019681 3020913y3020921 3023611 ... 3023619 3023757y3023765 3023758y3023766 3023975y3023983 3027358y3027366 3027433y3027441 3031507y3031515 3032259y3032267 3034613y3034621 3036799y3036807 3038496y3038504 3038724y3038732 3038966y3038974 3042887y3042895 3044398y3044406 3045587y3045595 1463152y 1465356y 1473069y 1473917y 1475863y 1479318y 1479477y 1479846y 1480623y 1484296y 1484705y 1485569y 1486355y 1488147y 1489155y 1489392y 1489509y 1491640y 1493907y 1494864y 1495827y 1497681y 1500166y 1500389y 1500827y GCTATATAA AATATATTG GCTATATTA AAAATATCG GCAATATAA GCTATATGA AATATATTG GCTATATTA GCTAAATAA AATACATCG GCAATATAA GCGATATAA GCTATATTA AAAATATCG GCTATATAA GCTAAATAA 1 2 1 2 GCTATAAAA GCGATATAA GCTATGTAA AATATATTG GCTGTATAA AAAATATCG GATATATAA AATTTATCG GCTATAAAA AATATACCG GCTATATAC AATATACCG GCTTTATAA GCTATGTAA AATATAACG ATTATATCG 1463160 1465364 1473077 1473925 1475871 1479326 1479485 1479854 1480631 1484304 1484713 1485577 1486363 1488155 1489163 1489400 þ 3 4 5 6 7 8 9 10 11 12 13 14 15 16 3 4 5 6 7 8 9 10 11 12 13 14 15 16 þ þ þ þ þ þ þ þ þ þ þ þ þ þ AATACATCG GCTATTTAA GCTATACAA GCTATAAAA AATAAATCG AATATAACG GCTTTATAA GTTATATAA AAAATATCG GCTATACAA 17 18 19 20 21 22 23 24 25 26 17 18 19 20 21 22 23 24 25 GCTACATAA GCTTTATAA ATTATATCG GCTATATCA GCTGTATAA GGTATATAA AATATATCC GCTATTTAA AATGTATCG 1489517 1491648 1493915 1494872 1495835 1497689 1500174 1500397 1500835 þ þ þ þ þ þ þ þ Frequency of Binding Sites 2.2 2.0 1.8 1.6 1.4 1.2 1.0 0.8 0.6 0.4 Fur HNS SPI2 SPI1 SPI3 SPI4 0.2 0.0 0 1x106 2x106 3x106 4x106 5x106 Base Number Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Purpose/name Sequence ( 5 ' -3 ' ) Digf ( forward 755bp csgD regulatory region ) tgatgaaactccacttttttta Digr ( reverse 755bp csgD regulatory region ) tgctgtcaccctggacctggtc ssrA knockout ( forward ) atgaatttgctcaatctcaagaatacgctgc aaacatctt ttaagacccactttcacatt agccgatacggcattttcaatatcagccag caagaggtcc ctaagcacttgtctcctg ssrA knockout ( reverse ) ggaagatatctcggccggttgc csg1 ( forward csgD internal ) csg2 ( reverse csgD internal ) tcagcctagggataatcgtcag rrsA1 ( forward rrsA internal ) gcaccggctaactccgtgcc rrsA2 ( reverse rrsA internal ) gcagttcccaggttgagcccg PSsrBF ( forward for pKF46 ) atgaaagaatataagatcttat PSsrBTR ( hybrid reverse for pKF46 ) ttaatactctaattaacctcattcttcgggcac agttaagtctaagcacttgtctcctg TSsrBF ( forward TetRA-ssrB ) acttaactgtgcccgaagaatgaggttaata gagtattaattaagacccactttcacatt TSsrBR ( reverse TetRA - after ssrB stop ) catcaaaatatgaccaatgcttaataccatc ggacgcccctggctaagcacttgtctcctg Digb ( Forward for EMSA ) Biotin - tgatgaaactccacttttttta CsgDigRS ( Reverse for EMSA ) aatatttttctctttctggata hns knockout ( forward ) gctcaacaaaccaccccaatataagtttgg attactacattaagacccactttcacatt hns knockout ( reverse ) atcccgccagcggcgggattttaagcatcc aggaagtaaactaagcacttgtctcctg Static biofilms were grown by inoculating the bacterial strains on APTES-coated coverslips in 24-well Nunclon polystyrene plates in 500 ml LB without salt medium and kept shaking at 30 ˚C , 100 rpm .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26880544" target="_blank">26880544</a>]<br></li>
+<li>The hns coding sequence was amplified from Salmonella LT2 genomic DNA and restriction-digested with NdeI and XhoI enzymes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>The promoters for dgt and hns were PCR amplified using primer pairs CTCGAGGT TCAACTGGCCAGTGTAAATTTC and CTCGAGGCGAATA TCGTTCAGATTTTCTTC , CTCGAGCGGGTGATGATAAG CATTGTTGAT and CTCGAGAAACCGATACGAGAGCTG ACTTTG ( underlined sequences indicate XhoI sites introduced for cloning into pGOA1193 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20121449" target="_blank">20121449</a>]<br></li>
+<li>Yamada , H. , Yoshida , T. , Tanaka , K. I. , Sasakawa , C. & Mizuno , T. 1991Molecular analysis of the Escherichia coli hns gene encoding a DNA-binding protein , which preferentially recognises curved DNA sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>While HNS binding of the SPI1 region has been previously identiﬁed as a silencing mechanism [ 89 ] , the role of presence of Fur binding sites in the SPI1s ; and HNS binding in the SPI2 , SPI3 , and SPI4 regions has not been previously reported .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>no consensus sequence has been identified , al ¬ - NS ( encoded by hns ) belongs to a though the few H-NS binding sites mapped to Hfamily of small abundant nucleoid - date are rich in AT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16763111" target="_blank">16763111</a>]<br></li>
+<li>In addition , we also located a number of Fur and HNS binding sites in close proximity to accessory regulators hilC , sprB , and hilA [ 17,19,33,46,47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>The predicted Fur binding site is located within 385 and 357 nucleotides upstream of hns ( signiﬁed by a ﬁlled triangle in Fig. 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>The predicted 35 and 10 sites of hns are located 70 and 50 nucleotides upstream of ATG , respectively , 309 and 292 nucleotides downstream from our putative Fur binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>A putative Fur binding site was identiﬁed upstream of hns , but no evidence was presented for Fur binding to this region ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Fur binds upstream of hns in a metal-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>We also identiﬁed 28 nucleotides upstream of hns that contained the Fur binding motif responsible for the Fur-de-pendent activation of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>In addition , Fur-controlled activation of hilA through 28 bp located at a distant site upstream of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>pLG703 was constructed by cloning a 736 bp EcoRI -- StuI fragment encoding hns from E. coli into the EcoRI -- HincII sites of pLG339 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15966862" target="_blank">15966862</a>]<br></li>
+<li>fur with in-frame expression of hemagglutinin epitope in AvaI HindIII sites of pACYC184 ( cat ) 385 bp from ATG of hns to 20 bp after TAA cloned into AvaI HindIII sites of pACYC184 ( cat ) 357 bp from ATG of hns to 20 bp after TAA cloned into AvaI HindIII sites of pACYC184 ( cat ) 190 bp from ATG of hns to 20 bp after TAA cloned into AvaI HindIII sites of pACYC184 ( cat ) a ATCC , American Type Culture Collection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>The nucleotides adjacent to the SPI-1 deletion sites that were deleted from the evolved hns mutant lineages are represented in grey font .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>The templates used for the DNA probe were a PCR fragment ampliﬁed from the sequence of the dsbA gene using NLM88 ( 5 - CTGGCGAACCCCAGGTACT G-3 ) and NLM78 ( 5 CGCATCAACGAACACTTTACGG-3 ) or an amplicon speciﬁc for hns using primers NM93 ( 5 - ATAAGCTCTTTTTTGTGCGGTG-3 ) and NM94 ( 5 - TATTTTTTTCGCGGCCTAAATG-3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>This procedure yielded a Cmr cassette insertion at the KpnI restriction site of the hns gene , approximately 330 bp downstream from the initiation codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>Primer extension analyses showed two 5 = ends located at bp 31 ( P1 ) and 36 ( P2 ) from the assT translation start site ( Fig. 5 ) , with a higher level of transcription in an hns mutant , according with the data obtained from transcriptional assays ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>gene induction J774A .1 plasmid promoter insert insert size ( bp ) gfp lacZ pGfp2 pGyrB gyrB 1600 ´ 0.8 ± 0.05 ´ 5.1 ± 0.8 pTopA topA 3300 ´ 1.6 ± 0.05 ´ 1.3 ± 0.1 pPheST pheST-ihfA 4700 ´ 1.2 ± 0.08 ´ 5.7 ± 1.0 pIhfA ihfA 860 ´ 1.1 ± 0.01 ´ 6.7 ± 0.8 pIhfB ihfB 4000 ´ 0.6 ± 0.04 ´ 2.8 ± 0.3 pHns hns 1600 ´ 1.5 ± 0.09 ´ 7.1 ± 1.0 dps pDps ´ 0.6 ± 0.05 ´ 3.0 ± 0.5 714 spv pSpv ´ 0.5 ± 0.06 ´ 5.1 ± 1.0 1574 open boxes represent coding sequences of genes Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Primers ( 5 ' ^ 3 ' ) used for the PCR ampli cents cation of plasmids restriction enzyme recognition sitea plasmid primer name primer sequence pDps dps up dps start CGCGGATCCTATATATTCTTACCGG ( BamHI ) ( BamHI ) ( KpnI ) ( BamHI ) ( SphI ) ( BamHI ) ( BamHI ) ( BamHI ) ( BamHI ) ( SphI ) ( BamHI ) ( BamHI ) ( BamHI ) ( BamHI ) ( BamHI ) ( BamHI ) CGCGGATCCAATCTCATATCCTCTTGATG CGGGGTACCGGATCAATCCCCATACG CGCGGATCCTTTGCCGGTATGTACG ACGCC ACATGCATGCTGCTTTCACAACGAAGCC CGGGGATCCCTTGTCGAAGCGCGCTTTCTCG CGCGGATCCACTGTCTGAAGATGCC TTCG CGCGGATCCCTTCAACGCTTTCCAGAGT AC CGCGGATCCAACAGATATTCTGACATTTCAG C ACATGCATGCAGGCCGTCAGATGATCATGG CGCGGATCCCGTCTTGGCGGGAATGTGC CGCGGATCCTGGCACGTACAACGAC CACC CGCGGATCCGTTTACGTTCCAGTTCAG GG CGCGGATCCAACAGATATTCTGACATTTCAG C CGCGGATCCAACAGGTCAATTAAATCC CCCGGATCCCCTGAAAATAAACAGAATG AAATCC pTopA topA cds topA up2 gyrB up gyrB start hns up hns cds ihfA cds ihfC ihfB cds ihfB up ihfA2 val up ihfA2 val cds spv up spv cds pGyrB pHns pPheST pIhfB pIhfA pSpv a The location of the site in the primer sequence is shown by underlining .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Hns</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>This result clearly indicates that hns deletion induces an active efﬂux system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>Both are known to regulate virulence factors in Salmonella ( Fur positively , and HNS negatively ) [ 17,22,95 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>As Salmo-nella hns mutants do not grow well in N9 minimal medium , PCN minimal medium was used as a substitute .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>This analysis also shows that hilD expression is controlled by lrp activity through hns global transcription regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>FIGURE 5  σE up-regulates SPI-2 gene expression by repressing hns transcription under LPM 20 h condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>( A ) σE down-regulates hns expression in LPM 20 h condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>These lysates were used to infect S. typhi-1 murium TL2643 ( hns galE/pD2 [ Eco lamB1 ] ) , TL2717 ( hns-101 : : IS10 galE/pD2 [ Eco lamB1 ] ) , and TL2647 ( hns-1 : : kan galE/pD2 [ Eco lamB1 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></li>
+<li>354 ( acrB ) and NKS291 ( acrB hns ) were measured as described previously ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>( C ) hilD and ompA primer extension products were generated by using total RNA from wild-type ( WT ) , hupA : : kan hupB : : kan ( hup ) , ﬁs3 : : cam ( ﬁs ) , and hns-1 : : kan ( hns ) derivatives of SL1344 or LT2 , grown under inducing or low-osmolarity conditions , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12933899" target="_blank">12933899</a>]<br></li>
+<li>Solid media assays showed that 4-E18 ( plsB ) and 5-H21 ( hns ) were upregulated by rifampicin and ampicillin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>For real-time PCR , 3 - l IP and input control samples were ampliﬁed by using 1 SensiMix Plus ( Quantace , London , United Kingdom ) and primers speciﬁc for rpoD , dinP , and hns ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>hns transcription and growth phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>These include genes such as hns , crp , cya , dnaJ and dnaK , pss , and psd ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>The primer pairs , YncC-P1 and YncC-P2 , Hns-P1 and Hns-P2 , YciG-P1 and KatN-P2 ( Table II ) were used for disruption of the yncC , hns , and yciGFEkatN operon , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>R27 encodes single copies of hns and hha genes ( ORFs 164 and 182 respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Restoring hns did not affect hlyE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>An hns mutation in S. Typhimurium LT2 is not lethal and its effect was examined , but this mutation also did not alter gtrP22 phase variation ( sMV203 , data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The plasmid ( pASK - H-NS -3 xFLAG ) expressing H-NS was constructed by cloning a DNA fragment containing coding sequence of hns on pASK-3xFLAG ( constructed on pASK-IBA33plus by Hyunjin Yoon ) via EcoRI and AvrII .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>The transcription of hns was measured by qRT-PCR using gyrB as an internal control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Fur regulates hilA-lacZ through nucleotides upstream of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Expression of chromosomal hilA-lacZY reporter was examined in LT2 background : WT ( LM643 ) , hha ( IO905 ) , hns ( LM645 ) , hha hns ( IO907 ) , DhilDC ( IO935 ) , DhilDC hha ( IO938 ) , DhilDC hns ( IO937 ) , DhilDC hha hns ( IO939 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>Modulation of acid-induced amino acid decarboxylase gene expression by HNS in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Shi X , Waasdorp BC & Bennett GN ( 1993 ) Modulation of acid-induced amino acid decarboxylase gene expression by hns in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Global regulation of gene expression by HNS and Fur Since SPI1 is a foreign fragment of DNA acquired by Salmonella during its evolution , it is understandable that it is subject to a heavy negative regulation [ 89 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Global regulation of gene expression by HNS and Fur 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>StpA repressed ompS1 expression in a mutant hns background H-NS negatively regulates ompS1 expression in both S. Typhi and S. Typhimurium ( Flores-Valdez et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The hns promoter was induced strongly in S. typhimurium cells growing in macrophage and not induced in TCM alone ( cents gure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>The same effect on E. coli hlyE expression can be achieved in hns mutants and in slyA-overexpressing strains [ 41,55,57 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Both hns and hha transcription factor are controlled by low osmolarity suggesting that this environmental signal is sensed by Salmonella during the macrophage invasion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Interestingly , however , in rpoS hns double mutants , curli genes are transcribed from the same start site by another sigma factor ( most probably s ) 70 ( Olsén et al. , 1993 ; Arnqvist et al. , 1994 ) , suggesting that DNA curvature affects transcription of csg genes by s .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_31">
+Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24643535" target="_blank">24643535</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24990908" target="_blank">24990908</a>]<br></label>
+<input id="tu_similarity_31", type="checkbox">
+<div class="TU_similar">
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Fur negatively regulates hns and is required for the expression of HilA and virulence in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26662614" target="_blank">26662614</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23306672" target="_blank">23306672</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li></div>
+<li>However , HilA was not required for siiE expression in an hns mutant strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18160484" target="_blank">18160484</a>]<br></li>
+<li>In the hns mutants , S was still required for katN-lacZ expression ( Fig. 2D and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>The wild-type S. enterica serovar Typhi hns gene was ampliﬁed by PCR with Expand ( Boehringer Mannheim Inc. ) and cloned into the pACYC184 vector ( New England Biolabs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>Mutants defective in hns exhibited high , constitutive levels of OmpR not subject to further induction by acid shock ( Fig. 8A , lanes 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12080060" target="_blank">12080060</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12068808" target="_blank">12068808</a>]<br></li>
+<li>The hns mutation showed an increase of rtsA ( 5.5-fold ) , hilD ( 2-fold ) , and hilC ( 2-fold ) expression under low-osmolarity conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>The combination of hha and hns mutations resulted in an 11-fold increase in rtsA expression under low-osmolarity conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>The combination of the hha and hns mutations resulted in a high-level salt-independent rtsA expression comparable with that seen for hilD hilC cells under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>Loss of hns , however , does not relieve repression of hilA by oxygen ( as opposed to osmolarity ) and expression of hilA in an hns mutant still requires HilD under inducing ( high osmolarity , low oxygen ) growth conditions ( L. Schechter and C. Lee , unpublished observations ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>Expression of siiE is increased in both hns and hns hilA : : Km mutant strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18160484" target="_blank">18160484</a>]<br></li>
+<li>Expression of b-galactosidase from lac fusions to hilA , proV ( Salmonella or E. coli ) , rcsA , and hlyA genes in wt , hns , hns ( R27 ) , and hns ( R27Dhns ) strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>However , S levels and katN-lacZ expression levels in stationary phase were not highly different in the two hns strains ( twofold difference ) ( Figs. 2D , E and Fig. 5C lanes 13 and 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>Gene expression patterns of strains SV050515 , SV5015AV ( hns ) and SV5015HY ( hha ydgT ) grown either in low and high osmolarity LB medium , and either at 25 or 37uC in conventional LB medium , were compared ( Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>To determine whether HilA promotes SPI4 expression by relieving H-NS-mediated silencing , siiE expression levels were measured in wild-type and isogenic hns , hilA : : Km , and hns hilA : : Km mutant strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18160484" target="_blank">18160484</a>]<br></li>
+<li>However , under low osmolarity conditions , HilD and HilC activators were not essential for hilA expression in hns and hha hns double mutants ( lines 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>Reporter fusions rcsA : : lacZ , proV : : lacZ hilA : : lacZ and hlyA : : lacZ were constructed and b-galactosidase expression was evaluated in wt , hns , hns ( R27 ) and hns ( R27Dhns ) cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>The predicted Fur binding site is located within 385 and 357 nucleotides upstream of hns ( signiﬁed by a ﬁlled triangle in Fig. 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>RpoS-dependent expression of osmY-lac in LBON medium was unaffected by rho but was increased around 6-fold by hns ( comparable to that reported earlier [ 5 ] ) and around 25-fold by growth at 10 ° C ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>In agreement with these findings , expression of katN-lacZ in S. Typhimurium ATCC14028 ( Fig. 2D ) and SL1344 ( data not shown ) was increased by an hns mutation by more than 10-fold in exponential phase and by twofold in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>In stationary phase , derepression of katN-lacZ expression by the hns mutation was stronger in ATCCrpoSLT2 than in ATCC14028 ( 12 - and twofold respectively , Figs. 2D , E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>Derepression of traJ expression by an hns mutation was detected in both Dam and Dam hosts ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>Deregulated expression of S. Typhimurium hilA and E. coli hly promoters in hns mutants was fully compensated by H-NSR27 ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>The fusions containing between bp 310 and 117 ( Fig. 1 ) were positively affected by interruption of hns , whereas fusions from 88 and downstream were not affected by the hns interruption ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>All of these genes display high A+T nucleotide sequence and have been previously shown ( in S. Typhimurium ) to be strongly bound by the nucleoid-associated protein H-NS , encoded by hns ( 61,66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23470992" target="_blank">23470992</a>]<br></li>
+<li>Most of the genes encoding proteins that play key roles as global modulators of gene expression and have been reported to be sensitive to H-NS modulation ( i.e. , psiF , dps , himA , stpA , rcsA , and hha ) were not sensitive to H-NSR27 modulation in hns cells ( see Table S1 and Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>The mechanism by which HilC , HilD and RtsA activate expression of hilA ( and possibly of each other ) apparently involves counteracting silencing by the nucleoid protein Hns [ 30,31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17208038" target="_blank">17208038</a>]<br></li>
+<li>The global regulatory hns gene negatively affects adhesion to solid surfaces by anaerobically grown Esch-erichia coli by modulating expression of ﬂagellar genes and lipopolysaccharide production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>Second , their expression is negatively affected by the H-NS nucleoid protein ; i.e. , they are activated when hns is mutated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>A third example is the hns gene , which encodes the abundant regulatory protein H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850262" target="_blank">17850262</a>]<br></li>
+<li>Our results suggest that there is no in vivo occupancy of ssrB and hns promoters by σE , therefore , it is likely that σE indirectly regulates ssrB and hns , which up-regulates SPI-2 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>An important ﬁnding is that σE up-regulates SPI-2 genes , which are essential for Salmonella intracellular survival , by up-regulating SPI-2 activator ssrB expression at the early stage of infection and down-regulating SPI-2 E repressor hns expression at a later stage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Notably , we found that σE up-regulates SPI-2 gene expression through different mechanisms at different stages of infection : by increasing the transcription of SPI-2 activator ssrB in early stage , and by decreasing the transcription of SPI-2 repressor hns in late stage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>We found that σE up-regulated SPI-2 gene expression through ssrB in early stages of infection , and through hns during late stages of infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>The effects of H-NS on SPI-2 gene expression in LPM 20 h condition was examined by over-producing H-NS instead of deleting hns , as it is required for viability in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>It is not known why Salmonella utilizes different mechanisms to meet its need in activating SPI-2 genes , yet in late stages of infection overall protein synthesis was down-regulated by σE ( Figure 3C ) , consistent with its effect on hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>The dRNA-seq data often conﬁrmed the TSSs that were already clearly apparent from RNA-seq and FRT-seq , as seen for the hns gene ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22538806" target="_blank">22538806</a>]<br></li>
+<li>However , we note that the screen does not seem to be saturated , because no alleles of hns were found by these methods ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+<li>The data revealed that both FNR and CRP made signiﬁcant positive contributions to hlyE expression , whereas the hns mutation resulted in slightly reduced hlyE transcription under these conditions ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Thus , whereas chromosomal hns is expressed constitutively under the conditions tested in this assay , hnsR27 shows a temperature-dependent expression pattern .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+<li>The data in Fig. 4B show that the HA-tagged Fur was not detected at the control genes , rpoD or dinP , but was enriched 103-fold at hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>As an additional control , competitive fitness was also tested for the mutants in hns , a gene encoding a histone-like protein that is known to be expressed in tomatoes [ 7 ] ) and aroA , a gene encoding 5-enolpyruvylshikimate 3-phosphate synthase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20824208" target="_blank">20824208</a>]<br></li>
+<li>This increase in catalase activity in the hns mutant probably resulted from increased rpoS transcription ( 5 ) and , because activity was unchanged in NLM2174 , suggests that the suppressor mutation in NLM2174 is not located in the rpoS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>However , when ompS1 expression was derepressed in the hns mutants , in either serovar Typhi or serovar Typhimurium , it was negatively regulated in high-osmolarity medium ( Fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>Because the hns and mviA genes are tightly linked , it was important to show that strain TE7512 ( LT2A hns : : Kan ) is mviA1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+<li>In order to determine which drug efﬂux pump shows increased expression when hns is deleted , we used quantitative reverse transcription-PCR to investigate changes in the levels of drug efﬂux gene mRNAs dependent on hns deletion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>Whether hns was induced or not , the expression of ssaE , sscA , and sseI were higher in WT than in rpoE strain ( comparing `` WT hns uninduced '' to `` rpoE hns uninduced , '' or `` WT hns induced '' to `` rpoE hns induced '' ) , which is consistent with results in Figure 4A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>The overexpression of H-NS repressed SPI-2 gene expression ( comparing `` rpoE hns uninduced '' to `` rpoE hns induced '' ) , however when σE was present , the repression of H-NS on SPI-2 was relieved ( compare `` WT hns induced '' to `` rpoE hns induced '' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>( A ) Expression of hns was signiﬁcantly elevated in the fur mutant determined by qRT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>The growth rate of Salmonella was highly affected by the hns mutation ( Fig. 2D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>The absence of genomic DNA was conﬁrmed by PCR using primers targeting within the coding gene of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>RpoS-dependent expression of csiD-lac was not affected by any of the conditions , that is , by rho or hns mutations or growth at low temperature ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>It is noteworthy that expression of dsbL ( assT 78/dsbL 105 ) was not inﬂuenced by the hns mutation ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Thus , under Fur active conditions ( left panel ) , hns is repressed by Fur thereby blocking H-NS repression of ftnB and the tdc operon ( signified by the circle with an `` X '' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Indeed , the activation of hilA by Fur was dependent on 28 nucleotides located upstream of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>In conclusion , Fur activates hilA by repressing the expression of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>We used 5 = RACE assays to deﬁne the 1 transcriptional sites of STM0271 and clpV , the ﬁrst genes of the two divergent T6SS operons , using mRNAs puriﬁed from S. Typhimurium WT and hns cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>The templates used for the DNA probe were a PCR fragment ampliﬁed from the sequence of the dsbA gene using NLM88 ( 5 - CTGGCGAACCCCAGGTACT G-3 ) and NLM78 ( 5 CGCATCAACGAACACTTTACGG-3 ) or an amplicon speciﬁc for hns using primers NM93 ( 5 - ATAAGCTCTTTTTTGTGCGGTG-3 ) and NM94 ( 5 - TATTTTTTTCGCGGCCTAAATG-3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>The template used for the DNA probe was a PCR fragment ampliﬁed from the promoter region of the dsbA gene using primer pair NLM22 ( 5 - ACAAGATCTATTAATACATTGGCGTT-3 ) and NLM24 ( 5 - CCCCTCGAGAAGCTTATCAAGAAGTT-3 ) and primer pair NM111 ( 5 - TAGCGACAGACGGTGAGTATCC-3 ) and NM112 ( 5 - GCAGT TTACGAGTGCGTTCTTCC-3 ) for the promoter region of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>In E. coli , hns regulates about 200 genes ( Hommais et al. , 2001 ) , and hns mutants are the most frequent cause of activation of the cryptic bgl operon ( Lopilato and Wright , 1990 ; Falconi et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850262" target="_blank">17850262</a>]<br></li>
+<li>Derivatives of both LT2 and LT2A were constructed that carry the RpoS-dependent katE-lac reporter as well as insertion mutations disrupting the mviA , clpP , and hns genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+<li>σ E REGULATES ssrB AND hns EXPRESSION INDIRECTLY ACKNOWLEDGMENTS This work was supported by the National Institute of Allergy and Infectious Diseases ( 5R01 AI022933 and IAA Y1-AI-8401 ) and the National Institute of General Medical Sciences ( GM094623 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Again , samples from strain SV5015UB2 and the corresponding hns , hha and hha hns derivatives were collected at both the exponential and early stationary growth phases , and hilA transcriptional expression was determined by monitoring b-galactosidase activity ( Fig. 2c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Plasmids pHNS11 and pH3 , in which hns and hha genes of S.enterica serovar Typhimurium are expressed under the control of the T7 promoter , were constructed by cloning the PCR-ampliﬁed hns and hha genes from SL1344 chromosomal DNA into expression vector pMBPHisParallel1 ( gift from Z. Derewenda ) with both MBP and 49 His6 afﬁnity tags .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443238" target="_blank">16443238</a>]<br></li>
+<li>To validate this , we determined the expression levels of hns and several SPI-1 associated genes in 1DsrA relative to wild-type under SPI-1 inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_97">
+Negative osmoregulation of the Salmonella ompS1 porin gene independently of ompR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29018419" target="_blank">29018419</a>]<br></label>
+<input id="tu_similarity_97", type="checkbox">
+<div class="TU_similar">
+<li>Flores-Valdez , M.A. , Puente , J.L. , and Calva , E. ( 2003 ) Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li></div>
+<li>In the absence of hns , a significant de-repression of sifA , sifB , and sseJ transcription under noninducing conditions , pH 7.4 , was observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>Expression of cloned hns was under the control of ca. 500 bp of its own regulatory region , and the clone does not contain any ﬂanking gene upstream or downstream .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>Previous work performed in vitro with E. coli has shown that expression of the nucleoid-associated protein H-NS is coupled to DNA synthesis such that in rapidly growing bacteria the hns gene is induced while in quiescent cells it is repressed ( Free & Dorman 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>This indicates that under the conditions tested , StpA does not regulate gene expression by modulation of H-NS levels , and is consistent with the transcriptomic data , which do not show signiﬁcant StpA-dependent changes in hns gene expression in S. Typhimurium JH3003 at any time point .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>Thus , acid pH is not required for transcription in the absence of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>In contrast , in the absence of hns , SlyA overproduction did not enhance hlyE expression ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Transcription of sifA , sifB , and sseJ is significantly de-re-pressed in an hns mutant at both inducing ( 5.8 ) and noninducing ( 7.4 ) pH. qRT-PCR was used to determine the extent of hns silencing of sifA , sifB , and sseJ transcript levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>Analysis of stpA and hns expression has indicated that the two gene products are capable of both negative autogenous control and cross-regulation ; that is , StpA levels are signiﬁcantly increased in an hns mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Remarkably , most of the genes deregulated in the hha ydgT mutant were also deregulated in the hns mutant : a total of 162 genes were overexpressed both in hha ydgT and hns mutants , and most of them were overexpressed under several growth conditions ( Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Cultures of strains M182 and M182 hns transformed with pGS1065 were grown under anaerobic conditions in the presence and absenc of glucose at 37 ° C for 16 h .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The depletion of NaCl from LB medium lead to a significant decrease in rtsA-lac expression , which is restored for the hns mutant and is further induced for the hns hha double mutant ( Fig. 1 and 8 ) , suggesting that the repression under low-osmolarity conditions is mediated by H-NS/Hha .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>Reporter gene expression from constructs carrying P1 was shown to be increased in an RpoSspeciﬁc manner by mutations in rho ( the gene for transcription termination factor Rho [ reviewed in references 21 , 44 , and 56 ] ) and hns and by the growth of cultures at 10 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>The magnitude of osmY expression was growth medium dependent , and the activating effects of hns and low temperature were not as pronounced in K-tryp-tone medium that had been used by us for the proU P1 studies ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>Expression of ompS1 , assT , and STY3070 was induced in an hns mutant , consistent with the notion that H-NS represses these genes ; transcriptional activity was lower for tpx and STY1978 in an hns background , suggesting that this global regulatory protein has a positive effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The ompS1 expression was determined under the induction of pT6H-NSG113D in three S. Typhi backgrounds : wild type ( IMSS-1 ) , hns mutant ( STYhns99 ) and stpA mutant ( STY DstpA ) ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The effect of the hns mutation on hlyE expression in aerobic cultures was also interesting ( Fig. 1c and d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The expression of mdsC , macA , and macB was slightly increased in the hns mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>The expression of hns was signiﬁcantly upregulated in the fur mutant , and a putative Fur binding site was identiﬁed upstream of the gene ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Interestingly , when S. typhimurium is grown under the normally repressing low osmolarity condition , a null mutation in hns results in high hilA expression , even in the absence of HilC and HilD ( L. Schechter and C. Lee , unpublished observations ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>At 30 ° C , both plasmids pHYD394 and pHYD395 conferred nil lac expression in wild-type or rho strains ; RpoS-dependent expression was induced around 50-fold in the hns mutant , and there was a further marginal elevation in the hns rho double mutant ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>For ompS2 and ompX expression , no change in the transcriptional pattern was observed in the hns mutant ( Fig. 2d and f ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Interestingly , the Lrp-binding consensus II motifs are linked with several genes , ﬂhC ( affects FliZ expression ) , hns , and ompR ( data not shown ) , whose products are known to be involved in the expression of hilA ( 62 , 63 , 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Transcript levels were graphed as - fold expression relative to the hns strain expressing pHNSWT , and the error bars represent the S.D. from three biological replicates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>murium to undergo the physiological changes associated Double hilC hns and hilD hns mutants could be easily with the transition from the exponential to the stationary constructed ; however , a double hns ihf mutant appeared not phase of growth , including virulence gene expression to be viable in strain SV5015 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Other evidence suggesting that DNA replication continues under the conditions of our experiments comes from the observation of hns gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>( 28 ± 5.7 versus 4.1 ± 0.6 Miller units for the hns mutant compared to the wild-type strain ) ( Fig. 7B ) but this level of β-galactosidase could not reﬂect on its own the very high induction of Rck protein expression observed by Western blots .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li>
+<li>Crystal-violet staining of static biofilms formed by the wild type , ssrB and ssrB hns strains was performed ; the amount of biofilms formed by ssrB hns was the same as the wild type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26880544" target="_blank">26880544</a>]<br></li>
+<li>E UP-REGULATES SPI-2 GENE EXPRESSION BY REPRESSING hns TRANSCRIPTION IN THE CONDITION THAT MIMICS LATE INFECTION In the condition that mimics late infection ( LPM 20 h ) , the expression of ssrB was unaffected by the presence of σE ( Figure 4A ) , suggesting that the general activator SsrB was not causing the up-regulation of SPI-2 genes at this time point .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Sequencing determined that the transposon was inserted into the coding sequence of hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>As expected and as previously reported [ 12 ] , the hns mutation resulted in an altered expression of a significant number of genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Falconi , M. , Brandi , A. , La Teana , A. , Gualerzi , C.O. , and Pon , C.L. ( 1996 ) Antagonistic involvement of Fis and H-NS proteins in the transcriptional control of hns expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123690" target="_blank">11123690</a>]<br></li>
+<li>Antagonistic involvement of FIS and H-NS proteins in the transcriptional control of hns expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+<li>It is known that the expression of a variety of genes is repressed by H-NS , and mutations in hns result in various phenotypes [ 62,63 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>Because one of Fur 's target promoters is that corresponding to the hns gene ( 53 ) , and H-NS is known to silence expression of SPI-2 genes ( 22 ) , the increase in iron should increase expression of SPI-2 genes ; however , we observed decreased expression ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23690578" target="_blank">23690578</a>]<br></li>
+<li>For instance , the H-NS modulator YmoA is preferentially degraded at 37 ◦ C by the ClpP and Lon proteases in Yersinia ( Jackson et al. , 2004 ) , and in Salmonella it has been shown that transcription of the hns gene -- which inﬂuences expression of the Spi-1-encoded invasion genes through the regulator HilD -- is repressed by the iron homeostasis regulator Fur ( Troxell et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>These results are reinforced by the fact that on mutation of the hns gene , diminished swarming ability and decreased expression of the rdar morphotype are observed ( 285 , 295 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>( A ) Conditions that activate Fur ( i.e. , the presence of iron ) repress the expression of hns ( solid arrow ) , and allow the expression of hilA ( blocked dotted arrows ) and increased HilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>SPI-1 expression is repressed by hns and activated by a complex positive feedback loop where the production of the HilD regulatory protein induces the expression of HilA , a transcription factor that directly activates expression of the TTSS and effector proteins [ 70 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>Thus , we showed that Fur negatively regulates the expression of hns and that the positive effect of Fur on the expression of hilA is dependent on an upstream sequence that contained the putative Fur-binding site in hns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>This activation is , in part , indirect where Fur represses the expression of hns , which represses the expression of hilA and hilD [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Deletion of dsrA Altered the Expression Proﬁle of Several Genes Associated with Invasion To determine the role of DsrA in regulating SPI-1 , we analyzed the expression of DsrA target hns along with a panel of SPI-1 master regulators and effectors in the 1DsrA strain relative to the WT , under SPI-1 inducing conditions , using qRT-PCR ( Figure 2F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199929" target="_blank">27199929</a>]<br></li>
+<li>The transcription of sdiA and hns in these recombinant plasmids is under the control of the promoter of the Kanr gene of the pACYC177 vector which allows a constitutive expression of SdiA or H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li>
+<li>Third , whole genome ChIP ana-lysis demonstrated that H-NS binds to ftnB and the expression of ftnB is up-regulated in the absence of hns [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>According to the hypothesis of functional equivalence of chromosomal and plasmidic H-NS , it was expected that expression of a functional H-NS protein encoded by plasmid R27 ( H-NSR27 ) in hns cells would result in the restoration of the wt expression pattern .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>The ﬁndings that SlyA does not enhance hlyE expression in hns cultures grown in liquid medium under anaerobic conditions and that SlyA appears unable to activate hlyE expression in the absence of FNR and CRP and the determination of the location of the region of PhlyE occupied by SlyA ( Fig. 6 ) suggest that SlyA activates hlyE expression by antagonizing the negative action of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The gene expression profiles of the hha / ydgT and hns strains are particularly well correlated with respect to the up-regula-tion of genes encoded within all five pathogenicity islands ( SPI1 to -5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>The expression levels of both hns genes at 25 ° C during three points of growth ( OD600 0.4 , 0.8 and 2.0 ) were quantiﬁed by comparing them with the expression levels obtained from cells grown to the corresponding OD at 37 ° C ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+<li>In the absence of hns ( Fig. 2 , black bars ) , high expression levels were observed even under noninducing pH ( compare the black solid and open pairs of bars for each gene ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21059643" target="_blank">21059643</a>]<br></li>
+<li>In S. enterica serovar Typhi , fusions containing sequences upstream of position 88 showed higher levels of expression in the hns background with respect to the wild type , whereas those at and downstream of 88 were not affected ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594821" target="_blank">14594821</a>]<br></li>
+<li>In the absence of hns , the requirement for SsrB in activating SPI-2 genes was dramatically reduced , suggesting a role for SsrB in countering H-NS silencing at SPI-2 ( Fig. 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630976" target="_blank">17630976</a>]<br></li>
+<li>Thus , in the presence of glucose , hlyE expression was enhanced in an hns mutant ( 365 Miller units ) relative to the parent ( 271 Miller units ) ( compare with Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>In the absence of glucose , hlyE expression was slightly lower in the hns mutant ( 399 Miller units ) than in the parent ( 420 Miller units ) ( compare with Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Under the conditions employed in this study , the level of leuO expression was similar to that of an Hns − mutant ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Under anaerobic conditions in the absence of glucose , hlyE expression in an fnr crp hns triple mutant was low compared to that of the parental strain ( Fig. 2a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The pattern of expression obtained in an-aerobic cultures in the presence of glucose was similar to that obtained in the absence of glucose , except that hlyE expression in the fnr crp hns triple mutant and the crp hns double mutant was signiﬁcantly higher than that for the corresponding cultures that lacked glucose ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>The transcription of hlyE in the hns strain under anaerobic conditions in the presence of glucose is presumably driven by FNR alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Overexpression in the hns mutant was compensated by the presence of R27 in 61 % of the genes ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19521501" target="_blank">19521501</a>]<br></li>
+<li>Expression of tssB-sfgfp in hns cells was accompanied by the observation of ﬂuorescent intracellular tubular structures in 60 % of the cells ( Fig. 6D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>Expression of about half of the genes that bound H-NS in LT2 were not affected by the deletion of hns , probably reﬂecting the absence of positive regulatory proteins in our culture conditions ( exponential growth in LB ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16933988" target="_blank">16933988</a>]<br></li>
+<li>To conﬁrm these data , we ﬁrst tested whether an hns mutation impacted the expression of the two divergent operons encoding the T6SS in strain S. Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>The n-fold change ratio was calculated by dividing the expression level of the gene in the NKS285 ( hns mutant ) strain by that in the ATCC 14028s ( wild-type ) strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>The data showed that the expression of hns was 14-fold higher in the fur mutant than in the parent strain ( Fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>For the mviA and clpP mutants , introduction of an rpoS null allele reduced katE-lac expression to ,3 % of the level seen in the rpoS1 parent ; for the hns mutant , the rpoS-independent expression was about 10 % ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_162">
+Instead , the expression of the gene coding for the histone-like protein , hns , was signiﬁcantly derepressed in the fur mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></label>
+<input id="tu_similarity_162", type="checkbox">
+<div class="TU_similar">
+<li>In addition , the expression of the gene coding for the histone-like protein , H-NS ( hns ) was increased in Δfur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li></div>
+<li>Although in the presence of the silencer hns mutations increased basal expression from the proU promoter three - to sixfold , in the absence of the silencer they did not result in a substantial increase in basal expression from the proU promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7635833" target="_blank">7635833</a>]<br></li>
+<li>It has been shown that IHF plays a combination of the hns allele with a mutant allele in the gene critical role in the expression of genes required by S. Typhi - encoding the H-NS antagonist would restore hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>It has been reported that StpA can negatively regulate expression of a reporter gene under the control of the hns promoter in E. coli ( Zhang et al. , 1996 ) ; although this could only be observed in the absence of hns , this raised the possibility that StpA-dependent gene expression could simply reﬂect changes in the level of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li>
+<li>Expression of the yciE-lacZ fusion was consistently derepressed in the hns mutant of MC4100 ( Fig. 4B , lanes 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>Expression of the yciE-lacZ fusion in the hns strain was strongly affected by the rpoS mutation ( Fig. 4B , lanes 2 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>( B ) The transcription of the rtsA and marA genes on the chromosome was monitored by RT-PCR following the growth of the WT ( IO908 ) and the hha hns mutant ( IO923 ) in LB medium without NaCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17675384" target="_blank">17675384</a>]<br></li>
+<li>To conﬁrm the data obtained in the microarray , the expression pattern of both chromosomal and plasmid hns genes was determined by quantitative reverse transcriptase-PCR ( qRTPCR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+<li>Detection of the YciE and YciF proteins in the hns mutant but not in the wild-type strain ( Fig. 4A ) suggested that expression of these proteins is silenced by H-NS in E. coli K-12 , in agreement with a previous finding ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>When cultures of the same strains were grown overnight to stationary phase in minimal glucose medium , the effect of the mviA , clpP , and hns mutations on katE-lac expression in LT2A was ampliﬁed ( Fig. 1 , right panel ) , primarily because of a decrease in expression in the wild type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+<li>The data in Fig. 5B , show that the expression of hilA-lacZ in the WT background was the same in cells carrying the empty vector control and in cells with a construct that contained 385 nucleotides upstream of hns ( relative to the ATG codon ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>The expression levels of drug efﬂux pump genes and tolC in the hns mutant were compared with those in the wild-type strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19506059" target="_blank">19506059</a>]<br></li>
+<li>The left-hand columns represent the expression of the cas3 transcriptional reporters evaluated in the wild-type S. Typhi IMSS-1 and in the hns isogenic mutant ( STYhns99 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>The transcription experiments also revealed no evident changes in the expression of the ompS2 and ompX genes in the hns mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Our results indicate that the level of hilD mRNA is reduced in the hupA hupB and ﬁs mutants and increased in the hns mutant ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12933899" target="_blank">12933899</a>]<br></li>
+<li>Interestingly , this fragment is the most similar to the one in fusion assT 78 / dsbL 105 whose expression was not inﬂuenced by the hns mutation in the transcriptional assays and the primer extension ( Table 1 and Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Among these regions , the expression of the T6SS genes encoded within Salmonella pathogenicity island 6 ( SPI-6 ) increased 1.9 - to 10.1-fold in hns mutant cells ( Fig. 1D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>First of all , 600 we did not observe any signiﬁcant variation in the expression of plasmid-encoded hns or chromosomal hns ( less than twofold difference in all cases ) at the different Values are referred to cells grown at the same OD at 37 ° C in LB 600 media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24024872" target="_blank">24024872</a>]<br></li>
+<li>The intoxication of E. coli by S. Typhimurium hns cells is due to the SPI-6 T6SS as S. Typhimurium hns cells carrying a deletion of the upstream ( STM0271-STM0266 ) or downstream ( STM0272-STM0289 ) T6SS gene operon had no impact on E. coli growth ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>WT , wild type ; hns , hns strains ; dw , deletion of the SPI-6 T6SS downstream operon , STM0272-STM0289 ; up , deletion of the SPI-6 T6SS upstream operon , STM0271-STM0266 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>Disruption of SPI-1 expression improves fitness of an hns mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375226" target="_blank">25375226</a>]<br></li>
+<li>Ueguchi , C. , Kakeda , M. , and Mizuno , T. ( 1993 ) Autoregulatory expression of the Escherichia coli hns gene encoding a nucleoid protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23515315" target="_blank">23515315</a>]<br></li>
+<li>Autoregulatory expression of the Escherichia coli hns gene encoding a nucleoid protein : H-NS functions as a repressor of its own transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14761985" target="_blank">14761985</a>]<br></li>
+<li>In conclusion , we provided , for the ﬁrst time , evidence that Fur represses hns expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>]<br></li>
+<li>Under these conditions , hlyE expression was greater for the hns strain than for the corresponding parental cultures , suggesting that H-NS has a negative effect on FNR-driven hlyE expression ( Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996792" target="_blank">14996792</a>]<br></li>
+<li>Under LPM 20 h condition , microarray data showed that σE repressed the expression of hns ( Table S2 ) , which was further conﬁrmed with qRT-PCR ( Figure 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Since σE represses hns transcription under the same condition , collectively our results suggest that under the condition that mimics late infection , σE up-regulates SPI-2 expression by repressing hns transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

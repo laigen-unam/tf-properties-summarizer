@@ -1,0 +1,615 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - SpvR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">SpvR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">SpvR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The ability to restore lgp-tubule formation to wild-type levels in plasmid-cured 1H3 is consistent with a negative regulation effect by a plasmid-encoded factor repressed by SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10998173" target="_blank">10998173</a>]<br></li>
+<li>Whether this control is exerted via the SpvR regulator is unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>The 17 regulators required for survival in Nramp1 / BALB/c mice are SpvR , FruR , YbdM , HimD , PhoP/PhoQ , SsrA/SsrB , SlyA , Hnr , STM2575 , RpoE , SmpB , CsrA , STM2912 , RpoS , Crp , OmpR/EnvZ , and Hfq ( see Table S1 in the supplemental material ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21041489" target="_blank">21041489</a>]<br></li>
+<li>As entC expression was grossly unaffected by spvR in the PNPase-proﬁcient MC1 strain , it is unlikely that entC would directly rely on SpvR for its expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>This points to a bipartite mechanism of spvB induction which depends on SpvR but which also requires a signal provided in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth-phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_7">
+42 Rivera , A. , Hohl , T. M. , Collins , N. , Leiner , I. , Gallegos , A. , Saijo , S. , Coward , J. W. et al. , Dectin-1 diversiﬁes Aspergillus fumigatus-speciﬁc 45 Guy , R. L. , Gonias , L. A. and Stein , M. A. , Aggregation of host endosomes by Salmonella requires SPI2 translocation of SseFG and involves SpvR and the fms-aroE intragenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21630252" target="_blank">21630252</a>]<br></label>
+<input id="act_similarity_7", type="checkbox">
+<div class="ACT_similar">
+<li>Guy , R.L. , Gonias , L.A. , and Stein , M.A. ( 2000 ) Aggregation of host endosomes by Salmonella requires SPI2 translocation of SseFG and involves SpvR and the fms-aroE intragenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25620407" target="_blank">25620407</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12950921" target="_blank">12950921</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12603739" target="_blank">12603739</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12464012" target="_blank">12464012</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18221392" target="_blank">18221392</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12864852" target="_blank">12864852</a>]<br></li></div>
+<li>In a recent paper in C. elegans model of infection using Salmonella Typhimurium , it has been demonstrated that along with PhoP regulon , SPI-1 , SPI-2 and SpvR is also induced in the C. elegans intestine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Interestingly , other functions encoded in the pSLT plasmid , such as the transcriptional-regulator SpvR , are induced in a Caenorhabditis elegans persistent infection model [ 49 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24205037" target="_blank">24205037</a>]<br></li>
+<li>This ability enable such proteins to either act as global regulators , as exempliﬁed by the OxyR response to oxidative-stress in E. coli and Salmonella ( Storz et al. , 1990 ) , or to deﬁne a more limited expression of gene expression under other circumstances , as exempliﬁed by SpvR ( Taira et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The presence of SpvR , A , B , C , D was demonstrated by correct size PCR-fragments following ampliﬁcation with speciﬁc primers on the donor strain E. coli J53-1 , using the primers and conditions described by Aabo et al. [ 39 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15120160" target="_blank">15120160</a>]<br></li>
+<li>This locus encodes and is activated by the transcriptional-regulator SpvR ( Gulig et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10998173" target="_blank">10998173</a>]<br></li>
+<li>Both ssaJ and sseL expression is activated by the two-component system SsrAB encoded within SPI2 whereas expression of spvB is controlled by SpvR also encoded on pSLT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22558361" target="_blank">22558361</a>]<br></li>
+<li>SpvR regulates its own gene positively and is also required to activate transcription of the spvABCD operon ( 6 , 9 , 13 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>Other regulators believed to modulate specific virulence genes include FimZ and AgfD , required for in vitro expression of type I fimbriae and thin aggregative fimbriae respectively ( Darwin and Miller , 1999a ) , and the LysR-like transcriptional-regulator , SpvR , which is specifically required for spvABCD expression ( Guiney et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>The SpvR protein is a positive transcriptional-regulator of the LysR family and binds to inverted repeat recognition sequences upstream of its own promoter and the spvA promoter ( Krause et al. , 1991 , 1995 ; Grob and Guiney , 1996 ; Grob et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21716657" target="_blank">21716657</a>]<br></li>
+<li>SpvR binds to regulatory sequences upstream of both the spvR and spvA promoters , inducing its own expression and that of the spvABCD operon ( Chen et al. , 1995 ; Grob and Gui-ney , 1996 ; Grob et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11207562" target="_blank">11207562</a>]<br></li>
+<li>For instance , the spv virulence genes are positively regulated by the LysR-type regulator SpvR and repressed by H-NS and LRP ( 45 , 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Coynault , C. , Robbe-Saule , V. , Popoff , M.Y. , and Norel , F. ( 1992 ) Growth phase and SpvR regulation of transcription of Salmonella typhimurium spvABC virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>To establish spvR-dependent regulation of spvA , spvB , spvC , and spvD , we analyzed their transcription with and without the presence of SpvR by comparing pSDL2 and pSD15-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>spvA , spvB , and spvC , which are regulated by SpvR , are located downstream of spvR , and all of these genes are transcribed in the same direction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>The pathogen contributes to this condition , since bacterial overgrowth is observed upon inactivation of bacterial regulators , such as PhoP-PhoQ , the sigma factor RpoS , or the plasmid-encoded regulator SpvR ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23090959" target="_blank">23090959</a>]<br></li>
+<li>This scenario entails SpvR repressing a pSLT factor that reduces lgp-tubule formation when expressed in the absence of SpvR , but is absent in cured strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10998173" target="_blank">10998173</a>]<br></li>
+<li>Taken together , these results suggest that SpvR mediates a coordinate regulation of the plasmid virulence genes in the course of infection that allows the microorganisms to respond to a specific hostile environment beyond the Peyer 's patches in mesenteric lymph nodes , liver , and spleen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>Its ability to activate its own transcription or that of spvB when present in multicopy and in trans also suggests that the spvR and spvB genes on the single-copy virulence plasmid in LT2 possess the normal regulatory signals ( such as binding sites for SpvR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>This has led to the suggestion that induction of spv virulence genes would be initiated by the binding of SpvR to a ( as yet unidentified ) ligand specifying the intracellular milieu , and that this SpvR-ligand complex would act as a key activator of Spv protein expression ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11370771" target="_blank">11370771</a>]<br></li>
+<li>Thus , as SpvR is essential for the activation of the expression of Spv effector-proteins such as SpvB ( Rhen et al. , 1993 ) , a role of SpvR could be to sense a factor deﬁning the intravacuolar environment thereby ensuring that activation of RpoS and PhoP as such does not lead to full spv gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The exact role of the virulence plasmid of Salmonella is con ¬ The regulation of the spv locus by SpvR was found to be activated only in vivo further indicating the role of this LTTR in virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>A lacZ transcriptional fusion to spvR could not be induced in stationary-phase cultures in the absence of functional SpvR , regardless of the cAMP-CRP status of the cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>It was decided also to examine the expression of spvB from the large virulence plasmid in the absence of active SpvR in strains deficient in the cAMP-CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>This confirmed the requirement for the SpvR positive regulator for enhanced expression of spvB in the absence of the cAMP-CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>Mutational inactivation of the spvR regulator diminished the increased expression of spv observed in the pnp mutant background , implying that PNPase acts upstream of or at the level of SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>This katF-independent transcription of spvR did not appear to be significantly regulated by SpvR , since expression of spvR from the cat promoter of pSTC17 enhanced by only twofold the transcription of the spvR ' - lacZ fusion in the katF strain C53K ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , sigmaS , SpvR , and growth-phase in the control of SpvR , the regulatory gene of the plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>SpvR induces the expression of the spvABCD operon and its own expression in the stationary phase of bacterial growth and inside the macrophages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Our results establish a central function of SpvR as a positive regulator of the downstream spvABCD genes in the stationary phase of bacterial growth and indicate that the primary mechanism of regulation is by activation of promoters upstream of spvA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>The absence of transcriptional start sites upstream of the other spv genes suggests that SpvR alone activates the promoters upstream of spvA and induces polycistronic mRNA synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>To test to what extent the increase in spvA expression that associated with PNPase deﬁciency during propagation in MM5 .8 still depended on the transcription factors PhoP , RpoS , or SpvR implicated in spv gene activation ( 5 , 20 , 21 , 30 , 35 , 43 , 68 , 71 , 84 , 85 ) , we measured - galactosidase activities encoded by pHUB61 ( spvA-lacZ ) in phoP , rpoS , and spvR mutants of MC1 and MC71 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>The genetic characterization of these isolates revealed that functions previously known to be involved in intramacrophage survival and in vivo intracellular proliferation , such as PhoP-PhoQ , SlyA , SpvR , and RpoS , are essential to down-regulating the Ipro in cultured ﬁbroblasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">SpvR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The amino acid sequences of SpvR from ﬁve different subspecies I serovars differ at only 4 positions out of 297 residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12011028" target="_blank">12011028</a>]<br></li>
+<li>SpvR contains an amino-terminal helix-turn-helix motif that has significant homology with corresponding regions of bacterial transcriptional activators of the MetR / LysR-family ( 21 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>SpvR does show homology with the amino acid sequences of LysR-family members at the critical conserved residue lymph nodes and spleen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">SpvR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Based on protein sequence identity , the SpvR protein associated with intracellular growth of Salmonella clearly belongs to the LysWMetR family ( 19-21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11370771" target="_blank">11370771</a>]<br></li>
+<li>The SpvR protein is a positive transcriptional regulator of the LysR family and binds to inverted repeat recognition sequences upstream of its own promoter and the spvA promoter ( Krause et al. , 1991 , 1995 ; Grob and Guiney , 1996 ; Grob et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21716657" target="_blank">21716657</a>]<br></li>
+<li>The co-ordinated expression of the spv genes is dependent on RpoS ( stationary phase σ factor ) and the LysR family transcriptional regulator SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25175817" target="_blank">25175817</a>]<br></li>
+<li>SpvR belongs to the LysR family of transcriptional activators and is essential for spvABCD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11207562" target="_blank">11207562</a>]<br></li>
+<li>SpvR also showed significant homology to other members of the LysR family of positive regulatory proteins ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>The homology of SpvR to MetR of the LysR family of positive regulatory proteins suggested that spvR encodes a positive regulatory protein for other plasmid-encoded virulence factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>While SpvR has been shown to belong to the LysR/MetR family of prokaryotic regulatory proteins ( Taira et al. , 1991a ) , the function ( s ) exerted by the rest of the spv gene products has not been resolved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10972829" target="_blank">10972829</a>]<br></li>
+<li>SpvR belongs to the LysR/MetR family of prokaryotic regulatory proteins , and SpvB is an actin-speciﬁc mono ( ADP-ribosyl ) - transferase ( Tezcan-Merdol et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>SpvR contains an amino-terminal helix-turn-helix motif that has significant homology with corresponding regions of bacterial transcriptional activators of the MetR / LysR family ( 21 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>SpvR does show homology with the amino acid sequences of LysR family members at the critical conserved residue lymph nodes and spleen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by SpvR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>A A R A A A A A HU MarT SpvR FimWYZ FlhDC FliZ A A A A A R A R A A R CsgD RtsB A A * R * R Lrp Lon DnaK Fur Mlc RNase E R R R A A A A R FadD Pag A R SlyA A a A , activation ; R , repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>) LysWMetR-type regulators Increasedintracellular replication SpvR Starvation , intracellular spvRABCD compartment AraC-type regulators SprA lnvF Intestine ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11370771" target="_blank">11370771</a>]<br></li>
+<li>SpvR , which positively regulates the plasmid-encoded spvABCD operon ( 27 ) , is also needed for systemic disease ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>Hfq OmpR / EnvZ protEomE profiling SlyA PhoPQ SpvR SmpB SsrAB SPI-2 FiGuRe 2  Regulatory network of selected transcription factors essential for virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21687430" target="_blank">21687430</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_5">
+Growth phase and SpvR regulation of Salmonella typhimurium spvABC virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></label>
+<input id="rp_similarity_5", type="checkbox">
+<div class="RP_similar">
+<li>Growth phase and SpvR regulation of transcription of Salmonella typhimurium spvABC virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12902215" target="_blank">12902215</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11443102" target="_blank">11443102</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17060472" target="_blank">17060472</a>]<br></li>
+<li>Coynault , C. , Robbe-Saule , V. , Popoff , M.Y. , and Norel , F. ( 1992 ) Growth phase and SpvR regulation of transcription of Salmonella typhimurium spvABC virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>[ 27 ] Coynault C , Robbe-Saule V , Popoff MY , Norel F. Growth phase and SpvR regulation of transcription of Salmonella typhimurium spvABC virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15120160" target="_blank">15120160</a>]<br></li></div>
+<li>The role of SpvR as a positive regulator of other virulence plasmid-encoded genes that had been hypothesized from amino acid sequence homology has now been substantiated genetically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>These results provided evidence that SpvR can act as a positive regulator of other virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>SpvR is a positive regulator of other virulence plasmid genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>Thus , SpvR is a positive regulator of at least three essential virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>Full induction of spv expression has been shown to depend on RpoS , SpvR , H-NS , IHF and a global regulatory component termed leucine response protein ( LRP ) ( 81 , 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11370771" target="_blank">11370771</a>]<br></li>
+<li>This ability enable such proteins to either act as global regulators , as exempliﬁed by the OxyR response-to-oxidative-stress in E. coli and Salmonella ( Storz et al. , 1990 ) , or to deﬁne a more limited expression of gene-expression under other circumstances , as exempliﬁed by SpvR ( Taira et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>These include SpvR , a transcription factor that governs transcription of the spv virulence genes on the 90 kb plasmid ( Grob & Guiney , 1996 ; Grob et al. , 1997 ; Sheehan & Dorman , 1998 ) , the HilA protein that regulates transcription of the SPI-1 island genes ( Akbar et al. , 2003 ; Bajaj et al. , 1996 ; Boddicker et al. , 2003 ) and the SsrA/SsrB two-component system that controls SPI-2 gene-expression ( Cirillo et al. , 1998 ; Deiwick et al. , 1999 ; Lee et al. , 2000 ; Valdivia & Falkow , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+<li>Apart from SpvR , the regulatory factors that participate in spv gene induction include the response regulator PhoP ( 30 ) the alternative - factor RpoS ( 15 , 21 , 41 , 71 ) , and integration host factor ( 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>However , the reversal of the spvR : : MudJ phenotype by plasmid curing may also occur if SpvR negatively regulates a virulence plasmid-encoded factor involved in modulating lgp-tubule formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10998173" target="_blank">10998173</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_18">
+Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></label>
+<input id="rp_similarity_18", type="checkbox">
+<div class="RP_similar">
+<li>Relationships between H-NS , sS , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11004173" target="_blank">11004173</a>]<br></li>
+<li>Relationships between H-NS , S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12902215" target="_blank">12902215</a>]<br></li>
+<li>Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , sigmaS , SpvR , and growth phase in the control of SpvR , the regulatory gene of the plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Robbe-Saule , V. , Schae ¡ er , F. , Kowartz , L. & Norel , F. 1997 Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella dublin virulence plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>[ 10 ] Robbe-Saule V , Schaeffer F , Kowarz L , Norel F. Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14726232" target="_blank">14726232</a>]<br></li>
+<li>Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , s , SpvR and growth S phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11260470" target="_blank">11260470</a>]<br></li>
+<li>Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123690" target="_blank">11123690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li></div>
+<li>SpvR is another LysR-family regulator involved in the regulation of the spv operon on the virulence plasmid ( Gulig et al. , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15617530" target="_blank">15617530</a>]<br></li>
+<li>To test the ability of SpvR to activate spvR transcription in the absence of the cAMP-CRP system , plasmid pCOB9 was introduced into strain CJD684 , which harbors the single-copy spvR-lacZ fusion on the virulence plasmid and a chromosomal crp : : TnlO mutation ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>Strangely only the SpvR transcription factor ( Salmonella plasmid virulence Regulator ) was found to be involved in the regulation of 308 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26387845" target="_blank">26387845</a>]<br></li>
+<li>Surprisingly , inactivation of the gene encoding the positive activator SpvR resulted in only a threefold reduction in spvB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>The regulator of the locus , SpvR , is a 33-kDa LysR-type protein and several approaches have been taken to elucidate the mode of gene regulation by SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>The co-ordinated expression of the spv genes is dependent on RpoS ( stationary phase σ factor ) and the LysR family transcriptional regulator SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25175817" target="_blank">25175817</a>]<br></li>
+<li>Still , the expression of spvA-lacZ remained dependent on growth phase and on the transcriptional regulators PhoP , RpoS , and SpvR , even in the PNPase-deﬁcient MC71 strain ( Fig. 3F to H ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>Altogether , these experiments validate our selection method and demonstrate that the virulence-related regulators SlyA , RpoS , and SpvR , as well as the SpvB protein , play a role in the attenuation of bacterial growth within ﬁbroblasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>Transcriptional regulators previously related to virulence , such as the PhoP-PhoQ system , SlyA , RpoS , and SpvR , are required to restrain intracellular bacterial growth in ﬁbroblasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516559" target="_blank">15516559</a>]<br></li>
+<li>The virulence transcriptional regulators RpoS , SlyA , and SpvR mediate attenuation of intracellular bacterial growth in ﬁbroblasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>SpvR and SpvB proteins are involved in attenuation of intracellular-growth within NRK-49F ﬁbroblasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>From this finding one may suggest a role for PNPase in degrading mRNAs that adapt the bacteria for host milieu , as does PhoP PhoQ and SpvR ( 6 , 7 ) , and that a disturbance in such a regulation leads to altered expression of selected virulence functions , which causes altered infection pathogenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12072563" target="_blank">12072563</a>]<br></li>
+<li>Results Rationale for strains used and study design To date , more than 300 genes have been annotated as regulatory genes in Salmonella and of those tested ( 83 ) we showed that 14 regulators including SpvR , FruR , IHF , PhoP/PhoQ , SsrA/SsrB , SlyA , Hnr , RpoE , SmpB , CsrA , RpoS , CRP , OmpR/EnvZ , and Hfq are required for virulence regulation during systemic infection in an acute mouse infection model [ 24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21711513" target="_blank">21711513</a>]<br></li>
+<li>These virulence regulators were varied , including two-component regulators ( PhoP / PhoQ , SsrA/SsrB , and OmpR/EnvZ ) , alternative sigma factors ( RpoE , RpoS , and FliA ) , post-transcriptional/post-translational regulators ( SmpB , CsrA , Hfq , and RseA ) , a response regulator for which the signal sensor is unknown ( Hnr ) , a bending protein essential for some types of recombination ( IHF ) , and an assortment of other transcriptional/putative transcriptional regulators ( SlyA , Crp , FruR , RelA/SpoT , STM1547 , STM3121 , SpvR , and RcsA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21687430" target="_blank">21687430</a>]<br></li>
+<li>Other regulators believed to modulate specific virulence genes include FimZ and AgfD , required for in vitro expression of type I fimbriae and thin aggregative fimbriae respectively ( Darwin and Miller , 1999a ) , and the LysR-like transcriptional regulator , SpvR , which is specifically required for spvABCD expression ( Guiney et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">SpvR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The SpvR protein is a positive transcriptional regulator of the LysR family and binds to inverted-repeat recognition sequences upstream of its own promoter and the spvA promoter ( Krause et al. , 1991 , 1995 ; Grob and Guiney , 1996 ; Grob et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21716657" target="_blank">21716657</a>]<br></li>
+<li>The transcriptional activator SpvR binds to well-deﬁned sequences upstream of the 25 position in both promoters , and promoter mutations within these sites have been isolated and characterized in serovar Dublin and serovar Typhimurium ( 12 , 13 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12011028" target="_blank">12011028</a>]<br></li>
+<li>In the spvA regulatory region , the serovar Typhimurium and serovar Dublin sequences are identical , but serovar Arizona has an A-to-G change at 13 and two A-to-G differences in the promoter-proximal end of the SpvR binding region ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12011028" target="_blank">12011028</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by SpvR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>PNPase deﬁciency does not relieve spvA gene expression from dependency on growth phase , PhoP , RpoS , or SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>SpvR does not function to stimulate expression of spvB in S. typhimurium growing in L broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>As described above , detectable levels of P-galactosi-dase were observed in X3337 ( pGTRO77 ) containing no other plasmid ( Fig. 6 ) , indicating that spvB does not absolutely require SpvR for basal expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>This scenario entails SpvR repressing a pSLT factor that reduces lgp-tubule formation when expressed in the absence of SpvR , but is absent in cured strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10998173" target="_blank">10998173</a>]<br></li>
+<li>SpvR is required for katF-dependent transcription of spvR in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>On one hand , it can autoregulate itself while , on the other hand , SpvR has been shown to positively modulate the spvABC promoter and separately activate this operon by means of lacZ transcriptional fusion ( 241 , 242 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>SpvR is essential for expression of the other spv genes , which form an operon ( 7 , 19 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11443102" target="_blank">11443102</a>]<br></li>
+<li>The Salmonella spv genes are organized as an operon , with expression of the spvABCD genes regulated by the SpvR protein ( Fang et al. , 1991 ; Krause et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11207562" target="_blank">11207562</a>]<br></li>
+<li>Certainly , the LT2 spvR gene is capable of encoding an active SpvR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_10">
+Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , s , SpvR and growth S phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11260470" target="_blank">11260470</a>]<br></label>
+<input id="tu_similarity_10", type="checkbox">
+<div class="TU_similar">
+<li>Robbe-Saule , V. , Schaeffer , F. , Kowarz , L. , and Norel , F. ( 1997 ) Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123690" target="_blank">11123690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25080967" target="_blank">25080967</a>]<br></li>
+<li>Relationships between H-NS , sigma S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Relationships between H-NS , sS , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11004173" target="_blank">11004173</a>]<br></li>
+<li>Relationships between H-NS , S , SpvR and growth phase in the control of spvR , the regulatory gene of the Salmonella plasmid virulence operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12902215" target="_blank">12902215</a>]<br></li></div>
+<li>The co-ordinated expression of the spv genes is dependent on RpoS ( stationary phase σ factor ) and the LysR family transcriptional regulator SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25175817" target="_blank">25175817</a>]<br></li>
+<li>Expression of spv-lacZ fusions in bacteria grown in low-mag-nesium minimal medium is reported to be dependent on the bacterial growth phase , the transcription factor SpvR , and the alternative - factor RpoS ( 84 , 85 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>The absence of transcriptional start sites upstream of the other spv genes suggests that SpvR alone activates the promoters upstream of spvA and induces polycistronic mRNA synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>A lacZ transcriptional fusion to spvR could not be induced in stationary-phase cultures in the absence of functional SpvR , regardless of the cAMP-CRP status of the cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>Since the transcription of the spvABCD operon is controlled by the SpvR regulatory protein ( 5 , 11 ) , it was of interest to determine whether a katF mutation would affect the expression of the spvR gene itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>This katF-independent transcription of spvR did not appear to be significantly regulated by SpvR , since expression of spvR from the cat promoter of pSTC17 enhanced by only twofold the transcription of the spvR ' - lacZ fusion in the katF strain C53K ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>Analysis of mRNA synthesis revealed that SpvR promotes transcription of the downstream spvABCD genes in the stationary growth phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>Our results establish a central function of SpvR as a positive regulator of the downstream spvABCD genes in the stationary phase of bacterial growth and indicate that the primary mechanism of regulation is by activation of promoters upstream of spvA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>This study has confirmed that the spvABCD genes are transcribed and expressed in the stationary phase of the cell growth cycle and are dependent on SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>SpvR induces the expression of the spvABCD operon and its own expression in the stationary phase of bacterial growth and inside the macrophages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Regulation of expression of the spv operon occurs through the SpvR transcription activator and the RpoS sigma factor , and responds physiologically to the stationary phase of growth and the intracellular environment of host cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21716657" target="_blank">21716657</a>]<br></li>
+<li>Enhanced spvB transcription was not seen in crp or cya mutants in the absence of a functional spvR positive regulatory gene , showing that the cAMP-CRP system acted on spvB expression either in conjunction with or via SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>Therefore , it appeared that as , in conjunction with SpvR , controls the transcription of the regulatory gene spvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>Surprisingly , inactivation of the gene encoding the positive activator SpvR resulted in only a threefold reduction in spvB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>In the absence of the transcriptional activator gene spvR , however , no accumulation in spv gene expression was observed with PNPase deﬁciency , implying that the relaxed expression of spv genes resulting from PNPase deﬁciency did not relive spv expression from the gene regulator SpvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+<li>Since the SpvR protein is required for transcription of the spvABCD operon , these ® ndings indicate that spv gene expression is necessary for the virulence phenotype in human macrophages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11207562" target="_blank">11207562</a>]<br></li>
+<li>Since it was previously shown that the spvR gene was subjected to positive autoregulation ( 11 , 41 ) , we hypothesized that the SpvR protein was required for the katF-dependent expression of the spvR ' - lacZ fusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>spvA , spvB , and spvC , which are regulated by SpvR , are located downstream of spvR , and all of these genes are transcribed in the same direction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1657882" target="_blank">1657882</a>]<br></li>
+<li>SpvR is recognized as a positive regulator of the spv operon via transcription of itself and spvA ( Fabrega and Vila , 2013 ; Heiskanen et al. , 1994 ) , and is expressed in a temporal fashion during infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25175817" target="_blank">25175817</a>]<br></li>
+<li>Expression of the spv operon is induced by the intracellular environment of host cells and is dependent on both SpvR and RpoS ( Fierer et al. , 1993 ; Chen et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21716657" target="_blank">21716657</a>]<br></li>
+<li>SpvR regulates its own gene positively and is also required to activate transcription of the spvABCD operon ( 6 , 9 , 13 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8300543" target="_blank">8300543</a>]<br></li>
+<li>SpvR binds to regulatory sequences upstream of both the spvR and spvA promoters , inducing its own expression and that of the spvABCD operon ( Chen et al. , 1995 ; Grob and Gui-ney , 1996 ; Grob et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11207562" target="_blank">11207562</a>]<br></li>
+<li>SpvR binds to both the spvR and spvA promoters and is required for expression of the spvABCD genes [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24426086" target="_blank">24426086</a>]<br></li>
+<li>Secondly , Salmonella that both as and SpvR are and these were used to demonstrate required for the transcription of the regulatory gene spvR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961444" target="_blank">7961444</a>]<br></li>
+<li>Both ssaJ and sseL expression is activated by the two-component system SsrAB encoded within SPI2 whereas expression of spvB is controlled by SpvR also encoded on pSLT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22558361" target="_blank">22558361</a>]<br></li>
+<li>As entC expression was grossly unaffected by spvR in the PNPase-proﬁcient MC1 strain , it is unlikely that entC would directly rely on SpvR for its expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16428774" target="_blank">16428774</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

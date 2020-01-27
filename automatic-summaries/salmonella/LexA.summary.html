@@ -1,0 +1,576 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LexA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LexA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LexA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Thus , LexA cleavage appears to be required for Gifsy prophage induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>These experiments were performed in a S. typhimurium strain lacking the prophages Gifsy-1 , Gifsy-2 , and Fels-2 to prevent cellular killing caused by LexA inactivation and resulting phage induction ( Bunny et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>In S. Tm , cib expression is negatively regulated in a Fur ( ferric uptake regulator ) - dependent and LexA ( locus for x-ray sensitivity A ) - dependent way ( Mankovich et al. , 1986 ; Nedialkova et al. , 2014 ) and maximally induced under iron limitation and upon exposure to DNA damaging agents .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26439675" target="_blank">26439675</a>]<br></li>
+<li>Phage 186 prophages are induced when cleavage of LexA allows tum expression and thereby upsets prophage repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>In contrast , lac fusions on the left side of these pro-phages are only weakly induced by mitomycin , and that induction is only partially prevented by overproduced LexA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Induction of sbmC by DNA damage is positively regulated by H-NS binding ,12 suggesting sbmC induction by FQs is H-NS and LexA mediated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>P2 lacks a tum gene and is not induced by UV ; phage 186 is induced by UV , and this induction is mediated by derepression of its tum gene following LexA inactivation ( 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Repression of the sulA-lacZY reporter caused by dimerization of the LexA1-87408-HilE fusion protein and the LexA1-87WT fusion protein Mean Fold repression - galactosidase of - galactosidase activity from from sulA-lacZY the sulA-lacZY ( wild type vs reporter SD experimental ) TA Strain SU202 ( sulA-lacZY ) 2,503 2,694 2,789 523 47 1 SU202/pLexA - HilE pDP804 SU202/pLexA-HilD pMS604 SU202/pLexA - HilD pLexA-HilD 102 98 56 0.93 0.90 4.8 FIG. 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>As increased DNA breaks are associated with increased mutation rates ( Ponder et al. 2005 ; Lovett 2006 ) , we determined whether these endonucleases were required for the increased mutation rate seen during derepression of the LexA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>No further increase in mutation rate was seen during slow growth , long-term stationary phase , or when overexpressing RpoS from an arabinose-inducible plasmid , in the presence or absence of translesion DNA polymerases or a derepressed LexA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>When either the LexA - HilE plasmid or the LexA-HilD plasmid was present in E. coli SU202 with only a control vector plasmid , there was no reduction in - galactosidase activity , and in fact a slight increase in expression was observed in some of the experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>LexA Regulon The LexA regulon encompasses an ensemble of genes involved in preserving cell viability under massive DNA damage and is present in most bacterial phyla [ Benson et al , 2000 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>The LexA ( Ind ) background prevents SOS induction , because the LexA mutant protein is unable to undergo autodigestion upon RecA activation ( 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>This regulon is induced when DNA damage produces single-stranded DNA , which interacts with RecA protein to form a complex that stimulates autocleavage of the LexA repressor protein ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>coli , dinB and dinP are two names for one gene , there is no dinB in S. typhimurium .8 ) The sbmC gene was originally identiﬁed by its ability to confer resistance to MccB17 at high copy number .9 MccB17 is a peptide antibiotic that induces double-stranded breaks in DNA in a DNA gyrase-dependent manner .9 In E.coli , the expression of sbmC is induced by DNA-damaging agents , possesses a quasicanonical LexA box and much like umuDC , the expression of sbmC is RecA and LexA dependent .9 Thus , upregulation of umuD , lexA , dinP and sbmC by all nine FQs is likely LexA dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>DNA damage created by quinolone antibiotics has been shown to be sufﬁcient to stimulate umuC transcription and the SOS response .4,5 The initial response to DNA damage is the reduction in LexA protein levels and induction of LexA repressed genes , which include lexA , umuDC and dinP .2,3 ( In Escherichia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>f With no DNA damage and a wild-type LexA protein , this gene is fully repressed ; in a lexA ( Ind ) background , the gene is transcribed at a low level but does not appear to be upregulated in the presence of DNA damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>The exception was ﬁvefold induced in the absence of a functional RecA protein , suggesting another layer of regulation in response to mitomycin C , in addition to the RecA-LexA pathway of SOS induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10852882" target="_blank">10852882</a>]<br></li>
+<li>In addition to the genes directly regulated by LexA , the induction of the SOS response via ssDNA activation of RecA promotes cleavage of other repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16713610" target="_blank">16713610</a>]<br></li>
+<li>This involves more than 30 genes , which allow bacteria to increase DNA damage tolerance and DNA repair .2 The LexA protein is the major SOS response-regulator that functions as a transcription repressor until DNA damage activates RecA ; RecA mediates the autodigestion of LexA , allowing expression of the SOS genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>The umu operon is reported to be the last operon induced during the SOS response and is under the control of the LexA repressor and RecA , both of which are also induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17600486" target="_blank">17600486</a>]<br></li>
+<li>In E. coli , the SOS response to DNA damage is under the direct control of the LexA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10852882" target="_blank">10852882</a>]<br></li>
+<li>Fig. 4 similarly depicts the 10 genes whose expressions were LexA regulon analysis The SOS response is the primary transcriptional response to DNA damage , and this response is mediated through the activation of the LexA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>Overall these data suggest that RecA is not necessarily required for translesion polymerase mediated deletion formation , but that it can have an indirect effect on the deletion rate due to its involvement in proteolytic activation of the UmuD2C complex and cleavage of the LexA protein to induce the SOS regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+<li>The RecA protein is the effector that passes on the signal for SOS induction by stimulating cleavage of the LexA repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10852882" target="_blank">10852882</a>]<br></li>
+<li>DNA damages will induce a repair system in the cell , the SOS response ( 20 ) , that is activated on RecA filamentation on ssDNA , and where filamented RecA mediates proteolytic cleavage of the LexA repressor protein ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+<li>This system is positively regulated by the RecA protease and negatively controlled by the LexA repressor [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10856648" target="_blank">10856648</a>]<br></li>
+<li>This response is all the more surprising as FsoA is under the control of the Fels-1 repressor , not LexA , and plays no apparent role in Fels-1 induction , which occurs via a Lambda CI-like repressor cleavage mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>Lethality is caused primarily by the Fels-2 prophage , and growth is secondarily impaired by the Gifsy-1 and -2 prophages , which appear to be destabilized ( or counterselected ) in the absence of LexA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>However , since this prophage is not strongly induced by UV irradiation , it seems more likely that the lack of LexA causes expression of some subset of phage genes ( perhaps mediated by the Tum antirepressor ) whose products restrict cell growth without causing full phage induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Taken together , these results indicate that even though a moderate 3.5 - to 11-fold increase in mutation rates can be seen for three mutation types when the LexA regulon is constitutively derepressed , this increase appears , for at least two types of mutation , to be mainly a consequence of the constitutive overexpression of endonucleases rather than translesion synthesis-induced mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>However , no such induction of mutagenesis could be seen for any one of the four different mutation rates measured ( except for the moderate increase caused by LexA inactivation alone ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>[ 14 ] P. Weightman , Prospects for the study of biological systems with high power [ 15 ] K. Johnson , Terahertz vibrational properties of water nanoclusters relevant to [ 16 ] O. Zeni , G.P. Gallerano , A. Perrotta , M. Romanò , A. Sannino , M. Sarti , M. [ 17 ] H. Hintzsche , C. Jastrow , K. Heinen , T. Kleine-Ostmann , M. Schwerdtfeger , [ 18 ] L.V. Titova , A.K. Ayesheshim , A. Golubov , D. Fogen , R. Rodriguez-Juarez , F.A. [ 19 ] A. Korenstein-Ilan , A. Barbul , P. Hasin , A. Eliran , A. Gover , R. Korenstein , [ 20 ] G.N. Kulipanov , N.G. Gavrilov , B.A. Knyazev , E.I. Kolobanov , V.V. Kotenkov , [ 21 ] N. Vinokurov , Free electron lasers as a high-power terahertz sources , J. [ 22 ] D.E. Levin , M. Hollstein , M.F. Christman , E.A. Schwiers , B.N. Ames , A new [ 23 ] D.M. Maron , B.N. Ames , Revised methods for the Salmonella mutagenicity test , [ 24 ] D.E. Levin , M. Hollstein , M.F. Christman , B.N. Ames , Detection of oxidative [ 25 ] K. Mortelmans , E. Zeiger , The Ames Salmonella/microsome mutagenicity [ 26 ] S.K. Chang , J.S. Choi , H.W. Gil , J.O. Yang , E.Y. Lee , Y.S. Jeon , Z.W. Lee , M. Lee , [ 27 ] P. Quillardet , M. Hofnung , The SOS Chromotest , a colorimetric bacterial assay [ 28 ] P.Q. Quillardet , O. Huisman , R. D'Ari , M. Hofnung , SOS Chromotest : a direct [ 29 ] P. Quillardet , M. Hofnung , Induction by UV light of the SOS function sﬁA in [ 30 ] V. Mersch-Sundermann , S. Kevekordes , S. Mochayedi , Sources of variability of [ 31 ] G.L. Kuryshev , A.P. Kovchantsev , B.G. Vainer , Medical thermal imager based [ 32 ] M. Tada , M. Tada , Interaction of a carcinogen , 4-nitroquinoline-l-oxide , with [ 33 ] M. Ikenaga , H. Ichikawa-Ryo , S. Kondo , The major cause of inactivation and [ 34 ] K.C. Giese , C.B. Michalowski , J.W. Little , RecA-dependent cleavage of LexA [ 35 ] L.K. Lewis , G.R. Harlow , L.A. Gregg-Jolly , D.W. Mount , Identiﬁcation of high [ 36 ] A.R. Fernández de Henestrosa , T. Ogi , S. Aoyagi , D. Chaﬁn , J.J. Hayes , H. [ 37 ] M. Madan Babu , S.A. Teichmann , Evolution of transcription factors and the [ 38 ] M. Butala , D. Zgur-Bertok , S.J.W. Busby , The bacterial LexA transcriptional irradiation on platelet aggregation and behavioral reactions of albino rats , Bull .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27265378" target="_blank">27265378</a>]<br></li>
+<li>Copyright 2010 by the Genetics Society of America DOI : 10.1534 / genetics .110.116376 Effect of Translesion DNA Polymerases , Endonucleases and RpoS on Mutation Rates in Salmonella typhimurium Sanna Koskiniemi , * Diarmaid Hughes † and Dan I. Andersson * ,1 * Department of Medical Biochemistry and Microbiology and † Department of Cell and Molecular Biology , Uppsala University , S-75123 Uppsala , Sweden Manuscript received March 5 , 2010 Accepted for publication April 23 , 2010 ABSTRACT It has been suggested that bacteria have evolved mechanisms to increase their mutation rate in response to various stresses and that the translesion DNA polymerase Pol IV under control of the LexA regulon and the alternative sigma factor RpoS are involved in regulating this mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>The increased mutation rate observed during derepression of the LexA regulon is completely dependent on the presence of functional endonucleases ( Cho and UvrC ) and the UvrB protein : Previously we showed that constitutive derepression of the LexA regulon increases the number of DNA breaks in the cell ( Koskiniemi and Andersson 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>This reduction in - galactosidase activity is indicative of a proteinprotein interaction between HilE and HilD that leads to dimerization of the LexA DNA-binding proteins and repression of the sulA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>With this experimental set-up , we tested the hypothesis of whether any particular combination of slow growth or stationary phase combined with derepression of the LexA regulon ( causing an increase in translesion DNA polymerases and DNA breaks ) and RpoS induction could induce pronounced mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>In conclusion , mutation rates are remarkably robust and no combination of growth conditions , induction of translesion DNA polymerases by inactivation of LexA , or increased RpoS expression could confer an increase in mutation rates higher than the moderate increase caused by derepression of the LexA regulon alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>Unexpectedly , for two of the three types of mutations where derepression of the LexA regulon caused an increased mutation rate , this increase was independent of the presence of functional translesion DNA polymerases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>Second , overexpression of these polymerases by derepression of the DNA dam-age-inducible LexA regulon caused a 25-fold increase in deletion rate that depended on the presence of functional translesion polymerases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+<li>LexA also undergoes RecA-stimulated cleavage in the presence of damaged DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>In contrast , lysogens of coliphage 186 can be maintained only in the presence of LexA protein , which represses the phage tum ( antirepressor ) gene ( 27 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LexA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In this system , the LexA DNA-binding domain ( LexADBD ) expressed from a plasmid is used as a reporter to determine protein dimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>The system relies on a wild-type LexA DNA-binding domain and a mutant LexA-binding domain that , when brought together by heterologous protein-protein interactions , dimerize and bind to an altered DNA-binding site upstream of a sulA-lacZY reporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>The DBD of LexA ( residues 1 to 128 ) was fused to full-length S. Typhi LeuO ( residues 1 to 314 ) and used as a positive control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LexA belongs to the winged-helix family of DNA-binding proteins [ 34 -- 38 ] , transcription factors that bind DNA through a mechanism whereby a recognition helix interacts with the major groove and two loops ( `` wings '' ) interact with the minor groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27265378" target="_blank">27265378</a>]<br></li>
+<li>This cleavage , mediated by LexA residues Ser119 and Lys156 , is similar in mechanism to that observed for serine proteases ( Luo et al. , 2001 ) and prevents LexA from binding to its specific recognition motif in the promoter region of SOS genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16713610" target="_blank">16713610</a>]<br></li>
+<li>This reduction in - galactosidase activity is indicative of a proteinprotein interaction between HilE and HilD that leads to dimerization of the LexA DNA-binding proteins and repression of the sulA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>To determine the role of the C-terminal domain of LeuO in oligomer formation , a collection of sequentially truncated forms of LeuO fused to LexA was constructed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Hence , in order to determine the involvement of the DBD , the LH , and the RD-I central subdomain of LeuO in oligomerization , fragments with single alanine substitutions at six conserved resi-dues were constructed ( Fig. 3 ) and fused to LexA for dimerization analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Given the dimerization defects of LexA -- LeuO1-309C ( Fig. 6B ) , it was of interest to know if proteins with single alanine substitutions in the last 5 residues showed the same phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LexA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>SHARED BOTTLENECK NODES BETWEEN THE CLR-DERIVED GSE2456 AND 15REGULATOR NETWORKS Gene ID name Description GC % ECO Mac MgM VirSum STM2888 spaR Surface presentation of antigens ; secretory proteins 49 % 20 % 0.46 0.37 3 Chan et al. , 2005 ; Lawley et al. , 2006 ; Shah et al. , 2005 Chan et al. , 2005 ; Morgan et al. , 2004 STM1404 sseF Secretion system effector 2 49 % 0 % 3.37 3.15 STM1851 Putative cytoplasmic protein 2 Chan et al. , 2005 ; Lawley et al. , 2006 Chan et al. , 2005 51 % 87 % 3.14 7.44 S spaP STM2890 urface presentation of antigens ; secreto proteins cetolactate synthase II , large subunit , fragment 1 , cryptic utative hydrolase 2 42 % 35 % 0.24 0.34 ry A ilvG STM3901 2 Chan et al. , 2005 56 % 47 % 0.79 0.84 P STM1540 1 Shah et al. , 2005 Chan et al. , 2005 Chan et al. , 2005 Chan et al. , 2005 48 % 0 % 2.11 1.22 P N P STM2139 STM2327 STM2331 utative inner membrane protein ADH dehydrogenase I chain B utative aminotransferase ( ortho ) , para putative regulator utative formate acetyltransferase utative cytoplasmic protein utative HesB-like domain 1 51 % 55 % 52 % 0 % 99 % 97 % 2.04 0.59 0.15 3.34 1.19 0.69 nuoB yfbQ 1 1 l P P P yﬁD ydiH sufA STM2646 STM1367 STM1369 Lawley et al. , 2006 1 0 0 50 % 46 % 52 % 96 % 80 % 84 % 0.02 0.45 0.03 0.47 0.81 3.24 ydeJ STM1514 STM1562 STM1632 STM1635 Putative competence-damaged protein Putative periplasmic transport protein Putative inner membrane protein Putative ABC-type polar amino acid transport system Putative periplasmic protein NADH dehydrogenase I chain E 0 0 0 0 49 % 45 % 47 % 44 % 56 % 43 % 0 % 39 % 1.6 1.45 0.12 2.73 3.42 1.86 1.37 5.57 STM2148 STM2325 48 % 56 % 49 % 82 % 97 % 0 % 1.47 0.35 0.13 1.20 0.92 0.43 0 nuoE 0 invJ STM2892 Surface presentation of antigens ; secretory proteins Phosphoglycerate kinase 50S ribosomal subunit protein L27 50S ribosomal subunit protein L34 SOS response regulator , transcriptional repressor ( LexA family ) 0 pgk STM3069 STM3303 STM3839 STM4237 98 % 95 % 100 % 97 % 55 % 50 % 53 % 55 % 0 0.04 0.57 1.62 8.98 1.05 0.71 0.88 0.91 rpmA rpmH lexA 0 0 0 57 % 94 % 0.9 0.85 STM4363 hﬂK Modulator for protease speciﬁc for FtsH phage lambda cII repressor 0 Bold type indicates statistically signiﬁcant enrichment ( p < 0:05 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19178137" target="_blank">19178137</a>]<br></li>
+<li>LexA belongs to the winged-helix family of DNA-binding proteins [ 34 -- 38 ] , transcription factors that bind DNA through a mechanism whereby a recognition helix interacts with the major groove and two loops ( `` wings '' ) interact with the minor groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27265378" target="_blank">27265378</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LexA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>In S. Tm , cib expression is negatively regulated in a Fur ( ferric uptake regulator ) - dependent and LexA ( locus for x-ray sensitivity A ) - dependent way ( Mankovich et al. , 1986 ; Nedialkova et al. , 2014 ) and maximally induced under iron limitation and upon exposure to DNA damaging agents .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26439675" target="_blank">26439675</a>]<br></li>
+<li>Another class of temperate bacteriophages carry a gene ( tum ) encoding an anti-repressor protein that is under direct negative control of LexA ( Shearwin et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16713610" target="_blank">16713610</a>]<br></li>
+<li>Bacteria partially regulate their response to DNA damage via the LexA regulon , which contains 33 genes in E. coli [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>Ohmori , R. Woodgate , Identiﬁcation of additional genes belonging to the LexA regulon in Escherichia coli , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27265378" target="_blank">27265378</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine-biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>In E. coli , recA null mutants are unable to stimulate the LexA cleavage reaction and are unable to establish the SOS-response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10852882" target="_blank">10852882</a>]<br></li>
+<li>These polymerases are under control of the LexA repressor , and a lexA ( def ) mutant with constitutive expression of the translesion polymerases was used to confer increased expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+<li>This response is all the more surprising as FsoA is under the control of the Fels-1 repressor , not LexA , and plays no apparent role in Fels-1 induction , which occurs via a Lambda CI-like repressor cleavage mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>DNA damage created by quinolone antibiotics has been shown to be sufﬁcient to stimulate umuC transcription and the SOS-response .4,5 The initial response to DNA damage is the reduction in LexA protein levels and induction of LexA repressed genes , which include lexA , umuDC and dinP .2,3 ( In Escherichia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>This involves more than 30 genes , which allow bacteria to increase DNA damage tolerance and DNA-repair .2 The LexA protein is the major SOS-response regulator that functions as a transcription repressor until DNA damage activates RecA ; RecA mediates the autodigestion of LexA , allowing expression of the SOS genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>In E. coli , the SOS-response to DNA damage is under the direct control of the LexA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10852882" target="_blank">10852882</a>]<br></li>
+<li>Fig. 4 similarly depicts the 10 genes whose expressions were LexA regulon analysis The SOS-response is the primary transcriptional response to DNA damage , and this response is mediated through the activation of the LexA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>The antirepressor genes lie outside the immunity region and are under direct control of the LexA repressor , thus plugging prophage induction directly into the SOS-response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>However , the repressor protein for sulA , encoded by lexA , showed a similar induction of expression , suggesting a balancing role for LexA in the activation and suppression of the SOS-response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492857" target="_blank">12492857</a>]<br></li>
+<li>Phenotypes of lexA Mutations in Salmonella enterica : Evidence for a Lethal lexA Null Phenotype Due to the Fels-2 Prophage Kim Bunny , † Jing Liu , ‡ and John Roth * Departm ent of Biology , University of Utah , Salt Lake City , Utah 84112 Received 19 February 2002/Accepted 18 August 2002 The LexA protein of Escherichia coli represses the damage-inducible SOS regulon , which includes genes for repair of DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Copyright 2010 by the Genetics Society of America DOI : 10.1534 / genetics .110.116376 Effect of Translesion DNA Polymerases , Endonucleases and RpoS on Mutation Rates in Salmonella typhimurium Sanna Koskiniemi , * Diarmaid Hughes † and Dan I. Andersson * ,1 * Department of Medical Biochemistry and Microbiology and † Department of Cell and Molecular Biology , Uppsala University , S-75123 Uppsala , Sweden Manuscript received March 5 , 2010 Accepted for publication April 23 , 2010 ABSTRACT It has been suggested that bacteria have evolved mechanisms to increase their mutation rate in response to various stresses and that the translesion DNA polymerase Pol IV under control of the LexA regulon and the alternative sigma factor RpoS are involved in regulating this mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20421601" target="_blank">20421601</a>]<br></li>
+<li>Below we discuss these two functions as well as the possible role of nanH in the LexA regulon and concept of steric coupling to explain the downregulation of porphyrin-metabolism genes by MX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>LexA Regulon The LexA regulon encompasses an ensemble of genes involved in preserving cell viability under massive DNA damage and is present in most bacterial phyla [ Benson et al , 2000 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>A mechanistically similar system regulates lysogeny of phage lambda ( in Esche-richia coli ) and P22 ( in Salmonella enterica ) without direct involvement of LexA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>In contrast to bacteria , yeast has a common environmental stress response o TABLE V. CMR DNA Repair Genes Altered Transcriptionally by BA-1 Gene Fold symbol change Hypergeometric P-value Gene title DNA ligase 1.4E-06 7.6E-05 8.0E-05 0.002 0.003 0.004 0.005 0.005 0.006 0.006 0.006 0.006 0.010 0.012 0.015 0.015 0.018 0.018 0.023 0.024 0.033 0.033 0.034 0.035 0.036 0.040 0.043 0.043 0.047 0.050 6.38 lig Putative nuclease subunit of the excinuclease complex Adenine DNA glycosylase DNA gyrase , subunit A , type II topoisomerase Putative recombination protein , gap repair Fels-2 prophage : similar to retron in E. coli Uracil-DNA-glycosylase Putative replicative DNA helicase UvrC , which is part of the UvrABC repair enzyme DNA polymerase III , delta prime subunit ATP-dependent DNA helicase DNA polymerase III , chi subunit UvrB , which is part of the UvrABC repair enzyme Replication termination protein Putative DNA helicase Regulator O-6-alkylguanine-DNA / cysteine-protein methyltransferase Putative DNA-repair protein Recombinase , site-speciﬁc Deoxyribodipyrimidine photolyase ( photoreactivation ) Primosomal protein I Putative helicase Primosomal replication protein N Endonuclease III ; DNA glycosylase/apyrimidinic ( AP ) lyase DNA polymerase III , alpha subunit Resembles eukaryotic-type potassium channels Putative ATP-dependent protease , DNA-repair protein Methyl-directed mismatch-repair Putative superfamily I DNA and RNA helicase Putative hydrolase N-terminus 24.55 4.00 22.55 22.50 22.16 27.46 23.12 22.53 22.82 22.27 4.27 5.41 2.28 22.07 21.97 22.50 22.43 25.87 21.88 1.80 22.50 2.88 STM1309 mutY gyrA recR STM2730 ung dnaB uvrC holB recQ holC uvrB tus yoaA oraA ogt radC xerD phrB dnaT ygcB priC nth dnaE 1.72 22.84 22.11 22.46 22.66 1.80 25.05 STM4372 radA mutS STM2767 STM0649 STM2727 2.7E-05 14.8 0.10 1.5 0.13 1.6 dinP 3.4E-05 4.8 0.11 21.6 0.68 21.1 sulA 4E-05 12.6 0.34 1.5 0.70 1.2 umuC 8.0E-06 8.6 0.12 1.8 0.81 21.1 umuD 2 4.4E-05 14.3 0.61 1.2 0.59 21.2 STM1019 4.8E-05 8.9 0.58 21.2 0.35 1.4 dinI 2 0.0002 16.9 0.42 1.3 0.46 1.3 yebG 2 0.0002 13.5 0.20 2.3 0.94 21.1 lexA 0.0003 4.0 0.05 22.3 0.73 1.1 STM1309 0.0010 2.5 0.00 24.5 0.05 21.8 polB 0.0010 2.8 0.46 1.2 0.88 21.0 yigN 0.0012 3.0 0.22 2.2 0.16 21.6 uvrA 0.0013 2.5 0.27 1.3 0.70 1.1 recA 0.0022 7.8 0.95 1.0 0.86 21.1 uvrD 0.0024 2.2 0.46 21.3 0.45 21.4 ruvA 0.0037 2.2 0.47 21.2 0.64 1.2 sbmC 0.0061 7.4 0.21 21.4 0.99 1.0 ydjM 0.0063 2.2 0.08 21.6 0.91 1.0 recN 0.027 16.0 0.23 21.5 0.15 1.7 STM0925 0.9730 1.0 0.55 1.3 0.75 1.1 ybfE 0.8064 0.9 0.11 21.6 0.16 2.1 uvrB 0.4355 1.3 0.01 5.4 0.08 3.1 dinG 0.4182 1.2 0.70 21.1 0.26 21.7 ftsK 0.1837 1.4 0.49 21.9 0.90 21.2 STM1056 0.2094 1.5 0.21 1.5 0.31 21.4 mfd 0.7057 0.9 0.15 1.4 0.50 1.2 minC 0.4689 0.9 0.69 1.1 0.52 1.3 yehR 0.0580 9.6 0.32 21.4 0.37 1.4 ftsY 0.7095 1.1 0.70 1.1 0.91 1.0 recG 0.9149 1.0 0.66 1.4 0.62 22.4 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a The P-value is from a Bayesian t-test measuring differential expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>Functional Category vs. UK-1 vs. UK-1 vs. Dublin vs. Newport in HSLB in LPM in HSLB in HSLB 7.35 12.62 4.26 NP 13.14 26.39 3.18 NP 11.69 20.75 3.46 NP 12.09 24.14 2.81 NP 8.37 12.71 NP NP 9.37 10.70 NP NP 10.27 9.84 NP NP 5.98 7.97 7.79 NP 7.20 12.42 5.09 NP 4.88 4.19 2.62 NP Gene ID Gene Product Hypothetical bacteriophage protein Hypothetical bacteriophage protein Hypothetical bacteriophage protein Similar to phage protein Hypothetical bacteriophage protein Hypothetical bacteriophage protein Hypothetical bacteriophage protein Putative bacteriophage protein Hypothetical bacteriophage protein Similar to phage integrase Nucleotide excision repair endonuclease DNA-damage-inducible SOS-response protein DNA polymerase IV LexA repressor DNA polymerase II Recombinase A Recombination and repair protein Holliday junction DNA helicase RuvA Holliday junction DNA helicase SOS cell-division inhibitor DNA polymerase V subunit DNA polymerase V subunit Excinuclease ABC subunit A LexA-regulated gene Putative inner membrane protein Putative secreted Protein DNA damage-inducible protein Putative replication regulatory protein Putative endoprotease Putative acetyl esterase Putative porin Proton efflux pump tRNA-Asn tRNA-Cys tRNA-Gly tRNA-Leu tRNA-Leu tRNA-Met tRNA-Tyr Putative ribonucleoprotein-related protei SOS regulon 5.28 3.92 2.93 − 1.18 dinF 2.42 4.68 4.50 2.04 dinP lexA 2.67 2.34 5.07 3.90 2.73 4.86 10.62 2.57 2.11 11.44 5.11 8.31 2.16 2.02 3.76 2.58 15.76 2.33 2.03 3.08 2.04 3.01 6.00 2.62 2.77 2.09 3.17 2.39 2.82 4.76 4.15 2.66 4.86 10.81 2.78 2.28 6.17 13.56 14.35 2.60 2.30 4.84 5.08 11.08 2.45 2.58 3.00 2.99 4.17 6.53 2.21 2.13 2.67 3.40 2.08 2.26 2.13 2.31 polB recA recN ruvA ruvB sulA umuC umuD uvrA ydjM yebE yebF yebG ompS setB asnT cysT glyW leuW leuZ metW tyrT NP 3.18 4.34 2.30 2.04 3.29 4.46 4.90 2.08 1.12 2.37 2.00 6.03 3.013 2.505 1.47 1.36 2.70 − 3.06 1.30 1.61 2.33 1.51 1.80 1.94 2.17 3.42 5.80 2.43 2.49 2.92 NP NP 2.47 1.31 4.59 4.89 7.74 1.12 5.49 2.46 14.14 1.14 − 1.18 3.01 4.37 3.34 1.58 1.22 − 1.27 Replication Metabolism Transport Translation NP 5.78 9.86 3.75 Plasmid Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25364573" target="_blank">25364573</a>]<br></li>
+<li>Classiﬁcation of annotated iron-responsive promoters with respect to Fur regulation Maximum fold inductiona Function ( s ) Classe Gene Reference ( s ) iroBc , d A 3 , 4 8,900 Putative glycosyl transferase , related to UDP-glucuronosyltransferase/putative ATP binding cassette ( ABC ) transporter Isochorismate synthetase , enterochelin-biosynthesis Outer membrane porin , receptor for colicin I , requires TonB Outer membrane porin , receptor for ferric enterobactin ( enterochelin ) and colicins B and D Putative hemin uptake factor Ferric hydroxamate transport , involved in reduction of ferric iron in cytoplasmic ferrioxamine B Salmonella iron-transporter Putative DedA family , membrane protein Regulatory or redox component complexing with Bfr in iron storage and mobility Putative iron chelator utilization protein Putative transcription regulator ; AraC family Putative anaerobic dimethyl sulfoxide reductase , subunit A Putative periplasmic protein Energy transducer : uptake of iron , cyanocobalamin : sensitivity to phages , colicins Outer membrane protein receptor or transporter for ferrichrome , colicin M , and phages T1 , T5 , and phi80 ATP-dependent protease , Hsp 100 , part of novel multichaperone system with DnaK , DnaJ , and GrpE Cu ( I ) - translocating P-type ATPase Putative hemolysin Phosphoribosylpyrophosphate synthetase DNA polymerase [ III ] , chi subunit Invasion protein Putative cytoplasmic protein O-antigen ligase MFS superfamily , nitrite extrusion protein Putative molybdopterin oxidoreductase UDP-D-glucose : ( galactosyl ) lipopolysaccharide glucosyltransferase Putative cytochrome c peroxidase Putative aminotransferase in cobalamin-synthesis Propanediol utilization : polyhedral bodies Propanediol utilization : propanol dehydrogenase entCc , d cirAc fepAc , d 1,805 620 569b 6 , 7 , 26 17 , 18 , 20 , 53 47 ydiEd fhuFc 353 241 38 19 , 35 , 36 sitAc , d yqjA bfd 142b 86 81b 54 32 32 , 37 58b 55b 52b 46 22 yajHd 38 32 STM0363d STM4305 STM1586 tonBc 32 32 20 , 40 fhuAc , d 21 20 , 47 20b clpB 32 copA yafA 12 11b 32 32 32 32 32 32 32 32 32 32 32 32 32 32 2b 3 6 6b 7 17 26b 28 29b 36 274b 363b prsA holC invH ytfK rfaL narKd fdnG rfaJ STM3820 cobD pduA pduQ 42b Iron-dependent alcohol dehydrogenase of the multifunctional alcohol dehydrogenase AdhE Cytoplasmic trehalase Xanthosine phosphorylase ( purine nucleoside phosphorylase ) Putative thioredoxin-like proteins and domain Putative coiled-coil protein Membrane-associated protein of unknown function Fimbrial protein Z , putative transcriptional regulator ( LuxR/UhpA family ) Pyruvate kinase 1 ( formerly F ) , fructose stimulated Putative DNA/RNA nonspeciﬁc endonuclease Putative cytoplasmic protein Fumarase A ( fumarate hydratase class I ) , aerobic isozyme Putative cytoplasmic protein Soluble pyridine nucleotide transhydrogenase Secreted effector protein of Salmonella serovar Dublin Putative inner membrane protein Paral putative oxidoreductase Surface presentation of antigens : secretory proteins Putative phosphatase L-Rhamnose isomerase Molybdopterin-biosynthesis , protein A Ferritin-like protein Putative peptidase T ( aminotripeptidase ) MukF protein ( killing factor KicB ) Fumarate reductase , anaerobic , ﬂavoprotein subunit sn-glycerol-3-phosphate dehydrogenase ( anaerobic ) , large subunit Putative aspartate racemase Anaerobic dimethyl sulfoxide reductase , subunit A B adhE 32 treF xapAd 15 13 32 32 32 32 32 32 32 32 32 30 32 32 32 32 32 32 32 32 32 32 8b 4b 2b 4 4 4 4b 5b 5 5 6 9 9 10 10 16b 19 21 24 24 28 30b 59b 88 yhgl STM1554 ycfC ﬁmZ pykF STM1330 yhcGd fumAc STM1239 udhA sopA yhfK ysaA sicA STM3595 rhaA moaAd ftnB pepT STM0989 frdAd glpA STM4510 dmsAd 32 32 32 32 32 Continue TABLE 2 -- Continued Maximum fold inductiona Classe Gene Function ( s ) Reference ( s ) yqhC Putative transcriptional regulator ( AraC/XylS family ) 32 104 yfcZ Putative cytoplasmic protein 32 STM1851 Putative cytoplasmic protein 32 yhcO Putative cytoplasmic protein 32 STM4448 Putative periplasmic protein/putative phosphotransferase system mannitol / 32 fructose-speciﬁc IIA domain ( Ntr type ) yciG 6 Putative cytoplasmic protein 32 ydhI 4 Putative inner membrane protein 32 nagB 3 Glucosamine-6-phosphate deaminase 32 narW 3 Nitrate reductase 2 , delta subunit , assembly function 32 STM1537 4b Putative Ni/Fe-hydrogenase 1 b-type cytochrome subunit 32 STM4067 4 Putative ADP-ribosylglycohydrolase 32 cybC 5b Cytochrome b ( 562 ) 32 yeaA 6b Putative domain frequently associated with peptide methionine sulfoxide 32 reductase nirB 7b Nitrite reductase , large subunit 32 yfbE 8 LexA regulated , putative SOS-response 32 sifB 9 Salmonella translocated effector : translocated by SP1 -- 2 32 yjdE 10 Putative APC family , putrescine/ornithine-transport protein , cryptic 32 yliG 10 Putative Fe-S oxidoreductase family 1 32 ais 12 Aluminum-inducible protein 32 yﬁR 14 Putative periplasmic protein 32 aspAd 15b Aspartate ammonia-lyase ( aspartase ) 32 STM1255 15b Putative ABC transporter periplasmic binding protein 32 fucR 22b Positive regulator of the fuc operon ( DeoR family ) 32 STM3138d 23 Putative methyl-accepting chemotaxis protein 32 araE 28 MFS family , L-arabinose : proton symport protein ( low-afﬁnity transporter ) 32 eutS 28 Putative carboxysome structural protein , ethanol utilization 32 yhbU 29 Putative protease 32 STM4519 41b Putative NAD-dependent aldehyde dehydrogenase 32 mgsA 78b Methylglyoxal synthase 32 a Indicates approximate maximum induction in LB medium between high-iron ( positive numbers ) and low-iron ( negative numbers ) conditions 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897017" target="_blank">12897017</a>]<br></li>
+<li>List of genes Description List of genes Description yjhP KpLE2 phage-like element ; predicted methyltransferase VexC sty4561 Restriction endonuclease fliC VI polysaccharide export ATP-binding protein Flagellar filament structural protein ( flagellin ) sty4591 Type I site-specific restriction-modification system , R subunit hilA sty4631 ATP/GTP binding protein lexA Invasion protein transcriptional activator LexA repressor sty4622 phage tail protein X sopE Invasion-associated secreted protein Phosphotransfer intermediate protein in two-component regulatory system with RcsBC VexE VI polysaccharide export protein CopG-like DNA-binding rcsD/yojN Cell invasion protein sty4667 sipB sty4670 Glucosamine-6-phosphate deaminase-like protein DNA-binding transcriptional regulator prophage P2 remnant STY4600 Predicted exopolysaccharide export protein vexA Discussion 4 Construction and applications of SPI regulatory pathways for Salmonella 4.1 To date , 17 SPIs have been discovered in S. enterica [ 12 , 43 , 44 , 45 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LexA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The LexA box is also found at the corresponding position for all three Gifsy prophages of strain ATCC14028 , in all instances preceded by palindromic sequences resembling Rho-independent transcription terminators ( Figure 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>Black circles indicate potential LexA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Italicized bases in the Fels-2 sequence indicate a second potential LexA binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>A light brown box encompasses sequences matching the consensus for LexA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>This potential regulatory sequence ends 20 bases prior to the nanH transcription start site , suggesting , along with the transcriptional evidence , that nanH may be regulated by LexA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>A deletion between FRT sites generates an in-frame lexA deletion allele that encodes a 31-amino-acid product containing the ﬁrst 10 and the last 9 amino acids of the LexA protein and 12 intervening amino acids encoded by the single remaining FRT sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>The presumptive LexA binding site lies within the region of sequence identity between Gifsy-1 and Gifsy-2 prophages of strain LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></li>
+<li>The standard LexA binding site has a 16-bp palindromic repeat motif ( CTGTN8ACAG ) within 3 -- 171 bp of the transcription site of the regulated gene [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17925033" target="_blank">17925033</a>]<br></li>
+<li>At the 5 end of one primer was the sequence 91 to 120 upstream of recA ; at the 5 end of the second primer were bases 1 to 39 upstream of recA , and then the 40th base of this primer introduces the point mutation within the LexA binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Sequences are compared to the demonstrated LexA binding region of coliphage 186 tum ( 8 ) and the LexA binding site consensus sequence from the review by Walker ( 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LexA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>In S. Tm , cib expression is negatively regulated in a Fur ( ferric uptake regulator ) - dependent and LexA ( locus for x-ray sensitivity A ) - dependent way ( Mankovich et al. , 1986 ; Nedialkova et al. , 2014 ) and maximally induced under iron limitation and upon exposure to DNA damaging agents .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26439675" target="_blank">26439675</a>]<br></li>
+<li>Phage 186 prophages are induced when cleavage of LexA allows tum expression and thereby upsets prophage repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>The genome of P22 lacks a tum homologue but encodes another antirepressor ( ant ) that does not appear to be regulated by LexA ( 49 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>The lacZ gene in this recombinant plasmid ( Fig. 2B ) was constitutively expressed , suggesting that the plasmid copy number was so high ( about 200 ) that it exceeded the repression capacity of the LexA protein produced by a single chromosomal lexA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>To construct the plasmid pSR660-SirA , expressing the LexA - SirA DBD fusion protein , the sirA gene was ampliﬁed by PCR using primers SirA-HisA-F and SirAR-LexA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>The effect of vector pSR660 ( negative control ) , expressing the LexA DNA-binding domain ( LexADBD ) , and plasmids pSR658-HNS ( positive control ) or pSR660-SirA , expressing fusion proteins LexADBD-HNS and LexADBD-SirA , respectively , on the expression of sulA : : lacZ fusion was determined in the E. coli SU101 reporter strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>These polymerases are under control of the LexA repressor , and a lexA ( def ) mutant with constitutive expression of the translesion polymerases was used to confer increased expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_8">
+The genes encoding these antirepressors are located outside the immunity region and under direct control of the LexA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21731505" target="_blank">21731505</a>]<br></label>
+<input id="tu_similarity_8", type="checkbox">
+<div class="TU_similar">
+<li>The genes encoding these proteins are located outside the immunity regions and under the direct control of the LexA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18689471" target="_blank">18689471</a>]<br></li></div>
+<li>Unlike SOS genes , however , ﬁnP transcription is not regulated by DNA damage and remains unaltered in a LexA ( Ind ) background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>Induction of the LexA regulon by DNA damage changes expression of 40 genes , most of which are up-regulated ( 20 , 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19525399" target="_blank">19525399</a>]<br></li>
+<li>However , since this prophage is not strongly induced by UV irradiation , it seems more likely that the lack of LexA causes expression of some subset of phage genes ( perhaps mediated by the Tum antirepressor ) whose products restrict cell growth without causing full phage induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>They were inferred to be LexA ( SOS ) regulated because their induction is prevented by a recA mutation and induced by overexpression of LexA ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>P2 lacks a tum gene and is not induced by UV ; phage 186 is induced by UV , and this induction is mediated by derepression of its tum gene following LexA inactivation ( 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>In both bacteria , lexA is the ﬁrst gene in a two-gene operon ( with dinF ) that is repressed by LexA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>Alone , the LexADBD is not functional ; however , when it is fused to a protein that interacts itself , a dimeric form of LexADBD is generated , which is able to repress the expression of sulA gene belonging to the LexA regulon ( 26 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>The umu operon is reported to be the last operon induced during the SOS response and is under the control of the LexA repressor and RecA , both of which are also induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17600486" target="_blank">17600486</a>]<br></li>
+<li>f With no DNA damage and a wild-type LexA protein , this gene is fully repressed ; in a lexA ( Ind ) background , the gene is transcribed at a low level but does not appear to be upregulated in the presence of DNA damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399494" target="_blank">12399494</a>]<br></li>
+<li>DNA damage created by quinolone antibiotics has been shown to be sufﬁcient to stimulate umuC transcription and the SOS response .4,5 The initial response to DNA damage is the reduction in LexA protein levels and induction of LexA repressed genes , which include lexA , umuDC and dinP .2,3 ( In Escherichia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+<li>coli , dinB and dinP are two names for one gene , there is no dinB in S. typhimurium .8 ) The sbmC gene was originally identiﬁed by its ability to confer resistance to MccB17 at high copy number .9 MccB17 is a peptide antibiotic that induces double-stranded breaks in DNA in a DNA gyrase-dependent manner .9 In E.coli , the expression of sbmC is induced by DNA-damaging agents , possesses a quasicanonical LexA box and much like umuDC , the expression of sbmC is RecA and LexA dependent .9 Thus , upregulation of umuD , lexA , dinP and sbmC by all nine FQs is likely LexA dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21102598" target="_blank">21102598</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

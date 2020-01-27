@@ -1,0 +1,981 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - OxyR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">OxyR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">OxyR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>An intramolecular disulfide bond involving Cys199 and Cys208 can stabilize OxyR in an activated form ( Choi et al. , 2001 ; Lee et al. , 2004 ; Zheng et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>OxyR tetramers can bind either OxyRAB or OxyRBC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>OxyR binds DNA as a tetramer ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Because SeqA binds hemimethylated GATC sites ( 59 ) , a tentative speculation is that it might favor DNA methylation over OxyR binding during DNA replication , as previously suggested for agn43 ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Proteins involved in oxidative-stress ( NarY , Qor , Dps , WraB , OxyR , GrxA , Gor , GrxB , KatG , KatE , SodC , SodB , AhpF ) ; acid stress ( CadA ) ; and starvation ( SspA , SspB ) were all also differentially regulated by Hfq survival in macrophages , and virulence in mice [ 38 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19277208" target="_blank">19277208</a>]<br></li>
+<li>Proteins lacking 16 or 22 residues in CysB and OxyR , respectively , were mainly affected in repression but were constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Ser54 corresponds to Ser35 in AmpR , Ser33 in OxyR , and Ser38 in CysB and GcvA , and these residues are required for DNA binding but not oligomerization ( 27 , 43 -- 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>A different effect was observed for mutants with a A233V point mutation in OxyR and a A227D point mutation in CysB , which still repressed and activated transcription constitutively and bound DNA as dimers ( 9 , 31 , 43 -- 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>We observed that Fe2 and Mn2 still repressed mntH : : lacZ when OxyR regulation was inactivated by a cis - or trans-acting mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>This defence mechanism is controlled mainly by SoxRS , OxyR , S E s , s , SlyA and RecA regulons ( Farr & Kogoma , 1991 ; Lacour & Landini , 2004 ; Yoo et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>In addition , resistance to ROS is essential for S. Typhimurium pathogenesis , which is enhanced through dps induction by those pathways controlled by SoxRS , OxyR , s , s , SlyA and RecA ( Halsey S E et al. , 2004 ; Pacello et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>OxyR and SoxRS are activated by reactive oxygen species , such as hydrogen peroxide and superoxide , respectively ( 7 , 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_13">
+The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10618525" target="_blank">10618525</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19223478" target="_blank">19223478</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></label>
+<input id="act_similarity_13", type="checkbox">
+<div class="ACT_similar">
+<li>The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and s in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and sS in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li>
+<li>Altuvia , S. , Almirön , M. , Huisman , G. , Kolter , R. & Storz , G. 1994 The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>[ 34 ] S. Altuvia , M. Almiron , G. Huisman , R. Kolter , G. Storz , The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li></div>
+<li>It is produced primarily throughout stationary phase and its expression is regulated by the stationary phase sigma factor RpoS ( s38 ) , OxyR , and IHF [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20920181" target="_blank">20920181</a>]<br></li>
+<li>A DNA bend is induced by OxyR in agn43 ( 47,56 ) , another phase variation locus regulated by Dam methylation and OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The ZirTS pathway is negatively regulated by zinc and OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>Unlike agn43 , which is repressed by OxyR [ 70 ] , and gtr , which is both activated and repressed by OxyR [ 4 ] , STM2209-STM2208 is under positive control by OxyR ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Redox regulation of OxyR requires specific disulfide bond formation involving a rapid kinetic reaction path .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_24">
+Kullik , I. , Stevens , J. , Toledano , M.B. and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for DNA binding and multimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></label>
+<input id="act_similarity_24", type="checkbox">
+<div class="ACT_similar">
+<li>Kullik , I. , Stevens , J. , Toledano , M.B. , and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for DNA binding and multimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. , and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Kullik I , Toledano MB , Tartaglia LA , Storz G. Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for oxidation and transcription activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. & Storz , G. Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26190504" target="_blank">26190504</a>]<br></li>
+<li>Mutational analysis of the redox-sensitive transcriptional-regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20562293" target="_blank">20562293</a>]<br></li></div>
+<li>Interestingly , while OxyR , LysR , NodD , IlvY , and MetR all negatively regulate their own genes , they positively regulate a transcript from an overlapping promoter on the complementary strand ( 29 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Wei , Q. , Le Minh , P.N. , Dotsch , A. , Hildebrand , F. , Panmanee , W. , Elfarash , A. , et al. ( 2012 ) Global regulation of gene expression by OxyR in an important human opportu-nistic pathogen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>An alternative pathway of OxyR activation during nitrosative stress has been proposed , in which nitrosylation of Cys199 stimulates a similar conformational change ( Hausladen et al. , 1996 ; Kim et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Redox active cysteine residue function in sensing oxidative-stress and cause activation of OxyR upon disulfide bond formation ( Choi et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>DISCUSSION OxyR is a speciﬁc-DNA-binding protein which is able to activate as well as repress transcription of speciﬁc target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>OxyR is a LysRtype transcriptional-regulator that also acts as a sensor of oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>However , OxyR also acts as a transcriptional-regulator irrespective of its oxidative state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_38">
+Taken together , our results support a model in which , in response to peroxide treatment , ryhB-1 and ryhB-2 are upregulated by OxyR through direct interaction with their promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></label>
+<input id="act_similarity_38", type="checkbox">
+<div class="ACT_similar">
+<li>Taken together , our results support a model where , in response to peroxide treatment , ryhB-1 and ryhB-2 are upregulated by OxyR through a direct interaction with their promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li></div>
+<li>Our previous experiments showed that both sRNAs are upregulated in response to H2O2 , and that OxyR is partially required for this induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>In addition to ArcAB and Fnr , OxyR and SoxRS are the other major global control systems that regulate genes in response to oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>ryhB-1 and ryhB-2 are upregulated by OxyR in response to H2O2 The response to H2O2 has been commonly related to the transcription factor OxyR [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>The increase in activity was not retained in the DoxyR strains ( Fig. 4A and B ) , conﬁrming that OxyR is required to upre-gulate ryhB-1 and ryhB-2 in response to H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>not known but this possibly is effected by direct activation by OxyR bound at the OxyR ( AB ) site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Thus the mntH response to peroxide is almost completely mediated by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The molecular mechanism by which the OxyR protein is activated by oxidative-stress is of interest .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Moreover , while in E. coli the expression of dps in logarithmic phase is modulated by the exposition to sources of hydrogen peroxide ( mediated by OxyR ) , in the stationary phase its expression is regulated by σs and is not induced by this reactive oxygen species [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li>
+<li>OxyS ( oxidative-stress-related ) is induced by hydrogen peroxide stress via the OxyR regulator [ 80,81 ] and was recently also demonstrated to be involved in cross-species regulation by downregulating a mRNA target of its eukaryotic predator C. elegans [ 82 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>OxyS responds to oxidative-stress and is transcriptionally activated by OxyR [ 80 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>They showed that OxyR is a key regulator in S-nitrosylation and that hcp transcription is activated by S-nitrosylation of OxyR during anaerobic nitrate respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>This sRNA is a pleiotropic regulator of about 40 genes in E. coli including rpoS , and an anti-mutator that may inhibit alternate stress adaptation pathways when OxyR is activated [ 30,32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19578432" target="_blank">19578432</a>]<br></li>
+<li>In contrast , a decrease in oxygen supply monitored by Fnr and ArcAB , or oxidative-stress controlled by OxyR and SoxRS is not regarded as a stress associated with host colonisation since inactivation of either of these systems does not result in reductions in colonisation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Their opposite promoters overlap in a way that is reminiscent of two other gene pairs that exhibit sRNA regulation by transcription factors , including oxyS control by OxyR in response to oxidative-stress , and GcvA regulating gcvB in response to glycine levels ( 6,39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18267966" target="_blank">18267966</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_54">
+Endogenous protein SNitrosylation in E. coli : regulation by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24929713" target="_blank">24929713</a>]<br></label>
+<input id="act_similarity_54", type="checkbox">
+<div class="ACT_similar">
+<li>Endogenous protein S-nitrosylation in E. coli : regulation by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li></div>
+<li>The Mudlux fusion in MPG203 is subject to regulation by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>Although OxyR is known to positively regulate catalase expression , we propose that Hrg might function in conjunction with OxyR in this regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>These results indicate that OxyR binding at OxyR ( AB ) results in maximal activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Primer extension assays of oxyS induction in nonrepressing OxyR mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>As shown in Fig. 4D -- F , binding of OxyR to all three methylated probes was negligible even at highest OxyR concentration used .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The katGp promoter is activated when the transcription factor OxyR reacts with H2O2 ( Dubbs and Mongkolsuk , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24439899" target="_blank">24439899</a>]<br></li>
+<li>Furthermore , many other Salmonellae genomes harbour gtr gene clusters ( M. Davies , unpublished ; Vernikos and Parkhill , 2006 ; Villafane et al. , 2008 ) , and many regulatory sequences can be categorized as P22-like based on the presence of similar OxyR binding sequence and GATC sequences as identiﬁed in Fig. 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR bound to the oxyR-oxyS promoter region represses its own expression under both oxidizing and reducing conditions and activates oxyS transcription upon oxidation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>OxyR derivatives ( SV5989 , SV5990 , SV7232 and SV7233 ) are shown in the lower row .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>In the OFF state , OxyR binds OBSAC , and GATC2 and GATC4 are methylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>In the ON state , OxyR binds OBSAB and OBSCD , and GATC1 and GACT3 are methylated [ 55 ] ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>The active form of most characterized LTTRs ( NahR , CysB , OxyR , CbnR , DntR , ArgP , TsaR , and AphB ) is a tetramer ( 28 , 30 -- 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The concentration of OxyR is indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR and SoxRS regulation of fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932449" target="_blank">11932449</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18790861" target="_blank">18790861</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>The presence of these Dam - and OxyR-related sequence elements suggested that gtr phase variation may be controlled by an epigenetic mechanism involving Dam and OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR binding prevents GATC methylation in vitro In epigenetic phase variation , DNA methylation confers heritability of the expression phase ( van der Woude and Baumler , 2004 ; Casadesus and Low , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_72">
+Haagmans , W. , and van der Woude , M. ( 2000 ) Phase variation of Ag43 in Escherichia coli : dam-dependent methylation abrogates OxyR binding and OxyR-mediated repression of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></label>
+<input id="act_similarity_72", type="checkbox">
+<div class="ACT_similar">
+<li>Haagmans , W. , and van der Woude , M. ( 2000 ) Phase variation of Ag43 in Escherichia coli : Dam-dependent methylation abrogates OxyR binding and OxyR-mediated repression of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18331470" target="_blank">18331470</a>]<br></li>
+<li>Haagmans , W. and van der Woude , M. ( 2000 ) Phase variation of Ag43 in Escherichia coli : Dam-dependent methylation abrogates OxyR binding and OxyR-mediated repression of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Haagmans , W. , and M. van der Woude , 2000 Phase variation of Ag43 in Escherichia coli : Dam-dependent methylation abrogates OxyR binding and OxyR-mediated repression of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008574" target="_blank">20008574</a>]<br></li></div>
+<li>The DNA fragments ( w2 ng ml 1 ) were mixed with increasing amounts of OxyR in the presence of binding buffer ( 0.1 mM TriseHCl , pH 7.5 , 0.1 mM EDTA , 5 mM DTT , 10 mM NaCl , 1 mM MgCl2 , 5 % , v/v glycerol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>When MPG203 ( pPDT12 ) was exposed to hydrogen peroxide ( Fig. 2b ) , its luminescence was reduced , as previously found with pDSA23 , suggesting that the reduced light production arose as a consequence of OxyR titration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>OxyR , a LysR-type regulator , is known to positively regulate 9 of them ( Christman et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Hattman , S. , and Sun , W. ( 1997 ) Escherichia coli OxyR modulation of bacteriophage Mu mom expression in dam + cells can be attributed to its ability to-bind hemimethylated Pmom promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Although OxyR was first described as an activator of genes responsive to oxidative damage ( 46 ) , its function in opvAB regulation is unrelated to oxidative damage and independent of its own oxidation state ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The ability of OxyR to sense nitrosative stress appears to be secondary to its recognition of endogenous H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20660761" target="_blank">20660761</a>]<br></li>
+<li>The ability of OxyR to-bind DNA was assumed to be required for both repression and activation of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>A recent study demonstrated that the OxyR protein , which activates expression of genes in response to intracellular reactive oxygen species ( ROS ) , positively regulates expression of both ryh genes by direct interaction in S. Typhimurium ( Calderon et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>As above , the positive regulation of both genes in response to host-driven ROS occurs through allosteric interaction with the Salmonella OxyR protein ( Slauch , 2011 ; Calderon et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>Oxidation of Cys199 to sulfenic acid by hydrogen peroxide promotes a reversible conformational change that allows OxyR to activate transcription of specific genes involved in resistance to oxidative-stress ( Kullik et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Additionally , OxyR positively regulates expression of both RyhBs in response to oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>The OxyR transcription factor is a LysR-type regulator that activates the expression of numerous genes in response to oxidative-stress [ 30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>Microarray analysis of E. coli during sulfur starvation found increased expression of ahpCF encoding an alkyl hydroperoxide reductase positively regulated by OxyR , and the CysB regulon has been shown by microarray analysis to be expressed in cells stressed by methyl viologen ( Blanchard et al. , 2007 ; Gyaneshwar et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>In addition , mntH is controlled by the hydrogen peroxide sensor OxyR ( Kehres et al. , 2002a ; Ikeda et al. , 2005 ) causing its expression to also be induced in response to intracellular hydrogen peroxide stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>]<br></li>
+<li>This ability enable such proteins to either act as global regulators , as exempliﬁed by the OxyR response to oxidative-stress in E. coli and Salmonella ( Storz et al. , 1990 ) , or to deﬁne a more limited expression of gene expression under other circumstances , as exempliﬁed by SpvR ( Taira et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>In E. coli , OxyR regulates gor expression [ 6 ] , while the expression of trxB has not been determined under this condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_92">
+[ 33 ] A. Wallecha , J. Correnti , V. Munster , M. Van der Woude , Phase variation of Ag43 is independent of the oxidation state of OxyR , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18722983" target="_blank">18722983</a>]<br></label>
+<input id="act_similarity_92", type="checkbox">
+<div class="ACT_similar">
+<li>Wallecha , A. , Correnti , J. , Munster , V. and van der Woude , M. ( 2003 ) Phase variation of Ag43 is independent of the oxidation state of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Wallecha , A. , Correnti , J. , Munster , V. , and van der Woude , M. ( 2003 ) Phase variation of Ag43 is independent of the oxidation state of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li></div>
+<li>Exposure of S. typhimurium to hydrogen peroxide results in a multigenic response , with selective induction of approximately 30 polypeptides ( 4 , 12 ) , of which a subset of 9 are regulated by the transcriptional-activator OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>It had previously been established that growing S. typhimurium at a low concentration of H2O2 allows induction of the OxyR pathway , mediating a greater level of survival following exposure to a high concentration of H2O2 ( Christman et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>OxyR mediates H2O2 activation of mntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Nitrosative stress : activation of the transcription factor OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22311927" target="_blank">22311927</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>]<br></li>
+<li>ROS levels do not increase after treatment with H2O2 , which suggests that bacterial defence mechanisms against oxidative-stress include the activation of regulon OxyR , which is involved in H2O2 tolerance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29857034" target="_blank">29857034</a>]<br></li>
+<li>As a result , both the SoxRS and the OxyR regulons are not only responsive to ROS but also for nitric oxide ( NO ) or S-nitrosothiols ( GSNO ) ( Hausladen , Privalle , Keng , DeAngelo , & Stamler , 1996 ; Nunoshiba , deRojas-Walker , Wishnok , Tannenbaum , & Demple , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>The footprinting experiments described here suggest that the OxyR protein binds to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Since binding of the OxyR protein to the DNA is assumed to be required for repression , mutant OxyR proteins which are not able to repress oxyR expression are likely to be DNA-binding mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The resulting OxyR C199S protein is locked in the reduced form as it can not form the disulfide bond required for oxidation [ 46,47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Nitrosative stress is also a signal that activates OxyR , a transcriptional-regulator that coordinates the expression of E. coli and Salmonella antioxidant defenses against hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>The Escherichia coli OxyR protein is a redox-sensitive transcriptional-regulator which activates the expression of antioxidant defense genes under oxidizing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>For example , OxyR utilizes cysteine as a regulatory switch to respond to redox changes in the cellular environment , and the SarA/MgrA family transcriptional-regulators employ cysteine res-idues to mediate bacterial virulence and antibiotic resistance19 ,20 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26190504" target="_blank">26190504</a>]<br></li>
+<li>Upon migration to systemic sites and exposure to reactive oxygen species from macrophages , OxyR activity is engaged and the zir pathway silenced to allow for increased survival and replication of Sal-monella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>Understanding OxyR , Fur , and MntR regulation of mntH should enable further regulatory questions to be addressed , particularly questions regarding the sensitivity of mntH expression to growth medium and growth state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Salmonella can enhance its resistance to oxidants through the induction of speciﬁc genetic pathways controlled by SoxRS , OxyR , S , E , SlyA , and RecA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></li>
+<li>Binding of OxyR to the ryhB-1 and ryhB-2 promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>For example , the OxyR and SoxRS regulons enable E. coli to resist the effects of H2O2 and superoxide , respectively ( Christman et al. , 1989 ; Wu & Weiss , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>In the ON state , OxyR binds to the OBSB and OBSD sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>While the oxidized wild-type OxyR protein was primarily tetrameric in solution , the E225K and A233V mutants appeared to be dimeric .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Indeed , this operon is controlled by 15 IscR , Fur and OxyR , which are the Fe -- S homeostasis - , the iron - and the H2O2-sensing regulators , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21952637" target="_blank">21952637</a>]<br></li>
+<li>induced by hydrogen peroxide , weakly induced by EDTA and unresponsive to paraquat , consistent with the presence of Fur and OxyR binding sites in the promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>It would be interesting to determine whether expression or activity of the ArcAB system is induced by RNI and whether the sensor ArcB is modiﬁed by nitrosylation , as OxyR and SoxR are .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Expression of the zir genes is negatively regulated by OxyR and zinc and may involve the thioredoxin protein ZirR ( red ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>OxyR is unlinked to its target and lacks the characteristic divergent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>This protection is not seen with extracts made from strains that do not overproduce OxyR and suggests that the mechanism by which OxyR negatively autoregulates its is and blocking , expression by binding to , therefore the DNA that are for its own sequences required transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Like in agn43 and in gtr , however , the oxidation state of OxyR is irrelevant for control of STM2209-STM2208 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>However , in the presence of H2O2 , transcription of fur is also activated by OxyR in E. coli ( Zheng et al. , 1999 ) , resulting in repression of target mRNAs for iron-uptake proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>A relevant example of this latter class is OxyR , a positive modulator of the expression of genes in response to oxidative-stress in E. coli and Salmonella ( Christman et al. , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21175741" target="_blank">21175741</a>]<br></li>
+<li>The autoregulated oxyR gene in E. coli is also not linked to any of the genes for which it serves as an activator ( 9 ) , but although DNase I footprints are qualitatively different with reduced and oxidized forms of highly purified OxyR protein , appreciable quantitative and differences in binding to positively negatively regulated promoters have not been observed ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1706701" target="_blank">1706701</a>]<br></li>
+<li>Therefore , OxyR is required in both activation and repression of gtrP22 , and it exerts these two roles by binding to its two alternative binding sites in the gtrP22 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Burkhold-eria pseudomallei RpoS regulates OxyR and the katG-dpsA operon under conditions of oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24271167" target="_blank">24271167</a>]<br></li>
+<li>OxyR and SoxR regulate the oxidative-stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>During normal growth and upon oxidative-stress , OxyR also acts as a repressor and negatively autoregulates its own expression and the expression of the Mu phage mom gene ( 8 , 16 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>In the present work , we show that in S. Typhimurium , OxyR positively regulates the expression of ryhB-1 and ryhB-2 ( Figs. 3 and 4 ) , and we suggest that this could link a response to oxidative-stress and iron homeostasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>Nitrosylation of cysteines or iron cofactors in OxyR , SoxR , and NorR activates transcription , whereas the iron-nitrosyl complexes in NsrR and Fur derepress gene expression ( 12 , 13 , 15 , 18 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22311927" target="_blank">22311927</a>]<br></li>
+<li>Peroxide exposure increased the expression of RyhB-1 and RyhB-2 and , in both cases , this regulation depended on OxyR , but not RpoS , which controls their expression in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>For example , NsrR and NorR are dedicated sensors of NO , and the transcriptional-regulators OxyR , SoxR , fumarate-nitrate reduction ( FNR ) , and Fur , which primarily function as sensors of O2 , reactive oxygen species ( ROS ) , and iron , also respond to RNS ( 10 , 12 , 15 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22311927" target="_blank">22311927</a>]<br></li>
+<li>The proteins NsrR and NorR are NO-dedicated sensors that regulate genes encoding antinitrosative activity in aerobic and anaerobic bacteria ( 15 , 16 ) , whereas OxyR , SoxR , FNR , DksA , and Fur , which primarily serve as sensors of reactive oxygen species , O2 , nutritional starvation , and iron , contribute important aspects of the antinitrosative arsenal of enteric bacteria ( 17 -- 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>]<br></li>
+<li>The distance between OBSA and OBSB , and between OBSC and OBSD as well , is canonical for binding of the reduced form of OxyR ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Mar. 1995 , p. 1285 -- / 95 / $ 04.0010 Copyright q 1995 , American Society for Microbiology Mutational Analysis of the Redox-Sensitive Transcriptional Regulator OxyR : Regions Important for DNA Binding and Multimerization INES KULLIK , † JENNIFER STEVENS , ‡ MICHEL B. TOLEDANO , § AND GISELA STORZ * Cell Biology and Metabolism Branch , National Institute of Child Health and Human Development , Bethesda , Maryland 20892 Received 26 July 1994/Accepted 15 December 1994 OxyR is a LysR-type transcriptional-regulator which negatively regulates its own expression and positively regulates the expression of proteins important for the defense against hydrogen peroxide in Eschericha coli and Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Low levels of hydrogen peroxide activate OxyR and induce hemH , which encodes the ultimate enzyme in heme biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>Activated OxyR induces transcription of more than 20 genes in the OxyR regulon that function for instance in the following : H2O2 breakdown ( katG , katE and katN ) , DNA protection ( dps ) , disulfide bond formation ( gorA , grxA ) , iron -- sulfur cluster repair ( sufA ) and reduction of oxidized lipids ( ahpCF ) ( Calhoun & Kwon , 2011 ; Hebrard , Viala , Meresse , Barras , & Aussel , 2009 ; McLean , Bowman , & Poole , 2010 ; Paget & Buttner , 2003 ; Spector & Kenyon , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>qRT-PCR analysis that was applied for ipfD exhibited a negative regulatory role for Fur and showed moderately ( two-fold or less ) lower transcription of ipfD in the absence of Lrp , RpoS , SoxR , PhoP , OmpR , and OxyR compared to the wild-type background ( Fig 7E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>The decrease in the transcript levels of the hemA gene was also detected by S1 analysis ( Fig. 1C , ﬁrst and second lanes ) , and we found that this decrease was independent of both Fur and OxyR ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>The OFF state can not be achieved in the absence of OxyR ( Fig. 1 ) , and thus OxyR is a repressor of this system and this requires binding at the OxyR ( BC ) containing sequence ( Fig. 6B ; sMV174 ; sMV244 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Assuming a globular conformation , this elution proﬁle could correspond to a tetramer of the 34.4-kDa OxyR protein ( 137.6 kDa ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>However , given the magnitude of peroxide induction versus EDTA induction , OxyR regulation appears to be dominant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>Several observations suggested that the oxidative state of OxyR is not relevant for STM2209-STM2208 regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>In GSO7 , wild-type OxyR repressed the expression of the oxyR-galK fusion , resulting in white colonies , while mutants that were unable to repress this fusion were detected as red colonies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>These data are consistent with promoter activation when OxyR is bound at the OxyR ( AB ) containing sequence , and repression when bound at the OxyR ( BC ) region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>This suggest that OxyR bound at the OxyR ( AB ) site is required for full activation of the gtrP22 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Nevertheless , the data support the conclusion that activation of transcription occurs when OxyR is bound at the OxyR ( AB ) containing sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Besides the negative regulation , mntH transcription is activated through the H2O2-sensing regulator OxyR , which binds to the OxyR-binding site in the promoter ( 11 , 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24596096" target="_blank">24596096</a>]<br></li>
+<li>However , the combined results support the conclusion that OxyR binding to the OxyR ( BC ) region represses transcription , and that repression is alleviated if GATC3/GATC4 are methylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR , a LTTR , upregulates various genes upon H2O2 treatment in different bacteria ( Farr & Kogoma , 1991 ) In oxidized form it binds to the promoter of the genes it regulates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>oxyR Is Negatively Autoregulated by the Binding of OxyR to Its Own Promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>The gene encoding the OxyR regulator , oxyR , is activated via the formation of disulﬁde bonds under hydrogen peroxide stress ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28003197" target="_blank">28003197</a>]<br></li>
+<li>In the presence of hydrogen peroxide , mntH is activated by OxyR , acting through an OxyR-binding motif centered just upstream of the likely 35 RNA polymerase-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>A recent study by Zheng et al. [ 8 ] showed that one of the disul cents de oxidoreductases/isomerases , DsbG , is activated by OxyR while the gene for DsbC is part of the RpoE regulon [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11814668" target="_blank">11814668</a>]<br></li>
+<li>Our study demonstrated that the L-ATR in 562 Salmonella serovar Typhimurium causes sensitivity to hydrogen peroxide ; the L-ATR appears to inactivate the oxidative-stress response via down-regulation of the OxyR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885318" target="_blank">16885318</a>]<br></li>
+<li>Our evidence suggests that adrenaline provides an environmental cue to alert S. Typhimurium against impending macrophage-derived peroxide stress as shown by the reduced ability of S. Typhimurium lacking OxyR to survive in the presence of adrenaline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18837991" target="_blank">18837991</a>]<br></li>
+<li>The CysB regulon was induced when cells were grown in the presence of the oxidant methyl viologen and the most stressed auxotrophs had increased OxyR and SoxR activity in low-level oxidative-stress conditions compared to wild-type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>In E. coli and Salmonella Typhimurium , OxyR and SoxRS are the major systems involved in the response to hydrogen peroxide and superoxide , respectively .42 -- 47 Our results show that the cellular effect of oﬂoxacin , a bactericidal antibiotic that produces ROS , occurs only under aerobic conditions , which supports the idea that the additional effect of bactericidal antibiotics should be in the presence of oxygen ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27530757" target="_blank">27530757</a>]<br></li>
+<li>We also monitored the expression of the sitB fusion in response to a variety of other environmental conditions , such as changes in pH , osmolarity , temperature , magnesium concentration and conditions that induce the OxyR regulon ( 1 mM H2O2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10712695" target="_blank">10712695</a>]<br></li>
+<li>The cellular response to oxidative-stress is regulated at the transcriptional level by activating the SoxRS and OxyR regulons in response to O − 2 and H2O2 , respectively [ 22,23 ] , however , several studies have provided evidence for a role of the ArcAB two component system in the resistance to ROS induced damage [ 12,24-26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>OxyR participates in controlling several genes involved in the response to oxidative-stress and the production of surface proteins by activating the expression of several genes ( e.g. dps , fur and katG ) whose protein products regulate intracellular hydrogen peroxide levels ( 59 -- 61 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20460466" target="_blank">20460466</a>]<br></li>
+<li>To ﬁnd out whether hemA26 and fur mutations only reduce the expression of genes in the heme pathway , we analyzed the transcription of dps , which encodes a nonspeciﬁc DNA-binding protein that is known to be induced by OxyR in response to hydrogen peroxide ( reviewed in reference 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>Furthermore , the system was shown to be negatively regulated by OxyR , a transcription factor that controls the expression of genes in response to oxidative-stress ( 17 ) , and also by the presence of zinc in the media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>It is known that the resistance of Salmonella to oxidative-stress is enhanced by the induction of regulators , such as OxyR , SodA , SoxRS , and RpoS ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28003197" target="_blank">28003197</a>]<br></li>
+<li>While OxyR is not present to induce the expression of both sRNAs , Fur is being disabled by sub-millimolar levels of peroxide , releasing the repression of ryhB-1 and ryhB-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>In summary , we propose a model where , in response to peroxide stress , the expression of RyhB-1 and RyhB-2 is not only determined by OxyR activation , but also by an exquisite redox balance that depends on the levels of H2O2 ( generation / degradation ) and the concentration of the active form of Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>KatG expression is controlled by the OxyR regulator of the adaptive response to hydrogen peroxide ( for a review , see Farr and Kogoma , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11260470" target="_blank">11260470</a>]<br></li>
+<li>We are using the cloned oxyR gene to overproduce OxyR and to allow purification of the protein to determine the exact manner of OxyR activation by oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>OxyS , a member of the OxyR regulon , is upregulated by micromolar levels of peroxide and coordinates the cellular response to oxidative-stress .65 AmgR is a 1.2 Kb antisense transcript encoded on the complementary strand to the mgtCBR operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22546935" target="_blank">22546935</a>]<br></li>
+<li>In response to oxi-dative stress , expression of the Fur protein is upregulated by the OxyR and SoxRS regulators ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18790861" target="_blank">18790861</a>]<br></li>
+<li>However , it is difficult to rule out of the presence of any oxidized OxyR in the cell and thus it is important to determine whether the oxidized form is essential for gtr phase variation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Binding of OxyR to the two gtrP22 binding sites is controlled by the GATC methylation state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Having observed that OxyR is oligomeric , we tested whether the nonrepressing mutant proteins exhibit a negative trans-dominant phenotype and could inhibit the activity of the wild-type protein by forming inactive heteromultimers in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Future studies of how the OxyR subunits are arranged , how the subunit contacts are changed upon oxidation , and how many subunits need to be oxidized in order t induce transcription should give further insights into how the OxyR protein is activated by oxidation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Another important difference between these two regulators lies in the activation of DNA binding by OxyR in response to nitrosative stress , whereas RNS inhibit the formation of SsrB-DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20660761" target="_blank">20660761</a>]<br></li>
+<li>As the percentage of DNA in complex with OxyR increases ( Fig. 5B ) , the percentage of DNA probe that is methylated at both GATC pairs decreases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>A. OxyR negatively regulates the expression of zirTS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>To avoid uncontrolled oxidation of OxyR and because it was previously shown that the oxidation state of OxyR is not relevant for opvAB regulation ( 16 ) , we used a mutant version of the OxyR protein , OxyRC199S , which can not be oxidized but retains the properties of the reduced form of OxyR ( 31,32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>OxyR-dependent activation of STM2209-STM2208 expression is independent of the oxidation state of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Expression of opvAB undergoes phase variation under the control of DNA adenine methylation and the transcriptional-regulator OxyR [ 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26583926" target="_blank">26583926</a>]<br></li>
+<li>Cells lacking the key oxidative-stress regulator OxyR showed reduced survival in the presence of adrenaline and complete restoration of growth upon addition of manganese .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18837991" target="_blank">18837991</a>]<br></li>
+<li>Deﬁning the role of OxyR in regulating gtr transcription as an activator and repressor The levels of expression characteristic of the ON and OFF phase may be obtained by intrinsic promoter activity , repression , activation or a combination of these .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>To determine whether this reﬂected a detrimental effect of pDSA23 on MPG203 through high-level ahpCF expression or , alternatively , reﬂected the indirect effects of OxyR sequestration by the plasmid , the experiments were repeated with MPG203 cells containing pPDT12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>However , in the presence of 1 mM H2O2 , the OxyR regulon exerts its detoxiﬁcation function , as described previously ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29857034" target="_blank">29857034</a>]<br></li>
+<li>Under speciﬁc physiological and environmental conditions , the levels of H2O2 are tightly controlled by the transcription factor OxyR , which regulates the expression of genes required for H2O2 scavenging , limiting its generation [ 15,19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>To the best of our knowledge , OxyR is the only identiﬁed bacterial regulator in which sulfhydryls have been co-opted as sensors of nitrosative stress ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20660761" target="_blank">20660761</a>]<br></li>
+<li>Induction of heme synthesis during oxidative-stress seems reasonable because OxyR also induces the synthesis of a major heme-requir-ing enzyme , hydroperoxidase I. Nevertheless , the reduction in hemA mRNA levels while the hemH mutant is activated suggests that during oxidative-stress it may be important to simultaneously shut off the heme synthesis pathway at its ﬁrst step , while completing the conversion of potentially toxic intermediate products into heme .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>The consequent accumulation of hydrogen peroxide will activate the regulator OxyR , which would be predicted to lead to the transcriptional activation of genes such as those involved in the thioredoxin and glutaredoxin systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492857" target="_blank">12492857</a>]<br></li>
+<li>The ﬁnding that OxyR exists as a multimer raises the possibility that the oligomerization state of OxyR might be regulated as a function of oxidation and reduction , similar to the case for the oxygen-sensitive transcriptional-regulator FNR ( 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The presence of unmethylated GATC pairs in up to 20 % of the DNA even in the absence of OxyR was presumably due to inefficient methylation under the binding conditions used here .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Speciﬁcally , the decrease of expression in an oxyR mutant compared with wild-type background suggests OxyR-dependent activation occurs as a result of enhanced binding to the OxyR ( AB ) sequence with the GATC mutations because of absence of methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In the absence of oxidative-stress , OxyR remains mostly in the reduced form due to the reducing environment of the cell [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Supporting this model , the concentrations of H2O2 used herein are sufﬁcient to activate OxyR [ 2 ] and to disrupt the ability of the repressor Fur to control the levels of free iron [ 50 ] , thus relieving the repression of both RyhBs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>To learn more about the nature of the repression we investigated the ability of the OxyR protein to-bind its own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>When OxyR binds to this site at the overlapping oxyR and oxyS promoters ( Fig. 1 ) , OxyR represses the expression of the oxyR gene independent of the oxidative state of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>We do not favor this mechanism for regulating the activity of OxyR , since the elution proﬁle of wild-type OxyR under reducing conditions ( data not shown ) is identical to the elution proﬁle of the oxidized protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>It is possible that in the normally reduced environment of the cytoplasm ( 83 ) , NO does not nitrosylate either the 2Fe-2S cluster of SoxR or the redox active cysteines of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>Since wild-type OxyR puriﬁed in the absence of reducing agents is oxidized , we also examined the size of the wild-type protein when the sizing column was loaded and eluted in the presence of 100 mM dithiothreitol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">OxyR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Like OxyR , other LysR-family members protect unusually long regions from DNase I digestion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_2">
+Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20562293" target="_blank">20562293</a>]<br></label>
+<input id="dom_similarity_2", type="checkbox">
+<div class="DOM_similar">
+<li>Kullik I , Toledano MB , Tartaglia LA , Storz G. Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for oxidation and transcription-activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. & Storz , G. Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26190504" target="_blank">26190504</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Kullik , I. , Toledano , M.B. , Tartaglia , L.A. , and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for oxidation and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li></div>
+				<label class="DOM_collapse_similarity" for="dom_similarity_7">
+Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for DNA-binding and multimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></label>
+<input id="dom_similarity_7", type="checkbox">
+<div class="DOM_similar">
+<li>Kullik , I. , Stevens , J. , Toledano , M.B. and Storz , G. ( 1995 ) Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for DNA-binding and multimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Kullik I , Stevens J , Toledano MB , Storz G. Mutational analysis of the redox-sensitive transcriptional regulator OxyR : regions important for DNA-binding and multimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li></div>
+<li>Alternatively , OxyR can directly sense NO through S-nitrosylation of one of this cysteine ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>OxyR mediates H2O2 activation of mntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Redox active cysteine residue function in sensing oxidative stress and cause activation of OxyR upon disulfide bond formation ( Choi et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>OxyR DNA-binding is stimulated by the oxidation of a redox-active cysteine residue to sulfenic acid , which may subsequently form a disulfide bond with a vicinial cysteine residue ( 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_14">
+Activation of the OxyR transcription factor by reversible disulfide bond formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></label>
+<input id="dom_similarity_14", type="checkbox">
+<div class="DOM_similar">
+<li>Zheng M , Aslund F , Storz G. Activation of the OxyR transcription factor by reversible disulfide bond formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li></div>
+<li>We had previously noted that the S. enterica serovar Typhimurium mntH promoter contains not only OxyR and Fur binding motifs but also a novel inverted repeat element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029031" target="_blank">12029031</a>]<br></li>
+<li>The opvAB regulatory region contains four sites for OxyR binding ( OBS ) , and four methylatable GATC motifs A-D ( GATC ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The regulatory region upstream of the opvAB promoter , depicted in Figures 2 and 9 , and Supplementary Figure S1 , contains four half-sites for binding of OxyR ( OBSA-D ) , and 4 methylatable GATC motifs ( GATC1 -- 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>A regulatory region upstream of the opvAB promoter contains four sites for OxyR binding ( OBSA-D ) and four GATC motifs ( GATC1-4 ) , which are targets for Dam methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>It may be significant that none ofthe six cysteine residues found in the OxyR protein is present in LysR or NodD since cysteines might easily be oxidized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>For OxyR , a region near the C terminus may also be critical for binding , since a protein with 22 amino acids truncated was not able to repress OxyR expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>We can not unambiguously distinguish between these possiblities , but we propose that the two OxyR mutations affect a putative tetramerization domain , since the C terminus seems to be dispensible for dimeric but not tetrameric LysR-family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>How this occurs mechanistically , particularly with the MntR-binding motif relatively distant from the OxyR binding site , is an intriguing question .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_24">
+In this study , we used random mutagenesis to deﬁne regions of the OxyR protein involved in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></label>
+<input id="dom_similarity_24", type="checkbox">
+<div class="DOM_similar">
+<li>Here we used random mutagenesis to deﬁne regions of OxyR involved in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li></div>
+<li>Recent studies of 54 synthetic binding sites , however , allowed the deﬁnition of an oxidized-OxyR binding motif composed of four ATAGxt elements ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The HTH motif represents a DNA-binding domain of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>All four NRAMP promoters contain putative Fur and OxyR binding motifs ; however , the 22 base inverted repeat motif is absent in the Y. pestis promoters for NRAMP and for yfeABCD , a virulence-associated iron transport system in Y. pestis thought to be equivalent to S. typhimurium sitABCD ( Bearden and Perry , 1999 ; Zhou et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>OxyR-DNase I footprints are long and cover 45 bp , and hydroxyl radical footprinting and interference assays showed that the oxidized OxyR protein binds to the four ATAGxt elements by contacting the DNA in four adjacent major grooves ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>It is interesting that for OxyR and possibly for other tetrameric LysR-family members , the C-terminal domain is critical for DNA-binding and the protein binds to approximately 45 bp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Ser54 corresponds to Ser35 in AmpR , Ser33 in OxyR , and Ser38 in CysB and GcvA , and these residues are required for DNA-binding but not oligomerization ( 27 , 43 -- 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>To characterize OxyR domains required for DNA-binding , we chose to randomly mutagenize the entire oxyR gene and screen for mutants defective in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>A C-terminal region of OxyR involved in tetramerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_34">
+Tao , K. , Fujita , N. and Ishihama , A. ( 1993 ) Involvement of the RNA polymerase alpha subunit C-terminal region in co-operative interaction and transcriptional activation with OxyR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></label>
+<input id="dom_similarity_34", type="checkbox">
+<div class="DOM_similar">
+<li>Involvement of the RNA polymerase a subunit C-terminal region in co-operative interaction and transcription-activation with OxyR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7730263" target="_blank">7730263</a>]<br></li></div>
+<li>In agreement with this view , it has been proposed that RNA polymerase may contact OxyR and other LysR-type transcription factors within the DNA region occupied by the regulator ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>In addition , the region contains two putative OxyR binding sites very similar to the consensus sequence [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>An EMSA was carried out with OxyRC199S and a probe of the gtrP22 promoter region that contains both putative OxyR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Therefore , OxyR is required in both activation and repression of gtrP22 , and it exerts these two roles by binding to its two alternative binding sites in the gtrP22 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The R4C , S33N , and R50W mutations in OxyR affect amino acids that show a high degree of conservation among the LysR-family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Five of the mutations causing the DNA-binding defect mapped near the N-terminal helix-turn-helix motif conserved among the LysR-family members , conﬁrming that this region is a DNA-binding domain in OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>We were able to show that the proposed HTH motif in OxyR is a DNA-binding domain , since several mutations in this region led to impaired DNA-binding of the mutant proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Moreover , mutants with single point mutations in the C termini of OxyR and CysB were dimeric , indicating that this region is involved in tetramer formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Several studies suggest that the C-terminal domain of LTTRs is involved in multimerization , since repression and DNA-binding are affected in NahR , CysB , or OxyR with deletions in the C terminus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Moreover , we found that the oxidized and reduced forms of OxyR are predominantly tetrameric , while one binding mutant and one constitutively active mutant , described in the accompanying paper ( 21 ) , were dimeric , suggesting that the C-terminal region affected by these mutations is involved in tetramerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>For example , one of the six cysteine residues ( Cys-199 ) is critical for the redox sensitivity of the transcriptional regulator OxyR ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20562293" target="_blank">20562293</a>]<br></li>
+<li>OxyR has been shown to recruit RNA polymerase by direct contact with the C-terminal domain of the subunit ( 58,50 ) , and the inverse is also true : RNA polymerase can recruit OxyR ( 50 ) , which might contribute to maintenance of the OpvABON state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Furthermore , the four base pair substitutions introduced in the STM2209-STM2208 UAS do not destroy known critical regions of the OxyR binding sequence [ 47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Another important difference between these two regulators lies in the activation of DNA-binding by OxyR in response to nitrosative stress , whereas RNS inhibit the formation of SsrB-DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20660761" target="_blank">20660761</a>]<br></li>
+<li>This would imply the presence of two multimerization domains in OxyR , one involved in dimerization and the other required for the tetramerization of two dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>It is possible that in the normally reduced environment of the cytoplasm ( 83 ) , NO does not nitrosylate either the 2Fe-2S cluster of SoxR or the redox active cysteines of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>In this respect , Cys203 in the C-terminal H4 helix of the dimerization domain of SsrB serves a function analogous to that of OxyR Cys199 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20660761" target="_blank">20660761</a>]<br></li>
+<li>With one exception , all of the nonrepressing mutations were located in or within 15 amino acids of the HTH motif of the OxyR protein presumed to be involved in DNA-binding ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">OxyR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Transcriptional factors belonging to this class include Ada , OxyR , CRP , OmpR , TrpI , and IHF ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Like OxyR , other LysR family members protect unusually long regions from DNase I digestion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The spvR gene product was found to have substantial amino-terminal homology with a large family of bacterial activator transcriptional proteins , including MetR , OxyR , LysR , CysB , and other proteins , at least some of which are involved in amino acid metabolic pathways ( 21 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>Here we report that OxyR is a member of a family of bacterial regulator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>DISCUSSION The cloning and DNA sequence of the E. coli oxyR gene , a positive regulator of a regulon for defenses against oxidative stress , revealed that OxyR is a 34-kDa protein that shows significant homology to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>The OxyR protein shows homology to a family of positive regulatory proteins including LysR in E. coli and NodD in Rhizobium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_7">
+OxyR , a positive regulator of hydrogen peroxide-inducible genes in Escherichia coli and Salmonella typhimurium , is homologous to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1706701" target="_blank">1706701</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></label>
+<input id="evo_similarity_7", type="checkbox">
+<div class="EVO_similar">
+<li>Christman MF , Storz G & Ames BN ( 1989 ) OxyR , a positive regulator of hydrogen peroxide-inducible genes in Escherichia coli and Salmonella typhimurium , is homologous to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21175741" target="_blank">21175741</a>]<br></li>
+<li>Christman , M.F. , Storz , G. , and Ames , B.N. ( 1989 ) OxyR , a positive regulator of hydrogen peroxide-inducible genes in Escherichia coli and Salmonella typhimurium , is homologous to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>Christman , M.F. , Storz , G. and Ames , B.N. ( 1989 ) OxyR , a positive regulator of hydrogen peroxide-inducible genes in Escherichia coli and Salmonella typhimurium , is homologous to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20460466" target="_blank">20460466</a>]<br></li></div>
+<li>OxyR , a member of the LysR family of bacterial transcriptional factors , regulates expression of many genes required for combating hydrogen peroxide ( H2O2 ) - mediated bacterial killing , such as those encoding catalase , glutathione reductase , glutaredoxin , alkyl hydroperoxide reductase , OxyS and Fur ( Christman et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>The transcriptional regulator OxyR belongs to the LysR family , one of the most abundant types of prokaryotic transcriptional regulators ( Maddocks & Oyston , 2008 ) , and has been identified as a protection mechanism for Salmonella against hydrogen peroxide triggered oxidative stress ( Christman , Storz , & Ames , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Expression of fur itself is under its own control but is also regulated by the hydrogen peroxide sensing regulator OxyR ( belonging to the LysR family of transcriptional regulators ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>]<br></li>
+<li>OxyR is a member of the family of LysR-type transcriptional regulators ( 8 , 16 , 33 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Protein sequence alignment of six LysR family members and locations of the OxyR mutations causing a nonrepressing phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The R4C , S33N , and R50W mutations in OxyR affect amino acids that show a high degree of conservation among the LysR family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Five of the mutations causing the DNA binding defect mapped near the N-terminal helix-turn-helix motif conserved among the LysR family members , conﬁrming that this region is a DNA binding domain in OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>It is interesting that for OxyR and possibly for other tetrameric LysR family members , the C-terminal domain is critical for DNA binding and the protein binds to approximately 45 bp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by OxyR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>To test whether OxyR affects zirTS expression , S. Typhimurium SL1344 oxyR mutant strain and a reporter-gene construct harboring a fusion between zirTS and a promoterless b-galactosidase gene ( zirTS : : lacZ ) were constructed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>Gene , operon or Location Cellular function locus Phenotype affected Molecular mechanism Known regulators ﬂjBA , ﬂiC ﬁm gtr Chromosome Chromosome Motility , adhesion and virulence Adhesion to the intestinal epithelium Lipopolysaccharide O-antigen glycosylation Modiﬁcation of O-antigen chain length Adhesion to the intestinal epithelium Adhesion to the intestinal epithelium Epithelial cell invasion Bioﬁlm formation Motility , adhesion and virulence Flagella Fimbriae LPS Site-speciﬁc recombination Unknown DNA-methylation pattern Hin FimB , FimE OxyR Chromosome and prophage P22 Chromosome Virulence plasmid Chromosome Chromosome Chromosome Chromosome Chromosome Chromosome opvAB pef std SPI-1 csgD ﬂiC lpf iol LPS Fimbriae DNA-methylation pattern DNA-methylation pattern DNA-methylation pattern Unknown Unknown Unknown Unknown Unknown OxyR Lrp , PefI Fimbriae TTSS Extracellular matrix Flagella Fimbriae myo-inositol utilization Dam , HdfR , RosE , SeqA StdE , StdF , FliZ c-di-GMP FliA , ClpX , FliZ , YdiV IolR , ReiD Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>Wei , Q. , Le Minh , P.N. , Dotsch , A. , Hildebrand , F. , Panmanee , W. , Elfarash , A. , et al. ( 2012 ) Global regulation-of-gene-expression by OxyR in an important human opportu-nistic pathogen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_4">
+Endogenous protein SNitrosylation in E. coli : regulation by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24929713" target="_blank">24929713</a>]<br></label>
+<input id="rp_similarity_4", type="checkbox">
+<div class="RP_similar">
+<li>Endogenous protein-S-nitrosylation in E. coli : regulation by OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li></div>
+<li>Several microbial resistance genes have been studied most extensively for serovar Typhimurium , which include the stress regulons OxyR ( H2O2 response regulator , e.g. Kat , catalase ) and SoxS Gifu 3P91 Gifu3P330 ∗ ∗ A B 50 ∗ ∗ a b 40 % Survival ∗ ∗ 30 100µm 100µm 20 c d 10 100µm 100µm 0 iNOS + / + iNOS -- / -- Fig. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16448800" target="_blank">16448800</a>]<br></li>
+<li>En second lieu , la Dam MT et les protéines régulatrices , telles que la protéine Cap ( Global positive regulator of transcription ) , Lrp ( Global regulatory protein ) ou OxyR ( Regulatory protein and sensor for oxidative stress ) , concurrencent pour les sites GATC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18722983" target="_blank">18722983</a>]<br></li>
+<li>In addition , resistance to ROS is essential for S. Typhimurium pathogenesis , which is enhanced through dps induction by those pathways controlled by SoxRS , OxyR , s , s , SlyA and RecA ( Halsey S E et al. , 2004 ; Pacello et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>OxyR and not Fur is essential for survival during adrenaline exposure Oxidative stress resistance in bacterial cells is mediated by enzymatic as well as non-enzymatic methods involving manganese [ 53,56 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18837991" target="_blank">18837991</a>]<br></li>
+<li>DISCUSSION OxyR is a speciﬁc-DNA-binding protein which is able to activate as well as repress transcription of speciﬁc target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Most regulators can be classified into following groups : response-to-stress ( BolA , CsiR , GadW , GadX , GadE , OxyR , RpoH , RpoS and YdeO ) , adhesion and biofilm ( BluR , CsgD , FlgM , H-NS , McbR , MlrA , RcdA and RcsB ) , quorum-sensing ( McbR , MqsR and LsrR ) , DNA-repair ( Ada and AidB ) and metabolism ( AppY , FadR and Nac ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26387845" target="_blank">26387845</a>]<br></li>
+<li>Gel ﬁltration analysis of wild-type ( wt ) OxyR and A233V , E225K , and C199S mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Proteins involved in oxidative stress ( NarY , Qor , Dps , WraB , OxyR , GrxA , Gor , GrxB , KatG , KatE , SodC , SodB , AhpF ) ; acid stress ( CadA ) ; and starvation ( SspA , SspB ) were all also differentially regulated by Hfq survival in macrophages , and virulence in mice [ 38 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19277208" target="_blank">19277208</a>]<br></li>
+<li>The role of OxyR and SoxRS in oxidative stress survival in Shigella flexneri .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Both OxyR and SoxRS systems are also involved in resistance to RNI ( 14 , 24 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Two other global transcriptional regulators , OxyR and SoxS , have been shown to be nonessential for virulence of S. enterica serovar Typhimurium in vivo , even though both are essential for resistance to RNI or ROI in vitro ( 19 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Proteome analysis of ex vivo puriﬁed biosensor Salmonella revealed unaltered expression of OxyR regulon members compared to Salmonella without episomal fusion ( Figure S2A ) , indicating negligible OxyR titration by multicopy katGp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24439899" target="_blank">24439899</a>]<br></li>
+<li>A C-terminal region of OxyR involved in tetramerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>OxyR acts as a repressor of catalase expression in Neisseria gonorrhoeae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>The spvR gene product was found to have substantial amino-terminal homology with a large family of bacterial activator transcriptional proteins , including MetR , OxyR , LysR , CysB , and other proteins , at least some of which are involved in amino-acid-metabolic pathways ( 21 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1378053" target="_blank">1378053</a>]<br></li>
+<li>OxyR , a member of the LysR family of bacterial transcriptional factors , regulates expression of many genes required for combating hydrogen peroxide ( H2O2 ) - mediated bacterial killing , such as those encoding catalase , glutathione reductase , glutaredoxin , alkyl hydroperoxide reductase , OxyS and Fur ( Christman et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18757817" target="_blank">18757817</a>]<br></li>
+<li>OxyR coordinates the cellular response-to-hydrogen-peroxide activating expression of at least 8 genes to counter ROS such as katG ( catalase I ) , ahpFC ( alkyl-hydroperoxidase ) , gor ( glutathione oxidoreductase ) , trxC ( thioredoxin 2 ) ( Altuvia et al. , 1997 ; Christman et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>ROS levels do not increase after treatment with H2O2 , which suggests that bacterial defence mechanisms against oxidative stress include the activation of regulon OxyR , which is involved in H2O2 tolerance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29857034" target="_blank">29857034</a>]<br></li>
+<li>Under oxidizing conditions , OxyR also acts to induce expression of the divergently transcribed oxyS gene , which encodes a small , untranslated regulatory RNA ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>This ability enable such proteins to either act as global regulators , as exempliﬁed by the OxyR response-to-oxidative-stress in E. coli and Salmonella ( Storz et al. , 1990 ) , or to deﬁne a more limited expression of gene-expression under other circumstances , as exempliﬁed by SpvR ( Taira et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>Microarray analysis of E. coli during sulfur starvation found increased expression of ahpCF encoding an alkyl hydroperoxide reductase positively regulated by OxyR , and the CysB regulon has been shown by microarray analysis to be expressed in cells stressed by methyl viologen ( Blanchard et al. , 2007 ; Gyaneshwar et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>Additionally , OxyR positively regulates expression of both RyhBs in response-to-oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>The OxyR transcription factor is a LysR-type regulator that activates the expression of numerous genes in response-to-oxidative-stress [ 30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>A recent study demonstrated that the OxyR protein , which activates expression of genes in response to intracellular reactive-oxygen-species ( ROS ) , positively regulates expression of both ryh genes by direct interaction in S. Typhimurium ( Calderon et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27242152" target="_blank">27242152</a>]<br></li>
+<li>A relevant example of this latter class is OxyR , a positive modulator of the expression of genes in response-to-oxidative-stress in E. coli and Salmonella ( Christman et al. , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21175741" target="_blank">21175741</a>]<br></li>
+<li>Oxidation of Cys199 to sulfenic acid by hydrogen peroxide promotes a reversible conformational change that allows OxyR to activate transcription of specific genes involved in resistance to oxidative stress ( Kullik et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>OxyR is a positive regulator of a range of genes implicated in resistance to hydrogen peroxide [ 56,57 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18837991" target="_blank">18837991</a>]<br></li>
+<li>The downstream genes regulated by OxyR that play crucial role in oxidative stress response are HPI catalase ( encoded by katG ) and subunits of alkyl hydroperoxidase ( ahp ) genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Their opposite promoters overlap in a way that is reminiscent of two other gene pairs that exhibit sRNA regulation by transcription factors , including oxyS control by OxyR in response-to-oxidative-stress , and GcvA regulating gcvB in response to glycine levels ( 6,39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18267966" target="_blank">18267966</a>]<br></li>
+<li>OxyR regulates the expression of both hydroperoxidase ( KatG ) and alkylhydroperoxidase ( AhpCF ) , which both help bacteria degrade excessive H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28193547" target="_blank">28193547</a>]<br></li>
+<li>Nitrosative stress is also a signal that activates OxyR , a transcriptional regulator that coordinates the expression of E. coli and Salmonella antioxidant defenses against hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>The Escherichia coli OxyR protein is a redox-sensitive transcriptional regulator which activates the expression of antioxidant defense genes under oxidizing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The gene encoding the OxyR regulator , oxyR , is activated via the formation of disulﬁde bonds under hydrogen peroxide stress ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28003197" target="_blank">28003197</a>]<br></li>
+<li>Evidence that STM2209-STM2208 is a new locus under the control of a Dam-sensitive transcriptional regulator is further supported by the identification of the LysR-like factor OxyR as a positive regulator of STM2209-STM2208 expression ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>The oxidized OxyR also activates the expression of katG ( encoding catalase hydroperoxidase I ) , dps ( encoding nonspeciﬁc DNA-binding proteins ) , gorA ( encoding glutathione reductase ) , and oxyS ( encoding small regulatory RNA ) involved in the bacterial resistance to oxidative stress ( 13 -- 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28003197" target="_blank">28003197</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>The proteins NsrR and NorR are NO-dedicated sensors that regulate genes encoding antinitrosative activity in aerobic and anaerobic bacteria ( 15 , 16 ) , whereas OxyR , SoxR , FNR , DksA , and Fur , which primarily serve as sensors of reactive-oxygen-species , O2 , nutritional starvation , and iron , contribute important aspects of the antinitrosative arsenal of enteric bacteria ( 17 -- 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>]<br></li>
+<li>Therefore σS along with an array of other regulatory proteins ( e.g. FadR , OxyR , RelA ) and SSR core genes in S. Typhimurium ( narZ , dadA , stiA , stiB and stiC ) provide a thorough and well-elicited response ( Seymour , Mishra , Khan , & Spector , 1996 ) A radical way of increasing the survival rates during starvation stress is the degradation of non-essential proteins , lipids and peptidoglycans from the cell envelope and other cell compartments , which serve as energy sources .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Mar. 1995 , p. 1285 -- / 95 / $ 04.0010 Copyright q 1995 , American Society for Microbiology Mutational Analysis of the Redox-Sensitive Transcriptional Regulator OxyR : Regions Important for DNA Binding and Multimerization INES KULLIK , † JENNIFER STEVENS , ‡ MICHEL B. TOLEDANO , § AND GISELA STORZ * Cell Biology and Metabolism Branch , National Institute of Child Health and Human Development , Bethesda , Maryland 20892 Received 26 July 1994/Accepted 15 December 1994 OxyR is a LysR-type transcriptional regulator which negatively regulates its own expression and positively regulates the expression of proteins important for the defense against hydrogen peroxide in Eschericha coli and Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>During normal growth and upon oxidative stress , OxyR also acts as a repressor and negatively autoregulates its own expression and the expression of the Mu phage mom gene ( 8 , 16 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Upon migration to systemic sites and exposure to reactive-oxygen-species from macrophages , OxyR activity is engaged and the zir pathway silenced to allow for increased survival and replication of Sal-monella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>To determine whether additional regulators were involved in the attenuation of the bacterial growth rate within ﬁbroblasts , we tested mutants affected in the following regulatory proteins : ( i ) RpoE , an alternative sigma factor ( 38 ) ; ( ii ) SpiR ( SsrA ) and SpiA , a regulator and a type III structural protein , respectively , both encoded in SPI-2 ( 34 , 51 ) ; ( iii ) OmpR , a transcriptional regulator controlling outer membrane protein content ( 43 ) ; ( iv ) Dam , a DNA-adenine meth-ylase required for systemic disease ( 23 , 33 ) ; ( v ) the global regulators Crp , RelA , and Lrp ( 18 ) ; ( vi ) OxyR and SoxRS , related to oxidative stress ( 13 , 67 ) ; ( vii ) MviA , a regulator required for eliciting systemic disease in mice ( 66 ) ; and ( viii ) Fnr , which controls switching to anaerobic metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>ArcA is one component of the E. coli and Salmonella global control systems that respond to molecular oxygen , including the OxyR , SoxRS , Fnr , and ArcAB systems ( 2 , 28 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>In addition to ArcAB and Fnr , OxyR and SoxRS are the other major global control systems that regulate genes in response-to-oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>In the present work , we show that in S. Typhimurium , OxyR positively regulates the expression of ryhB-1 and ryhB-2 ( Figs. 3 and 4 ) , and we suggest that this could link a response-to-oxidative-stress and iron-homeostasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>Salmonella serovar Typhimurium genes exhibiting more than a ﬁvefold increase in the level of expression during the lactic acid-induced acid tolerance response and members of the OxyR regulon that are down-regulated during the responsea Expression level after exposure to lactic acid at pH 5.8 compared to expression at pH 7 Gene Function or comment Common System name nam atic e Lysine decarboxylase 1 Lysine/cadaverine-transport protein Putative cold shock protein Detoxiﬁcation of hydroperoxides Detoxiﬁcation of hydroperoxides Starvation-induced resistance to H2O2 Catalase ; hydroperoxidase HPI ( I ) Regulatory protein sensor for oxidative stress cadA cadB 5.9 2559 2558 STM STM 50.94 cspB ahpC 8.97 0.2 1996 0608 STM STM ahpF 0.06 0609 STM dps 0.14 0831 STM FIG. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885318" target="_blank">16885318</a>]<br></li>
+<li>Low levels of hydrogen peroxide activate OxyR and induce hemH , which encodes the ultimate enzyme in heme-biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>DISCUSSION The cloning and DNA sequence of the E. coli oxyR gene , a positive regulator of a regulon for defenses against oxidative stress , revealed that OxyR is a 34-kDa protein that shows significant homology to a family of bacterial regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Molecular cloning and nucleotide sequencing of oxyR , the positive regulatory gene of a regulon for an adaptive response-to-oxidative-stress in Escherichia coli : homologies between OxyR protein and a family of bacterial activator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Identiﬁcation and characterization of hydrogen peroxide-sensitive mutants of Escherichia coli : genes that require OxyR for expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16940079" target="_blank">16940079</a>]<br></li>
+<li>Puriﬁcation and characterization of the Escherichia coli OxyR protein , the positive regulator for a hydrogen peroxide-inducible regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Activated OxyR induces transcription of more than 20 genes in the OxyR regulon that function for instance in the following : H2O2 breakdown ( katG , katE and katN ) , DNA-protection ( dps ) , disulfide bond formation ( gorA , grxA ) , iron -- sulfur cluster repair ( sufA ) and reduction of oxidized lipids ( ahpCF ) ( Calhoun & Kwon , 2011 ; Hebrard , Viala , Meresse , Barras , & Aussel , 2009 ; McLean , Bowman , & Poole , 2010 ; Paget & Buttner , 2003 ; Spector & Kenyon , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Dam is involved in epigenetic phase variation in conjunction with either Lrp or OxyR for phase variation of the family of pap ﬁmbrial operons and the agn43 gene family respectively ( van der Woude and Baumler , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Expression of opvAB undergoes phase variation under the control of DNA adenine methylation and the transcriptional regulator OxyR [ 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26583926" target="_blank">26583926</a>]<br></li>
+<li>OxyR is a well known transcriptional regulator [ 45 ] , and has been previously shown to control phase variation of other Dam methylation-sensitive loci : the E. coli agn43 gene [ 70,71 ] and the P22 gtr operon [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Induction of heme-synthesis during oxidative stress seems reasonable because OxyR also induces the synthesis of a major heme-requir-ing enzyme , hydroperoxidase I. Nevertheless , the reduction in hemA mRNA levels while the hemH mutant is activated suggests that during oxidative stress it may be important to simultaneously shut off the heme-synthesis pathway at its ﬁrst step , while completing the conversion of potentially toxic intermediate products into heme .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>In the oxidized state , OxyR activates the expression of oxidative-stress-responding genes [ 45 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>A. OxyR negatively regulates the expression of zirTS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>Under speciﬁc physiological and environmental conditions , the levels of H2O2 are tightly controlled by the transcription factor OxyR , which regulates the expression of genes required for H2O2-scavenging , limiting its generation [ 15,19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>We also monitored the expression of the sitB fusion in response to a variety of other environmental conditions , such as changes in pH , osmolarity , temperature , magnesium concentration and conditions that induce the OxyR regulon ( 1 mM H2O2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10712695" target="_blank">10712695</a>]<br></li>
+<li>OxyR participates in controlling several genes involved in the response-to-oxidative-stress and the production of surface proteins by activating the expression of several genes ( e.g. dps , fur and katG ) whose protein products regulate intracellular hydrogen peroxide levels ( 59 -- 61 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20460466" target="_blank">20460466</a>]<br></li>
+<li>To ﬁnd out whether hemA26 and fur mutations only reduce the expression of genes in the heme pathway , we analyzed the transcription of dps , which encodes a nonspeciﬁc DNA-binding protein that is known to be induced by OxyR in response-to-hydrogen-peroxide ( reviewed in reference 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>Furthermore , the system was shown to be negatively regulated by OxyR , a transcription factor that controls the expression of genes in response-to-oxidative-stress ( 17 ) , and also by the presence of zinc in the media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>The consequent accumulation of hydrogen peroxide will activate the regulator OxyR , which would be predicted to lead to the transcriptional activation of genes such as those involved in the thioredoxin and glutaredoxin systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492857" target="_blank">12492857</a>]<br></li>
+<li>In E. coli and Salmonella Typhimurium , OxyR and SoxRS are the major systems involved in the response-to-hydrogen-peroxide and superoxide , respectively .42 -- 47 Our results show that the cellular effect of oﬂoxacin , a bactericidal antibiotic that produces ROS , occurs only under aerobic conditions , which supports the idea that the additional effect of bactericidal antibiotics should be in the presence of oxygen ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27530757" target="_blank">27530757</a>]<br></li>
+<li>Heni-koff et al. ( 29 ) have recently recognized that these proteins and others [ E. coli IlvY , regulator of ilvC and other genes in the isoleucine-valine biosynthetic pathway ( 30 ) ; E. coli and S. typhimurium CysB , positive regulator of the cysteine regulon ( 31 ) ; S. typhimurium MetR , regulator of the metE and metH genes ( 32 ) ; and the Enterobacter cloacae ampR regulator of the ampC gene , which confers resistance to cepha-losporin ( 33 ) ] comprise a family of bacterial regulatory OxyR - A HT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>g005 The transcription factor OxyR and zinc are involved in zirTS regulation In order to understand better the regulation the ZirTS pathway , we were interested in identifying different regulatory factors that govern the expression of zirTS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>establish that OxyR is involved in the transcriptional regulation of the target gene containing the Mudlux element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>Expression of the zir genes is negatively regulated by OxyR and zinc and may involve the thioredoxin protein ZirR ( red ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>The dps gene is located on the bacterial chromosome , and like spv , it requires the RpoS sigma factor and IHF for full expression ; unlike spv , dps is under the control of the OxyR regulator , a redox-sensitive DNA-binding protein ( Altuvia et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Additionally , OxyR and SoxRS both activate the expression of the iron regulator , Fur ( Zheng et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>The increased expression from a heterologous oxyR : : lacZ gene fusion in an oxyR deletion strain compared to an oxyR ' strain suggests that OxyR is also a negative regulator of its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>OxyR is a LysRtype transcriptional regulator that also acts as a sensor of oxidative stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>However , OxyR also acts as a transcriptional regulator irrespective of its oxidative state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Seth , Hausladen , Wang , and Stamler ( 2012 ) have also demonstrated that OxyR is able to control S-nitrosylation under anaerobic conditions in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>OxyR is a global regulator that senses and signals oxidative stress by direct oxidation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>They showed that OxyR is a key regulator in S-nitrosylation and that hcp transcription is activated by S-nitrosylation of OxyR during anaerobic nitrate respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>This sRNA is a pleiotropic regulator of about 40 genes in E. coli including rpoS , and an anti-mutator that may inhibit alternate stress adaptation pathways when OxyR is activated [ 30,32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19578432" target="_blank">19578432</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">OxyR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Our finding that only a single CysB tetramer binds to a 45-bp site attribute of LysR-type proteins may be indicative of a common in recognizing large binding sites , which have been reported to be between 36 and 55 bp for OxyR ( 56 ) , AmpR ( 33 ) , NodD ( 11 ) , NahR ( 25 , 53 ) , and OccR ( 61 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8206845" target="_blank">8206845</a>]<br></li>
+<li>The presence of these Dam - and OxyR-related sequence elements suggested that gtr phase variation may be controlled by an epigenetic mechanism involving Dam and OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>We had previously noted that the S. enterica serovar Typhimurium mntH promoter contains not only OxyR and Fur binding motifs but also a novel inverted-repeat element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029031" target="_blank">12029031</a>]<br></li>
+<li>Both the reduced and oxidized forms of OxyR can bind DNA , sometimes even at the same regulatory sequence like at agn43 ( Kullik et al. , 1995 ; Wallecha et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Thus , in a dam mutant OxyR binding could occur at either binding site and conversely , with Dam over production OxyR binding should be blocked .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Because OxyR is essential for opvAB expression ( 16 ) , alteration of consensus sequences was avoided inside putative OxyR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Because these GATC sequences are contained within OxyR binding sites , mutations were chosen that did not alter the OxyR consensus sequence ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR binds DNA as a dimer of dimers , and thus these three putative dimer binding sequences will be referred to further as OxyR binding half sites : OxyR ( A ) , OxyR ( B ) and OxyR ( C ) ( Figs 2 and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>We also showed that OxyR binds to two different probes containing either of the two putative alternative OxyR binding site sequences , OxyR ( AB ) and OxyR ( BC ) , and that methylation of GATC sequences contained within these sequences affects OxyR binding ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Using the Virtual-Footprint program ( http://www.prodoric.de/vfp/ ) [ 29 ] we were able to identify a potential binding site for OxyR located 97-bp upstream from the start codon of zirT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18389060" target="_blank">18389060</a>]<br></li>
+<li>Comparison of the gtr sequence with the consensus binding site of a single OxyR dimer ( ATAGxTxxxAxCATAT ) ( Storz et al. , 1990 ; Toledano et al. , 1994 ) showed that in gtr there are three blocks of sequence that have either nine or 10 nucleotides conserved with this consensus binding sequence ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The putative OxyR binding sites are shown along with the consensus OxyR half site binding sequences ( Storz et al. , 1990 ; Toledano et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>An interpretation of these observations is that OBSB and OBSD DNA sequence amelioration may ` trap ' OxyR in the OpvABON configuration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Of these two , has no recognizable OxyR binding site in the promoter region and only one GATC sequence ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Second , once OxyR is bound , Dam access to the GATC pair in the occupied site is blocked ( Figs 3 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>These data are consistent with promoter activation when OxyR is bound at the OxyR ( AB ) containing sequence , and repression when bound at the OxyR ( BC ) region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Taken together , the data suggest that OxyR is bound at OxyR ( AB ) in the ON phase and at the OxyR ( BC ) site in the OFF phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Nevertheless , the data support the conclusion that activation of transcription occurs when OxyR is bound at the OxyR ( AB ) containing sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Methylation protection occurred of the GATC pairs contained in either the OxyR ( AB ) or the OxyR ( BC ) sequences , as evident from protection of individual GATC pairs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>To examine the role of OxyR for this , the amount of upstream DNA was increased to 95 bp upstream of the transcription start site to include only the OxyR ( BC ) site ( sMV174 , Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The remainder of the reaction was incubated at 70 ° C for 10 min to dissociate bound OxyR from the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>( a ) The dps promoter region : localization of the putative RpoS , OxyR and Fur binding sites is indicated by grey boxes , and the putative RcsB-binding site is identified by a black box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>The transcription start site is 33 bp downstream of GATC4 ( Broadbent et al. , 2010 ) and thus the promoter region contains GATC4 and is overlapped by the OxyR ( BC ) binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>How this occurs mechanistically , particularly with the MntR-binding motif relatively distant from the OxyR binding site , is an intriguing question .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Although the OxyR consensus binding motif is somewhat degenerate ( Toledano et al. , 1994 ) , a plausible binding site for this hydrogen peroxideactivated transcriptional activator ( ATCGTTTCACACTATCAAAGTAATCACCCGTACCCATT in S. typhimurium ) lies just upstream of the 235 region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>Thus , methylation of the GATC sequences in the gtrP22 regulatory region prevents OxyR binding at both of its gtrP22 binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In this isolate , the absence of methylation at this region should allow constant binding of OxyR at the OxyR ( AB ) binding site ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In this isolate GATC4 is methylated ( Fig. 3B , lanes 5 -- 8 ) , which is consistent with the absence of an OxyR binding site and the requirement of OxyR binding for sequestration of the GATC sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The GATC3/GATC4 sequences are overlapped by both the RNA polymerase binding site and the OxyR ( BC ) binding site , making it difficult to distinguish the exact role of methylation of this GATC pair for regulation of gtr expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In our original study , a larger region of the mntH promoter that included the MntR binding site , Fur binding site , and OxyR binding site was cloned upstream of lacZ in a single - or low-copy-number plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>In the presence of hydrogen peroxide , mntH is activated by OxyR , acting through an OxyR-binding motif centered just upstream of the likely 35 RNA polymerase-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Induction by peroxide is consistent with the presence of a consensus OxyR binding site in the presumed mntH promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>In contrast , the operon has a regulatory region that is very similar to that of gtrP22 and contains the sequence elements we identiﬁed here as being important for phase variation : three OxyR half sites with identical spacing and four Dam target sequences ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In gtr , the sites bound by OxyR in the OFF and ON lineages have identical number of nucleotides in common with the consensus sequence ( 15 ) , which may explain why the gtr locus has similar ON → OFF and OFF → ON transition rates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>In the ON state , OxyR binds to the OBSB and OBSD sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>OxyR-DNase I footprints are long and cover 45 bp , and hydroxyl radical footprinting and interference assays showed that the oxidized OxyR protein binds to the four ATAGxt elements by contacting the DNA in four adjacent major grooves ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The boxed sequences are the MntR protected sequences , R1 ( the one overlapping the OxyR binding region ) and R2 ( the one overlapping the MntR-box ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24596096" target="_blank">24596096</a>]<br></li>
+<li>Furthermore , the four base pair substitutions introduced in the STM2209-STM2208 UAS do not destroy known critical regions of the OxyR binding sequence [ 47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>In addition , the region contains two putative OxyR binding sites very similar to the consensus sequence [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>This indicates that there are two alternative OxyR binding sites in the gtrP22 promoter , which could overlap at the OxyR ( B ) sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The consensus OxyR binding motif ( 38 ) , Fur binding motif ( 9 , 23 ) , and MntR binding motif ( based on the mntH promoter of E. coli ) ( 30 ) are shown above the corresponding putative sites underlined in the mntH ( 19 ) and sitABCD promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>induced by hydrogen peroxide , weakly induced by EDTA and unresponsive to paraquat , consistent with the presence of Fur and OxyR binding sites in the promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>The higher stability of the OpvABOFF lineage may be caused by binding of OxyR to sites that are identical to the consensus ( OBS and A OBS ) , while the sites bound by OxyR in OpvABON c cells ( OBS and OBS ) are not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Assuming a helical periodicity of 10.5 bp ( 30 ) , the OBS are predicted to be spaced by one , two and one helical turns , which means that all the OxyR binding sites may be on the same face of the DNA helix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The positions of the GATC sequences , OxyR binding sites ( A , B and C ) and RNA polymerase binding site ( -10 and -35 ) are shown on the cartoon below .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>OxyR is required for gtrP22 phase variation and the GATC sequences are contained within the putative OxyR binding sites , suggesting OxyR may be the sequestration factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>The probes contained the putative OxyR ( ABC ) binding sites ( A and D ) , only the OxyR ( AB ) ( B and E ) or only the OxyR ( BC ) binding sites ( C and F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>In contast , the OBSA and OBSC sites of opvAB are identical to the consensus sequence for OxyR binding while OBSB and OBSD share only 8/10 and 7/10 nt with the consensus , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>OxyR binds the opvAB regulatory region Four putative OxyR binding half-sites are found in the regulatory region of opvAB centered in the − 148 , − 116 , − 75 and − 43 positions ( Supplementary Figure S1 ) , and sharing 10 , 8 , 10 and 7 nt respectively with the 10-nt consensus sequence ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Mutations in the OBSB and OBSD OxyR binding sites abol - ish phase variation Of the four OxyR binding half-sites in the opvAB regulatory region , OBSA and OBSC are an absolute match ( 10 out of 10 nt ) to the consensus sequences defined for OxyR binding ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The relevance of the nucleotide sequence of OxyR binding sites for opvAB regulation is illustrated by the observation that single nucleotide changes in OBSB and OBSD lock the system in the ON state ( Figure 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>( A ) Diagram of the opvAB regulatory region , with the GATC sites and the OxyR binding sites outlined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Furthermore , the spacing between the half sites in the putative OxyR binding sites described below is consistent with specific binding of the reduced form of OxyR [ 47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>The opvAB regulatory region contains four sites for OxyR binding ( OBS ) , and four methylatable GATC motifs A-D ( GATC ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>A regulatory region upstream of the opvAB promoter contains four sites for OxyR binding ( OBSA-D ) and four GATC motifs ( GATC1-4 ) , which are targets for Dam methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>A , B , C and D indicate OxyR binding sites , whereas 1 , 2 , 3 , and 4 indicate GATC sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>When OxyR binds the OxyRAB sites , GACT1 and GATC2 are protected from methylation and gtr transcription occurs [ 52 ] ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>The OBSA and OBSC sites are identical to the consensus sequence for OxyR binding , while OBSB and OBSD are not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>OxyR binds DNA as a tetramer ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Because SeqA binds hemimethylated GATC sites ( 59 ) , a tentative speculation is that it might favor DNA methylation over OxyR binding during DNA replication , as previously suggested for agn43 ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by OxyR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Plasmids containing oxyR ( pET-TOPOOxyR ) were checked by PCR and DNA sequencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_2">
+The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10618525" target="_blank">10618525</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19223478" target="_blank">19223478</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></label>
+<input id="tu_similarity_2", type="checkbox">
+<div class="TU_similar">
+<li>The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and s in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and sS in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li>
+<li>Altuvia , S. , Almirön , M. , Huisman , G. , Kolter , R. & Storz , G. 1994 The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>[ 34 ] S. Altuvia , M. Almiron , G. Huisman , R. Kolter , G. Storz , The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li></div>
+<li>Expression of dps in E. coli has been shown to be regulated 38 by the stationary-phase sigma factor RpoS ( ) , OxyR , and IHF ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></li>
+<li>It is produced primarily throughout stationary phase and its expression is regulated by the stationary phase sigma factor RpoS ( s38 ) , OxyR , and IHF [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20920181" target="_blank">20920181</a>]<br></li>
+<li>OxyR is unlinked to its target and lacks the characteristic divergent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>This protection is not seen with extracts made from strains that do not overproduce OxyR and suggests that the mechanism by which OxyR negatively autoregulates its is and blocking , expression by binding to , therefore the DNA that are for its own sequences required transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>It would be interesting to determine whether expression or activity of the ArcAB system is induced by RNI and whether the sensor ArcB is modiﬁed by nitrosylation , as OxyR and SoxR are .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Moreover , while in E. coli the expression of dps in logarithmic phase is modulated by the exposition to sources of hydrogen peroxide ( mediated by OxyR ) , in the stationary phase its expression is regulated by σs and is not induced by this reactive oxygen species [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li>
+<li>Thus , there is a possibility of a co-regulation of katG by both OxyR and Hrg in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>They showed that OxyR is a key regulator in S-nitrosylation and that hcp transcription is activated by S-nitrosylation of OxyR during anaerobic nitrate respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>A DNA bend is induced by OxyR in agn43 ( 47,56 ) , another phase variation locus regulated by Dam methylation and OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Unlike agn43 , which is repressed by OxyR [ 70 ] , and gtr , which is both activated and repressed by OxyR [ 4 ] , STM2209-STM2208 is under positive control by OxyR ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>The downstream genes regulated by OxyR that play crucial role in oxidative stress response are HPI catalase ( encoded by katG ) and subunits of alkyl hydroperoxidase ( ahp ) genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Microarray analysis of E. coli during sulfur starvation found increased expression of ahpCF encoding an alkyl hydroperoxide reductase positively regulated by OxyR , and the CysB regulon has been shown by microarray analysis to be expressed in cells stressed by methyl viologen ( Blanchard et al. , 2007 ; Gyaneshwar et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>DISCUSSION OxyR is a speciﬁc-DNA-binding protein which is able to activate as well as repress transcription of speciﬁc target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>In addition , mntH is controlled by the hydrogen peroxide sensor OxyR ( Kehres et al. , 2002a ; Ikeda et al. , 2005 ) causing its expression to also be induced in response to intracellular hydrogen peroxide stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>]<br></li>
+<li>These experiments indicate that OxyR is essential for the expression of STM2209-STM2208 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>These observations suggest that oxidation of OxyR is not necessary for STM2209-STM2208 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>This finding suggests that OxyR is a negative regulator of its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>The increased expression from a heterologous oxyR : : lacZ gene fusion in an oxyR deletion strain compared to an oxyR ' strain suggests that OxyR is also a negative regulator of its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>OxyR bound to the oxyR-oxyS promoter region represses its own expression under both oxidizing and reducing conditions and activates oxyS transcription upon oxidation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>In the same study it was reported that the mutation in the katG gene was also without effect on Salmonella survival suggesting OxyR is not essential for bacterial survival in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Low levels of hydrogen peroxide activate OxyR and induce hemH , which encodes the ultimate enzyme in heme biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>The autoregulated oxyR gene in E. coli is also not linked to any of the genes for which it serves as an activator ( 9 ) , but although DNase I footprints are qualitatively different with reduced and oxidized forms of highly purified OxyR protein , appreciable quantitative and differences in binding to positively negatively regulated promoters have not been observed ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1706701" target="_blank">1706701</a>]<br></li>
+<li>As shown in Fig. 5 , OxyR was able to bind to both promoter regions , and not to a DNA fragment corresponding to the coding region of the katG gene ( negative control ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>oxyR Is Negatively Autoregulated by the Binding of OxyR to Its Own Promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2471187" target="_blank">2471187</a>]<br></li>
+<li>Expression of fur itself is under its own control but is also regulated by the hydrogen peroxide sensing regulator OxyR ( belonging to the LysR family of transcriptional regulators ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>]<br></li>
+<li>While OxyR is not present to induce the expression of both sRNAs , Fur is being disabled by sub-millimolar levels of peroxide , releasing the repression of ryhB-1 and ryhB-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>Phase variation of STM2209-STM2208 expression was also unaffected by the oxidation state of OxyR ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>OxyR-dependent activation of STM2209-STM2208 expression is independent of the oxidation state of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Evidence that STM2209-STM2208 is a new locus under the control of a Dam-sensitive transcriptional regulator is further supported by the identification of the LysR-like factor OxyR as a positive regulator of STM2209-STM2208 expression ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>In addition , the level of expression in an oxyR - background was similar whether or not the OxyR ( A ) half site was present ( compare sMV244 and sMV136 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Phase variation of the S. Enteritidis derived regulatory region was also abrogated by over expression of dam and when sequence containing only the promoter and the putative OxyR ( BC ) half sites drives expression ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>We have shown that higher ( millimolar ) concentrations of hydrogen peroxide affect the ability of OxyR to induce expression of the its target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>One was that an H2O2 concentration sufficient to promote the expression of genes belonging to the classical OxyR regulon ( genes activated by oxidative damage ) showed no effect on the expression of STM2209-STM2208 ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22606300" target="_blank">22606300</a>]<br></li>
+<li>Under speciﬁc physiological and environmental conditions , the levels of H2O2 are tightly controlled by the transcription factor OxyR , which regulates the expression of genes required for H2O2 scavenging , limiting its generation [ 15,19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>The example best known at the molecular level is the gtr operon of the bacteriophage P22 integrated in the Salmonella genome , which shows phase variable expression under the control of Dam methylation and the transcriptional regulator OxyR [ 52 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>When OxyR binds to this site at the overlapping oxyR and oxyS promoters ( Fig. 1 ) , OxyR represses the expression of the oxyR gene independent of the oxidative state of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>We also monitored the expression of the sitB fusion in response to a variety of other environmental conditions , such as changes in pH , osmolarity , temperature , magnesium concentration and conditions that induce the OxyR regulon ( 1 mM H2O2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10712695" target="_blank">10712695</a>]<br></li>
+<li>To ﬁnd out whether hemA26 and fur mutations only reduce the expression of genes in the heme pathway , we analyzed the transcription of dps , which encodes a nonspeciﬁc DNA-binding protein that is known to be induced by OxyR in response to hydrogen peroxide ( reviewed in reference 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>Furthermore , the system was shown to be negatively regulated by OxyR , a transcription factor that controls the expression of genes in response to oxidative stress ( 17 ) , and also by the presence of zinc in the media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>The Escherichia coli OxyR protein is a redox-sensitive transcriptional regulator which activates the expression of antioxidant defense genes under oxidizing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>The opvA and opvB genes form a bicistronic transcriptional unit , which is transcribed from a canonical , 70-dependent promoter under the control of the LysR-type factor OxyR ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>The dps gene is located on the bacterial chromosome , and like spv , it requires the RpoS sigma factor and IHF for full expression ; unlike spv , dps is under the control of the OxyR regulator , a redox-sensitive DNA-binding protein ( Altuvia et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Burkhold-eria pseudomallei RpoS regulates OxyR and the katG-dpsA operon under conditions of oxidative stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24271167" target="_blank">24271167</a>]<br></li>
+<li>Results Expression of the gtrP22 operon phase varies and this requires Dam and OxyR P22-dependent O1 serotype modiﬁcation had originally been described to show heterogeneity ( Hayes , 1947 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>By using lacZ-fusions and electrophoretic mobility shift assays , we conﬁrmed the requirement of OxyR for inducing expression of both ryhB-1 and ryhB-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>Peroxide exposure increased the expression of RyhB-1 and RyhB-2 and , in both cases , this regulation depended on OxyR , but not RpoS , which controls their expression in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>During normal growth and upon oxidative stress , OxyR also acts as a repressor and negatively autoregulates its own expression and the expression of the Mu phage mom gene ( 8 , 16 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>Dam and OxyR also control expression of the phage Mu mom gene , but whether expression phase varies is not known ( Hattman and Sun , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Induction of the sufA operon encoding Fe-S assembly proteins by superoxide generators and hydrogen peroxide : involvement of OxyR , IHF and an unidentiﬁed oxidant-responsive factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18441067" target="_blank">18441067</a>]<br></li>
+<li>The decrease in the transcript levels of the hemA gene was also detected by S1 analysis ( Fig. 1C , ﬁrst and second lanes ) , and we found that this decrease was independent of both Fur and OxyR ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>The sodB gene was up-regulated at 2 h and 24 h after infection , however , expression of the genes encoding OxyR , the oxidative stress regulator and katEG and sodA genes , were not up-regulated by Typhi in macrophages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16443683" target="_blank">16443683</a>]<br></li>
+<li>Expression of the zir genes is negatively regulated by OxyR and zinc and may involve the thioredoxin protein ZirR ( red ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+<li>Under oxidizing conditions , OxyR also acts to induce expression of the divergently transcribed oxyS gene , which encodes a small , untranslated regulatory RNA ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>]<br></li>
+<li>In E. coli , OxyR regulates gor expression [ 6 ] , while the expression of trxB has not been determined under this condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - BaeR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">BaeR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">BaeR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Abbreviations : BaeR-P , phosphorylated BaeR ; BBS , BaeR-binding site ; CIP , ciprofloxacin ; EMSA , electrophoretic mobility shift assay ; MEN , menadione ; NBT , nitro blue tretrazolium ; qRT-PCR , real-time RT-PCR ; ROS , reactive oxygen species ; S. Typhimurium , Salmonella enterica serovar Typhimurium ; SOD , superoxide dismutase ; TCS , two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>Other inducers of BaeR activity include iron , copper and zinc as well as PapG overproduction ( Leblanc , Oates , & Raivio , 2011 ; Macritchie et al. , 2008 ; Raffa & Raivio , 2002 ; Rowley et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>BaeR induces iNOS , IL-1b , IL-6 and TNF-a mRNA expression The level of iNOS mRNA was measured in RAW 264.7 and THP-1 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces IL-1b , IL-6 and TNF-a mRNA expression in THP-1 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>As shown in Fig. 2 , BaeR signiﬁcantly increased iNOS expression in both cell lines , compared to untreated controls .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces NO production in RAW 264.7 cells A concentration-dependent increase in NO production was observed in RAW 264.7 cells stimulated with BaeR at concentration levels ranging from 3 to 30 mg/ml for 16 h , compared to untreated controls ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>The S. Paratyphi A response-regulator protein BaeR induces nitric oxide ( NO ) production in RAW 264.7 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Linked with this observation , BaeR induction during stationary phase growth may well be to prevent accumulation of membrane damaging toxic metabolites , but requires further investigation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>It will be interesting to test whether BaeR is required for long term carbon starvation and whether it is also required for carbon starvation inducible cross resistance to other environmental stressed akin to RpoE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>TolC , AcrAB , and BaeR regulate multidrug resistance to pump out bile acids , antibiotics , dyes , and disinfectants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>BaeR at 3 mg/ml concentration level was sufﬁcient to induce as high level of NO as 100 ng/ml of LPS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Cells were stimulated with 3 mg/ml of BaeR for the indicated time .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Cells were treated with MAPK inhibitors , including SB203580 , SP600125 , or U0126 for 1 h followed by stimulation with BaeR ( 3 mg/ml ) for 12 h. LPS ( 100 ng/ml ) was used as a reference material for measurement of cell activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>SDS/PAGE and western blotting Raw 264.7 cells were stimulated for 0 , 5 , 15 , 30 , 45 or 60 min with 3 mg/ml of BaeR , and western blot analysis was conducted according to a reported method [ 15 ] , with slight modiﬁcation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Cells were stimulated with 3 mg/ml of BaeR or 100 ng/ml of LPS as a positive control for 16 h and IL-1b , IL-6 and TNF mRNA expression analyzed using qRT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR dependent induction of mdtA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>RESULTS Overexpression of BaeR increases resistance to oxacillin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Overexpression of BaeR increases resistance to - lactams , novobiocin , and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>As shown in Fig. 4 , BaeR induced phosphorylation of ERK1/2 , JNK and p38 MAPK as early as 5 min and it lasted for at least 60 min .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>The amounts of phosphorylated BaeS and BaeR were measured as in Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>BaeR ( 3 mg/ml ) upregulated iNOS mRNA expression in both cell lines , and induced signiﬁcant production of NO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>The NO production was through increased iNOS mRN expression because the speciﬁc iNOS inhibitor , L-NIL , resulted in a signiﬁcant suppression of NO production by BaeR ( Fig. 5b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR activates mitogen-activated protein kinases ( MAPKs ) in RAW 264.7 cells It is well established that activation of MAPKs is an integral part of the inﬂammatory process induced by bacterial products , such as LPS [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces phosphorylation of mitogen-activated protein kinases ( MAPKs ) in RAW 264.7 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Since NO , plays a crucial role in innate host defense mechanisms against microbial infection [ 24,25 ] , we ﬁrst evaluated the induction of NO in RAW 264.7 cells stimulated with various concentrations of BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR is a potent inducer of NO in which 3 mg/ml concentration of the protein induces greater than ten-fold higher NO production than control cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>JNK and p38 MAPK , but not ERK 1/2 , are involved in BaeR-induced NO production To investigate the speciﬁc role of each MAPKs on BaeR-induced NO production , cells were treated with speciﬁc inhibitors for MAPKs in culture media 1 h prior to stimulation with BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>ERK 1/2 , JNK and p38 MAPKs mediate BaeR - induced production of proinﬂammatory cytokines ELISA analysis for the protein levels of IL-1b , IL-6 and TNF-a in RAW 264.7 cells showed a similar pattern of increase as observed with their mRNA levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induced signiﬁcant levels of IL-1b , TNF-a and IL-6 in both RAW 264.7 and THP-1 cells suggesting the proin-ﬂammatory role of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>2 Supporting this hypothesis , Martin et al. ( 2008 ) demonstrated that SoxS is activated at high concentrations of 2 2 O2 , while CIP is suggested to generate low levels of O2 ( Goswami et al. , 2006 ) , and therefore sodA upregulation by SoxS and/or BaeR could be dose dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>TyphimuriumbaeRmutantis sensitive to tungstate To identify conditions where there is an absolute requirement for BaeR in S. Typhimurium physiology and response to stress , phenotype microarrayswere employed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>In sum , the results from EMSAs and transcriptional fusions indicate that BaeR positively regulates sodA in response to CIP by a direct interaction with its promoter region , most likely by binding to BBS-1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>In unpicking the answer to this question we sought to identify conditions which both induced the BaeR response and led to a SalmonellabaeR mutant phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>In Salmonella enterica serovar Typhimurium ( S. Typhimurium ) , a BaeR mutant is fourfold more sensitive to ceftriaxone ( Hu et al. , 2005 ) , and the BaeSR TCS responds to the fluoroquinolone ciprofloxacin ( CIP ) ( Guerrero et al. , 2012 ) , which contributes to bacterial cell death by inhibiting DNA gyrase ( Cambau & Gutmann , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>This is the first environmental stress identified where BaeR is both induced and required for cell viability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Here we demonstrate stationary phase growth , iron and sodium tungstate as novel inducers of the BaeRregulon , with BaeR critically required for Salmonella resistance to sodium tungstate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Novel Inducers of the Envelope Stress Response BaeSR in Salmonella Typhimurium : BaeR Is Critically Required for Tungstate Waste Disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_38">
+Novel inducers of the envelope stress response BaeSR in Salmonella typhimurium : BaeR is critically required for tungstate waste disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27879336" target="_blank">27879336</a>]<br></label>
+<input id="act_similarity_38", type="checkbox">
+<div class="ACT_similar">
+<li>Novel inducers of the envelope stress response BaeSR in Salmonella Typhimurium : BaeR is critically required for tungstate waste disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li></div>
+<li>Samples were electro-phoresed on a 6 % non-denatur-ing PAGE and stained with ethidium bromide S. Typhimurium , and consistent with this , we show by means an electrophoretic mobility shift assay that the BaeR protein binds to this region and had more aYnity when the protein was phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Moreover , the mdtA expression is directly regulated by binding of BaeR at the promoter region , and this interaction is enhanced when the protein is phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Moreover , we show that both members of this system are required for mdtA activation under ciproXoxacin treatment and conWrmed that His 250 from BaeS and Asp 61 from BaeR are required , even though BaeR binds speciWcally to the mdtA promoter with more aYnity when the protein is phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>When we used non-phosphorylated BaeR , the band shift pattern was diVerent and bound at higher protein concentrations , suggesting that phosphorylation is critical for BaeR aYnity to the promoter region ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Each promoter and negative control DNA ( 199 bp from mdtA-codifying region , ampliWed using the mdtARTFw and mdtARTRv primers ) ( '' 2 ng ml ¡ 1 ) was mixed with increasing concentrations of puriWed BaeR , BaeR-P ( phosphorylated BaeR ) , BaeR D61A or BaeR D61A-P ( phosphorylated BaeR D61A ) in the presence of binding buVer ( 10 mM Tris -- Cl [ pH 7.5 ] , 50 mM KCl , 5 mM MgCl2 , 1 mM dithiothreitol , 2.5 % glycerol , 0.05 % NP-40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>BaeR phosphorylation level was estimated by detecting both the increase in BaeR-associated 32P radioactivity and the decrease in BaeS-associated radioactivity ( Fig. 2a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>DISCUSSION In this study , we performed a genome-wide search for a regulator of multidrug resistance in S. enterica serovar Typhi-murium by random shotgun cloning and discovered BaeR , which upregulates the mdtABCD locus and acrD , thereby increasing resistance to - lactams , novobiocin , and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>In a two-pronged approach of transcriptomics and genomic screening , we identify tungstate as an environmental stress where BaeR is essential for both regulation of drug efflux and cell survival and demonstrate the combined role of MdtA , and either AcrD or AcrB in heavy metal detoxification .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>The promoter regions of acrD and mdtABC harbor binding sites for the response-regulator BaeR , which activates acrD and mdtABC transcription in response to indole , copper , and zinc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>S. typhimurium spy transcription was strongly induced during spheroplast formation , and also when exposed to membrane-disrupting agents , including ethanol and the antimicrobial peptide polymyxin B. Moreover , spy induction requi ¬ red the activity of regulator proteins BaeR and CpxR , which are part of the major envelope stress response systems BaeS/BaeR and CpxA/CpxR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28316480" target="_blank">28316480</a>]<br></li>
+<li>In conclusion , this study has clearly demonstrated for the first time that spy transcription can be induced in S. typhimurium by exposure to envelope stresses , including ethanol , polymyxin B , and spheroplasting , and is dependent on the envelope stress response-regulators BaeR and CpxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28316480" target="_blank">28316480</a>]<br></li>
+<li>Microbes and Infection 15 ( 2013 ) 951e957 www.elsevier.com/locate/micinf Original article BaeR protein from Salmonella enterica serovar Paratyphi A induces inﬂammatory response in murine and human cell lines Seung Jin Lee , Elias Gebru Awji , Myung Hee Kim , Seung Chun Park a b c a , * a Laboratory of Veterinary Pharmacokinetics & Pharmacodynamics , College of Veterinary Medicine , Kyungpook National University , Daegu 702-701 , Republic of Korea b COPD Program , Lovelace Respiratory Research Institute , Albuquerque , NM 87108 , USA c Division of Biosystems Research , KRIBB , Daejeon 305-806 , Republic of Korea Received 18 March 2013 ; accepted 9 September 2013 Available online 18 September 2013 Abstract BaeR is the response-regulator of the two-component system , BaeSR , found in Escherichia coli ( E. coli ) and Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Upregulation of BaeR in S. Typhimurium was also observed in the presence of tungstate ( Appia-Ayme et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Transphosphorylation in vitro was performed by mixing equimolar amounts of phosphorylated BaeS and puriWed BaeR in the presence of an excess amount of unlabeled ATP ( 0.5 mM ) for the indicated times ( 30 s -- 15 min ) at 37 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>BaeR and BaeS exhibit an in vitro phosphotransfer reaction in the presence of ATP ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>By real-time PCR , we showed that mdtA activation in the presence of ciproXoxacin depends on both members of this system and that histidine 250 of BaeS and aspartic acid 61 of BaeR are needed for this .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>One possibility is that BaeR could modulate the levels of one or more of these factors or sRNA , and in this manner regulate sodB , although this requires further investigation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>Whether CpxR , or indeed many of the other regulators of drug efflux such as RamA or RamR , can compensate for BaeR under other stress inducing conditions remains to be elucidated , but the lack of BaeR phenotypes under these conditions indicates that this might be the case .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>This evidence suggests that overproduction of BaeR decreased drastically the drug accumulation , presumably via increased active eZux , or the absence of the regulator is involved in a loss of resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Confirmation of the baeR tungstate sensitivity and measurement of the largest transcriptional induction of baeR in the presence of sub-inhibitory concentrations of tungstate provided with us a tool to unpick the molecular regulation of the BaeR response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>In support of this , loss of BaeR in the presence of sub-inhibitory concentrations of tungstate results in up-regulation of the majority of envelope stress pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Both AcrD and MdtABC are required for the Salmonella multidrug resistance induced by BaeR ( Table 3 ) , indicating that this resistance is due to the increased expression of acrD and mdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>In the present study , we report positive regulation of the multidrug efﬂux pump mdtABC and acrD genes by a response-regulator , BaeR , of the two-component BaeSR signal transduction system ( 38 ) , a phenomenon that leads to increased resistance to - lactams , novobiocin and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>In the mdtABC acrB strain , baeR overexpression conferred resistance to oxacillin , cloxacillin , nafcillin , novobiocin , and deoxycholate , but the levels of resistance to oxacillin , cloxacillin , and novobiocin were lower than those in the acrB/pbaeR strain , suggesting that the MdtABC drug efﬂux system contributes to the multidrug resistance modulated by the BaeR regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>g006 RND type multidrug efflux pumps are required for tungstate waste disposal To complement the microarray based approach , which would include both direct and indirect transcriptional changes caused by the loss of BaeR in the presence of tungstate , we also sought to randomly complement the tungstate baeR phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Using the mdtA-lacZ fusion described earlier , as opposed to the 2 and 3 fold inductions observed with indole , zinc etc , in the presence of sodium tungstate there is a more than 10 fold induction of the mdtA reporter which is dependent on BaeR MdtA , AcrD , and Spy [ 8,25,27,29 ] had already been identified as BaeR regulated in other studies so we first tested the sensitivity of mutants in these genes to tungstate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>As a tool to identify the Salmonella BaeR regulon and unpick the tungstate phenotype , DNA microarrays were employed to measure the global transcriptional differences between the WT and baeR mutant in the presence and absence of tungstate ( DataS1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Although it is possible that BaeR can be exposed and come in contact with macrophages in vivo when the bacteria is killed by the host immune and inﬂammatory responses , due to the hostile environment of the phagosome , or during the course of antibiotic treatment [ 7,33 e35 ] , little is known about the extent to which the released protein contributes to the pathogenesis of S. Paratyphi A infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>However , the authors suggest that the physiological role for BaeR is to respond to stress which specifically damage MdtA leading to an induction of MdtA transport and removal of the toxic agent from the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>For instance , the nap and nar genes , encoding nitrate reductases , and the nir operon encoding a nitrite reductase are up-regulated in the presence of tungstate only if BaeR is present ( Table 1 and DataS1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>BaeR thus regulates the transcription of the mdt-bae operon and acrD directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>We wanted to identify conditions in S. Typhimurium which induce the BaeR response , with loss of BaeR resulting in sensitivity to this condition , as route to try and identify the physiological role of this two component regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>This leads us to suggest a modified role for BaeR , in the up-regulation of several RND systems including MdtAandAcrD in response to specific envelope damaging agents such as tungstate , as a belt and braces approach to protect the cell through waste disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>As a control , BaeR protein was incubated in the presence of [ -32 P ] ATP for 30 min , and no phosphorylation was observed , conWrming that the presence on BaeS -- P is fundamental for transphosphorylation to BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>We screened a range of metals to look for inducers of the BaeR pathway , and agree that baeR in S. Typhimurium responds to increased exogenous copper and zinc concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Both BaeR and BaeR-P were able to-bind to the wild-type promoter ( Fig. 3b , c ) , although at different concentrations ( 0.9 and 0.6 mM , respectively ) , indicating that phosphorylation of BaeR increases its affinity for the promoter of sodA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>While we agree that gallic acid does induce mdtA in a BaeR-dependent manner ( figure 3 ) , BaeR is not required for Salmonella to survive in the presence of gallic acid under the conditions we have tested ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Enterobactin siderophores protect Salmonella from Tungstate toxicity We have clearly demonstrated earlier in this study that BaeR is required for Salmonella survival in the presence of 30mM tungstate and have identified a BaeR dependent mechanism for the detoxification or waste disposal of tungstate , through regulation of RND type multidrug transporters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>It is worth noting that CpxR also controls regulation of MdtA and AcrD , yet a CpxR mutant is not tungstate sensitive , indicating that BaeR is the primary regulator , at least in the terms of tungstate waste disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>This phosphoryl group is then transferred to an aspartate residue of the cognate response-regulator ( Hoch 2000 ) , which for the case of BaeR is Asp 61 , resulting in its activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Taken together , our data suggest that BaeR is a putative inducer of inﬂammatory response and the MAPKs are involved in the process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>Salmonella BaeR is induced by indole , copper , iron and zinc but is not required for resistance BaeSR was identified as the third envelope stress response pathway in E. coli [ 8 ] , and shares overlap with CpxAR in regulation of the periplasmic protein Spy .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>[ 29 ] supports the role of zinc but adds copper as an inducer of MdtA in a BaeR dependent manner in S. Typhimurium ATCC 14028and shows BaeR is induced during stationary phase RpoE is induced during the stationary phase of LB cultures [ 35 ] , and is also important for the starvation stress response [ 36 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>In the present study , we found that BaeR activates expression of the multifunctional outer membrane channel gene tolC in S. enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Our results suggest that in Salmonella , BaeR may synergize with PhoP in response to the acidification of the environment in phagosomes during the infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Thus , our results suggest that BaeR can synergize with PhoP in response to the acidification and low cation concentration inside host phagosomes during the infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>As deletion mutants in these genes can grow on tungstate ( Table S1 ) and the encoded proteins are not necessary for growth in an aerobic rich media , their BaeR regulation in this condition is difficult to explain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>It seemed likely that in cells carrying this plasmid , overexpressed BaeR was causing the transcriptional activation of genes involved in oxacillin resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">BaeR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul>				<label class="DOM_collapse_similarity" for="dom_similarity_1">
+We dem-onstrated in vitro that residue histidine 250 is essential for BaeS autophosphorylation and aspartic acid 61 for BaeR transphosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></label>
+<input id="dom_similarity_1", type="checkbox">
+<div class="DOM_similar">
+<li>We demonstrated in vitro that His 250 residue is essential for BaeS autophosphorylation and Asp 61 residue for BaeR transphosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li></div>
+<li>After electrophoresis , the gel was washed , dried and exposed onto an image plate BaeS -- BaeR D61A , transphosphorylation was not observed as indicated by the absence of BaeR radioactivity , indicating that Asp 61 residue is critical in phosphate transfer ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>We puriWed the cytoplasmic BaeS domain , which retains the autophosphorylation and transphosphorylation activity to the cognate RR BaeR in the absence of the eVector-binding domain as described to this system in E. coli ( Yamamoto et al. 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>These results indicate that His 250 residue from BaeS and Asp 61 residue from BaeR are essential for the function of this two-component system and the activation of the target gene mdtA in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>This phosphoryl group is then transferred to an aspartate residue of the cognate response regulator ( Hoch 2000 ) , which for the case of BaeR is Asp 61 , resulting in its activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">BaeR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>BaeR exhibits sequence similarity to the response regulators and is likely to constitute a two-component regulatory system with a sensor kinase , BaeS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by BaeR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Table 2 Drug resistance proﬁles of response regulators in E. coli Response MIC Ratio ( fold increase , MIC for acrB mutant overproducing response regulator versus MIC for acrB mutant ) regulator EM KM FOM DXR NOV CV R6G TPP BENZ SDS DOC MPIPC CMZ CMD CAZ AZT IPM AMK CBPC MCIPC CRMN PAPM BIPM FRPM 1 1 1 4 1 1 1 4 4 2 1 1 2 1 1 2 1 1 1 1 1 1 2 8 1 1 1 1 1 1 1 1 1 1 BaeR CheY CitB CpxR CreB DcuR EvgA FimZ KdpE NarL NarP OmpR RcsB RstA TorR YedW YehT 1 1 4 1 1 1 1 1 1 1 1 2 2 2 4 1 2 1 1 32 1 1 1 1 1 1 2 4 1 1 1 2 1 1 2 1 1 2 1 1 1 1 1 1 1 1 4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 8 1 1 2 1 1 1 1 1 1 1 16 1 N32 32 1 1 1 1 N32 2 1 1 16 2 N32 16 1 2 1 1 1 1 4 1 32 2 16 2 1 1 1 1 1 1 4 1 2 2 4 4 8 1 1 1 1 1 4 1 1 1 1 1 1 8 1 1 1 2 ND ND ND 4 ND ND ND ND ND ND ND ND ND ND ND ND ND 8 16 8 ND ND ND ND ND 8 ND ND ND ND ND ND 8 ND ND ND ND ND ND ND ND ND 16 ND ND ND ND ND ND 32 ND ND ND ND ND ND ND ND ND 4 ND ND ND ND ND ND 4 ND ND ND ND 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 2 2 1 2 2 1 2 1 2 1 1 1 1 1 ND ND ND ND ND 2 ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND 8 ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND 1 1 1 1 32 1 1 2 1 1 1 1 1 1 1 1 4 1 4 4 1 1 2 1 1 1 1 1 1 1 1 1 1 2 8 1 1 1 2 2 1 1 1 1 1 1 1 1 1 16 1 1 1 1 1 1 1 1 1 1 1 2 1 1 2 2 1 1 1 1 2 2 1 2 1 Abbreviations : EM , erythromycin ; KM , kanamycin ; FOM , fosfomycin ; DXR , doxorubicin ; NOV , novobiocin ; CV , crystal violet ; R6G , rhodamine 6G ; TPP , tetraphenylphosphonium bromide ; BENZ , benzalkonium ; SDS , sodium dodecyl sulfate ; DOC , deoxycholate ; MPIPC , oxacillin ; CMZ , cefmetazole ; CMD , cefamandole ; CAZ , ceftazidime ; AZT , aztreonam ; IPM , imipenem ; AMK , amikacin ; CBPC , carbenicillin ; MCIPC , cloxacillin ; CRMN , carmonam ; PAPM , panipenem ; BIPM , biapenem ; FRPM , faropenem .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>Nagakubo , S. , Nishino , K. , Hirata , T. , and Yamaguchi , A. ( 2002 ) The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multi-drug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16359323" target="_blank">16359323</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919284" target="_blank">17919284</a>]<br></li>
+<li>The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21646491" target="_blank">21646491</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_4">
+J Bacteriol 178:6238 -- 6249 Nagakubo S , Nishino K , Hirata T , Yamaguchi A ( 2002 ) The putative response regulator BaeR stimulates multidrug-resistance of Esch-erichia coli via a novel multidrug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></label>
+<input id="rp_similarity_4", type="checkbox">
+<div class="RP_similar">
+<li>Nagakubo , S. , Nishino , K. , Hirata , T. , Yamaguchi , A. : The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25011632" target="_blank">25011632</a>]<br></li>
+<li>[ 18 ] S. Nagakubo , K. Nishino , T. Hirata , A. Yamaguchi , The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>[ 42 ] S. Nagakubo , K. Nishino , T. Hirata , A. Yamaguchi , The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>BaeR induces IL-1b , IL-6 and TNF-a mRNA expression in THP-1 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>The S. Paratyphi A response regulator protein BaeR induces nitric oxide ( NO ) production in RAW 264.7 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces phosphorylation of mitogen-activated protein kinases ( MAPKs ) in RAW 264.7 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>SNEA also found novel significant transcription factors ( RpoN and BaeR ) that have never been reported playing a role during infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>TyphimuriumbaeRmutantis sensitive to tungstate To identify conditions where there is an absolute requirement for BaeR in S. Typhimurium physiology and response-to-stress , phenotype microarrayswere employed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>We predicted that as BaeR had already been shown to regulate RND efflux pumps , although single mutants were themselves tungstate resistant , they must play an important role in the cellular response to tungstate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>As a control , an assay showed no interaction between BaeR and the fragment including the acrA promoter ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Novel Inducers of the Envelope Stress Response BaeSR in Salmonella Typhimurium : BaeR Is Critically Required for Tungstate Waste Disposal Corinne Appia-Ayme * , Elaine Patrick , Matthew J.Sullivan , Mark J. Alston , Sarah J. Field , Manal 1 1 1 3 1 AbuOun , Muna F. Anjum , Gary Rowley * 2 2 1 1 School of Biological Sciences , University of East Anglia , Norwich Research Park , Norwich , United Kingdom , 2 Animal Health and Veterinary Laboratories Agency ( AHVLA ) ( Weybridge ) , Surrey , United Kingdom , 3 The Genome Analysis Centre , Norwich Research Park , Norwich , United Kingdom Abstract screening for factors which controlled expression of the periplasmic protein Spy ( spheroplast protein Y ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>It seemed likely that in cells carrying this plasmid , overexpressed BaeR was causing the transcriptional activation of genes involved in oxacillin resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>The Bae Pathway A search for novel 2CST systems in E. coli discovered the BaeSR system , consisting of the IM-bound SK , BaeS , and its cognate cytoplasmic response regulator , BaeR ( Nagasawa , Ishige , & Mizuno , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>The response regulator BaeR modulates the expression of mdtABC and acrD , which encode multidrug exporter systems ( Hirakawa et al. 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>BaeR controls the expression of mdtABC , acrD , and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>( C ) The BaeS/BaeR system activates expression of the mdt operon , acrD , and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>The lack of phenotypes associated with loss of BaeR is surprising given its classification as an envelope stress response pathway , and also given that the regulon members , away from the periplasmic chaperone , Spy , primarily consists of the RND multidrug efflux pumps MdtA andAcrD , which allow bacteria to resist a wide range of antimicrobial agents .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Although CpxR also regulates transcription of mdtA and acrD , cpxR deletion strains do not possess a tungstate-sensitive phenotype , suggesting that BaeR is the primary regulator of these genes in response to tungstate waste removal and is critically required for S. Typhimurium resistance to Na2WO4 ( Appia-Ayme et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Supporting a role for BaeSR in drug-resistance , overexpression of BaeR significantly increases the resistance of an E. coli acrAB mutant to novobiocin and deoxycholate , by upregulating a multiple drug-transport system encoded by the mdtABCD operon ( Baranova & Nikaido , 2002 ; Nagakubo et al. , 2002 ; Nishino et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>In the present study , we report positive regulation of the multidrug efﬂux pump mdtABC and acrD genes by a response regulator , BaeR , of the two-component BaeSR signal-transduction-system ( 38 ) , a phenomenon that leads to increased resistance to - lactams , novobiocin and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>DISCUSSION In this study , we performed a genome-wide search for a regulator of multidrug-resistance in S. enterica serovar Typhi-murium by random shotgun cloning and discovered BaeR , which upregulates the mdtABCD locus and acrD , thereby increasing resistance to - lactams , novobiocin , and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Overexpression of BaeR in a DacrB backgroundin E. coliupregulatesmdtA and acrDand results in resistance to ß-lactam antibiotics , novobiocin and deoxycho-late [ 27,28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>This leads us to suggest a modified role for BaeR , in the up-regulation of several RND systems including MdtAandAcrD in response to specific envelope damaging agents such as tungstate , as a belt and braces approach to protect the cell through waste disposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Pletzer , D. , Stahl , A. , Oja , A.E. , and Weingart , H. ( 2015 ) Role of the cell envelope stress regulators BaeR and CpxR in control of RND-type multidrug efflux pumps and transcriptional cross talk with exopolysaccharide-synthesis in Erwinia amylovora .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>In a two-pronged approach of transcriptomics and genomic screening , we identify tungstate as an environmental stress where BaeR is essential for both regulation of drug efflux and cell survival and demonstrate the combined role of MdtA , and either AcrD or AcrB in heavy metal detoxification .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>As a tool to identify the Salmonella BaeR regulon and unpick the tungstate phenotype , DNA microarrays were employed to measure the global transcriptional differences between the WT and baeR mutant in the presence and absence of tungstate ( DataS1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>Extracytoplasmic stress in gram-negative bacteria is sensed by multiple regulatory systems that serve to maintain cell envelope and periplasmic homeostasis , including the alternative sigma factor σE ( RpoE ) , the CpxA-CpxR and BaeS-BaeR two-component regulatory systems , and the phage-shock protein ( Psp ) system ( Ades , 2004 ; Darwin , 2005 ; Duguay and Silhavy , 2004 ; Raivio and Silhavy , 2001 ; Rowley et al. , 2006 ; Ruiz and Silhavy , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20807201" target="_blank">20807201</a>]<br></li>
+<li>Several biological functions of BaeR , related to multidrug efﬂux and bacterial virulence , have been described .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR also activates the expression of mdtD , which encodes a putative MFS-type transporter , but it has been reported that mdtD is not related to multidrug-resistance ( 3 , 37 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">BaeR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The promoter regions of acrD and mdtABC harbor binding sites for the response regulator BaeR , which activates acrD and mdtABC transcription in response to indole , copper , and zinc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>It has been reported that the promoter regions of acrD and mdtABC harbor binding sites for the response regulator BaeR ( Nishino et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199934" target="_blank">27199934</a>]<br></li>
+<li>BaeR-binding site sequence motifs and model for the control of drug efﬂux system genes by the two-component BaeS/BaeR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>BaeR -- P binds to the mdtA promoter region Electrophoretic mobility shift assays were performed with phosphorylated BaeR-6 # His and a 600 bp DNA fragment of the upstream region of mdtA as described in methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>A search of the regions upstream ( 100 bp ) of tolC did not reveal the consensus sequence resembling the BaeR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Search of the regions upstream ( 100 bp ) of tolC did not reveal the consensus sequence resembling the BaeR box , and an electrophoretic mobility shift assay did not show signiﬁcant BaeR binding to this region ( data not shown ) , suggesting that BaeR may indirectly activates the expression of tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>We identiﬁed sequences resembling the BaeR box in the region upstream of the mdt operon and acrD ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Sequences resembling the BaeR box were found in the region upstream of the mdt-bae operon and acrD ( Fig. 2A ) , and an electrophoretic mobility shift assay showed that the BaeR protein binds to these regions ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by BaeR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Expression of sodA and sodB is induced by ofloxacin ( a ) BBS1 MUTA sodA -- 300 -- 50 -- 250 -- 200 -- 150 BBS2 MUTB -- 100 +1 WT ( A ) MUTA ( B ) MUTB ( C ) MUTAB ( D ) ( b ) BaeR ( c ) BaeR-P 0 0.3 0.6 0.9 1.2 ( mM ) 0 0.3 0.6 0.9 1.2 ( mM ) 0 0.3 0.6 0.9 1.2 ( mM ) 0 0.3 0.6 0.9 1.2 ( mM ) 0 0.3 0.6 0.9 1.2 ( mM ) * * * * ( A ) ( A ) ( B ) ( C ) ( D ) NC NC NC NC NC Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>BaeR ( 3 mg/ml ) upregulated iNOS mRNA expression in both cell lines , and induced signiﬁcant production of NO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces iNOS , IL-1b , IL-6 and TNF-a mRNA expression The level of iNOS mRNA was measured in RAW 264.7 and THP-1 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>BaeR induces IL-1b , IL-6 and TNF-a mRNA expression in THP-1 cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24055826" target="_blank">24055826</a>]<br></li>
+<li>In agreement with the protein analysis baeR is clearly induced during stationary phase survival and indicates a role for BaeR under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21886814" target="_blank">21886814</a>]<br></li>
+<li>BaeR also activates the expression of mdtD , which encodes a putative MFS-type transporter , but it has been reported that mdtD is not related to multidrug resistance ( 3 , 37 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Our results indicate that BaeR modulates the expression of sodB ( Fig. 2b , 3b ) ; however , EMSAs suggest that its role is indirect ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>This indicates that the BaeS/BaeR two-component system generates a positive feedback loop by regulating the mdt-bae operon ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>BaeR is the response regulator of a putative two-component system , which also includes the sensor kinase BaeS , encoded in a gene located upstream of baeR ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>These results indicate that the mdtABC and acrD drug efﬂux genes are directly regulated by BaeR protein ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Recently , it has been reported that Salmonella BaeR controls the expression of the outer membrane proteins OmpW and STM3031 , which might be associated with ceftriaxone resistance ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Detection of mdtA mRNA after ciproXoxacin treatment BaeS and BaeR are members of a TCS and are suggested to be part of an operon being the last two genes of a cluster of 6 genes , whose expression is positively regulated by BaeR in multidrug and metals treatment ( Nishino et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Together , these data indicate that the multidrug resistance conferred by the BaeR regulator is due to increased expression of both the mdtABC and acrD drug efﬂux system genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Both AcrD and MdtABC are required for the Salmonella multidrug resistance induced by BaeR ( Table 3 ) , indicating that this resistance is due to the increased expression of acrD and mdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>Among the nine drug efﬂux systems in Salmonella , quantitative real-time PCR analysis showed that BaeR induced the expression of acrD and mdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>These results indicate that BaeR protein induces the expression of the MdtABC and AcrD drug efﬂux systems and the TolC outer membrane channel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>BaeR controls the expression of mdtABC , acrD , and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>( C ) The BaeS/BaeR system activates expression of the mdt operon , acrD , and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>To examine the ability of the BaeR protein to bind the promoter regions of mdt operon and acrD , we ﬁrst constructed a derivative of the baeR gene encoding a protein with six histidine residues at its amino terminus , and we showed that a plasmid encoding this baeR derivative ( pQEbaeRH6 shown in Table 1 ) could activate the transcription of the mdtABC and acrD genes ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>We identiﬁed sequences resembling the BaeR box in the region upstream of the mdt operon and acrD ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+<li>BaeR thus regulates the transcription of the mdt-bae operon and acrD directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17933888" target="_blank">17933888</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

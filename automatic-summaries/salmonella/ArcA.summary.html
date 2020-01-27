@@ -1,0 +1,907 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - ArcA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">ArcA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">ArcA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>In addition , no bound was detected when either fragment was incubated with non-phosphorylated ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>FNR functions alone or in synchronization with other regulators such as ArcA , RpoS , NarL , Fur or SoxR ( Spiro & Guest , 1991 ; Hassan & Sun , 1992 ; Gunsalus & Park , 1994 ; Schröder et al. , 1994 ; Park & Gunsalus , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>This means that as long as respiration or any other enzymic reaction catalysed by CydA or controlled by ArcA is possible , rpoS transcription is decreased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>Positive Normalized Enrichment Score ( NES ) values represent pathways up-regulated by ArcA , while negative NES values represent pathways negatively regulated upon H2O2 treatment under aerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_5">
+Positive values indicate pathways positively regulated by ArcA , while negative ones indicate pathways that are downregulated by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="act_similarity_5", type="checkbox">
+<div class="ACT_similar">
+<li>Positive values indicate pathways negatively regulated by ArcA , while negative values indicate pathways that are up-regulated by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li></div>
+<li>] rlgA map rpsB yajC nrdR 2.8 2.6 4.0 3.2 2.5 3.1 7.1 8.2 No No No No No No No No No No No No No Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Yes [ 12 ] Yes [ 12 ] cyoE cyoD cyoB cyoA fepA Yes [ 12 ] Yes [ 12 ] Yes [ 12,15,16,126-129 ] Yes [ 12,16,127-129 ] Yes [ 12,15,130 ] No 3.2 No 10.7 Yes [ 128,129 ] fes entC 39.8 6.8 4.1 5.6 2.7 2.8 -4.2 7.4 Yes [ 128,129 ] Yes [ 130 ] No No No No No No Fnr [ 21 ] sucC gpmA cmk Yes [ 12 ] No No No Yes [ 12,15 ] No Yes [ 15 ] No STM1013 STM1133 ydiE nth STM1586 Fnr [ 21 ] Rcs [ 131 ] 2.9 No No 76.1 -4.0 -37.3 11.4 3.1 5.8 -8.8 Fnr [ 21 ] Fnr [ 21 ] ldhA ynaF No No Yes [ 132 ] Yes [ 29 ] No No No Yes [ 12,15 ] Yes [ 29 ] No No Yes [ 12,15 ] No No tonB hns STM1795 Fnr [ 21 ] Fnr [ 21 ] STM2186 cirA eutC eutB yffB Yes [ 133 ] No No No No No No 4.0 -4.1 -3.2 2.6 4.6 9.1 53.8 Fnr [ 21 ] Fnr [ 21 ] No Yes [ 15,59 ] iroB iroN sitA No Yes [ 15,46,61,134-138 ] No Yes [ 12 ] Yes [ 101 ] Yes [ 14,79,88 ] MntR [ 61 ] No No 3.5 3.8 yggU yqjH secY bfr bfd Yes [ 100 ] No No No 4.0 3.2 5.9 11.8 Yes [ 12,14,15 ] Yes ArcA and Fnr [ 141 ] feoB [ 12,14,63,134,139,140 ] No No No No Yes [ 14,55,82,88,143-148 ] No STM3600 STM3690 rpoZ udp sodA No No Fnr [ 21 ] Fnr [ 21 ] -6.8 -4.2 3.9 -5.4 9.1 No No Yes [ 85,146,148 ] IscS [ 142 ] Fnr , ArcA , IHF , SoxRS [ 53,81 ] yjcD N 2.8 Table 4 Comparison of Differentially Expressed Genes in Δ?Δ?fur That Contain a Putative Fur Binding Site with Confirmed Data of Fur Regulation from other Studies and the Possible Involvement of other Transcription Regulators ( Continued ) No -5.8 -3.6 No dcuA aspA No Yes [ 13,15 ] NarL [ 149,150 ] ArcA [ 151 ] NsrR [ 99 ] ytfE 10.0 Yes [ 13 ] fhuF 8.5 Yes [ 12,13,15 ] No Yes [ 11,152,153 ] a Genes from the present study that are regulated by Fur and possess a putative Fur-binding motif bFold change of expression in Δfur relative to the wt 14028s c Evidence of direct Fur binding the regulatory region of the gene d Regulation by other transcription factors besides Fur Figure 6 Role of Fur in the transcriptional , translational and post-translational regulation of sodA and sodB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>On the other hand , only non-hydroxylated lipid A species were detected when ArcA was overexpressed under anaerobic conditions ( Figure 1 , lower right panel ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In S. Typhimurium 14028s grown under anaerobic conditions , ArcA regulates either directly or indirectly more than 392 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Under aerobic conditions , no interaction between NuoG , CydA , ArcA and RpoS was detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>Under these conditions , ArcA should be inactive and slight changes in cAMP levels could affect induction ; no variability was seen when exogenous cAMP was added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Furthermore , genes coding for transcriptional-repressor CytR , nitrite reductase , 2-dexoyribose-5-phosphate aldolase , thymidine phosphorylase , lysine/cadaverine transport protein , putrescine / ornithine antiporter , ornithine decarboxylase , ethanola-mine operon , and propanediol operon as well as its transcriptional-regulator PocR were activated by ArcA ( Figure 3B and 3C , and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Under low O2 concentrations , the phosphorylated ArcA after sensing of low O2 signal by ArcB can indirectly activate loiA gene transcription , LoiA can then activate SPI-1 T3SS through directly activating HilD , thus promoting epithelial cell invasion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Park , D. M. , Akhtar , M. S. , Ansari , A. Z. , and Kiley , P. J. ( 2013 ) The bacterial response-regulator ArcA uses a diverse binding site architecture to regulate carbon oxidation globally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>[ 21 ] E.H. Morales , B. Collao , P.T. Desai , I.L. Calderón , F. Gil , R. Luraschi , S. Porwollik , M. McClelland , C.P. Saavedra , Probing the ArcA regulon under aerobic/ROS conditions in Salmonella enterica serovar Typhimurium , BMC Genomics 14 ( 2013 ) 626 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24937451" target="_blank">24937451</a>]<br></li>
+<li>Hypochlorous acid and hydrogen peroxide-induced negative regulation of Salmonella enterica serovar Typhimurium ompW by the response-regulator ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>[ 20 ] E. Morales , I.L. Calderón , B. Collao , F. Gil , S. Porwolik , M. McClelland , et al. , Hypochlorous acid and hydrogen peroxide-induced negative regulation of Salmo-nella enterica serovar Typhimurium ompW by the response-regulator ArcA , BMC Microbiol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28193547" target="_blank">28193547</a>]<br></li>
+<li>Morales EH , Calderón IL , Collao B , Gil F , Porwollik S , McClelland M , Saavedra CP : Hypochlorous acid and hydrogen peroxide-induced negative regulation of Salmonella enterica serovar Typhimurium ompW by the response-regulator ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Research in Microbiology 162 ( 2011 ) 214e222 www.elsevier.com/locate/resmic Response regulator ArcA of Salmonella enterica serovar Typhimurium downregulates expression o mpD , a porin facilitating uptake of hydrogen peroxide f O Iván L. Calderón , Eduardo Morales , Nelson J. Caro , Catalina A. Chahúan , Bernardo Collao , Fernando Gil , José M. Villarreal , Francisco Ipinza , Guido C. Mora , Claudia P. Saavedra * Laboratorio de Microbiologıa Molecular , Facultad de Ciencias Biológicas , Universidad Andrés Bello , República 217 , Santiago , Chile Received 29 July 2010 ; accepted 1 October 2010 Available online 7 December 2010 Abstract Here we demonstrate that OmpD , the most abundant porin in Salmonella enterica serovar Typhimurium , facilitates uptake of hydrogen peroxide ( H2O2 ) and that its expression is negatively regulated by ArcA upon peroxide exposure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Calderón IL , Morales E , Caro NJ , Chahuán CA , Collao B , Gil F , Villareal JM , Ipinza F , Mora GC , Saavedra CP : Response regulator ArcA of Salmonella enterica serovar Typhimurium downregulates the expression of OmpD , a porin facilitating uptake of hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>ArcA seems to slightly repress flhDC ( i. e. , below our cut-off level of ± 2.5-fold ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>stand functional associations or interactions of those proteins regulated by ArcA , next we performed network analysis using the STRING database .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>We also identified 120 genes that were regulated by the anaerobic regulator , Fnr , as well as by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In some cases , this regulation can not be explained only by simple additive effects of each regulator , suggesting complex functional interactions between ArcA and Fnr [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>ArcA regulates different genes after ROS exposure in aerobiosis , under aerobic-growth in rich media and under anaerobi-osis ( Figure 1 , 2 and 4 ; Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>[ 115 ] Alexeeva , S. , Hellingwerf , K.J. and Teixeira de Mattos , M.J. ( 2003 ) Requirement of ArcA for redox regulation in Escherichia coli under microaerobic but not anaerobic or aerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Alexeeva S , Hellingwerf K , Mattos JT : Requirement of ArcA for Redox Regulation in Escherichia coli under Microaerobic but Not Anaerobic or Aerobic Conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>In absence of ArcA under aerobic conditions , H2O2 exposure resulted in lower levels of glutathione reductase activity , leading to a decreased GSH ( reduced glutathione ) / GSSG ( oxidized glutathione ) ratio .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>After H2O2 exposure under aerobic conditions , ArcA was found to regulate turnover of reduced glutathione ( GSH ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Induction was dependent on the transcriptional-regulator ArcA , with a second transcriptional-regulator , FNR , playing a negative role speciﬁcally under anaerobic conditions ( S. Darie and R. P. Gunsalus , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550494" target="_blank">8550494</a>]<br></li>
+<li>Transcript levels of ompD were measured since its expression is regulated by ArcA under ROS conditions [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Regulation of SodA production is complex but includes repression by Fnr , ArcA , and Fur , such that expression is repressed under anaerobic conditions ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>These observations suggest that ArcA is a negative regulator of lpxO expression under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>ArcA mutant of S. enterica serovar Enteritidis exhibited normal growth under both aerobic and anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>All assays were performed under aerobic conditions with vigorous shaking since ArcA is known to be the global regulator induced under anaerobic conditions and anaerobic conditions may affect bacterial resistance to other stresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>ArcA is most active under microaerobic and anaerobic conditions [ 26,115 ] when it suppresses genes encoding enzymes of TCA cycle , probably to decrease respiration under less favourable conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>In the last few years , it has been observed that , in addition to its role as a global response-regulator in bacterial anaerobic-growth , ArcA is also important in resistance to oxygenreactive intermediates in different bacteria ( Loui et al. , 2009 ; Lu et al. , 2002 ; Wong et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Conversely , the response-regulator ArcA is IM-localized in cells grown in LB or those grown in LPM for a short duration , but is CYT-localized in cells grown overnight in LPM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22900174" target="_blank">22900174</a>]<br></li>
+<li>To determine whether the negative regulation by ArcA was dependant on its cognate sensor ArcB , ompW mRNA levels were evaluated in a ΔarcB strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>One may thus hypothesize that host-encoded functions such as Lrp , Dam methylation and ArcA might be part of signal transduction pathways that regulate bacterial conjugation in response to cellular or environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Our results demonstrated that in S. Typhimurium , ArcA serves as a transcriptional-regulator coordinating cellular metabolism , flagella biosynthesis , and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Transcription factors Fnr and ArcA are the major regulators involved in adaptation to oxygen availability ( Compan and Touati , 1994 ; Kiley and Beinert , 1998 ; Sawers , 1999 ; Fink et al. , 2007 ; Ravcheev et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>It has ﬁve promoters and is activated by global regulators , including Crp , ArcA , and integration host factor , and by a speciﬁc activator , PocR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>The dctA gene encodes the aerobically expressed transporter for succinate , malate , and fumarate and is catabolite ( cyclic AMP receptor protein ) and anaerobically ( ArcA ) repressed ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16585773" target="_blank">16585773</a>]<br></li>
+<li>The positive regulatory protein , PocR , is necessary for the induction of the cob and pdu operons and is subject to global regulatory control via ArcA and/or Crp [ 69,70 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>ArcA is a repressor of S. Typhimurium fis The redox sensors ArcAB and FNR are transcriptional-activators in low oxygen conditions , making them prime candidates for activating sustained fis expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Salmon , K. A. , Hung , S. P. , Steffen , N. R. , Krupp , R. , Baldi , P. , Hatfield , G. W. , and Gunsalus , R. P. ( 2005 ) Global gene expression profiling in Escherichia coli K12 : effects of oxygen availability and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_48">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="act_similarity_48", type="checkbox">
+<div class="ACT_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>Jiang , F. , An , C. , Bao , Y. , Zhao , X. , Jernigan , R. L. , Lithio , A. , Nettleton , D. , Li , L. , Wurtele , E. S. , Nolan , L. K. , Lu , C. , and Li , G. ( 2015 ) ArcA controls metabolism , chemotaxis , and motility contributing to the pathogenicity of avian pathogenic Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_51">
+Levanon SS , San KY , Bennett GN : Effect of oxygen on the Escherichia coli ArcA and FNR regulation systems and metabolic responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></label>
+<input id="act_similarity_51", type="checkbox">
+<div class="ACT_similar">
+<li>Effect of oxygen on the Escherichia coli ArcA and FNR regulation systems and metabolic responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17220229" target="_blank">17220229</a>]<br></li></div>
+<li>The Global Regulator ArcA Controls Resistance to Reactive Nitrogen and Oxygen Intermediates in Salmonella enterica Serovar Enteritidis Sangwei Lu ,1 Patrick B. Killoran ,1 Ferric C. Fang ,2 and Lee W. Riley1 * Program in Infectious Diseases and Immunity , School of Public Health , University of California at Berkeley , Berkeley , California ,1 and Department of Medicine , Pathology and Microbiology , University of Colorado Health Sciences Center , Denver , Colorado2 Received 26 June 2001/Returned for modiﬁcation 3 October 2001/Accepted 18 October 2001 Salmonella enterica serovar Enteritidis is a major cause of food-borne diseases associated with consumption of shell eggs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>This leads to activation of ArcA , which regulates a variety of metabolic and regulatory genes , subsequently shifting the cell into a state of oxidative-stress through hydroxyl radical production and eventual cell death ( Kohanski , Dwyer , Wierzbowski , Cottarel , & Collins , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>This led us to test whether the redox-sensing transcription factors ArcA and FNR regulate S. enterica fis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>ArcA increases resistance of S. enterica serovar Enteritidis to ASN .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>ArcA increases the resistance of S. enterica serovar Enteritidis to GSNO and hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Antimicrob Agents Chemother 49:3955 -- 3958 Jeon Y , Lee YS , Han JS , Kim JB , Hwang DS ( 2001 ) Multimerization of phosphorylated and non-phosphorylated ArcA is necessary for the response-regulator function of the Arc two-component signal transduction system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Multimerization of phosphorylated and non-phosphorylated ArcA is necessary for the response-regulator function of the Arc two-component signal transduction system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16339942" target="_blank">16339942</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>However , no in vitro data to support direct interaction of ArcA with Pcob are available .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8636018" target="_blank">8636018</a>]<br></li>
+<li>In anaerobic conditions , sensor-kinase ArcB is activated by reduced quinones and subsequently activates its cognate transcriptional-regulator ArcA by phosphorylating ArcA at Asp54 ( Georgellis et al. , 1998 ) ; however , it has been reported that in E. coli , ArcB can also phosphorylate ArcA directly through His292 under aerobic conditions ( Matsushika and Mizuno , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Interestingly , neither ompD nor ompW expression was down-regulated in an ArcA dependant manner , suggesting that the ArcA regulon under anaerobic and aerobic ROS conditions could be different .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Together , these results indicate that ArcA has a major role in regulating gene expression under aerobic conditions and that the genes regulated in aerobiosis are different from those regulated in anaerobiosis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Interestingly , the genes regulated by ArcA in response to H2O2 differ from those regulated under anaerobic conditions [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Therefore , in contrast to the pathways regulated by ArcA under aerobic conditions , the pathways positively regulated by ArcA in response to H2O2 under aerobic conditions have positive NES values , while the pathways negatively regulated by ArcA in response to H2O2 under aerobic conditions have negative NES values .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Of the 220 genes upregulated by ArcA in aerobiosis , only 15 are positively regulated by ArcA under anaerobic conditions ( Figure 1A ) , while of the 122 genes downregulated by ArcA under aerobic conditions , only 10 are also downregulated by ArcA in anaerobiosis ( Figure 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Interestingly , genes of the Krebs cycle , which are negatively regulated by ArcA under anaerobic conditions [ 8 ] , were not repressed in aerobiosis ( Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>The gene gor was upregulated by ArcA under aerobic conditions with H2O2 ( Figure 2 , Additional file 2 : Table S2 ) , therefore decreased levels of both GSH and GR activity in the arcA mutant exposed to H2O2 under aerobic conditions were expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Neither katN nor sodA , previously described as members of the ArcA regulon under anaerobic conditions [ 8,51 ] , were found to be regulated by ArcA under aerobic conditions with or without H2O2 treatment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>The experimental evidence shown here indicates that ArcA is a transcriptional-repressor of the S. Typhimurium ompD gene when cells are exposed to hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>We recently demonstrated that ArcA negatively regulates the expression of S. Typhimurium ompD after H2O2 exposure by direct interaction with its promoter region [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>In the ArcAB two-component system , ArcA is a site-specific DNA binding protein that is activated by phosphorylation when ArcB senses a drop in redox potential [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>These results showed that LoiA is able to sense and respond to low O2 via the ArcB/ArcA system for SPI-1 activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>ArcZ is negatively controlled by the ArcB/ArcA two component system [ 76 ] and was recently shown to indirectly stimulate biofilm formation in Salmonella [ 63 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Although the effects of these global regulatory proteins have not been shown directly , it is thought that the cAMP receptor protein-cAMP complex acts by inducing pocR transcription ( 1 ) , while ArcA may increase pocR transcription under anoxic conditions and may activate cob transcription directly ( 1 , 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>In addition , we also found the presence of a few small clusters including those required for amino acid and lipid metabolism , suggesting their anaerobic repression by ArcA ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>We did not see upregulation of FNR or ArcA , the two major regulators responding to anaerobic conditions , or other anaerobically induced genes ( Gunsalus and Park , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492857" target="_blank">12492857</a>]<br></li>
+<li>This suggests that rather than changes in expression , ArcA is activated in response to ROS , most likely by phosphorylation of residue D54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>We feel that the observed variability is probably due to slight differences in cAMP and active ArcA levels caused by harvesting cells at slightly different times .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Anaerobically , variability was seen only during growth-on-glucose , when the cAMP level is low and Crp is largely inactive ; slight changes in active ArcA levels due to differences in oxygenation of dense cultures could affect induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>The cumulative expression change for ArcA and ArcB was identical for both isolates , while ArcC was present in only one isoform , and the increase observed was much less in strain 204 compared to 74 ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>( E ) W1 , W2 and W3 were incubated with increasing amounts of non-phosphorylated ArcA The ArcAB two component system mediates ompW negative regulation To establish a direct relationship between ompW negative regulation and ArcA-P binding to its promoter region , ompW expression was evaluated by qRT-PCR in a ΔarcA strain exposed to H2O2 and HOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>ORIGINAL RESEARCH published : 08 June 2018 doi : 10.3389 / fmicb .2018.01220 Fnr and ArcA Regulate Lipid A Hydroxylation in Salmonella Enteritidis by Controlling lpxO Expression in Response to Oxygen Availability Paulina A. Fernández † , Felipe Velásquez † , Héctor Garcias-Papayani , Fernando A. Amaya , Jaime Ortega , Sebastián Gómez , Carlos A. Santiviago and Sergio A. Álvarez * Laboratorio de Microbiología , Departamento de Bioquímica y Biología Molecular , Facultad de Ciencias Químicas y Farmacéuticas , Universidad de Chile , Santiago , Chile Edited by : George Grant , Lipid A is the bioactive component of lipopolysaccharide , and presents a dynamic structure that undergoes modiﬁcations in response to environmental signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Gene set enrichment analysis ( GSEA ) of the expression data from WT and ΔarcA strains , revealed that , in response to H2O2 challenge in aerobically grown cells , ArcA down regulated multiple PEP-PTS and ABC transporters , while up regulating genes involved in glutathione and glycerolipid metabolism and nucleotide transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>One study conducted in E. coli used a proteomic approach and determined that ArcA regulates the expression of fliC , oppA and gltI in response to H2O2 [ 7 ] , while in S. Typhimurium ArcA negatively regulates ompD and ompW [ 27,28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Several studies in E. coli , S. Typhimurium , H. influenzae and Shewanella oneidensis have used global gene expression profiling to determine the ArcA regulon under anaerobic conditions , showing that the effect of ArcA is pleiotropic and coordinates a response that includes changes in cellular metabolism , motility and chromosomal replication , among others [ 8,10,23-26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Conclusion We identified the ArcA regulon in S. Typhimurium under aerobic-growth with and without H2O2 , and show that ArcA coordinates a response that includes changes in cellular - , glutathione - , thioredoxin - , NADH - and glycerolipid metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Therefore , these observations reveal a functional interplay between ArcA and Fnr to control the OAg modal distribution in S. Enteritidis in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Figure 3 Role of ArcA in modulating the redox status in aerobiosis and in response to H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>However , two SPI-3 genes , slsA , encoding a putative inner membrane protein required for colonization of chickens and calves [ 1,44 ] , and STM3784 , a putative sugar phosphotransferase , were activated by ArcA as their expression levels were significantly lower in the mutant than in the WT ( Figure 3A and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The cobalamin and PDU pathways are under the control of several regulators , including ArcA and Crp ( 68 ) and CsrA ( 69 ) , but are not known to be regulated by RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23104408" target="_blank">23104408</a>]<br></li>
+<li>The pathways deduced to be upregulated by ArcA in response to H2O2 are implicated in nucleotide and siderophore biosynthesis , central and glutathione metabolism , among others , while the pathways downregulated by ArcA were PTS and ABC transporters ( Figure 2 , Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Evans , M. R. , Fink , R. C. , Vazquez-Torres , A. , Porwollik , S. , Jones-Carson , J. , McClelland , M. , and Hassan , H. M. ( 2011 ) Analysis of the ArcA regulon in anaerobically grown Salmonella enterica sv .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Specifically , proteins with higher or lower levels in the deletion mutant are the candidates being repressed or activated by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Under this constraint , 392 genes were differentially expressed in the arcA mutant relative to the WT and , therefore , regulated directly or indirectl by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Interestingly , most of the 120 genes were regulated by ArcA and Fnr in the same fashion ( i.e. , repressed or activated ) except for yneB ( putative fructose-1 ,6 - bisphosphate aldolase - STM4078 ) , which was activated by ArcA , but repressed by Fnr ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Jeong JY , Kim YJ , Cho N , Shin D , Nam TW , Ryu S , et al : Expression of ptsG encoding the major glucose transporter is regulated by ArcA in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Interestingly , aerobic expression of cydAB is repressed by H-NS , which is relieved by the response-regulator ArcA [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Furthermore , we provide evidence that the regulation of the TCA cycle by ArcA is partially mediated by its repression of the transcription factor YdcI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Collectively , these data suggest that the repression of the TCA cycle by ArcA is , at least in part , mediated by its regulation on YdcI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Transfer of the F sex factor and its relatives is regulated by the FinOP system of fertility inhibition , which is encoded on the plasmid itself ( Firth et al. , 1996 ) , and by ArcA , a protein provided by the host ( Strohmaier et al. , 1998 ; Taki et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Transcription of the tra operon , which encodes the elements of the pilus as well as products required for mating and DNA transfer , is activated by ArcA ( Strohmaier et al. , 1998 ; Taki et al. , 1998 ) and by TraJ ( Firth et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Anaerobic induction of pyruvate formate-lyase gene expression is mediated by the ArcA and FNR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>In addition , our proteomic dataset suggests ArcA activates the expression of S. Typhimurium SPI-1 T3SS , which is required for bacterial invasion of intestinal epithelial cells ( 38 ) and controlled by the transcriptional-regulator HilA ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Effect on hilA expression decrease decrease decrease decrease decrease decrease decrease Mutation1 Comments ompR envZ [ 66 ] [ 66 ] EnvZ/OmpR is a two-component system EnvZ/OmpR is a two-component system pho-24 sirA , barA pstS fadD ﬂiZ [ 19 ] [ 64 , 65 , 68 ] , unpublished2 [ 66 ] [ 66 ] [ 66 ] , unpublished3 hyperactive PhoQ sensor kinase BarA/SirA is a two-component system acts via PhoB regulator does not act via FadR regulator transposon insertions in ﬂiA are polar on ﬂiZ ; FliZ suppresses the effects of transposon insertions in ﬂiA and ﬂhCD the Csr system regulates RNA stability Fis is a small nucleoid binding protein HU , a small nucleoid binding protein , is comprised of HupA and HupB Hha is a small nucleoid binding protein amsE encodes RNase E H-NS is a small nucleoid binding protein no known homologies PhoPQ-activated gene csrB ﬁs decrease decrease decrease decrease increase increase increase increase [ 64 , 68 ] unpublished4 ,5 unpublished4 ,5 unpublished2 [ 56 ] unpublished4 ,5 [ 56 ] [ 56 ] hupA/hupB hha amsE : : Tn5-1 hns hilE pag-1 Condition high osmolarity low oxygen late log phase near-neutral pH low osmolarity low oxygen early log phase bile [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 osmolarity regulates hilA in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA induction induction induction induction repression repression repression repression late log phase induces invasion activity ; RpoS is not required not mediated by PmrAB osmolarity regulates hilA expression in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA early log phase represses invasion activity ; RpoS is not required reported to regulate invasion , prgH , invF and hilC ; effects on hilA expression not reported but very likely 1 Unless otherwise noted , the mutations are null mutations in the open reading frame listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>Anaerobic repression of sit was unaffected by loss of the oxygen-sensing global regulator ArcA or Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>Table 3 Classification of ArcA regulated genes according to Clusters of Orthologous Groups ( COGs ) a b Functional Gene Groups # of Genes ArcA - ArcA-activated repressed 0 0 4 4 Cell division and chromosome partitioning Cell envelope and biogenesis , outer membrane Cell motility and secretion 12 1 Posttranslational modification , protein turnover , chaperones 3 1 ArcA as a repressor Transcription of the genes required for aerobic metabo-lism , energy generation , amino acid transport , and fatty acid transport were anaerobically repressed by ArcA ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Each symbol represents groups of genes that are functionally related and are colored based on the degree of regulation by ArcA under each condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Identification of ArcA by Western blot ; Effects of H2O2 on viability of the ArcA mutant ; List of genes differentially regulated by ArcA ; and List of genes shared with the Fnr regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>ArcA and FNR regulate dozens and hundreds of genes , respectively , many of which are required for metabolism in anaerobic conditions , but neither transcription factor has been implicated in controlling fis expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Shalel-Levanon S , San KY , Bennett GN : Effect of ArcA and FNR on the expression of genes related to the oxygen regulation and glycolysis pathway in Escherichia coli under growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>The arginine-degradation enzymes described above do not appear to be a part of either ArcA or FNR regulons , but their marked increase suggests that L-arginine is actively utilized as a carbon and energy source in the absence of oxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>In Escherichia coli , ArcA ( Aerobic Respiratory Control ) helps the cells to sense and respond to the presence of dioxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Briefly , ArcB responds to low oxygen conditions when bacteria reach the distal ileum and undergoes autophosphorylation , following which the phosphate group is transferred to ArcA ; phosphorylated ArcA ( ArcA-P ) activates loiA gene expression indirectly through unknown regulator ( s ) ; LoiA activates HilD directly through binding the hilD promoter ; HilD then activates hilA and other SPI-1 genes , and thus facilitates the invasion process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>After oxidation of two cysteine residues , ArcB autophosphorylates , transfers the phosphate to ArcA [ 114 ] and the activated ArcA-P controls gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>ArcZ and σS are under negative control by the ArcB/ArcA two-componen system and thereby linked to the redox state of the respiratory chain [ 76,98 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Under microaerobic or anaerobic conditions , ArcB undergoes autophosphorylation and catalyzes the phosphorylation of ArcA ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>E. coli mutant strains in residue H-717 of ArcB are able to phosphorylate and activate ArcA through the transfer of the phosphate group from residue His-292 under aerobic conditions [ 45 ] and Loui et al. ( 2009 ) suggested that H2O2 resistance is independent of ArcA phosphorylation at residue Asp-54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Under normal growth conditions , PspA and PspD control-the-activity rank of ArcB/ArcA system that senses the redox or metabolic state of the cell , whereas under stress conditions PspA and PspD deliver their effector functions at least in part by activating ArcB/ArcA through positive feedback [ 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636618" target="_blank">19636618</a>]<br></li>
+<li>That ArcZ expression is under negative control of the ArcB/ArcA system and in a feedback cycle also interferes with ArcB expression [ 76 ] , indirectly contributes to the multiple negative effects of this two-component system on σS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>The connection between the ArcB/ArcA system and LoiA on SPI-1 regulation was further investigated by examing the expression levels of hilD in arcA , arcB , loiA , arcA/loiA and arcB / loiA double mutants grown under high and low O2 conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Activation of LoiA expression in response to low O2 conditions is mediated by the ArcB/ArcA two-component regulatory system Fnr ( fumarate nitrate reduction regulator ) and the ArcB/ArcA ( aerobic respiratory control ) two-component regulation system are well-known global regulators , which can sense and respond to changes in O2 availability and regulate gene expression in low O2 and anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>These results indicate that both ArcA and ArcB are involved in the regulation of hilD in response to low O2 conditions , and the ArcAB regulation on hilD is mediated by LoiA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>After assessing the functionality of each ABS in the lpxO promoter by EMSA , we observed that ArcA binds to ABS-1 , but not to ABS-2 and ABS-3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>One possibility for this result is that in the absence of ArcA , ArcB might phosphorylate ( i.e ArcB-OmpR , [ 43 ] ) one or more response-regulators , either unspecifically or due to cross-talk , which could bind to the promoter region and therefore prevent binding of positive regulators like SoxS , which has been demonstrated to regulate ompW and is up-regulated in response to HOCl [ 20,44 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Furthermore , we demonstrate that the response-regulator ArcA mediates ompW negative regulation in response to H2O2 and HOCl via a direct interaction with the upstream region of ompW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Since the effect of ArcA is pleiotropic and its levels remain constant throughout all stresses evaluated ( Additional file 1 : Figure S1 A and B ) , achieving wild type levels of ArcA is required to properly address its role in the response to ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>In contrast to the previous report , we found that ArcA represses ethanolamine utilization by directly binding to the promoter region of the eut operon and importantly such regulation is physiologically relevant during bacterial infection in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Given the large number of genes in this operon , it is not surprising that in addition to the local regulator EutR , its regulation is also coordinated with the global carbon and energy metabolism of S. Typhimurium ( i.e. its expression is regulated by the global regulator ArcA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Strohmaier , H. , Noiges , R. , Kotschan , S. , Sawers , G. , Högenauer , G. , Zechner , E. , and Koraimann , G. ( 1998 ) Signal transduction and bacterial conjugation : characterization of the role of ArcA in regulating conjugative transfer of the resistance plasmid R1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>In addition to the central metabolism regulated similarly as in E. coli , Sal-monella ArcA also controls the expression of distinct pathways such as repression of ethanolamine utilization and activation propanediol metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>These findings , combined with the absence of etha-nolamine in the culture medium used in our assay ( and in the assay by Evans et al. ) and the large number of genes in the eut operon ( i.e. their expression would be energy-consuming ) , strongly support the notion that ArcA represses the expression of eut genes in the rich medium ( LB-MOPS-X ) under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>As rpoS is upregulated in these mutants , activities of CydA and ArcA under microaerobiosis in the wild-type cells lead to the downregulation of rpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>Pfis-2 is upregulated in anaerobic shock and even overtakes Pfis-1 as the primary source of transcript in the absence of ArcA or RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Our finding of ArcA repression of the eut operon is , however , in direct contrast to the previous transcriptomic study ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Repression of the eut operon by direct binding of ArcA to its promoter region and physiological relevance of such regulation in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>A similar 2-fold increase was noticed in E. coli and the binding of ArcA to the promoter of ptsG was demonstrated [ 54 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Due to the complementary roles of ArcA and Fnr in the regulation of cellular metabolism and adaptation to changes in redox , we hypothesized that the ArcA regulon of S. Typhimur-ium will also differ from that of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Under anaerobic conditions and in the absence of electron acceptors , where the reduced quinone carriers can activate ArcA , it seems to be more advantageous for S. Typhimurium and E. coli cells to control the rate of glucose metabo-lism in order to reduce the rate of production of acidic end-products .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>This suggests that under the assayed conditions , ArcA is not active , since , as observed in the presence of NaOCl , when ArcA , MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>It is plausible to speculate that under those conditions ArcA could bind to the 235 element and impede binding of the sigma factor , explaining why , although both MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Conclusions : OmpW allows the influx of H2O2 and HOCl and is negatively regulated by ArcA by direct interaction with the ompW promoter region upon exposure to both toxic compounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>The above results led us to hypothesize that lpxO expression is regulated by oxygen availability through the activity of transcription regulators ArcA and/or Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Our results indicate that neither ompD or arcB transcript levels were decreased after exposure to H2O2 or HOCl while those of ompC remained regulated in a ΔarcA strain treated with either of the toxic compounds ( Figure 6A ) , confirming that ArcA mediates ompD regulation under ROS conditions and showing that the expression of ompC is ArcA independent and regulated by different mechanisms which remain unsolved to the date , and are under study in our laboratory .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Taken together , with our previous observation that OmpD mediates influx of H2O2 and is negatively regulated by ArcA in respons to H2O2 , these results further expand our knowledge regarding the coordinated regulatory mechanisms of ROS resistance and the role of ArcAB in this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Oxygen availability regulates the expression of wzzSE and wzzfepE in S. Enteritidis The above results lead us to hypothesize that the expression of genes encoding the OAg chain-length regulators WzzSE and WzzfepE are regulated by ArcA or Fnr in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>This suggests that the genes regulated by ArcA in response to various stimuli are different and do hardly overlap ( Figure 1 ) , which underscores the importance and versatility of ArcAmediated regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>The data indicated that ArcA and Fnr shared in the regulation of 120 genes ; while the numbers of genes solely regulated by either ArcA or Fnr were 272 and 191 , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>This indicates that the LPS phenotype associated to the Dfnr allele does not depend on the presence of a functional ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Conversely , very little is known about the regulatory network controlled by ArcA in S. Typhimurium under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>This is the first genome-wide study on the regulatory role of ArcA in S. Typhimurium ( 14028s ) under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Transition into stationary phase under microaerobic conditions is thus controlled by coordinated action of the RpoS and ArcA regulators , depending on subtle changes in the environment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>Positive regulation of LoiA by the ArcB/ArcA system is dependent on low O2 conditions as the expression level of loiA in all mutant strains is comparable with the wild-type level under high O2 conditions ( Fig 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>As previously described , the S. Enteritidis 1arcA mutant exhibits impaired growth in minimal medium under anaerobic conditions ( Silva-Valenzuela et al. , 2016 ) , preventing the use of this strain to determine a role for ArcA on oxygen-modulated lipid A hydroxylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Herein , we report the first genome-wide study addressing the role of ArcA in response to H2O2 under aerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Role of ArcA in the response to H2O2 under aerobic conditions It has been well established that an aerobically grown ΔarcA strain is sensitive to H2O2 treatment [ 7-10 ] , however , the genes regulated by ArcA under this condition have not been determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>To determine the pathways regulated by ArcA in response to H2O2 under aerobic conditions , the intensity values were treated as follows : ( log2 14028s wild typ Figure 1 Overlap of the ArcA regulon in response to H2O2 , aerobiosis and anaerobiosis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>This suggests that in response to H2O2 under aerobic conditions , ArcA may act together with Apo-IscR , up-regulating the nrdEFHI operon Figure 4 Model showing the major differences in the processes regulated by ArcA after H2O2 exposure under aerobic conditions , aerobiosis and anaerobiosis in S. Typhimurium 14028s .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Comparison with the ArcA regulon of strain 14028s in anaerobiosis [ 8 ] showed that 63 genes were regulated under both conditions , but the expression of 38 genes was regulated in the opposite direction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Biochemical analysis of the ΔarcA strain The microarray analysis predicted that in response to H2O2 under aerobic conditions , ArcA regulates the expression of genes implicated in GSH metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Results : In the ΔarcA strain , expression of 292 genes showed direct or indirect regulation by ArcA in response to H2O2 , of which 141were also regulated in aerobiosis , but in the opposite direction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>In contrast to the vast amount of information about the role of ArcA in anaerobiosis , little is known about the genes or biochemical processes that ArcA regulates in response to H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>In addition , RT-PCR and western blot experiments demonstrated that the ompD downregulation , observed when the wild type strain was grown in the presence of H2O2 , was not retained in arcA mutants , suggesting that ArcA could act as an ompD transcriptional-repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>In agreement , in an aerobically grown ΔarcA strain , total ROS was increased as compared to the isogenic wild type strain under the same condition ( Figure 3E ) , indicating that the absence of ArcA generates a metabolic imbalance which leads to increased levels of ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Neither the ArcA global regulator ( also responding to anaerobic conditions ) nor the Crp-cyclic AMP system ( responding to carbon starvation ) affected ttr operon induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>In contrast , in response to menadione ArcA could be inactive , allowing MarA and SoxS to exert their regulation , although this has not been evaluated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Eq-value for the pathway predicted to be regulated by ArcA in response to H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Dq-value for the pathway predicted to be regulated by ArcA in aerobic-growth in rich media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>The nipAB promoter completely failed to induce in the SL1344 fnr background , while ArcA did not appear to have an effect on regulation as measured by LacZ activity ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>In response to oxygen availability , ArcB autophosphorylates in an ATP dependant intramo-lecular reaction at position His-292 [ 29,30 ] and transfers the phosphate group to the cytoplasmic response-regulator ArcA [ 31-33 ] , which binds to promoter regions regulating gene expression [ 34,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>In order to complement the ΔarcA mutation , we first evaluated the mechanism by which ArcA regulates gene expression in response to ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">ArcA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>ArcA is the transcriptional regulator , and ArcB is a transmembrane protein that contains receiver and transmitter domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>After oxidation of two cysteine residues , ArcB autophosphorylates , transfers the phosphate to ArcA [ 114 ] and the activated ArcA-P controls gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>E. coli mutant strains in residue H-717 of ArcB are able to phosphorylate and activate ArcA through the transfer of the phosphate group from residue His-292 under aerobic conditions [ 45 ] and Loui et al. ( 2009 ) suggested that H2O2 resistance is independent of ArcA phosphorylation at residue Asp-54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>The signal is transferred to residues D576 and H717 of ArcB and finally to residue D54 of ArcA [ 12,19,20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>To determine which putative ABS in the lpxO promoter is responsible for P-ArcA binding , the promoter region was dissected in three regions each one containing only one putative ABS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>The alignment of the ArcA motifs from this website did not include the motifs present in the sodA and mutM promoters [ 29,30 ] , therefore they were included in our analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In silico analysis aimed at detecting putative transcriptional regulator binding regions led to identiﬁcation of an ArcA global regulator motif in the ompD promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Puriﬁcation of ArcA and analysis of its speciﬁc interaction with the pﬂ promoter-regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8636018" target="_blank">8636018</a>]<br></li>
+<li>A bioinformatic analysis in search for potential negative regulators predicted the presence of three ArcA binding sites at the ompW promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>In support of this hypothesis , our bioinformatics analyses revealed the presence of a putative binding sites for Fnr at position 262 , and three putative binding sites for ArcA at positions 13 , 85 and 107 with respect to the potential transcription initiation site of wzzfepE ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">ArcA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Region of homology arLeth ngd Location Proteins coc re % Identity mpaodmp 33.8 219 4-215 vs 8-228 122 8-129 vs 2-216 vs 5-231 TctD vs OmpR TctD vs NtrC TctD vs ArcA 34.4 27.2 ACKNOWLEDGMENTS This work was supported by a grant to W.W.K. from thie Natural Sciences and Engineering Research Council of Canada .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2666399" target="_blank">2666399</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by ArcA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>In contrast to bacteria , yeast has a common environmental stress response o TABLE V. CMR DNA Repair Genes Altered Transcriptionally by BA-1 Gene Fold symbol change Hypergeometric P-value Gene title DNA ligase 1.4E-06 7.6E-05 8.0E-05 0.002 0.003 0.004 0.005 0.005 0.006 0.006 0.006 0.006 0.010 0.012 0.015 0.015 0.018 0.018 0.023 0.024 0.033 0.033 0.034 0.035 0.036 0.040 0.043 0.043 0.047 0.050 6.38 lig Putative nuclease subunit of the excinuclease complex Adenine DNA glycosylase DNA gyrase , subunit A , type II topoisomerase Putative recombination protein , gap repair Fels-2 prophage : similar to retron in E. coli Uracil-DNA-glycosylase Putative replicative DNA helicase UvrC , which is part of the UvrABC repair enzyme DNA polymerase III , delta prime subunit ATP-dependent DNA helicase DNA polymerase III , chi subunit UvrB , which is part of the UvrABC repair enzyme Replication termination protein Putative DNA helicase Regulator O-6-alkylguanine-DNA / cysteine-protein methyltransferase Putative DNA-repair protein Recombinase , site-speciﬁc Deoxyribodipyrimidine photolyase ( photoreactivation ) Primosomal protein I Putative helicase Primosomal replication protein N Endonuclease III ; DNA glycosylase/apyrimidinic ( AP ) lyase DNA polymerase III , alpha subunit Resembles eukaryotic-type potassium channels Putative ATP-dependent protease , DNA-repair protein Methyl-directed mismatch-repair Putative superfamily I DNA and RNA helicase Putative hydrolase N-terminus 24.55 4.00 22.55 22.50 22.16 27.46 23.12 22.53 22.82 22.27 4.27 5.41 2.28 22.07 21.97 22.50 22.43 25.87 21.88 1.80 22.50 2.88 STM1309 mutY gyrA recR STM2730 ung dnaB uvrC holB recQ holC uvrB tus yoaA oraA ogt radC xerD phrB dnaT ygcB priC nth dnaE 1.72 22.84 22.11 22.46 22.66 1.80 25.05 STM4372 radA mutS STM2767 STM0649 STM2727 2.7E-05 14.8 0.10 1.5 0.13 1.6 dinP 3.4E-05 4.8 0.11 21.6 0.68 21.1 sulA 4E-05 12.6 0.34 1.5 0.70 1.2 umuC 8.0E-06 8.6 0.12 1.8 0.81 21.1 umuD 2 4.4E-05 14.3 0.61 1.2 0.59 21.2 STM1019 4.8E-05 8.9 0.58 21.2 0.35 1.4 dinI 2 0.0002 16.9 0.42 1.3 0.46 1.3 yebG 2 0.0002 13.5 0.20 2.3 0.94 21.1 lexA 0.0003 4.0 0.05 22.3 0.73 1.1 STM1309 0.0010 2.5 0.00 24.5 0.05 21.8 polB 0.0010 2.8 0.46 1.2 0.88 21.0 yigN 0.0012 3.0 0.22 2.2 0.16 21.6 uvrA 0.0013 2.5 0.27 1.3 0.70 1.1 recA 0.0022 7.8 0.95 1.0 0.86 21.1 uvrD 0.0024 2.2 0.46 21.3 0.45 21.4 ruvA 0.0037 2.2 0.47 21.2 0.64 1.2 sbmC 0.0061 7.4 0.21 21.4 0.99 1.0 ydjM 0.0063 2.2 0.08 21.6 0.91 1.0 recN 0.027 16.0 0.23 21.5 0.15 1.7 STM0925 0.9730 1.0 0.55 1.3 0.75 1.1 ybfE 0.8064 0.9 0.11 21.6 0.16 2.1 uvrB 0.4355 1.3 0.01 5.4 0.08 3.1 dinG 0.4182 1.2 0.70 21.1 0.26 21.7 ftsK 0.1837 1.4 0.49 21.9 0.90 21.2 STM1056 0.2094 1.5 0.21 1.5 0.31 21.4 mfd 0.7057 0.9 0.15 1.4 0.50 1.2 minC 0.4689 0.9 0.69 1.1 0.52 1.3 yehR 0.0580 9.6 0.32 21.4 0.37 1.4 ftsY 0.7095 1.1 0.70 1.1 0.91 1.0 recG 0.9149 1.0 0.66 1.4 0.62 22.4 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a The P-value is from a Bayesian t-test measuring differential expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_2">
+Salmonella-specific genes/operons regulated by ArcA included those required for propanediol utilization , flagellar genes ( mcpAC , cheV ) , Gifsy-1 prophage genes , and three SPI-3 genes ( mgtBC , slsA , STM3784 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></label>
+<input id="rp_similarity_2", type="checkbox">
+<div class="RP_similar">
+<li>However , Salmonella-specific genes/operons regulated by ArcA include newly identified flagellar genes ( mcpAC , cheV ) , Gifsy-1 prophage genes , a few SPI-3 genes ( mgtBC , slsA , STM3784 ) , and those for propanediol utilization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li></div>
+<li>Additionally , some genes related to Salmonella virulence were repressed by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>However , few virulence genes related to SPI-2 ( sspH2 ) and SPI-3 ( mgtCB , slsA , STM3784 ) were affected by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Genes required for L-lactate-transport and metabolism , phosphate-transport , acetyl-CoA transfer-ase , APC family/D-alanine/D-serine / glycine-transport , putative cationic amino-acid-transporter , peptide methionine sulfoxide reductase , multiple antibiotic resistance operon , as well as many poorly characterized genes were also repressed by ArcA ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Furthermore , genes coding for transcriptional repressor CytR , nitrite reductase , 2-dexoyribose-5-phosphate aldolase , thymidine phosphorylase , lysine/cadaverine-transport protein , putrescine / ornithine antiporter , ornithine decarboxylase , ethanola-mine operon , and propanediol operon as well as its transcriptional regulator PocR were activated by ArcA ( Figure 3B and 3C , and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>We also identified 120 genes that were regulated by the anaerobic regulator , Fnr , as well as by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In particular , the genes required for cytochrome-o-oxidase , succinyl-CoA synthetase , glutamate/aspartate-transport , trehalose-6-phosphate biosynthesis , long-chain-fatty-acids transport , spermidine/putrescine-transport , dipeptide-transport , the genes encoding the two-component tricarboxylic transport system and the site-specific DNA factor for inversion stimulation ( fis ) were among the highest repressed by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The ArcA regulon and oxidative stress resistance in Haemophilus inﬂuenzae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_11">
+Wong SM , Alugupalli KR , Ram S , Akerley BJ : The ArcA regulon and oxidative stress resistance in Haemophilus influenzae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="rp_similarity_11", type="checkbox">
+<div class="RP_similar">
+<li>Wong SMS , Alugupalli KR , Ram S , Akerley BJ : The ArcA regulon and oxidative stress resistance in Haemophilus influenzae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li></div>
+<li>71 , [ 130 ] Lu , S. , Killoran , P.B. , Fang , F.C. and Riley , L.W. ( 2002 ) The global regulator ArcA controls resistance to reactive nitrogen and oxygen intermediates in Salmonella enterica serovar enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_14">
+The global regulator ArcA controls resistance to reactive nitrogen and oxygen intermediates in Salmonella enterica serovar Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19762438" target="_blank">19762438</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19001074" target="_blank">19001074</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20656781" target="_blank">20656781</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></label>
+<input id="rp_similarity_14", type="checkbox">
+<div class="RP_similar">
+<li>Lu S , Killoran PB , Fang FC , Riley LW : The global regulator ArcA controls resistance to reactive nitrogen and oxygen intermediates in Salmonella enterica serovar Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li></div>
+<li>Interestingly , ArcA was recently reported to play a role in acidiﬁed nitrite resistance in serovar Enteritidis ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>In the last few years , it has been observed that , in addition to its role as a global response regulator in bacterial anaerobic growth , ArcA is also important in resistance to oxygenreactive intermediates in different bacteria ( Loui et al. , 2009 ; Lu et al. , 2002 ; Wong et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>The DNA insert in the clone encoded ArcA , a global regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>We also demonstrated that Fnr plays a more hierarchical role than ArcA in pathogenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_20">
+Gao H , Wang X , Yang ZK , Palzkill T , Zhou J : Probing regulon of ArcA in Shewanella oneidensis MR-I by integrated genomic analyses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="rp_similarity_20", type="checkbox">
+<div class="RP_similar">
+<li>Gao H , Wang X , Yang ZK , Palzkill T , Zhou J : Probing regulon of ArcA in Shewanella oneidensis MR-1 by integrated genomic analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li></div>
+<li>Promoter analysis Discussion Several reports have demonstrated that the global regulator ArcA is required for H2O2 resistance [ 7-10 ] , however , only a few have evaluated its role on regulating gene-expression under this condition [ 27,28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Neither the ArcA global regulator ( also responding to anaerobic conditions ) nor the Crp-cyclic AMP system ( responding to carbon starvation ) affected ttr operon induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>In order to complement the ΔarcA mutation , we first evaluated the mechanism by which ArcA regulates gene-expression in response-to-ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Induction was dependent on the transcriptional regulator ArcA , with a second transcriptional regulator , FNR , playing a negative role speciﬁcally under anaerobic conditions ( S. Darie and R. P. Gunsalus , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550494" target="_blank">8550494</a>]<br></li>
+<li>These observations suggest that ArcA is a negative regulator of lpxO expression under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>All assays were performed under aerobic conditions with vigorous shaking since ArcA is known to be the global regulator induced under anaerobic conditions and anaerobic conditions may affect bacterial resistance to other stresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>ArcA is most active under microaerobic and anaerobic conditions [ 26,115 ] when it suppresses genes encoding enzymes of TCA-cycle , probably to decrease respiration under less favourable conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Response regulator ArcA of Salmonella enterica serovar Typhimurium downregulates expression of OmpD , a porin facilitating uptake of hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27507830" target="_blank">27507830</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>]<br></li>
+<li>Calderón IL , Morales E , Caro NJ , Chahuán CA , Collao B , Gil F , Villareal JM , Ipinza F , Mora GC , Saavedra CP : Response regulator ArcA of Salmonella enterica serovar Typhimurium downregulates the expression of OmpD , a porin facilitating uptake of hydrogen peroxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Morales EH , Calderón IL , Collao B , Gil F , Porwollik S , McClelland M , Saavedra CP : Hypochlorous acid and hydrogen peroxide-induced negative regulation of Salmonella enterica serovar Typhimurium ompW by the response regulator ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access Hypochlorous acid and hydrogen peroxide-induced negative regulation of Salmonella enterica serovar Typhimurium ompW by the response regulator ArcA Eduardo H Morales1 † , Iván L Calderón1 † , Bernardo Collao1 , Fernando Gil1 , Steffen Porwollik2 , Michael McClelland2 ,3 and Claudia P Saavedra1 * Abstract Background : Hydrogen peroxide ( H2O2 ) and hypochlorous acid ( HOCl ) are reactive-oxygen-species that are part of the oxidative burst encountered by Salmonella enterica serovar Typhimurium ( S. Typhimurium ) upon internalization by phagocytic cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access Probing the ArcA regulon under aerobic/ROS conditions in Salmonella enterica serovar Typhimurium Eduardo H Morales1 ,3,4 † , Bernardo Collao1 † , Prerak T Desai2 , Iván L Calderón1 , Fernando Gil1 , Roberto Luraschi1 , Steffen Porwollik2 , Michael McClelland2 and Claudia P Saavedra1 * Abstract Background : Hydrogen peroxide ( H2O2 ) is a reactive-oxygen-species ( ROS ) , which is part of the oxidative burst encountered upon internalization of Salmonella enterica serovar Typhimurium ( S. Typhimurium ) by phagocytic cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>In all cases , EMSA included heat-inactivated proteins and/or non-phosphorylated ArcA as negative controls .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Furthermore , ArcA seems to activate a set of proteins associated with protein-translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>TctD also shows homology with ArcA ( previously known as Dye ) , a pleiotropic regulatory protein which under anaerobic conditions represses the synthesis of a wide variety of enzymes associated with aerobic catabolism ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2666399" target="_blank">2666399</a>]<br></li>
+<li>In addition , previous studies have shown that a redox sensor of the bacterial cell , ArcA , regulates tra operon expression in F-like plasmids ( Strohmaier et al. , 1998 ; Taki et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>These include arginine deiminase ( ArcA ) , ornithine carbamoyltransferase ( ArcB ) and carbamate kinase ( ArcC ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_39">
+A two-component phosphotransfer network involving ArcB , ArcA , and RssB coordinates synthesis and proteolysis of sigmaS ( RpoS ) in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23385142" target="_blank">23385142</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20075614" target="_blank">20075614</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218385" target="_blank">19218385</a>]<br></label>
+<input id="rp_similarity_39", type="checkbox">
+<div class="RP_similar">
+<li>Mika F , Hengge R : A btwo-component phosphotransfer network involving ArcB , ArcA , and RssB coordinates synthesis and proteolysis of σS ( RpoS ) in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Mika F , Hengge R ( 2005 ) A two-component phosphotransfer network involving ArcB , ArcA , and RssB coordinates synthesis and proteolysis of σS ( RpoS ) in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li></div>
+<li>Alexeeva S , Hellingwerf K , Mattos JT : Requirement of ArcA for Redox Regulation in Escherichia coli under Microaerobic but Not Anaerobic or Aerobic Conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Under aerobic conditions , ArcA mainly repressed pathways implicated in central metab-olism and nucleotide-biosynthesis ( Table 1 , positive NES values ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>ArcA is essential for S. Enteritidis , Typhimurium and E. coli resistance to ROS [ 24,26,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>A second possibility is that there is cross talk or cross-regulation between the various bacterial two-component signal pathways involved in ceftriaxone resistance ; for example , cross talk is known to occur between EnvZ-OmpR and CpxA-CpxR ( 34 ) , and crossregulation is also known to occur between ArcB-ArcA and EnvZ-OmpR ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21646491" target="_blank">21646491</a>]<br></li>
+<li>One may thus hypothesize that host-encoded functions such as Lrp , Dam methylation and ArcA might be part of signal-transduction-pathways that regulate bacterial conjugation in response to cellular or environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>This suggests that rather than changes in expression , ArcA is activated in response-to-ROS , most likely by phosphorylation of residue D54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Boulette ML , Payne SM : Anaerobic regulation of Shigella flexneri virulence : ArcA regulates Fur and iron acquisition genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In anaerobic conditions , sensor-kinase ArcB is activated by reduced quinones and subsequently activates its cognate transcriptional regulator ArcA by phosphorylating ArcA at Asp54 ( Georgellis et al. , 1998 ) ; however , it has been reported that in E. coli , ArcB can also phosphorylate ArcA directly through His292 under aerobic conditions ( Matsushika and Mizuno , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Several genes regulated by oxygen availability in Escherichia coli , such as cydAB [ 30 ] , cyoABCDE , ﬁxABCX [ 28 ] and dpiBA [ 31 ] , also possess similarly-positioned Fnr and ArcA biding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Fnr and ArcA are global transcriptional regulators that control several genes in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>Transcription factors Fnr and ArcA are the major regulators involved in adaptation to oxygen availability ( Compan and Touati , 1994 ; Kiley and Beinert , 1998 ; Sawers , 1999 ; Fink et al. , 2007 ; Ravcheev et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>It has ﬁve promoters and is activated by global regulators , including Crp , ArcA , and integration host factor , and by a speciﬁc activator , PocR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>Cloning , overexpression and puriﬁcation of the global response regulator ArcA The arcA gene was ampliﬁed using primers CACCATG-CAGACCCCGCACATTCT ( pET-arcAFw ) and TTAATCCT GCAGGTCGCCGCAGA ( pET-arcARv ) and inserted into plasmid pET100/D-TOPO ( Invitrogen ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>The dctA gene encodes the aerobically expressed transporter for succinate , malate , and fumarate and is catabolite ( cyclic AMP receptor protein ) and anaerobically ( ArcA ) repressed ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16585773" target="_blank">16585773</a>]<br></li>
+<li>However , genes/operons present in both organisms , but regulated differently by ArcA in S. Typhimurium included those coding for ethanolamine utilization , lactate-transport and metabolism , and succinate dehydrogenases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The group of proteins whose expression was visible only during bioﬁlm growth included proteins involved in global regulation and stress response ( ArcA , BtuE , Dps , OsmY , SspA , TrxA , YbbN and YhbO ) , nutrient transport ( Crr , DppA , Fur and SufC ) , degradation and energy metabolism ( GcvT , GpmA , RibB ) , detoxiﬁcation ( SseA and YibF ) , DNA-metabolism ( SSB ) , curli production ( CsgF ) , and murein synthesis ( MipA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23376784" target="_blank">23376784</a>]<br></li>
+<li>The 20 proteins whose expression was visible only in the bioﬁlm-derived samples could be classiﬁed into the following ﬁve categories , based on their function : ( a ) proteins involved in global regulation and stress response ( ArcA , BtuE , Dps , OsmY , SspA , TrxA , YbbN and YhbO ) ; ( b ) proteins involved in nutrient transport ( Crr , DppA , Fur and SufC ) ; ( c ) proteins involved in degradation and energy metab-olism ( GcvT , GpmA and RibB ) ; ( d ) proteins involved in detoxiﬁcation ( SseA and YibF ) and ( e ) proteins involved in various processes , such as DNA-metabolism ( SSB ) , curli production ( CsgF ) and murein synthesis ( MipA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23376784" target="_blank">23376784</a>]<br></li>
+<li>ArcA and hydrogenases ArcA and flagellar biosynthesis/swarming motility / chemotaxis Our data show that , anaerobically , ArcA positively regulates the expression of genes involved in flagellar bio-synthesis , swarming motility , and chemotaxis ( Figures 3 and 4 ; Table 3 and Additional file 1 : Table S1 ) including many newly identified flagellar genes ( i.e. , mcpAC and cheV ) [ 43 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Our data showed that ArcA activates class 2 and class 3 flagellar genes and we identified a potential ArcA binding site in filA , filZ , flgM , and flgN .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Several studies in E. coli , S. Typhimurium , H. influenzae and Shewanella oneidensis have used global gene-expression profiling to determine the ArcA regulon under anaerobic conditions , showing that the effect of ArcA is pleiotropic and coordinates a response that includes changes in cellular-metabolism , motility and chromosomal replication , among others [ 8,10,23-26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Conclusion We identified the ArcA regulon in S. Typhimurium under aerobic growth with and without H2O2 , and show that ArcA coordinates a response that includes changes in cellular - , glutathione - , thioredoxin - , NADH - and glycerolipid-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>We therefore investigated the ArcA regulon in aerobically growing S. Typhimurium before and after exposure to H2O2 by querying gene-expression and other physiological changes in wild type and ΔarcA strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Gene set enrichment analysis ( GSEA ) of the expression data from WT and ΔarcA strains , revealed that , in response to H2O2 challenge in aerobically grown cells , ArcA down regulated multiple PEP-PTS and ABC transporters , while up regulating genes involved in glutathione and glycerolipid-metabolism and nucleotide-transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>One study conducted in E. coli used a proteomic approach and determined that ArcA regulates the expression of fliC , oppA and gltI in response to H2O2 [ 7 ] , while in S. Typhimurium ArcA negatively regulates ompD and ompW [ 27,28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Finally , several genes involved in metabolism previously identified as being regulated by ArcA in E. coli [ 5-17 ,49 -52 ] were also identified in the present study ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Together , these results indicate that ArcA has a major role in regulating gene-expression under aerobic conditions and that the genes regulated in aerobiosis are different from those regulated in anaerobiosis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>ArcA regulates different genes after ROS exposure in aerobiosis , under aerobic growth in rich media and under anaerobi-osis ( Figure 1 , 2 and 4 ; Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Our analysis shows that ArcA directly or indirectly regulates the expression of 292 genes in response to H2O2 in aerobically grown cells , 117 and 175 genes were up - or downregulated , respect-ively ( Figure 1 , Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>It also predicted that in aerobiosis , ArcA regulates expression of genes coding proteins involved in glycolysis ( Table 1 and Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Our data clearly demonstrate that ArcA serves , directly or indirectly , as a regulator/modulator of genes involved in aerobic/anaerobic energy metabolism and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In S. Typhimurium transcriptome analyses have recently shown that the global response regulator ArcA ( aerobic respiratory control ) directly or indirectly , regulates 392 genes ( 8.5 % of the genome ) , while it mainly serves as a regulator/modulator of genes involved in aerobic/anaerobic energy metabolism and motility ( Evans et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23376784" target="_blank">23376784</a>]<br></li>
+<li>Our results demonstrated that in S. Typhimurium , ArcA serves as a transcriptional regulator coordinating cellular-metabolism , flagella biosynthesis , and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In particular , we showed that ArcA is involved in energy metabolism , fla-gella biosynthesis , and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_75">
+[ 116 ] Nystrom , T. , Larsson , C. and Gustafsson , L. ( 1996 ) Bacterial defense against aging : role of the Escherichia coli ArcA regulator in gene-expression , readjusted energy ﬂux and survival during stasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></label>
+<input id="rp_similarity_75", type="checkbox">
+<div class="RP_similar">
+<li>Bacterial defense against aging : role of the Escherichia coli ArcA regulator in gene-expression , readjusted energy ﬂux and survival during stasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>Trends Microbiol 3:131 -- 136 Nystrom T , Larsson C , Gustafsson L ( 1996 ) Bacterial defense against aging : role of the Escherichia coli ArcA regulator in gene-expression , readjusted energy flux and survival during stasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12420160" target="_blank">12420160</a>]<br></li>
+<li>Nystrom T , Larsson C , Gustafsson L : Bacterial defense against aging : role of the Escherichia coli ArcA regulator in gene-expression , readjusted energy flux and survival during stasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_79">
+Perrenoud A , Sauer U : Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Cya , Fnr , and Mlc on glucose-catabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="rp_similarity_79", type="checkbox">
+<div class="RP_similar">
+<li>04553.x Perrenoud A , Sauer U ( 2005 ) Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Fnr , and Mlc on glucose-metabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li></div>
+<li>Salmon KA , Hung SP , Steffen NR , Krupp R , Baldi P , Hatfield GW , et al : Globa gene-expression profiling in Escherichia coli K12 : effects of oxygen availability and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_82">
+Salmon , K. A. , Hung , S. P. , Steffen , N. R. , Krupp , R. , Baldi , P. , Hatfield , G. W. , and Gunsalus , R. P. ( 2005 ) Global gene-expression profiling in Escherichia coli K12 : effects of oxygen availability and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></label>
+<input id="rp_similarity_82", type="checkbox">
+<div class="RP_similar">
+<li>Global gene-expression profiling in Escherichia coli K12 : effects of oxygen availability and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Global gene-expression proﬁling in Escherichia coli K12 : effects of oxygen availability and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li></div>
+<li>( A , B ) qRT-PCR analysis of loiA gene-expression in wild-type , arcA mutant , arcB mutant , and complemented strains for ArcA and ArcB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>ArcA and FNR regulate dozens and hundreds of genes , respectively , many of which are required for metabolism in anaerobic conditions , but neither transcription factor has been implicated in controlling fis expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Cotter PA , Gunsalus RP : Contribution of the Fnr and ArcA gene-products in coordinate regulation of cytochrome-o and cytochrome-d oxidase ( cyoABCDE and cydAB ) genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_88">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="rp_similarity_88", type="checkbox">
+<div class="RP_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>Cho BK , Knight EM , Palsson BO : Transcriptional regulation of the fad regulon genes of Escherichia coli by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In addition , we also found the presence of a few small clusters including those required for amino acid and lipid-metabolism , suggesting their anaerobic repression by ArcA ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>This suggests that in aerobically grown cells exposed to H2O2 , ArcA regulates the GSH/GSSG and Trx - [ S ] 2/Trx - [ SH ] 2 ratio , modulating the redox status of the cell , and the expression of nrdEF ined by GSEA NESH F G Aerobic H2O2 2.16 2.29 2.06 2.22 1.79 2.02 1.98 Gene set Glycerophospholipid-metabolism Purine metabolism 73 19 35 0.003 0.000 50 14 18 0.044 0.003 26 17 0.004 Pyrimidine metabolism Lipopolisaccharide biosynthesis Glutathione metabolism 16 8 33 8 0.005 0.012 0.022 0.067 1.94 1.87 1.81 1.69 Bacterial invasion of epithelial cells 8 5 0.002 0.250 − 1.9 0.46 Glycolysis/gluconeogenesis 10 10 Biosynthesis of siderophore group non-ribosomal peptides 4 5 Glycerolipid-metabolism 1 1 1.68 0.083 10 34 32 0.109 0.189 0.000 0.022 1.6 1.5 Flagellar assembly 7 Phosphotransferase system ( PTS ) 17 29 17 46 8 12 0.001 0.005 0.001 0.005 − 1.88 − 1.83 − 2.04 − 1.79 − 2.26 − 1.86 124 16 28 22 ABC transporters Salmonella infection Bacterial secretion system Bacterial chemotaxis 6 0.049 0.096 0.129 0.117 − 1.63 − 1.56 − 1.52 − 1.52 88 6 Two-component system 11 3 Cyanoamino-acid-metabolism 3 8 Ascorbate and aldarate metabolism 14 14 14 Amino sugar and nucleotide sugar metabolism 0.213 0.233 0.244 0.004 − 1.43 − 1.43 − 1.39 2.01 50 34 26 Fructose and mannose-metabolism Starch and sucrose-metabolism 28 3 45 8 24 Ribosome 0.113 0.137 Riboflavin metabolism 1.63 1.59 Cysteine and methionine-metabolism ABased on the KEGG database for S. Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>ArcA coordinates a response that involves multiple aspects of the carbon flux through central metabolism , which ultimately modulates the reducing potential of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>The finding that arcA mutations reduce but do not prevent expression of the cob andpdu operons indicates that a global regulator other than the ArcA protein may assist in induction of these operons during anaerobic growth on poorer carbon sources .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Biochemical analysis of the ΔarcA strain The microarray analysis predicted that in response to H2O2 under aerobic conditions , ArcA regulates the expression of genes implicated in GSH metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>B ) Figure S1 : Characterization of the mechanism of ArcA in response-to-ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Transcription of the tra operon , which encodes the elements of the pilus as well as products required for mating and DNA transfer , is activated by ArcA ( Strohmaier et al. , 1998 ; Taki et al. , 1998 ) and by TraJ ( Firth et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Furthermore , the expression of the flagellar biosynthesis , motility , and chemotaxis genes under anae-robiosis was more highly activated by Fnr than by ArcA ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Although results from gel shift assays suggest that ArcA-mediated control of ompD expression under oxidative stress is dependent on ArcA phosphorylation , additional evidence is required to elucidate the signaling-pathway and molecular mechanisms involved in this regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>In this report , we provide evidence that ArcA , the response regulator of the ArcAB global regulatory system , is essential for nitro-sative and oxidative stress resistance in S. enterica serovar Enteritidis SE2472 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Given the large number of genes in this operon , it is not surprising that in addition to the local regulator EutR , its regulation is also coordinated with the global carbon and energy metabolism of S. Typhimurium ( i.e. its expression is regulated by the global regulator ArcA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>However , it has been shown that CydA is important in the generation of an unknown signal for the ArcB sensor kinase of ArcA ( Iuchi et al. , 1990b ) , thus playing a role in the control of ArcA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>]<br></li>
+<li>In Escherichia coli , ArcA ( Aerobic Respiratory Control ) is one of the main transcriptional regulators involved in the metabolic shift from anaerobic to aerobic conditions and controlling the enzymatic defenses of bacteria against ROS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In addition , our proteomic dataset suggests ArcA activates the expression of S. Typhimurium SPI-1 T3SS , which is required for bacterial invasion of intestinal epithelial cells ( 38 ) and controlled by the transcriptional regulator HilA ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>ArcA is the response regulator of the two-component signal-transduction-system responsible for repression of aerobic metabolic pathways during anaerobic growth ( Iuchi and Lin 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12420160" target="_blank">12420160</a>]<br></li>
+<li>The ArcB/ArcA system is a well-known global regulator that controls expression of a large number of genes for growth under O2 limitation conditions , including genes for aerobic-respiration and central metabolisms , as well as activation of the gene for the F-pilus [ 52,53 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>In other words , ArcA may both directly and indirectly repress the expression of the TCA genes ( Fig. 4G ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>This indicates that Fnr and/or ArcA also control the expression of genes encoding other enzymes involved in lipid A covalent modiﬁcations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>In this work , we show that the chain-length distribution of OAg in S. Enteritidis is under oxygendependent regulation mediated by Fnr and ArcA , which control the expression of the genes encoding WzzSE and WzzfepE chainlength determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Adaptation to oxygen deprivation involves the global regulators Fnr and ArcA , which control the expression of a large number of genes whose products are mainly involved in adaptation to anaerobiosis [ 13e18 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Oxygen availability regulates the expression of wzzSE and wzzfepE in S. Enteritidis The above results lead us to hypothesize that the expression of genes encoding the OAg chain-length regulators WzzSE and WzzfepE are regulated by ArcA or Fnr in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>In addition , we also demonstrate that global regulators Fnr and ArcA control the oxygen-dependent lipid A hydroxylation by directly regulating the expression of lpxO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In addition , transcriptomic analyses have shown that Fnr and ArcA also regulate the expression of several genes linked to S. Typhimurium virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine-biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>Phosphor-ylated ArcA is then activated as a transcription factor and turns on/off the expression of a wide spectrum of downstream genes , thereby reshuffling bacterial metabolic pathways to optimize energy conversion ( 6 , 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Figure 2 Effect of ArcA on the expression of genes of central metabolism , sugar uptake and reductive pathways in aerobiosis with or without H2O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_118">
+Signal transduction and bacterial conjugation : characterization of the role of ArcA in regulating conjugative transfer of the resistance plasmid R1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></label>
+<input id="rp_similarity_118", type="checkbox">
+<div class="RP_similar">
+<li>Strohmaier , H. , Noiges , R. , Kotschan , S. , Sawers , G. , Högenauer , G. , Zechner , E. , and Koraimann , G. ( 1998 ) Signal transduction and bacterial conjugation : characterization of the role of ArcA in regulating conjugative transfer of the resistance plasmid R1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li></div>
+<li>This leads to activation of ArcA , which regulates a variety of metabolic and regulatory genes , subsequently shifting the cell into a state of oxidative stress through hydroxyl radical production and eventual cell-death ( Kohanski , Dwyer , Wierzbowski , Cottarel , & Collins , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_121">
+Park S-J , Chao G , Gunsalus RP : Aerobic regulation of the sucABCD genes of Escherichia coli , which encode alpha-ketoglutarate dehydrogenase and succinyl coenzyme A synthetase : roles of ArcA , Fnr , and the upstream sdhCDAB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></label>
+<input id="rp_similarity_121", type="checkbox">
+<div class="RP_similar">
+<li>Aerobic regulation of the sucABCD genes of Escherichia coli , which encode - ketoglutarate dehydrogenase and succinyl coenzyme A synthetase : roles of ArcA , Fnr , and the upstream sdhCDAB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17220229" target="_blank">17220229</a>]<br></li></div>
+<li>ArcA Regulates the TCA Cycle In Both Direct and Indirect Manners -- The largest group of ArcA-repressed proteins encompasses enzymes in the central carbon metabolism ( Table I ) , in particular those in the TCA-cycle .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>In addition to the central metabolism regulated similarly as in E. coli , Sal-monella ArcA also controls the expression of distinct pathways such as repression of ethanolamine utilization and activation propanediol-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Salmonella Lacking arcA Exhibits Competitive Disadvantage and Lower Cellular ATP Levels -- Given the global regulatory roles of ArcA in carbon and energy metabolism as well as protein-synthesis , next we examined the physiological consequences of arcA deletion in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Involvement of Post-transcriptional Regulation of SPI-1-en-coded Virulence Factors and Other Pathways In the ArcA Regulon -- Network analyses of ArcA-activated proteins revealed several distinct clusters including ribosomal proteins , hydrogenases , proteins involved in maltose utilization and sulfate-assimilation , and SPI-1-encoded virulence factors ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Table 3 Classification of ArcA regulated genes according to Clusters of Orthologous Groups ( COGs ) a b Functional Gene Groups # of Genes ArcA - ArcA-activated repressed 0 0 4 4 Cell division and chromosome partitioning Cell envelope and biogenesis , outer membrane Cell motility and secretion 12 1 Posttranslational modification , protein turnover , chaperones 3 1 ArcA as a repressor Transcription of the genes required for aerobic metabo-lism , energy generation , amino-acid-transport , and fatty-acid-transport were anaerobically repressed by ArcA ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>ArcA as an activator Several of the genes involved in regulating flagellar bio-synthesis , motility , chemotaxis , sugar-transport , metabo-lism , and glycogen-biosynthesis were found to be anaerobically activated by ArcA ( Figure 3D-F and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Bp-value estimates the significance of the weight associated to each site [ 38 ] Role of ArcA in ROS scavenging The S. Typhimurium genome codes for several genes that degrade H2O2 or organic hydroperoxide , including catalases ( katG , katE and katN ) , alkyl hydroperoxide reductases ( ahpCF and tsaA ) [ 47 ] and a glutathione-dependent peroxidase ( btuE ) [ 48 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Of particular interest are the genes most upregulated by ArcA in aerobiosis with H2O2 in the pathways of nucleotide and glutathione-metabolism , coding for the alternative ribo-nucleotide reductase ( nrdEF ) and glutathione reductase ( gor ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Role of ArcA in maintaining GSH and thioredoxin levels ArcA positively regulates the expression of the genes gor ( GR ) and trxB ( thioredoxin reductase ) in aerobiosis with H2O2 , but not without the toxic compound ( Figure 2 and 4 Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Network Analyses of Functional Associations and/or Interactions Among ArcA-Regulated Proteins -- To further under ¬ Classification of differentially expressed Salmonella proteins in the arcA mutant according to Clusters of Orthologous Groups ( COGs ) Number of Proteins ArcA - ArcA-repressed activated 34 10 20 12 2 8 10 6 0 4 8 4 74 44 0 14 4 5 0 2 8 3 6 1 4 0 Nucleotide metabolism and transport Carbohydrate metabolism and transport Coenzyme metabolism Lipid metabolism a Metabolism Translation Transcription Replication and repair Cell wall/membrane/envelop biogenesis Cell motility Post-translational modification , protein turnover , chaperone functions Inorganic ion-transport and metabolism 7 6 Secondary structure 4 1 Signal transduction 11 3 Intracellular trafficking and secretion 3 1 General functional prediction only 8 7 Function unknown 41 28 a The bolded functional category contains a summary of the unbolded COG functional groups above associated with metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>ArcA regulation of cobalamine-synthesis and metabolism Propanediol ( encoded by the pdu operon ) , a fermentation product of rhamnose or fucose [ 66,67 ] , and ethanolamine ( encoded by the eut operon ) , an essential component of bacterial and eukaryotic cells , can be used by Salmonella as carbon and energy sources in the mammalian gastro-intestinal tract [ 67 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Among the pathways upregulated by ArcA were those implicated in the transport of amino acids and sugars , oligopeptides and metals , including PTS and ABC transporters , among others ( Table 1 , negative NES values ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>For example , the expression of the mgtCB operon ( member of SPI-3 ) that is required for Mg2 + transport/growth in low-magnesium and involved in systemic infections in mice/intrama-crophage survival [ 37-40 ] , genes constituting the lambdoid prophage Gifsy-1 that contributes to the virulence of S. Typhimurium [ 41 ] , and genes coding for a leucine-rich repeat protein ( sspH2 ) that is translocated by and coordinately regulated with the SPI-2 TTSS [ 42 ] were highly repressed by ArcA ( Figure 3A and Additional file 1 : Table S1 ) 12 3 Inorganic ion-transport and metabolism Signal transduction mechanisms Cellular processesc Defense Mechanismsc 1 5 34 12 1 1 Translation , ribosomal structure , and biogenesis Transcription 7 0 18 4 8 DNA-replication , recombination , and repair Information storage and processingc Intracell traffickingc 2 29 10 1 0 9 18 Energy production and conversion Amino acid transport and metabolism 25 7 30 2 Nucleotide transport and metabolism Carbohydrate transport and metabolism 20 16 Coenzyme metabolism Lipid metabolism 2 0 7 1 Secondary metabolites biosynthesis , transport , and catabolism Metabolismc 4 12 79 74 General function prediction only 21 Function unknown 8 24 8 Poorly characterized 23 67 Unknownc 39 112 Total 147 245 qRT-PCRRatio 4.0 R = 0.8682 2 3.0 2.0 1.0 0.0 -1.0 -2.0 -3.0 -4.0 qRT-PCR vs. Microarray Linear ( qRT-PCR vs. Microarray ) -5.0 -8.0 -2.0 0.0 2.0 -4.0 -6.0 4.0 6.0 8.0 Microarray Ratios Figure 1 Correlation between the microarray and the qRT-PCR data of 17 randomly selected genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Thus , the response regulator ArcA directly inhibits rpoS transcription and the sensor kinase ArcB also promotes proteolysis of σS by acting as a phosphor donor for the σS-specific proteolytic targeting factor and response regulator , RssB [ 98 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Briefly , ArcB responds to low oxygen conditions when bacteria reach the distal ileum and undergoes autophosphorylation , following which the phosphate group is transferred to ArcA ; phosphorylated ArcA ( ArcA-P ) activates loiA gene-expression indirectly through unknown regulator ( s ) ; LoiA activates HilD directly through binding the hilD promoter ; HilD then activates hilA and other SPI-1 genes , and thus facilitates the invasion process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>This group included most of the global regulators and many were differentially affected under the different growth conditions including Crp , Fis , ArcA , SlyA , Fur , and H-NS ( Figures 1D -- F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>ArcB transfers a phosphoryl group to ArcA , activating it , and inducing or repressing a large and diverse number of operons including the tricarboxylic-acid-cycle ( TCA ) , terminal oxidases , dehydrogenases of the flavoprotein class , the glyoxylate shunt , and fatty-acid-degradation [ 5-17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The novel low-O2 signal-transduction-pathway reported here constitutes both global regulators ( ArcB/ArcA ) and a specifically acquired regulator ( LoiA ) , and direct regulators of SPI-1 ( HilA , HilD ) , indicating the complex mechanisms of SPI-1 regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Jiang , F. , An , C. , Bao , Y. , Zhao , X. , Jernigan , R. L. , Lithio , A. , Nettleton , D. , Li , L. , Wurtele , E. S. , Nolan , L. K. , Lu , C. , and Li , G. ( 2015 ) ArcA controls metabolism , chemotaxis , and motility contributing to the pathogenicity of avian pathogenic Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>ArcA is one component of the E. coli and Salmonella global control systems that respond to molecular oxygen , including the OxyR , SoxRS , Fnr , and ArcAB systems ( 2 , 28 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Tardat B , Touati D : Iron and oxygen regulation of Escherichia coli MnSOD expression : competition between the global regulators Fur and ArcA for binding to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Shalel-Levanon S , San KY , Bennett GN : Effect of ArcA and FNR on the expression of genes related to the oxygen regulation and glycolysis pathway in Escherichia coli under growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Levanon SS , San KY , Bennett GN : Effect of oxygen on the Escherichia coli ArcA and FNR regulation systems and metabolic responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">ArcA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Black and red boxes indicate predicted ArcA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Binding sites with a p-value of ≤ 0.0001 were considered significant and reported as predicted ArcA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>As shown in Fig. 4A , a putative ArcA binding site was identiﬁed at positions 343 to 334 from the translational start codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>In support of this hypothesis , our bioinformatics analyses revealed the presence of a putative binding sites for Fnr at position 262 , and three putative binding sites for ArcA at positions 13 , 85 and 107 with respect to the potential transcription initiation site of wzzfepE ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>In the case of wzzSE , we also identiﬁed a putative binding site for Fnr at position 14 , and three putative binding sites for ArcA at positions 117 , 208 and 314 , with respect to its assumed transcription initiation site ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>The upstream sequences of the genes regulated by ArcA in response to aerobiosis or H2O2 exposure under aerobic conditions ( Additional file 2 : Table S2 ) were retrieved ( positions − 400 to − 1 with respect to the translation start site ) from the sequenced and annotated genome of S. Typhimurium 14028s [ 37 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Figure 2 Logo of the information matrix obtained from the alignment of ArcA sequences for S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>To generate plasmids pLoiA , pHilD , pArcA and pArcB , the ORF and the upstream promoter sequence of the corresponding genes were amplified by PCR from genomic DNA of the wild-type strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>The pET-LoiA and pET-ArcA plasmids used for purification of the LoiA-His6 and ArcA-His6 proteins were generated by cloning the loiA and arcA gene sequence into the HindIII and BamHI sites downstream of the His-tag element in recombination with introduction of pCP20 plasmid [ 59 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Furthermore , our bioinformatic analyses in search for ArcA motifs predicted binding sites in the promoter regions of ompW and ompD , but not for ompC ( [ 12 ] , data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Substituted bases are in red , underlined and shown below the core ArcA binding sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>The consensus ArcA binding site is shown under the promoter sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>However , the ArcA-binding site consensus ( WGTTAATTAW [ 21 ] ) is quite disparate in sequence from the second inverted-repeat located upstream of nipAB , and our induction studies utilizing the lacZ reporter indicate that ArcA does not regulate nipAB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by ArcA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Plasmids containing arcA ( pET-TOPO100ArcA ) were checked by PCR and DNA sequencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>This led us to test whether ArcA may act through rpoS in S. Typhimurium , perhaps by up-regulating rpoS expression as opposed to repressing it as in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Neither the ArcA global regulator ( also responding to anaerobic conditions ) nor the Crp-cyclic AMP system ( responding to carbon starvation ) affected ttr operon induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>These results indicate that Fnr and ArcA regulate lpxO expression through direct binding to its promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In particular , the genes required for cytochrome-o-oxidase , succinyl-CoA synthetase , glutamate/aspartate transport , trehalose-6-phosphate biosynthesis , long-chain-fatty-acids transport , spermidine/putrescine transport , dipeptide transport , the genes encoding the two-component tricarboxylic transport system and the site-specific DNA factor for inversion stimulation ( fis ) were among the highest repressed by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>ArcA is most active under microaerobic and anaerobic conditions [ 26,115 ] when it suppresses genes encoding enzymes of TCA cycle , probably to decrease respiration under less favourable conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Transcript levels of ompD were measured since its expression is regulated by ArcA under ROS conditions [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>Regulation of SodA production is complex but includes repression by Fnr , ArcA , and Fur , such that expression is repressed under anaerobic conditions ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>These observations suggest that ArcA is a negative regulator of lpxO expression under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Although the effects of these global regulatory proteins have not been shown directly , it is thought that the cAMP receptor protein-cAMP complex acts by inducing pocR transcription ( 1 ) , while ArcA may increase pocR transcription under anoxic conditions and may activate cob transcription directly ( 1 , 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>ArcA and FNR regulate dozens and hundreds of genes , respectively , many of which are required for metabolism in anaerobic conditions , but neither transcription factor has been implicated in controlling fis expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_12">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="tu_similarity_12", type="checkbox">
+<div class="TU_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>Involvement of FNR and ArcA in anaerobic expression of the tdc operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17220229" target="_blank">17220229</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_15">
+The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaero-philic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7730262" target="_blank">7730262</a>]<br></label>
+<input id="tu_similarity_15", type="checkbox">
+<div class="TU_similar">
+<li>The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li></div>
+<li>Transcription was moderately reduced at both Pfis-1 and Pfis-2 in the ΔarcA mutant ( Figure 4B ) , suggesting that ArcA causes mild activation of fis expression during exponential growth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>This clone was pursued further because the operon is coregulated in E. coli by both ArcA and Fnr ( 27 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18559530" target="_blank">18559530</a>]<br></li>
+<li>Transcription of tetrathionate ( ttr operon ) was activated at equal levels by both Fnr and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The dctA gene encodes the aerobically expressed transporter for succinate , malate , and fumarate and is catabolite ( cyclic AMP receptor protein ) and anaerobically ( ArcA ) repressed ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16585773" target="_blank">16585773</a>]<br></li>
+<li>Therefore , it is possible and reliable to compare genes / operons regulated by these two important transcriptional factors ( i. e. , ArcA and Fnr ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>In addition to known processes under its control , notably we found that ArcA represses ethanolamine utilization by directly binding to the promoter region of the eut operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Expression of ptsG encoding the major glucose transporter is regulated by ArcA in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27628932" target="_blank">27628932</a>]<br></li>
+<li>This suggests that under the assayed conditions , ArcA is not active , since , as observed in the presence of NaOCl , when ArcA , MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>These findings , combined with the absence of etha-nolamine in the culture medium used in our assay ( and in the assay by Evans et al. ) and the large number of genes in the eut operon ( i.e. their expression would be energy-consuming ) , strongly support the notion that ArcA represses the expression of eut genes in the rich medium ( LB-MOPS-X ) under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Our data show that , anaerobically , ArcA repressed the cyo operon ( Additional file 1 : Table S1 ) , while the expression of cyd operon was slightly reduced in the arcA mutant relative to WT ( i.e. , ArcA is required for the activation of cyd ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Given the large number of genes in this operon , it is not surprising that in addition to the local regulator EutR , its regulation is also coordinated with the global carbon and energy metabolism of S. Typhimurium ( i.e. its expression is regulated by the global regulator ArcA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>In this work , we show that the chain-length distribution of OAg in S. Enteritidis is under oxygendependent regulation mediated by Fnr and ArcA , which control the expression of the genes encoding WzzSE and WzzfepE chainlength determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Interestingly , most of the 120 genes were regulated by ArcA and Fnr in the same fashion ( i.e. , repressed or activated ) except for yneB ( putative fructose-1 ,6 - bisphosphate aldolase - STM4078 ) , which was activated by ArcA , but repressed by Fnr ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The genes of the two-component tricarboxylic transport system ( tctE , STM2786 , STM2787 , STM2788 , and STM2789 ) were the most highly repressed by ArcA ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Our data have shown that most of the SPI-1 through SPI-5 genes were not significantly regulated by ArcA , with the exception of three genes contained within SPI-3 including , mgtC , mgtB , and slsA ( Figure 3 and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Furthermore , all of the genes in the eut and pdu operons were activated by ArcA ( Figure 3 and Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Anaerobically , our data indicate that the expression of many of the antioxidant genes [ i.e. : sodA , sodB , sodC1 , and sodC2 ( coding for superoxide dismutases ) and katG and katE ( coding for hydroperoxidases ) , and hmpA ( coding for flavohemoglobin ) ] were not significantly affected by ArcA ; however the expression of STM1731 ( Mn-catalase , katN ) was significantly increased in the arcA mutant compared to the WT ( Additional file 1 : Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Blue shows that the genes are positively regulated by ArcA , yellow shows that the genes are not affected by ArcA , and red shows that the genes are negatively regulated by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Under this constraint , 392 genes were differentially expressed in the arcA mutant relative to the WT and , therefore , regulated directly or indirectl by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Together , these ﬁndings suggested that the role played by Fnr and ArcA in lipid A hydroxylation most probably occurs by controlling lpxO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>The connection between the ArcB/ArcA system and LoiA on SPI-1 regulation was further investigated by examing the expression levels of hilD in arcA , arcB , loiA , arcA/loiA and arcB / loiA double mutants grown under high and low O2 conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Expression and Puriﬁcation of ArcA and FnrD154A Expression of ArcA and FnrD154A was induced during 4 h by adding 0.02 % or 0.2 % L-arabinose to cultures ( OD600 ∼ 0.4 ) of E. coli TOP10 harboring pBAD-arcA or pBAD-fnrD154A , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Anaerobic induction of pyruvate formate-lyase gene expression is mediated by the ArcA and FNR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>Repression of the Ethanolamine Utilization Operon by ArcA -- Several proteins of the ethanolamine utilization operon , including EutB , EutC , EutE and EutQ , are of significantly higher ( 23 -- 49 fold ) levels in arcA cells , suggesting their repression by ArcA ( Fig. 2A and 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=30038032" target="_blank">30038032</a>]<br></li>
+<li>Expression of both operons is induced by propanediol and globally controlled by the ArcA and Crp systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>This condition leads to an adaptive response by changing the expression of numerous genes , and transcription factors Fnr and ArcA are major regulators of this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Biochemical and genetic analyses indicate that this process is regulated by Fnr and ArcA controlling the expression of lpxO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Interestingly , aerobic expression of cydAB is repressed by H-NS , which is relieved by the response regulator ArcA [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Role of ArcA during aerobic conditions The expression of 220 and 122 genes was up - or downregulated , respectively , by ArcA under aerobic conditions ( Additional file 2 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Interestingly , genes of the Krebs cycle , which are negatively regulated by ArcA under anaerobic conditions [ 8 ] , were not repressed in aerobiosis ( Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+<li>Role of ArcA in the response to H2O2 under aerobic conditions It has been well established that an aerobically grown ΔarcA strain is sensitive to H2O2 treatment [ 7-10 ] , however , the genes regulated by ArcA under this condition have not been determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

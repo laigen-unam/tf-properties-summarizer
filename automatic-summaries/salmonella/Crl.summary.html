@@ -1,0 +1,802 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Crl</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Crl</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Crl transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Lane 1 , no plasmid ; lane 2 , pUT18 ; lane 3 , pUTCrl ; lane 4 , pUTCrlY22A ; lane 5 , pUTCrlF53A ; lane 6 , pUTCrlW56A ; lane 7 , pUTCrlG80A ; lane 8 , pUTCrlW82A ; lane 9 , pUTCrlR51A ; lane 10 , pUTCrlE52A ; lane 11 , pUTCrlG55A ; lane 12 , pUTCrlW57A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_2">
+Pratt , L.A. , and Silhavy , T.J. ( 1998 ) Crl stimulates RpoS activity during stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></label>
+<input id="act_similarity_2", type="checkbox">
+<div class="ACT_similar">
+<li>Pratt , L. A. & Silhavy , T. J. Crl stimulates RpoS activity during stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Crl stimulates RpoS activity during stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li></div>
+<li>However , Crl might be more active at low temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Altogether these results demonstrated that substitution L87R renders σSPA sensitive to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>S2 ) , prompting us to examine whether σSPA can be activated by Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>We show here that σS PA PA is not activated by Crl due to its inability to interact with Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Positive regulation by RpoS , Crl , and CsgD is indicated by arrows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>The results were more obvious than in gel retardation assays since wild-type Crl stimulated E S-lacUV5 abortive transcription by 4-fold under our conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>So far , Crl is the only known σS-dedicated regulatory factor that enhances σS activity through a direct interaction , favouring EσS formation7 ,10 -- 15 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_12">
+Arnqvist , A. , Olsén , A. , Pfeifer , J. , Russell , D.G. , and Normark , S. ( 1992 ) The Crl protein activates cryptic genes for curli formation and ﬁbronectin binding in Escherichia coli HB101 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></label>
+<input id="act_similarity_12", type="checkbox">
+<div class="ACT_similar">
+<li>The Crl protein activates cryptic genes for curli formation and ﬁbronectin binding in Escherichia coli HB101 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17012381" target="_blank">17012381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li></div>
+<li>Residue R82 in σSSTM is required for Crl binding and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>D36 and R51 in Crl and R82 , D135 and E137 in σS were defined as active residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The ﬁnal concentrations of core , His6 - S , Crl , and katN fragments were , respectively , 8 nM , 32 nM , 3 M , and 1 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Moreover , in free Crl , residue D36 is involved in an intramolecular interaction with R24 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Cavaliere , P. , Norel , F. & Sizun , C. 1H , 13C and 15N resonance assignments of σS activating protein Crl from Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Robbe-Saule , V. , Jaumouillé , V. , Prévost , M. C. , Guadagnini , S. , Talh-ouarne , C. , Mathout , H. , Kolb , A. , and Norel , F. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica Serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22235813" target="_blank">22235813</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17012381" target="_blank">17012381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29580499" target="_blank">29580499</a>]<br></li>
+<li>, Guadagnini , S. , Talhouarne , C. , Mathout , H. , et al. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20545866" target="_blank">20545866</a>]<br></li>
+<li>Robbe-Saule , V. , Jaumouille , V. , Prevost , M.C. , Guadagnini , S. , Talhouarne , C. , Mathout , H. , et al. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li></div>
+<li>The physiological effects of Crl are greatest at low levels of S ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Several mechanisms could explain Crl activation of S-dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Importantly , substitution of this leucine by an arginine rendered σSPA sensitive to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>In vivo activity of σS variants and their sensitivity to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>For example , when Crl is missing and S activity decreases , an increase in S levels due to a lack of Crl may have a compensatory role .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>In addition , katE is not resistant to Crl activation per se because it responded to Crl activation when S levels were decreased by the rpoSLT2 mutation ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Thus , transcriptional activation by Crl appeared to be speciﬁc for E S. Crl facilitates open complex formation by E S at the csgD and adrA promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>In E. coli and Salmonella , the Crl S protein activates r - dependent transcription and plays an important role in the biosynthesis of curli ﬁbers , involved in adhesion to extracellular matrices and bioﬁlm formation & Christina Sizun christina.sizun@cnrs.fr 1 Département de Microbiologie , Laboratoire Systèmes Macromoléculaires et Signalisation , Institut Pasteur , 25 rue du Docteur Roux , 75015 Paris , France 2 CNRS ERL3526 , rue du Docteur Roux , 75015 Paris , France 3 Institut de Chimie des Substances Naturelles , CNRS UPR2301 , 91190 Gif-sur-Yvette , France ( Hengge 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>S Physiological Effects of Crl in Salmonella Are Modulated by Level and Promoter Speciﬁcity Véronique Robbe-Saule , Miguel Dias Lopes , † Annie Kolb , and Françoise Norel * Unité des Régulations Transcriptionnelles , URA-CNRS 2172 , Institut Pasteur , 25 rue du Docteur Roux , 75724 Paris Cedex 15 , France Received 20 December 2006/Accepted 29 January 2007 The small regulatory protein Crl activates S ( RpoS ) , the stationary-phase and general stress response sigma factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>S Effect of Growth Temperature on Crl-Dependent Regulation of Activity in Salmonella enterica Serovar Typhimurium éronique Robbe-Saule , Ingrid Carreira , † Annie Kolb , and Françoise Norel * V Unité de Génétique moléculaire and CNRS URA2172 , Institut Pasteur , Paris , France Received 30 January 2008/Accepted 22 April 2008 The small regulatory protein Crl favors association of the stationary-phase sigma factor S ( RpoS ) with the core enzyme polymerase and thereby increases S activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>In wild-type strain ATCC 14028 , the Crl protein was synthesized during the early exponential-growth-phase , but Crl protein levels increased during the late exponential and stationary growth-phases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>This indicated that the His6-Crl protein was active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>The strong sequence conservation of σS2 , the only σS domain that binds Crl16 ,18,21 , prompted us to assess possible activation of σS by Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>How does Crl binding to σS increase the σS association rate with E ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Whereas σ factors are usually inactivated upon interaction with anti-σ proteins , σS binding to the Crl protein increases σS activity by favouring its association to E. Taking advantage of evolution of the σS sequence in bacterial species that do not contain a crl gene , like Pseudomonas aeruginosa , we identified and assigned a critical arginine residue in σS to the S. Typhimurium σS-Crl binding interface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Therefore , if the conformation of σS in the cell is rather compact , Crl binding to σS2 may alleviate intramolecular interactions between σS2 and other σS domains , favouring an open conformation for just the time required for σS to-bind E , but transiently enough to avoid σS degradation by ClpXP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Crl contributes to negative regulation by S. Negative regulation of 70-dependent gene expression by S has been reported , and this probably results from the competition between S and 70 for binding to a limiting amount of core polymerase ( 10 , 13 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>To determine whether Crl contributes to negative regulation by S , growth of wild-type strains and that of mutant strains were compared in minimal medium with succinate as a sole carbon source ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Altogether , these results indicate that the major stimulatory effect of Crl at low temperature is not due to the fact that Crl is more active or more abundant at low temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>It is likely that the requirement for Crl is more acute in cells expressing low levels of S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Crl protein activates in vitro transcription by E S from the csgD and adrA promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>In the zoom view , the side chain of the charged residues , involved in salt bridges , are colored as follows : in Crl , R51 in orange , D36 in magenta and in σS , R82 in green and the DPE motif in yellow .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>On the one hand , Crl binds to S , directly increasing its efﬁciency in transcription initiation both in vivo and in vitro , and as expected , a crl null mutation can be complemented by an increase in RpoS expression ( Fig. 2 and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>In contrast , the F53A and W56A variants of Crl ( Fig. 7A , lanes 5 and 7 ) had hardly any effect , in agreement with their highly reduced ability to stimulate csgD-lacZ expression or hydrogen peroxide resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In conclusion , the Y22A , F53A , W56A , and W82A substitutions all abolished the interaction between Crl and S , either directly or indirectly , through conformational changes in Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Numerous transcription factors are involved , including OmpR , MlrA , and CpxR and the nonspeciﬁc DNA-binding proteins H-NS and IHF , in addition to the feed-forward loop involving rpoS and the factors that regulate RpoS activity , including IraP and Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25824832" target="_blank">25824832</a>]<br></li>
+<li>However , whereas OxyS negatively influences RpoS abundance ,15 DsrA , RprA and ArcZ all upregulate RpoS protein lev-els .16 -20 Post-transcriptional activation of RpoS by these sRNAs relies on de-sequestration of an intramolecular base-pairing within the rpoS 5 ' UTR , a process which increases transcript stability and facilitates translation initiation .21 The importance of post-transcriptionally acting sRNAs for rpoS translation is reflected in the strong decrease of cellular RpoS levels in hfq mutant strains , while rpoS mRNA levels display only a minor reduction .22,23 Currently it is unclear why S. Typhimurium and E. coli recruited multiple sRNAs to control rpoS translation , however , the degree of regulation by the above mentioned sRNAs varies among both species .24 Whereas the relevance of RpoS for rdar morphotype development and c-di-GMP signaling has been studied in great detail ,6,25 Introduction The rdar ( red , dry and rough ) morphotype formed by Salmonella enterica serovar typhimurium ( from here on S. Typhimurium ) and Escherichia coli species constitutes a multicellular biofilm behavior characterized by the expression of extracellular matrix components , proteinaceous curli fimbriae and the exopolysaccharide cellulose .1 A major contributor to rdar development is the response-regulator CsgD which acts as a transcriptional-activator of csgBA encoding curli fimbrial subunits and adrA encoding a di-guanylate cyclase stimulating cellulose biosynthesis .2,3 The second messenger c-di-GMP produced by AdrA and other di-guanylate cyclases is a key molecule in the switch between sessility and motility4 and facilitates csgD expression at the transcriptional and post-transcriptional level .5 Transcriptional control of csgD is complex and integrates various outside stimuli such as temperature , osmolarity and nutritional status through a variety of regulatory factors , e.g. , two-component systems and nucleoid binding proteins .6,7 The alternative sigma factor RpoS ( δS ) activates csgD expression in stationary phase , a process which is aided by the auxiliary protein Crl .8 Therefore RpoS constitutes a crucial factor for multicellular behavior and rdar morphotype development in S. Typhimurium and E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22336758" target="_blank">22336758</a>]<br></li>
+<li>The holoenzyme was preincubated in the absence of His6-Crl ( lanes 1 , 5 , 6 , 8 , and 12 ) or in the presence of His6-Crl ( lanes 2 and 9 , 250 nM ; lanes 3 and 10 , 1 M ; lanes 4 , 7 , and 11 , 4 M ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>These results suggested that the activity of S Ty19 was highly dependent on Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>To assess whether the interaction between σSPA L87R and Crl was functional ( i.e. whether Crl activates σSPA L87R ) , we monitored the rdar morphotype of S. Typhimurium harbouring the chromosomal rpoSPA-L87R allele expressing σSPA L87R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>On one side , Crl stimulates the S-dependent transcription of rssB and thereby increases S degradation ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Crl at concentrations of 250 nM and 1 M increased the amount of tetranucleotide synthesized 1.7-fold and 2-fold , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>An exception to this general rule is the Crl protein that binds the stationary-phase sigma factor S ( RpoS ) and enhances its afﬁnity for the RNAP core enzyme , thereby increasing expression of S-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>This may be because the Sdependent genes required for survival and stress resistance under these conditions are not highly sensitive to Crl activation , as is the case for the katE gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>It remains to be determined whether Crl also increases the activity of other alternative sigma factors , for example , 32 , in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>This indicated that the ﬁrst 71 residues in S are nonessential for Crl binding and further suggested that the deletion of this region induces a conformational change in S that favors its stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The results above corroborate the hypothesis that the Crl-σS complex formation is likely driven by electrostatic interactions by demonstrating that one positively charged residue , R82 in σSSTM , is of paramount importance for Crl binding and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Whereas r factors are generally inactivated upon interaction with antisigma proteins , rS binding by the Crl protein facilitates the formation of the holoenzyme ErS , and therefore rS-con-trolled transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>Here , we further investigated the physiological effects of Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Thus , even though a role for Crl in 70 activation under speciﬁc conditions or on particular promoters could not be excluded , it appears that under the conditions used in our study , the basic function of Crl in vivo involves S much more than 70 activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>However , high-resolution structural data are missing to fully understand the mole-cular mechanisms underlying rS activation by Crl , in particular the possible role of Crl in triggering domain rearrangements in the multi-domain protein rS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>However , if Crl is present at a limiting level in the cell , even a small increase in the Crl concentration might increase the Crl effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>One hypothesis to explain the effect of temperature on Crl-mediated activation is that Crl levels are limiting in vivo compared to S levels , so that a small increase in the Crl level at 28 ° C compared with that at 37 ° C results in greater Crl effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Finally , we underscored a feedback control of Crl effects ; in stationary S phase , when the level of is high and Crl may be dispensable , S exerts a negative effect on Crl production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>This suggests that rpoS negatively regulates Crl production in stationary phase , when the level of S is high .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>There may also be other environmental conditions under which the balance of Crl and S levels is set such that the presence of more Crl makes an important difference .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>However , the stimulating effect of Crl could not be reproduced in vitro with puriﬁed products , and the mechanism by which Crl inﬂu-ences S activity is unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Alternatively , since Gaal et al. ( 12 ) recently reported that Crl increases the transcriptional activity of E 70 in vitro besides that of E S , the absence of Crl might be disadvantageous for bacterial ﬁtness during stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>This mechanism of action of Crl is consistent with our ﬁnding that the effect of Crl in vivo is maximal at low concentrations of S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>We observed that , in the absence of Crl , no binding of STy19 ( up to 2.5 M ) to E could be detected ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>In conclusion , the G282V substitution in S both decreased the activity of S and inTy19 creased its dependency to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Most interestingly , substitution of one single residue in the helix α2 of σSPA was suffifficient to confer to σSPA the ability to-bind Crl , and our data assigned this residue to the σS-Crl binding interface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>We replaced the wild-type rpoS allele in S. enterica serovar Typhimurium strain ATCC 14028 with the rpoSLT2 allele that shows reduced expression of S ; the result was an increased Crl activation ratio and larger physiological effects of Crl on oxidative , thermal , and acid stress resistance levels during stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Thus , depending on the bacterial lifestyles and environment encountered , cellular physiology , and the mechanisms of regulation of rpoS expression , Crl might be dispensable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The magnitude of the Crl-mediated activation of S-dependent genes and the physiological impact of Crl increased as S levels decreased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Clearly , the physiological effects of Cr and the magnitude of Crl activation of gene expression were greater at low levels of S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Therefore , even though decreased S abundance increased the magnitude of Crl activation of gene expression , it did not affect the differential responsiveness of the katE and katN genes to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In contrast , increasing the S level rendered Salmonella more resistant to H2O2 at 28 ° C , increased the expression of katE , and reduced the magnitude of Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>The chaperone-like protein Crl increases the performance S of , but its impact on the H2O2 resistance level of S. Typhi-murium in stationary phase is hardly detectable in standard growth conditions ( 37 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>E S was preincubated in the absence of Crl or in the presence of wild-type Crl or its variants Y22A , F53A , W82A , and W56A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_84">
+For csgD and adrA , E S was preincubated in the absence of His6-Crl ( -RCB- ) or in the presence of His6-Crl ( ■ , 250 nM ; Œ , 1 M ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></label>
+<input id="act_similarity_84", type="checkbox">
+<div class="ACT_similar">
+<li>For lacUV5 , E 70 was preincubated in the absence of His6-Crl ( -RCB- ) or in the presence of His6-Crl ( ■ , 250 nM ; Œ , 1 M ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li></div>
+<li>In this system , the ﬁrst 38 residues of S were dispensable for efﬁcient binding of Crl ( Table 3 , compare T25 - S and T25 - S 1-38 in the presence of Crl-T18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>No E-binding of His6 - STy19 can be detected in the absence of Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>The addition of W56A Crl resulted in an even lower activity than in the absence of Crl , suggesting a slight inhibitory effect of this variant on S-dependent transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>This positive effect of Crl on S stability , which would result in higher levels of S in the presence of Crl , is masked by the effect of Crl on rssB expression and cellular amounts of S are higher in the absence of Crl ( 35 , 46 , 39 ) ( Fig. 1 , lanes 4 to 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>The activities of the variant proteins were also probed in vitro by gel retardation and abortive initiation assays , based on the ability of Crl to increase the amount of promoter complexes formed by the S-RNA polymerase ( E S ) and activate transcription initiation ( 12 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>One way to answer this question is to determine the role ( if any ) of Crl in the expression of 70-dependent genes and phenotypes negatively regulated by RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In agreement with the in vivo data , in vitro transcription S experiments using three different - dependent promoters -- katE , katN , and poxB -- demonstrated that the activity of the S Ty19 protein was lower , and much more dependent on Crl activation , than that of the wild-type S protein ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>It is likely that , in the rpoSTy19 mutant , the inverse effects of Crl on STy19 stability , through E - STy19 formation and induction of the STy19-dependent rssB transcription , fully compensate each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>The primary determinants of S involved in the binding of Crl are unknown , but the lack of interaction between Crl and 70 ( 12 ) suggests that the interaction involves sequence deterS minants or structural features that are speciﬁc to .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>LT2 This suggests that the magnitude of Crl repression , like that of S Crl activation , is dependent on the content in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In in vitro transcription experiments also , the magnitude of the Crl effect decreased substantially as the S concentration increased ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>At both temperatures , Crl was present in excess of S , and increasing the Crl level further did not increase the H2O2 resistance level of Salmonella and the expression of the S-dependent gene katE encoding the stationary-phase catalase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>This dual role of S in the control of the operon , and the inverse correlation , observed in this study , between the S level and the magnitude of H-NS repression , might account for the strong sensitivity of yciGFEkatN expression to S levels and to activation by Crl ( 21 ) , the S - chaperone that increases S activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>In the late exponential-growth-phase , the level of csgD expression in the presence of pSTK4 was slightly lower in the crl strain than in the wild-type strain , suggesting that , even in the presence of high levels of S , Crl may still contribute to S activity when cells enter the stationary phase ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Interestingly , the gain of ﬁtness afforded by the rpoSTy19 mutation was conditional upon the presence of crl ( Fig. 6B ) , suggesting that , under these conditions , the level of STy19 activity in the absence of Crl is below the threshold required for Salmonella ﬁtness .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>At each promoter , the reactivity of the transcription bubble thymines was clearly more intense in the presence of Crl , indicating that Crl had increased the amount of open complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>The chemical shift perturbations in the NMR spectrum of Crl in the presence of σS indicate that loop 2 senses the presence of σS , but extend beyond the region directly involved in σS binding , including helix α1 , loop 1 and helix α3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The sensorgrams shown in blue and cyan correspond to the binding of S in the absence of Crl , and those in red and magenta correspond to that in the presence of Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>To evaluate the impact in Crl binding of σSSTM residue R82 , corresponding to L87 in σSPA , ( Fig. 1d ) , the ability of the σSSTM R82L variant to interact with Crl was assessed in BACTH and ITC assays ( Fig. 4 and Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>On the contrary , in the presence of Crl , the ability of STy19 to-bind to E was restored to a level similar to that observed with the wild-type S protein in the absence of Crl ( Fig. 3B ) , in agreement with the in vitro transcription data ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>However , both in the absence and in the presence of the Crl protein we were unable to obtain noticeable in vitro transcription from the csgB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>DNA encoding proteins with Y22A , F53A , W56A , or W82A substitutions or the neutral G80A substitution were introduced into pUTCrl , and the ability of the Crl-T18 derivatives to interact with S was assessed in the presence of T25 - S ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Hence , the role of Crl in assisting S binding to the core appeared to be particularly signiﬁcant at the lowest concentrations of S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>The transcription factor Crl binds directly to rS , but not to DNA , and stimulates formation of the ErS holoenzyme , increasing the competitiveness of rS , which is otherwise the r factor with the weakest in vitro afﬁnity for E ( Hengge 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_110">
+Robbe-Saule , V. , Lopes , M.D. , Kolb , A. , and Norel , F. ( 2007 ) Physiological effects of Crl in Salmonella are modulated by sigmaS level and promoter specificity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></label>
+<input id="act_similarity_110", type="checkbox">
+<div class="ACT_similar">
+<li>[ 16 ] V. Robbe-Saule , M. Dias Lopes , A. Kolb , F. Norel , Physiological effects of Crl in Salmonella are modulated by rs level and promoter speciﬁcity , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20875749" target="_blank">20875749</a>]<br></li>
+<li>Robbe-Saule , V. , Lopes , M. D. , Kolb , A. & Norel , F. Physiological effects of Crl in Salmonella are modulated by sigmaS level and promoter specificity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li></div>
+<li>Site-directed mutagenesis of pACcrl-1 was performed , yielding 11 derivatives expressing Crl proteins in which residues Y22 , F35 , C28 , C37 , C41 , F53 , W56 , G74 , G80 , W82 , and F103 are replaced by alanines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Nevertheless , there are some rpoS-containing species , including P. aeruginosa , that do not harbour a crl gene16 and in which σS activity may be controlled by alternative mechanisms or functional homologs of Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Crl protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>We constructed pQEcrl , which expressed a recombinant Crl protein containing six histidine res-idues at its N terminus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>A single amino acid substitution renders σSPA sensitive to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_3">
+Crl binds to domain 2 of S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></label>
+<input id="dom_similarity_3", type="checkbox">
+<div class="DOM_similar">
+<li>Crl binds to S domain 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li></div>
+<li>The interplay between Salmonella Crl and S level and activity appears to be intricate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Residue D87 was previously pointed as important for Crl binding in E. coli21 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The S domain involved in Crl binding had thus far remained unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Fur-Crl interactions in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>If Crl activates the major sigma factor 70 in vivo , in addition to alternative sigma factors , what is its major physiological function ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Moreover , in free Crl , residue D36 is involved in an intramolecular interaction with R24 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Experiments are in progress to determine which region of S is involved in Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>S1 ) , confirming that the DPE motif in σSSTM is involved in Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Interest-2 2 ingly , replacement of all three cysteine residues substantially decreased Crl levels ( Fig. 6A , lanes 17 and 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In contrast , a Crl protein in which each of its three cysteine residues was replaced was unstable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The ﬁrst 71 amino acids of S are nonessential for Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In contrast , alanine substitution for both C37 and C41 substantially decreased Crl levels ( Fig. 6A , lane 16 ) , suggesting that these two cysteine residues are important for Crl stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>We showed that four conserved residues ( Y22 , F53 , W56 , and W82 ) are important for Crl activity and for Crl - S interaction but not for Crl stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Altogether , these results demonstrated that amino acids 72 to 167 in S are sufﬁcient for interaction with Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Unlike σS 16,18 STM , σSPA did not interact with Crl , suggesting that unidentified σSSTM residues , not conserved in σSPA , are crucial for Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>This is consistent with previous work suggesting that the main function of Crl is to favor S interaction with RNA polymerase ( 41 , 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Our results reveal that Crl interacts with domain 2 of S ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>S11 ) , σS R82 interacts with the Crl residues E25 or E102 , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The region containing the two salt bridges between σS and Crl is zoomed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>So far , Crl is the only known σS-dedicated regulatory factor that enhances σS activity through a direct interaction , favouring EσS formation7 ,10 -- 15 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Why is the σS-Crl interaction so transient ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Residue R82 in σSSTM is required for Crl binding and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Altogether , these findings suggested that σSSTM R82 plays a key role in Crl binding and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Two substitutions , W56A and F53A , located in a conserved motif of Crl ( residues 48 to 57 ) ( Fig. 1 ) , substantially diminished complementation in all three tests ( Fig. 4 and 5 , spots 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In this model two salt bridges are formed involving the critical binding residues R82 and E137 in σS and D36 and R51 in Crl ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>D36 and R51 in Crl and R82 , D135 and E137 in σS were defined as active residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>In addition , two acidic residues in σS , D135 and E137 , were spotted as likely candidates for interaction with Crl ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Charged residues in Crl , D36 and R51 , were previously found to be essential for σS binding18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Models C and D are also unlikely since E137 in σS interacts with R24 in Crl , a residue dispensible for σS binding18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Key features of sigmaS required for specific recognition by Crl , a transcription factor promoting assembly of RNA polymerase holoenzyme .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Structure of the RNA polymerase assembly factor Crl and identification of its interaction surface with sigma S. J Bacteriol 196 , 3279 -- 88 ( 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>doi :10.1146 / annurev-micro-090110-102946 Cavaliere P , Levi-Acobas F , Mayer C , Saul FA , England P , Weber P , Raynal B , Monteil V , Bellalou J , Haouz A , Norel F ( 2014 ) Structural and functional features of Crl proteins and identiﬁcation of conserved surface residues required for interaction with the RpoS/sigmaS subunit of RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>Structural and functional features of Crl proteins and identification of conserved surface residues required for interaction with the RpoS/sigmaS subunit of RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>These possibilities prompted us to determine whether this domain of S is required for S activity and for Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Thus , transcriptional activation by Crl appeared to be speciﬁc for E S. Crl facilitates open complex formation by E S at the csgD and adrA promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>We used the bacterial adenylate cyclase two-hybrid system ( BACTH ) ( 22 ) to determine whether these residues and speciﬁc regions of Crl are required for efﬁcient interaction with S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>We used the bacterial adenylate cyclase two-hybrid system to demonstrate that Crl bound to residues 72 to 167 of S domain 2 and that G282V substitution did not directly affect Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Examination of the Crl family members indicated that they all contain at least two cysteine residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Altogether , these results suggested that the presence of at least one , and probably two , cysteine resi-due ( s ) is required for Crl stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In the case of Crl , collective motions of the three loops remodel the cavity either by closing it or widening it , which would help accommodating σS2 ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>We next determined whether the mutations selected above affected the Crl - S interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>To determine whether the four substitutions studied above affected Crl - S interaction speciﬁcally , we assessed their effect on the interaction of Crl with another partner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>We show here that Pseudomonas aeruginosa σS ( σSPA ) does not interact with Crl , despites the conservation of the DPE motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Consistent with this hypothesis , in the study by Banta et al. 21 , some amino acid substitutions of D87 , such as D87C , did not drastically affect the σS interaction with Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Nevertheless , Crl family members perform the same biological function and share a common mechanism of σS binding17 ,18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>In vivo activity of σS variants and their sensitivity to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Moreover , the X-ray crystal structure of Crl from Proteus mirabilis ( CrlPM ) and mutational analyses strongly suggest that σS binds to a Crl cavity enclosed by flexible loops16 -- 18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The strong sequence conservation of σS2 , the only σS domain that binds Crl16 ,18,21 , prompted us to assess possible activation of σS by Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The Salmonella Crl protein contains three cysteines , ( C28 , C37 , and C41 ) , one of which ( C41 ) is conserved in all Crl members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The conserved residues are located in four regions of Crl ( one-third of them are aromatic amino acids ) ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Residues conserved in all members of the Crl family were replaced by using site-directed mutagenesis experiments to identify residues important for Crl activity in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Residues that are identical in all of the Crl proteins are shown in black boxes , and positions of these conserved residues in the Crl sequence from S. enterica serovar Typhimurium ( [ CrlSTM ] 133 residues ; NP-459316 , line 16 ) are shown below the alignment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Seventeen residues are conserved in all members of the Crl family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Alignment of these 60 Crl sequences by ClustalW re vealed 17 residues that are conserved in all members of the Crl family ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Altogether , these results suggested that Crl interacts with the conserved amino acid region ( 72 to 330 ) of S. Identiﬁcation of conserved residues important for Crl activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Identiﬁcation of conserved amino acid residues of the Salmonella S chaperone Crl involved in Crl - S interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_61">
+Monteil , V. , Kolb , A. , D'Alayer , J. , Beguin , P. , and Norel , F. ( 2010 ) Identification of conserved amino acid residues of the Salmonella sigmaS chaperone Crl involved in Crl-sigmaS interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></label>
+<input id="dom_similarity_61", type="checkbox">
+<div class="DOM_similar">
+<li>ASM Press , Washington , pp 251 -- 289 Monteil V , Kolb A , D'Alayer J , Beguin P , Norel F ( 2010a ) Identiﬁcation of conserved amino acid residues of the Salmonella sigmaS chaperone Crl involved in Crl-sigmaS interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>Monteil , V. , Kolb , A. , D'Alayer , J. , Beguin , P. & Norel , F. Identification of conserved amino acid residues of the Salmonella sigmaS chaperone Crl involved in Crl-sigmaS interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li></div>
+<li>This indicated that the ﬁrst 71 residues in S are nonessential for Crl binding and further suggested that the deletion of this region induces a conformational change in S that favors its stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The ﬁndings that Crl can bind and rescue STy19 efﬁciently ( Fig. 3 and 4B ) , indicate that residue G282 is not in itself crucial for the interaction with E , but rather that STy19 is blocked in a conformation incompatible for E binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>In the zoom view , the side chain of the charged residues , involved in salt bridges , are colored as follows : in Crl , R51 in orange , D36 in magenta and in σS , R82 in green and the DPE motif in yellow .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>To further refine our understanding of σS2 residues involved in Crl binding , the amino acid sequence of σS2 was compared in bacterial species harbouring crl in their genome and in those lacking crl ( Fig. 1c and Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Taking advantage of the evolution of the σS sequence in P. aeruginosa and other species lacking crl , we identified residues conserved in σS sequences from crl proficient species , and potentially implicated in Crl recognition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Thus , even though a role for Crl in 70 activation under speciﬁc conditions or on particular promoters could not be excluded , it appears that under the conditions used in our study , the basic function of Crl in vivo involves S much more than 70 activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>We also mutated the three cysteine residues in Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Double mutations in the cysteine residues in Crl ( Crl with the mutations C28A an FIG. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>It would be interesting to determine whether these σS proteins interact with Crl , and if not , whether they could be used to identify additional σS residues involved in Crl binding by the strategy described in this study for σSPA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>We also used a bacterial two-hybrid system ( BACTH ) to show that the four substitutions in Crl abolish Crl - S interaction and that residues 1 to 71 in S are dispensable for Crl binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>σSSTM also induced overall line broadening in Crl 1 STM H-15N HSQC spectra , as a consequence of faster transverse relaxation in the Crl-σS complex than in free Crl , and additional line broadening for several residues ( Fig. 7a , b , e.g. residue N43 ) , due to exchange between free and complexed Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Previously , critical residues in both Crl and rS were identiﬁed and assigned to the binding interface in the Crl -- rS complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>These residues are not conserved in Crl family members22 and the Crl E25A and E102A variants interacted with σSSTM in the same manner as wild type Crl ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Site-directed mutagenesis of the crl gene from Salmonella enterica serovar Typhi-murium and complementation of a crl mutant of Salmonella indicated that substitution of the conserved residues Y22 , F53 , W56 , and W82 decreased Crl activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In this system , the ﬁrst 38 residues of S were dispensable for efﬁcient binding of Crl ( Table 3 , compare T25 - S and T25 - S 1-38 in the presence of Crl-T18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>These ﬁndings suggest that Crl does not form extended interfaces with S and are consistent with the binding of Crl to a single domain of S. Experiments are in progress to determine which amino acids of the S residues 72 2 to 167 are directly involved in Crl binding and to investigate the mechanism of action of Crl in greater detail by structural and biophysical approaches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>We ﬁrst examined the sensitivity to Crl activation of a S mutant lacking the ﬁrst 39 residues of S ( ST2 ) ( Fig. 2 and 3 ) and thus lacking most of region 1.1 ( 32 , 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>These ﬁrst 55 residues deﬁne a speciﬁc domain of S that is not well conserved in other sigma factors besides 70 ( corresponding roughly to region 1.1 ) ( see also Discussion section and references 32 and 51 ) and might thus play a role in the speciﬁcity of recognition of S by Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>However , our ﬁndings that ( i ) S , a pro-1 .1 T2 tein lacking residues 1 to 39 , including most of region in 1.1 native S ( 32 , 51 ) is dependent on Crl activation ( Fig. 2 ) , and ( ii ) deletion of residues 1 to 71 of S , which removes region and part of subregion 1.2 ( 32 , 51 ) does not abolish Crl - S 1.1 interaction ( Table 3 ) , ruled out this possibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In vivo activity and puriﬁcation of the recombinant His6-Crl protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Alanine substitutions for the cysteine residues ( C28A , C37A , and C41A ) did not signiﬁcantly affect the levels of Crl protein or its activity ( Fig. 4 , 5 , and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>We previously showed that the ﬁrst 71 residues of S were not required for Crl binding since the T25 - S72-330 and Crl-T18 chimeras interacted efﬁciently ( 28 and Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>We show that the rpoS allele of Ty19 ( rpoSTy19 ) led to the synthesis of a STy19 protein carrying a single glycine-to-valine substitution at position 282 in S domain 4 , which was much more dependent than the wild-type S protein on activation by Crl , a chaperone-like protein that increases the afﬁnity of S for the RNA polymerase core enzyme ( E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>CrlSTM is a 133 residue protein containing 20 aromatic residues ( 4 tryptophans , 4 tyrosines , 10 phenyalanines and 2 histidines ) that contribute to the core structure of the protein by stacking the two main helices a1 and a3 onto the central ﬁve stranded b-sheet ( the topology of Crl is indicated in Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>In agreement with the in vivo data , in vitro transcription S experiments using three different - dependent promoters -- katE , katN , and poxB -- demonstrated that the activity of the S Ty19 protein was lower , and much more dependent on Crl activation , than that of the wild-type S protein ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>To determine whether the C-terminal domain of S interacts with Crl , truncated variants of the T25 - S chimera were assessed in the BACTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>We can not rule out the possibility that Crl contacts transiently and/or weakly an additional domain of S , besides the S domain , thus making this asso-2 ciation difﬁcult to detect in the BACTH assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>However , high-resolution structural data are missing to fully understand the mole-cular mechanisms underlying rS activation by Crl , in particular the possible role of Crl in triggering domain rearrangements in the multi-domain protein rS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>To determine whether the failure of σSPA to respond to Crl activation resulted from a lack of interaction between the two proteins , we used the BACTH in vivo assay ( Fig. 4 ) and isothermal titration calo-rimetry ( ITC ) in vitro assay ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>To determine whether the non-conserved residues at position 83 , 87 , 89 and 90 in σSPA were responsible for the defect in Crl binding , we constructed σSPA variants in which the σSSTM sequence was restored at these positions , and assessed their ability to interact with Crl in the BACTH assay ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>To evaluate the impact in Crl binding of σSSTM residue R82 , corresponding to L87 in σSPA , ( Fig. 1d ) , the ability of the σSSTM R82L variant to interact with Crl was assessed in BACTH and ITC assays ( Fig. 4 and Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The chemical shift perturbations in the NMR spectrum of Crl in the presence of σS indicate that loop 2 senses the presence of σS , but extend beyond the region directly involved in σS binding , including helix α1 , loop 1 and helix α3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>σS2 is the only domain involved in the interaction with Crl16 ,18,21 and two regions , close together on the structural model of σS 16 STM ( Fig. 1a , b ) , were identified as the Crl binding regions : the helix α2 , corresponding to residues 74 to 85 in σS 16,21 STM , and the DPE motif , corresponding to residues 135 to 137 and initially identified in σS from E. coli21 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>It was not possible to restrain the Crl-R51 / σS-E137 pair to form a salt bridge , but in a number of clusters the two loops that contain these two residues were in close contact , corroborating the relevance of model E for the σS-Crl interface and in agreement with the NMR interaction experiments that pointed to the role of loop 2 for complex formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Analysis of four additional substitutions ( R51A , E52A , G55A , and W57A ) in the BACTH assay conﬁrmed the role of the REF-GWW motif in Crl - S interactions ( Table 3 and Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Since this region appears to be flexible in free Crl , the dynamics of loop 2 certainly plays a role in the formation of the CrlSTM-σSSTM complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Alanine substitution mutagenesis was performed to investigate the functional relevance of the conserved residues in Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>In conclusion , the G282V substitution in S both decreased the activity of S and inTy19 creased its dependency to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Most interestingly , substitution of one single residue in the helix α2 of σSPA was suffifficient to confer to σSPA the ability to bind Crl , and our data assigned this residue to the σS-Crl binding interface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The results above corroborate the hypothesis that the Crl-σS complex formation is likely driven by electrostatic interactions by demonstrating that one positively charged residue , R82 in σSSTM , is of paramount importance for Crl binding and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Therefore , if the conformation of σS in the cell is rather compact , Crl binding to σS2 may alleviate intramolecular interactions between σS2 and other σS domains , favouring an open conformation for just the time required for σS to bind E , but transiently enough to avoid σS degradation by ClpXP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Whereas σ factors are usually inactivated upon interaction with anti-σ proteins , σS binding to the Crl protein increases σS activity by favouring its association to E. Taking advantage of evolution of the σS sequence in bacterial species that do not contain a crl gene , like Pseudomonas aeruginosa , we identified and assigned a critical arginine residue in σS to the S. Typhimurium σS-Crl binding interface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The σS-Crl models suggest that the identified arginine in σS interacts with an aspartate of Crl that is required for σS binding and is located inside a cavity enclosed by flexible loops , which also contribute to the interface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Domain 2 ( σ2 ) , the most highly conserved domain of σ factors19 ,20 , is the only σS domain involved in Crl binding , and two regions of σS are required for interaction16 ,21 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The in silico models of the σS-Crl complex show that salt bridges can indeed be formed for the two pairs of residues Crl-D36 / σS-R82 and Crl-R51 / σS-E137 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Moreover , several van der Waals and hydrogen bond interactions between the σS helix α2 and both loop 1 and β1 of Crl , and the σS loop containing the DPE motif and loop 2 of Crl , can further contribute to the σS-Crl complex ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>This leads to a picture of an ideal binding interface in which helix α2 of σS , containing R82 , would dock into the cavity of Crl containing D36 , disrupting the intermolecular R24-D36 contact , and the DPE motif and loop 2 of Crl would make contact on the outside , driven by electrostatic interactions between Crl-R51 and σS-D135 / E137 ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Crl evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Distribution and sequence conservation of Crl in sequenced bacterial genomes Identity with c RpoSSTM ( % ) Identity with b CrlSTM ( % ) Family and genusa Enterobacteriaceae Salmonella Citrobacter Escherichia Shigella Enterobacter Klebsiella Serratia Erwinia Yersinia Pectobacterium Proteus Providencia 96 -- 100 90 83 -- 84 83 -- 84 74 -- 77 75 -- 76 69 66 63 -- 66 64 49 40 -- 45 99 -- 100 100 98 -- 99 99 97 98 94 95 84 -- 97 91 79 78 Other families Aeromonas 85 -- 84 72 -- 82 81 79 -- 80 76 77 43 -- 44 38 -- 50 46 42 -- 49 38 35 -- 44 Vibrio Unclassiﬁed Vibrionales Photobacterium Moritella Psychromonas a Sequenced bacterial genomes containing a crl gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The Salmonella Crl protein contains three cysteines , ( C28 , C37 , and C41 ) , one of which ( C41 ) is conserved in all Crl members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Nevertheless , Crl family members perform the same biological function and share a common mechanism of σS binding17 ,18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Examination of the Crl family members indicated that they all contain at least two cysteine residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Seventeen residues are conserved in all members of the Crl family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Alignment of these 60 Crl sequences by ClustalW re vealed 17 residues that are conserved in all members of the Crl family ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Plasmids pUTCrlR51A , pUTCrlE52A , pUTCrlG55A , and b Range of percentage of identity between the amino acid sequence of the Crl proteins in strains belonging to the indicated genus and that CrlSTM ( 133 resi-dues ; NP-459316 , shown in Fig. 1 , line 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Alignment of the proteins from the Crl family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Crl</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>MltC/E 2672 BarA 1798 RcsD RcsC EnvZ CpxA Motility FliG/M MlrA OmpR CpxR RcsB IHF Crl SirA RpoS FliA RpoD H-NS CsrB/C RprA 3375 csgDEFG csgBAC Curli FlhDC ArcZ expression CsrA Hfq 1697 CsgD P SdsR bcsABZC bcsEFG 1344 MicA BcsE Cellulose synthesis 3611 4451 P CsgD BcsA 1703 adrA yihvW yihU -- yshA 1827 AdrA 1987 bapABCD YihW 2123 4264 3388 DsbA/B O-antigen capsule biosynthesis BapA secretion Figure 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>Bacterial strains and plasmids used in this study Characteristics Strain or plasmid Reference or source E. coli strains JM109 48 recA1 supE44 endA1 hsdR17 gyrA96 relA1 thi ( lac-proAB ) F ( traD36 proAB lacIq lacZ M15 ) hsdR mcrB araD139 ( araABC-leu ) 7679 lacX74 galU galK rpsL thi MC1061 48 Salmonella serovar Typhimurium strains ATCC 14028 American Type Culture Collection This study This study This study This study 45 58 This study This study This study This study This study This study This study This study This study This study This study This study This study This study This study This study This study This study Wild type ATCC 14028 rpoS : : cm ATCC 14028 crl : : cm ATCCrpoS ATCCcrl ATCC 14028 csgD : : cm ATCC 14028 csgB : : cm MAE52 adrA : : MudJ MAE52 bcsA : : MudJ ATCC 14028 adrA : : MudJ ATCC 14028 bcsA : : MudJ ATCC 14028 rpoS crl : : cm ATCC 14028 csgB-lacZY ATCC 14028 csgD-lacZY ATCC 14028 rpoS csgD : : cm ATCC 14028 rpoS : : cm bcsA : : MudJ ATCC 14028 rpoS : : cm adrA : : MudJ ATCC 14028 rpoS : : cm csgD-lacZY ATCC 14028 rpoS : : cm csgB-lacZY ATCC 14028 crl : : cm bcsA : : MudJ ATCC 14028 crl csgB : : cm ATCC 14028 crl : : cm adrA : : MudJ ATCC 14028 crl : : cm csgD-lacZY ATCC 14028 crl : : cm csgB-lacZY ATCC 14028 csgD : : cm adrA : : MudJ ATCC 14028 csgD : : cm bcsA : : MudJ ATCC 14028 csgD : : cm csgB-lacZY ATCCcsgD ATCCcsgB ADR1a MAE150 ATCCadrA ATCCbcsA ATCCrpoScrl ATCCcsgB-lacZ ATCCcsgD-lacZ ATCCrpoScsgD ATCCrpoSbcsA ATCCrpoSadrA ATCCrpoScsgD-lacZ ATCCrpoScsgB-lacZ ATCCcrlbcsA ATCCcrlcsgB ATCCcrladrA ATCCcrlcsgD-lacZ ATCCcrlcsgB-lacZ ATCCcsgDadrA ATCCcsgDbcsA ATCCcsgDcsgB-lacZ Plasmids pQE30 Cbr , for expression of His-tagged proteins Cbr , pQE30 : : crl , expresses a His6-Crl protein QIAGEN This study pQEcrl pACYC184 pACcrl-1 pACcrl-2 pSTK4 pJCD01 pJCDadrA pGO1 pU-2750 Cmr Tetr , cloning vector Tetr , pACYC184 : : crl , cat , and crl in the same orientation Tetr , pACYC184 : : crl , cat , and crl in the opposite orientation Cmr , pACYC184 : : rpoS Cbr , pUC with transcriptional terminators Cbr , pJCD01 : : adrA Cbr , pJCD01 : : lac Cbr , pJCD01 : : csgD 10 This study This study 23 28 This study 34 U. Gerstel et al. , unpublished TABLE 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>The stationary phase global regulator RpoS ( s ) s ( Olsén et al. , 1993 ; Römling et al. , 1998b ) and other global regulators including H-NS ( Olsén et al. , 1993 ; Arnqvist et al. , 1994 ) , Crl ( Arnqvist et al. , 1992 ) and OmpR ( Römling et al. , 1998b ; Vidal et al. , 1998 ) can effect curli synthesis by promoting or suppressing expression of the curli-encoding genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_4">
+Arnqvist , A. , Olsén , A. , Pfeifer , J. , Russell , D.G. , and Normark , S. ( 1992 ) The Crl protein activates cryptic genes for curli formation and ﬁbronectin binding in Escherichia coli HB101 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></label>
+<input id="rp_similarity_4", type="checkbox">
+<div class="RP_similar">
+<li>The Crl protein activates cryptic genes for curli formation and ﬁbronectin binding in Escherichia coli HB101 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17012381" target="_blank">17012381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li></div>
+<li>Bacterial strains and growth conditions ( Crl ) - OVA257-264 fusion protein ( S-OVA strain ) was obtained from Mary Jo Wick , Department of Microbiology and Immunology , University of Gothenburg , Sweden .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26292028" target="_blank">26292028</a>]<br></li>
+<li>Expression of Crl wild-type ( WT ) and mutant proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Effects of Crl on stress resistance of Salmonella wild-type and rpoSLT2 mutant strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Crl activation of gene-expression in Salmonella wild-type and rpoSLT2 mutant strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In E. coli and Salmonella , the Crl S protein activates r - dependent transcription and plays an important role in the biosynthesis of curli ﬁbers , involved in adhesion to extracellular matrices and bioﬁlm formation & Christina Sizun christina.sizun@cnrs.fr 1 Département de Microbiologie , Laboratoire Systèmes Macromoléculaires et Signalisation , Institut Pasteur , 25 rue du Docteur Roux , 75015 Paris , France 2 CNRS ERL3526 , rue du Docteur Roux , 75015 Paris , France 3 Institut de Chimie des Substances Naturelles , CNRS UPR2301 , 91190 Gif-sur-Yvette , France ( Hengge 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_11">
+ASM Press , Washington , pp 251 -- 289 Monteil V , Kolb A , D'Alayer J , Beguin P , Norel F ( 2010a ) Identiﬁcation of conserved amino acid residues of the Salmonella sigmaS chaperone Crl involved in Crl-sigmaS interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></label>
+<input id="rp_similarity_11", type="checkbox">
+<div class="RP_similar">
+<li>Monteil , V. , Kolb , A. , D'Alayer , J. , Beguin , P. & Norel , F. Identification of conserved amino acid residues of the Salmonella sigmaS chaperone Crl involved in Crl-sigmaS interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li></div>
+<li>Robbe-Saule , V. , Jaumouillé , V. , Prévost , M. C. , Guadagnini , S. , Talh-ouarne , C. , Mathout , H. , Kolb , A. , and Norel , F. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_14">
+Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica Serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22235813" target="_blank">22235813</a>]<br></label>
+<input id="rp_similarity_14", type="checkbox">
+<div class="RP_similar">
+<li>Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17012381" target="_blank">17012381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29580499" target="_blank">29580499</a>]<br></li>
+<li>, Guadagnini , S. , Talhouarne , C. , Mathout , H. , et al. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20545866" target="_blank">20545866</a>]<br></li>
+<li>Robbe-Saule , V. , Jaumouille , V. , Prevost , M.C. , Guadagnini , S. , Talhouarne , C. , Mathout , H. , et al. ( 2006 ) Crl activates transcription initiation of RpoS-regulated genes involved in the multicellular behavior of Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li></div>
+<li>Biomol NMR Assign ( 2015 ) 9:397 -- 401 DOI 10.1007 / s12104-015-9617-z A RT I CL E H , C and N resonance assignments of rS activating p Crl from Salmonella enterica serovar Typhimurium 1 13 15 rotein Paola Cavaliere • Françoise Norel • Christina Sizun 1,2 1,2 3 Received : 15 March 2015 / Accepted : 30 April 2015 / Published online : 6 May 2015 Springer Science + Business Media Dordrecht 2015 Abstract The general stress response in Enterobacteria , like Escherichia coli or Salmonella , is controlled by the transcription factor rS , encoded by the rpoS gene , which accumulates during stationary phase growth and associates with the core RNA polymerase enzyme ( E ) to promote transcription of genes involved in cell survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25943268" target="_blank">25943268</a>]<br></li>
+<li>OPEN Binding interface between the S Salmonella σ / RpoS subunit of RNA polymerase and Crl : hints Received : 30 March 2015 accepted : 30 July 2015 from bacterial species lacking crl Published : 04 September 2015 Paola Cavaliere1 ,2 , Christina Sizun3 , Fabienne Levi-Acobas4 ,5 , Mireille Nowakowski4 ,5 , Véronique Monteil1 ,2 , François Bontems3 , Jacques Bellalou4 ,5 , Claudine Mayer5 ,6,7 & Françoise Norel1 ,2 In many Gram-negative bacteria , including Salmonella enterica serovar Typhimurium ( S. Typhimurium ) , the sigma factor RpoS / σS accumulates during stationary phase of growth , and associates with the core RNA polymerase enzyme ( E ) to promote transcription initiation of genes involved in general stress resistance and starvation survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>Crl modulates the expression of S-regulated genes ( poxB , katE , bolA , and csgB ) ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Inactivation of Crl , an RpoS-binding factor , results in downregulated biofilm-formation in S. Typhimurium and reduced expression of csgD and other biofilm-related genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>The Crl protein of Escherichia coli interacts with S and activates expression of Sregulated genes , such as the csgBAC operon encoding the subunit of the curli proteins , by an unknown mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>However , whereas OxyS negatively influences RpoS abundance ,15 DsrA , RprA and ArcZ all upregulate RpoS protein lev-els .16 -20 Post-transcriptional activation of RpoS by these sRNAs relies on de-sequestration of an intramolecular base-pairing within the rpoS 5 ' UTR , a process which increases transcript stability and facilitates translation-initiation .21 The importance of post-transcriptionally acting sRNAs for rpoS translation is reflected in the strong decrease of cellular RpoS levels in hfq mutant strains , while rpoS mRNA levels display only a minor reduction .22,23 Currently it is unclear why S. Typhimurium and E. coli recruited multiple sRNAs to control rpoS translation , however , the degree of regulation by the above mentioned sRNAs varies among both species .24 Whereas the relevance of RpoS for rdar morphotype development and c-di-GMP signaling has been studied in great detail ,6,25 Introduction The rdar ( red , dry and rough ) morphotype formed by Salmonella enterica serovar typhimurium ( from here on S. Typhimurium ) and Escherichia coli species constitutes a multicellular biofilm behavior characterized by the expression of extracellular matrix components , proteinaceous curli fimbriae and the exopolysaccharide cellulose .1 A major contributor to rdar development is the response regulator CsgD which acts as a transcriptional activator of csgBA encoding curli fimbrial subunits and adrA encoding a di-guanylate cyclase stimulating cellulose-biosynthesis .2,3 The second messenger c-di-GMP produced by AdrA and other di-guanylate cyclases is a key molecule in the switch between sessility and motility4 and facilitates csgD expression at the transcriptional and post-transcriptional level .5 Transcriptional control of csgD is complex and integrates various outside stimuli such as temperature , osmolarity and nutritional status through a variety of regulatory factors , e.g. , two-component systems and nucleoid binding proteins .6,7 The alternative sigma factor RpoS ( δS ) activates csgD expression in stationary phase , a process which is aided by the auxiliary protein Crl .8 Therefore RpoS constitutes a crucial factor for multicellular behavior and rdar morphotype development in S. Typhimurium and E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22336758" target="_blank">22336758</a>]<br></li>
+<li>In Salmonella enterica serovar Typhimurium , Crl is required for the development of the rdar morphotype and transcription initiation of the S-dependent genes csgD and adrA , involved in curli and cellulose production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Here , we showed using in vivo and in vitro experiments that the Crl protein of Salmonella serovar Typhimurium is required for development of a typical rdar morphotype and for maximal expression of the csgD , csgB , adrA , and bcsA genes , which are involved in curli and cellulose-biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>An exception to this general rule is the Crl protein that binds the stationary-phase sigma factor S ( RpoS ) and enhances its afﬁnity for the RNAP core enzyme , thereby increasing expression of S-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>These results suggested that Crl had a marked effect on the H O resistance at 28 ° C 2 2 because under these conditions , S levels were the limiting S factor for maximal expression of - dependent genes , including katE ; consequently , Crl plays a major role by increasing the amount of E S. RpoS has a negative effect on Crl production in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Crl is involved in the development of the rdar morphotype of Salmo-nella , a multicellular behavior controlled by S ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>This expression pattern is consistent with previous results showing that Crl increases the expression of genes involved in the rdar morphotype when cells enter the stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>This increase in RpoS expression may alleviate the need for Crl for expression of the genes involved in the rdar morphotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Lelong et al. ( 28 ) reported that in E. coli W3110 , Crl can interact with the ferric uptake regulator Fur , a key protein for the control of intracellular iron concentration ( see reference 8 and references therein ) and that Fur represses crl transcription ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>Numerous transcription factors are involved , including OmpR , MlrA , and CpxR and the nonspeciﬁc DNA-binding proteins H-NS and IHF , in addition to the feed-forward loop involving rpoS and the factors that regulate RpoS activity , including IraP and Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25824832" target="_blank">25824832</a>]<br></li>
+<li>Under low nutrient and low temperature conditions , the regulator protein Crl recruits σS to the csgBAC promoter , enabling expression of Curli and biofilm-formation ( Bougdour et .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Therefore , we conclude that the Crl protein does not play a major role in virulence under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Crl has a dual role in S proteolysis ( 35 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+<li>Moreover , in free Crl , residue D36 is involved in an intramolecular interaction with R24 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Crl binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>RESULTS Distribution and sequence conservation of Crl in sequenced microbial genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>The Crl binding region of S. Typhimurium σS and sequence comparison of σS from species harbouring crl or lacking crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>The accession numbers for the Crl sequences are as follows ( line numbers are in parentheses ) : for Salmonella , ZP-02346845 ( 14 ) , ZP-02663633 ( 15 ) NP-459316 ( 16 ) , YP-215307 ( 17 ) , and YP-001571691 ( 18 ) ; for Citrobacter , YP-001454497 ( 19 ) ; for Escherichia , NP-285957 ( 22 ) , NP-414775 ( 23 ) , YP-001742400 ( 25 ) , YP-002383844 ( 26 ) , YP-002327819 ( 27 ) , NP-752324 ( 28 ) , YP-539315 ( 29 ) , and ZP-02902139 ( 30 ) ; for Shigella , YP-309300 ( 20 ) , YP-402173 ( 21 ) , and NP-706240 ( 24 ) ; for Enterobacter , YP-001175503 ( 31 ) , ZP-03281271 ( 32 ) , and YP-001439177 ( 35 ) ; for Klebsiella , YP-001333935 ( 33 ) and YP-002240279 ( 34 ) ; for Serratia , YP-001477200 ( 13 ) ; for Erwinia , YP-001908518 ( 36 ) ; for Yersinia , YP-001007379 ( 6 ) , ZP-00829910 ( 7 ) , ZP-00821198 ( 8 ) , ZP-00826726 ( 9 ) , ZP-00833806 ( 10 ) , YP-001402111 ( 11 ) , and NP-668295 ( 12 ) ; for Pectobacterium , YP-051554 ( 37 ) ; for Proteus , YP-002150140 ( 38 ) ; for Providencia , ZP-03313695 ( 39 ) , ZP-03317513 ( 40 ) , and ZP-02958311 ( 41 ) ; for Aeromonas , YP-857911 ( 42 ) and YP-001140774 ( 43 ) ; for Vibrio , ZP-01235672 ( 1 ) , NP-231906 ( 44 ) , ZP-01957597 ( 45 ) , ZP-01980856 ( 46 ) , NP-759329 ( 47 ) , NP-933650 ( 48 ) , ZP-01065753 ( 49 ) , YP-002418001 ( 50 ) , ZP-00993088 ( 51 ) , ZP-01870715 ( 53 ) , NP-797054 ( 54 ) , ZP-01260295 ( 55 ) , YP-001444378 ( 56 ) , ZP-01987497 ( 57 ) , and ZP-02197346 ( 58 ) ; for unclassiﬁed Vibrionales , ZP-01813308 ( 52 ) ; for Photobacterium , ZP-01159718 ( 2 ) , YP-129053 ( 3 ) , and ZP-01218949 ( 4 ) ; for Moritella , ZP-01898329 ( 5 ) ; for Psychromonas , YP-944255 ( 59 ) and ZP-01216084 ( 60 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>S Ty19 depends on Crl for binding to RNAP core .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20935100" target="_blank">20935100</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Crl</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>However , Crl is not a classical transcription factor since it does not bind DNA ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Upon entry into stationary phase , Crl is more abundant than S , and S levels , but not Crl levels , are limiting for expression of S-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Crl levels are not a limiting factor for S-dependent gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>ATCC 14028 and its crl mutant derivative containing the pQE30 vector and pQEcrl expressing the His6-Crl protein were grown on CR plates for 6 days at 28 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Inactivation of Crl , an RpoS-binding factor , results in downregulated biofilm formation in S. Typhimurium and reduced expression of csgD and other biofilm-related genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>As for katE , expression of katN was more dependent on Crl in 2922KrpoSLT2 than in 2922K ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In addition , increasing Crl levels in ATCC 14028 did not result in higher expression of the katE gene , nor did they result in greater H2O2 resistance ( Fig. 2 and 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>This suggests that rpoS negatively regulates Crl production in stationary phase , when the level of S is high .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>This may be because the Sdependent genes required for survival and stress resistance under these conditions are not highly sensitive to Crl activation , as is the case for the katE gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>In particular , the expression of the katE gene , which encodes a S-dependent stationary-phase catalase , was induced by less than 1.5-fold by Crl at 37 ° C and by 2 - to 3-fold at 28 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Crl modulates the expression of S-regulated genes ( poxB , katE , bolA , and csgB ) ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>CsgD depends on RpoS and Crl and controls the expression of csgBAC and adrA but not the expression of bscA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>The kinetics of expression were assessed for genes that display high levels of sensitivity ( ydeJ and katN ) , low levels of sensitivity ( poxB ) , and almost no sensitivity ( katE ) to Crl ; the high sensitivity of ydeJ and katN to Crl was conﬁrmed ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>At 28 ° C , expression of katE and expression of katN were induced 2.8-and 8.1-fold , respectively , by Crl ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Expression of Crl was similar in the two strains during both exponential and stationary growth phases ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>The Crl effect was greatest upon entry into stationary phase ( Fig. 3B ) , when the Crl concentration is maximal in the cell and S expression is induced ( 32 ) ( Fig. 2A and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Growth of the crl strain on M9 succinate was prevented by pACcrl-1 , which expresses Crl , but not by the empty vector pACYC184 or by pACcrl-2 , in which the crl gene is inserted in the promoterless orientation ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>Introducing plasmid pACcrl-1 expressing the Crl protein into the crl mutant restored the typical rdar morphotype ( Fig. 2 ) , whereas we observed no complementation with the negative controls pACYC184 and pACcrl-2 , in which the crl gene was cloned in the promoterless orientation ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Consistently , development of the rdar morphotype and katN-lacZ expression levels were similar in the rpoSSTM-R82L strain ( whatever its crl status ) and the Δcrl strain harbouring the wild-type rpoSSTM allele ( spots 5 , 6 and 2 , Fig. 2 and Fig. 3b ) , indicating that σSSTM R82L was not activated by Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>In the absence of Crl , katN-lacZ expression level was similar in the rpoSSTM-R82L and rpoSSTM strains ( Fig. 3b ) , suggesting that σS stability and its interaction with the core RNAP were not affected by the R82L substitution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26338235" target="_blank">26338235</a>]<br></li>
+<li>These results suggested that Crl had a marked effect on the H O resistance at 28 ° C 2 2 because under these conditions , S levels were the limiting S factor for maximal expression of - dependent genes , including katE ; consequently , Crl plays a major role by increasing the amount of E S. RpoS has a negative effect on Crl production in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>One way to answer this question is to determine the role ( if any ) of Crl in the expression of 70-dependent genes and phenotypes negatively regulated by RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>The expression pattern of the Crl protein did not seem to be affected in the rpoS strain under the environmental conditions used ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>During early stationary phase , the absence of activation by Crl resulted in a slightly delayed expression of genes in the crl mutant ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>To determine the effects of Crl on gene expression , we monitored the expression of 30 S-dependent transcriptional fusions in crl and wild-type strains grown to stationary phase in LB medium at 37 ° C ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>However , the levels of induction of expression of the fusions by Crl at 28 ° C were in the same range in both LB0 and LB ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Growth of rpoS strains and that of rpoS crl strains on succinate and glucose were similar ( Fig. 6B ) , indicating that the negative effect of Crl was abolished in the absence of S. Consistent with these results , the expression of a lacZ gene fusion to sdhA , encoding the ﬂavoprotein subunit of the succinate dehydrogenase , during stationary phase was 6 - and 2.5-fold higher in the rpoS and rpoSLT2 mutants , respectively , than in the wild-type strain ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>At both temperatures , Crl was present in excess of S , and increasing the Crl level further did not increase the H2O2 resistance level of Salmonella and the expression of the S-dependent gene katE encoding the stationary-phase catalase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18456810" target="_blank">18456810</a>]<br></li>
+<li>Therefore , even though decreased S abundance increased the magnitude of Crl activation of gene expression , it did not affect the differential responsiveness of the katE and katN genes to Crl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293430" target="_blank">17293430</a>]<br></li>
+<li>( A ) Complementation of the crl mutant by His6-Crl for expression of the rdar morphotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>Also , expression of Crl from pACcrl-1 did not modify the `` saw '' morphotype of the rpoS mutant ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16707690" target="_blank">16707690</a>]<br></li>
+<li>In Escherichia coli , it has been reported that Crl also interacts with the ferric uptake regulator Fur and that Fur represses crl transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>crl transcription in E. coli W3110 is repressed by Fur ( by 100-fold ) and by Crl ( by more than 10-fold ) ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+<li>These results suggested that crl transcription is not repressed by Fur and Crl in ATCC 14028 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20008066" target="_blank">20008066</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

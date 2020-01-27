@@ -1,0 +1,819 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - FimZ</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">FimZ</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">FimZ transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Type 1 ﬁmbriae are utilized for surface adhesion , but it is not known to what signals FimZ responds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>FimZ is a response-regulator that activates type 1 ﬁmbrial genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>The results shown in Table 4 indicate that FimY is an autoregulatory protein but that this activation is only achievable when FimZ is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>Only when FimZ is constitutively expressed is repression seen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FliZ also activates HilD ( 38 , 41 , 53 , 57 , 82 ) and represses FimZ posttranscriptionally ( this study ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>RcsB and FimZ , however , retained some capacity for negatively regulating motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>Thus , a possible mechanism for FimWmediated repression may be that it binds FimZ and prevents it from activating transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Since RcsB , FimZ , and PefI-SrgD are associated with speciﬁc structures involved in sticking to surfaces , it makes sense that these regulators would inhibit ﬂagellar transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>These results indicate that both Lrp and FimZ independently bind to PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Baxter and Jones recently reported that PhoP activates hilE transcription in a manner that is somehow dependent on FimZ ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>One possibility is that FliZ posttranscriptionally regulates FimZ in a manner similar to FlhD4C2 and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Increased expression of FimZ in serovar Typhimurium resulted in bacteria which were hyperﬁmbriated but were nonmotile in soft agar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>Expression of hilE is apparently activated primarily by FimZ , but this regulation is modest under normal conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>Possibly , in its inactive state ( FimZD56A ) , modulation of FimZ activity by FimW is not necessary , but once it is phosphorylated , FimW may decrease its activity by interacting with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In these studies , we have demonstrated that introducing a mutation mimicking phosphorylation of FimZ is necessary for activation of its target gene , ﬁmA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Finally , our investigations indicate that phosphorylated FimZ is necessary for optimal activation of ﬁmA and that this activation may be modulated by interaction with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In addition , ﬁmbriae were detected on the surface of SL1344 ﬁmZ : : ﬁmZ when it was D56E grown under noninducing conditions ( plate cultures ) as well as inducing conditions , indicating that FimZ is constitutively active in this construct .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>There is no result demonstrating that many copies of ﬁmZ alone can activate FimZ expression ; that many copies of ﬁmY alone can activate FimZ expression could be explained by gene dosage effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>FimZ expression was induced by addition of 15 g/ml tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Thus these promoters can be activated by FimZ and produce wild-type levels of type 1 fimbriae when grown in LB broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>RESEARCH ARTICLE crossm InvS Coordinates Expression of PrgH and d Is R FimZ an equired for Invasion of Epithelial Cells by Salmonella enterica serovar Typhimurium Lu Wang , a Xia Cai , a * Shuyan Wu , a * Rajdeep Bomjan , a Ernesto S. Nakayasu , b * Kristian Händler , c * Jay C. D. Hinton , d Daoguo Zhoua Department of Biological Sciencesa and Bindley Bioscience Center , b Purdue University , West Lafayette , Indiana , USA ; Department of Microbiology , School of Genetics & Microbiology , Moyne Institute of Preventive Medicine , Trinity College Dublin , Dublin , Irelandc ; Institute of Integrative Biology , University of Liverpool , Liverpool , United Kingdomd ABSTRACT Deep sequencing has revolutionized our understanding of the bacterial RNA world and has facilitated the identiﬁcation of 280 small RNAs ( sRNAs ) in Salmo-nella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>a Molecular Link between Sticking and Swim FimZ Is ming in Salmonella enterica Serovar Typhimurium Steven Clegg1 * and Kelly T. Hughes2 Department of Microbiology , College of Medicine , University of Iowa , Iowa City , Iowa 52242,1 and Department of Microbiology , University of Washington , Seattle , Washington 981952 Received 3 August 2001/Accepted 26 November 2001 Salmonella enterica serovar Typhimurium produces two types of ﬁlamentous appendages on its surface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>FimY Does Not Interfere with FimZ-FimW Interaction during Type 1 Fimbria Production by Salmonella enterica Serovar Typhimurium Sarah A. Zeiner , Brett E. Dwyer , Steven Clegg Department of Microbiology , Roy J. and Lucille A. Carver College of Medicine , University of Iowa , Iowa City , Iowa , USA The production of type 1 ﬁmbriae in Salmonella enterica serovar Typhimurium is controlled , in part , by three proteins , FimZ , FimY , and FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>, 46 ( 1 ) , 1 -- 10 , 2002 FimZ Binds the Salmonella typhimurium ﬁmA Promoter Region and May Regulate Its Own Expression with FimY Kuang-Sheng Yeh * , 1 , Juliette K. Tinker2 , and Steven Clegg2 1Department of Pathobiology , Pig Research Institute Taiwan , P.O. Box 23 , Chunan , Miaoli 350 , Taiwan , and 2Department of Microbiology , College of Medicine , The University of Iowa , 51 Newton Road , Iowa City , IA 52242 , U.S.A. Received June 18 , 2001 ; in revised form , October 10 , 2001 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Lanes 1 , 5 , and 9 , DNA incubated with no protein ; Lanes 2 , 6 , 10 , 13 , and 15 , DNA incubated with 5 µg of cell extract possessing no FimZ ; Lanes 3 , 7 , and 11 , DNA incubated with 5 µg of FimZ-containing cell extract ; Lanes 4 , 8 , 12 , 14 , and 16 , DNA incubated with 1 µg of puriﬁed FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>This partial inhibition by RcsB and FimZ might be an indirect effect through the upregulation of capsule and ﬁmbrial synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>Effect of cellular Lrp levels on FimZ synthesis and PfimA-FimZ interaction in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>[ High ] , at high concentration of Lrp or FimZ ; and [ Low ] , at low concentration of Lrp or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimZ activates FimA , the major ﬁmbrial unit .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>For example , the type I fimbrial regulator , FimZ , increases HilE expression whereas the phosphoenolpyr-uvate phosphotransferase system ( PTS ) regulator , Mlc , represses it [ 23,24,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20686667" target="_blank">20686667</a>]<br></li>
+<li>Based on these results , FimW would appear ﬁmW to repress the PﬁmY promoter by preventing FimZ from activating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In this work , we have studied how PhoPQ , HilE , and FimZ function together to regulate the S. Typhimurium SPI-1 transcriptional-activator hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>While these results agree with previously published data regarding the ﬁm system in serovar Typhimurium , they still do not tell us how FimW , FimY , and FimZ individually contribute to PﬁmA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>RcsB is an activator of capsule synthesis , FimZ upregulates type 1 ﬁmbriae , PefI controls the synthesis of virulence plasmid-encoded ﬁmbriae , and YdiV has weak homology to EAL domain proteins which are known to decrease c-di-GMP levels , enhance swimming , and decrease cell adhesion to surfaces .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>Deletion of invS leads to increased levels of FimZ , which should lead to increased expression of hilE ( not tested ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>We propose that InvS coordinates the increase of PrgH and decrease in FimZ that promote efﬁcient Salmonella invasion into nonphagocytic cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>Taken together , we conclude that InvS coordinates the increase in PrgH and decrease in FimZ leading to more efﬁcient Salmonella invasion ( Fig. 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>Within this strain that lacks functional FimZ protein , ﬁmZ : : lacZY expression was 555.1 10.6 Miller units , which is still a 2.7-fold increase in ﬁmZ expression compared to that of the wild type ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>In this work , we hypothesize that FimZ is responsible for responding to signals from the PhoPQ regulon , which causes an increase in hilE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>From these results , we hypothesize that FimZ is activated in response to the PhoPQ signal ( likely by phosphorylation ) , which leads to induction of hilE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>However , extensive in vitro DNA binding studies , under conditions in which FimZ has previously been shown to-bind to the ﬁmA promoter , were unable to establish a speciﬁc interaction between FimY and the ﬁmA or ﬁmY promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>However , our in vitro results indicate that FimZ alone will bind to the ﬁmA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>The FimZ transcription factor activates this promoter directly , and it also positively regulates the transcription of its own gene , ﬁmZ ( Fig. 1 ) ( 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The FimZ transcriptional factor activates the fimA expression by binding to the fimA promoter , and in addition , FimZ also positively regulates its own transcription [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18652702" target="_blank">18652702</a>]<br></li>
+<li>In the former situation , FimZ directly binds to and hence activates the hilE promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Examination of the FimZ primary sequence indicates that the protein contains motifs that are homologous to proteins that are phosphorylated , although phosphorylation of speciﬁc residues has not been demonstrated for FimZ ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>These results strongly suggest that the phosphorylation of FimZ is necessary for its activity , although we can not rule out the possibility that the latter mutation destabilizes FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Possibly , if FimW is a DNA-binding protein , it binds to its target only in the context of interacting with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In addition , the interaction of FimZ with FimW , a repressor of ﬁmA expression , occurs only when FimZ is phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Initially , we believed that the interaction of FimW with FimZ may be most stable when FimZ is not activated ( FimZD56A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>This arrangement decouples FimZ expression from its native regulation and causes it to be constitutively expressed from its native chromosomal locus in the presence of tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_52">
+FIG 6 InvS regulates the level of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></label>
+<input id="act_similarity_52", type="checkbox">
+<div class="ACT_similar">
+<li>InvS regulates the level of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li></div>
+<li>This DNA topology change may contribute to activation of type 1 fimbriae production under normal growth conditions in cells ( neither the absence nor overproduction of the regulators Lrp or FimZ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Even in the presence of ﬁmW , no interaction of FimZ with FimY can be shown ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The decrease in motility in the presence of increased amounts of FimZ was not due to the complete absence of ﬂagella on the bacterial surface since electron micros-copy indicated a few ﬂagellum ﬁlaments on the surfaces of bacteria grown in the presence of tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>As expected , only the SL1344 ( pBADﬁmZ ) construct displayed inhibition of motility in the presence of arabinose , which was consistent with the expression of functional FimZ protein from pBADﬁmZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The pBADﬁmZ-containing lrp mutant showed no visible agglutination of red blood cells in the presence of glucose , which inhibited the expression of FimZ from this construct .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Consequently , the negative regulatory effect of FimW is most likely due to downmodulation of the active FimZ protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>This constitutive activity is most likely due to the presence of relatively large amounts of FimZ in the transformants since ﬁmZ is carried on multi-copy recombinant plasmids in these strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Whether under normal physiological conditions FimY is involved in the phosphorylation of FimZ has yet to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>( A ) FliZ is unable to regulate PﬁmA promoter activity in the absence of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>The increase in FimZ leads to the subsequent increase in HilE protein levels , which limits the availability of HilD to activate the hilA promoter due to HilE-HilD binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>No differences in the binding activity of FimZ to the ﬁmA promoter were observed when acetyl phosphate was used as a donor ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Such an interaction may lead to decreased activation by FimZ in the context of the ﬁmA promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Binding of FimZ to the ﬁmA promoter could be demonstrated in vitro and the location of binding was precisely detected by DNase I footprint assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>This increase in FimZ activates hilE expression , leading to the repression of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>FimZ is known to regulate the expression of its own gene positively , raising the possibility that Lrp can potentiate the positive effect of FimZ at the PﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>It is possible that the increase in FimZ in the ΔinvS background strain led to the decrease of ﬂhD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>These results demonstrate that the activation of the PhoB response-regulator leads to increased ﬁmZ expression , in the absence of functional FimZ , although the presence of FimZ further increases ﬁmZ expression due to autoactivation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>Under conditions of low magnesium concentration , the PhoPQ regulon is activated , leading to the phosphorylation of FimZ with the subsequent increase in hilE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>Also , in the presence of FimZ encoded by pISF187 , the FimY fusion could activate expression of the ﬁmA reporter constructs ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>However , in the E. coli host , the S. typhimurium ﬁmA gene is expressed in the presence of two Salmonella proteins , FimZ and FimY ( 33 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Notably , the in vivo expression of FimZ is highest in the presence of both FimZ and FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>The presence of this S. typhimurium FimZ counterpart in E. coli may explain the FimZ expression level in the E. coli host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>This system demonstrated signiﬁcant repression in the presence of the FimW and FimZ fusion molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In addition , in the presence of both Lrp and FimZ , we observed an increase in the apparent size of the PfimA ( WT ) complex ( supershift ) compared to the shift when each protein was present alone ( Fig. 7C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In contrast to these conditions , in presence of Lrp ( 50 nM ) or FimZ ( 12.5 nM ) alone , the PfimA-Lrp or PfimA-FimZ complexes ran as a smear in the gel ( Fig. 7A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>At a lower range of Lrp concentrations ( about 1,000,2400 dimers per cell ) , the levels of FimZ are high , such as occurs when cells are grown in nutrient-rich conditions ( e.g. LB broth ) , FimZ is better able to occupy its activation site in PfimA , presumably due to the fact the affinity of Lrp to motifs 2 , 3 , and 4 is relatively weak ( Fig. 3B ) and there is an abundance of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Lrp acts as both positive and negative regulator of fimZ expression The increase in fimA expression observed in the b mutant ( Fig. 4B ) raised the possibility that the binding of Lrp to motif 2 , adjacent to the FimZ binding site ( Fig. 3C ) , may affect FimZ binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>We assume that the binding of Lrp to motifs 2 and 3 may allow binding of the silencing factor H-NS to the high affinity H-NS-binding motifs in the FimZ-binding region , and competitively exclude FimZ binding to the PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The involvement of the global regulators Lrp and H-NS in addition to the ﬁm-speciﬁc proteins FimW , FimY , and FimZ is likely to make the ﬁm gene cluster sensitive to environmental stimuli and to the physiological state of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Binding of the purified Lrp and FimZ proteins to PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Accordingly , the ability of FimZ to regulate its own expression was analyzed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Since we could neither demonstrate the binding of FimZ to its promoter DNA nor identify the precise FimZ site of binding to its promoter region in vitro by gel mobility shift or DNase I footprint assays ( data not shown ) , we decided to determine whether FimZ could regulate its own expression by using a ﬁmZ-lacZ reporter construct .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>A FimZ-activating signal additionally leads to increased type 1 ﬁmbrial expression by direct binding of the FimZ activator to the type 1 ﬁmbrial gene operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>The FimZ regulator activates expression of the fimAICDHF operon by binding to the fimA promoter [ 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimW was found to negatively regulate ﬁm gene expression by repressing transcription from the PﬁmY promoter , independent of FimY or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Instead , FimW may function by inﬂuencing the ability of FimZ to activate transcription from this promoter , either by inhibiting the binding of FimZ to the ﬁmA promoter or by inhibiting activation by FimZ once this protein has bound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In the case of ﬁmU , the expression of this gene was not found to be regulated by FimW , FimY , or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In contrast , this regulator represses expression of type I ﬁmbriae , since ﬂiZ deletion leads to increased expression of ﬁmA , whereas its overexpression concurs with repression of FimZ and eventually the ﬁm genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>The requirement for the presence of both FimY and FimZ to activate ﬁmY expression was conﬁrmed by analysis using the ﬁmY-lacZ reporter in serovar Typhimurium SL1344 and the SL1344 ﬁmY and ﬁmZ mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>Similar to expression of ﬁmA , ﬁmY expression requires the presence of both FimY and FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>FimZ also binds to the PﬂhDC promoter and represses the expression of the ﬂagellar genes ( 10 ) and induces the expression of HilE to repress SPI1 gene expression ( 5 , 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>We therefore hypothesized that the signals from the PhoPQ and PhoBR two-component regulators are processed through FimZ , leading to the repression of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>In the following stages ﬂagellar gene expression is downregulated on the level of the ﬂhDC promoter by the combined action of multiple regulators , including the Spi-1-dependent RtsB protein and the type 1 ﬁmbriae regulator FimZ ( Ellermeier and Slauch , 2003 ; Saini et al. , 2010 ; Mouslim and Hughes , 2014 ; Singer et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>The hilE gene , which encodes a negative regulator of SPI-1 gene expression , possesses three promoters , one of which is controlled by the Mlc repressor ( Lim et al. , 2007 ) , which responds to the availability of glucose , and another that is controlled by the FimZ activator ( Baxter and Jones , 2005 ) , which also regulates Salmonella attachment and adherence under static growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Finally , we demonstrated that the previously observed coordinate regulation of SPI1 gene expression by the ﬁm gene circuit ( 7 ) occurs through the activation of hilE expression by FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>However , more than a 100-fold increase in FimZ expression was detected in the presence of pISF182 that produced both FimZ and FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>It is possible that FimZ and FimY , in correct stoichiometric ratios , are required for optimal expression of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Evidence that FimZ is necessary for ﬁmbrial expression in S. typhimurium and that the binding by FimZ results in increased expression of ﬁmA is presented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+<li>Previous studies using a FimZ mutant have indicated that this protein is necessary for ﬁmA expression , and in vitro DNA binding assays determined that FimZ is a transcriptional-activator that binds directly to the ﬁmA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>FimZ is a DNA binding protein that binds the fimA promoter and activate its expression [ 30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>It is unknown whether any of the additional gene products , such as FimY or FimW , directly interact with FimZ to mediate ﬁmA expression or if these polypeptides regulate ﬁmZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+<li>It has been shown previously that FimZ can bind to the promoter of the ﬁmA gene cluster but that FimY is also required to activate gene expression of ﬁmA ( 47 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15731035" target="_blank">15731035</a>]<br></li>
+<li>It appears that FimY acts upstream of FimZ to activate ﬁmA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Previous work showed FimY acts upstream of FimZ to activate the ﬁm operon , while FliZ functions to repress FimZ posttranscriptionally ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>As mentioned above , FimW has not been shown to-bind to any DNA targets , and its repressive activity may be one of inhib-iting FimZ alone to activate ﬁmA expression by facilitating binding of the FimZ-FimW complex to a different site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The predicted amino acid sequence of FimZ and its ability to-bind to the ﬁmA-pro-moter region suggest that this protein may be a response-regulator ; it is unknown whether FimZ needs to be phosphorylated in order to-bind .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>We propose that in the regulatory circuit of type 1 ﬁmbriae , FimY functions as a DNA-binding protein to activate ﬁmZ , and a FimY-FimZ protein complex may form to regulate other ﬁm genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>Since FimY and FimZ are both required to activate ﬁmA ( Swenson and Clegg , 1992 ) , it is possible that these two proteins form a complex to-bind the promoter of ﬁmA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>The expression of ﬁm is controlled in response to environmental signals through a complex regulatory cascade involving the proteins FimW , FimY , and FimZ and a genetic locus , ﬁmU , that encodes a rare arginine tRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Expression of the ﬁm gene cluster is known to be regulated by three proteins -- FimW , FimY , and FimZ -- and a tRNA encoded by ﬁmU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Earlier reports suggested that FimW binds FimZ and somehow inhibits the FimZ-dependent activation of ﬁm promoters ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>No regions of similarity were observed , and it is currently unknown whether FimZ binds directly to the ﬂhDC promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>Due to the requirement of motif 1 for FimA and type 1 fimbriae synthesis ( Fig 4 ) , we infer an interaction between Lrp and FimZ under these conditions that enhance FimZ-mediated activation of fimA expression by changing the regional DNA secondary structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The ability of FimZ to-bind to the ﬁmA promoter DNA and its derivatives is indicated as positive , while negative indicates that FimZ does not cause a mobility shift of these DNA fragments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>The regulatory link is not completely elucidated and can imply either posttranscriptional regulation of FimZ or prevention of FimZ binding to the ﬁmA promoter and consequent activation ( 15 , 217 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_119">
+When the concentration of FimZ was held constant at 50 nM , the intensity of shifted DNA-protein complex was increased by adding Lrp in a concentration dependent manner ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></label>
+<input id="act_similarity_119", type="checkbox">
+<div class="ACT_similar">
+<li>Similarly , when the Lrp concentration was held constant at 50 nM , the intensity of shifted DNA-protein complex was increased by adding FimZ in a concentration dependent manner ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li></div>
+<li>In addition , positive regulation of fimA expression by FimZ is dominant over the negative regulation by Lrp when fimZ is overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>One possible explanation of this ﬁnding is that the pstS mutation increases protein levels of FimZ , potentially activating transcription of its own gene , consistent with previous work by Yeh et al. ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>FimW inhibition of type 1 ﬁmbrial production may be mediated by consumption of the positive regulator , FimZ or by physical interactions , or may be mediated by repression of the promoter activity of ﬁmY ( Saini et al. , 2009 ; Tinker et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>In light of the positive regulation of ﬁmZ by the FimZ protein , H-NS displacement could be achieved by Lrp alone or by Lrp acting in combination with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>This would suggest that FimW has a higher afﬁnity for the phosphorylated or activated FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>A signiﬁcant interaction ( ** , P 0.05 ) of FimZ with FimW was observed only when FimZ was produced as a Lex-Fim fusion molecule ( FimW-FimZY or FimWY-FimZ ) in this system , and no interaction could occur when it was produced as a native protein ( FimW-FimYZ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>This negative regulation was proposed to be mediated through an inhibitory effect on the FimZ protein by a FimW-FimZ protein-protein interaction [ 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18652702" target="_blank">18652702</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_128">
+FimZ binds the Salmonella typhimurium fimA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21852351" target="_blank">21852351</a>]<br></label>
+<input id="act_similarity_128", type="checkbox">
+<div class="ACT_similar">
+<li>Yeh KS , Tinker JK , Clegg S : FimZ binds the Salmonella typhimurium fimA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>[ 40 ] K. Yeh , J.K. Tinker , S. Clegg , FimZ binds the Salmonella typhimurium ﬁmA promoter region and may regulate its own expression with FimY , Microbiol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>FimZ binds the Salmonella typhimurium ﬁmA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15731035" target="_blank">15731035</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>FimZ binds the Salmonella Typhimu-rium ﬁmA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>FimZ binds the Salmonella typhimu-rium ﬁmA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22778099" target="_blank">22778099</a>]<br></li></div>
+<li>The likelihood that FimZ functions by receiving phosphorylation signals from multiple two-component signals provides a model to understand how this gene can regulate genes involved in motility , bioﬁlm formation , invasion gene repression , and type I ﬁmbrial gene expression ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>FimZ is known to negatively regulate ﬂhD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>In particular , FimZ expression led to a more than 10-fold increase in PﬁmY promoter activity , and FimY expression led to a 10-fold increase in PﬁmZ activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ , FimY , FimW and an arginine transfer RNA fimU regulate fimbrial expression through a complicate circuit involving transcriptional and translational levels ( Tinker and Clegg 2001 ; Tinker et al. 2001 ; Yeh et al. 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>In addition to their ability to activate each other 's ﬁmZ promoters , FimY and FimZ were found to increase expression from their own promoters roughly threefold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Both FimZ and FimY were again found to weakly activate expression from their own promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_140">
+In addition , FimW and FimZ form a coupled feedback loop where they activate their own and each other 's expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></label>
+<input id="act_similarity_140", type="checkbox">
+<div class="ACT_similar">
+<li>In type 1 ﬁmbriae , FimW and FimZ form a coupled feedback loop where they can activate their own and each other 's expression ( 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_142">
+FimY and FimZ were also found to strongly activate each other 's expression and weakly activate their own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></label>
+<input id="act_similarity_142", type="checkbox">
+<div class="ACT_similar">
+<li>Collectively , these results show that FimY and FimZ strongly activate each other 's expression and weakly activate their own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>We als found that FimY and FimZ strongly activate each other 's expression and weakly activate their own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li></div>
+<li>While FimZ also regulates ﬂagellar and SPI1 gene expression , the effects are minor and are really seen only when the regulator is constitutively expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Other regulators believed to modulate specific virulence genes include FimZ and AgfD , required for in vitro expression of type I fimbriae and thin aggregative fimbriae respectively ( Darwin and Miller , 1999a ) , and the LysR-like transcriptional-regulator , SpvR , which is specifically required for spvABCD expression ( Guiney et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>We hypothesize that this negative feedback loop involving FimW prevents the runaway expression of FimY and FimZ arising from their participation in interacting positive feedback .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Speciﬁcally , we hypothesize that when FimY and FimZ reach their optimum expression levels , the FimW negative feedback loop is activated and halts expression from the PﬁmY and PﬁmZ promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>However , it was demonstrated by analysing promoter activities that FimY and FimZ can activate each other 's expression ( Saini et al. 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Using genetic approaches , we found that FimZ and FimY activate each other 's expression and that each protein can independently activate the P promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Using genetic approaches , we demonstrated that FimY and FimZ independently activate the PﬁmA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ requires another co-activa-tor FimY to activate fimA expression , however , no evidence has revealed any interaction of FimY and the fimA promoter [ 19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18652702" target="_blank">18652702</a>]<br></li>
+<li>According to the results reported by Saini et al. , FimY and FimZ independ-ently activate the fimA gene expression , in addition , FimY and FimZ also activated each other 's expression [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>FimZ and FimY can independently activate expression from the PﬁmA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ , FimY , FimW , STM0551 , and an arginine transfer RNA ( ﬁmU ) were previously demonstrated to regulate ﬁmbrial expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>FimZ and FimY are both required to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>Both FimY and FimZ are required to activate fimA expression in S. Typhimurium [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>FimW represses fimA expression and FimW interacts with FimZ physically to consume FimZ , diminishing available FimZ to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>FimZ binds to PfimA and activates fimA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The interaction between FimZ and FimW was found to repress sulA-lacZY expression by 12-fold , indicating a stronger interaction between FimZ and FimW than between HilE and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>Moreover , FimY and FimZ protein expression levels are controlled by a negative feedback loop involving FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">FimZ protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>RcsB and FimZ are response regulators with C-terminal DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>This result suggests that both Lrp and FimZ competitively interact with the overlapped motif in PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Finally , our investigations indicate that phosphorylated FimZ is necessary for optimal activation of ﬁmA and that this activation may be modulated by interaction with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Since FimZ plays a central role in ﬁmA expression by S. typhimurium , we have identiﬁed the speciﬁc FimZ DNA-binding region within ﬁmA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>It is possible that the FimZ prepared in our study has some non-speciﬁc DNA-binding activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>DNA motif 2 lies just upstream and motifs 3 and 4 lie just downstream of the FimZ binding site [ 298 to 247 ] [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Therefore , in these studies , we also examined the role of a conserved phosphorylation site on FimZ activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The N-terminal domain of FimZ is similar in sequence to a family of response regulators including BvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Examination of the FimZ primary sequence indicates that the protein contains motifs that are homologous to proteins that are phosphorylated , although phosphorylation of speciﬁc residues has not been demonstrated for FimZ ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>The regions of homology between these proteins include conserved phosphorylated residues , indicating that the action of FimZ is dependent upon phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In previous studies , we have shown that FimZ and FimW are the only two of the three regulatory proteins in which an interaction can be demonstrated in pairwise combinations ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Even in the presence of ﬁmW , no interaction of FimZ with FimY can be shown ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In order to more fully understand the relationship between the three ﬁmbrial regulatory proteins , we investigated whether FimY inﬂuences the ability of FimW to interact with FimZ and also to determine if FimY is necessary for FimZ activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>DISCUSSION Previous studies using recombinant E. coli strains have indicated that the presence of two regulatory proteins , FimZ and FimY , is necessary for activation of the serovar Typhimurium ﬁmA gene ( 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>Such an interaction may lead to decreased activation by FimZ in the context of the ﬁmA promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Alternatively , FimY may not be a DNA-binding protein at all , but it may instead interact with FimZ in a manner that activates FimZ for binding to the promoter region of ﬁmA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>We assume that the binding of Lrp to motifs 2 and 3 may allow binding of the silencing factor H-NS to the high affinity H-NS-binding motifs in the FimZ-binding region , and competitively exclude FimZ binding to the PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimZ contains a conserved aspartate residue at amino acid 56 which may act as a site of phosphorylation conferring activation of FimZ in the positive control of ﬁmA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Similar to FimZ , the C-terminal amino acid sequence of FimY appears to contain a helix-turn-helix DNA-binding motif , yet examination of the entire FimY sequence identiﬁes very limited homology to known prokaryotic proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>Examination of the amino acid sequence of the C-terminal domain of FimZ reveals a helix-turn-helix motif and this , along with our previous reports of FimZ affecting ﬁmA expression ( 33 , 40 ) , indicates that FimZ can bind to the ﬁmA promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>By using the predicted amino acid sequence of FimZ , it is possible to demonstrate a helix-turn-helix motif in the C terminus of this polypeptide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">FimZ evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>First , FimZ is homologous to known response regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15731035" target="_blank">15731035</a>]<br></li>
+<li>The FimZ protein is an `` orphan '' member of the response regulator family of transcription factors , that is , one for whom no cognate histidine protein kinase partner has been identiﬁed ( 83 , 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The amino sequence of FimZ exhibits relatedness to several two-component response regulators ( 19 , 22 , 23 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The three genes encoding FimWYZ constitute the main activation complex of type I ﬁmbriae : FimZ belongs to the response regulator family of proteins showing DNA binding ability ( 215 ) , FimY cooperatively acts with FimZ to activate the ﬁmbrial genes ( 216 ) , and FimW exerts a negative inﬂuence on the expression of the ﬁm genes ( 243 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>The N-terminal domain of FimZ is similar in sequence to a family of response regulators including BvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>However , the amino acid sequence of the C-terminal part of FimY does share some homology to members of LuxR family regulators , such as FimZ , SdiA , and CsgD of S. Typhimurium , and LuxR of Vibrio ﬁscheri ( Patankar and Gonzalez , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>Amino acid sequence analysis indicates that FimZ belongs to the family of bacterial response regulators of two-component systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The predicted amino acid sequence of FimZ relates to a family of transcriptional activators that are sensory regulators of two-component systems ( 10 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Transcription initiation site of ﬁmA is designated by arrow Discussion The predicted amino acid sequence of the S. typhimurium ﬁmbrial regulator , FimZ , exhibits a high degree of homology to a variety of bacterial transcriptional activators ( 10 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Examination of the predicted amino acid sequence of the FimZ polypeptide had shown that it exhibited similarity to a number of transcriptional activators ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+<li>A comparison of the amino acid sequence of FimZ indicates that it is a member of the family of response regulators ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by FimZ</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Table 2 Drug resistance proﬁles of response regulators in E. coli Response MIC Ratio ( fold increase , MIC for acrB mutant overproducing response regulator versus MIC for acrB mutant ) regulator EM KM FOM DXR NOV CV R6G TPP BENZ SDS DOC MPIPC CMZ CMD CAZ AZT IPM AMK CBPC MCIPC CRMN PAPM BIPM FRPM 1 1 1 4 1 1 1 4 4 2 1 1 2 1 1 2 1 1 1 1 1 1 2 8 1 1 1 1 1 1 1 1 1 1 BaeR CheY CitB CpxR CreB DcuR EvgA FimZ KdpE NarL NarP OmpR RcsB RstA TorR YedW YehT 1 1 4 1 1 1 1 1 1 1 1 2 2 2 4 1 2 1 1 32 1 1 1 1 1 1 2 4 1 1 1 2 1 1 2 1 1 2 1 1 1 1 1 1 1 1 4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 8 1 1 2 1 1 1 1 1 1 1 16 1 N32 32 1 1 1 1 N32 2 1 1 16 2 N32 16 1 2 1 1 1 1 4 1 32 2 16 2 1 1 1 1 1 1 4 1 2 2 4 4 8 1 1 1 1 1 4 1 1 1 1 1 1 8 1 1 1 2 ND ND ND 4 ND ND ND ND ND ND ND ND ND ND ND ND ND 8 16 8 ND ND ND ND ND 8 ND ND ND ND ND ND 8 ND ND ND ND ND ND ND ND ND 16 ND ND ND ND ND ND 32 ND ND ND ND ND ND ND ND ND 4 ND ND ND ND ND ND 4 ND ND ND ND 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 2 2 1 2 2 1 2 1 2 1 1 1 1 1 ND ND ND ND ND 2 ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND 8 ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND ND 1 1 1 1 32 1 1 2 1 1 1 1 1 1 1 1 4 1 4 4 1 1 2 1 1 1 1 1 1 1 1 1 1 2 8 1 1 1 2 2 1 1 1 1 1 1 1 1 1 16 1 1 1 1 1 1 1 1 1 1 1 2 1 1 2 2 1 1 1 1 2 2 1 2 1 Abbreviations : EM , erythromycin ; KM , kanamycin ; FOM , fosfomycin ; DXR , doxorubicin ; NOV , novobiocin ; CV , crystal violet ; R6G , rhodamine 6G ; TPP , tetraphenylphosphonium bromide ; BENZ , benzalkonium ; SDS , sodium dodecyl sulfate ; DOC , deoxycholate ; MPIPC , oxacillin ; CMZ , cefmetazole ; CMD , cefamandole ; CAZ , ceftazidime ; AZT , aztreonam ; IPM , imipenem ; AMK , amikacin ; CBPC , carbenicillin ; MCIPC , cloxacillin ; CRMN , carmonam ; PAPM , panipenem ; BIPM , biapenem ; FRPM , faropenem .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>Supporting our initial observations of phoP repression by bile , we found that tran ¬ ORF no.a Common name Gene regulation STM3146 Hydrogenase 2 maturation endopeptidase hybD 10.36 STM3506 Ferrous iron-transport protein B feoB 7.02 STM3150 Hydrogenase 2 small subunit hypO 4.55 STM1907 Copper homeostasis protein CutC cutC 4.46 STM3511 Putative DNA uptake protein yhgI 3.98 STM3465 Hypothetical protein yhfA 3.61 STM3505 Ferrous iron-transport protein A feoA 3.56 STM1324 Putative cytoplasmic protein 3.53 STM0629 Cold shock protein CspE cspE 3.43 STM3360 Arginine repressor argR 3.17 STM1200 Thymidylate kinase tmk 3.16 STM1121 Putative cytoplasmic protein ymdF 3.15 STM2856 Hydrogenase assembly chaperone hypC 2.88 STM3147 Hydrogenase 2 large subunit hybC 2.87 STM3302 Pseudogene , yhhE yhbE 2.84 STM0974 Formate transporter focA 2.71 STM2532 Putative inner membrane lipoprotein 2.55 STM0441 Cytochrome o ubiquinol oxidase subunit III cyoC 10.71 STM0439 Protoheme IX farnesyltransferase cyoE 7.50 STM3630 Dipeptide-transport protein dppA 6.35 ORF01133 Protein PhoH phoH 5.60 STM0544 Fimbrial protein ﬁmI 5.33 STM0154 Dihydrolipoamide dehydrogenase lpdA 5.14 STM0158 Bifunctional aconitate hydratase 2/2 - acnB 4.79 methylisocitrate dehydratase STM2378 3-Oxoacyl - ( acyl carrier protein ) synthase I fabB 4.58 STM4398 d-Alanine/d-serine/glycine permease cycA 4.56 STM0600 Carbon starvation protein cstA 4.54 STM3218 Putrescine-2-oxoglutarate aminotransferase oat 4.43 STM2389 3-ketoacyl-CoAb thiolase fadI 4.20 PSLT052 Plasmid partition protein A parA 4.18 STM1231 DNA-binding transcriptional regulator PhoP phoP 4.06 STM4159 Thiamine-biosynthesis protein ThiH thiH 4.05 STM3557 Glycerol-3-phosphate-transporter periplasmic ugpB 4.03 binding protein STM0734 Succinate dehydrogenase ﬂavoprotein subunit sdhA 3.98 STM0662 Glutamate/aspartate-transporter gltL 3.89 ORF01131 Bifunctional protein PutA putA 3.84 STM1238 Isocitrate dehydrogenase icdA 3.83 STM1712 Aconitate hydratase acnA 3.48 STM0549 Transcriptional regulator FimZ ﬁmZ 3.45 STM2141 Fructose-bisphosphate aldolase fbaB 3.37 STM0735 Succinate dehydrogenase iron-sulfur subunit sdhB 3.25 STM0738 Succinyl-CoA synthetase subunit beta sucC 3.25 STM1744 Oligopeptide-transport protein oppC 3.21 PSLT046 Putative carbonic anhydrase 3.20 STM2190 Galactose-transport protein mglB 3.02 STM2799 DNA binding protein , nucleoid associated stpA 2.97 STM1292 Putative cytoplasmic protein yeaC 2.94 STM0730 Type II citrate synthase gltA 2.90 STM3321 Putative 54 modulation protein yhbH 2.84 STM1742 Oligopeptide-transport protein oppF 2.78 STM3033 Plasmid maintenance protein 2.72 STM4274 Putative inner membrane protein yjcH 2.65 STM4126 Soluble pyridine nucleotide transhydrogenase udhA 2.63 ORF04918 Virulence protein VsdF 2.59 a STM and pSLT designations refer to Salmonella enterica serovar Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22366421" target="_blank">22366421</a>]<br></li>
+<li>Proposed Virulence Proposed Environmental site in host genes functions conditions In vivo Regulatory factors induction Stomach atr genes Log-phase acid tolerance acid pH a response a Fur , RpoS a Adhesion b FimZ , AgfD b Fimbrial genes Intestine SPI1 Invasion , chemokine Oxygen , osmolarity , production , PMN migration , pH , growth phase , Apoptosis cations ( ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>To conﬁrm that FimZ production plays a role in altering bacterial movement through agar , S. enterica sero-var Typhimurium LT2 transformants possessing plasmid pISF187 were examined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>A third DNA-bind-ing protein that affects motility is FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>FimZ is a response regulator that activates type 1 ﬁmbrial genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>In addition , FimZ has been identiﬁed as being closely related to response regulators of two-component systems using amino acid homology analyses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimZ is involved in invasive signal processing as well as motility and adherence ( via type 1 fimbriae ) regulation 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15765064" target="_blank">15765064</a>]<br></li>
+<li>In serovar Typhimurium , Lrp is required for type 1 fimbriae production by activating FimZ synthesis [ 33 ] , whereas in E. coli , Lrp is involved in inversion-dependent phase variation [ 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>For example , the type I fimbrial regulator , FimZ , increases HilE expression whereas the phosphoenolpyr-uvate phosphotransferase system ( PTS ) regulator , Mlc , represses it [ 23,24,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20686667" target="_blank">20686667</a>]<br></li>
+<li>FimW may be involved in this phosphorylation cascade , such that it is able to inactivate FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>Amino acid sequence analysis revealed that FimZ is related to a number of transcriptional activators , including BvgA , a response regulator of a two-component system in Bordetella pertussis that activates several virulence factors in that organism ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>The predicted amino acid sequence of FimZ suggests that this protein may be a DNA-binding protein related to BvgA , a sensory regulator of virulence gene-expression in Bordetella pertussis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>The FimZ transcription factor activates this promoter directly , and it also positively regulates the transcription of its own gene , ﬁmZ ( Fig. 1 ) ( 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The resulting strain , CR804 ( PﬁmZ : : tetRA ) , places FimZ under the control of a tetracycline-inducible promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>The likelihood that FimZ functions by receiving phosphorylation signals from multiple two-component signals provides a model to understand how this gene can regulate genes involved in motility , bioﬁlm formation , invasion gene repression , and type I ﬁmbrial gene-expression ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>( D to F ) Overexpressing FimZ represses both ﬂagellar and SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>In addition , we identiﬁed a novel regulatory link between ﬂagellar and type 1 ﬁmbrial gene-expression dynamics , where we found that the ﬂagellar regulator , FliZ , represses type 1 ﬁmbrial gene-expression through the posttranscriptional regulation of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FliZ regulates type 1 ﬁmbrial gene-expression though FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>( B ) Mannose-sensitive yeast agglutination assay to assess type 1 fimbriae production and western bolt analysis for the FimZ synthesis in the lrp mutants harboring pWSK29 ( a low-copy number vector control ) C or pYA4865 ( Lrp-independent fimZ expression vector ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Flagellar regulation is highly complex and is orchestrated at the levels of transcription , translation , ﬂagellum assembly , and stability , involving a large number of positive and negative regulators , including SirA/BarA ( 38 ) , RtsB ( 39 ) , SlyA and LrhA ( 40 ) , RcsB ( 41 ) , RﬂM ( 42 ) , CsrA ( 43 ) , FimZ ( 44 ) , HilD ( 45 ) , cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) complex ( cAMP-CRC ) and H-NS ( 46 ) , and YdiV ( 47 ) , as well as other mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>The major regulatory proteins that control ﬁm expression have been identiﬁed as FimZ , FimY , and FimW ( 14 -- 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimZ , FimY , STM0551 , FimW , and an arginine transfer RNA ( ﬁmU ) regulate ﬁmbrial expression through a complicated circuit involving both transcriptional and translational levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>In addition , we also deleted FimY so that regulation was dependent entirely on FimZ ( FimW is a negative regulator of type 1 ﬁmbrial gene-expression and operates through FimY [ 72 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_25">
+RESULTS FimZ and FimY are activators and FimW is a repressor of ﬁm gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></label>
+<input id="rp_similarity_25", type="checkbox">
+<div class="RP_similar">
+<li>FimY and FimZ are activators and FimW is a repressor of ﬁm gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li></div>
+<li>FimZ and FimY are regulators that control expression of type 1 ﬁmbriae genes [ 50 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17208038" target="_blank">17208038</a>]<br></li>
+<li>Both FimZ and FimY are required for high-level expression of FimZ , which suggests that these two ﬁmbrial proteins are involved in regulating both FimA and FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>FimZ is a transcriptional activator of type 1 ﬁmbriae genes ( 41 , 43 ) and also exerts regulatory effects on motility ( 40 ) , invasion gene-expression , and bioﬁlm formation ( 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>Other regulators believed to modulate specific virulence genes include FimZ and AgfD , required for in vitro expression of type I fimbriae and thin aggregative fimbriae respectively ( Darwin and Miller , 1999a ) , and the LysR-like transcriptional regulator , SpvR , which is specifically required for spvABCD expression ( Guiney et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>From these results , we hypothesize that FimZ is activated in response to the PhoPQ signal ( likely by phosphorylation ) , which leads to induction of hilE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>Whether under normal physiological conditions FimY is involved in the phosphorylation of FimZ has yet to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>RcsB is an activator of capsule synthesis , FimZ upregulates type 1 ﬁmbriae , PefI controls the synthesis of virulence plasmid-encoded ﬁmbriae , and YdiV has weak homology to EAL domain proteins which are known to decrease c-di-GMP levels , enhance swimming , and decrease cell-adhesion to surfaces .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19114490" target="_blank">19114490</a>]<br></li>
+<li>FimZ is an activator of type 1 ﬁmbriae and was shown to represses ﬂhDC , as well as Spi-1 genes , which indicates that cross-talk between the ﬂagellar , ﬁmbriae and Spi-1 regulatory systems is of importance during the transition from a motile , planktonic lifestyle to intestinal colonization and persistence ( Saini et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>The results indicate that FimY is a positive regulator of ﬁmbrial expression and that this protein acts in cooperation with FimZ to regulate the expression of Salmonella type 1 ﬁmbrial appendages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>This system has also been used to demonstrate an interaction between the regulatory proteins FimZ and FimW that control the expression of Salmonella type 1 ﬁmbriae ( 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>The expression of FimH on the bacterial surface is tightly controlled by the fim regulatory proteins ( FimZ , FimY and FimW ) in response to environmental signals [ 45,46,47 ] and , due to involvement of fim regulatory proteins in the global regulatory network , FimH expression is coupled with the expression of other virulence factors including flagella [ 48 ] , T3SS [ 49,50,51 ] and LPS [ 52 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22685400" target="_blank">22685400</a>]<br></li>
+<li>The expression of ﬁm is controlled in response to environmental signals through a complex regulatory cascade involving the proteins FimW , FimY , and FimZ and a genetic locus , ﬁmU , that encodes a rare arginine tRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>FimZ controls the dynamics of SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Our results indicate that FimZ alone is able to enhance the expression of hilE , a known repressor of SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>The hilE gene , which encodes a negative regulator of SPI-1 gene-expression , possesses three promoters , one of which is controlled by the Mlc repressor ( Lim et al. , 2007 ) , which responds to the availability of glucose , and another that is controlled by the FimZ activator ( Baxter and Jones , 2005 ) , which also regulates Salmonella attachment and adherence under static growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>FimW negatively regulates production of type 1 ﬁmbriae by interacting with FimY ( 83 ) and possibly with FimZ ( 96 ) ; the latter two proteins independently activate the PﬁmA promoter , which controls the expression of the ﬁm structural genes ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>Our results indicate that FimY and FimZ independently activate the PﬁmA promoter which controls the expression of the ﬁm structural genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ also binds to the PﬂhDC promoter and represses the expression of the ﬂagellar genes ( 10 ) and induces the expression of HilE to repress SPI1 gene-expression ( 5 , 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>In the following stages ﬂagellar gene-expression is downregulated on the level of the ﬂhDC promoter by the combined action of multiple regulators , including the Spi-1-dependent RtsB protein and the type 1 ﬁmbriae regulator FimZ ( Ellermeier and Slauch , 2003 ; Saini et al. , 2010 ; Mouslim and Hughes , 2014 ; Singer et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Instead of influencing the efficiency of a site-specific recombination process that moves the E. coli fim genes between ON and OFF expression states , Lrp in Salmonella enterica controls fim gene-expression by governing the supply of a regulatory protein , FimZ ( McFarland et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>InvS also modulates the protein levels of PrgH and FimZ , a type-III-secretion apparatus protein and a negative regulator that suppresses the expression of Salmonella invasion genes , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>The pBADﬁmZ-containing lrp mutant showed no visible agglutination of red-blood-cells in the presence of glucose , which inhibited the expression of FimZ from this construct .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Under conditions of low magnesium concentration , the PhoPQ regulon is activated , leading to the phosphorylation of FimZ with the subsequent increase in hilE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>In addition , FimZ is known to downregulate Salmonella invasion by activating hilE , which represses the expression of several of the Salmonella invasion genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>FimZ also negatively regulates ﬂagellar synthesis by repressing expression of the master ﬂagellar regulator FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>In addition , FimZ negatively inﬂu-ences expression of HilA as well as the ﬂagellar genes and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Additional two-component regulatory systems are involved in the regulation of SPI1 , including BarA/SirA , FimY/FimZ , PhoP/PhoQ , and PhoB/PhoR ( 12 , 28 , 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18160484" target="_blank">18160484</a>]<br></li>
+<li>Leucine-responsive regulatory protein ( Lrp ) is known to be an indirect activator of type 1 fimbriae synthesis in Salmonella enterica serovar Typhimurium via direct regulation of FimZ , a direct positive regulator for type 1 fimbriae production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Accepted October 15 , 2001 Abstract : The FimZ protein , an activator of FimA production in Salmonella typhimurium , acts in conjunction with FimY to facilitate the expression of type 1 ﬁmbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_56">
+Saini S , Pearl JA , Rao CV : Role of FimW , FimY , and FimZ in regulating the expression of type 1 fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></label>
+<input id="rp_similarity_56", type="checkbox">
+<div class="RP_similar">
+<li>64 2765 -- 2773 Saini S , Pearl JA and Rao CV 2009 Role of FimW , FimY and FimZ in regulating the expression of type 1 fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21852351" target="_blank">21852351</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type I ﬁmbriae in Salmonella enterica sero-var Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Sal-monella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type I ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21478311" target="_blank">21478311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22778099" target="_blank">22778099</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type 1 ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>[ 39 ] S. Saini , J.A. Pearl , C.V. Rao , Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>Saini , S. , Pearl , J.A. , and Rao , C.V. ( 2009 ) Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></li></div>
+<li>In addition , expression from a ﬁmZ-lacZ reporter construct conﬁrms that FimZ plays a role in its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>FimZ has been shown not only to play a role in type 1 ﬁmbria production by S. Typhi-murium but also to affect ﬂagella and virulence gene-expression in these bacteria ( 14 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Therefore , environmental factors probably play a role in affecting Salmonella ﬁmbrial expression , and FimZ is a putative candidate in this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">FimZ binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Since we have previously demonstrated that FimZ binds to the ﬁmA promoter region ( 18 ) , we examined the ﬂhDC promoter for nucleotide sequences similar to those found for ﬁmZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11807085" target="_blank">11807085</a>]<br></li>
+<li>This region possesses a pair of 7-base pair tandem repeats , of which at least one is necessary for FimZ binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>A 7-bp sequence ( 5 - AATAAGA-3 ) that is known to be required for FimZ binding at ﬁmA is centered at position 352 upstream of ﬁmZ ( 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Published work has shown that the FimZ protein binds to the ﬁmA promoter at a DNA region with a tandem repeat of the motif AATAAGA separated by 20 bp ( 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15731035" target="_blank">15731035</a>]<br></li>
+<li>Expression of β-Galactosidase from the ﬁmZ-lacZ Reporter in E. coli and S. typhimurium Examination of the nucleotide sequence of the ﬁmZ promoter region indicated one copy of the sequence , 5 ' - AATAAGA-3 ' was identical to the directly repeated sequence found in the FimZ binding region of the ﬁmA promoter ( Fig. 4 , Panel B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>An examination of the predicted amino acid sequence , deduced from the nucleotide sequence of ﬁmZ , indicated that the FimZ polypeptide possessed a DNA binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+<li>DNA motif 2 lies just upstream and motifs 3 and 4 lie just downstream of the FimZ binding site [ 298 to 247 ] [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The FimZ protein was partially puriﬁed and found to bind to the promoter region of ﬁmA , approximately 100 bp upstream of the transcription initiation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>The precise binding site of FimZ has been shown to extend from 47 to 100 bp upstream of the transcription initiation site of ﬁmA ( unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>The transcription initiation site of ﬁmZ is 227 bp upstream of the FimZ initiation codon and is in bold face and denoted by Ti .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>The region of DNA protected from DNase I digestion by FimZ binding is located between 47 and 98 nucleotides upstream from the ﬁmA transcription initiation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Removing one of these repeats causes the FimZ binding to be lost , suggesting that these sequences participate in FimZ binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Certainly , the relative locations of the putative FimZ binding site at 352 and the Lrp sites at 152 and 100 are consistent with such a model .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>This result suggests that Lrp and FimZ compete for binding to PfimA at the overlapping sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by FimZ</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Expression of hilE is apparently activated primarily by FimZ , but this regulation is modest under normal conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>In our studies , we showed that FimZ upregulates hilE expression , thereby playing a signiﬁcant role in whether hilA is expressed or not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>In addition , expression from a ﬁmZ-lacZ reporter construct conﬁrms that FimZ plays a role in its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Also , as expected , type 1 ﬁmbrial gene expression was signiﬁcantly accelerated when FimZ was constitutively expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Repression of type 1 ﬁmbrial gene expression by FliZ is through FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>We next tested whether FliZ represses type 1 ﬁmbrial gene expression through FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Of the two , only FimZ was found to affect PhilE expression ( 1,089 421 RFU/OD [ uninduced ] versus 17,654 2,234 RFU/OD [ induced ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Overnight cultures were subcultured 1:1,000 in fresh LB and then grown statically at 37 ° C for 24 h. FimZ expression was induced by addition of 15 g/ml tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FimZ expression was induced by addition of 15 g/ml tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>It was also demonstrated that transcription from the cloned ﬁmY promoter was not detected in the E. coli host unless both FimY and FimZ were present ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>When FimZ was constitutively expressed , however , we found that both the ﬂagellar and SPI1 genes were repressed ( Fig. 7D and E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>The FimZ transcription factor activates this promoter directly , and it also positively regulates the transcription of its own gene , ﬁmZ ( Fig. 1 ) ( 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>One possible explanation of this ﬁnding is that the pstS mutation increases protein levels of FimZ , potentially activating transcription of its own gene , consistent with previous work by Yeh et al. ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>This arrangement decouples FimZ expression from its native regulation and causes it to be constitutively expressed from its native chromosomal locus in the presence of tetracycline .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FimZ binds the Salmonella typhimurium fimA promoter region and may regulate its own expression with FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21852351" target="_blank">21852351</a>]<br></li>
+<li>FimZ is a DNA binding protein that binds the fimA promoter and activate its expression [ 30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>Because FimZ is a positive activator of fimA expression , we assessed fimZ expression in the lrp mutant by RT-C PCR analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In addition , positive regulation of fimA expression by FimZ is dominant over the negative regulation by Lrp when fimZ is overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>This increase in FimZ activates hilE expression , leading to the repression of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25547794" target="_blank">25547794</a>]<br></li>
+<li>The FimZ transcriptional factor activates the fimA expression by binding to the fimA promoter , and in addition , FimZ also positively regulates its own transcription [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18652702" target="_blank">18652702</a>]<br></li>
+<li>The FimZ regulator activates expression of the fimAICDHF operon by binding to the fimA promoter [ 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Expression vectors for RtsB and FimZ were constructed by PCR amplifying the gene of interest and cloning it in the multiple-cloning site of the vector , pPROTet.E .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>In addition , FimZ is known to downregulate Salmonella invasion by activating hilE , which represses the expression of several of the Salmonella invasion genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>The hilE gene , which encodes a negative regulator of SPI-1 gene expression , possesses three promoters , one of which is controlled by the Mlc repressor ( Lim et al. , 2007 ) , which responds to the availability of glucose , and another that is controlled by the FimZ activator ( Baxter and Jones , 2005 ) , which also regulates Salmonella attachment and adherence under static growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>The exact mechanism by which InvS activates the expression of PrgH and reduces the expression of FimZ is currently unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>FimZ is known to regulate the expression of its own gene positively , raising the possibility that Lrp can potentiate the positive effect of FimZ at the PﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>FimZ also binds to the PﬂhDC promoter and represses the expression of the ﬂagellar genes ( 10 ) and induces the expression of HilE to repress SPI1 gene expression ( 5 , 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Also , in the presence of FimZ encoded by pISF187 , the FimY fusion could activate expression of the ﬁmA reporter constructs ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>Notably , the in vivo expression of FimZ is highest in the presence of both FimZ and FimY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>FimW negatively regulates production of type 1 ﬁmbriae by interacting with FimY ( 83 ) and possibly with FimZ ( 96 ) ; the latter two proteins independently activate the PﬁmA promoter , which controls the expression of the ﬁm structural genes ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>Our results indicate that FimY and FimZ independently activate the PﬁmA promoter which controls the expression of the ﬁm structural genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In this system , the expression of the genes encoding the type I fimbriae is controlled by two regulators , FimY and FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20686667" target="_blank">20686667</a>]<br></li>
+<li>In serovar Typhimurium , the expression of the structural genes is regulated by three transcription factors , FimY , FimZ , and FimW ( 44 , 46 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>The molecular interaction of both FimZ and FimY proteins must be determined to understand the role of these two gene products in Salmonella ﬁmbrial expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>Accordingly , the ability of FimZ to regulate its own expression was analyzed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+<li>FimY and FimZ have been previously shown to regulate SPI1 gene expression by repressing hilA expression through their activation of the P prohilE moter ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimW was found to negatively regulate ﬁm gene expression by repressing transcription from the PﬁmY promoter , independent of FimY or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In the case of ﬁmU , the expression of this gene was not found to be regulated by FimW , FimY , or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ is known to negatively regulate ﬂhD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>FimZ alone is able to regulate SPI1 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ has also been shown to bind the PﬂhDC promoter and repress ﬂagellar gene expression ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>( D to F ) Overexpressing FimZ represses both ﬂagellar and SPI1 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Expression of the ﬁm gene cluster is known to be regulated by three proteins -- FimW , FimY , and FimZ -- and a tRNA encoded by ﬁmU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_44">
+RESULTS FimZ and FimY are activators and FimW is a repressor of ﬁm gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></label>
+<input id="tu_similarity_44", type="checkbox">
+<div class="TU_similar">
+<li>FimY and FimZ are activators and FimW is a repressor of ﬁm gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li></div>
+<li>FimZ and FimY are regulators that control expression of type 1 ﬁmbriae genes [ 50 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17208038" target="_blank">17208038</a>]<br></li>
+<li>FimZ and FimY are positive regulators of fimA [ 14,19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18652702" target="_blank">18652702</a>]<br></li>
+<li>It appears that FimY acts upstream of FimZ to activate ﬁmA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimY and FimZ were also found to strongly activate each other 's expression and weakly activate their own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Both FimZ and FimY were again found to weakly activate expression from their own promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimZ and FimY are both required to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>Both FimY and FimZ are required to activate fimA expression in S. Typhimurium [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>FimW represses fimA expression and FimW interacts with FimZ physically to consume FimZ , diminishing available FimZ to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>FimZ binds to PfimA and activates fimA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Rob</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Rob</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Rob transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Acknowledgements We are grateful to Anne Fielder , Jay Hinton , Kenny Linton , Francisco Ussery for stimulating Mojica , Graham Pavitt , Rob Stephen and David manuscript .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8521826" target="_blank">8521826</a>]<br></li>
+<li>In E. coli , it was demonstrated that Rob inducers such as dipyridyl , bile salts , or fatty acids trigger its activity by provoking a conformational switch in the regulator ( 37 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>In contrast , DEC binds Rob protein , but does not affect the activity of MarR protein ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>All the experiments were repeated three times and asterisks represent statistical differences between control and treated cells for each strain ( ** p \ 0.005 ; *** p \ 0.001 ) , values are mean ± SD Strain MIC ( mM ) and protein level ) in response to NaOCl results in a repression of Rob ( Figs. 1a , b , 3a , b , d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Lastly , the multilevel regulation mechanisms that converge to control mgtA expression , comprising posttranscriptional and transcriptional-regulatory mechanisms ( i.e. , PhoPQ , attenuation , degradation by RNase E , and Rob regulation ) , are indicative of a requirement for MgtA expression in Salmonella under precise physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>When a high extracellular Mg2 concentration was present in the growth medium , Rob induction of mgtA was still evident .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Consistent with this result , when the rob mutant was compared to the otherwise WT strain in late exponential phase , downregulation of mgtA expression was observed , showing that , under this condition , physiological Rob levels contribute approximately 30 % of mgtA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Bands were visualized by ethidium bromide staining Table 3 Minimal inhibitory concentrations ( MIC ) of NaOCl for S. Typhimurium wild-type and mutants strains 8 14028s Drob 1.6 0.4 Drob/pBAD-roba DmarA DmarA/pBAD-marAa 0.4 16 DsoxS 0.4 16 0.2 DsoxS/pBAD-soxSa DmarA DsoxS DmarA Drob DsoxS Drob 0.4 0.4 0.2 DmarA DsoxS Drob Numbers are the mean of 3 independent determinations a Genetically complemented strains , cells induced with 10 m arabinose M To further investigate the role of MarA , SoxS , and Rob in response to NaOCl , we evaluated their expression in response to treatment with the toxic compound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Therefore , to examine whether the three paralog proteins share the ability to upregulate mgtA , we determined mgtA expression when SoxS , MarA , or Rob was overexpressed in the soxS , marA , or rob mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>To verify the functionality of the three expressed proteins , we measured their abilities to promote acrAB expression , which is known to be stimulated by Rob , MarA , or SoxS ( 37 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>We demonstrate that , in Salmonella enterica , Rob overexpression upregulates the transcription of mgtA , which codes for the MgtA Mg2 transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Rob induces the expression of mgtA in an Mg2 - and PhoP / PhoQ-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>In contrast , in a phoP background , when the region required for the riboswitch is disrupted while preserving the Rob-binding site ( UTR2 strain ) , mgtA is induced by Rob in an Mg2 - independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Overexpression of MarA , Rob , RamA , PqrA , or AarP results in the activation of at least some , though not all , SoxRS ¬ * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_15">
+J Biol Chem 262:10362 -- 10368 Martin RG , Rosner JL ( 1997 ) Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15235764" target="_blank">15235764</a>]<br></label>
+<input id="act_similarity_15", type="checkbox">
+<div class="ACT_similar">
+<li>Martin R.G. , Rosner J.L. ( 1997 ) Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li></div>
+<li>Bile-mediated activation of the mar operon occurs independently of Rob Rob , a known activator of marRAB in E. coli ( Martin & Rosner , 1997 ) , was examined for its role in bile activation of the mar operon in S. typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Posttranscriptional activation of the transcriptional-activator Rob by dipyridyl in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Transcriptional activity of acrAB was measured in the presence and absence of Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Induction of mgtA by the overproduction of the Rob protein has been found to increase the resistance of S. enterica to cyclohexane ( 30 ) , which could be a manifestation of increased membrane stability resulting from increased Mg2 accumulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805196" target="_blank">19805196</a>]<br></li>
+<li>It would be interesting to examine whether the expression of Rob is increased in these isolates , as it is known that this protein affects the function of the AcrAB efﬂux pump in E. coli ( 3 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>To gain an insight into the physiological role of the Rob-dependent induction of mgtA in Salmonella , we compared the resistances of the WT and mgtA mutant strains to diverse compounds in the absence or presence of overexpressed Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>This is reminiscent of the binding of bile to the Rob protein involved in regulation of acrAB in E. coli [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>They thus suggested that direct binding of bile to RamA could convert it from a low activity state into a high activity state allowing the activation of acrAB .18 Such a mechanism acting at the protein level would be reminiscent of the binding of bile to the Rob protein 34 involved in the regulation of acrAB in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24816212" target="_blank">24816212</a>]<br></li>
+<li>These data suggest that exposure to antimicrobials that are AcrAB substrates enhance the activation of the AcrAB efﬂux pump via RamA , but not via SoxS , MarA , or Rob in S. Choleraesuis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>Because RamA displays close homology to MarA , SoxS , and Rob , the suggestion was made that RamA mediates MDR in Klebsiella via activation of the mar locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15155237" target="_blank">15155237</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Since the binding sites of the members of the mar/sox/rob regulon are similar , in S. enterica serovar Typhimurium Rob and MarA might also regulate ompW in response to menadione , another superoxide-generating compound ( Kato et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response to superoxide and Rob following treatment with bile salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional-activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>In the present work , we evaluated the expression and cross-reg-ulation of the transcription factors MarA , Rob , and SoxS in response to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In this work , we evaluated the role of the transcription factors MarA , SoxS and Rob of S. enterica serovar Typhimurium in regulating ompW expression in response to menadione .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>The Transcriptional Heat Shock Response of Salmonella Typhimurium Shows Hysteresis and Heated Cells Show Increased Resistance to Heat and Acid Stress Carmen Pin * , Trine Hansen , Marina Muñoz - Cuevas , Rob de Jonge , Jesper T. Rosenkrantz , 1 2 1 3 4 Charlotta Löfström , Henk Aarts , John E. Olsen 2 3 4 1 Institute of Food Research , Norwich , United Kingdom , 2 National Food Institute , Technical University of Denmark , Søborg , Denmark , 3 National Institute for Public Health and the Environment ( RIVM ) , Bilthoven , The Netherlands , 4 Department of Veterinary Disease Biology , University of Copenhagen , Copenhagen , Denmark Abstract We investigated if the transcriptional response of Salmonella Typhimurium to temperature and acid variations was hysteretic , i.e. whether the transcriptional regulation caused by environmental stimuli showed memory and remained after the stimuli ceased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23236453" target="_blank">23236453</a>]<br></li>
+<li>Rosenberg , E.Y. , Bertenthal , D. , Nilles , M.L. , Bertrand , K.P. and Nikaido , H. ( 2003 ) Bile salts and fatty acids induce the expression of Escherichia coli AcrAB multidrug efﬂux pump through their interaction with Rob regulatory pro ¬ Saenz , Y. , Ruiz , J. , Zarazaga , M. , Teixido , M. , Torres , C. and Vila , J. ( 2004 ) Effect of the efﬂux pump inhibitor phe-arg-b-naphthylamide on the MIC values of the quinolones , tetracycline and chloramphenicol , in Escherichia coli isolates of different origin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21299579" target="_blank">21299579</a>]<br></li>
+<li>Recently , the presence of Rma , an additional transcriptional-activator for which no homolog exists in E. coli , has been identiﬁed in Salmonella enterica subspecies enterica ser-ovar Paratyphi B. Rma belongs to the AraC-XylS tran-22 scriptional activator family , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>In contrast to what has been described for SoxS or MarA , the intracellular levels of Rob do not appear to be subject to extensive variations under most of the conditions tested , although a moderate increase has been observed in stationary phase or in phosphate - or glucose-re-stricted medium ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Contrarily , overexpression of Rob resulted in a 20-fold increase in the sensitivity to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Taken together , these results suggest that an increase in the levels of MarA and SoxS increase the resistance to NaOCl while Rob overexpression results in an increased sensitivity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>We showed that DEC , which is known to-bind Rob protein and thus presumably activates it post-translationally ( 16 ) , actually reduced the transcription of rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>The SoxS and Rob proteins bind to the same pairs of 17-bp sequences , but they require different bases for optimal binding ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107132" target="_blank">12107132</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_41">
+Expression of MarA , SoxS , and Rob is increased upon exposure to a wide variety of signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="act_similarity_41", type="checkbox">
+<div class="ACT_similar">
+<li>Expression of MarA , SoxS and Rob is increased upon exposure to a wide variety of signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>Microbes and Infection 13 ( 2011 ) 383e393 www.elsevier.com/locate/micinf Original article Gene expression proﬁles induced by Salmonella infection in resistant and susceptible mice Shaun Cawthraw , Jeroen L.A. Pennings , Hennie M. Hodemaekers , Rob de Jonge , a ,1 b ,1 b c Arie H. Havelaar , Barbara Hoebee , Linda Johnson , Angus Best , Emma Kennedy , c , d b e a a Roberto M. La Ragione , Diane G. Newell , Riny Janssen a , f g b , * a Department of Bacteriology , Veterinary Laboratories Agency ( Weybridge ) , Woodham Lane , Addlestone , Surrey KT15 3NB , UK b Laboratory for Health Protection Research , National Institute for Public Health and the Environment , PO Box 1 , 3720 BA Bilthoven , The Netherlands c Laboratory for Zoonoses and Environmental Microbiology , National Institute for Public Health and the Environment , PO Box 1 , 3720 BA Bilthoven , The Netherlands d Institute for Risk Assessment Sciences , Utrecht University , PO Box 80175 , 3508 TD Utrecht , The Netherlands e Department of Pathology , Veterinary Laboratories Agency ( Weybridge ) , Woodham Lane , Addlestone , Surrey KT15 3NB , UK f Faculty of Health and Medical Sciences , University of Surrey , Guildford , Surrey GU2 7XH , UK g Foodborne Zoonoses Consultancy , Andover , Hampshire SP11 7AE , UK Received 25 October 2010 ; accepted 4 January 2011 Available online 20 January 2011 Abstract Mouse models have been extensively used to investigate the mechanisms of salmonellosis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21256241" target="_blank">21256241</a>]<br></li>
+<li>crossmark DUF3380 Domain from a Salmonella Phage Endolysin Shows Potent N-Acetylmuramidase Activity Lorena Rodríguez-Rubio , a Hans Gerstmans , a , b Simon Thorpe , c Stéphane Mesnage , d Rob Lavigne , a Yves Briersb KU Leuven , Laboratory of Gene Technology , Leuven , Belgiuma ; Ghent University , Department of Applied Biosciences , Laboratory of Applied Biotechnology , Ghent , Belgiumb ; Faculty of Science , Mass Spectrometry Facility , University of Shefﬁeld , Shefﬁeld , United Kingdomc ; Krebs Institute , Department of Molecular Biology and Biotechnology , University of Shefﬁeld , Shefﬁeld , United Kingdomd ABSTRACT Bacteriophage-encoded endolysins are highly diverse enzymes that cleave the bacterial peptidoglycan layer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27287318" target="_blank">27287318</a>]<br></li>
+<li>Over-expression of efflux pumps can result from mutations within local repressor genes or from activation of a regulon regulated by global transcriptional-regulators such as MarA , SoxS or Rob Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>This experiment demonstrates that Rob is not required for activation of the mar operon by bile .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>While Rosenberg et al. ( 2003 ) presented evidence that mar is not necessary for bile-salt-mediated activation of acrAB in E. coli , they observed that induction of acrAB by bile salts is dependent upon Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>However , work presented here demonstrates that activation of acrAB by bile was not dependent upon Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>In S. typhimurium , acrAB is required for bile resistance , but while transcription of acrAB is activated by bile , this activation is independent of marRAB , as well as Rob , RpoS or PhoP -- PhoQ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Prouty et al. ( 47 ) further reported that acrAB activation by bile is independent of MarA , Rob , PhoP/PhoQ , and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></li>
+<li>acrAB activation by bile is independent of MarA , Rob , PhoP -- PhoQ and RpoS MarA is believed to mediate enhanced resistance to anti-microbials through activation of the genes encoding the AcrAB efﬂux pump ( White et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>In agreement with qRT -- PCR analysis , MarA and SoxS levels were increased while those of Rob were almost undetectable upon NaOCl treatment compared with untreated cells ( Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>( iii ) Different from the low-copy number plasmid ( pYS1010 ) that we used to study regulatory function of the mgtA 50LR in which transcription is only regulated by the 50LR , they determined mgtA transcription , particularly its response to proline , from its chromosomal locus , which , in addition to the 50LR ( Cromie et al , 2006 ) , is regulated by at least two independent promoters controlled by PhoP , in response to the extracytoplasmic Mg ( Garcia Vescovi et al , 1996 ) and Rob 2 þ ( Barchiesi et al , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21399613" target="_blank">21399613</a>]<br></li>
+<li>In addition to being regulated by a Mg2 + - sensing riboswitch , mgtA transcription is controlled at the initiation step by two DNA binding proteins : PhoP , which activates transcription when its cognate sensor PhoQ detects low extracytoplasmic Mg2 + ( Garcia Vescovi et al. , 1996 ) , acid pH ( Prost et al. , 2007 ) or antimicrobial peptides ( Bader et al. , 2005 ) ; and Rob , the overexpression of which stimulates mgtA transcription from a site located downstream of the PhoP-dependent start site ( Barchiesi et al. , 2008 ) ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20813261" target="_blank">20813261</a>]<br></li>
+<li>Bile , like other environmental signals , can regulate genes and modulate proteins in salmonellae and other enteric bacteria , as demonstrated by regulation of genes involved in Shigella ﬂexneri and Salmonella typhimurium invasion , and modulation of Vibrio cholerae ToxT and Escherichia coli Rob ( Pope et al. , 1995 ; Prouty & Gunn , 2000 ; Rosenberg et al. , 2003 ; Schuhmacher & Klose , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_56">
+MarA levels are increased in response to weak acid conditions and salicylate treatment ( Pomposiello et al. 2001 ) ; SoxS in response to superoxide and Rob after treatment with bile salts and dipyridyl ( Storz and Imlay 1999 ; Semchyshyn et al. 2005 ; Kwon et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="act_similarity_56", type="checkbox">
+<div class="ACT_similar">
+<li>MarA is increased in response to weak acid conditions and salicylate treatment ( Pomposiello et al. , 2001 ) ; SoxS in response to nitric oxide , superoxide and ammonium quaternary compounds ( Li & Demple , 1994 ; Vasil ' eva et al. , 2001 ) ; and Rob after treatment with bile salts and dipyridyl ( Storz & Imlay , 1999 ; Semchyshyn et al. , 2005 ; Kwon et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>AcrAB regulation is mediated by five regulators : MarA , SoxS , Rob , AcrR and RamA ( Bailey et al. , 2008 ; Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ; Schneiders et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_59">
+In Escherichia coli , AcrAB is regulated by three activators , MarA , SoxS and Rob , and one repressor , AcrR ( Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></label>
+<input id="act_similarity_59", type="checkbox">
+<div class="ACT_similar">
+<li>In addition to RamA , AcrAB is regulated by three activators , MarA , SoxS and Rob , and one repressor , AcrR ( Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li></div>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>Its expression is modulated precisely by its local repressor , AcrR , as well as by global transcriptional-regulators of the AraC family , RamA , MarA , SoxS , and Rob ( Nikaido et al. , 2008 ; Kehrenberg et al. , 2009 ; Pérez et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li>
+<li>In particular , the expression of acrAB is regulated by the global regulators , RamA , SoxS , MarA , and Rob ( Rosenberg et al. , 2003 ; Abouzeed et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>Furthermore , in E. coli , Rob , a global regulator with homology to MarA , independently regulates genes also regulated by MarA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Other regulators of acrAB such as MarA , SoxS , Rob , SdiA , and AcrR did not contrib-ute to acrAB induction by indole in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_66">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="act_similarity_66", type="checkbox">
+<div class="ACT_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>As shown in Fig. 1A , and in contrast to Rob , neither SoxS nor MarA overexpression upregulated mgtA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Taken together , qRT-PCR and Western blot analyses suggest that MarA and SoxS are required to positively regulate ompW in response to menadione , while Rob is not involved in this response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>AcrAB expression is adjusted by a local repressor , AcrR , and by the global regulators SoxS , MarA , RamA , and Rob [ 19 , 21 , 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27116992" target="_blank">27116992</a>]<br></li>
+<li>AcrAB is induced by multiple regulators , such as MarA , Rob , SoxS , 26 SdiA , RamA and RamR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21081542" target="_blank">21081542</a>]<br></li>
+<li>These results are interesting , as MarA and probably also Rob are known activators of AcrAB , and are expected to increase its transcription when they are overexpressed ( 51 , 16 , 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>The MarA homologs SoxS and Rob can also bind to the marO marbox and activate marRAB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>Like marRAB , acrAB and tolC are positively regulated by MarA , SoxS , and Rob ( 2 , 7 , 25 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>The global regulatory proteins MarA , SoxS and Rob are primarily responsible for activation of acrAB and tolC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>RESULTS mgtA expression is speciﬁcally upregulated by Rob in a PhoP-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>A 0.1 mM IPTG concentration was selected to induce Rob expression in subsequent experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>No mgtA induction was observed when testing compounds previously described to posttranslationally activate Rob in E. coli ( i.e. , salicylate , deoxycholate , and dipyridyl ) ( 37 , 38 ; data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Rob protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>MarA , SoxS , and Rob are members of the AraC-family ( Martin and Rosner 2002 ) and in E. coli MarA , SoxS , and the N-terminal domain of Rob share approximately 50 % of amino acid identity , mostly at the amino-terminal region which contains the DNA-binding domains in these proteins ( Jair et al. 1995 , 1996 ; Tobes and Ramos 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In E. coli MarA , SoxS and the N-terminal domain of Rob , which include the DNA-binding domain , share approximately 50 % amino acid sequence identity ( Jair et al. , 1995 , 1996 ; Tobes & Ramos , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>The Sybyl-Composer model was used to perform homology modeling for panels C and D to build structures for the CTD of HilD , from amino acids 211 to 309 , based on the crystal structure of Rob , an AraC/XylS regulator that is homologous to HilD in its helix-turn-helix DNA-binding domain ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12511499" target="_blank">12511499</a>]<br></li>
+<li>Crystal structures of 2 AraC / XylS family members , MarA and Rob , showed that these transcription factors contain 2 helix-turn-helix ( HTH ) motifs [ 20 , 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28329249" target="_blank">28329249</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Rob evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>In this regard , the E. coli and Salmonella Rob amino acid sequences display 92 % identity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>A subset of this family includes SoxS , MarA , Rob , TetD , and RamA from Klebsiella pneumoniae ; PqrA from Proteus vulgaris ; and AarP from Providencia stuartii ( 2 , 10 , 24 , 26 , 27 , 33 , 43 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>Crystal structures of 2 AraC / XylS family members , MarA and Rob , showed that these transcription factors contain 2 helix-turn-helix ( HTH ) motifs [ 20 , 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28329249" target="_blank">28329249</a>]<br></li>
+<li>In addition to the MarA/SoxS/Rob family , RamA was identi-ﬁed as a potential alternative global regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>At a local level acrAB expression is modulated by the local repressor AcrR , and at a global level it is modulated by MarA , SoxS , and Rob , which belong to the AraC/XylS family of transcriptional regulators ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>Its expression is modulated precisely by its local repressor , AcrR , as well as by global transcriptional regulators of the AraC family , RamA , MarA , SoxS , and Rob ( Nikaido et al. , 2008 ; Kehrenberg et al. , 2009 ; Pérez et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li>
+<li>MarA , SoxS , and Rob are members of the AraC family ( Martin and Rosner 2002 ) and in E. coli MarA , SoxS , and the N-terminal domain of Rob share approximately 50 % of amino acid identity , mostly at the amino-terminal region which contains the DNA binding domains in these proteins ( Jair et al. 1995 , 1996 ; Tobes and Ramos 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In E. coli MarA , SoxS and the N-terminal domain of Rob , which include the DNA-binding domain , share approximately 50 % amino acid sequence identity ( Jair et al. , 1995 , 1996 ; Tobes & Ramos , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>The Rob protein is a member of a subfamily of AraC/XylS transcriptional regulators which also includes MarA , SoxS , and TetD , a more recently described protein ( 14 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>SoxS belongs to the AraC family of transcriptional regulators , like MarA and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>SoxS belongs to the AraC family of transcriptional regulators , of which MarA and Rob are also members ( Martin & Rosner , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Recently , the presence of Rma , an additional transcriptional activator for which no homolog exists in E. coli , has been identiﬁed in Salmonella enterica subspecies enterica ser-ovar Paratyphi B. Rma belongs to the AraC-XylS tran-22 scriptional activator family , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>24,25 26 In addition to the MarA/SoxS/Rob family , George et al. identiﬁed and characterized RamA , another member of the AraC/XylS family , for its role in conferring MDR in Klebsiella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>The Sybyl-Composer model was used to perform homology modeling for panels C and D to build structures for the CTD of HilD , from amino acids 211 to 309 , based on the crystal structure of Rob , an AraC/XylS regulator that is homologous to HilD in its helix-turn-helix DNA-binding domain ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12511499" target="_blank">12511499</a>]<br></li>
+<li>Interestingly , when the sequence that matches the Mar/Sox / Rob motif in the S. enterica mgtA promoter is compared to that region in other members of the family Enterobacteriaceae , an identical box can be found upstream of Citrobacter koseri mgtA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Since the binding sites of the members of the mar/sox/rob regulon are similar , in S. enterica serovar Typhimurium Rob and MarA might also regulate ompW in response to menadione , another superoxide-generating compound ( Kato et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Rob</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Editor : Rob Delahay Keywords Salmonella infection ; virulence ; genomic island ; tRNA ; horizontal gene transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19583791" target="_blank">19583791</a>]<br></li>
+<li>We also thank Linda J. Kenney , Ricardo Oropeza , and Rob Edwards for helpful discussions and suggestions and Paul Gaytán and Eugenio Bustos for oligonucleotide-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>[ 68 ] E.Y. Rosenberg , D. Bertenthal , M.L. Nilles , K.P. Bertrand , H. Nikaido , Bile salts and fatty acids induce the expression of Escherichia coli AcrAB multidrug efﬂux pump through their interaction with Rob regulatory protein , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>Over-expression of efflux pumps can result from mutations within local repressor genes or from activation of a regulon regulated by global transcriptional regulators such as MarA , SoxS or Rob Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Recently , it has been shown that high-level expression of the Rob protein , which is a transcriptional activator of genes involved in resistance to antibiotics , heavy metals , superoxide , and organic solvents , results in the induction of the mgtA gene from a PhoP-independent promoter that is 43 nt downstream of the major PhoP-dependent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805196" target="_blank">19805196</a>]<br></li>
+<li>Characterization of TetD as a transcriptional activator of a subset of genes of the Escherichia coli SoxS/MarA/Rob regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Furthermore , in E. coli , Rob , a global regulator with homology to MarA , independently regulates genes also regulated by MarA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_10">
+In E. coli , the transcriptional factor Rob plays a major role in inducing acrAB expression in response to bile ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></label>
+<input id="rp_similarity_10", type="checkbox">
+<div class="RP_similar">
+<li>In E. coli , the transcriptional factor Rob plays a major role in inducing acrAB expression in response to bile [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_12">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="rp_similarity_12", type="checkbox">
+<div class="RP_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>It has been demonstrated that MarA , SoxS , and Rob are able to promote low-level resistance to multiple drugs , heavy metals , and superoxide and also to induce organic solvent tolerance in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>DOI : 10.1089 = mdr .2008.0846 ediated Fluoroquinolone Resistance in Salm m r Multidrug Role of Global Regulator R a fo Efﬂux -- M onella Silke Feuerriegel * and Peter Heisig The genetic basis for multidrug-resistance ( mdr ) due to overexpression of mdr efﬂux pumps in Escherichia coli usually includes alterations in genes encoding global regulators , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>In this work , we evaluated the expression of genes encoding the transcription factors MarA , SoxS , and Rob of Salmonella enterica serovar Typhimurium ( S. Typhimurium ) in response to HOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response-to-superoxide and Rob following treatment with bile salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>6 Enhanced expression of global regulators , like MarA , SoxS , and Rob , which activate efﬂux pump expression , is 17 known to play a major role in resistance to multiple antibiotics in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>Studies in Escherichia coli have 8 -- 13 shown that transcriptional activators , such as MarA , SoxS and Rob , play a role in antimicrobial resistance by activating transcription of efﬂux pumps , including acrAB and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>Lastly , the multilevel regulation mechanisms that converge to control mgtA expression , comprising posttranscriptional and transcriptional regulatory mechanisms ( i.e. , PhoPQ , attenuation , degradation by RNase E , and Rob regulation ) , are indicative of a requirement for MgtA expression in Salmonella under precise physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>Bile , like other environmental signals , can regulate genes and modulate proteins in salmonellae and other enteric bacteria , as demonstrated by regulation of genes involved in Shigella ﬂexneri and Salmonella typhimurium invasion , and modulation of Vibrio cholerae ToxT and Escherichia coli Rob ( Pope et al. , 1995 ; Prouty & Gunn , 2000 ; Rosenberg et al. , 2003 ; Schuhmacher & Klose , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Rob binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul>				<label class="SIT_collapse_similarity" for="sit_similarity_1">
+Sequence specificity for DNA binding by Escherichia coli SoxS and Rob proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></label>
+<input id="sit_similarity_1", type="checkbox">
+<div class="SIT_similar">
+<li>Sequence speciﬁcity for DNA binding by Escherichia coli SoxS and Rob proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107132" target="_blank">12107132</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li></div>
+<li>The protected region ( Fig. 4A ) encompassed a sequence that displays a 15-of-20 match to the AHRGCACRWWNNRYYA AAHN Mar/Sox/Rob revised consensus binding motif ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Nucleotides that match the Mar/Sox/Rob consensus motif ( sequence at the top ) are in boldface .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Interestingly , when the sequence that matches the Mar/Sox / Rob motif in the S. enterica mgtA promoter is compared to that region in other members of the family Enterobacteriaceae , an identical box can be found upstream of Citrobacter koseri mgtA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Alignment of sequences that match the Mar/Sox/Rob motif in the promoter region of mgtA in S. enterica and other enterobacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Here we demonstrate that Rob ( but not its paralog protein SoxS or MarA ) is able to induce mgtA transcription in a PhoP-independent fashion by binding to a conserved Mar/Sox/Rob motif localized downstream of the PhoP-box and overlapping the PhoP-dependent transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Rob , SoxS , and MarA display overlapping functionality , and all three recognize a degenerate 20-bp binding site in the regulatory region of the target genes that is known as the Mar/Sox/Rob box ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>( ii ) A transcriptional regulator , Rob , can bind to the Salmonella sequence : 50-accgccaTaattgccacaaa-30 , which includes the PhoP-dependent transcription start ( shown in uppercase ) ( Barchiesi et al , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21399613" target="_blank">21399613</a>]<br></li>
+<li>As shown in Fig. 4B , Rob protected an overlapping region from nt 28 to nt 53 relative to the Rob-depen-dent transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Rob</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>We found that Rob was able to induce mgtA transcription by a direct interaction * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>mgtA Expression Is Induced by Rob Overexpression and Mediates a Salmonella enterica Resistance Phenotype Julieta Barchiesi , Marıa E. Castelli , Fernando C. Soncini , and Eleonora Garcıa Véscovi * Instituto de Biologıa Molecular y Celular de Rosario , Consejo Nacional de Investigaciones Cientıﬁcas y Técnicas ( IBR-CONICET ) , Departamento de Microbiologıa , Facultad de Ciencias Bioquımicas y Farmacéuticas , Universidad Nacional de Rosario , S2002LRK Rosario , Argentina Received 7 February 2008/Accepted 7 May 2008 Rob is a member of the Sox/Mar subfamily of AraC/XylS-type transcriptional regulators implicated in bacterial multidrug , heavy metal , superoxide , and organic solvent resistance phenotypes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_3">
+In E. coli , the transcriptional factor Rob plays a major role in inducing acrAB expression in response to bile ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></label>
+<input id="tu_similarity_3", type="checkbox">
+<div class="TU_similar">
+<li>In E. coli , the transcriptional factor Rob plays a major role in inducing acrAB expression in response to bile [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>Other regulators of acrAB such as MarA , SoxS , Rob , SdiA , and AcrR did not contrib-ute to acrAB induction by indole in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_6">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="tu_similarity_6", type="checkbox">
+<div class="TU_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>As shown in Fig. 1A , and in contrast to Rob , neither SoxS nor MarA overexpression upregulated mgtA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>It has been demonstrated that MarA , SoxS , and Rob are able to promote low-level resistance to multiple drugs , heavy metals , and superoxide and also to induce organic solvent tolerance in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Taken together , qRT-PCR and Western blot analyses suggest that MarA and SoxS are required to positively regulate ompW in response to menadione , while Rob is not involved in this response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>By measuring the - ga-lactosidase activity from strains harboring lacZ transcriptional fusions to pcgF , virK , pcgM , pbgF , and mgtCB ( 39 ) transformed with either pRob or the empty vector , we observed that their expression remained unaltered when Rob expression was induced ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>They concluded that acrR is a secondary modulator of acrRAB expression and suggested that up-regulation under general stress conditions is controlled by an unidentiﬁed regulator , possibly a homologue of the known global regulator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>The present data reveal that Rob of S. typhimurium is highly transcribed throughout the growth cycle , and that its transcription is downregulated by SAL and PQ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>In this work , we show that the mgtA regulatory region also harbors a Mar/Sox/Rob box downstream the PhoP recognition motif and that its expression is selectively induced by Rob and not modulated by MarA or SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>marRAB transcription can also be activated by the MarA homologs SoxS and Rob ( 2 , 10 , 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>In E. coli , the transcription of acrAB and micF is controlled by the homologous proteins MarA , SoxS and Rob ( 9 , 10 ) , but may be affected by other proteins such as AcrR ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>At a local level acrAB expression is modulated by the local repressor AcrR , and at a global level it is modulated by MarA , SoxS , and Rob , which belong to the AraC/XylS family of transcriptional regulators ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>In particular , the expression of acrAB is regulated by the global regulators , RamA , SoxS , MarA , and Rob ( Rosenberg et al. , 2003 ; Abouzeed et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>We showed that DEC , which is known to bind Rob protein and thus presumably activates it post-translationally ( 16 ) , actually reduced the transcription of rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>This experiment demonstrates that Rob is not required for activation of the mar operon by bile .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Bile-mediated activation of the mar operon occurs independently of Rob Rob , a known activator of marRAB in E. coli ( Martin & Rosner , 1997 ) , was examined for its role in bile activation of the mar operon in S. typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>Our results indicate that Rob is not involved in the regulation of ompW ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Given that the mgtA gene can be transcribed by the Rob protein independently of the PhoP/PhoQ system ( Barchiesi et al. , 2008 ) , it appears that expression of the MgtA protein versus the MgtB protein is favour under different circumstances .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22857388" target="_blank">22857388</a>]<br></li>
+<li>It would be interesting to examine whether the expression of Rob is increased in these isolates , as it is known that this protein affects the function of the AcrAB efﬂux pump in E. coli ( 3 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>Recently , it has been shown that high-level expression of the Rob protein , which is a transcriptional activator of genes involved in resistance to antibiotics , heavy metals , superoxide , and organic solvents , results in the induction of the mgtA gene from a PhoP-independent promoter that is 43 nt downstream of the major PhoP-dependent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805196" target="_blank">19805196</a>]<br></li>
+<li>To verify that Rob expression was responsible for mgtA induction , we PCR ampliﬁed and cloned rob into medium-copy plasmid pUHE21-2lacIq ( 39 ) under the control of the IPTG-inducible promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>To exclude the effects of mutual interference or cross-regulation among the three proteins , we also veriﬁed that Rob was able to induce mgtA expression when endogenous marA , soxS , and rob expression was simultaneously abolished ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Because the overexpression of Rob was demonstrated to increase bacterial resistance to organic solvents , heavy metals , and antibiotics , we examined whether mgtA expression somehow contributes to the expression of these phenotypes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Rob induces the expression of mgtA in an Mg2 - and PhoP / PhoQ-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Here we demonstrate that Rob ( but not its paralog protein SoxS or MarA ) is able to induce mgtA transcription in a PhoP-independent fashion by binding to a conserved Mar/Sox/Rob motif localized downstream of the PhoP-box and overlapping the PhoP-dependent transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Together , these results demonstrate that overexpression of Rob , but not of SoxS or MarA , is able to speciﬁcally induce mgtA expression in a PhoP-independent fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Arch Microbiol ( 2012 ) 194:933 -- 942 DOI 10.1007 / s00203-012-0828-8 ORIGINAL PAPER Differential expression of the transcription factors MarA , Rob , and SoxS of Salmonella Typhimurium in response to sodium hypochlorite : down-regulation of rob by MarA and SoxS B. Collao • E. H. Morales • F. Gil • R. Polanco • I. L. Calderón • C. P. Saavedra Received : 15 March 2012 / Revised : 1 June 2012 / Accepted : 8 June 2012 / Published online : 1 July 2012 Springer-Verlag 2012 Abstract To survive , Salmonella enterica serovar Typhimurium ( S. Typhimurium ) must sense signals found in phagocytic cells and modulate gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>To verify the functionality of the three expressed proteins , we measured their abilities to promote acrAB expression , which is known to be stimulated by Rob , MarA , or SoxS ( 37 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Here , we examined the expression levels of acrB and its multiple regulator genes ( RamA , SoxS , MarA , and Rob ) in 17 ﬁeld isolates of S. Choleraesuis by using quantitative PCR methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Homologues of MarA , such as SoxS , Rob , and RamA , have been shown to bind to the mar box and also to upregulate expression of the mar locus ( 3,8,11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15155237" target="_blank">15155237</a>]<br></li>
+<li>When marA and soxS levels were analyzed in the different genetic backgrounds , we observed the same response to NaOCl found in the wild-type strain , therefore indicating that their expression is independent of MarA , SoxS , or Rob , which suggests a role for other factors such as SoxR for SoxS ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In the present work , we evaluated the expression and cross-reg-ulation of the transcription factors MarA , Rob , and SoxS in response to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_41">
+In this work , we evaluated the expression of genes encoding the transcription factors MarA , SoxS , and Rob of Salmonella enterica serovar Typhimurium ( S. Typhimurium ) in response to HOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="tu_similarity_41", type="checkbox">
+<div class="TU_similar">
+<li>In this work , we evaluated the role of the transcription factors MarA , SoxS and Rob of S. enterica serovar Typhimurium in regulating ompW expression in response to menadione .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response to superoxide and Rob following treatment with bile-salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>Differential expression of the transcription factors MarA , Rob , and SoxS of Salmonella Typhimurium in response to sodium hypochlorite : down-regulation of rob by MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_45">
+At a more global level , acrAB expression is modulated by stress conditions and by global regulators like MarA , SoxS , or Rob ( 1 , 2 , 3 , 14 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></label>
+<input id="tu_similarity_45", type="checkbox">
+<div class="TU_similar">
+<li>At a more global level , acrAB expression is modulated by stress conditions and by global regulators like MarA , SoxS or Rob [ 13,14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li></div>
+<li>Like marRAB , acrAB and tolC are positively regulated by MarA , SoxS , and Rob ( 2 , 7 , 25 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>AcrAB is induced by multiple regulators , such as MarA , Rob , SoxS , 26 SdiA , RamA and RamR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21081542" target="_blank">21081542</a>]<br></li>
+<li>Barchiesi J , Castelli ME , Soncini FC et al. mgtA expression is induced by Rob overexpression and mediates a Salmonella enterica resistance phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>]<br></li>
+<li>RESULTS mgtA expression is speciﬁcally upregulated by Rob in a PhoP-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>
