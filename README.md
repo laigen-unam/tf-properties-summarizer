@@ -13,6 +13,13 @@ We were able to recover automatically a median of 77% of the knowledge
 contained into manual summaries (obtained from RegulonDB) 
 describing properties of 177 TFs of 
 *Escherichia coli* K-12 by processing 5961 scientific articles. 
+
+.
++-- _config.yml
++-- _drafts
+|   +-- begin-with-the-crazy-ideas.textile
+|   +-- on-simplicity-in-technology.markdown
+
 Furthermore, training a predictive model with manual summaries of *E. coli*, 
 we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
 
@@ -29,11 +36,8 @@ processes. *Database*, Oxford University Press (https://academic.oup.com/databas
 
 ## Manual summaries
 
-We employed manual summaries from RegulonDB (http://regulondb.ccg.unam.mx/), 
-the main database on transcriptional regulation for 
-*Escherichia coli* K-12, as training data to train an automatic summarizer 
-that extracts relevant sentences describing these TF properties 
-from article collections. 
+We employed manual summaries from RegulonDB (http://regulondb.ccg.unam.mx/) 
+as training data to train an automatic summarizer. 
 We manually classified the sentences of 177 manual summaries 
 of TFs of RegulonDB in one or more of the six TF properties. 
 To classify the sentences, we tagged specific relevant information associated 
