@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+	
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+
+.spacer {
+	height: 10px;
+}
+	
+.main-content {
+	padding: 5%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+body {
+  font: 16px Arial;  
+}
+	
+.options {
+	background: blue;
+	display: none;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete_eco {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle-box + label {
+	display: inline-block;
+}
+
+.toggle-box + label + div {
+	display: none;
+}
+
+.toggle-box:checked + label + div {
+	display: block;
+}
+
+input[type="checkbox"] {
+	font-size:20px;
+}
+
+.collapse_ecoli {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	background: #DCDCDC;
+}
+.collapse_ecoli + input{
+	display: none;
+}
+.collapse_ecoli + input + div{
+	display: none;
+}
+.collapse_ecoli + input:checked + div{
+	display: block;
+}
+.ecoli {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ecoli_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ecoli_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ecoli_collapse_similarity + input {
+	display: none;
+}
+.ecoli_collapse_similarity + input + div{
+	display: none;
+}
+
+.ecoli_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ecoli_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ecoli_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ecoli_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ecoli_collapse_similarity + input {
+	display: none;
+}
+.ecoli_collapse_similarity + input + div{
+	display: none;
+}
+.ecoli_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ecoli_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ecoli_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ecoli_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+	
+.collapse_salmonella {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	background: #DCDCDC;
+}
+.collapse_salmonella + input{
+	display: none;
+}
+.collapse_salmonella + input + div{
+	display: none;
+}
+.collapse_salmonella + input:checked + div{
+	display: block;
+}
+.salmonella {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.salmonella_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.salmonella_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.salmonella_collapse_similarity + input {
+	display: none;
+}
+.salmonella_collapse_similarity + input + div{
+	display: none;
+}
+
+.salmonella_collapse_similarity + input:checked + div{
+	display: block;
+}
+.salmonella_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.salmonella_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.salmonella_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.salmonella_collapse_similarity + input {
+	display: none;
+}
+.salmonella_collapse_similarity + input + div{
+	display: none;
+}
+.salmonella_collapse_similarity + input:checked + div{
+	display: block;
+}
+.salmonella_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.salmonella_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.salmonella_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+</style>
+</head>     
+<body>
+
+<title>TF properties</title>
+<div class="banner">
+	<center><font color="white" size="16px" face="arial">TF properties</font></center>
+</div>
+	
+<div class="spacer"></div>
+<div align="center" class="main-content">
+<label class="collapse_ecoli" for="_1"><font size="5px">Escherichia coli</font></label>
+	<input id="_1" type="checkbox">
+	<div class="ecoli"><br>
+<ul>
+<center><li><a href="./ecoli/AcrR">AcrR</a></li></center>
+<center><li><a href="./ecoli/Ada">Ada</a></li></center>
+<center><li><a href="./ecoli/AdiY">AdiY</a></li></center>
+<center><li><a href="./ecoli/AgaR">AgaR</a></li></center>
+<center><li><a href="./ecoli/AllS">AllS</a></li></center>
+<center><li><a href="./ecoli/AlpA">AlpA</a></li></center>
+<center><li><a href="./ecoli/AlsR">AlsR</a></li></center>
+<center><li><a href="./ecoli/AppY">AppY</a></li></center>
+<center><li><a href="./ecoli/AraC">AraC</a></li></center>
+<center><li><a href="./ecoli/ArcA">ArcA</a></li></center>
+<center><li><a href="./ecoli/ArgP">ArgP</a></li></center>
+<center><li><a href="./ecoli/ArgR">ArgR</a></li></center>
+<center><li><a href="./ecoli/ArsR">ArsR</a></li></center>
+<center><li><a href="./ecoli/AscG">AscG</a></li></center>
+<center><li><a href="./ecoli/AsnC">AsnC</a></li></center>
+<center><li><a href="./ecoli/AtoC">AtoC</a></li></center>
+<center><li><a href="./ecoli/BaeR">BaeR</a></li></center>
+<center><li><a href="./ecoli/BasR">BasR</a></li></center>
+<center><li><a href="./ecoli/BetI">BetI</a></li></center>
+<center><li><a href="./ecoli/BglJ">BglJ</a></li></center>
+<center><li><a href="./ecoli/BirA">BirA</a></li></center>
+<center><li><a href="./ecoli/BluR">BluR</a></li></center>
+<center><li><a href="./ecoli/BolA">BolA</a></li></center>
+<center><li><a href="./ecoli/CadC">CadC</a></li></center>
+<center><li><a href="./ecoli/Cbl">Cbl</a></li></center>
+<center><li><a href="./ecoli/CdaR">CdaR</a></li></center>
+<center><li><a href="./ecoli/ComR">ComR</a></li></center>
+<center><li><a href="./ecoli/Cra">Cra</a></li></center>
+<center><li><a href="./ecoli/CreB">CreB</a></li></center>
+<center><li><a href="./ecoli/CRP">CRP</a></li></center>
+<center><li><a href="./ecoli/CsgD">CsgD</a></li></center>
+<center><li><a href="./ecoli/CsiR">CsiR</a></li></center>
+<center><li><a href="./ecoli/CspA">CspA</a></li></center>
+<center><li><a href="./ecoli/CueR">CueR</a></li></center>
+<center><li><a href="./ecoli/CusR">CusR</a></li></center>
+<center><li><a href="./ecoli/CynR">CynR</a></li></center>
+<center><li><a href="./ecoli/CytR">CytR</a></li></center>
+<center><li><a href="./ecoli/Dan">Dan</a></li></center>
+<center><li><a href="./ecoli/DcuR">DcuR</a></li></center>
+<center><li><a href="./ecoli/DeoR">DeoR</a></li></center>
+<center><li><a href="./ecoli/DhaR">DhaR</a></li></center>
+<center><li><a href="./ecoli/DicA">DicA</a></li></center>
+<center><li><a href="./ecoli/DinJ-YafQ">DinJ-YafQ</a></li></center>
+<center><li><a href="./ecoli/DnaA">DnaA</a></li></center>
+<center><li><a href="./ecoli/DpiA">DpiA</a></li></center>
+<center><li><a href="./ecoli/DsdC">DsdC</a></li></center>
+<center><li><a href="./ecoli/EbgR">EbgR</a></li></center>
+<center><li><a href="./ecoli/EnvR">EnvR</a></li></center>
+<center><li><a href="./ecoli/EnvY">EnvY</a></li></center>
+<center><li><a href="./ecoli/EvgA">EvgA</a></li></center>
+<center><li><a href="./ecoli/ExuR">ExuR</a></li></center>
+<center><li><a href="./ecoli/FabR">FabR</a></li></center>
+<center><li><a href="./ecoli/FadR">FadR</a></li></center>
+<center><li><a href="./ecoli/FeaR">FeaR</a></li></center>
+<center><li><a href="./ecoli/FhlA">FhlA</a></li></center>
+<center><li><a href="./ecoli/FlhDC">FlhDC</a></li></center>
+<center><li><a href="./ecoli/FliZ">FliZ</a></li></center>
+<center><li><a href="./ecoli/FNR">FNR</a></li></center>
+<center><li><a href="./ecoli/FucR">FucR</a></li></center>
+<center><li><a href="./ecoli/Fur">Fur</a></li></center>
+<center><li><a href="./ecoli/GadE">GadE</a></li></center>
+<center><li><a href="./ecoli/GadW">GadW</a></li></center>
+<center><li><a href="./ecoli/GadX">GadX</a></li></center>
+<center><li><a href="./ecoli/GalR">GalR</a></li></center>
+<center><li><a href="./ecoli/GalS">GalS</a></li></center>
+<center><li><a href="./ecoli/GatR">GatR</a></li></center>
+<center><li><a href="./ecoli/GcvA">GcvA</a></li></center>
+<center><li><a href="./ecoli/GlpR">GlpR</a></li></center>
+<center><li><a href="./ecoli/GntR">GntR</a></li></center>
+<center><li><a href="./ecoli/GutM">GutM</a></li></center>
+<center><li><a href="./ecoli/GutR">GutR</a></li></center>
+<center><li><a href="./ecoli/HdfR">HdfR</a></li></center>
+<center><li><a href="./ecoli/HipAB">HipAB</a></li></center>
+<center><li><a href="./ecoli/HipB">HipB</a></li></center>
+<center><li><a href="./ecoli/H-NS">H-NS</a></li></center>
+<center><li><a href="./ecoli/HU">HU</a></li></center>
+<center><li><a href="./ecoli/HyfR">HyfR</a></li></center>
+<center><li><a href="./ecoli/HypT">HypT</a></li></center>
+<center><li><a href="./ecoli/IclR">IclR</a></li></center>
+<center><li><a href="./ecoli/IdnR">IdnR</a></li></center>
+<center><li><a href="./ecoli/IHF">IHF</a></li></center>
+<center><li><a href="./ecoli/IscR">IscR</a></li></center>
+<center><li><a href="./ecoli/KdgR">KdgR</a></li></center>
+<center><li><a href="./ecoli/KdpE">KdpE</a></li></center>
+<center><li><a href="./ecoli/LacI">LacI</a></li></center>
+<center><li><a href="./ecoli/LeuO">LeuO</a></li></center>
+<center><li><a href="./ecoli/LexA">LexA</a></li></center>
+<center><li><a href="./ecoli/LldR">LldR</a></li></center>
+<center><li><a href="./ecoli/LrhA">LrhA</a></li></center>
+<center><li><a href="./ecoli/Lrp">Lrp</a></li></center>
+<center><li><a href="./ecoli/LsrR">LsrR</a></li></center>
+<center><li><a href="./ecoli/LysR">LysR</a></li></center>
+<center><li><a href="./ecoli/MalI">MalI</a></li></center>
+<center><li><a href="./ecoli/MalT">MalT</a></li></center>
+<center><li><a href="./ecoli/MarA">MarA</a></li></center>
+<center><li><a href="./ecoli/MatA">MatA</a></li></center>
+<center><li><a href="./ecoli/MazE">MazE</a></li></center>
+<center><li><a href="./ecoli/MazE-MazF">MazE-MazF</a></li></center>
+<center><li><a href="./ecoli/McbR">McbR</a></li></center>
+<center><li><a href="./ecoli/MelR">MelR</a></li></center>
+<center><li><a href="./ecoli/MetJ">MetJ</a></li></center>
+<center><li><a href="./ecoli/MhpR">MhpR</a></li></center>
+<center><li><a href="./ecoli/Mlc">Mlc</a></li></center>
+<center><li><a href="./ecoli/MlrA">MlrA</a></li></center>
+<center><li><a href="./ecoli/MngR">MngR</a></li></center>
+<center><li><a href="./ecoli/MntR">MntR</a></li></center>
+<center><li><a href="./ecoli/ModE">ModE</a></li></center>
+<center><li><a href="./ecoli/MprA">MprA</a></li></center>
+<center><li><a href="./ecoli/MqsA">MqsA</a></li></center>
+<center><li><a href="./ecoli/MraZ">MraZ</a></li></center>
+<center><li><a href="./ecoli/MtlR">MtlR</a></li></center>
+<center><li><a href="./ecoli/MurR">MurR</a></li></center>
+<center><li><a href="./ecoli/Nac">Nac</a></li></center>
+<center><li><a href="./ecoli/NadR">NadR</a></li></center>
+<center><li><a href="./ecoli/NagC">NagC</a></li></center>
+<center><li><a href="./ecoli/NanR">NanR</a></li></center>
+<center><li><a href="./ecoli/NarL">NarL</a></li></center>
+<center><li><a href="./ecoli/NarP">NarP</a></li></center>
+<center><li><a href="./ecoli/NemR">NemR</a></li></center>
+<center><li><a href="./ecoli/NhaR">NhaR</a></li></center>
+<center><li><a href="./ecoli/NikR">NikR</a></li></center>
+<center><li><a href="./ecoli/NorR">NorR</a></li></center>
+<center><li><a href="./ecoli/NtrC">NtrC</a></li></center>
+<center><li><a href="./ecoli/OmpR">OmpR</a></li></center>
+<center><li><a href="./ecoli/OxyR">OxyR</a></li></center>
+<center><li><a href="./ecoli/PaaX">PaaX</a></li></center>
+<center><li><a href="./ecoli/PdhR">PdhR</a></li></center>
+<center><li><a href="./ecoli/PgrR">PgrR</a></li></center>
+<center><li><a href="./ecoli/PhoB">PhoB</a></li></center>
+<center><li><a href="./ecoli/PhoP">PhoP</a></li></center>
+<center><li><a href="./ecoli/PrpR">PrpR</a></li></center>
+<center><li><a href="./ecoli/PspF">PspF</a></li></center>
+<center><li><a href="./ecoli/PutA">PutA</a></li></center>
+<center><li><a href="./ecoli/PuuR">PuuR</a></li></center>
+<center><li><a href="./ecoli/QseB">QseB</a></li></center>
+<center><li><a href="./ecoli/RbsR">RbsR</a></li></center>
+<center><li><a href="./ecoli/RcdA">RcdA</a></li></center>
+<center><li><a href="./ecoli/RclR">RclR</a></li></center>
+<center><li><a href="./ecoli/RcnR">RcnR</a></li></center>
+<center><li><a href="./ecoli/RcsB-BglJ">RcsB-BglJ</a></li></center>
+<center><li><a href="./ecoli/RelB">RelB</a></li></center>
+<center><li><a href="./ecoli/RhaR">RhaR</a></li></center>
+<center><li><a href="./ecoli/RhaS">RhaS</a></li></center>
+<center><li><a href="./ecoli/Rob">Rob</a></li></center>
+<center><li><a href="./ecoli/RstA">RstA</a></li></center>
+<center><li><a href="./ecoli/RtcR">RtcR</a></li></center>
+<center><li><a href="./ecoli/RutR">RutR</a></li></center>
+<center><li><a href="./ecoli/SdiA">SdiA</a></li></center>
+<center><li><a href="./ecoli/SgrR">SgrR</a></li></center>
+<center><li><a href="./ecoli/SlyA">SlyA</a></li></center>
+<center><li><a href="./ecoli/SoxR">SoxR</a></li></center>
+<center><li><a href="./ecoli/SoxS">SoxS</a></li></center>
+<center><li><a href="./ecoli/StpA">StpA</a></li></center>
+<center><li><a href="./ecoli/SutR">SutR</a></li></center>
+<center><li><a href="./ecoli/TdcA">TdcA</a></li></center>
+<center><li><a href="./ecoli/TdcR">TdcR</a></li></center>
+<center><li><a href="./ecoli/TreR">TreR</a></li></center>
+<center><li><a href="./ecoli/TrpR">TrpR</a></li></center>
+<center><li><a href="./ecoli/UhpA">UhpA</a></li></center>
+<center><li><a href="./ecoli/UidR">UidR</a></li></center>
+<center><li><a href="./ecoli/UlaR">UlaR</a></li></center>
+<center><li><a href="./ecoli/UxuR">UxuR</a></li></center>
+<center><li><a href="./ecoli/XapR">XapR</a></li></center>
+<center><li><a href="./ecoli/XylR">XylR</a></li></center>
+<center><li><a href="./ecoli/YdeO">YdeO</a></li></center>
+<center><li><a href="./ecoli/YdfH">YdfH</a></li></center>
+<center><li><a href="./ecoli/YefM">YefM</a></li></center>
+<center><li><a href="./ecoli/YefM-YoeB">YefM-YoeB</a></li></center>
+<center><li><a href="./ecoli/YehT">YehT</a></li></center>
+<center><li><a href="./ecoli/YeiL">YeiL</a></li></center>
+<center><li><a href="./ecoli/YiaJ">YiaJ</a></li></center>
+<center><li><a href="./ecoli/YpdB">YpdB</a></li></center>
+<center><li><a href="./ecoli/YqhC">YqhC</a></li></center>
+<center><li><a href="./ecoli/YqjI">YqjI</a></li></center>
+<center><li><a href="./ecoli/ZntR">ZntR</a></li></center>
+<center><li><a href="./ecoli/ZraR">ZraR</a></li></center>
+<center><li><a href="./ecoli/Zur">Zur</a></li></center></ul>
+</div>
+<br>
+<label class="collapse_salmonella" for="_2"><font size="5px">Salmonella</font></label>
+	<input id="_2" type="checkbox">
+	<div class="salmonella"><br>
+<ul>
+<center><li><a href="./salmonella/AccB">AccB</a></li></center>
+<center><li><a href="./salmonella/AcrR">AcrR</a></li></center>
+<center><li><a href="./salmonella/Ada">Ada</a></li></center>
+<center><li><a href="./salmonella/AdiY">AdiY</a></li></center>
+<center><li><a href="./salmonella/AidB">AidB</a></li></center>
+<center><li><a href="./salmonella/AppY">AppY</a></li></center>
+<center><li><a href="./salmonella/AraC">AraC</a></li></center>
+<center><li><a href="./salmonella/ArcA">ArcA</a></li></center>
+<center><li><a href="./salmonella/ArgP">ArgP</a></li></center>
+<center><li><a href="./salmonella/ArgR">ArgR</a></li></center>
+<center><li><a href="./salmonella/ArsR">ArsR</a></li></center>
+<center><li><a href="./salmonella/AsnC">AsnC</a></li></center>
+<center><li><a href="./salmonella/AtoC">AtoC</a></li></center>
+<center><li><a href="./salmonella/BaeR">BaeR</a></li></center>
+<center><li><a href="./salmonella/BasR">BasR</a></li></center>
+<center><li><a href="./salmonella/BglG">BglG</a></li></center>
+<center><li><a href="./salmonella/BglJ">BglJ</a></li></center>
+<center><li><a href="./salmonella/BirA">BirA</a></li></center>
+<center><li><a href="./salmonella/BluR">BluR</a></li></center>
+<center><li><a href="./salmonella/BolA">BolA</a></li></center>
+<center><li><a href="./salmonella/CadC">CadC</a></li></center>
+<center><li><a href="./salmonella/CaiF">CaiF</a></li></center>
+<center><li><a href="./salmonella/Cbl">Cbl</a></li></center>
+<center><li><a href="./salmonella/CdaR">CdaR</a></li></center>
+<center><li><a href="./salmonella/ChbR">ChbR</a></li></center>
+<center><li><a href="./salmonella/ClpX">ClpX</a></li></center>
+<center><li><a href="./salmonella/ComR">ComR</a></li></center>
+<center><li><a href="./salmonella/CopR">CopR</a></li></center>
+<center><li><a href="./salmonella/CpxR">CpxR</a></li></center>
+<center><li><a href="./salmonella/Cra">Cra</a></li></center>
+<center><li><a href="./salmonella/CreB">CreB</a></li></center>
+<center><li><a href="./salmonella/Crl">Crl</a></li></center>
+<center><li><a href="./salmonella/Crp">Crp</a></li></center>
+<center><li><a href="./salmonella/CRP">CRP</a></li></center>
+<center><li><a href="./salmonella/CsgD">CsgD</a></li></center>
+<center><li><a href="./salmonella/CsiR">CsiR</a></li></center>
+<center><li><a href="./salmonella/CspA">CspA</a></li></center>
+<center><li><a href="./salmonella/CspB">CspB</a></li></center>
+<center><li><a href="./salmonella/CspC">CspC</a></li></center>
+<center><li><a href="./salmonella/Csp">Csp</a></li></center>
+<center><li><a href="./salmonella/CspD">CspD</a></li></center>
+<center><li><a href="./salmonella/CspE">CspE</a></li></center>
+<center><li><a href="./salmonella/CueR">CueR</a></li></center>
+<center><li><a href="./salmonella/CusR">CusR</a></li></center>
+<center><li><a href="./salmonella/CysB">CysB</a></li></center>
+<center><li><a href="./salmonella/CytR">CytR</a></li></center>
+<center><li><a href="./salmonella/Dan">Dan</a></li></center>
+<center><li><a href="./salmonella/DcuR">DcuR</a></li></center>
+<center><li><a href="./salmonella/DeoR">DeoR</a></li></center>
+<center><li><a href="./salmonella/DksA">DksA</a></li></center>
+<center><li><a href="./salmonella/DnaA">DnaA</a></li></center>
+<center><li><a href="./salmonella/DsdC">DsdC</a></li></center>
+<center><li><a href="./salmonella/EcnR">EcnR</a></li></center>
+<center><li><a href="./salmonella/EmrR">EmrR</a></li></center>
+<center><li><a href="./salmonella/EnvR">EnvR</a></li></center>
+<center><li><a href="./salmonella/EnvY">EnvY</a></li></center>
+<center><li><a href="./salmonella/EutR">EutR</a></li></center>
+<center><li><a href="./salmonella/EvgA">EvgA</a></li></center>
+<center><li><a href="./salmonella/FabR">FabR</a></li></center>
+<center><li><a href="./salmonella/FadR">FadR</a></li></center>
+<center><li><a href="./salmonella/FhlA">FhlA</a></li></center>
+<center><li><a href="./salmonella/FimW">FimW</a></li></center>
+<center><li><a href="./salmonella/FimZ">FimZ</a></li></center>
+<center><li><a href="./salmonella/Fis">Fis</a></li></center>
+<center><li><a href="./salmonella/FIS">FIS</a></li></center>
+<center><li><a href="./salmonella/FlhC">FlhC</a></li></center>
+<center><li><a href="./salmonella/FlhDC">FlhDC</a></li></center>
+<center><li><a href="./salmonella/FlhD">FlhD</a></li></center>
+<center><li><a href="./salmonella/FliZ">FliZ</a></li></center>
+<center><li><a href="./salmonella/Fnr">Fnr</a></li></center>
+<center><li><a href="./salmonella/FNR">FNR</a></li></center>
+<center><li><a href="./salmonella/FruR">FruR</a></li></center>
+<center><li><a href="./salmonella/Fur">Fur</a></li></center>
+<center><li><a href="./salmonella/FUR">FUR</a></li></center>
+<center><li><a href="./salmonella/GadE">GadE</a></li></center>
+<center><li><a href="./salmonella/GadW">GadW</a></li></center>
+<center><li><a href="./salmonella/GadX">GadX</a></li></center>
+<center><li><a href="./salmonella/GalR">GalR</a></li></center>
+<center><li><a href="./salmonella/GalS">GalS</a></li></center>
+<center><li><a href="./salmonella/GatR">GatR</a></li></center>
+<center><li><a href="./salmonella/GcvA">GcvA</a></li></center>
+<center><li><a href="./salmonella/GcvR">GcvR</a></li></center>
+<center><li><a href="./salmonella/GlnD">GlnD</a></li></center>
+<center><li><a href="./salmonella/GlnG">GlnG</a></li></center>
+<center><li><a href="./salmonella/GlpR">GlpR</a></li></center>
+<center><li><a href="./salmonella/GlrR">GlrR</a></li></center>
+<center><li><a href="./salmonella/GntR">GntR</a></li></center>
+<center><li><a href="./salmonella/HdfR">HdfR</a></li></center>
+<center><li><a href="./salmonella/Hha">Hha</a></li></center>
+<center><li><a href="./salmonella/HilA">HilA</a></li></center>
+<center><li><a href="./salmonella/HilC">HilC</a></li></center>
+<center><li><a href="./salmonella/HilD">HilD</a></li></center>
+<center><li><a href="./salmonella/Hns">Hns</a></li></center>
+<center><li><a href="./salmonella/H-NS">H-NS</a></li></center>
+<center><li><a href="./salmonella/HNS">HNS</a></li></center>
+<center><li><a href="./salmonella/Hu">Hu</a></li></center>
+<center><li><a href="./salmonella/HU">HU</a></li></center>
+<center><li><a href="./salmonella/HupB">HupB</a></li></center>
+<center><li><a href="./salmonella/HutC">HutC</a></li></center>
+<center><li><a href="./salmonella/HydG">HydG</a></li></center>
+<center><li><a href="./salmonella/IciA">IciA</a></li></center>
+<center><li><a href="./salmonella/IclR">IclR</a></li></center>
+<center><li><a href="./salmonella/IHF">IHF</a></li></center>
+<center><li><a href="./salmonella/IlvY">IlvY</a></li></center>
+<center><li><a href="./salmonella/InvF">InvF</a></li></center>
+<center><li><a href="./salmonella/IscR">IscR</a></li></center>
+<center><li><a href="./salmonella/KdgR">KdgR</a></li></center>
+<center><li><a href="./salmonella/KdpE">KdpE</a></li></center>
+<center><li><a href="./salmonella/LacI">LacI</a></li></center>
+<center><li><a href="./salmonella/LeuO">LeuO</a></li></center>
+<center><li><a href="./salmonella/LexA">LexA</a></li></center>
+<center><li><a href="./salmonella/LrhA">LrhA</a></li></center>
+<center><li><a href="./salmonella/Lrp">Lrp</a></li></center>
+<center><li><a href="./salmonella/LsrR">LsrR</a></li></center>
+<center><li><a href="./salmonella/LysR">LysR</a></li></center>
+<center><li><a href="./salmonella/MalT">MalT</a></li></center>
+<center><li><a href="./salmonella/MarA">MarA</a></li></center>
+<center><li><a href="./salmonella/MarR">MarR</a></li></center>
+<center><li><a href="./salmonella/MarT">MarT</a></li></center>
+<center><li><a href="./salmonella/MazE">MazE</a></li></center>
+<center><li><a href="./salmonella/MazF">MazF</a></li></center>
+<center><li><a href="./salmonella/McbR">McbR</a></li></center>
+<center><li><a href="./salmonella/MelR">MelR</a></li></center>
+<center><li><a href="./salmonella/MetJ">MetJ</a></li></center>
+<center><li><a href="./salmonella/MetR">MetR</a></li></center>
+<center><li><a href="./salmonella/Mlc">Mlc</a></li></center>
+<center><li><a href="./salmonella/MlrA">MlrA</a></li></center>
+<center><li><a href="./salmonella/MntR">MntR</a></li></center>
+<center><li><a href="./salmonella/ModE">ModE</a></li></center>
+<center><li><a href="./salmonella/MprA">MprA</a></li></center>
+<center><li><a href="./salmonella/MtlR">MtlR</a></li></center>
+<center><li><a href="./salmonella/MutM">MutM</a></li></center>
+<center><li><a href="./salmonella/Nac">Nac</a></li></center>
+<center><li><a href="./salmonella/NadR">NadR</a></li></center>
+<center><li><a href="./salmonella/NagC">NagC</a></li></center>
+<center><li><a href="./salmonella/NanR">NanR</a></li></center>
+<center><li><a href="./salmonella/NarL">NarL</a></li></center>
+<center><li><a href="./salmonella/NarP">NarP</a></li></center>
+<center><li><a href="./salmonella/Nei">Nei</a></li></center>
+<center><li><a href="./salmonella/NhaR">NhaR</a></li></center>
+<center><li><a href="./salmonella/NikR">NikR</a></li></center>
+<center><li><a href="./salmonella/NorR">NorR</a></li></center>
+<center><li><a href="./salmonella/NrdR">NrdR</a></li></center>
+<center><li><a href="./salmonella/NsrR">NsrR</a></li></center>
+<center><li><a href="./salmonella/NtrC">NtrC</a></li></center>
+<center><li><a href="./salmonella/OmpR">OmpR</a></li></center>
+<center><li><a href="./salmonella/OxyR">OxyR</a></li></center>
+<center><li><a href="./salmonella/ParB">ParB</a></li></center>
+<center><li><a href="./salmonella/PefI">PefI</a></li></center>
+<center><li><a href="./salmonella/PepA">PepA</a></li></center>
+<center><li><a href="./salmonella/PgtA">PgtA</a></li></center>
+<center><li><a href="./salmonella/PhnR">PhnR</a></li></center>
+<center><li><a href="./salmonella/PhoB">PhoB</a></li></center>
+<center><li><a href="./salmonella/PhoP">PhoP</a></li></center>
+<center><li><a href="./salmonella/PhoU">PhoU</a></li></center>
+<center><li><a href="./salmonella/PocR">PocR</a></li></center>
+<center><li><a href="./salmonella/PrpR">PrpR</a></li></center>
+<center><li><a href="./salmonella/Pslt068">Pslt068</a></li></center>
+<center><li><a href="./salmonella/PspC">PspC</a></li></center>
+<center><li><a href="./salmonella/PspF">PspF</a></li></center>
+<center><li><a href="./salmonella/PtsJ">PtsJ</a></li></center>
+<center><li><a href="./salmonella/PurR">PurR</a></li></center>
+<center><li><a href="./salmonella/PutA">PutA</a></li></center>
+<center><li><a href="./salmonella/QseB">QseB</a></li></center>
+<center><li><a href="./salmonella/RbsR">RbsR</a></li></center>
+<center><li><a href="./salmonella/RcdA">RcdA</a></li></center>
+<center><li><a href="./salmonella/RcnR">RcnR</a></li></center>
+<center><li><a href="./salmonella/RcsAB">RcsAB</a></li></center>
+<center><li><a href="./salmonella/RcsA">RcsA</a></li></center>
+<center><li><a href="./salmonella/RcsB-BglJ">RcsB-BglJ</a></li></center>
+<center><li><a href="./salmonella/RcsB">RcsB</a></li></center>
+<center><li><a href="./salmonella/RelA">RelA</a></li></center>
+<center><li><a href="./salmonella/RelB">RelB</a></li></center>
+<center><li><a href="./salmonella/RelE">RelE</a></li></center>
+<center><li><a href="./salmonella/RhaR">RhaR</a></li></center>
+<center><li><a href="./salmonella/RhaS">RhaS</a></li></center>
+<center><li><a href="./salmonella/Rho">Rho</a></li></center>
+<center><li><a href="./salmonella/RHO">RHO</a></li></center>
+<center><li><a href="./salmonella/Rob">Rob</a></li></center>
+<center><li><a href="./salmonella/Rsd">Rsd</a></li></center>
+<center><li><a href="./salmonella/RstA">RstA</a></li></center>
+<center><li><a href="./salmonella/RtcR">RtcR</a></li></center>
+<center><li><a href="./salmonella/RutR">RutR</a></li></center>
+<center><li><a href="./salmonella/SdiA">SdiA</a></li></center>
+<center><li><a href="./salmonella/SfsA">SfsA</a></li></center>
+<center><li><a href="./salmonella/SgrR">SgrR</a></li></center>
+<center><li><a href="./salmonella/SinR">SinR</a></li></center>
+<center><li><a href="./salmonella/SirA">SirA</a></li></center>
+<center><li><a href="./salmonella/SirC">SirC</a></li></center>
+<center><li><a href="./salmonella/SlyA">SlyA</a></li></center>
+<center><li><a href="./salmonella/SoxR">SoxR</a></li></center>
+<center><li><a href="./salmonella/SoxS">SoxS</a></li></center>
+<center><li><a href="./salmonella/SprB">SprB</a></li></center>
+<center><li><a href="./salmonella/SpvR">SpvR</a></li></center>
+<center><li><a href="./salmonella/SrgC">SrgC</a></li></center>
+<center><li><a href="./salmonella/SsrB">SsrB</a></li></center>
+<center><li><a href="./salmonella/STM0014">STM0014</a></li></center>
+<center><li><a href="./salmonella/STM0017">STM0017</a></li></center>
+<center><li><a href="./salmonella/STM0030">STM0030</a></li></center>
+<center><li><a href="./salmonella/STM0031">STM0031</a></li></center>
+<center><li><a href="./salmonella/STM0164">STM0164</a></li></center>
+<center><li><a href="./salmonella/STM0333">STM0333</a></li></center>
+<center><li><a href="./salmonella/STM0341">STM0341</a></li></center>
+<center><li><a href="./salmonella/STM0344">STM0344</a></li></center>
+<center><li><a href="./salmonella/STM0347">STM0347</a></li></center>
+<center><li><a href="./salmonella/STM0354">STM0354</a></li></center>
+<center><li><a href="./salmonella/STM0580">STM0580</a></li></center>
+<center><li><a href="./salmonella/STM0652">STM0652</a></li></center>
+<center><li><a href="./salmonella/STM0692">STM0692</a></li></center>
+<center><li><a href="./salmonella/STM0764">STM0764</a></li></center>
+<center><li><a href="./salmonella/STM0835">STM0835</a></li></center>
+<center><li><a href="./salmonella/STM0859">STM0859</a></li></center>
+<center><li><a href="./salmonella/STM0952">STM0952</a></li></center>
+<center><li><a href="./salmonella/STM1003">STM1003</a></li></center>
+<center><li><a href="./salmonella/STM1012">STM1012</a></li></center>
+<center><li><a href="./salmonella/STM1243">STM1243</a></li></center>
+<center><li><a href="./salmonella/STM1265">STM1265</a></li></center>
+<center><li><a href="./salmonella/STM1547">STM1547</a></li></center>
+<center><li><a href="./salmonella/STM1555">STM1555</a></li></center>
+<center><li><a href="./salmonella/STM1664">STM1664</a></li></center>
+<center><li><a href="./salmonella/STM1671">STM1671</a></li></center>
+<center><li><a href="./salmonella/STM1677">STM1677</a></li></center>
+<center><li><a href="./salmonella/STM2180">STM2180</a></li></center>
+<center><li><a href="./salmonella/STM2275">STM2275</a></li></center>
+<center><li><a href="./salmonella/STM2281">STM2281</a></li></center>
+<center><li><a href="./salmonella/STM2361">STM2361</a></li></center>
+<center><li><a href="./salmonella/STM2575">STM2575</a></li></center>
+<center><li><a href="./salmonella/STM2694">STM2694</a></li></center>
+<center><li><a href="./salmonella/STM2748">STM2748</a></li></center>
+<center><li><a href="./salmonella/STM2797">STM2797</a></li></center>
+<center><li><a href="./salmonella/STM2912">STM2912</a></li></center>
+<center><li><a href="./salmonella/STM3012">STM3012</a></li></center>
+<center><li><a href="./salmonella/STM3020">STM3020</a></li></center>
+<center><li><a href="./salmonella/STM3034">STM3034</a></li></center>
+<center><li><a href="./salmonella/STM3096">STM3096</a></li></center>
+<center><li><a href="./salmonella/STM3098">STM3098</a></li></center>
+<center><li><a href="./salmonella/STM3121">STM3121</a></li></center>
+<center><li><a href="./salmonella/STM3124">STM3124</a></li></center>
+<center><li><a href="./salmonella/STM3175">STM3175</a></li></center>
+<center><li><a href="./salmonella/STM3262">STM3262</a></li></center>
+<center><li><a href="./salmonella/STM3533">STM3533</a></li></center>
+<center><li><a href="./salmonella/STM3602">STM3602</a></li></center>
+<center><li><a href="./salmonella/STM3696">STM3696</a></li></center>
+<center><li><a href="./salmonella/STM3736">STM3736</a></li></center>
+<center><li><a href="./salmonella/STM3773">STM3773</a></li></center>
+<center><li><a href="./salmonella/STM3785">STM3785</a></li></center>
+<center><li><a href="./salmonella/STM4030.S">STM4030.S</a></li></center>
+<center><li><a href="./salmonella/STM4068">STM4068</a></li></center>
+<center><li><a href="./salmonella/STM4270">STM4270</a></li></center>
+<center><li><a href="./salmonella/STM4314">STM4314</a></li></center>
+<center><li><a href="./salmonella/STM4315">STM4315</a></li></center>
+<center><li><a href="./salmonella/STM4320">STM4320</a></li></center>
+<center><li><a href="./salmonella/STM4417">STM4417</a></li></center>
+<center><li><a href="./salmonella/STM4423">STM4423</a></li></center>
+<center><li><a href="./salmonella/STM4448">STM4448</a></li></center>
+<center><li><a href="./salmonella/STM4463">STM4463</a></li></center>
+<center><li><a href="./salmonella/STM4534">STM4534</a></li></center>
+<center><li><a href="./salmonella/StpA">StpA</a></li></center>
+<center><li><a href="./salmonella/TctD">TctD</a></li></center>
+<center><li><a href="./salmonella/TdcA">TdcA</a></li></center>
+<center><li><a href="./salmonella/TdcR">TdcR</a></li></center>
+<center><li><a href="./salmonella/TorR">TorR</a></li></center>
+<center><li><a href="./salmonella/TraR">TraR</a></li></center>
+<center><li><a href="./salmonella/TrpR">TrpR</a></li></center>
+<center><li><a href="./salmonella/TtrR">TtrR</a></li></center>
+<center><li><a href="./salmonella/TyrR">TyrR</a></li></center>
+<center><li><a href="./salmonella/UhpA">UhpA</a></li></center>
+<center><li><a href="./salmonella/UvrY">UvrY</a></li></center>
+<center><li><a href="./salmonella/XapR">XapR</a></li></center>
+<center><li><a href="./salmonella/XylR">XylR</a></li></center>
+<center><li><a href="./salmonella/YbbS">YbbS</a></li></center>
+<center><li><a href="./salmonella/YbdM">YbdM</a></li></center>
+<center><li><a href="./salmonella/YbdO">YbdO</a></li></center>
+<center><li><a href="./salmonella/YbeF">YbeF</a></li></center>
+<center><li><a href="./salmonella/YcfQ">YcfQ</a></li></center>
+<center><li><a href="./salmonella/YdcI">YdcI</a></li></center>
+<center><li><a href="./salmonella/YdcR">YdcR</a></li></center>
+<center><li><a href="./salmonella/YdeO">YdeO</a></li></center>
+<center><li><a href="./salmonella/YdgT">YdgT</a></li></center>
+<center><li><a href="./salmonella/YdhB">YdhB</a></li></center>
+<center><li><a href="./salmonella/YdhM">YdhM</a></li></center>
+<center><li><a href="./salmonella/YdiP">YdiP</a></li></center>
+<center><li><a href="./salmonella/YeeN">YeeN</a></li></center>
+<center><li><a href="./salmonella/YeeY">YeeY</a></li></center>
+<center><li><a href="./salmonella/YefM">YefM</a></li></center>
+<center><li><a href="./salmonella/YehT">YehT</a></li></center>
+<center><li><a href="./salmonella/YeiE">YeiE</a></li></center>
+<center><li><a href="./salmonella/YfeR">YfeR</a></li></center>
+<center><li><a href="./salmonella/YfgA">YfgA</a></li></center>
+<center><li><a href="./salmonella/YfhA">YfhA</a></li></center>
+<center><li><a href="./salmonella/YfhP">YfhP</a></li></center>
+<center><li><a href="./salmonella/YgaA">YgaA</a></li></center>
+<center><li><a href="./salmonella/YgaE">YgaE</a></li></center>
+<center><li><a href="./salmonella/YgiX">YgiX</a></li></center>
+<center><li><a href="./salmonella/YhaJ">YhaJ</a></li></center>
+<center><li><a href="./salmonella/YhcS">YhcS</a></li></center>
+<center><li><a href="./salmonella/YhjB">YhjB</a></li></center>
+<center><li><a href="./salmonella/YhjC">YhjC</a></li></center>
+<center><li><a href="./salmonella/YiaG">YiaG</a></li></center>
+<center><li><a href="./salmonella/YidZ">YidZ</a></li></center>
+<center><li><a href="./salmonella/YifA">YifA</a></li></center>
+<center><li><a href="./salmonella/YihW">YihW</a></li></center>
+<center><li><a href="./salmonella/YijC">YijC</a></li></center>
+<center><li><a href="./salmonella/YncC">YncC</a></li></center>
+<center><li><a href="./salmonella/YneJ">YneJ</a></li></center>
+<center><li><a href="./salmonella/YnfL">YnfL</a></li></center>
+<center><li><a href="./salmonella/YpdB">YpdB</a></li></center>
+<center><li><a href="./salmonella/YqhC">YqhC</a></li></center>
+<center><li><a href="./salmonella/zar">zar</a></li></center>
+<center><li><a href="./salmonella/ZntR">ZntR</a></li></center>
+<center><li><a href="./salmonella/ZraR">ZraR</a></li></center>
+<center><li><a href="./salmonella/zur">zur</a></li></center>
+<center><li><a href="./salmonella/Zur">Zur</a></li></center>
+</ul>
+</div>
+</div>
+</body>
+</html>
