@@ -1,0 +1,993 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LeuO</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LeuO</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LeuO transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24239962" target="_blank">24239962</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19443540" target="_blank">19443540</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_2">
+De La Cruz MA , Fernández-Mora M , Guadarrama C , Flores-Valdez MA , Bustamante VH , Vázquez A , Calva E. LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></label>
+<input id="act_similarity_2", type="checkbox">
+<div class="ACT_similar">
+<li>Proc Natl Acad Sci USA 97:6640 -- 6645 De la Cruz MA , Fernández-Mora M , Guadarrama C , Flores-Valdez MA , Bustamante VH , Vázquez A , Calva E ( 2007 ) LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22173828" target="_blank">22173828</a>]<br></li>
+<li>Proc Natl Acad Sci USA 97:6640 -- 6645 De la Cruz MA , Fernández - Mora M , Guadarrama C , Flores-Valdez MA , Bustamante VH , Vázquez A , Calva E ( 2007 ) LeuO antagonizes H -- NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_5">
+De la Cruz , M.A. , Fernández-Mora , M. , Guadarrama , C. , Flores-Valdez , M.A. , Bustamante , V.H. , Vázquez , A. , and Calva , E. ( 2007 ) LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></label>
+<input id="act_similarity_5", type="checkbox">
+<div class="ACT_similar">
+<li>De la Cruz , M.A. , Fernandez-Mora , M. , Guadarrama , C. , Flores-Valdez , M.A. , Bustamante , V.H. , Vazquez , A. , and Calva , E. ( 2007 ) LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>De la Cruz , M.A. , Fernandez-Mora , M. , Guadarrama , C. , Flores-Valdez , M.A. , Bustamante , V.H. , Vazquez , A. , et al. ( 2007 ) LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>[ 62 ] M.A. De la Cruz , M. Fernández - Mora , C. Guadarrama , M.A. Flores-Valdez , V.H. Bustamante , A. Vázquez , et al. , LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li></div>
+<li>A recent study has depicted the presence of seven LeuO regulated proteins having diverse function in Salmonella Typhi ( Hernandez-Lucas et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Hernández-Lucas , I. , Gallego-Hernández , A.L. , Encarnación , S. , Fernández-Mora , M. , Martínez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional-regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional-regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Furthermore , LeuO has a complex relationship with its own gene , antagonizing H-NS-mediated leuO repression and antagonizing RcsB-BglJ-mediated leuO activation ( Chen and Wu , 2005 ; Stratmann et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Many genes activated by LeuO are repressed by H-NS , and for this reason LeuO is often viewed as a transcriptional antagonist of H-NS ( Chen and Wu , 2005 ; Chen et al. , 2005 ; Hernandez-Lucas et al. , 2008 ; Stratmann et al. , 2008 ; Shimada et al. , 2009 ; 2011 ; Gallego-Hernandez et al. , 2012 ) and of its paralogue StpA ( De la Cruz et al. , 2007 ; Stratmann et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>In Salmonella enterica serovar Typhi , LeuO activates the synthesis of quiescent porins OmpS1 and OmpS2 ( Fernandez-Mora et al. , 2004 ; Rodriguez-Morales et al. , 2006 ; De la Cruz et al. , 2007 ; Hernandez-Lucas et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>LeuO is known to activate bglJ in E. coli ( Stratmann et al. , 2008 ) while RcsB-BglJ heterodimers activate leuO transcription ( Stratmann et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>While LeuO is known to antagonize H-NS , its own gene is repressed by H-NS ( Klauck et al. , 1997 ; Chen et al. , 2001 ; Stratmann et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO is a LysR-type quiescent regulator that is under negative control by H-NS ( Klauck et al. , 1997 ; Chen et al. , B 2005 ; Navarre et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Hence , LeuO seems to repress SPI-1 by a major ` pathway ' involving HilD and HilE , and also by minor , HilD-and HilE-independent mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>We thus considered that LeuO might activate hilE transcription , and that HilE might repress SPI-1 via HilD inactivation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The ompS2 gene is expressed at lower concentrations of LeuO , whereas ompS1 is expressed at higher concentrations where ompS2 expression is repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Later , it was demonstrated that LeuO counteracts H-NS repression ( 49 , 57 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Our data are inconsistent with a simplistic model in which LeuO overcomes H-NS transcriptional repression activity simply by displacing H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The transcriptional-regulator LeuO is normally repressed by H-NS under laboratory conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>It has been suggested that LeuO repression of SPI-1 genes may occur under growth conditions where H-NS , for unknown reasons , has failed to perform such repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Because HilE is a SPI-1 repressor , a tentative model is that activation of hilE transcription by LeuO might boost SPI-1 repression , perhaps under conditions in which H-NS fails to do so .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Previously , other loci regulated by LeuO , such as bgl , rovA , dsrA , cadC , and leuO , have been reported ( 9 , 27,45 , 50 , 55 ) ; however , they were not detected in our proteomic analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Transcription experiments indicated that assT-dsbL-dsbI expression is dependent on LeuO induction in rich medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>This observation could mean that LeuO binds to DNA differently when it displaces the H-NS protein to turn on a gene than when it binds to impede transcription initiation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Given this , it could be that LeuO binds to DNA as a dimer via a dimer-dimer interaction , which would be favored by the presence of DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The presence of dyad symmetry is consistent with individual LeuO subunits binding to half-sites to form a dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The tpx gene was also negatively regulated by LeuO ; this gene is proposed to code for a periplasmic antioxidant enzyme that is induced under several pH conditions ( 51 ) , in the exponential-growth-phase , and during bioﬁlm formation ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Our experiments suggest that LeuO and Lon act through HilD under SPI1-inducing conditions , whereas PhoP directly interacts with the slrP promoter to activate transcription under SPI2 inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>The dually positive regulation that we describe here for slrP by LeuO , Lon , and HilD under SPI1-inducing conditions and by PhoP under SPI2-inducing conditions partially explains the ability of SlrP to be secreted by both T3SSs under different circumstances .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>It was shown previously that Lon protease degrades HilD ( 40 ) and that the transcriptional-regulator LeuO directly activates transcription of hilE ( 41 ) , whose product inhibits HilD activity ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>It is thus conceivable that activation of LeuO synthesis under speciﬁc circumstances can permit expression of genes that are usually repressed by H-NS and its paralogues ( Dorman , 2007 ; Hernandez-Lucas and Calva , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>We thus conclude that LeuO inhibits invasion of epithelial cells by Salmonella enterica serovar Typhimu-rium , and that the main inhibition ` pathway ' requires HilE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Indeed , we show that LeuO represses transcription of SPI-1 and inhibits epithelial cell invasion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>LeuO activates hilE transcription A tentative model for LeuO-mediated downregulation of SPI-1 via HilE and HilD is that LeuO may activate hilE expression , and that HilE-mediated inhibition of HilD activity ( Baxter et al. , 2003 ) may contribute to SPI-1 downregulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>When acting as a repressor it has been suggested to function as a backup for H-NS ; nevertheless in several cases LeuO acts as a derepressor of gene expression by displacement or prevention of H-NS repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>The expression of leuO is repressed by H-NS , although there are some stress conditions when LeuO can be detected in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Westra , E.R. , Pul , U. , Heidrich , N. , Jore , M.M. , Lundgren , M. , Stratmann , T. , et al. ( 2010 ) H-NS-mediated repression of CRISPR-based immunity in Escherichia coli K12 can be relieved by the transcription activator LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Curiously , ompS1 is negatively regulated by the HN-S nucleoid protein , and ompS2 is positively regulated by the LeuO regulator by derepressing the HN-S action .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Interestingly , the pRO310 ompS1 -- lacZ fusion was also positively regulated by LeuO , but at higher concentrations of IPTG than previously reported for ompS2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In contrast , LeuO puriﬁed under denaturing conditions ( LeuO-6 His-DC ) bound to the same DNA with a lower afﬁnity ( Fig. 2E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>However , the mutations introduced on pRO310 bIV -- mt2 derepressed partially the expression without LeuO induction ; although there was still response to LeuO activation ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>pRO310 , pRO266 and pRO153 fusions responded to the LeuO-positive effect ; however , the pRO117 fusion was not positively regulated by LeuO , being similar to the pRO310 -- d4 ( Fig. 5D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In any event , care must be taken to purify LeuO under the appropriate native conditions in order to obtain the best activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>DISCUSSION In this study , a proteomic approach was used to elucidate the genes regulated by LeuO in Salmonella under a particular set of conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Furthermore , the S. Typhi CRISPR-Cas locus is regulated by LeuO , H-NS and LRP [ 22 , 26 ] , which are involved in pathogenesis [ 27 -- 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Both possess clusters of A 1T-rich horizontally acquired virulence genes that are silenced by the nucleoid-associated protein H-NS and regulated positively or negatively by wHTH TFs : for example , ToxR and LeuO in V. cholerae ; HilA , LeuO , SlyA and OmpR in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>The Salmonella enterica Serovar Typhi LeuO Global Regulator Forms Tetramers : Residues Involved in Oligomerization , DNA Binding , and Transcriptional Regulation Carmen Guadarrama , Abraham Medrano-López , Ricardo Oropeza , Ismael Hernández-Lucas , Edmundo Calva Instituto de Biotecnología , Universidad Nacional Autónoma de México , Cuernavaca , Morelos , Mexico LeuO is a LysR-type transcriptional-regulator ( LTTR ) that has been described to be a global regulator in Escherichia coli and Sal-monella enterica , since it positively and negatively regulates the expression of genes involved in multiple biological processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO expression is enhanced in stationary phase and by phosphorous restriction ( 10 , 56 ) ; it is also involved in Vibrio cholerae bioﬁlm formation and in the stringent response ( 30 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>A collection of single amino acid substitutions in the LeuO DBD indicated that this region is involved in oligomerization , in positive and negative regulation , as well as in DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>[ 4 ] C. Guadarrama , T. Villaseñor , and E. Calva , `` The subtleties and contrasts of the LeuO regulator in Salmonella Typhi implications in the immune response , '' Frontiers in Immunology , vol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28529955" target="_blank">28529955</a>]<br></li>
+<li>Therefore , complex structure-function relationships in LeuO may account for its regulatory functions , acting as a repressor , antirepressor , or activator of a wide variety of nonrelated genes , the number of which is increasing ( 21 , 22 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>This is consistent with th notion that an increase in the expression of LeuO causes an increase in ompS2 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>LeuO is an example of a global regulator whose level of expression is an important issue , since this has an effect on its many regulated genes that are involved in a variety of cellular functions , such as virulence and bacterial survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Both pipA and envR DNA probes showed a clear pattern of retarded migration after incubation with increasing concentrations of puriﬁed LeuO while LeuO did not bind to the SL3361 DNA probe ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>As can be observed , increasing amounts of LeuO modiﬁed the H-NS -- DNA complexes causing a displacement of H-NS from the bound DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The results obtained with the fusions showed that in the absence of LeuO these three loci are constitutively expressed , but when LeuO was induced with 50 M IPTG , strong repression was observed for tpx ( Fig. 2e ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>DNA sequence analysis To test for the presence of over-represented motifs in DNA sequences bound by LeuO in E. coli and S. Typhimurium , the Quantitative reverse transcriptase PCR ( qRT-PCR ) SELEX screening ( Shimada et al. , 2011 ) and ChIPOTle datasets were manually curated to deﬁne short binding regions that could be analysed by the Meme motif-ﬁnding program .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Interestingly , the results presented here indicate that H-NS is a positive regulator of tpx and STY1978 ; one possibility is that in an hns mutant the levels of LeuO increase since leuO is repressed by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The observation that both ompS1 and ompS2 were regulated by LeuO at different levels of induction opens the possibility that there is a regulon in S. enterica , where various genes are expressed at different levels according to the concentration of LeuO in the bacterial cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The level of ompS1 expression in pFV5 in such hns stpA background did not increase in the presence of LeuO ( Fig. 6A ) , which is consistent with the notion that it is acting as a derepressor antagonizing H-NS and StpA action , and where LeuO is not acting by recruiting RNA polymerase to the ompS1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Also , LeuO expression was detected in a phosphate-restricted media ( 98 ) ; and recently it was shown that the expression of the leuO gene can be activated by the RcsB and BglJ regulators ( 58 , 101 ) LeuO HAS SEVERAL FUNCTIONS IN VIVO Even though LeuO is expressed at very low level in standard laboratory conditions , it seems that in vivo it has a role in bacterial survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Previously , we have determined that the cse1 promoter is repressed by the global regulators H-NS and LRP whereas LeuO participates in its positive regulation ; also , it can be expressed independently of LeuO in N-MM [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>It appears that the physiological function of LeuO is important and that promoter relay mechanis evolved to provide the crucial regulation to control leuO expression in response to growth stress in a timely fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>In the presence of OmpR-P , LeuO also bound to both boxes I and II , and there was an enhanced sensitivity to DNase digestion at 118 , indicative of a change in conformation upon binding of both regulators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>LeuO speciﬁcally bound to the 5 intergenic regions of ompS2 , assT , STY3070 , ompX , and tpx , while it was not observed to-bind to the promoter region of STY1978 , suggesting that LeuO regulates in direct and indirect ways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Future research is needed to elucidate the ﬁne-tuning mechanism of casA repression mediated by H-NS and LRP , and it would also be interesting to determine how LeuO in the presence of these proteins induces casA activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , LeuO is quiescent in a wild-type ( wt ) genomic background , due to the negative regulatory effect of the H-NS nucle-oid-associated protein and transcriptional silencer , but its expression can be detected in stationary phase and when the levels of phosphate and amino acids are restricted ( 7 , 23 -- 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>STY3070 in Salmonella was later determined to be the casC gene of the CRISPR/Cas system ; and its repression was found to depend also on Lrp , and its expression induced in minimal media independent of LeuO ( 78 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Interestingly , a gradual decrease in activity from casA to cas2 was also found in the presence of LeuO in E. coli K-12 ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , compared to assT 688/assT 80 , CAT activity levels in the presence of LeuO decreased more than 75 % when the LBS II or both the LBS I-II were eliminated ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>It will certainly be interesting to determine the impact of base changes on binding of the LeuO protein to elucidate whether the decrease in activity is because the protein is effectively unable to-bind to the DNA or binds it in an ineffective manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>As we expected , no regulation of ompC by LeuO was observed since no differences in CAT activity were detected in the presence or absence of LeuO ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Thus , besides supporting the notion that the increase in ompS2 expression was the result of augmented levels of LeuO , the dependence on the OmpR transcriptional-regulator was further substantiated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>The expression of the mutants was evaluated under the absence or presence of LeuO induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>A fusion of the complete 5 intergenic region of the CRISPR was constructed , and no activity was observed in the presence or absence of LeuO ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , as can be seen in Fig. 8 , in the presence of LeuO there was an increased the afﬁnity of OmpR-P for the regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>The next lanes contain the same increasing concentrations of OmpR-P but in the presence of 0.23 M LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>Figure 2C depicts the presence of OmpS1 in the outer membrane upon induction with LeuO , even in the ompR mutant ( under P2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The transcriptional results with pKK9-RR-casA-cas2 showed minimal activity in the absence of LeuO , while in the presence of LeuO the transcriptional activity increased notably ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>( D and E ) Transcriptional proﬁles of fusions to the cat reporter gene for the ompS1 and tpx genes in S. Typhi in the presence of either the LeuO wt or mutants with different deletions in the C terminus : LeuO1-309 , LeuO1-304 , LeuO1-299 , LeuO1-294 , LeuO1-284 , and LeuO1-214 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The expression of ompS1 and tpx ( as regulatory regions fused to the cat gene ) was activated or repressed in the presence of the LeuO wt , respectively ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Alternatively , the LeuO protein might act as a classical transcriptional-regulator and stimulate transcription of the ilvIH operon or of the leu operon in response to leucine limitation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10931352" target="_blank">10931352</a>]<br></li>
+<li>Interestingly , OmpR-P bound at 0.2 M and above , in the presence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>We also observed that a hilE null mutation increased the HilD levels in the presence and in the absence of LeuO ( Fig. 3 ) , in accordance with two well known facts : the inhibition of HilD activity by HilE ( Baxter et al. , 2003 ) and the occurrence of autogenous activation of hilD transcription ( Ellermeier et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>However , importantly , production of LeuO decreases hilD transcription in the absence of HilD , decreases hilC and rtsA transcription in the absence of both HilD and HilE , and leads to an invasion defect in the absence of HilE ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>C. β-Galactosidase activities of pIZ1997 , pIZ1998 , pIZ1999 and pIZ2000 in the presence and in the absence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_91">
+A. β-Galactosidase activity of an hilE : : lac translational fusion in the presence and in the absence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></label>
+<input id="act_similarity_91", type="checkbox">
+<div class="ACT_similar">
+<li>( B ) - Galactosidase activity of slrP : : lacZ in the presence and in the absence of LeuO or HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_93">
+Effect of a hilE mutation on the levels of HilD protein in the presence and in the absence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></label>
+<input id="act_similarity_93", type="checkbox">
+<div class="ACT_similar">
+<li>Effect of HilD expression on the - galactosidase activity of slrP : : lacZ in the presence and in the absence of Lon and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>( C ) Effect of LeuO on slrP expression in the presence and in the absence of HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li></div>
+<li>In S. enterica serovar Typhi IMSS-1 , we showed that the LeuO-depen-dent promoter ( PLeuO ) , located at bp 164 upstream of the assT translation start site ( 26 ) , is activated only in the presence of LeuO , resulting in the transcription of assT , dsbL , and dsbI as an operon ( Fig. 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Comparison of β-galactosidase activities in the presence and in the absence of LeuO ( strains SV7327 and SV7328 ) indicated that hilE expression is activated by LeuO ( Fig. 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The transcriptional results in the absence of H-NS and LRP showed casA activity values of around 5,000 in MA medium ( Fig. 4 ) , while the expression value obtained in the presence of LeuO was only 500 ( Fig. 1C ) , indicating that LeuO moderately induces casA transcriptional expression and that some additional positive regulatory elements or signals are needed to obtain its complete induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Furthermore , expression in the hns mutant derivatives increased in the presence of LeuO , indicating that it can derepress ompS1 expression to the maximum level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>However , LeuO could increase transcriptional activity in N-minimal medium , as overexpression of the leuO gene resulted in a 2-fold induction of casA transcription compared to an absence of overexpression in the wild-type Sal-monella strain ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Therefore , the presence of LeuO had not simply resulted in the complete displacement of H-NS in LPM since these locations lacked H-NS binding in the absence of detectable levels of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>However , transcriptional activity of this fusion was induced in the presence of LeuO as well as in an H-NS-deﬁcient strain , supporting the notion that H-NS negatively regulates the expression of casA ( STY3070 ) in S. Typhi IMSS-1 ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>The promoter region reported in this work is induced in the presence of the global regulator LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>In contrast , low levels of assT expression were detected in the absence of P1 and P2 , in a STYhns99 strain , suggesting that the upstream PLeuO promoter activity is also repressed by the H-NS global regulator in N-minimal medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>These data indicate that transcriptional expression in MA medium in the presence of overexpressed LeuO , as well as that in N-minimal medium in the absence of overexpressed LeuO , is driven by the same promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Using transcriptional fusions , RT-PCR , and Northern experiments , we demonstrated that the entire CRISPR/Cas system is induced as a large polycistronic mRNA in rich medium in the presence of LeuO , supporting an operon organization ( Table 1 ; Fig. 2 ) that forms part of the LeuO regulon in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>In the case of assT and ompS1 , no transcriptional activity was detected when LeuO was absent , but upon induction with IPTG , high transcriptional activity of the assT and ompS1 fusions was detected ( Fig. 2b and c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_108">
+LeuO positively regulates the ompS1 expression by derepressing both the promoters and antagonizing the negative effect of H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></label>
+<input id="act_similarity_108", type="checkbox">
+<div class="ACT_similar">
+<li>LeuO positively regulated the ompS1 expression by derepressing both promoters and antagonizing the negative effect of H-NS and StpA , displacing them from the 5 ′ regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li></div>
+<li>In this respect , the structural properties of LeuO as an LTTR member have been initially explored : ﬁnding that it is active as a tetramer , that the mechanisms for induction and repression of gene expression appear to be different , and that there are relevant interactions between the N - and C-termini ( 97 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In contrast , LeuO repressed the expression of OmpX , STY1978 , and Tpx .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The results of EMSAs with the LeuO wt and the P139A and S54A mutants , which were puriﬁed under native conditions , bound to the 32P-end-labeled F 1 DNA ompS1 fragment are shown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Nevertheless , as discussed above , the LeuO tetramer binds with a high afﬁnity to DNA in vitro and is the oligomeric form obtained under native puriﬁcation conditions ( Fig. 1 and Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Moreover , LeuO and OmpR bound in close proximity , but independently , to the 5 upstream regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>Competitive EMSAs between LeuO and H-NS for binding to the ompS1 regulatory region were performed to examine the effect of LeuO on H-NS bound to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>It is interesting that at the highest levels of LeuO induction ompS1 expression increased whereas ompS2 expression decreased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In the case of ompS2 , LeuO also acted positively when it was present at low levels , but if the amount of LeuO increased , ompS2 expression diminished ( Fig. 2d ) , supporting the observation that an ompS2 gene fusion is expressed at higher levels at an OD of 0.6 upon induction of LeuO with 20 M IPTG from pFMTrcleuO-50 ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The repression of ompS2 observed at the higher levels of induction of the leuO gene could be due to the competition of LeuO for the binding site of the OmpR transcriptional-activator as ompS2 expression is dependent of LeuO and OmpR ( Fernández-Mora et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Thus , whereas the induction of ompS2 expression by LeuO is from a sole OmpR-dependent promoter ( Fernández-Mora et al. , 2004 ) , the induction of ompS1 can occur independent of OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Although residual SPI-1 repression by LeuO is observed in the absence of HilE , the LeuO-HilE-HilD ` pathway ' appears to be the major mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Hence , HilE-dependent downregulation seems to be the major ` pathway ' of SPI-1 repression by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Because HilE is a negative regulator of hilD ( Baxter et al. , 2003 ) , a tentative interpretation for the occurrence of HilE-dependent SPI-1 repression was that LeuO might increase the HilE level , which in turn might inhibit HilD activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>If HilD was required for SPI-1 repression by LeuO , we reasoned , downregulation of SPI-1 by LeuO should not be observed in the absence of HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The existence of a LeuO-HilE-HilD ` pathway ' of SPI-1 repression in S. enterica serovar Typhimurium is supported by several lines of evidence : ( i ) lack of HilE relieves LeuO-mediated repression of SPI-1 ( Fig. 2 ) ; ( ii ) activation of leuO transcription decreases the level of HilD protein ( Fig. 3 ) ; ( iii ) the HilD protein decrease caused by LeuO is suppressed by a hilE mutation ( Fig. 3 ) ; and ( iv ) LeuO activates transcription of hilE ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>This conclusion is coherent with the detection of a subpopulation of SPI-1 ( OFF ) cells when LeuO expression was activated in a HilE − background ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>© 2013 John Wiley & Sons Lt Results Activation of leuO transcription represses SPI-1 To conﬁrm previous evidence indicating that SPI-1 might be repressed by LeuO ( Dillon et al. , 2012 ) , we compared the expression of selected SPI-1 genes in the presence and in the absence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>A genetic screen for loss-of-function mutations that restored SPI-1 expression in the presence of LeuO provided evidence that the hilE gene is necessary for LeuOmediated repression of SPI-1 , an hypothesis conﬁrmed upon directed construction of a HilE − mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The observation that LeuO downregulates SPI expression thus raised the question of whether activation of hilE transcription by LeuO might inhibit epithelial cell invasion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>In the absence of HilE , activation of leuO transcription reduced epithelial cell invasion three - to fourfold ( Fig. 7B ) , thereby providing further evidence for HilE-independent downregulation of SPI-1 by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Our present model for ompS2 expression implies that LeuO relieves repression by disrupting either a structure in the region from 413 to 97 or by antagonizing the effect of an unknown repressor that binds to such region or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>The results of this analysis suggest that LeuO activates transcription of envR , perhaps by antagonizing H-NS , but appears to function as a repressor at the other target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Fernandez-Mora M , Puente JL & Calva E ( 2004 ) OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi Flores-Valdez MA , Puente JL & Calva E ( 2003 ) Negative osmoregulation of the Salmonella ompS1 porin gene independently of OmpR in an hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19187206" target="_blank">19187206</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_133">
+Fernández-Mora , M. , Puente , J.L. , and Calva , E. ( 2004 ) OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi ompS2 porin gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></label>
+<input id="act_similarity_133", type="checkbox">
+<div class="ACT_similar">
+<li>Fernandez-Mora , M. , Puente , J.L. , and Calva , E. ( 2004 ) OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi ompS2 porin gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+<li>Thus , the OmpR and LeuO regulators positively regulate ompS2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>In Salmonella Typhi LeuO is shown to positively regulate the porin gene expression and regulate the virulence of bacteria ( Fernandez-Mora et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Transcriptional fusions supported the positive and negative LeuO regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The global regulators H-NS and LeuO regulate the assT-dsbL-dsbI cluster expression negatively and positively , respectively , and this regulation depends on speciﬁc growth conditions ( 77 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_139">
+Gallego-Hernández , A.L. , Hernández-Lucas , I. , De la Cruz , M.A. , Olvera , L. , Morett , E. , Medina-Aparicio , L. , et al. ( 2012 ) Transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi IMSS-1 depends on LeuO , H-NS , and speciﬁc growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></label>
+<input id="act_similarity_139", type="checkbox">
+<div class="ACT_similar">
+<li>Gallego-Hernandez , A.L. , Hernandez-Lucas , I. , De la Cruz , M.A. , Olvera , L. , Morett , E. , Medina-Aparicio , L. , et al. ( 2012 ) Transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi IMSS-1 depends on LeuO , H-NS , and speciﬁc growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+<li>In conclusion , the transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi is dependent on growth culture conditions , where the global regulators LeuO and H-NS are involved in positive and negative regulation , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_142">
+Transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi IMSS-1 depends on LeuO , H-NS , and specific growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></label>
+<input id="act_similarity_142", type="checkbox">
+<div class="ACT_similar">
+<li>Transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi IMSS-1 depends on LeuO , H-NS , and speciﬁc growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li></div>
+<li>Majumder , A. , Fang , M. , Tsai , K.J. , Ueguchi , C. , Mizuno , T. , and Wu , H.Y. ( 2001 ) LeuO expression in response to starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>LeuO DBD , LH , and RD-I central subdomain mutants are impaired in transcriptional activation and repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>RISPR/Cas Immune System Is an Operon Regulated by H-NS , and Leucine-Responsive Regulatory Protein in Salmonella enterica Serovar Typhi † The C LeuO , L. Medina-Aparicio , J. E. Rebollar-Flores , A. L. Gallego-Herna ́ndez , A. Vázquez , L. Olvera , R. M. Gutiérrez - Ríos , E. Calva , and I. Hernández - Lucas * Departamento de Microbiología Molecular , Instituto de Biotecnología , Universidad Nacional Autónoma de México , Cuernavaca , Morelos 62210 , Mexico Received 8 December 2010/Accepted 4 March 2011 Prokaryotes have developed multiple strategies to survive phage attack and invasive DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>The LeuO wt used for size exclusion chroma-tography was puriﬁed from a liter of LB medium and grown to midlogarithmic phase , and 0.1 % L - ( ) - arabinose ( Sigma-Aldrich ) was added to activate expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>In a subsequent study to pursue more targets in Salmonella Typhi , LeuO was found to also positively regulate assT and STY3070 ; and negatively ompX , tpx and STY1978 ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In Y. enterocolitica , LeuO was found to positively regulate rovA and , in turn , H-NS also negatively regulates its expression ( 86 ) ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In E. coli , by SELEX screening , LeuO was found to regulate genes involved in sulfa drug sensitivity and to increase its own expression during transition into stationary phase and after a week of culture , where H-NS concentration decreased ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>H-NS , StpA and LeuO bound around OmpR box IV H-NS was found to-bind upstream of position -88 of ompS1 P1 ( Flores-Valdez et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Studies in a variety of gramnegative bacteria have shown that LeuO regulates transcription of genes involved in diverse physiological processes , either as an activator or as a repressor ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ; Chen and Wu , 2005 ; Stratmann et al. , 2008 ; 2012 ; Shimada et al. , 2009 ; 2011 ; Dillon et al. , 2012 ; Hernandez-Lucas and Calva , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The LeuO protein relieves H-NS-mediated repression and cooperates with DNA topological dynamism in this relay to regulate transcription of genes involved in branched chain amino acid synthesis ( Chen et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LeuO protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Six conserved residues , FIG 2 Tetrameric LeuO wt binds to DNA with a high afﬁnity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Therefore , we wanted to determine if LeuO binding was associated with a speciﬁc DNA motif in our ChIP-chip binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO protein delimits the transcriptionally active end repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_4">
+Chen , C.C. , and Wu , H.Y. ( 2005 ) LeuO protein delimits the transcriptionally active and repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></label>
+<input id="dom_similarity_4", type="checkbox">
+<div class="DOM_similar">
+<li>( 2005 ) LeuO protein delimits the transcriptionally active and repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>LeuO protein delimits the transcriptionally active and repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19443540" target="_blank">19443540</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li></div>
+<li>Interestingly , the ATA bases located at positions 88 to 90 ( LBS I ) are key for LeuO activation ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>LeuO binding site analysis revealed a logo conforming to the TN11A motif common to LysR-type transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Hence , the mutated residues in mt1 appear to be determinant for LeuO binding as observed by EMSA ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The DBD of LexA ( residues 1 to 128 ) was fused to full-length S. Typhi LeuO ( residues 1 to 314 ) and used as a positive control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The DNA-binding domain of LeuO comprises residues 21 to 78 , the linker helix comprises residues 79 to 105 , and the C-terminal regulatory domain comprises residues 106 to 314 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>It also allowed us to study LeuO binding to DNA adopting conformations that are natural to the in vivo situation , a factor that is known to inﬂuence the binding of several DNA-binding proteins ( Cameron and Dorman , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>In previous work ( 2 ) , three LeuO binding sites were found in the ilvIH-leuO-leuABCD cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The pipA and envR genes each contain one and two predicted LeuO sites respectively , while SL3361 , which is located beside envR and does not contain a predicted LeuO binding site motif , was used as a negative control ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The envR 5 ′ regulatory region ( PenvR ) contains two predicted LeuO binding sites located in close proximity to each other ( 81 bp spacing ) and displayed a higher affinity for LeuO binding than the pipA region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The Salmonella enterica Serovar Typhi LeuO global regulator forms tetramers : residues involved in oligomerization , DNA-binding and transcriptional regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>This indicates that LeuO-6 His-NC is composed of four identical subunits ( Fig. 1B ) and that LeuO forms a tetramer in solution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>By site-directed and deletion mutagenesis , protein-DNA interaction , transcriptional regulation activity , and oligomerization studies , we observed that each LeuO domain is important to maintenance of its properties .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>In addition , we found that each LeuO domain is also important in oligomerization , transcriptional regulatory functions , and protein-DNA interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Residues in LeuO DBD and LH are involved in oligomerization , while an RD-I central subdomain mutant has no effect on oligomer formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO DBD , LH , and RD-I central subdomain mutants are impaired in transcriptional activation and repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO DBD , LH , and RD-I central subdomain mutants are defective in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Moreover , substitutions in the LBS II affect assT activation mediated by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Additional efforts are needed to elucidate the rules that LeuO follows for DNA-recognition and transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , a single alanine substitution in each of the last 5 residues of LeuO did not affect dimerization ( Fig. 7A ) or repression ( Fig. 8B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>In contrast , LexA-S54A , where S54A is located in the HTH motif , and LexA-P139A , where P139A is located in the RD-I central subdomain , repressed sulA : : lacZ reporter expression as effectively as the LexA-LeuO wt ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>All these results strongly suggest that several LysR regulators , including LeuO , function as tetramers and that the C terminus ( the RD-I and RD-II subdomains ) is important for proper oli-gomer formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO is comprised of an N-terminal DNA-binding domain ( DBD ) with a winged-helix-turn-helix ( wHTH ) motif and of a long linker helix ( LH ) involved in dimerization that connects the DBD with the C-terminal effector-binding domain ( EBD ) or regulatory domain ( RD ; which comprises subdomains RD-I and RD-II ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>This is clear evidence that the C-terminal RD-II and RD-I subdomains of LeuO are involved not only in tetramer formation but also in dimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Deletions in the LeuO C-terminal RD-II and RD-I subdomains affect oligomerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The transcriptional function of LeuO C-terminal variants with truncations in the RD-II and RD-I subdomains is completely abolished .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO belongs to the LysR-family of transcription regulators present in Enterobacteriaceae such as Yersinia , Shigella , Escherichia coli , and Salmonella ; these regulators typically are 300 amino acids long and have an N-terminal-DNA-binding-domain and a C-terminal sensing-domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The quasi-palindromic nature and presence of A-tracts in the LeuO motifs suggests that a combination of direct amino-acid-base-pair interactions and DNA shape may be important features in determining LeuO binding speciﬁcity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>All these observations show that the C - and N-terminal domains have a role in dimer formation and thus suggest that they have a role in tetramer formation and that the oligomeric state of LeuO is essential to exert transcriptional regulation and DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>All truncated proteins in the C-terminal regulatory domain of LeuO were defective in dimerization ( Fig. 6B ) , transcriptional activation and repression ( Fig. 6D and E ) , and DNA-binding in vitro ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>A collection of single amino acid substitutions in the LeuO DBD indicated that this region is involved in oligomerization , in positive and negative regulation , as well as in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>All these data show that some residues in the DBD of LeuO are involved in dimer formation , since Ala substitutions of these residues affected DNA-binding and transcriptional-activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Together , these data demonstrate that not only the C terminus but also the DBD of LeuO is involved in oligomer formation ; therefore , each LeuO domain appears to act synergistically to maintain its regulatory functions in Salmo-nella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>To determine the role of the C-terminal domain of LeuO in oligomer formation , a collection of sequentially truncated forms of LeuO fused to LexA was constructed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>These results show that deletion of the last 5 LeuO residues of the RD-I terminal subdomain affects dimerization but that independent substitutions in each residue do not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>FIG 8 Effect of single alanine substitutions in the last 5 residues of the RD-I subdomain at the C terminus on LeuO regulatory functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Furthermore , LeuO and OmpR-P bound in close proximity at the 5 regulatory region ( Fig. 2 and 8 ) , and the activity rendered by pFM97 required phosphorylation at the major OmpR D55 residue ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>LeuO mutants with point mutations in the last 5 residues of the C terminus are able to dimerize but are differentially affected in activation and repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>In contrast , mutants with mutation of the remaining three residues that are part of the last predicted helix in LeuO ( Fig. 3 ) still repressed but were affected in activating transcription ( Fig. 8A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Hence , in order to determine the involvement of the DBD , the LH , and the RD-I central subdomain of LeuO in oligomerization , fragments with single alanine substitutions at six conserved resi-dues were constructed ( Fig. 3 ) and fused to LexA for dimerization analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>By analysis of mutants with site-directed and deletion mutations , we observed that LeuO shares some features with other characterized LTTRs , such as the functionality of its DBD and the involvement of the C-terminal domain , including the last 5 resi-dues , in oligomerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>These results showed that residues L27 , L46 , L60 , and T79 are important in LeuO dimerization , while residues S54 and P139 do not affect dimerization , supporting the involvement of the DBD and LH regions in LeuO oligomerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>FIG 4 Analysis of the dimerization and regulatory functions of LeuO wt and different mutants with alanine-substituted residues in DBD and RD-I .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Since the LeuO tetramer is required for DNA-binding , the involvement of DBD , the C-terminal RD-I central and terminal subdomains , and the RD-II subdomain in oligomer formation was evaluated using alanine substitutions and deletions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>L27 , L46 , S54 , and L60 ( located in the DBD ) , T79 ( located one residue before the predicted LH ) , and P139A located in the RD-I central subdomain of LeuO ( Fig. 3 and 4A ) , were replaced by alanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Interestingly , these residues , like P139 , are located in the RD-I C-terminal and central subdomain and are part of the last LeuO helix ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Accordingly , LeuO shares a high degree of sequence similarity with other LTTRs at the N-terminal DNA-binding domain and less conservation at the C-terminal inducer-binding domain ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Even though the LeuO sequence alignment with other LTTRs showed the conservation of domains and residues ( Fig. 3 ) , up to this point , further research on the three-dimensional structure of LeuO should help provide an understanding of whether its domains correspond to those previously deﬁned for other LTTRs ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Thus , each of the LeuO protected regions should be evaluated by site-directed mutagenesis to determine the speciﬁc LeuO interacting motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LeuO evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>RESULTS The LysR family transcriptional regulator LeuO controls assT-dsbL-dsbI expression in S. Typhi IMSS-1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>While the E. coli and S. Typhimurium LeuO proteins are highly related ( 87 % amino acid identity ) there are a number of amino acid differences in the N-terminal DNA binding domain which may have altered DNA binding site speciﬁcity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO belongs to the LysR family of transcription regulators present in Enterobacteriaceae such as Yersinia , Shigella , Escherichia coli , and Salmonella ; these regulators typically are 300 amino acids long and have an N-terminal DNA binding domain and a C-terminal sensing domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Summary LeuO is a quiescent LysR-type regulator belonging to the H-NS regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Discussion The existence of LeuO has been known for more than two decades ( Hertzberg et al. , 1980 ) , and its recognition as a member of the LysR family was published ﬁfteen years ago ( Henikoff et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>LeuO is a member of the LTTR family and is found in members of the Enterobacteriaceae , including Escheri-chia coli , Salmonella , Shigella and Yersinia spp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Alternatively , binding of LeuO to the 5 regulatory region of STY1978 might require an accessory molecule , as reported for other LysR family members ( 48 ) , or even could occur outside the boundaries of the region studied .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Moreover , the LeuO activator of the LysR family was identiﬁed ( 21 ) as a regulator for ompS2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>In all three , the transposon inserted upstream of the leuO gene , which codes for the LeuO regulator , a member of the LysR family of regulatory proteins ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>LeuO HISTORY The ﬁrst report of the LeuO regulator was by the localization of the leuO gene between the leuABCD and ilvIH operons ; upon which it was included in the LysR family due to its amino acid sequence similitude with other members of the family ( 47 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>THE LeuO GLOBAL REGULATOR IS AN LTTR LeuO is part of the LysR-type transcriptional regulators ( LTTRs ) , the largest family of transcriptional regulators in prokaryotes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Although these transcriptional factors have a global role in patho-genic bacteria , in S. Typhi only the function of the LeuO regulator has been explored ( Fernández-Mora et al. , 2004 ; Hernández-Lucas et al. , 2008 ; Medina-Aparicio et al. , 2011 ; Gallego-Hernández et al. , 2012 ) and the performance of a large number of these proteins remain to be Summary A characterization of the LtrR regulator , an S. Typhi protein belonging to the LysR family is presented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>Introduction The LeuO protein belongs to the family of LysR-type transcriptional regulators ( LTTRs ) , the largest family of prokaryotic DNA binding proteins ( Pareja et al. , 2006 ; Momany and Neidle , 2012 ) with over 55 000 potential members in the Pfam database ( PF00126 , LysR - substrate ) ( Punta et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LeuO</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Uncharacterized Uncharacterized Uncharacterized Allantoin utilization Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Oxidative stress response Uncharacterized Uncharacterized Uncharacterized Not involved in virulence Uncharacterized Cysteine biosynthesis Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Uncharacterized Glycine cleavage system Lysine biosynthesis Uncharacterized Uncharacterized Uncharacterized Uncharacterized Amino acid degradation Uncharacterized Uncharacterized Uncharacterized d-serine detoxiﬁcation , d-amino acid dehydrogenase d-serine detoxiﬁcation , d-amino acid dehydrogenase Uncharacterized Involved in anaerobic NO protection Isoleucine and Valine biosynthesis Methionine biosynthesis Hydrogen peroxide stress response Hydrogen peroxide stress response Uncharacterize Name STM0014 Size ( amino acid ) STM0030 STM0040/NhaR STM0115/LeuO STM0164 STM0256 307 STM0333 STM0514/YbbS STM0606/YbdO STM0634/YbeF STM0692 STM0764 STM0859 STM0952/Hrg STM1429/YdhB STM1487/YnfL STM1523/YneJ STM1625/YdcI STM1677 STM1713/CysB STM2069 STM2180 STM2201/YeiE STM2281 STM2330 STM2420/XapR STM2424 STM2575 STM2644 STM2912 STM2982 STM3014/LysR STM3020 STM3120 STM3121 STM3235/YhaJ STM3245/TdcA STM3367/YhcS STM3607/YhjC STM3736 STM3736/DsdC 4.4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>LeuO is a LysR-type quiescent regulator that is under negative control by H-NS ( Klauck et al. , 1997 ; Chen et al. , B 2005 ; Navarre et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>On these grounds , we used a global ChIP-chip approach to identify LeuO-regulated genes to obtain comprehensive information about LeuO binding to its genomic targets in living bacterial cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Majumder , A. , Fang , M. , Tsai , K.J. , Ueguchi , C. , Mizuno , T. , and Wu , H.Y. ( 2001 ) LeuO expression in response-to-starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_5">
+( 2001 ) LeuO expression in response-to-starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></label>
+<input id="rp_similarity_5", type="checkbox">
+<div class="RP_similar">
+<li>LeuO expression in response-to-starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li></div>
+<li>In other genes , however , LeuO has been shown to repress transcription ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Hence , LeuO seems to repress SPI-1 by a major ` pathway ' involving HilD and HilE , and also by minor , HilD-and HilE-independent mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>A genetic screen identiﬁed LeuO and Lon as negative regulators and HilD as a positive regulator under SPI1-inducing conditions ( Fig. 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>Even more , a global antagonistic interplay between H-NS and LeuO was proposed , acting on some genes involved in stress response , such as cryptic chaperone/usher-type ﬁmbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In order to determine the nucleotides in LBS II involved in assT activation by LeuO , substitutions were generated on the assT 688/assT 80 gene fusion ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>It is important to notice that LeuO down-regulates proteins that are involved in the resistance to different pH conditions ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>LeuO Another LTTR , LeuO is known to be involved in the stress response regulation in various bacteria ( Fang et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>It appears that the physiological function of LeuO is important and that promoter relay mechanis evolved to provide the crucial regulation to control leuO expression in response to growth stress in a timely fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>Recent data have shown that LeuO is involved in the regulation of mechanosensitive channels that allow bacteria to survive during a rapid increase in turgor pressure ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Ante , V.M. , Bina , X.R. , and Bina , J.E. ( 2015a ) The LysRtype regulator LeuO regulates the acid tolerance response in Vibrio cholerae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>Bina , X.R. , Howard , M.F. , Ante , V.M. , and Bina , J.E. ( 2016 ) Vibrio cholerae LeuO links the ToxR regulon to expression of lipid A remodeling genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>The LeuO protein relieves H-NS-mediated repression and cooperates with DNA topological dynamism in this relay to regulate transcription of genes involved in branched chain amino acid synthesis ( Chen et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>Furthermore , the S. Typhi CRISPR-Cas locus is regulated by LeuO , H-NS and LRP [ 22 , 26 ] , which are involved in pathogenesis [ 27 -- 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Interestingly , in both cases , LeuO indirectly represses the cadAB operon expression and RpoS translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>It may be also signiﬁcant during infection : the Salmonella containing vacuole in an infected host cell is a nutrient limiting environment ( simulated by growth in LPM ) , and control of amino acid biosynthesis by LeuO may facilitate survival during the infection process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO is involved in the virulence of S. Typhimurium both in a mouse model and in Caenorhabditis elegans , and its role in Vibrio cholerae bioﬁlm formation has been reported ( 17 -- 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO expression is enhanced in stationary phase and by phosphorous restriction ( 10 , 56 ) ; it is also involved in Vibrio cholerae bioﬁlm formation and in the stringent-response ( 30 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>An average plot of H-NS occupancy with respect to LeuO binding site location in LeuO inducing conditions ( LPM ) and non-inducing conditions ( LB ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO binding in close proximity to H-NS Enteric bacteria encode the abundant DNA binding H-NS protein which acts as a global repressor of ~ 20 % of genes in S. Typhimurium ( Dorman , 2004 ; Dillon and Dorman , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The participation of global regulatory proteins such as LeuO , H-NS , and LRP , which have been implicated in virulence metabolism and other biological-processes , suggests that the CRISPR/Cas system responds to a wide variety of environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>In E. coli , by SELEX screening , LeuO was found to regulate genes involved in sulfa drug sensitivity and to increase its own expression during transition into stationary phase and after a week of culture , where H-NS concentration decreased ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Additionally , LeuO was reported to be a global regulator in S. Typhi , since it positively regulates the expression of assT and STY3070 ( casC ) and downregulates ompX , tpx , and STY1978 ( 14 -- 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>A number of transcriptional activators , including PhoP , SlyA , and LeuO , have been shown to antagonize H-NS silencing in E. coli and S. Typhimurium ( 86 -- 91 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>Both possess clusters of A 1T-rich horizontally acquired virulence genes that are silenced by the nucleoid-associated protein H-NS and regulated positively or negatively by wHTH TFs : for example , ToxR and LeuO in V. cholerae ; HilA , LeuO , SlyA and OmpR in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>LeuO and H-NS are involved in regulation of leuO and ompS1 ( 2 , 5 ) , in addition to bgl , cadC , dsrA , and rovA ( 27 , 45 , 50 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Our recent studies using protein two-dimensional gel electrophoresis have shown that LeuO affects the expression of at least 27 genes either positively or negatively ( H.-Y .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>The rssB gene , which encodes a response-regulator-like adaptor protein ( RssB ) for ClpXP proteolytic degradation of the RpoS stress and stationary phase sigma factor ( Klauck et al. , 2001 ) , was found to be a LeuO target .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Regulation of slrP expression by PhoP , Lon , LeuO , and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>In this study , we show that LeuO downregulates the expression of a major virulence determinant of Salmo-nella enterica serovar Typhimurium , the gene cluster known as Salmonella pathogenicity island 1 ( SPI-1 ) ( Galan and Curtiss , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_36">
+In contrast , LeuO repressed the expression of OmpX , STY1978 , and Tpx .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></label>
+<input id="rp_similarity_36", type="checkbox">
+<div class="RP_similar">
+<li>In contrast , LeuO down-regulated the expression of OmpX , Tpx , and STY1978 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_38">
+Shimada T , Bridier A , Briandet R , Ishihama A. Novel roles of LeuO in transcription regulation of E. coli genome : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></label>
+<input id="rp_similarity_38", type="checkbox">
+<div class="RP_similar">
+<li>Shimada , T. , Bridier , A. , Briandet , R. , and Ishihama , A. ( 2011 ) Novel roles of LeuO in transcription regulation of E. coli genome : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_40">
+Involvement of the leucine response transcription factor LeuO in the regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></label>
+<input id="rp_similarity_40", type="checkbox">
+<div class="RP_similar">
+<li>Shimada T , Yamamoto K , Ishihama A. Involvement of leucine-response transcription factor LeuO in regulation of the genes for sulfa-drug efflux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Involvement of th leucine response transcription factor LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Shimada T , Yamamoto K , Ishihama A. Involvement of the leucine response transcription factor LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Shimada , T. , Yamamoto , K. , and Ishihama , A. ( 2009 ) Involvement of the leucine response transcription factor LeuO in regulation of the genes for sulfa drug efflux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_45">
+Shi , X. , and Bennett , G.N. ( 1995 ) Effects of multicopy LeuO on the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></label>
+<input id="rp_similarity_45", type="checkbox">
+<div class="RP_similar">
+<li>Effects of multicopy LeuO on the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li></div>
+<li>Besides , LeuO has a negative effect on the expression of the small regulatory DsrA RNA involved in RpoS translation ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>Besides , LeuO has a negative effect on the expression of the small regulatory DsrA RNA that increases sigma factor RpoS translation ( Klauck et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Since LeuO positively regulates the cas3-divergent cse1 gene , we evaluated the role of this LysR regulator in cas3 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_50">
+The LysR-like regulator LeuO in Escherichia coli is involved in the translational regulation of rpoS by affecting the expression of the small regulatory DsrA-RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></label>
+<input id="rp_similarity_50", type="checkbox">
+<div class="RP_similar">
+<li>Klauck , E. , Bohringer , J. , and Hengge-Aronis , R. ( 1997 ) The LysR-like regulator LeuO ( I ) n Escherichia coli is involved in the translational regulation of rpoS by affecting the expression of the small regulatory DsrA-RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Klauck , E. , Bohringer , J. , and Hengge-Aronis , R. ( 1997 ) The LysR-like regulator LeuO in Escherichia coli is involved in the translational regulation of rpoS by affecting the expression of the small regulatory DsrA-RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+<li>The Expression of leuO in Response to the Starvation for Branched-Chain Amino Acids The conditional expression of leuO suggested that the LeuO protein might be important for maintaining cell-physiology under certain condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>The widespread effect of LeuO on gene-expression supports the possibility that LeuO is crucial for controlling cell-division under stress by promptly triggering changes in the expression of many genes important for cell-division .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>THE LeuO REGULATOR IN OTHER GRAM-NEGATIVE BACTERIA Studies in S. enterica serovar Typhi ( Figure 1 ) have shown that overexpression of LeuO induces the expression of two quiescent genes that encode for the OmpS1 and OmpS2 porins ( 70 , 71 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>It has been reported more recently that LeuO positively regulates the expression of rovA , which codes for the key regulator of virulence in Yersinia ( Lawrenz and Miller , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>LeuO regulates the bgl and cadAB operons , as well as the ompS1 , ompS2 , dsrA , and rovA genes ( 5 , 12 , 27 , 45 , 50 , 55 ) , and has been shown to be part of a promoter relay mechanism that explains the coordinate expression of the ilvIH-leuO-leuABCD gene cluster ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Thus , the expression of the assT-dsbL-dsbI gene cluster depends on the global regulatory proteins LeuO and H-NS , as well as on speciﬁc growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Although the LeuO protein , the gene product of the intermediate leuO gene , was shown to be important for transcription control in the ilvIH -- leuO -- leuABCD gene locus ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>In one interesting study , it has been shown that the role of LeuO was directly involved in the bacterial stringent-response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Nevertheless , since the ﬁrst report of LeuO as a transcriptional regulator , it was shown to be involved in the regulation of genes important for bacterial survival in stringent conditions ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In conclusion , the transcriptional regulation of the assT-dsbL-dsbI gene cluster in Salmonella enterica serovar Typhi is dependent on growth culture conditions , where the global regulators LeuO and H-NS are involved in positive and negative regulation , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>The LeuO regulator belongs to the LysR-type transcriptional regulators ( LTTRs ) ( 5 ) and represses the expression of DsrA RNA and cadAB ( 6 , 7 ) ; it is also involved in the activation of bgl and of the yjjQ-bglJ operons in Escherichia coli ( 8 -- 10 ) and rovA in Yersinia ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>The experiments described above indicated that both the LeuO and the OmpR regulators were involved in the positive regulation of ompS2 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>The proteomic data , the gene fusions , and the primer extension experiments described above indicated that LeuO is a genetic component involved in the regulation of STY3070 , assT , ompS1 , ompS2 , tpx , ompX , and STY1978 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>A search for genetic factors involved in controlling the expression of slrP unveiled LeuO , Lon , and the two-component system PhoQ/PhoP as novel regulators of slrP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>A role of H-NS and LeuO in the transcriptional regulation of the Type I-E CRISPR-Cas system from Escherichia coli K12 has also been reported [ 33 , 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Determination of the nucleotides involved in LeuO activation of the CRISPR/Cas genetic system in S. Typhi IMSS-1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Hence , the understanding of the LeuO regulon implies a role of bacterial genetic regulation in determining the host-immune-response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_70">
+Thus , LeuO relieved silencing of the bgl operon , the operon involved in the utilization of certain - glucosides ( 52 ) ; suppressed the effect of an hns mutation on cadC , which codes for the activator of the acid-inducible lysine decarboxylase ( 50 ) ; and also suppressed the negative effect of the AT4 region , the 72-bp gene silencer region located between the leuO gene and the leuABCD leucine biosynthetic operon ( 8 , 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></label>
+<input id="rp_similarity_70", type="checkbox">
+<div class="RP_similar">
+<li>Furthermore , expression of LeuO has been found to affect the expression of several genes inﬂuenced by mutations in hns : LeuO relieved silencing of the bgl operon , the operon involved in the utilization of certain b-glucosides ( Ueguchi et al. , 1998 ) ; suppressed the effect of an hns mutation on cadC , which codes for the activator of the acid-inducible lysine decarboxylase ( Shi and Bennet , 1995 ) ; and also suppressed the negative effect of the AT4 region , the 72 bp gene silencer region located between the leuO gene and the leuABCD leucine biosynthetic operon , by delimiting the transcriptional repression by H-NS through the binding of LeuO to the promoter region ( Chen et al. , 2001 ; 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li></div>
+<li>Alternatively , the LeuO protein might act as a classical transcriptional regulator and stimulate transcription of the ilvIH operon or of the leu operon in response to leucine limitation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10931352" target="_blank">10931352</a>]<br></li>
+<li>The roles of LeuO and SinR , a transcriptional regulator encoded within the SPI-6 pathogenicity island , in countersilencing the expression of the SPI-6 T6SS gene cluster need to be tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25916986" target="_blank">25916986</a>]<br></li>
+<li>LeuO was also shown to be involved in the regulation of the expression of several genes located throughout the E. coli chromosome ( 32 , 79 -- 81 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>H-NS is a master regulator of the S. Typhi genome , and signiﬁcant evidence has been compiled about the role of this protein in the expression of several genes belonging to the LeuO regulon ( 13 , 16 , 28 , 59 , 60 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_76">
+Stratmann T , Madhusudan S , Schnetz K. Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></label>
+<input id="rp_similarity_76", type="checkbox">
+<div class="RP_similar">
+<li>Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li></div>
+<li>In Salmonella Typhi LeuO is shown to positively regulate the porin gene-expression and regulate the virulence of bacteria ( Fernandez-Mora et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Expression of pRO310 and pFM413 is also shown in the original S. Typhi Tn-10 insertion mutant ( IMSSTN103 ) , where the transposon insertion promoted leuO expression and allowed us to identify LeuO as a positive regulator of ompS2 ( Fernández-Mora et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Transcriptional activation by LeuO is well documented but LeuO has also been shown to repress the acid stress regulator cadC , the small RNA dsrA and the ﬁmAICDFGH operon in E. coli ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ; Shimada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Further work , performed mostly in E. coli and Salmo-nella Typhi , has shown that LeuO plays a positive role in the regulation of a number of genes including the bgl operon involved in b-glucoside utilization ( Ueguchi et al. , 1998 ) , the yjjQ-bglJ operon encoding LuxR-type transcriptional regulators ( Stratmann et al. , 2008 ) , and the yjcRQP operon involved in Sulfa drug efflux ( Shimada et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>We present all the elements implicated in the positive ( + ) and negative ( ) regulation of each transcriptional unit from the S. Typhi CRISPR-Cas locus that have been identified in this work , as well as by Hernandez-Lucas et al. [ 26 ] and Medina-Aparicio et al. [ 22 ] including the LysR-type regulator LeuO , LRP ( leucine-response protein ) , H-NS ( heat-stable nucleoid-structuring protein ) , N-MM ( N-minimal medium ) and pH. 9 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>LeuO has also been reported to regulate positively rovA , a key regulator of virulence in Yersinia spp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Therefore , complex structure-function relationships in LeuO may account for its regulatory functions , acting as a repressor , antirepressor , or activator of a wide variety of nonrelated genes , the number of which is increasing ( 21 , 22 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>Interestingly , LeuO a transcriptional global regulator which is encoded outside of any SPI , is proposed to be part of a complex regulatory network that involves expression of several genes that help bacteria to survive stress conditions and , also , induces the expression of porins that have been shown to be immunogens and can thus be considered as antigenic candidates for acellular vaccines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>LeuO is a dual regulator that can induce the expression of several genes ( arrows ) and also is capable of repressing gene-expression ( lines ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>LeuO is an example of a global regulator whose level of expression is an important issue , since this has an effect on its many regulated genes that are involved in a variety of cellular functions , such as virulence and bacterial survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In this work , a novel set of genes belonging to the LeuO regulon are described ; interestingly , these genes are involved in a variety of biological-processes , suggesting that LeuO is a global regulator in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>When acting as a repressor it has been suggested to function as a backup for H-NS ; nevertheless in several cases LeuO acts as a derepressor of gene-expression by displacement or prevention of H-NS repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Also , in Salmonella it has been described as an interesting case of differential control of transcriptional regulation , which depends on LeuO concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Other notable LeuO target genes are sopA , encoding an effector protein that is translocated by the Salmonella pathogenicity island ( SPI ) 1 type-III-secretion-system , and sifA , the SPI-2 translocated effector gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>We also identiﬁed the genes coding for three other LysR-like regulators as LeuO targets : metR , yeeY and stm2180 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Previously , we described isolation , characterization , and regulation analysis of the quiescent porins OmpS1 and OmpS2 ; furthermore , we showed that the genes encoding these proteins are LeuO targets , and thus we considered these proteins relevant controls for proteomic analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>LeuO also activates the casABCDE operon ( Hernandez-Lucas et al. , 2008 ; Westra et al. , 2010 ; Medina-Aparicio et al. , 2011 ) that is part of the CRISPR / Cas defence system that provides ` immunity ' against mobile genetic elements ( Karginov and Hannon , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>In E. coli , RcsB regulates together with the auxiliary proteins GadE and BglJ acid stress resistance and the global regulators H-NS , LeuO and CRP , respectively , ( Castanie-Cornet et al. , 2010 ; Salscheider et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>Examples of bacterial functions under LeuO control include bioﬁlm formation in Vibrio cholerae ( Moorthy and Watnick , 2005 ) and E. coli ( Shimada et al. , 2011 ) , and Departamento de Genética , Facultad de Biología , Universidad de Sevilla , Apartado 1095 , Sevilla E-41080 , Spain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Here , LeuO controls a large regulon of genes , including virulence genes , many of which are silenced by H-NS ( Dillon et al. , 2012 ; Cordero-Alba and Ramos-Morales , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>LeuO is an H-NS antagonist that regulates positively genes that contribute to bile and acid resistance in V. cholerae ( Ante et al. , 2015a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></li>
+<li>It is clear that LeuO regulates a diverse set of genes and this has been expanded by a recent SELEX analysis in E. coli ( Shimada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Studies in a variety of gramnegative bacteria have shown that LeuO regulates transcription of genes involved in diverse physiological-processes , either as an activator or as a repressor ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ; Chen and Wu , 2005 ; Stratmann et al. , 2008 ; 2012 ; Shimada et al. , 2009 ; 2011 ; Dillon et al. , 2012 ; Hernandez-Lucas and Calva , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>A genomic analysis revealed that LeuO is a positive regulator of OmpS1 , OmpS2 , AssT , and STY3070 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Thus it appears that LeuO has a dual role as activator and repressor of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>3 4 5 12 Salmonella serovar Typhi gi 16761966 6.59 65.66 351.3 / 0 6 848.4 / 0 Salmonella serovar Typhi Salmonella serovar Typhimurium Salmonella serovar Typhi Salmonella serovar Typhi 32 44 gi 16759110 gi 16764195 7.20 5.17 47.51 19.80 7 57.7 / 261.2 54 8 123.8 / 287.5 38/222 .4 gi 16502500 gi 16503032 5.17 5.15 21.50 23.2 7.21 e 20 13 20 35 49.6 / 0 103.1 / 0 123.2 / Salmonella serovar Typhi Salmonella serovar Typhi Salmonella serovar Typhi Salmonella serovar Typhi gi 16760937 gi 16760937 gi 16760937 gi 16504014 5.09 5.06 5.03 6.12 51.89 52.45 52.47 51.89 SS-III ) / protein spot intensity ( OD ) of Salmonella serovar Typhi leuO FIG. 2 166 FIG. 2 -- Continued 166 The proteomic data mentioned above also revealed that LeuO represses the expression of tpx , ompX , and STY1978 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>RESULTS The LysR family transcriptional regulator LeuO controls assT-dsbL-dsbI expression in S. Typhi IMSS-1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_105">
+The LysR-type transcriptional regulator LeuO controls the expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></label>
+<input id="rp_similarity_105", type="checkbox">
+<div class="RP_similar">
+<li>The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li></div>
+<li>Hernández - Lucas I , Gallego-Herna ́ndez AL , Encarnación S , Fernández - Mora M , Martınez-Batallar AG , Salgado H , Oropeza R & Calva E ( 2008 ) The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21175741" target="_blank">21175741</a>]<br></li>
+<li>Hernández-Lucas , I. , Gallego-Hernández , A.L. , Encarnación , S. , Fernández-Mora , M. , Martínez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Molecular Microbiology ( 2012 ) 85 ( 6 ) , 1072 -- 1089 doi :10.1111 / j.1365-2958.2012.08162.x First published online 23 July 2012 LeuO is a global regulator of gene-expression in Salmonella enterica serovar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO is a global regulator of gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24375101" target="_blank">24375101</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_112">
+Dillon , S.C. , Espinosa , E. , Hokamp , K. , Ussery , D.W. , Casadesus , J. , and Dorman , C.J. ( 2012 ) LeuO is a global regulator of gene-expression in Salmonella enterica sero-var Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631437" target="_blank">28631437</a>]<br></label>
+<input id="rp_similarity_112", type="checkbox">
+<div class="RP_similar">
+<li>Dillon , S.C. , Espinosa , E. , Hokamp , K. , Ussery , D.W. , Casadesús , J. , and Dorman , C.J. ( 2012 ) LeuO is a global regulator of gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24720747" target="_blank">24720747</a>]<br></li>
+<li>Dillon , S.C. , Espinosa , E. , Hokamp , K. , Ussery , D.W. , Casadesus , J. and Dorman , C.J. ( 2012 ) LeuO is a global regulator of gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26687718" target="_blank">26687718</a>]<br></li>
+<li>Dillon , S.C. , Espinosa , E. , Hokamp , K. , Ussery , D.W. , Casadesus , J. , and Dorman , C.J. ( 2012 ) LeuO is a global regulator of gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li></div>
+<li>Together , all these data indicate that LeuO regulates proteins involved in several biological-processes and may be a global regulator in .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The Salmonella enterica Serovar Typhi LeuO global regulator forms tetramers : residues involved in oligomerization , DNA binding and transcriptional regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>The Salmonella enterica Serovar Typhi LeuO Global Regulator Forms Tetramers : Residues Involved in Oligomerization , DNA Binding , and Transcriptional Regulation Carmen Guadarrama , Abraham Medrano-López , Ricardo Oropeza , Ismael Hernández-Lucas , Edmundo Calva Instituto de Biotecnología , Universidad Nacional Autónoma de México , Cuernavaca , Morelos , Mexico LeuO is a LysR-type transcriptional regulator ( LTTR ) that has been described to be a global regulator in Escherichia coli and Sal-monella enterica , since it positively and negatively regulates the expression of genes involved in multiple biological-processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LysR-Type Transcriptional Regulator LeuO Controls Expression The of Several Genes in Salmonella enterica Serovar Typhi † I. Hernández - Lucas ,1 ‡ A. L. Gallego-Herna ́ndez ,1 ‡ S. Encarnación ,2 M. Fernández - Mora ,1 A. G. Martınez-Batallar ,2 H. Salgado ,2 R. Oropeza ,1 and E. Calva1 * Departamento de Microbiologıa Molecular , Instituto de Biotecnologıa , Universidad Nacional Autónoma de México , Cuernavaca , Morelos 62210 , México ,1 and Centro de Ciencias Genómicas , Universidad Nacional Autónoma de México , Cuernavaca , Morelos 62210 , México2 Received 11 October 2007/Accepted 11 December 2007 LeuO is a LysR-type transcriptional regulator that has been implicated in the bacterial stringent-response and in the virulence of Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Recently , LeuO has been denominated as a global antagonist of H-NS in E. coli and in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Transcriptional regulation of sdiA by cAMP-receptor protein , LeuO , and environmental signals in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LeuO binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>To determine whether LeuO recognizes a speciﬁc DNA sequence , two bioinformatics approaches were used : pattern matching and pattern discovery .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Three regions with high A T content were replaced by G C , considering that LeuO binds preferentially to sites with high A T ( 9 , 10 , 11 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Several regions in LBS I and LBS II with high A T content were replaced by G C nucleotides , considering that LeuO binds preferentially to sites with high A T content ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>LeuO LPM target genes ( n = 178 ) A None H-NS H-NS + RNAP only RNAP only Occupancy 2 3 4 Occupancy 3 4 5 5 6 2 1 1 LPM LB 105 50 5 63 5 30 11 46 H-NS B LPM LB -- 500 -- 400 -- 300 -- 200 -- 100 0 500 Distance from centre of LeuO binding site ( bp ) RNAP C LPM LB -- 500 -- 400 -- 300 -- 200 -- 100 0 500 Distance from centre of LeuO binding site ( bp ) Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The extremely high A + T content of both logos ( Fig. 4B ) is consistent with the proposed role of LeuO as an H-NS antagonist as H-NS binds to A + T rich sequences ( Lucchini et al. , 2006 ; Navarre et al. , 2006 ; Dillon et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>A Species Dataset Number of Average Total % A+T Source Sequences Size Size ( bp ) ( bp ) Salmonella LeuO + Typhimurium HNS 50.5 This study Escherichia E. coli coli LeuO 59.9 Shimada et al. ( 2011 ) bits bits B 2 n = 50 R = 20.7 E. coli 1 1 2 2 A A T A T 3 3 4 5 4 5 T 6 7 8 9 A ATAT AAAT AATT A T A T AT TTTTATC AT T TA C A G C T A TA C T C GGGCT G 0 CG A A A C G A GT A G A C CC G C CGG 1 C A T 6 7 8 9 10 11 10 11 T N11 A 12 12 2 n = 36 S. Typhimurium 13 13 R = 16.8 14 14 A 15 15 A 16 16 A 1 TTATAT A A T T TAAA AA T A AA AAAGCGTGTTG GTG TA C A C AGAT T 0 GGCG CAG C G C A G A GT CCG C T G T C C TGT A TG A GC CCC A TG GT G C C GG 17 18 19 20 21 17 18 19 20 21 A. Details of the manually curated S. Typhimurium and E. coli LeuO datasets used to derive the LeuO binding motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Identiﬁcation of an AT-rich LeuO DNA binding motif The ability of proteins to recognize speciﬁc DNA sequences is a key feature of many biological processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>This result suggests that there are no other highafﬁnity LeuO binding sites in this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>The locations of predicted LeuO binding sites are indicated by arrows and protected regions are indicated by asterisks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Global identiﬁcation and categorization of LeuO binding sites by ChIP-chip .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Validation of predicted LeuO binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO binding was observed in close proximity to a previously mapped H-NS binding site at leuO ( Dillon et al. , 2010 ) , consistent with LeuO functioning as an H-NS antagonist in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>First , the S. Typhimurium LeuO + H-NS binding regions described above in which LeuO binding overlapped with or was close to an H-NS binding location were selected for DNA sequence motif analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Therefore , we wanted to determine if LeuO binding was associated with a speciﬁc DNA motif in our ChIP-chip binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>A. EMSA analysis was used to validate predicted LeuO binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO binding site analysis revealed a logo conforming to the TN11A motif common to LysR-type transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>RNA polymerase recruitment to LeuO target genes LTTRs are known to bind sites overlapping or adjacent to the target promoter to repress or activate transcription ( Maddocks and Oyston , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>As previously reported ( 26 ) , assT was not expressed in the wild-type strain with the control vector ( data not shown ) , although it was indeed induced in a fusion that contains 688 bp upstream and 80 bp downstream from the assT translation start site ( pKK232-9 assT 688/assT 80 ) , upon LeuO overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>DNA sequence analysis To test for the presence of over-represented motifs in DNA sequences bound by LeuO in E. coli and S. Typhimurium , the Quantitative reverse transcriptase PCR ( qRT-PCR ) SELEX screening ( Shimada et al. , 2011 ) and ChIPOTle datasets were manually curated to deﬁne short binding regions that could be analysed by the Meme motif-ﬁnding program .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>We also created a list of DNA sequences bound by LeuO in E. coli by extracting 500 bp DNA sequences that centred on the genomic co-ordinate provided for each LeuO binding site by Shimada et al. ( 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>For the SELEX data this involved extracting 500 bp of DNA sequence centred on the genomic co-ordinate presented for each LeuO binding site in Shimada et al. ( 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>We used the Motif Alignment and Search Tool ( MAST ) , which is part of the MEME suite of tools used for motif discovery and searching ( Bailey et al. , 2009 ) , to generate a position-speciﬁc scoring matrix ( PSSM ) from the LeuO sequence logos .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>( B ) Upstream regulatory sequence of assT. The location of the PLeuO ( 164 ) promoter observed in MA medium and the two transcription start sites , P1 ( 31 ) and P2 ( 36 ) , observed in N-minimal medium are shown , as well the corresponding 10 TATA boxes , which are underlined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Furthermore , we evaluated 131 bp upstream and 38 bp downstream of the 5 intergenic region of STY1978 in order to see whether LeuO bound at a greater distance , but protection from DNase I was not detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Moreover , LeuO and OmpR bound in close proximity , but independently , to the 5 upstream regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>LeuO bound to the 5 upstream regulatory region of ompS2 in two deﬁned boxes , LeuO ( I ) and LeuO ( II ) , at 0.03 M and higher ( Fig. 2 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>Speciﬁcally , LeuO bound at a region with two sites : one between -134 and -125 , LeuO ( I ) , and another at -113 to -99 , LeuO ( II ) , where the ﬁrst site generated greater protection by LeuO than the second ( Fig. 4F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In the ﬁrst method , the experimental LeuO regions protected from DNase I were used as a training set to run the consensus program ( 16 ) ; thus , we obtained alignments and weight matrices of binding sites that were 8 to 12 bp long .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>For the 5 region of ompX , the LeuO DNase I-protected sites were detected at nucleotides 1 to 9 and 28 to 60 ( Fig. 3d , panel B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Previously , we demonstrated that a TATgTcATAT region located at positions 125 to 134 with respect to the transcriptional start site was necessary for the LeuO induction of the ompS1 gene ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>LeuO speciﬁcally bound to the 5 intergenic regions of ompS2 , assT , STY3070 , ompX , and tpx , while it was not observed to bind to the promoter region of STY1978 , suggesting that LeuO regulates in direct and indirect ways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>A previous report showed that LeuO bound to the promoter region of ompS2 at 93 to 109 and 139 to 152 bp with respect to the transcription start site ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>As mentioned above , LeuO is a positive activator of the CRISPR / Cas operon in S. Typhi ; by footprinting experiments , we showed previously that LeuO binds to nucleotides 56 to 96 ( LeuO binding site I [ LBS I ] ) and 102 to 131 ( LBS II ) with respect to the transcriptional start site of casA ( STY3070 ) ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>These data showed that the binding of H-NS and StpA was located at two sites and that LeuO bound upstream from the ompS1 regulatory region , overlapping with one binding site of H-NS and StpA , but not interacting with the promoter region and promoting a change in the local DNA architecture .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Together with this genetic evidence , it was found that LeuO could displace H-NS from the 5 ′ regulatory region ( Fig. 6B and C ) ; and a binding site for H-NS , StpA and LeuO was mapped around the previously deﬁned OmpR-binding box IV , -124 to -107 bp upstream of the transcriptional start for promoter P1 ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>A sequence with similarity to the consensus OmpR-binding site ( thick underline ) , the site for the binding of OmpR ( thin dashed line ) , and two boxes for the binding of LeuO ( I and II ) ( thick dashed lines ) are also represented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126450" target="_blank">15126450</a>]<br></li>
+<li>Nevertheless , the LeuO binding site ( between -137 and -99 ) on ompS1 shares the sequence ANTCA ( Fig. 4F ) with the binding sites at the ompS2 and leuO genes , and with a site for LeuO activity on dsrA ( Repoila and Gottesman , 2001 ; Chen et al. , 2003 ; Fernández-Mora et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Interestingly , the sequence at the LeuO ( II ) binding site ( TATATATCCT ) presents homology to the H-NS nucleation site of the proU gene ( AATATATCGA ) ( Bouffartigues et al. , 2007 ) and the mt2 mutant at this site ( TTTTTTTCCT ) showed less affinity for H-NS ( Fig. 5A and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>Previously , we determined by DNase protection footprinting experiments the presence of two LeuO binding sites ( LBS I and LBS II ) , located at bp 276 to 286 and bp 295 to 328 upstream of the assT translation start site ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>In S. enterica serovar Typhi IMSS-1 , we showed that the LeuO-depen-dent promoter ( PLeuO ) , located at bp 164 upstream of the assT translation start site ( 26 ) , is activated only in the presence of LeuO , resulting in the transcription of assT , dsbL , and dsbI as an operon ( Fig. 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Figure 3 shows the DNA sequences recognized by LeuO in each member of the LeuO regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Mapping of the LeuO recognition sequences in the regulatory region of casA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , in the 5 intergenic region ( 41 bp ) of STY1978 , no LeuO protected sites were detected , suggesting that LeuO indirectly regulates the expression of this gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Interestingly , bioinformatics analyses showed that LeuO did not recognize a speciﬁc motif in the promoter region of the LeuO-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>In addition , the lack of either signiﬁcant oligonucleotides or dyads in the upstream regulatory region of the LeuO-dependent genes supported the notion that the LeuO binding sites are not sequence speciﬁc and may not be easily represented with a consensus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Three other protected sites were identiﬁed further upstream of the leuO ORF which did not contain a predicted site but were located in a 60 bp region of high A + T content ( 66 % ) , consistent with LeuO binding to A + T rich sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The envR 5 ′ regulatory region ( PenvR ) contains two predicted LeuO binding sites located in close proximity to each other ( 81 bp spacing ) and displayed a higher affinity for LeuO binding than the pipA region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>To analyze the ability of tetrameric LeuO-6 His-NC to bind DNA , a 350-bp DNA fragment ( F 1 ) from the ompS1 promoter region containing two LeuO binding sites ( 13 ) was used in an EMSA ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>RNA polymerase occupancy was plotted for a distance of + / -500 bp from the centre of the LeuO binding sites and was found to peak with respect to the centre of LeuO binding sites in both growth media .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Average H-NS and LeuO ChIP occupancies were calculated + / -500 bp with respect to the centre of the LeuO binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Averaged LeuO and H-NS data were plotted in 100 bp windows with respect to the centre of ChIPOTle-deﬁned LeuO binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The locations of these H-NS binding regions were compared with the LeuO binding sites and those LeuO binding sites that overlapped with , or were located within 200 bp of , an H-NS binding region were classiﬁed as LeuO + H-NS sites ; the remaining sites were classiﬁed as LeuO sites ( Fig. 2C ) ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>ChIPOTle analysis of both datasets and comparison with the location of LeuO binding sites revealed that 173 of the 178 LeuO binding sites were also associated with RNA polymerase binding in LPM ( co-occupancy was deﬁned as a LeuO binding region located within 200 bp of an RNA polymerase binding region ) , whereas only 61 of the LeuO binding sites were occupied by RNA polymerase upon growth in LB ( Fig. 3A and Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Genome-wide prediction and validation of LeuO binding sites The identiﬁcation of the 28 bp LeuO DNA binding motifs suggested that accurate prediction of LeuO binding sites in E. coli and S. Typhimurium genome sequences would be possible .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Conversely the predicted LeuO binding sites for sifA , sopA and pipA are all located downstream of the start codons , where LeuO binding is likely to have a repressive effect on transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The second method , pattern discovery , assumed that LeuO binding sites are unknown ; thus , the regulated LeuO sequences together with the Oligo and dyad analysis programs were used to identify a motif in the LeuO interacting sites ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The parameters used to determine the LeuO consensus sequence are available at http://www.ccg.unam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>To determine a consensus sequence for LeuO interaction , the LeuO sites determined in this study were analyzed by using two bioinformatics approaches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>unam.mx / / tools/LeuO / ) , indicating that the interacting sites are not sequence speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LeuO</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>While LeuO is known to antagonize H-NS , its own gene is repressed by H-NS ( Klauck et al. , 1997 ; Chen et al. , 2001 ; Stratmann et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>LeuO is a quiescent LTTR under standard laboratory conditions because leuO transcription is repressed by H-NS ( Klauck et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>These experiments conﬁrmed that LeuO represses SPI-1 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>As LTTRs often auto-regulate their own expression ( Maddocks and Oyston , 2008 ) , it is possible that LeuO establishes a heterotypic interaction with the corresponding LTTR family member to facilitate this auto-regulation Fluorescence ( A.U. ) LeuO motif locations : 3,582,131 - 3,582 158 3,582,239 - 3,582,266 LeuO motif location : no LeuO motif 1,132,525-1 ,132,552 A pipA envR SL3361 1,132,750 3,579,000 1,131,750 3,582,500 0 nM 200nM 400nM 600nM 0 nM 200nM 400nM 600nM 0 nM 200nM 400nM 600nM Fold chang envR SL3361 pipA B C 1000 PenvR No LeuO LeuO 6 SL1344 Tpop-leuO SL1344 Tpop-ΔleuO 800 5 4 600 3 * * * * * 400 2 200 1 0 sifA sopA pipA 0 envR 3582000 3582200 3582300 3582100 3582400 envR Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>The pipA and envR genes each contain one and two predicted LeuO sites respectively , while SL3361 , which is located beside envR and does not contain a predicted LeuO binding site motif , was used as a negative control ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>In other genes , however , LeuO has been shown to repress transcription ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>In our strategy , we exploited knowledge of LeuO protein expression : the leuO gene is expressed maximally in bacteria growing in phosphate-limited minimal medium on entry into stationary phase ( VanBogelen et al. , 1996 ; Fang et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_8">
+Stratmann , T. , Madhusudan , S. , and Schnetz , K. ( 2008 ) Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></label>
+<input id="tu_similarity_8", type="checkbox">
+<div class="TU_similar">
+<li>Stratmann , T. , Madhusudan , S. and Schnetz , K. ( 2008 ) Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Stratmann T , Madhusudan S , Schnetz K. Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li></div>
+<li>Curiously , ompS1 is negatively regulated by the HN-S nucleoid protein , and ompS2 is positively regulated by the LeuO regulator by derepressing the HN-S action .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Other notable LeuO target genes are sopA , encoding an effector protein that is translocated by the Salmonella pathogenicity island ( SPI ) 1 type III secretion system , and sifA , the SPI-2 translocated effector gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>32 6 Although the divergently transcribed cse1 and cas3 genes share a 5 cents intergenic region , we found that LRP and LeuO only control cse1 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>The tpx gene was also negatively regulated by LeuO ; this gene is proposed to code for a periplasmic antioxidant enzyme that is induced under several pH conditions ( 51 ) , in the exponential growth phase , and during bioﬁlm formation ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>As previously reported ( 26 ) , assT was not expressed in the wild-type strain with the control vector ( data not shown ) , although it was indeed induced in a fusion that contains 688 bp upstream and 80 bp downstream from the assT translation start site ( pKK232-9 assT 688/assT 80 ) , upon LeuO overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Second , the presence of RNAP at 105 LeuO target genes in inducing conditions ( and its absence in non-inducing conditions ) suggests that LeuO recruits RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>We show that , under SPI1-inducing conditions , LeuO and Lon are indirect regulators of the slrP expression that act through HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>In contrast , LexA-S54A , where S54A is located in the HTH motif , and LexA-P139A , where P139A is located in the RD-I central subdomain , repressed sulA : : lacZ reporter expression as effectively as the LexA-LeuO wt ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>In contrast , LeuO repressed the expression of OmpX , STY1978 , and Tpx .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>In the case of ompX and STY1978 , down-regulation by LeuO was also observed at different ODs ( Fig. 2f and g ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>The Expression of leuO in Response to the Starvation for Branched-Chain Amino Acids The conditional expression of leuO suggested that the LeuO protein might be important for maintaining cell physiology under certain condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>The essential role of LeuO in the ability of cells to overcome growth stress was conﬁrmed by testing the leuO knockout MC4100 strain , MF1 , under the same growth conditions ( 71 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>Since LeuO positively regulates the cas3-divergent cse1 gene , we evaluated the role of this LysR regulator in cas3 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Elimination of the assT regulatory region , including the LeuO-dependent promoter ( assT 78/dsbL 105 , dsbL 297 / dsbI 107 , and dsbI 498/dsbI 107 cat fusions ) , abolished the transcriptional activation generated by LeuO , indicating that the regulatory region of assT is essential for assT-dsbL-dsbI expression mediated by LeuO , and suggesting a LeuO-dependent operon in S. Typhi IMSS-1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Further support of the assT , dsbL , and dsbI operon organization comes from the RT-PCR ampliﬁcation of a 2,025-bp fragment that contained most of the assT structural gene , the dsbL , and part of the dsbI genes ( dsbL 1232 to dsbI 107 ) detected upon LeuO overexpression ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>Two of these sites ( AT7 and AT3 ) were mapped upstream of the leuO promoter , whereas the third site was located downstream of the leuO gene , and it was suggested that H-NS represses leuO expression by interacting with an AT8 region located between LeuO binding sites AT7 and AT3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>To identify the LeuO-regulated proteins , spots of interest were excised , trypsin digested , and analyzed by MALDI-TOF MS. These analysis showed that LeuO activated the expression of OmpS1 ( ﬁve isoforms ) , OmpS2 , AssT ( two isoforms ) , and STY3068 , the third gene of the STY3070-STY3064 operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>Moreover it has been reported that LeuO and the silencing proteins H-NS and StpA are the main positive and negative regulators of ompS1 expression in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>LeuO positively regulates the ompS1 expression by derepressing both the promoters and antagonizing the negative effect of H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>© 2013 John Wiley & Sons Lt Results Activation of leuO transcription represses SPI-1 To conﬁrm previous evidence indicating that SPI-1 might be repressed by LeuO ( Dillon et al. , 2012 ) , we compared the expression of selected SPI-1 genes in the presence and in the absence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>LeuO acts as a derepressor for ompS1 expression by binding upstream of the promoter and not in the proximal region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The LeuO regulator belongs to the LysR-type transcriptional regulators ( LTTRs ) ( 5 ) and represses the expression of DsrA RNA and cadAB ( 6 , 7 ) ; it is also involved in the activation of bgl and of the yjjQ-bglJ operons in Escherichia coli ( 8 -- 10 ) and rovA in Yersinia ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>( C ) Effect of LeuO on slrP expression in the presence and in the absence of HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>LeuO was also shown to be involved in the regulation of the expression of several genes located throughout the E. coli chromosome ( 32 , 79 -- 81 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>The expression of ompS1 and tpx ( as regulatory regions fused to the cat gene ) was activated or repressed in the presence of the LeuO wt , respectively ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>LeuO HISTORY The ﬁrst report of the LeuO regulator was by the localization of the leuO gene between the leuABCD and ilvIH operons ; upon which it was included in the LysR family due to its amino acid sequence similitude with other members of the family ( 47 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>STY3070 in Salmonella was later determined to be the casC gene of the CRISPR/Cas system ; and its repression was found to depend also on Lrp , and its expression induced in minimal media independent of LeuO ( 78 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Interestingly , the transcriptional results showed that LeuO positively induced STY3070 , assT , and ompS1 at different points of the growth curve , and the highest activity was observed in stationary phase ( Fig. 2a to c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>When LeuO was induced in the wild type , expression was observed only from P1 ; whereas in the ompR mutant the expression came from P2 ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>The sense strand of the S. Typhi CRISPR-Cas locus encodes two transcriptional units : the cse1-cse2-cas7-cas5-cas6e-cas1-cas2-CRISPR operon and the scse2 RNA Previously , we showed that there was minimal expression of the CRISPR-Cas system in rich medium and that LeuO overexpression induces transcriptional activity of the cse1-cse2-cas7-cas5-cas6e-cas1-cas2-CRISPR operon ( cas-CRISPR ) in this condition [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>To determine whether LeuO is the casA activator in N-minimal medium , the pKK-375 fusion was introduced into the IMSS-1 leuO strain : we found that LeuO does not induce casA expression in N-minimal medium , since the activity values in the leuO-deﬁcient strain were the same as those in the wild-type strain ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Using transcriptional fusions , RT-PCR , and Northern experiments , we demonstrated that the entire CRISPR/Cas system is induced as a large polycistronic mRNA in rich medium in the presence of LeuO , supporting an operon organization ( Table 1 ; Fig. 2 ) that forms part of the LeuO regulon in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>The transcription assay showed null expression when the TATA box was mutated in all of these fusions in the presence of overexpressed LeuO ( data not shown ) , showing that PLeuO indeed transcribes assT , dsbL , and dsbI as an operon in MA medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>The data indicate that assT is induced in N-minimal medium in the absence of LeuO , since the same activity was observed in all of the constructions in a leuO isogenic background ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22343301" target="_blank">22343301</a>]<br></li>
+<li>These data indicate that transcriptional expression in MA medium in the presence of overexpressed LeuO , as well as that in N-minimal medium in the absence of overexpressed LeuO , is driven by the same promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21398529" target="_blank">21398529</a>]<br></li>
+<li>Interestingly , in both cases , LeuO indirectly represses the cadAB operon expression and RpoS translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>This possibility is supported by the observation that LeuO and H-NS are both known to repress the ﬁmAICDFGH operon in E. coli ( Shimada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Transcriptional activation by LeuO is well documented but LeuO has also been shown to repress the acid stress regulator cadC , the small RNA dsrA and the ﬁmAICDFGH operon in E. coli ( Shi and Bennett , 1995 ; Repoila and Gottesman , 2001 ; Shimada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>Previously , we have determined that the cse1 promoter is repressed by the global regulators H-NS and LRP whereas LeuO participates in its positive regulation ; also , it can be expressed independently of LeuO in N-MM [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>LeuO expression is enhanced in stationary phase and by phosphorous restriction ( 10 , 56 ) ; it is also involved in Vibrio cholerae bioﬁlm formation and in the stringent response ( 30 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>These results suggest that LeuO has the ability to differentially repress gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18156266" target="_blank">18156266</a>]<br></li>
+<li>An interesting observation was that the LeuO concentration differentially affects ompS1 and ompS2 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>LeuO is a dual regulator that can induce the expression of several genes ( arrows ) and also is capable of repressing gene expression ( lines ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>It is interesting that at the highest levels of LeuO induction ompS1 expression increased whereas ompS2 expression decreased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+<li>In Y. enterocolitica , LeuO was found to positively regulate rovA and , in turn , H-NS also negatively regulates its expression ( 86 ) ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>In E. coli , by SELEX screening , LeuO was found to regulate genes involved in sulfa drug sensitivity and to increase its own expression during transition into stationary phase and after a week of culture , where H-NS concentration decreased ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>It was then subcultured in LB medium with tetracycline ( 10 g/ml ) , kanamycin ( 30 g/ml ) , and IPTG ( 1 mM ) to induce expression of LexADBD-LeuO hybrid proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659766" target="_blank">24659766</a>]<br></li>
+<li>For LeuO protein puriﬁcation , E. coli BL21 ( pIZ1871 ) was grown in YT broth , and adding 1 mM IPTG induced LeuO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>It is intriguing that conditions known at present for LeuO expression are extreme and that in many studies it has to be overexpressed to analyze its function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>It is possible that LeuO and H-NS function together to repress transcription of these genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22804842" target="_blank">22804842</a>]<br></li>
+<li>It is thus conceivable that activation of LeuO synthesis under speciﬁc circumstances can permit expression of genes that are usually repressed by H-NS and its paralogues ( Dorman , 2007 ; Hernandez-Lucas and Calva , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>The expression of leuO is repressed by H-NS , although there are some stress conditions when LeuO can be detected in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Regulation of hilE expression by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24354910" target="_blank">24354910</a>]<br></li>
+<li>Regulation of slrP expression by PhoP , Lon , LeuO , and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25182488" target="_blank">25182488</a>]<br></li>
+<li>The ompS2 gene is expressed at lower concentrations of LeuO , whereas ompS1 is expressed at higher concentrations where ompS2 expression is repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>The highest level of ompS1 expression ( ~ 25 000 U ) was obtained when LeuO was induced at 100 mM IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17908208" target="_blank">17908208</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

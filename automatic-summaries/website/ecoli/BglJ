@@ -1,0 +1,648 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - BglJ</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">BglJ</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">BglJ transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The search for proteins with homology to the putative BglJ protein yielded other members of this family including FimZ , UvrC , MalT , RcsA , NarP , and NarL ( ALTSCHUL et al. 1990 ; STOUTet al. 1991 ; SWENSOaNnd CLEGG1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8725214" target="_blank">8725214</a>]<br></li>
+<li>As LeuO is a virulence factor in S. enterica ( 32 , 57 ) and as YjjQ , which is coencoded with BglJ , is presumably important for infection by avian-pathogenic E. coli ( 34 ) , it is conceivable that certain conditions in the host environment induce their expression , which in turn should also relieve repression of the bgl operon and allow its induction by substrate ( aryl - , D-glucosides ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In the absence of BglJ the respective 50-RACE product was apparent but very weak .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Published online 13 December 2013 Transcriptional regulation by BglJ -- RcsB , a pleiotropic heteromeric activator in Escherichia coli Silja Lucia Salscheider , Andreas Jahn and Karin Schnetz * Received July 26 , 2013 ; Revised November 20 , 2013 ; Accepted November 21 , 2013 ABSTRACT The bacterial Rcs phosphorelay signals perturb-ations of the bacterial cell envelope to its response-regulator RcsB , which regulates transcription of multiple loci related to motility , biofilm formation and various stress responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The normalized qRT-PCR values conﬁrm that all tested loci are activated when BglJ is present ( Figure 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Previously , we have shown that the CRISPR system can be activated in E. coli when the concentration of the transcription factor LeuO is artificially increased by transformation with a leuO-overexpressing plasmid .21 The promoters of the leuO gene have been characterized recently , and it has been shown that the heterodimeric transcriptional-regulator RcsBBglJ is able to induce leuO expression .26 Both transcriptional-regulators , RcsB and BglJ , belong to the FixJ/NarL-type family and regulate several genes in the form of RcsB-BglJ heterodimers in E. coli K12 if BglJ is expressed constitutively .26,27 Microarray analyses revealed that , among others , the transcription of casA gene was induced by RcsB-BglJ in a LeuO-dependent manner .26 In the present study , we analyzed the role of RcsB-BglJ on the induction of the CRISPR system in E. coli , by comparing the CRISPR promoter activities , crRNA processing and Cascade gene expression in strains expressing either BglJ or LeuO constitutively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>To test whether crRNA maturation is induced upon upregulation of LeuO , we analyzed the effect of BglJ on CRISPR defense , as leuO transcription is strongly activated when BglJ is constitutively expressed .26 We found that the constitutive expression of BglJ activates the Cascade transcription to equal levels as obtained by constitutive expression of the LeuO protein itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Next , the expression levels directed by BglJ-RcsB binding-site mutants 1 to 3 ( Fig. 4A ) were tested in the absence or presence of BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>However , in the isogenic crp mutants expression levels were very low ( 5 units ) irrespective of the absence or presence of BglJ ( Figure 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Thirdly , to investigate whether LeuO can downregulate its expression in the presence of RcsB-BglJ , we performed the experiments using bglJC strain T570 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Expression of these fusions and their activation by BglJ -- RcsB was tested in the absence and presence of BglJ ( using strains carrying allele yjjP-yjjQ-bglJ and bglJC , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>We demonstrate that the Pcas promoter is activated by constitutive expression of BglJ to the same extent as in presence of elevated LeuO levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>In contrast to the constitutive expression of LeuO , the strong activation of the Pcas promoter in presence of BglJ did not lead to a significant accumulation of the crRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>The results of expression analyses in the bglJ deletion and bglJC strain backgrounds as well as in the bglJC rcsB background demonstrate that all 10 promoter lacZ fusions are specifically activated in the presence of BglJ , ranging from a 4 - to 73-fold activation , and that the activation by BglJ is RcsB dependent ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>This was demonstrated by chromosomal integration of the mutant promoter lacZ fusions and expression analyses in the absence and presence of BglJ ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>However , LeuO did not cause full activation ( approximately 200 units in the presence of LeuO compared to 690 units in the presence of BglJ ) , possibly because plasmid-directed expression of the pleiotropic LeuO affects the accuracy of the - ga-lactosidase assay ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>However , when we expressed BglJ from plasmid pKETS1 the expression level increased to 338 Miller units ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Interestingly , binding site mutant 2 also affected derepression of the bgl promoter-lacZ fusion by BglJ-RcsB , as the expression level increased only 8-fold , from 12 to 92 units , when BglJ was expressed ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In dnaK mutants , downstream repression of bgl by H-NS is speciﬁcally reduced , whilst BglJ and LeuO have no impact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>These data demonstrate that upstream and downstream repression of bgl by H-NS is regulated independently by LeuO and BglJ , as well as DnaKJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Likewise , as shown here , bgl promoter activity is increased in the bglJ and leuO mutants , which express BglJ and LeuO constitutively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>These mutations increase the bgl promoter activity , as shown here for BglJ and LeuO and as known for RpoS and Crl , and thus compensate indirectly for the more efﬁcient downstream repression in the lon mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Indeed , in the DrcsB mutant expression of BglJ from plasmid pKETS1 did not cause activation of the leuO promoter lacZ fusion and only background expression levels of 3 units were detected Transcription of leuO is repressed by H-NS and StpA Previous studies have shown that transcription of leuO is repressed by the nucleoid-associated protein H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In this strain the leuO promoter lacZ fusion is repressed by H-NS and StpA , while BglJ is absent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>BglJ is a transcriptional-regulator whose constitutive expression causes activation of the H-NS - and StpA-repressed bgl ( aryl - , D-glucoside ) operon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition to being controlled by H-NS , StpA , LeuO , and BglJ-RcsB , the bgl promoter is CRP dependent and is repressed by FIS ( 4 , 48 , 52 ) DISCUSSION BglJ , a LuxR-type transcriptional-regulator , and LeuO , a LysR-type transcriptional-regulator , relieve repression of the bgl operon by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Number Loci of known function 39 38 5 2 13 11 1 Total RcsB-dependent leuO , rhsA , rhsB , rhsC , setA , sfsB , osmB , btuB , blc cas , rhsE , elfA bgl , chiA LeuO-dependent Co-activated by LeuO and BglJ Loci of putative function in inner/outer membrane Loci of unknown function RcsB-independent csrB Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In contrast , expression of yecT and ynjI was moderately increased in the hns stpA yjjP-yjjQ-bglJ and strongly increased in the bglJC background ( Figure 4 ) , indicating that these loci are to some extent directly or indirectly regulated by HNS and/or StpA , while BglJ -- RcsB activates them signiﬁcantly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Here , we show that BglJ -- RcsB activates the promoters of 10 additional loci ( chiA , molR , sfsB , yecT , yqhG , ygiZ , yidL , ykiA , ynbA and ynjI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Mutagenesis of this predicted binding motif in the promoter lacZ fusions of ﬁve loci including molR , sfsB , ygiZ , ynbA and ynjI , indeed completely abrogated their activation by BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Furthermore , we analyzed whether heterodimer formation of RcsB with BglJ and RcsA , respectively , depends on phosphorylation of RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The activity of the heteromeric RcsA -- RcsB depends on phosphorylation of RcsB , while BglJ -- RcsB is active independently of RcsB phosphoryl-ation ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>These data demonstrate that there is no signiﬁcant difference between wild-type RcsB , and the D56 mutants , suggesting that activation of leuO by RcsB-BglJ is independent of the phosphorylation status of RcsB at D56 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>We therefore tested whether activation of leuO by RcsB-BglJ is also independent of phosphorylation of RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>C Although the induction of leuO expression by RcsB-BglJ is independent of the phosphorylation status of RcsB ,26 we tested whether the RcsB phosphorylation is relevant for processing of the pre-crRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>DISCUSSION BglJ is an auxiliary regulator that activates a speciﬁc set of target loci together with RcsB but independent of RcsB phosphorylation ( 4,20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Activation of leuO and bgl is independent of phosphorylation of the Rcs two-component system response-regulator RcsB , and our microarray data suggest that regulation by BglJ in general depends on RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>These results suggest that BglJ and RcsB act together independently of RcsB phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The data suggest that activation by BglJ -- RcsB is DNA phasing dependent at some loci , a feature reminiscent of canonical transcriptional-activators , while at other loci BglJ -- RcsB activation may be indirect by inhibition of HNS-mediated repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Furthermore , some of the BglJ -- RcsB target promoters are repressed by HNS , including bgl ( Figure 5 ) ( 4 ) and yidL ( Figure 4 ) , indicating that activation by BglJ -- RcsB can be indirect by inhibition of HNS mediated repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Second , at the yidL promoter BglJ -- RcsB may act as HNS antagonist and activate transcription indirectly by preventing HNS-mediated repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Activation of yidL transcription by BglJ -- RcsB is independent of DNA phasing ( Figure 6 ) and thus may be mediated by inhibition of HNS mediated repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>To address the correlation between activation of a promoter by BglJ -- RcsB and repression by HNS we tested for some of the loci whether they are also repressed by HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>To test whether activation by BglJ -- RcsB is sensitive to DNA phasing , we chose the non-HNS repressed molR promoter and the HNS repressed yidL promoter , and constructed derivatives with 5 and 10 bp sequence duplications in between the Bgl -- RcsB binding site and the core promoter ( Figures 2 and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>This suggests that both RcsB and BglJ are required to relieve th H-NS-mediated repression of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Thus , BglJ -- RcsB is a pleio-tropic transcriptional-activator that coordinates regulation with global regulators including CRP , LeuO and HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Thus , DNA phasing seems to be crucial in case of the bgl promoter which is HNS repressed and synergistically activated by BglJ -- RcsB and CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Third , at the HNS-repressed bgl operon BglJ -- RcsB activates transcription synergistically with CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>At the bgl operon , which is controlled by HNS , StpA , CRP , and LeuO , BglJ -- RcsB and CRP presumably act synergistically to overcome repression by HNS ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Synergistic regulation of bgl by BglJ -- RcsB and CRP -- cAMP BglJ -- RcsB and CRP synergistically activate the bgl P2 promoter and relief repression by HNS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Synergistic regulation of bgl by BglJ -- RcsB and cAMP-CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Transcription can be activated by binding of RcsB-BglJ upstream of P2 ( activated ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>BglJ -- RcsB activated genes and their co-regulation by HNS / StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Transcription of leuO is activated by RcsB-BglJ independently of the Rcs phosphorelay and repressed by H-NS/StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Activation of the HNS and StpA repressed leuO gene by BglJ -- RcsB is inhibited by LeuO ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The BglJ -- RcsB heteromer is known to activate the HNS repressed leuO and bgl loci independent of RcsB phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>As both of the characterized BglJ -- RcsB activated loci , bgl and leuO , are repressed by HNS and StpA , BglJ -- RcsB is a presumptive HNS and StpA antagonist .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Here , we show that the heterodimer of the FixJ/NarL-type transcription regulators RcsB and BglJ strongly activates expression of leuO and that RcsB-BglJ regulates additional loci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Taken together , these data suggest that RcsB-BglJ activates leuO transcription by binding to the mapped site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Our data suggest that BglJ -- RcsB activates transcription of HNS repressed and non-HNS repressed loci by several mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Discussion In this study , we demonstrate that the induction of the Cascade transcription by the transcriptional-regulator RcsB-BglJ does not per se lead to activation of crRNA maturation in E. coli K12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>The BglJ-induced activation depended on RcsB and LeuO , consistent with the upregulation of leuO expression by RcsB-BglJ , which , in turn , leads to de-repression of the Pcas promoter ( Fig. 1A , lanes 4 , 5 ) .26 Activation of Pcas by RcsB-BglJ does not result in accumulation of mature crRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>The above data suggest that LeuO is an autoregulator that may have a moderate positive autoregulatory effect , but that strongly represses leuO transcription in the absence of H-NS and StpA and that counteracts activation of leuO by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Moreover , LeuO antagonizes activation of leuO by RcsB-BglJ and acts as negative autoregulator in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Furthermore , activation of the leuO P2 promoter by BglJ -- RcsB is inhibited by LeuO acting as negative autoregulator ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>This suggests that heterodimerization of BglJ and RcsB is essential for activation of gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>This sixfold downregulation of leuO promoter activity by LeuO in the presence of RcsB-BglJ suggests that LeuO counteracts activation of P2leuO by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>This shows that both proteins , RcsB and BglJ , are required for activation of leuO transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>This activation is LeuO-dependent as heterodimers of BglJ and RcsB activate leuO transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Furthermore , activation of molR and bgl by BglJ -- RcsB turned out to be DNA phasing dependent ( Figure 6 ) suggesting that the mechan-ism of transcription activation by BglJ -- RcsB involves protein -- protein interactions and thus resembles that of canonical activators ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In this work , we characterized the activation of additional loci by BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>DNA phasing dependence of activation by BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Interestingly though , for synergistic activation of bgl by BglJ -- RcsB and CRP , the CRP AR1 but not the AR2 is important ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Thus , the synergistic activation of bgl by BglJ -- RcsB and CRP apparently involves a novel mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_75">
+These data suggest that activation of P2bgl by BglJ -- RcsB is CRP-dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></label>
+<input id="act_similarity_75", type="checkbox">
+<div class="ACT_similar">
+<li>These data suggest that AR2 of CRP is not involved in co-activation of P2bgl by BglJ -- RcsB and CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li></div>
+<li>Both BglJ -- RcsB and CRP are required for transcription activation of the newly identiﬁed P2bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>These data further support the notion that CRP is required for activation of bgl transcription by BglJ -- RcsB , and they demonstrate that the AR1 of CRP is important for this activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Our ﬁnding that BglJ and RcsB also form a heterodimer that acts as a transcriptional-activator of the bgl operon expands the role of the Rcs system and underscores the notion that RcsB activity , in addition to being modulated by phosphorylation , is controlled by interaction with other transcriptional-regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>© 2012 Blackwell Publishing Lt RcsB is a unique bacterial response-regulator in that it acts as homodimer but also as heterodimer with RcsA ( regulation of capsule synthesis ) , GadE ( regulation of acid stress response ) and BglJ ( activation of the bgl operon ) respectively ( Majdalani and Gottesman , 2005 ; Castanie-Cornet et al. , 2010 ; Venkatesh et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>However , the RcsBBglJ heterodimer activates transcription of the so far only known target locus , the bgl operon , independently of RcsB phosphorylation ( Venkatesh et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Results Transcription of leuO is activated by RcsB-BglJ The heterodimer RcsB-BglJ activates the bgl operon , its only known regulatory target to date .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>leuO is activated by an RcsB-BglJ heterodimer independently of the Rcs phosphorelay BglJ requires RcsB as dimerization partner to activate transcription of the bgl operon ( Venkatesh et al. , 2010 ) , and our microarray data suggested that BglJ requires RcsB for activation of leuO and other target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">BglJ protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Properties of the bglJ4 mutation suggest that theBglJ protein is necessary for bgl activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8725214" target="_blank">8725214</a>]<br></li>
+<li>The N-terminal domains of the auxiliary regulators RcsA ( 11 ) and BglJ are related to a receiver-domain , but their alignment suggests that BglJ lacks a aspartic acid phosphorylation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>RcsB-BglJ binds to the leuO promoter region and activates one of two leuO promoters mapped in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>RcsB-BglJ activates one of two H-NS/StpA-repressed leuO promoters in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Mutation of the best candidate sequence motif ( mapping at position 84239 to 84252 ) completely abrogated activation by BglJ ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>S1 in the supplemental material ) , this match indicates that the RcsB subunit of the BglJ-RcsB heterodimer may bind to this motif and that BglJ contacts adjacent base pairs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>RcsB and BglJ are transcription factors of the FixJ/NarL family , characterized by a conserved LuxR-type helix -- turn -- helix ( HTH ) motif in the C-terminal DNA-binding domain ( Henikoff et al. , 1990 ; Gao et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>RcsB and BglJ both belong to the LuxR-type family of transcriptional regulators with a characteristic C-terminal DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition , plasmids that express fusions of the wild-type LexA1-87 DNA-binding domain to BglJ , RcsB , YjjQ , and RcsA were constructed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>RcsB and BglJ were also fused to the mutant LexA4081-87 DNA-binding domain ( Fig. 2 and Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The carboxy terminus contains a potentiahlelix-turn-helix motif that is shared by the BglJ and RcsB protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8725214" target="_blank">8725214</a>]<br></li>
+<li>The factor of activation by BglJ -- RcsB ( fold act .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>We previously characterized a sequence motif required for BglJ -- RcsB-mediated activation of the bgl operon ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In this work , we characterized the activation of additional loci by BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Here , we analyzed the activation of 10 target loci by BglJ -- RcsB and we deﬁne a consensus DNA-binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Mutagenesis of this predicted binding motif in the promoter lacZ fusions of ﬁve loci including molR , sfsB , ygiZ , ynbA and ynjI , indeed completely abrogated their activation by BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">BglJ evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>RcsB and BglJ both belong to the LuxR-type family of transcriptional regulators with a characteristic C-terminal DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The search for proteins with homology to the putative BglJ protein yielded other members of this family including FimZ , UvrC , MalT , RcsA , NarP , and NarL ( ALTSCHUL et al. 1990 ; STOUTet al. 1991 ; SWENSOaNnd CLEGG1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8725214" target="_blank">8725214</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by BglJ</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Function of analyzed BglJ -- RcsB target loci Gene ( s ) Function ( 32 ) chiA ynbAB Endochitinase ( 897 aa ) YnbA predicted diacylglycerol choline-phosphotransferase ( 201 aa ) YnbB inner membrane protein ( 298 aa ) Inner membrane protein ( 346 aa ) Unknown function ( 162 aa ) YqhG unknown function ( 308 aa ) YqhH predicted lipoprotein ( 85 aa ) Inner membrane protein ( 110 aa ) SfsB/Nlp transcriptional regulator , Ner-like protein ( 92 aa ) Unknown function ( 113 aa ) Predicted AraC-type transcription regulator ( 307 aa ) Molybdate metabolism regulator ( disrupted in K12 ) ( 33,34 ) ( 34 ) ( 33 ) ( 33 ) ( 34 ) ( 33,35 ) ( 33 ) ( 33 ) ( 33 ) ynjI yecT yqhGH ygiZ sfsB ykiA yidL molR ( yehH ) Figure 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>This plasmid directs the expression of active BglJ protein ( see below ) , while plasmids pKETS9 and pKETS10 , which include the second or third start codon , provide no functional BglJ ( data not shown ) , suggesting that translation of the bglJ gene begins at the very ﬁrst start codon of the open reading frame .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>It has also been shown before that constitutive expression of BglJ and LeuO , respectively , relieves silencing of bgl ( Giel et al. , 1996 ; Ueguchi et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>RcsB also forms heterodimers with RcsA , TviA , and BglJ to regulate colanic-acid-synthesis , antigen VI expression , and sugar-transport , respectively ( 26 -- 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>Furthermore , the data support the conclusion that LeuO , whose expression is likewise repressed by H-NS and which is a virulence factor in Salmonella enterica , is a master regulator that among other loci , also controls the yjjQ-bglJ operon and thus indirectly the presumptive targets of YjjQ and BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Published online 13 December 2013 Transcriptional regulation by BglJ -- RcsB , a pleiotropic heteromeric activator in Escherichia coli Silja Lucia Salscheider , Andreas Jahn and Karin Schnetz * Received July 26 , 2013 ; Revised November 20 , 2013 ; Accepted November 21 , 2013 ABSTRACT The bacterial Rcs phosphorelay signals perturb-ations of the bacterial cell envelope to its response regulator RcsB , which regulates transcription of multiple loci related to motility , biofilm-formation and various stress responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Here , we show that the heterodimer of the FixJ/NarL-type transcription regulators RcsB and BglJ strongly activates expression of leuO and that RcsB-BglJ regulates additional loci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>We therefore tested whether activation of leuO by RcsB-BglJ is also independent of phosphorylation of RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>This suggests that heterodimerization of BglJ and RcsB is essential for activation of gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The leuO gene is another example for antagonistic regulation that involves BglJ -- RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>BglJ is a transcriptional regulator whose constitutive expression causes activation of the H-NS - and StpA-repressed bgl ( aryl - , D-glucoside ) operon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>BglJ is an RcsB-dependent transcriptional regulator which was initially identiﬁed as activator of the bgl ( aryl-b , D-glucoside ) operon in Escherichia coli ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>More recent studies demonstrated that BglJ -- RcsB also activates the transcription of the leuO gene encoding the pleiotropic transcriptional regulator and HNS antagonist LeuO ( 20 -- 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Molecular Microbiology ( 2012 ) 83 ( 6 ) , 1109 -- 1123 doi :10.1111 / j.1365-2958.2012.07993.x First published online 14 February 2012 RcsB-BglJ activates the Escherichia coli leuO gene , encoding an H-NS antagonist and pleiotropic regulator of virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_15">
+, Wurm , R. , Wagner , R. and Schnetz , K. ( 2012 ) RcsB-BglJ activates the Escherichia coli leuO gene , encoding an H-NS antagonist and pleiotropic regulator of virulence determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></label>
+<input id="rp_similarity_15", type="checkbox">
+<div class="RP_similar">
+<li>RcsB-BglJ activates the Escherichia coli leuO gene , encoding an H-NS antagonist and pleiotropic regulator of virulence determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li></div>
+<li>Our ﬁnding that BglJ and RcsB also form a heterodimer that acts as a transcriptional activator of the bgl operon expands the role of the Rcs system and underscores the notion that RcsB activity , in addition to being modulated by phosphorylation , is controlled by interaction with other transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Regulation of leuO by RcsB-BglJ and LeuO as shown here and activation of yjjQ-bglJ by LeuO ( Stratmann et al. , 2008 ) indicates a feedback control mechanism of two global transcriptional regulators that may ensure turn on of their expression in response to speciﬁc environmental signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Thus , BglJ -- RcsB is a pleio-tropic transcriptional activator that coordinates regulation with global regulators including CRP , LeuO and HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In this strain background , BglJ caused an increase in expression from 3 units to 406 units ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To identify factors that are involved in derepression of bgl by BglJ , we performed a transposon mutagenesis screen using strain S2822 , which carries the bgl operon and a bgl promoterlacZ fusion as dual reporters ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Microarray To determine putative target genes of BglJ and LeuO , DyjjPQ-bglJ strain T75 , DyjjPQ-bglJ DrcsB strain T175 and DyjjPQ-bglJ DleuO strain T177 ( Table 1 ) were transformed with either pKETS1 ( BglJ ) or pKESK22 ( control , Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>( B ) Analysis of homodimer formation in RcsB , RcsA , BglJ , and YjjQ was performed with transformants of strain S3434 with plasmids pKEMK17 ( lexA1-87-rcsB ) , pKES192 ( lexA1-87-rcsA ) , pKEAP30 ( lexA1-87-bglJ ) , pKEAP27 ( lexA1-87-yjjQ ) , and pMS604 ( lexA1-87-fos ) as controls .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>For expression analysis of BglJ -- RcsB activated genes , a qRTPCR analysis was performed of RNA isolated from yjjP-yjjQ-bglJ deletion strain T75 ( indicated as bglJ ) , from strain T1166 ( bglJC ) expressing BglJ constitutively and from the hns stpA yjjP-yjjQ-bglJ mutant T1048 ( indicated as hns stpA bglJ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">BglJ binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Here , we show that BglJ and RcsB interact and form heterodimers that presumably bind upstream of the bgl promoter , as suggested by mutation of a sequence motif related to the consensus sequence for RcsA-RcsB heterodimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The mapping of the asymmetric BglJ -- RcsB consensus motif in relation to the transcription start site at several promoters ( Figures 2 and 3 ) suggests a DNA phasing and orientation dependent positioning , with the half-site of the BglJ -- RcsB motif that is presumably RcsB bound mapping closer to the promoter at most of the analyzed promoters , except yidL and yqhG ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Mutagenesis of a predicted motif which overlapped with the core promoter of ykiA as well as mutagenesis of predicted motifs at yidL and chiA mapping 150 bp upstream of the transcription start site did not affect their activation by BglJ -- RcsB ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>All BglJ -- RcsB binding sites except ykiA and yqhG scored among the top 14 hits in the FIMO search of the E. coli K12 MG1655 genome sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The logo was generated by MEME SUITE ( 36 ) using 120 bp sequences encompassing the mapped BglJ -- RcsB binding sites of the loci shown in the middle .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Next , 50 bp DNA sequences encompassing the seven known BglJ -- RcsB binding sites ( including the ﬁve ones mapped here ) were used to deﬁne a sequence logo using MEME SUITE ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Mapping of BglJ -- RcsB binding sites For characterization of the presumptive BglJ -- RcsB binding sites and deﬁnition of a consensus binding motif , we took an iterative approach .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Interestingly , part of the BglJ -- RcsB motif ( including the central wwTTCykA sequence ) corresponds well to the right half of the consensus sequence for the RcsA -- RcsB binding site TaAGaajtatTCctA ( 12 ) , indicating that this part may be bound by the RcsB subunit .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>To test whether activation by BglJ -- RcsB is sensitive to DNA phasing , we chose the non-HNS repressed molR promoter and the HNS repressed yidL promoter , and constructed derivatives with 5 and 10 bp sequence duplications in between the Bgl -- RcsB binding site and the core promoter ( Figures 2 and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>( A ) Activation of plasmid encoded PmolR and PyidL lacZ fusions as well as derivatives carrying 5 bp ( +5 ) and 10 bp ( +10 ) sequence duplications in between the BglJ -- RcsB binding site and the core promoter was tested in the bglJ deletion strain T23 ( bglJ ) and the isogenic bglJC strain T1030 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>First , we scanned the sequence of the target promoter regions for similarity to the two known BglJ -- RcsB binding sites mapped at the bgl and leuO loci ( 4,20 ) using the program MEM Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The leuO promoter region was searched for sites showing high similarity to the RcsB-BglJ binding site mapped at the bgl promoter ( Venkatesh et al. , 2010 ) and to RcsA-RcsB consensus binding site ( Wehland and Bernhard , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Therefore , we searched the leuO regulatory sequence for possible RcsB-BglJ binding sites by comparing it with the only known RcsB-BglJ binding site located at the bgl locus ( Fig. 2A ) ( Venkatesh et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Taken together , these data suggest that RcsB-BglJ activates leuO transcription by binding to the mapped site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Sequence of BglJ -- RcsB activated promoters and their BglJ -- RcsB binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Mapping of RcsB-BglJ binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Top : Sequence logo for the BglJ -- RcsB binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Furthermore , we mapped the BglJ -- RcsB binding site at seven loci and propose a consensus sequence motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>BglJ -- RcsB consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Indicated are the primers used for 5 ′ RACE , the mapped transcription starts ( given as coordinates of sequence reference ﬁle ) , and the RcsB-BglJ binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Middle : Sequences of the BglJ -- RcsB binding sites mapped by site-speciﬁc mutagenesis and their genome position in the MG1655 reference genome sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In contrast , for the HNS repressed bgl promoter a 6 bp linker insertion mapping in between the BglJ -- RcsB binding site and the CRP-binding site completely abrogated activation , as did insertions mapping within the BglJ -- RcsB binding site ( Figure 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The RcsB-BglJ heterodimer activates a newly characterized promoter P2leuO apparently by binding to a site located directly upstream of the core sequence of P2leuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>At the bgl locus , the BglJ -- RcsB binding site was mapped to a position 100 bp upstream of the promoter ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The BglJ -- RcsB binding site is situated 70 bp upstream of this P2 promoter ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Intriguingly , the center of this presumptive BglJ -- RcsB binding site maps 96 bp upstream of the transcription start site of the HNS-repressed and CRP-dependent bgl promoter , Pbgl , and thus further upstream than in case of the other BglJ -- RcsB activated promoters ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Correspondingly , the centre of the RcsB-BglJ binding site maps at -58.5 bp relative to this transcription start ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>However , at yidL the center of the BglJ -- RcsB binding site maps out of phase at 52 bp upstream of the transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by BglJ</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Yet , up to date it is not known under which physiological conditions BglJ is present in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>As expected ( 4 ) , expression levels were low in the bglJ deletion background ( 15 units ) and high ( 354 units ) in the BglJ expressing strain ( Figure 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Left panel : The expression level of chromosomal promoter lacZ fusions ( coordinates given relative to the transcription start site ) was determined in the bglJ deletion background ( allele yjjP-yjjQ-bglJ ) ( ) , in isogenic bglJC strains expressing BglJ constitutively , and in isogenic bglJC DrcsB mutant derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>For expression analysis of BglJ -- RcsB activated genes , a qRTPCR analysis was performed of RNA isolated from yjjP-yjjQ-bglJ deletion strain T75 ( indicated as bglJ ) , from strain T1166 ( bglJC ) expressing BglJ constitutively and from the hns stpA yjjP-yjjQ-bglJ mutant T1048 ( indicated as hns stpA bglJ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>here , we show that the pcas promoter can also be induced by constitutive expression of the regulator BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>This was demonstrated by chromosomal integration of the mutant promoter lacZ fusions and expression analyses in the absence and presence of BglJ ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Interestingly , YjjQ ( fused to LexA1-87 ) and BglJ ( fused to LexA4081-87 ) caused no repression ( Fig. 2C ) , suggesting that the two LuxR-type transcription factors BglJ and YjjQ do not interact , although they are encoded in one operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Furthermore , we have shown that constitutive expression of transcription factors LeuO and BglJ relieves silencing of the bgl operon by counteracting repression of the promoter by H-NS through the upstream site , whilst BglJ and LeuO do not affect downstream repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>The second , downstream level of bgl operon repression by H-NS is not affected by LeuO , BglJ or RpoS/Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Later , it was found that repression of the bgl operon by H-NS can be relieved by the LysRtype transcription factor LeuO ( see below ) and by BglJ ( 25 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>As LeuO is a virulence factor in S. enterica ( 32 , 57 ) and as YjjQ , which is coencoded with BglJ , is presumably important for infection by avian-pathogenic E. coli ( 34 ) , it is conceivable that certain conditions in the host environment induce their expression , which in turn should also relieve repression of the bgl operon and allow its induction by substrate ( aryl - , D-glucosides ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Furthermore , the data support the conclusion that LeuO , whose expression is likewise repressed by H-NS and which is a virulence factor in Salmonella enterica , is a master regulator that among other loci , also controls the yjjQ-bglJ operon and thus indirectly the presumptive targets of YjjQ and BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Activation of yidL transcription by BglJ -- RcsB is independent of DNA phasing ( Figure 6 ) and thus may be mediated by inhibition of HNS mediated repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>We further found that some of the known targets of LeuO were activated by RcsB-BglJ in the leuO + strain T75 but not in its DleuO derivative ( T177 ) which was analysed in parallel ( Tables 2 , S1 and S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>leuO is activated by an RcsB-BglJ heterodimer independently of the Rcs phosphorelay BglJ requires RcsB as dimerization partner to activate transcription of the bgl operon ( Venkatesh et al. , 2010 ) , and our microarray data suggested that BglJ requires RcsB for activation of leuO and other target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Results Transcription of leuO is activated by RcsB-BglJ The heterodimer RcsB-BglJ activates the bgl operon , its only known regulatory target to date .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The BglJ -- RcsB heteromer is known to activate the HNS repressed leuO and bgl loci independent of RcsB phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Transcription can be activated by binding of RcsB-BglJ upstream of P2 ( activated ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>These results show that expression of leuO is directed by two H-NS and StpA repressed promoters ( PleuO and P2leuO ) and they suggest that RcsB-BglJ activates transcription from promoter P2leuO at position 84 304 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Promoter mapping revealed that two H-NS and StpA repressed promoters direct expression of the leuO gene and that one of these promoters is activated by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Transcription of leuO is activated by RcsB-BglJ independently of the Rcs phosphorelay and repressed by H-NS/StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The microarray data revealed that leuO was one of the genes most strongly affected by BglJ expression , showing a 45-fold upregulation ( Tables 2 and S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To test whether crRNA maturation is induced upon upregulation of LeuO , we analyzed the effect of BglJ on CRISPR defense , as leuO transcription is strongly activated when BglJ is constitutively expressed .26 We found that the constitutive expression of BglJ activates the Cascade transcription to equal levels as obtained by constitutive expression of the LeuO protein itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - IHF</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">IHF</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">IHF transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>] rlgA map rpsB yajC nrdR 2.8 2.6 4.0 3.2 2.5 3.1 7.1 8.2 No No No No No No No No No No No No No Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Yes [ 12 ] Yes [ 12 ] cyoE cyoD cyoB cyoA fepA Yes [ 12 ] Yes [ 12 ] Yes [ 12,15,16,126-129 ] Yes [ 12,16,127-129 ] Yes [ 12,15,130 ] No 3.2 No 10.7 Yes [ 128,129 ] fes entC 39.8 6.8 4.1 5.6 2.7 2.8 -4.2 7.4 Yes [ 128,129 ] Yes [ 130 ] No No No No No No Fnr [ 21 ] sucC gpmA cmk Yes [ 12 ] No No No Yes [ 12,15 ] No Yes [ 15 ] No STM1013 STM1133 ydiE nth STM1586 Fnr [ 21 ] Rcs [ 131 ] 2.9 No No 76.1 -4.0 -37.3 11.4 3.1 5.8 -8.8 Fnr [ 21 ] Fnr [ 21 ] ldhA ynaF No No Yes [ 132 ] Yes [ 29 ] No No No Yes [ 12,15 ] Yes [ 29 ] No No Yes [ 12,15 ] No No tonB hns STM1795 Fnr [ 21 ] Fnr [ 21 ] STM2186 cirA eutC eutB yffB Yes [ 133 ] No No No No No No 4.0 -4.1 -3.2 2.6 4.6 9.1 53.8 Fnr [ 21 ] Fnr [ 21 ] No Yes [ 15,59 ] iroB iroN sitA No Yes [ 15,46,61,134-138 ] No Yes [ 12 ] Yes [ 101 ] Yes [ 14,79,88 ] MntR [ 61 ] No No 3.5 3.8 yggU yqjH secY bfr bfd Yes [ 100 ] No No No 4.0 3.2 5.9 11.8 Yes [ 12,14,15 ] Yes ArcA and Fnr [ 141 ] feoB [ 12,14,63,134,139,140 ] No No No No Yes [ 14,55,82,88,143-148 ] No STM3600 STM3690 rpoZ udp sodA No No Fnr [ 21 ] Fnr [ 21 ] -6.8 -4.2 3.9 -5.4 9.1 No No Yes [ 85,146,148 ] IscS [ 142 ] Fnr , ArcA , IHF , SoxRS [ 53,81 ] yjcD N 2.8 Table 4 Comparison of Differentially Expressed Genes in Δ?Δ?fur That Contain a Putative Fur Binding Site with Confirmed Data of Fur Regulation from other Studies and the Possible Involvement of other Transcription Regulators ( Continued ) No -5.8 -3.6 No dcuA aspA No Yes [ 13,15 ] NarL [ 149,150 ] ArcA [ 151 ] NsrR [ 99 ] ytfE 10.0 Yes [ 13 ] fhuF 8.5 Yes [ 12,13,15 ] No Yes [ 11,152,153 ] a Genes from the present study that are regulated by Fur and possess a putative Fur-binding motif bFold change of expression in Δfur relative to the wt 14028s c Evidence of direct Fur binding the regulatory region of the gene d Regulation by other transcription factors besides Fur Figure 6 Role of Fur in the transcriptional , translational and post-translational regulation of sodA and sodB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>It has been reported before that IHF antagonizes H-NS-dependent repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Recently , a new T7 expression system in Escherichia coli and Salmonella Abbreviations : cAMP , cyclic adenosine monophosphate ; CRP , cAMP receptor protein ; GFP , green fluorescent protein ; IHF , integration host factor ; 2-MC , 2-methycitrate ; PCR , polymerase chain reaction ; RBS , ribosome binding site ; RFU , relative fluorescence units .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16616438" target="_blank">16616438</a>]<br></li>
+<li>Hence , hilA in cells growing aerobically in LB medium and entering the transcription in hilC/hilD or ihf mutants would correspondstationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Transcriptional fusion studies exhibited a three-times-reduced csgD activity in an ihf mutant strain under microaerophilic growth conditions in liquid phase , whereas no effect was seen when the cultures were grown under aerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Under microaerophilic conditions IHF replaces OmpR-P at D3 -- D6 and occupies IHF1 , which leads to a ∼ 3-fold increase in csgD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Band-shift assays and in vitro transcription data showed that for hilA induction under certain growth conditions , IHF is required to alleviate H-NS-mediated silencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>In vivo data show that , under specific environmental and physiological conditions ( permissive conditions ) , IHF is required for hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Under standby conditions , the P1 promoter is activated by IHF with Fnr or Crp proteins acting alternatively at their nearby binding site ; this binding occludes the pdu promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>This competition of an activator with a repressor clearly assigns a physiological role for IHF , whereby under microarophilic conditions IHF outcompetes OmpR-P for binding and causes activation of csgD transcription [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Negative and positive regulation of Tn10/IS10-promoted recombination by IHF : two distinguishable processes inhibit transposition off of multicopy plasmid replicons and activate chromosomal events that favor evolution of new transposons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>Such examples include counter-effect of HilD on H-NS mediated silencing of ssrA and ssrB [ 5 ] and counter-effect of IHF on H-NS mediated repression of hilA [ 45 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24079299" target="_blank">24079299</a>]<br></li>
+<li>Therefore , we hypothesized that either the ingly increase when H-NS activity was reduced by expressing HilD-HilC-RtsA regulatory cascade or IHF could play a role H-NSTEPEC only if HilC , HilD or IHF acted as an H-NS Downloaded from www.microbiologyresearch.org by IP : 132.248.34.164 On : Mon , 22 Oct 2018 15:15:0 We next tested the role of IHF in stationary phase-dependent hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Data showing that IHF is required at multiple steps during the induction of cob/pdu transcription in response to 1,2-PDL are presented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>Further experiments are needed to understand this additional requirement for IHF in the activation of cob/pdu transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>These results indicate that IHF was required for the activation of cob/pdu expression in response to 1,2-PDL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>Second , even when PocR was available , in the absence of IHF , PocR was unable to activate transcription of cob/pdu in response to 1,2-PDL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>IHF was required to produce wild-type levels of PocR protein in response to 1,2-PDL and appears to play an additional role in the activation of cob/pdu expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>However , in vitro data show that this inhibition requires the IHF protein ; in the absence of this accessory factor , spv expression remains high even when DNA is relaxed ( Marshall et al. 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Different studies have shown that low oxygen , high osmolarity , the exponential phase of growth and slightly alkaline pH induce hilA expression and consequently the invasion genes ( Bajaj et al. , 1996 ; Jones & Falkow , 1994 ; Chubiz et al. , 2010 ) Other recent studies have shown that , when Salmonella cells are grown in aerated Luria -- Bertani ( LB ) medium at 37 uC , hilA induction occurs at the onset of the Abbreviations : EMSA , electrophoretic mobility shift assay ; IHF , integ-ration host factor ; SPI1 , Salmonella pathogenicity island 1 ; T3SS , type III secretion system ; wt , wild-type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Increasing concentrations of H-NS -- His or IHF protein were added when indicated , and the reaction was continued at 37 uC for 15 min .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>To account for such multi-factorial effects , the rule for H-NS was defined such that H-NS was turned ` OFF ' only in the presence of all five repressors ( HilD , PhoP , SlyA , IHF and Fur ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24079299" target="_blank">24079299</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_23">
+IHF directly regulates the expression of csrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></label>
+<input id="act_similarity_23", type="checkbox">
+<div class="ACT_similar">
+<li>FIG 8 IHF positively and directly regulates the expression of csrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li></div>
+<li>In contrast , when IHF was prebound to DNA , addition of increasing amounts of H-NS did not alter the mobility of protein -- DNA complexes ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>Binding reactions were performed by mixing 100 ng of each PCR product with 100 ng of the sigD fragment ( negative control ) and increasing concentrations of puri-ﬁed and phosphorylated MBP-SirA or puriﬁed IHF in a total volume of 20 l of binding buffer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>For the binding reactions , increasing concentrations of phosphorylated MBP-SirA or IHF were incubated at room temperature with 5 104 cpm of labeled template in a total of 30 l of the binding buffers used in each case for EMSAs plus 1.0 g of poly ( dI-dC ) ( Boehringer ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>In conclusion , at least three ppGpp-dependent means of regulation appear to contribute to branched-chain amino acid biosynthesis : ( i ) effects of ppGpp on transcriptional activation , as suggested for ilvGp2 ( 55 ) ; ( ii ) indirect effects of ppGpp on expression of auxiliary factors such as Lrp or IHF ; and ( iii ) a ppGpp-dependent reduction in the RNA chain elongation rate , enhancing the pausing required for derepression , as suggested here for ilvBN and possibly the other ilv genes and operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Control of fis expression is best understood in E. coli , where the global regulatory proteins CRP , IHF , and FIS modulate only the degree of induction , but none of them is absolutely required for fis expression in laboratory culture [ 4-6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>atabolite Repression of the Propionate Catabolic Genes in C Escherichia coli and Salmonella enterica : Evidence for Involvement of the Cyclic AMP Receptor Protein Sung Kuk Lee ,1 Jack D. Newman ,1 and Jay D. Keasling1 ,2 * Department of Chemical Engineering , University of California ,1 and Synthetic Biology Department , Physical Biosciences Division , Lawrence Berkeley National Laboratory ,2 Berkeley , California Received 24 September 2004/Accepted 3 January 2005 Previous studies with Salmonella enterica serovar Typhimurium LT2 demonstrated that transcriptional activation of the prpBCDE operon requires the function of transcription factor PrpR , sigma-54 , and IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li>
+<li>Regarding their roles of IHF , CRP , RpoS , and Hfq as regulators modulating the expression of multiple genes in a coordinated manner , the optimal activity of each regulator may be critical for bacterial viability and adaptation to stressful environments , otherwise leading to abnormal increase or decrease in growth due to imbalance in the regulatory network by suboptimal activities of regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23966021" target="_blank">23966021</a>]<br></li>
+<li>Selective regulation of certain pathways by IHF was upregulated and may have acted to prevent the downlow Mg2þ concentrations , some of which were as shown in regulation of a portion of the RpoS-dependent proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>As shown in Figure 7D , slyA is capable of activating expression of SPI-2 genes independently of ssrB , ompR/envZ , phoP/phoQ , csrA and himD ( ihf ) , although the effects are not as strong as ssrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></li>
+<li>Concerning SPI-1 regulation , since similar activating effects are seen for HilA , HilD , and HilC , it is possible that IHF activates SPI-1 genes at the level of HilD , which can then inﬂuence expression of the downstream regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>However , the presence of IHF caused only a slight stimulatory effect ( 1.3-fold ) on the S. mar-cescens and E. carotovora ﬁs promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>Thus , the lack of IHF stimulation in S. mar-cescens and E. carotovora were unexpected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>In order to determine the transcriptional factors responsible for cas3 negative regulation , its transcriptional activity was assessed in individual mutants lacking the H-NS [ 49 ] , LRP , CRP , CpxR , SsrB , IHF , PhoP , PmrA , FNR or OmpR regulators , particularly since some of them ( H-NS or CRP ) have been previously implicated in the regulation of other CRISPR-Cas systems [ 33 , 50 , 51 ] or in virulence of Salmonella ( CpxR , SsrB , IHF , PhoP , PmrA , FNR or OmpR ) [ 52 -- 58 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>These in vivo results suggest that , at least under certain environmental conditions ( high temperature and osmolarity , cells entering the stationary phase ) , the presence of IHF antagonizes H-NS-mediated hilA silencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>By growing cells in aerated LB medium , we show that H-NS silencing of hilA ceases at the onset of the stationary phase , and in addition that IHF is required to alleviate H-NS silencing under these physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>The in vitro transcription assay was performed in the presence of H-NS and IHF simultaneously or separately .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Mutants lacking IHF did not induce hilA in cells entering the stationary phase , and this lack of induction was dependent on the presence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>IHF alleviates H-NS-mediated repression of hilA transcription The effect of ihfA or ihB mutant alleles on hilA expression in cells growing in LB medium and entering the stationary phase , the effect on hilA transcription of the H-NS antagonist in double ihf hns mutants , as well as the gel-shift data presented above suggest that the IHF protein functions as a transcriptional-regulator of the hilA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>The increase in the degree of stimulation in the presence of H-NS indicates that in vitro , IHF can alleviate H-NS-mediated repression of hilA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>The effect of a lack of IHF can not be explained solely by the decreased level of PocR in the cell , indicating that IHF is also required at another step in transcription activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>It is unclear whether the effects of the lack of IHF protein are direct or indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>To test the effect of increasing concentrations of IHF on the yield of trans-cripts from the hilA promoter , the concentration of H-NS was fixed at 1 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Quantification of the transcripts showed that the presence of 0.5 mM IHF in the transcription assay did not have a stimulatory effect in the absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Nevertheless , when IHF was present at 0.5 mM in the reaction mix , it stimulated transcription twofold in the presence of 1 mM H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>As shown in Table 2 , the absence of IHF resulted in a 15-fold reduction of prpBCDE expression when propionate was added to the medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>In the presence of IHF , transcription from E. coli , K. pneumoniae , and P. vulgaris ﬁs promoters was stimulated with different ef-ﬁciencies ( 3.8 - to 2.4-fold ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>ParB binds to a 74 bp high-affinity site ( parS ) which adopts a highly bent DNA structure in the presence of IHF ( Funnell , 1988 ) ( Funnell and Slavcev , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850262" target="_blank">17850262</a>]<br></li>
+<li>Hence , binding of IHF to the lacZ and ptsG promoters is unspeciﬁc , which is in line with previous data reporting that IHF binds DNA with lower afﬁnity also in sequence-independent manner ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>These are DNA gyrase , a type II topoisomerase that introduces negative supercoils into DNA , an activity that is unique to prokaryotes ; DNA topoisomerase I , an enzyme that relaxes DNA and which acts antagonistically to gyrase ; integration host factor ( IHF ) , a sequence-speci cents c DNA-binding protein that places 1808 bends into DNA and modulates the function of many bacterial promoters , as well as in # uencing transposition , site-speci cents c recombination , DNA replication and other DNA transactions ; H-NS , a nucleoid-associated protein that binds DNA in a sequence-independent manner ( it is thought to recognize and bind at , or close to , regions of intrinsic curvature in DNA ) and can regulate transcription from a large number of promoters ( almost always negatively ) as well as in # uencing other DNA reactions such as site-speci cents c recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Whether IHF induces a DNA bending that facilitates the formation of SirA/RNAP/promoter complex in csrB and whether another DNA-bending protein , such as HU or intrinsically curved DNA , is involved in the expression of csrC remains to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>In contrast , activity of the overlapping s70-promoter appears to be unaffected by IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Lastly , the absence of a functional IHF protein leads to a reduced rdar morphotype , and consistently diminished CsgD expression is detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>IHF activation is deduced to be mediated through HilD as for Fis and HU according to the information provided in the text .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Because the effect is observed in DH10B , which does not carry prpR , the negative regulation might be due to a secondary DNA structure formed by binding of IHF to the region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li>
+<li>Upon activation by a speciﬁc signal , the activator protein bound to the ELE contacts the sigma-54 RNA polymerase holoenzyme bound to the promoter via a DNA-looping mechanism in which the integration host factor ( IHF ) is thought to be involved ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>Unsurprisingly , OmpR and IHF compete for binding to the overlapping IHF1/OmpR D3 -- D6 sites dependent on the phosphorylation status of the response-regulator OmpR , in response to altered oxygen tension [ 83,86 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>Since the IHF and OmpR levels remain constant under aerobic and microaerophilic conditions ( our unpublished data ) , we propose that the phosphorylation status of OmpR will change , whereas the concentration of OmpR-P is high under aerobic conditions , such that it can successfully compete with IHF for DNA binding at the overlapping site IHF1/D3-D 6 , as has been shown by in vitro experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>An evaluation to determine transcriptional factors involved in cas3 regulation , as well as those in cas-CRISPR operon , scse2 and ascas2-1 , led to the finding that the CpxR , SsrB , IHF , PhoP , PmrA , FNR , CRP , LRP and OmpR regulators are not involved in the transcriptional control of these transcriptional units ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>The regulation of the prp operon is complex due to the transcriptional-regulators , such as PrpR , the 54 σ factor RpoN , and IHF , that are required to activate the transcription of prpBCDE ( Simonte et al. , 2017 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29018430" target="_blank">29018430</a>]<br></li>
+<li>In contrast , but according to the maximal IHF expression levels detected in the late logarithmic phase , SPI-2 genes , the mgtCB operon , pipB , and the spvABC genes are particularly activated after 6 h of growth ( when favorable conditions for SPI-2 induction and intracellular survival have been described ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>IHF and the RcsCDB system coordinately regulate this plasmid-borne operon together with SPI-2 and the pipB gene , as seen by the strong activation at the stationary phase and the dual regulation according to the degrees of activation reported for these regulators ( 274 , 301 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>The E. coli glnH promoter has an IHF binding site ; when bound to this site , IHF serves to facilitate contact between NtrC and s54-holoenzyme and thus to increase glnH transcription ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>The cAMP-cAMP receptor protein ( CRP ) complex and integration host factor ( IHF ) act in concert to activate tdc transcription by binding to specific DNA sequences in the tdc promoter [ 20 , 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21464594" target="_blank">21464594</a>]<br></li>
+<li>Expression of the ihf genes is subject to complex control ; they respond to growth-phase , RpoS , guanosine tetraphosphate and are subject to autoregulation ( Aviv et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>This result adds another layer of complexity to a promoter already known to require two other proteins , IHF and PrpR , for transcriptional activation ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li>
+<li>PCR-ampliﬁed and puriﬁed fragment csrB-370 was incubated with increasing concentrations ( 0 , 40 , 60 , 80 , and 100 nM ) of puriﬁed IHF protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>RpoS , IHF , and low-Mg2þ concentration regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>The positive and negative regulators IHF and H-NS , respectively , compete for binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth-phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>( B ) Levels of RpoS-regulated proteins were decreased in all tested groups , while IHF and those IHF/RpoS coregulated proteins showed relatively high expression levels in the low-Mg2þ concentration group .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>We discovered that CAMP activated a portion of the PhoP/PhoQ regulatory network , whereas low Mg2þ concentrations upregulated nearly all known members of this network , a number of previously unknown proteins , and some proteins regulated by IHF and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>We found the C18G signal activated only part of the PhoP / PhoQ regulatory network , while low Mg2þ concentrations upregulated more proteins and may even have a connection with RpoS and IHF regulation ( Figures 2 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>In addition , concentration-dependent cooperative binding of the two negative regulators CpxR and H-NS as well as pairwise cooperative binding of the positive regulators IHF and OmpR as well as IHF and RstA was demonstrated [ 94 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>A previous microarray study showed that IHF had an auxiliary and direct role in the activation of some RpoS-dependent genes ( Figure 5A ) , such as osmY , dps , and treA .39 Interestingly , we found that both subunits of IHF protein ( IHFR and IHFβ ) as well as many IHF/RpoS coregulated proteins ( OsmY , Dps , TreA , WrbA , OsmC , and OsmE ) ' DISCUSSION In this study , we investigated and compared proteomic changes of S. Typhimurium under two PhoP/PhoQ activation conditions , low Mg2þ concentrations ( Low ) and a sublethal concentration of C18G ( C18G ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>Activation of the agfD promoter is regulated by RpoS , OmpR , MlrA , CpxR , H-NS , and IHF ( 23 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17079680" target="_blank">17079680</a>]<br></li>
+<li>cluster 3 cluster 4 1.2 0.61 0.27 0.24 2þ Relationship of Low-Mg Concentration Regulation and Regulators RpoS and IHF As mentioned previously , IraP is activated by the PhoP/PhoQ 28 system and functions to prevent RpoS degradation ( Figure 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>]<br></li>
+<li>Additional results have revealed that IHF binds to the spvR upstream region and that upon its inactivation , spvR and spvB transcriptional levels are reduced ( 302 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Several regulatory proteins , including OmpR , IHF , H-NS , and MlrA , bind directly to a large intergenic region upstream of the csgD promoter to modulate gene expression in response to changing environmental stimuli ( Gerstel and Romling , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Like Fis , HU , and IHF , H-NS is not thought to-bind any ligand that would alter its activity , and unlike these other proteins , H-NS levels in the cell are relatively constant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>Numerous transcription factors are involved , including OmpR , MlrA , and CpxR and the nonspeciﬁc DNA-binding proteins H-NS and IHF , in addition to the feed-forward loop involving rpoS and the factors that regulate RpoS activity , including IraP and Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25824832" target="_blank">25824832</a>]<br></li>
+<li>In particular , the abundant nucleoid-associated proteins such as IHF , FIS , HU , and H-NS are known to modulate DNA supercoiling globally and locally ( reviewed in 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>Furthermore , other DNA-bending modulators such as IHF and Fis counteract H-NS repression and support virulence gene activation by the virulence cluster/PAI-speci ﬁc activator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>CsgD itself is subject to regulation by environmental conditions ( Gerstel and Romling , 2001 ; Gerstel et al. , © 2004 Blackwell Publishing Lt 2003 ) , the global regulatory proteins RpoS , OmpR and CpxR , and the architectural proteins H-NS and IHF ( Romling et al. , 1998a , b ; Prigent-Combaret et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458421" target="_blank">15458421</a>]<br></li>
+<li>The Salmonella typhimurium spv genes , which are required for the systemic phase of infection , are also regulated by IHF and H-NS , as well as Lrp ( O'Byrne and Dorman , 1994 ; Robbe-Saule et al. , 1997 ; Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123690" target="_blank">11123690</a>]<br></li>
+<li>For example , DNA bending and supercoiling may regulate virulence genes as suggested by findings that the small nucleoid binding proteins IHF and H-NS reduce expression of spvR and spvABCD respectively ( O'Byrne and Dorman , 1994 ; Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>Another NAP , IHF , also positively regulates hilA by displacing H-NS ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>This hypothesis is supported by previous observations demonstrating that IHF activates curli fimbriae production in S. enterica Typhimurium ( Gerstel , Park and Romling 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>It is produced primarily throughout stationary phase and its expression is regulated by the stationary phase sigma factor RpoS ( s38 ) , OxyR , and IHF [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20920181" target="_blank">20920181</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_94">
+The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10618525" target="_blank">10618525</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19223478" target="_blank">19223478</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></label>
+<input id="act_similarity_94", type="checkbox">
+<div class="ACT_similar">
+<li>The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and s in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and sS in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li>
+<li>Altuvia , S. , Almirön , M. , Huisman , G. , Kolter , R. & Storz , G. 1994 The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>[ 34 ] S. Altuvia , M. Almiron , G. Huisman , R. Kolter , G. Storz , The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">IHF protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>There is also evidence that IHF plays an architectural role in that it brings together distantly located elements , as has been well documented for the activation of sigma 54 promoters [ 10,48 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>c A162T R24S Assays were carried out at 37 uC in 10 ml reactions containing the indicated amount of activator with 20 nM DNA template , 25 nM RNA polymerase core enzyme , 100 nM s protein , 4 mM ATP , 54 40 nM IHF protein , in Tris/acetate buffer ( 25 mM Tris/acetate , pH 7 ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15528672" target="_blank">15528672</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">IHF evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Transcriptional factors belonging to this class include Ada , OxyR , CRP , OmpR , TrpI , and IHF ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11911183" target="_blank">11911183</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by IHF</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>MltC/E 2672 BarA 1798 RcsD RcsC EnvZ CpxA Motility FliG/M MlrA OmpR CpxR RcsB IHF Crl SirA RpoS FliA RpoD H-NS CsrB/C RprA 3375 csgDEFG csgBAC Curli FlhDC ArcZ expression CsrA Hfq 1697 CsgD P SdsR bcsABZC bcsEFG 1344 MicA BcsE Cellulose synthesis 3611 4451 P CsgD BcsA 1703 adrA yihvW yihU -- yshA 1827 AdrA 1987 bapABCD YihW 2123 4264 3388 DsbA/B O-antigen capsule biosynthesis BapA secretion Figure 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>In contrast to bacteria , yeast has a common environmental stress response o TABLE V. CMR DNA Repair Genes Altered Transcriptionally by BA-1 Gene Fold symbol change Hypergeometric P-value Gene title DNA ligase 1.4E-06 7.6E-05 8.0E-05 0.002 0.003 0.004 0.005 0.005 0.006 0.006 0.006 0.006 0.010 0.012 0.015 0.015 0.018 0.018 0.023 0.024 0.033 0.033 0.034 0.035 0.036 0.040 0.043 0.043 0.047 0.050 6.38 lig Putative nuclease subunit of the excinuclease complex Adenine DNA glycosylase DNA gyrase , subunit A , type II topoisomerase Putative recombination protein , gap repair Fels-2 prophage : similar to retron in E. coli Uracil-DNA-glycosylase Putative replicative DNA helicase UvrC , which is part of the UvrABC repair enzyme DNA polymerase III , delta prime subunit ATP-dependent DNA helicase DNA polymerase III , chi subunit UvrB , which is part of the UvrABC repair enzyme Replication termination protein Putative DNA helicase Regulator O-6-alkylguanine-DNA / cysteine-protein methyltransferase Putative DNA-repair protein Recombinase , site-speciﬁc Deoxyribodipyrimidine photolyase ( photoreactivation ) Primosomal protein I Putative helicase Primosomal replication protein N Endonuclease III ; DNA glycosylase/apyrimidinic ( AP ) lyase DNA polymerase III , alpha subunit Resembles eukaryotic-type potassium channels Putative ATP-dependent protease , DNA-repair protein Methyl-directed mismatch-repair Putative superfamily I DNA and RNA helicase Putative hydrolase N-terminus 24.55 4.00 22.55 22.50 22.16 27.46 23.12 22.53 22.82 22.27 4.27 5.41 2.28 22.07 21.97 22.50 22.43 25.87 21.88 1.80 22.50 2.88 STM1309 mutY gyrA recR STM2730 ung dnaB uvrC holB recQ holC uvrB tus yoaA oraA ogt radC xerD phrB dnaT ygcB priC nth dnaE 1.72 22.84 22.11 22.46 22.66 1.80 25.05 STM4372 radA mutS STM2767 STM0649 STM2727 2.7E-05 14.8 0.10 1.5 0.13 1.6 dinP 3.4E-05 4.8 0.11 21.6 0.68 21.1 sulA 4E-05 12.6 0.34 1.5 0.70 1.2 umuC 8.0E-06 8.6 0.12 1.8 0.81 21.1 umuD 2 4.4E-05 14.3 0.61 1.2 0.59 21.2 STM1019 4.8E-05 8.9 0.58 21.2 0.35 1.4 dinI 2 0.0002 16.9 0.42 1.3 0.46 1.3 yebG 2 0.0002 13.5 0.20 2.3 0.94 21.1 lexA 0.0003 4.0 0.05 22.3 0.73 1.1 STM1309 0.0010 2.5 0.00 24.5 0.05 21.8 polB 0.0010 2.8 0.46 1.2 0.88 21.0 yigN 0.0012 3.0 0.22 2.2 0.16 21.6 uvrA 0.0013 2.5 0.27 1.3 0.70 1.1 recA 0.0022 7.8 0.95 1.0 0.86 21.1 uvrD 0.0024 2.2 0.46 21.3 0.45 21.4 ruvA 0.0037 2.2 0.47 21.2 0.64 1.2 sbmC 0.0061 7.4 0.21 21.4 0.99 1.0 ydjM 0.0063 2.2 0.08 21.6 0.91 1.0 recN 0.027 16.0 0.23 21.5 0.15 1.7 STM0925 0.9730 1.0 0.55 1.3 0.75 1.1 ybfE 0.8064 0.9 0.11 21.6 0.16 2.1 uvrB 0.4355 1.3 0.01 5.4 0.08 3.1 dinG 0.4182 1.2 0.70 21.1 0.26 21.7 ftsK 0.1837 1.4 0.49 21.9 0.90 21.2 STM1056 0.2094 1.5 0.21 1.5 0.31 21.4 mfd 0.7057 0.9 0.15 1.4 0.50 1.2 minC 0.4689 0.9 0.69 1.1 0.52 1.3 yehR 0.0580 9.6 0.32 21.4 0.37 1.4 ftsY 0.7095 1.1 0.70 1.1 0.91 1.0 recG 0.9149 1.0 0.66 1.4 0.62 22.4 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a The P-value is from a Bayesian t-test measuring differential expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>Abbreviations : IHF , integration host factor ; NAP , nucleoid-associated protein ; SPI , salmonella pathogenicity island ; TTSS , type three secretion system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>Recently , a new T7 expression system in Escherichia coli and Salmonella Abbreviations : cAMP , cyclic adenosine monophosphate ; CRP , cAMP receptor protein ; GFP , green fluorescent protein ; IHF , integration host factor ; 2-MC , 2-methycitrate ; PCR , polymerase chain reaction ; RBS , ribosome binding site ; RFU , relative fluorescence units .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16616438" target="_blank">16616438</a>]<br></li>
+<li>These include HU , H-NS , integration host factor ( IHF ) , and factor for inversion stimulation ( Fis ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_6">
+The integration host factor ( IHF ) integrates stationary-phase and virulence gene-expression in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16988271" target="_blank">16988271</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17905993" target="_blank">17905993</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218385" target="_blank">19218385</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997949" target="_blank">16997949</a>]<br></label>
+<input id="rp_similarity_6", type="checkbox">
+<div class="RP_similar">
+<li>The integration host factor ( IHF ) integrates stationary-phase and virulence gene-expression in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>The integration host factor ( IHF ) integrates stationary-phase and virulence gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21563813" target="_blank">21563813</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19411325" target="_blank">19411325</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29751061" target="_blank">29751061</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_9">
+Mangan MW , Lucchini S , Danino V , Croinin TO , Hinton JC , et al. ( 2006 ) The integration host factor ( IHF ) integrates stationary-phase and virulence gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></label>
+<input id="rp_similarity_9", type="checkbox">
+<div class="RP_similar">
+<li>Mangan , M.W. , Lucchini , S. , Danino , V. , Croinin , T.O. , Hinton , J.C.D. , and Dorman , C.J. ( 2006 ) The integration host factor ( IHF ) integrates stationary-phase and virulence gene-expression in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_11">
+prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimu-rium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21768276" target="_blank">21768276</a>]<br></label>
+<input id="rp_similarity_11", type="checkbox">
+<div class="RP_similar">
+<li>prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15528672" target="_blank">15528672</a>]<br></li>
+<li>Palacios S , Escalante-Semerena JC : prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24007446" target="_blank">24007446</a>]<br></li>
+<li>prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12581721" target="_blank">12581721</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12125817" target="_blank">12125817</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980465" target="_blank">16980465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27583250" target="_blank">27583250</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12700259" target="_blank">12700259</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12147480" target="_blank">12147480</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li></div>
+<li>The himD mutation has only a slight negative effect ( approximately twofold ) on glnH transcription ( Table 4 ) under our assay conditions , so it remains unclear from our data whether IHF is involved in expression of this operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>Therefore , IHF plays an important role in biofilm-formation by S. enterica Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>In conclusion , our results indicate that IHF has an important regulatory role in biofilm-formation by S. enterica Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Curli fimbriae and cellulose Since curli fimbriae and cellulose play an important role in biofilm-formation , we evaluated the role of IHF on their production in S. enterica Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Based on the global regulatory role of IHF , we hypothesised that this NAP can influence or directly regulate genes involved in biofilm-formation by S. enterica Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Therefore , the regulation of biofilm-formation by IHF in both serovars suggests that IHF plays a central role in S. enterica biofilm biogenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Phenotypic analysis also showed that deletion of ihf causes a deficiency in curli fimbriae expression , cellulose production and pellicle formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Our data indicate that ihf mutant strains are impaired in biofilm-formation , showing a reduction in matrix formation and a decrease in viability and metabolic activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Furthermore , to characterise biofilm-formation and structure in strains lacking ihf , we performed scanning electron microscopy ( SEM ) of cells in biofilms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>In addition , OmpR , CpxR , H-NS , IHF , MlrA , and RpoS are also involved in biofilm-formation under specific environmental conditions ( 3,9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545539" target="_blank">22545539</a>]<br></li>
+<li>These results indicated that IHF influences biofilm-formation in different materials such as polystyrene and glass surfaces .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>In addition , nucleoid-associated proteins such as Fis , H-NS , HU and IHF inﬂuence the expression of these virulence genes ( Schechter et al. , 2003 ; Kelly et al. , 2004 ; Mangan et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16999831" target="_blank">16999831</a>]<br></li>
+<li>Full induction of spv expression has been shown to depend on RpoS , SpvR , H-NS , IHF and a global regulatory component termed leucine response protein ( LRP ) ( 81 , 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11370771" target="_blank">11370771</a>]<br></li>
+<li>We thank S. Maloy for providing ihf mutant strains and plasmid pHX3-8 , M. Filutowicz for the gift of puriﬁed IHF protein , and W. McClure for the MacTargsearch program .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>This may help to explain some of the mutagenic potency and mutational spectra of MX ; however , it does not Gene Nitric oxide synthesis and detoxiﬁcation Carnitine metabolism Molybdenum metabolism Cold shock Indirect activator of L-rhamnose operon Integration host factor Sulfur assimilation via cysteine-biosynthesis Response to DNA damage Cyclic AMP receptor protein growth regulation Global anaerobic regulator Regulates response to the redox conditions of growth BA-1 NsrR 2.0E-02 3.4E-02 4.4E-02 4.4E-02 CaiF ModE CspA RhaR 4.3E-02 5.6E-09 BA-4 IHF MX CysB 1.1E-07 6.3E-06 LexA CRP FNR ArcA a of the consequences of these alterations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19598237" target="_blank">19598237</a>]<br></li>
+<li>Therefore , we examined the role of IHF for expression of E. coli glmY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Role of IHF for expression of glmY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>IHF directly regulates the expression of csrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Our finding that HU positively regulates IHF expression may reflect some overlap between the regulons of genes under the control of these two NAPs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>Nomenclature of the genes encoding IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>Interestingly , the a subunit of IHF ( encoded by himA ) lies in an operon which was previously identiﬁed as being induced within the host during S. typhi-murium pathogenesis ( 36 ) , and a polar mutation in this operon also causes attenuation of S. typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>Whether IHF induces a DNA bending that facilitates the formation of SirA/RNAP/promoter complex in csrB and whether another DNA-bending protein , such as HU or intrinsically curved DNA , is involved in the expression of csrC remains to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>An evaluation to determine transcriptional factors involved in cas3 regulation , as well as those in cas-CRISPR operon , scse2 and ascas2-1 , led to the finding that the CpxR , SsrB , IHF , PhoP , PmrA , FNR , CRP , LRP and OmpR regulators are not involved in the transcriptional-control of these transcriptional units ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>The main regulatory proteins involved in the expression of Spi-2 include the two-component systems SpiR ( SsrA ) / SsrB , PhoP/PhoQ , OmpR/EnvZ , as well as the DNA-binding proteins HilD , SlyA ( RovA in Yersinia ) , RcsB , the iron regulator Fur , and the nucleoid-associated proteins H-NS , Hha ( YmoA in Yersinia ) , YdgT , IHF , and Fis ( Fass and Groisman , 2009 ; Choi et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>The dps gene is located on the bacterial chromosome , and like spv , it requires the RpoS sigma factor and IHF for full expression ; unlike spv , dps is under the control of the OxyR regulator , a redox-sensitive DNA-binding protein ( Altuvia et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Moreover , several of these regulators play a master role in the timing of virulence , since they drive the transition from the exponential growth to the stationary phase ( e.g. , Fis and IHF ) as well as from the extracellular to the intracellular environment ( e.g. , PhoQ-PhoP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Further analysis of the involvement of the integration host factor ( IHF ) protein in the expression of this operon is required due to the well-documented pleiotropic effect the lack of this global regulator has on gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>One of the modulators , the global DNA-bending protein integration host f actor ( IHF ) is required for the expression of motility , Spi-1 and Spi-2 genes during the transition from exponential to stationary growth ( Mangan et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>This study also indicated some phenotypic differences regarding biofilm-formation between single and double ihf mutants that deserve additional molecular analyses in order to better clarify the role of each subunit on the expression of biofilm regulator genes such as that of the csg and bcs operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Our data pave the way for further studies on investigating the mechanisms involved in the regulation of biofilm-formation by IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>It has been shown that IHF plays a combination of the hns allele with a mutant allele in the gene critical role in the expression of genes required by S. Typhi - encoding the H-NS antagonist would restore hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>The growing interest in understanding the regulatory network of gene activities during the transition from a planktonic to a sessile cellular lifestyle prompted us to investigate the role of IHF in S. enterica Enteritidis biofilm-formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>These virulence regulators were varied , including two-component regulators ( PhoP / PhoQ , SsrA/SsrB , and OmpR/EnvZ ) , alternative sigma factors ( RpoE , RpoS , and FliA ) , post-transcriptional/post-translational regulators ( SmpB , CsrA , Hfq , and RseA ) , a response regulator for which the signal sensor is unknown ( Hnr ) , a bending protein essential for some types of recombination ( IHF ) , and an assortment of other transcriptional/putative transcriptional regulators ( SlyA , Crp , FruR , RelA/SpoT , STM1547 , STM3121 , SpvR , and RcsA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21687430" target="_blank">21687430</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_48">
+The 14 regulators identified were diverse and included alternative sigma factors ( rpoS and rpoE ) , two-component regulators ( ompR/envZ , phoP/phoQ , and ssrA/ssrB ) , a response regulator for which the signal sensor is unknown ( hnr or mviA ) , posttranscriptional regulators ( csrA , hfq and smpB ) , a bending protein essential for some types of recombination ( ihf ) and an assortment of other DNA binding proteins ( fruR , spvR , crp , and slyA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></label>
+<input id="rp_similarity_48", type="checkbox">
+<div class="RP_similar">
+<li>These 14 regulators are very diverse including alternative sigma factors ( rpoS and rpoE ) , two-component regulators ( ompR/envZ , phoP/phoQ , and ssrA/ssrB ) , posttranscriptional regulators ( csrA , hfq and smpB ) , a bending protein ( ihf ) and an assortment of other DNA binding proteins ( fruR , spvR , crp , slyA , and hnr ; see Table 1 for references ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></li></div>
+<li>Sigma factor selectivity of Escherichia coli RNA polymerase : role for CRP , IHF and lrp transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29763647" target="_blank">29763647</a>]<br></li>
+<li>IHF is a DNA-binding protein with a role in changing DNA structure and thereby controlling transcription of many genes , including classical stationary-phase genes [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23966021" target="_blank">23966021</a>]<br></li>
+<li>IHF is a sequence-speciﬁc DNA-binding protein which participates in many cellular-processes , including site-speciﬁc recombination , DNA-replication , and regulation of transcription ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>These are DNA gyrase , a type II topoisomerase that introduces negative supercoils into DNA , an activity that is unique to prokaryotes ; DNA topoisomerase I , an enzyme that relaxes DNA and which acts antagonistically to gyrase ; integration host factor ( IHF ) , a sequence-speci cents c DNA-binding protein that places 1808 bends into DNA and modulates the function of many bacterial promoters , as well as in # uencing transposition , site-speci cents c recombination , DNA-replication and other DNA transactions ; H-NS , a nucleoid-associated protein that binds DNA in a sequence-independent manner ( it is thought to recognize and bind at , or close to , regions of intrinsic curvature in DNA ) and can regulate transcription from a large number of promoters ( almost always negatively ) as well as in # uencing other DNA reactions such as site-speci cents c recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Integration host factor ( IHF ) is a dimeric NAP that binds with DNA in a sequence-specific manner and introduces curvatures of up to 180 ◦ , which influence many aspects of bacterial physiology , including global gene-expression , DNA topology , site-specific recombination and DNA-replication ( Dillon and Dorman 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Negative and positive regulation of Tn10/IS10-promoted recombination by IHF : two distinguishable processes inhibit transposition off of multicopy plasmid replicons and activate chromosomal events that favor evolution of new transposons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>In addition , Crp , IHF , Lrp , and H-NS ( 5 , 23 , 29 , 30 , 44 , 49 , 55 , 57 ) have been identiﬁed as modulating factors in the control of various sS-dependent genes ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>]<br></li>
+<li>Results Rationale for strains used and study design To date , more than 300 genes have been annotated as regulatory genes in Salmonella and of those tested ( 83 ) we showed that 14 regulators including SpvR , FruR , IHF , PhoP/PhoQ , SsrA/SsrB , SlyA , Hnr , RpoE , SmpB , CsrA , RpoS , CRP , OmpR/EnvZ , and Hfq are required for virulence regulation during systemic infection in an acute mouse infection model [ 24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21711513" target="_blank">21711513</a>]<br></li>
+<li>Identification of related genes in phages phi 80 and P22 whose products are inhibitory for phage growth in Escherichia coli IHF mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22694898" target="_blank">22694898</a>]<br></li>
+<li>IHF is involved in a variety of cellular-processes like recombination , replication and gene-expression [ 16,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>In addition , inver-sion-independent mechanisms of regulation , as well as global regulators involved in DNA topology , such as the leucine responsive regulatory protein ( LRP ) and integration host factor ( IHF ) , affect type 1 ﬁmbrial expression in E. coli ( 4 , 17 , 20 , 25 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In addition , a number of global regulators have been implicated in type 1 ﬁmbrial expression in E. coli , including LRP , H-NS , and IHF ( 4 , 5 , 17 , 20 , 25 , 54 ) , and these proteins may be involved in serovar Typhimurium ﬁmbrial regulation as well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In addition , global regulators , such as LRP , IHF , and HN-S , have been shown to affect ﬁmA expression in E. coli ( 5 , 18 , 45 ) , whereas little is known about the ability of this group of molecules to control ﬁmA expression in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816478" target="_blank">10816478</a>]<br></li>
+<li>In addition to these two global regulatory systems , integration host factor ( IHF ) is involved in the expression of the genes involved in branchedchain amino acid biosynthesis ( for reviews , see references 11 , 40 , and 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Nucleoid-binding global regulators that modulate DNA topology , such as Lrp , integration host factor ( IHF ) , and H-NS affect phase variation and synthesis of type 1 fimbriae in E. coli [ 22 -- 27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Regulation of csgD expression is known to be complex , involving multiple transcriptional regulatory proteins , small RNAs ( sRNAs ) , and histone-like proteins , such as H-NS and integration host factor ( IHF ) ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27260360" target="_blank">27260360</a>]<br></li>
+<li>Regulation of expression of the spvR gene is very complex , and besides RpoS , other proteins that exert control over spvR include H-NS , Crp , and Lrp as negative regulators and integration host factor ( IHF ) as a positive regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>This is further supported by the previous work by [ 57 ] that shows IHF integrates stationary-phase and virulence gene-expression and plays a critical role in the co-regulatory process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Certainly , the classes of genes that show altered expression in the absence of HU and IHF show a considerable overlap : the SPI1 and SPI2 virulence genes , and the chemotaxis and motility genes discussed above are HU-dependent and are also influenced by IHF ( Mangan et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>Model illustrating the roles of the TCS GlrR/GlrK , s54 and IHF for transcription of sRNA genes glmY and glmZ in Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Sub-network enrichment analyses of the expression time-course of Salmonella genes during human macrophage invasion identified several transcription factors ( PhoP , IHF , SlyA , and Lrp ) that were previously shown in the literature to be significant for infection and survival in phagosomes and therefore were components of our SPI pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>The most observed regulators in E. coli include : RpoS , RpoH , H-NS and IHF , respectively , controlling the expression of 128 , 48 , 28 and 23 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26387845" target="_blank">26387845</a>]<br></li>
+<li>Like Lrp ( 14 , 32 ) , IHF accumulation and expression is growth phase dependent ( 3 , 16 ) and expression of the genes encoding IHF ( ihfA and ihfB ) apparently requires ppGpp ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>While the physiological role of the HilD-mediated cross-talk between Spi-1 and Spi-2 remains to be further analyzed in vivo inside host cells , it has been proposed that coordinated regulation of Spi-1 and Spi-2 gene-expression involves also IHF ( as described above ) which inﬂuences HilD expression ( Fass and Groisman , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>IHF has an important role in the regulation-of-gene-expression and environmental adaptability of S. enterica and E. coli ( Mangan et al. 2006 ; Prieto et al. 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>Numerous transcription factors are involved , including OmpR , MlrA , and CpxR and the nonspeciﬁc DNA-binding proteins H-NS and IHF , in addition to the feed-forward loop involving rpoS and the factors that regulate RpoS activity , including IraP and Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25824832" target="_blank">25824832</a>]<br></li>
+<li>For example , DNA bending and supercoiling may regulate virulence genes as suggested by findings that the small nucleoid binding proteins IHF and H-NS reduce expression of spvR and spvABCD respectively ( O'Byrne and Dorman , 1994 ; Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>Genomic analysis of DNA binding and gene regulation by homologous nucleoid-associated proteins IHF and HU in Escherichia coli K12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28859308" target="_blank">28859308</a>]<br></li>
+<li>IHF is a nucleoid-associated protein that binds and bends the DNA at speciﬁc sequences and thus acts as an accessory factor in a wide variety of processes , including transcription ( 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Integration host factor ( IHF ) plays an important role in DNA bending and compactation and in the transcriptional regulation of many genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Another NAP , IHF , also positively regulates hilA by displacing H-NS ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>HU , IHF : Même combat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">IHF binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>[ 89 ] BasR/PmrA Escherichia coli K12 TTAANNTT ( N ) TTAANNTT 3 Cra Escherichia coli K12 RSTGAAWCSNTHHW CRP Escherichia coli K12 AAATGTGATCTAGATCACATTT CsgD Escherichia coli K12 CGGGKGAKNKA ‡ Escherichia coli K12 AAAAGNGNNAAAWW ‡ Salmonella enterica serovar Typhimurium ATCC14028 YGGGTGAGTYM § HGGGNDRNBNN § CpxR Escherichia coli K12 GTAA ( N5 -- 7 ) GTAA IHF Salmonella enterica serovar Typhimurium ATCC14028 WATCAA ( N4 ) TTR MlrA Escherichia coli K12 AAAATTGTACA ( 12N ) TGTACAATTTT OmpR Escherichia coli MG1655 TTTRWAYATWRDTTTACA ¶ Salmonella enterica serovar Typhimurium ATCC14028 ACNTTTNGNTACANNTAT RcdA Escherichia coli K12 TTGTNNACA RstA Escherichia coli K12 TACATNTNGTTACA † The consensus sequences are written in International Union of Pure and Applied Chemistry ( IUPAC ) nucleotide code .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>IHF binds to many target DNA sequences and plays a role as a transcription factor ( Browning et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Four highly conserved nucleotides ( Supplementary Figure S3 ) were exchanged within the putative IHF site 1 ( Figure 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>The sequence alignment also detected two putative IHF binding sites that coincide with the occurrence of s54-promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Sequence motifs of a s54-promoter , three GlrR binding sites and two IHF binding sites are detect-able .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>The two sites identiﬁed by sequence alignment are likely candidates for these IHF binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Important regulatory regions or binding sites for OmpR ( hatched boxes ) , CpxR ( black boxes ) , H-NS ( gray box ) , and IHF ( white box ) are displayed above the alignment ( 23 , 35 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17012381" target="_blank">17012381</a>]<br></li>
+<li>CRP and FIS ( grey boxes ) and IHF ( underline ) binding sites identified in E. coli are shown [ 5,6,40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24358360" target="_blank">24358360</a>]<br></li>
+<li>Matches to the ihf consensus sequence ( 10 , 19 -- 21 ) are underlined ; mismatches are shown in bold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>IHF differs from HU in binding to a consensus sequence in DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The cAMP-cAMP receptor protein ( CRP ) complex and integration host factor ( IHF ) act in concert to activate tdc transcription by binding to specific DNA sequences in the tdc promoter [ 20 , 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21464594" target="_blank">21464594</a>]<br></li>
+<li>ParB binds to a 74 bp high-affinity site ( parS ) which adopts a highly bent DNA structure in the presence of IHF ( Funnell , 1988 ) ( Funnell and Slavcev , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850262" target="_blank">17850262</a>]<br></li>
+<li>Further investigations elucidated two IHF binding sites one 181 bp upstream and one 273 bp downstream of the csgD transcriptional start site ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Both the P. vulgaris and S. marcescens ihf sites centered at 2116 contain only two mismatches from the E. coli ihf consensus sequence ( Table 3 ) , whereas the ihf sites for all other ﬁs promoters contain only one mismatch .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>Two additional regions ﬂanking ABS3 exhibit a higher degree of conservation and show similarity to binding sites of IHF , which are represented by the consensus WATCARXXXXTTR ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Integration host factor ( IHF ) binds to DNA sequences upstream of the spvR regulatory region , and the leucine-responsive regulatory protein ( Lrp ) binds to sequences upstream of the spvABCD operon and regulate spv expression ( Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>The banded rectangle indicates a putative hybrid Fnr-Crp binding site ; the black rectangle is an IHF binding site ; the white rectangle is the Crp binding site ; and ovals are putative pocR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>To determine the speciﬁc sequence bound by IHF , DNase I protection assays were performed using puriﬁed IHF and a radiolabeled fragment spanning positions 290 to 18 of the csrB regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Sequences for a p54-promoter and for binding sites of the response regulator GlrR as well as of IHF are shared features of the glmY and glmZ promoter regions of many , but not all Enterobacteriaceae We performed sequence alignments of the promoter regions of the glmY as well as glmZ genes retrieved from 39 genome sequences representing the most important genera of Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>The sequences of the putative IHF binding sites upstream of E. coli glmY and Y. pseudotuberculosis glmZ are shown and the nucleotide exchanges introduced in IHF site 1 of the E. coli glmY promoter are indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>To assess whether the two sequence elements resembling IHF binding sites are important for s54-promoter activity , we mutated the putative IHF-site 1 in the E. coli glmY ' - lacZ fusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Certain features noted in the upstream sequence in E. coli ( 3 ) -- a putative s54 promoter ( 18 ) , two potential NtrC binding sites ( 18 ) , and a putative integration host factor ( IHF ) binding site ( 4 ) -- are present at the corresponding locations in the S. typhimurium sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10074092" target="_blank">10074092</a>]<br></li>
+<li>IHF interacts with a deﬁned DNA sequence that has a supportive A-tract upstream of the consensus sequence by binding to the minor groove of the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>IHF protected the sequence located between positions 116 to 86 , which includes the sequence ( AACAACT AATTA ) initially predicted by the bioinformatics analyses as a possible IHF binding site ( Fig. 2A and 8C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Therefore , these results demonstrate that IHF positively controls the expression of csrB by binding to a site located between the SirA binding sequence and the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>We determined that the integration host factor ( IHF ) positively regulates the expression of csrB , but not of csrC , and dem-onstrated that IHF binds the sequence that we initially predicted by computational analyses as an IHF binding site ( Fig. 8 ) , which is located between the SirA binding site and the promoter of csrB ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>For csrB , the predicted IHF binding sequence is shown inside a box with dashed lines , whereas the sequences protected by SirA and IHF in the footprinting assays are indicated by ﬁlled and open boxes above the sequence , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Only one putative binding site for the IHF and one for the response regulator CpxR were identiﬁed in csrB ; both were located between the IR sequence bound by SirA and the promoter ( Fig. 2A and data not shown ) , whereas none was identiﬁed in csrC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Although the deﬁned IHF binding site in the E. coli glnH promoter and the corresponding sequence in the S. typhimurium glnH promoter share only 14 of 27 nucleotides , the consensus binding site for IHF is actually quite small ( WATCAAN4TTR , where W represents A or T and R represents A or G [ 7 , 20 , 33 ] ) , and the potential site in the S. typhimurium sequence has only one mismatch to the consensus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>IHF binds to a site marked with a stippled gray box in the E. coli sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>594 Consensus sequence ... WATCAANNNNTTR a The match to the ihf site sequence in the E. coli ﬁs P region extends from 2116 to 2128 and was functionally veriﬁed based on deletions , point mutations , and DNase I protection analysis ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>The sequence preceding ORF1 in the enteric bacteria showed a very strong similarity to the E. coli ﬁs P region from 253 to 127 and the region around 2116 containing an ihf binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+<li>The open rectangle indicates a region containing a match to the ihf consensus sequence , and the broken line indicates the region protected by IHF from DNase I cleavage in the E. coli ﬁs P region ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9811652" target="_blank">9811652</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by IHF</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>For this reason knockout mutations in ihf and in hup are not equivalent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>prpR , ntrA , and ihf Functions Are Required for Expression of the prpBCDE Operon , Encoding Enzymes That Catabolize Propionate in Salmonella enterica Serovar Typhimurium LT2 SERGIO PALACIOS AND JORGE C. ESCALANTE-SEMERENA * Department of Bacteriology , University of Wisconsin -- Madison , Madison , Wisconsin Received 13 September 1999/Accepted 17 November 1999 The genes required for the catabolism of propionate in Salmonella enterica serovar Typhimurium are organized as two transcriptional units ( prpR and prpBCDE ) that are divergently transcribed from one another .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_3">
+Palacios S , Escalante-Semerena JC : prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24007446" target="_blank">24007446</a>]<br></label>
+<input id="tu_similarity_3", type="checkbox">
+<div class="TU_similar">
+<li>prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12581721" target="_blank">12581721</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12125817" target="_blank">12125817</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980465" target="_blank">16980465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27583250" target="_blank">27583250</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12700259" target="_blank">12700259</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12147480" target="_blank">12147480</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li>
+<li>prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar Typhimu-rium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21768276" target="_blank">21768276</a>]<br></li>
+<li>prpR , ntrA , and ihf functions are required for expression of the prpBCDE operon , encoding enzymes that catabolize propionate in Salmonella enterica serovar typhimurium LT2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15528672" target="_blank">15528672</a>]<br></li></div>
+<li>The himD mutation has only a slight negative effect ( approximately twofold ) on glnH transcription ( Table 4 ) under our assay conditions , so it remains unclear from our data whether IHF is involved in expression of this operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>Under other growth conditions ( low temperature , low osmolarity ) , neither of the two ihf mutant alleles modified hilA expression ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Other SPI-2 regulators , such as YdgT , Hha and IHF , have been suggested to repress SPI-2 gene expression indirectly , since no binding of these proteins to ssrA and/or ssrB promoters has been demonstrated [ 21,24,25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29751061" target="_blank">29751061</a>]<br></li>
+<li>Over expressing strains were constructed cloning the cysJIH operon or cysB in the pBAD TOPO TA vector according to manufacturer 's instructions ( Invitrogen ) using the primers ; pBADcysJIHF : 50 ATGACGACACCGGCTCC ACTGACTG 30 and pBADcysJIHR : 50 CCCTTCATGCAGCCCGCAC TCGCGC 30 or pBADcysBF : 50 ATGAAATTGCAGCAGCTTCG 30 pBADcysBR : 50 CTTTTCAGGCAGCTTTATAT 30 and transformed into S. Typhimurium ATCC 14028s .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25637663" target="_blank">25637663</a>]<br></li>
+<li>Expression of the ihf genes is subject to complex control ; they respond to growth phase , RpoS , guanosine tetraphosphate and are subject to autoregulation ( Aviv et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>Additional results have revealed that IHF binds to the spvR upstream region and that upon its inactivation , spvR and spvB transcriptional levels are reduced ( 302 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>IHF is involved in a variety of cellular processes like recombination , replication and gene expression [ 16,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Induction of the sufA operon encoding Fe-S assembly proteins by superoxide generators and hydrogen peroxide : involvement of OxyR , IHF and an unidentiﬁed oxidant-responsive factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18441067" target="_blank">18441067</a>]<br></li>
+<li>Like Lrp ( 14 , 32 ) , IHF accumulation and expression is growth phase dependent ( 3 , 16 ) and expression of the genes encoding IHF ( ihfA and ihfB ) apparently requires ppGpp ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>murium to undergo the physiological changes associated Double hilC hns and hilD hns mutants could be easily with the transition from the exponential to the stationary constructed ; however , a double hns ihf mutant appeared not phase of growth , including virulence gene expression to be viable in strain SV5015 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>Interestingly , the a subunit of IHF ( encoded by himA ) lies in an operon which was previously identiﬁed as being induced within the host during S. typhi-murium pathogenesis ( 36 ) , and a polar mutation in this operon also causes attenuation of S. typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9009317" target="_blank">9009317</a>]<br></li>
+<li>Expression of cbi and pdu operon fusions was measured as a function of IHF in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171434" target="_blank">9171434</a>]<br></li>
+<li>In contrast , analysis of mRNA levels of himA encoding the subunit of IHF protein in hemA26 and fur mutants showed that hydrogen peroxide did not suppress its expression , indicating that this reduction in expression by hydrogen peroxide is speciﬁc to oxyR-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081946" target="_blank">12081946</a>]<br></li>
+<li>Therefore , these computational analyses strongly suggested that IHF and CpxR could be involved in the expression of csrB but not of csrC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Whether IHF induces a DNA bending that facilitates the formation of SirA/RNAP/promoter complex in csrB and whether another DNA-bending protein , such as HU or intrinsically curved DNA , is involved in the expression of csrC remains to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Mutants lacking IHF did not induce hilA in cells entering the stationary phase , and this lack of induction was dependent on the presence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>These in vivo results suggest that , at least under certain environmental conditions ( high temperature and osmolarity , cells entering the stationary phase ) , the presence of IHF antagonizes H-NS-mediated hilA silencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>By growing cells in aerated LB medium , we show that H-NS silencing of hilA ceases at the onset of the stationary phase , and in addition that IHF is required to alleviate H-NS silencing under these physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_25">
+IHF directly regulates the expression of csrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></label>
+<input id="tu_similarity_25", type="checkbox">
+<div class="TU_similar">
+<li>FIG 8 IHF positively and directly regulates the expression of csrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li></div>
+<li>It has been shown that IHF plays a combination of the hns allele with a mutant allele in the gene critical role in the expression of genes required by S. Typhi - encoding the H-NS antagonist would restore hilA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21680637" target="_blank">21680637</a>]<br></li>
+<li>In contrast , the expression of the csrB-370 fusion , but not of the csrC-350 fusion , was drastically reduced in the himA mutant lacking the subunit of IHF ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>Since IHF does not play a role in low csgD expression under aerobic conditions , we assume that none of the IHF binding sites or only the IHF2 site downstream of the csgD promoter is occupied .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14643403" target="_blank">14643403</a>]<br></li>
+<li>Furthermore , we found that SirA also controls the expression of csrC by an indirect mode , which involves the Csr system , and that the integration host factor ( IHF ) positively regulates csrB , but not csrC , by interacting with a sequence located between the promoter and the SirA-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>We determined that the integration host factor ( IHF ) positively regulates the expression of csrB , but not of csrC , and dem-onstrated that IHF binds the sequence that we initially predicted by computational analyses as an IHF binding site ( Fig. 8 ) , which is located between the SirA binding site and the promoter of csrB ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24187088" target="_blank">24187088</a>]<br></li>
+<li>These data indicated that PrpR , IHF , and transcription sigma factor RpoN were required for the expression of the prpBCDE operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>The data indicate that transcription factor sig-ma-54 and the IHF protein are important for the transcription of the prpBCDE operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648513" target="_blank">10648513</a>]<br></li>
+<li>The dps gene is located on the bacterial chromosome , and like spv , it requires the RpoS sigma factor and IHF for full expression ; unlike spv , dps is under the control of the OxyR regulator , a redox-sensitive DNA-binding protein ( Altuvia et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+<li>These results revealed a reciprocal regulatory relationship between HU and IHF at the level of transcription in which IHF represses hup gene transcription and HU upregulates the transcription of ihfA and ihfB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21212121" target="_blank">21212121</a>]<br></li>
+<li>IHF activates the transcription of ilvBN and the ilvGp2 promoter ( 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Growth phase determines the expression levels of several regulators ( e.g. , Fis is maximally expressed at 1 h of growth , and IHF peaks during the transition into the stationary phase [ 301 , 305 ] ) and inﬂuences its regulatory action ( e.g. , HilD induces SPI-2 genes during the late stationary phase [ 14 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>IHF and the RcsCDB system coordinately regulate this plasmid-borne operon together with SPI-2 and the pipB gene , as seen by the strong activation at the stationary phase and the dual regulation according to the degrees of activation reported for these regulators ( 274 , 301 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>SPI-1 genes , the siiBCD genes ( SPI-4 ) , sigD , and the ﬂagellar and chemotaxis genes are signiﬁcantly downregulated at 1 and 4 h of growth in the absence of IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>In contrast , but according to the maximal IHF expression levels detected in the late logarithmic phase , SPI-2 genes , the mgtCB operon , pipB , and the spvABC genes are particularly activated after 6 h of growth ( when favorable conditions for SPI-2 induction and intracellular survival have been described ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>As shown in Figure 7D , slyA is capable of activating expression of SPI-2 genes independently of ssrB , ompR/envZ , phoP/phoQ , csrA and himD ( ihf ) , although the effects are not as strong as ssrB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></li>
+<li>In the construction of the himD knockout strain , himD was cloned onto pCP20 ( ibid ) allowing expression of flip recombinase even in an ihf mutant , which does not support replication of pCP20 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19229334" target="_blank">19229334</a>]<br></li>
+<li>Expression of the chromosomally encoded E. coli glmY ' - lacZ fusion was determined in mutants lacking ihfA or ihfB , which encode the subunits of IHF ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li>
+<li>Another NAP , IHF , also positively regulates hilA by displacing H-NS ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>INTEGRATION HOST FACTOR The IHF is encoded by two unlinked genes , ihfA and ihfB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_46">
+Altuvia , S. , Almirön , M. , Huisman , G. , Kolter , R. & Storz , G. 1994 The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10874730" target="_blank">10874730</a>]<br></label>
+<input id="tu_similarity_46", type="checkbox">
+<div class="TU_similar">
+<li>[ 34 ] S. Altuvia , M. Almiron , G. Huisman , R. Kolter , G. Storz , The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18166161" target="_blank">18166161</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and a sigma ( s ) in 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9190824" target="_blank">9190824</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and sigma S in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10618525" target="_blank">10618525</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19223478" target="_blank">19223478</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and ss in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7868603" target="_blank">7868603</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and s in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25028458" target="_blank">25028458</a>]<br></li>
+<li>The dps promoter is activated by OxyR during growth and by IHF and sS in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li></div>
+<li>Expression of dps in E. coli has been shown to be regulated 38 by the stationary-phase sigma factor RpoS ( ) , OxyR , and IHF ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742565" target="_blank">14742565</a>]<br></li>
+<li>It is produced primarily throughout stationary phase and its expression is regulated by the stationary phase sigma factor RpoS ( s38 ) , OxyR , and IHF [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20920181" target="_blank">20920181</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - CadC</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">CadC</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">CadC transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>In fact , proteins such as Tsr , Tar ( Umemura et al. , 2002 ) and CadC ( Haneburger et al. , 2011 ) utilize non-histidine residues to detect and respond to pH changes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27282333" target="_blank">27282333</a>]<br></li>
+<li>Thus , their CadC proteins appear to respond differently to this signal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>This led us to hypothesize that CadC could regulate ompR gene expression by direct interaction with OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>CadC activates the cadAB operon , an important system expressed under acidic conditions ( 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>The CadC protein of E. coli , for example , is activated by exog-enous lysine besides acid pH ( Dell et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17229213" target="_blank">17229213</a>]<br></li>
+<li>Lee YH , Kim BH , Kim JH , Yoon WS , Bang SH & Park YK Lee YH , Kim JH , Bang IS & Park YK ( 2008 ) The membrane-bound transcriptional-regulator CadC is activated by proteolytic cleavage in response to acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>The acid response in S. Typhimurium is regulated by different proteins , including CadC , AdiY , PhoPQ , OmpR , and RpoS ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23315743" target="_blank">23315743</a>]<br></li>
+<li>DISCUSSION The central ﬁnding of our study is that a membrane-bound transcriptional-regulator CadC is activated by proteolytic cleavage in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The mem-brane-bound transcriptional-regulator CadC is activated by proteolytic cleavage in response to acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>Cellular accumulation and functional inactivation of C-terminally truncated CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Our data suggest that the PTS permease STM4538 affects proteolytic processing , which is a necessary but not sufﬁcient step for CadC activation , rendering CadC able to activate target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>We report here that CadC is located on the inner membrane under normal growth conditions but rapidly cleaved under acid stress conditions , leading to the induction of target gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The results in Fig. 3 show that CadC is somewhat stable through the ﬁrst 20 min under nonstress conditions , but its stability is strongly decreased under stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Figure 4A shows that CadC degradation occurs strictly in response to acid stress and is coupled to induction of cadA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The in vivo induction of CadC suggests that it contributes to survival in speciﬁc host tissues , enhancing virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>This led to the prediction that S. enterica serovar Typhimurium CadC may be a transmembrane protein that undergoes regulated proteolysis by which it is cleaved and activated from a latent state ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>CadC is rapidly degraded by low pH and lysine signal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Our previous study clearly demonstrated that in S. Typhimurium CadC is produced as a dormant membrane-localized precursor that is rapidly cleaved in response to low pH and lysine signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>This suggests that CadC undergoes posttranslational proteolysis in response to low pH and lysine signal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Together , our findings suggest that CadC may repress autoinduction of the OmpR response-regulator through their direct interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>Arrows indicate activation and T-shaped lines represent repre-ssion ( B ) ( A ) Conclusion Our data demonstrate a specific interaction between DNA-binding transcription factors , CadC and OmpR , and suggest that this direct interaction may be a possible mechanism underlying the CadC-mediated repression of ompR autoinduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>The prepared fractions were analyzed by immunoblotting for the presence of CadC protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>After 2 h of incubation , followed by extensive washing of the beads , the presence of His-tagged OmpR bound to GST-CadC or GST control was analyzed by SDS-PAGE and immunoblotting with anti-His antibodies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>The level of GST-CadC and GST alone bound to the beads was also analyzed by immunoblotting with anti-GST antibodies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>C-terminally HA-tagged CadC ( CadC-HA ) was expressed under the control of its own promoter to ensure regulation as observed in wild-type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The ΔcadC strain harboring this plasmid was grown in E glucose medium to early log phase ( OD600 of 0.4 ) , and then C-terminally HA-tagged CadC ( CadC-HA ) was induced with increasing amounts of arabinose ( 0 to 5 mM ) for 1 h. Immunoblot analysis of total protein extracts showed that the cellular level of OmpR decreases as CadC increases ( Fig. 1 ) , suggesting that there exists a tightly regulated inverse correlation between the CadC and OmpR transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>To further conﬁrm CadC degradation , we constructed a pBAD24 derivative ( pBAD24-CadC-HA ) that expressed CadC-HA under the control of araBAD promoter , which is strictly regulated by the concentration of extracellular arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>We therefore were motivated by the reciprocal transcriptional repression between cadC and ompR genes under similar but different environ ¬ To assess effects of CadC on the OmpR protein level , we used a pBAD24 derivative ( pBAD24-CadC-HA ) that expressed CadC-HA under control of the arabinose-inducible araBAD promoter ( Guzman et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>To explore the molecular basis for OmpR repression by CadC , we performed in vitro binding assays and determined that CadC directly interacts with OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>CadC interacts directly with OmpR Since S. enterica serovar Typhimurium OmpR response re-gulator was shown to induce its own synthesis by binding to its promoter ( Bang et al. , 2002 ) , we hypothesized that CadC could mediate the repression of ompR gene expression by direct interaction with OmpR , sterically hindering binding of OmpR to its own promoter or RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>The M embrane-Bound Transcriptional Regulator CadC Is Activated by Proteolytic Cleavage in Response to Acid Stress Yong Heon Lee ,1 Ji Hye Kim ,1 Iel Soo Bang ,2 and Yong Keun Park1 * School of Life Sciences and Biotechnology , Korea University , Seoul 136-701 ,1 and Department of Microbiology and Immunology , Chosun University School of Dentistry , Gwangju 501-759 ,2 South Korea Received 4 January 2008/Accepted 7 May 2008 Proteolytic processes often participate in signal transduction across bacterial membranes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>55 , No. 12 , pp. 966 -- 972 DOI 10.1007 / s12275-017-7410-7 eISSN 1976-3794 pISSN 1225-8873 Direct interaction between the transcription factors CadC and OmpR involved in the acid stress response of Salmonella enterica Yong Heon Lee1 ,2 * and Ji Hye Kim1 1School of Life Sciences and Biotechnology , Korea University , Seoul 02841 , Republic of Korea 2Department of Biomedical Laboratory Science , Dongseo University , Busan 47011 , Republic of Korea ( Received Sep 27 , 2017 / Revised Oct 18 , 2017 / Accepted Oct 23 , 2017 ) In Salmonella enterica serovar Typhimurium , the acid-sens-ing regulator CadC activates transcription of the cadBA op-eron which contributes to the acid tolerance response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>MICROBIOLOGY LETTERS R E S E A R C H L E T T E R A phosphotransferase system permease is a novel component of CadC signaling in Salmonella enterica Yong Heon Lee1 , Sinyeon Kim1 , Ji Hye Kim1 , Iel Soo Bang2 , In Soo Lee3 , Seong Ho Bang4 & Yong Keun Park1 1 2 School of Life Sciences and Biotechnology , Korea University , Seoul , South Korea ; Department of Microbiology and Immunology , Chosun University School of Dentistry , Gwangju , South Korea ; Department of Biotechnology , Hannam University , Daejeon , South Korea ; and 3 4 Department of Biological Science , Hanseo University , Seosan , South Korea Correspondence : Yong Keun Park , School of Life Sciences and Biotechnology , Korea Abstract In Salmonella enterica serovar Typhimurium , proteolytic cleavage of the mem-brane-bound transcriptional-regulator CadC acts as a switch to activate genes of the lysine decarboxylase system in response to low pH and lysine signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>a Global Translational Effect during Acid A Salmonella enterica Serovar Typhimurium CadC Has daptation in Yong Heon Lee ,1 Bae Hoon Kim ,1 Ji Hye Kim ,1 Won Suck Yoon ,1 Seong Ho Bang ,2 and Yong Keun Park1 * School of Life Sciences and Biotechnology , Korea University , Seoul 136-701 ,1 and Department of Biology , Hanseo University , Seosan 356-706 ,2 Korea Received 13 August 2006/Accepted 17 December 2006 In Salmonella enterica serovar Typhimurium , the membrane-localized CadC is a transcriptional-activator of the cadBA operon , which contributes to the acid tolerance response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>E-mail : yhlee@dongseo.ac.kr; Tel. : +82-51-320-1912 ; Fax : +82-51-320-2721 Copyright 2017 , The Microbiological Society of Korea S. enterica serovar Typhimurium CadC is an acid-sensing transcriptional-activator of the cadBA operon , whose expre-ssion is induced by external acidification and exogenous lysine contributing to the acid tolerance response ( Park et al. , 1996 ; Lee et al. , 2007 , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>Results and Discussion Inverse correlation between the acid-sensing regulator CadC and the response-regulator OmpR S. enterica serovar Typhimurium CadC is known to act as a repressor of ompR transcription during acid adaptation ( Lee et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>CadC activates the cadBA operon in response to external acidiﬁcation and exogenous lysine ( Watson et al. , 1992 ; Lee et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>In acidic minimal medium , CadC activates the cadBA operon , which is involved in the recovery from acid stress ( Lee et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>CadC acts as both a signal sensor and transcriptional-regulator , responding to the low pH and lysine signal by activating transcription of the cadBA operon ( 21 , 29 , 30 , 40 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>In Salmonella enterica serovar Typhimurium , the transcriptional-regulator CadC activates genes of lysine decarboxylase system in response to external acidiﬁcation and exogenous lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Acid-sensing protein CadC is a transcriptional-regulator that activates the cadBA operon encoding lysine decarboxylase CadA and lysine-cadaverine antiporter CadB , under conditions of low external pH and exogenous lysine ( 21 , 25 , 28 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_42">
+Neely MN , Dell CL & Olson ER ( 1994 ) Roles of LysP and CadC in mediating the lysine requirement for acid induction of the Escherichia coli cad operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></label>
+<input id="act_similarity_42", type="checkbox">
+<div class="ACT_similar">
+<li>Roles of LysP and CadC in mediating the lysine requirement for acid induction of the Escherichia coli cad operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9882690" target="_blank">9882690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28290295" target="_blank">28290295</a>]<br></li></div>
+<li>A recent study has also shown that E. coli CadC is inactivated through an interaction with the lysine permease LysP in the absence of exogenous lysine ( Tetsch et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>These results suggest that the lysine signal represses lysP expression , thereby eliminating the negative regulation of CadC activation by LysP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>This study was designed to test the hypothesis that the activation of membrane-bound transcriptional-regulator CadC is governed by a proteolytic mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>We aimed to elucidate the function of S. enterica serovar Typhimurium CadC in the ATR and discovered that it regulates expression of 36 proteins and is related to the OmpR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Accordingly , since the MarT homolog CadC has been proven to counteract H-NS and since HilA is no longer required for siiE expression in the absence of this NAP , MarT binding to the misL promoter and HilA activation of the SPI-4 genes are thought to antagonize H-NS repression ( 225 , 239 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Because CadC senses environmental cues such as external pH and lysine through its putative C-terminal periplasmic domain , it is likely that the truncated CadC is not sensitive enough to external signaling to activate the cadBA operon , resulting in loss of the lysine-decarboxylase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>Thus , the mutation identiﬁed in this study is likely to reduce the ability of CadC to activate cadBA transcription due to a weak response to signals induced by external pH or lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>For example , CadC might regulate other transcriptional-regulators , which in turn induce or repress the production of the proteins indicated in Fig. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Based on all the information gathered to date , we propose a model for the reciprocal negative regulation between the CadC and OmpR transcription factors under in vitro and in vivo acidic conditions ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>b-Galactosidase assays Results Genetic screening for candidate genes required To identify genes involved in the proteolytic activation of CadC , we performed a genome-wide screen to isolate mutants that prevent cadBA expression , even in the presence of the cadC gene , under acid stress conditions ( pH 5.8 , 10 mM lysine ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>( A ) Under acidic conditions in vitro ( NCE glucose medium with 10 mM lysine at pH 4.4 ) , the transcriptional-regulator CadC activates the cadBA operon which is involved in the recovery from acid stress , but represses autoinduction of the ompR gene possibly through direct CadC-OmpR interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">CadC protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Five C-terminal truncated forms of CadC were generated by PCR using the primer pairs PcadC-F/CadC162-R , PcadC-F/CadC183-R , PcadC-F/CadC200-R , PcadC-F/CadC210-R , and PcadC-F/CadC220-R , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Future studies will be required to identify regions of CadC and OmpR that are necessary for their physical interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>We further demonstrate , using in vitro binding assays , that CadC can form a physical complex with OmpR , representing an example of a functional interaction between two transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>Arrows indicate activation and T-shaped lines represent repre-ssion ( B ) ( A ) Conclusion Our data demonstrate a specific interaction between DNA-binding transcription factors , CadC and OmpR , and suggest that this direct interaction may be a possible mechanism underlying the CadC-mediated repression of ompR autoinduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>In vitro binding assays for determination of CadC and OmpR interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>( C ) In vitro interaction between GST-OmpR and His6-CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>CadC was predicted to have one transmembrane domain at amino acid residues 163 to 183 ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The in vivo induction of CadC suggests that it contributes to survival in speciﬁc host tissues , enhancing virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Although ToxR and CadC also lack a phosphoryl-acceptor domain , HilA lacks a predicted membrane spanning domain which is characteristic of these two family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12396235" target="_blank">12396235</a>]<br></li>
+<li>The truncated CadC protein retained its putative DNA-binding and transmembrane domains , but lacked its C-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>Salmonella enterica serovar Typhimurium ( S. Typhi-muium ) CadC is a membrane-spanning transcriptional activator with a cytoplasmic DNA-binding domain and a periplasmic signal-sensing-domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Comparative sequence analysis predicts that S. enterica ser-ovar Typhimurium CadC may be a membrane-spanning protein with an N-terminal cytoplasmic DNA-binding domain and a C-terminal periplasmic domain ( 19 , 39 ) , although there has been no direct demonstration for this .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Comparative sequence analysis suggests that CadC has three domains : an N-terminal cytoplasmic DNA-binding domain , a central transmembrane domain , and a Cterminal periplasmic domain ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>C-terminal truncations of CadC abolish its proteolytic activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>One possible explanation for our results is that CadC signal transduction may be mediated by proteolysis-induced conformational changes in the cytoplasmic DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Analysis of the other CadC-regulated proteins may provide further insight into the roles played by CadC in pathogen-host interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>To determine whether the periplasmic portion of the native N-terminal CadC fragment is indispensable for its transcriptional activator function , we performed LDC assay using these two C-terminal truncations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>To further determine the approximate site of proteolytic cleavage , we constructed three C-terminal truncations of HA-CadC ending at residues 200 , TABLE 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>To determine whether a fragment containing the cytoplasmic domain of CadC is produced by proteolytic cleavage , a similar analysis was carried out with the N-terminally HA-tagged CadC ( HA-CadC ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>for CadC activity Inactivation of STM4538 prevents proteolytic cleavage of CadC To assess the potential role of STM4538 in the proteolytic activation of CadC , we performed an immunoblot analysis of total protein extracts from the S. Typhimurium wild-type and DSTM4538 strains harboring pACYC184-HA-CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>To test the importance of the periplasmic domain for CadC degradation , we constructed two additional C-terminally truncated versions of CadC with an N-terminal HA tag .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>PTS permease STM4538 is involved in the proteolytic activation of CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>As shown in Fig. 5C , HA-CadC210 ( residues 1 to 210 ) nearly comigrated with the native cleavage product , indicating that CadC undergoes proteolytic cleavage in the vicinity of residue 210 , which is 27 amino acids distal to the periplasmic end of the predicted transmembrane segment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Moreover , serovar Typhimurium CadC shows a high degree of homology to the N-terminal DNA-binding domain of V. cholerae ToxR ( 20 ) , which regulates as many as 17 genes either directly or indirectly ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Thus , it will be interesting to determine whether proteolytic cleavage at the periplasmic domain of CadC generates a conformational signal that modulates its DNA-binding activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>These results suggest that CadC indeed undergoes proteolytic cleavage to generate a biologically active form of N-terminal DNA-binding domain , which binds to the target gene promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Site-speciﬁc proteolysis at the periplasmic domain of CadC generates a biologically active form of the N-ter-minal DNA-binding domain , which binds to the target gene promoter ( Lee et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Together , these observations suggest that sitespeciﬁc proteolysis at the periplasmic domain of CadC generates a biologically active form of N-terminal DNA-binding domain to promote target gene activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The deduced amino acid sequence of CadC has three domains : a cytoplasmic domain at the amino terminus , a transmembrane domain , and a periplasmic domain at the carboxyl terminus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>As full-length CadC is degraded , the N-terminal fragment containing the DNA-binding domain accumulates in the inner membrane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The observed CadC fragment was slightly larger than the expected size of the cytoplasmic domain , implying that it contains the transmembrane domain as well as the cytoplasmic domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The present study implicates a proteolytic mechanism in CadC signal transduction , demonstrating that , upon acid stress , the N-terminal CadC fragment that contains the DNA-binding domain is produced by proteolytic cleavage and thereby functions as a transcriptional activator of cadBA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Because CadC senses environmental cues such as external pH and lysine through its putative C-terminal periplasmic domain , it is likely that the truncated CadC is not sensitive enough to external signaling to activate the cadBA operon , resulting in loss of the lysine-decarboxylase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>Single amino acid substitutions in the carboxyl terminal periplasmic domain cause derepression of pH - and lysine signaling , suggesting that this domain is important for the function of CadC as a sensor ( Dell et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">CadC evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>However , the S. enterica serovar Typhimurium and E. coli CadC proteins only share 58.4 % identity , well below the median amino acid identity of homologous proteins between these species ( 90 % ) ( 28 ) , including those of CadB ( 90.2 % ) and CadA ( 92.4 % ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Although the CadC proteins in S. enterica serovar Typhi-murium and E. coli have similar structures ( 20 ) , they share only 58.4 % identity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Although ToxR and CadC also lack a phosphoryl-acceptor domain , HilA lacks a predicted membrane spanning domain which is characteristic of these two family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12396235" target="_blank">12396235</a>]<br></li>
+<li>Moreover , serovar Typhimurium CadC shows a high degree of homology to the N-terminal DNA-binding domain of V. cholerae ToxR ( 20 ) , which regulates as many as 17 genes either directly or indirectly ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>The marT gene is located on SPI3 and encodes a protein of 285 amino acids , which is most closely related ( 41 % sequence identity ) to the transcriptional activator CadC of E. coli ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17351045" target="_blank">17351045</a>]<br></li>
+<li>MarT and its close homologue CadC are members of the family of ToxR-like regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17351045" target="_blank">17351045</a>]<br></li>
+<li>Analysis of the CadC amino acid sequence also predicts it to be a member of the ToxR-like family rather than a member of the two-com-ponent system ( 19 , 25 ) , which is a phospho-relay cascade from the membrane-bound autophosphorylating sensor kinase to its corresponding cytosolic response regulator ( 4 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by CadC</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Cloning and sequencing analysis of cadC encoding transcriptional activator CadC from Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>We show that a phosphotransferase system ( PTS ) permease STM4538 acts as a positive modulator of CadC function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Keywords : Salmonella enterica , CadC , OmpR , fliC , acid stress Introduction The facultative intracellular pathogen Salmonella enterica serovar Typhimurium causes a systemic typhoid-like disease in mice and gastroenteritis in humans .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>In summary , we have shown that S. enterica serovar Typhi-murium CadC affects global translation and participates in control of ompR expression during acid adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>CadC has a global translational effect during acid adaptation in Salmonella enterica serovar Typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28486078" target="_blank">28486078</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28600761" target="_blank">28600761</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_6">
+CadC has a global translational effect during acid adaptation in Sal-monella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></label>
+<input id="rp_similarity_6", type="checkbox">
+<div class="RP_similar">
+<li>CadC has a global translational effect during acid adaptation in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23657681" target="_blank">23657681</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386064" target="_blank">26386064</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356573" target="_blank">22356573</a>]<br></li></div>
+<li>DISCUSSION CadC is a global regulator of acid adaptation in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>The major ﬁnding in this study is that S. enterica serovar Typhimurium CadC plays a role in global regulation during acid adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>We present evidence that regulated proteolysis participates in CadC signal-transduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Acid-sensing protein CadC is a transcriptional regulator that activates the cadBA operon encoding lysine decarboxylase CadA and lysine-cadaverine antiporter CadB , under conditions of low external pH and exogenous lysine ( 21 , 25 , 28 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>Effects of low pH and lysine on CadC proteolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>This suggests that CadC undergoes posttranslational proteolysis in response to low pH and lysine signal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The mem-brane-bound transcriptional regulator CadC is activated by proteolytic cleavage in response to acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>Thus , the ToxR-like family , including CadC , represents the simplest form of transmembrane signaling system , since the same protein acts as both a signal sensor and response regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>( B ) ( A ) ( C CadC exerts a positive effect on fliC expression and motility during acid adaptation The EnvZ-OmpR TCS was shown to negatively regulate trans-cription of the master flagellar control operon flhDC in E. coli ( Shin and Park , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>The participation of CadC in control of ompR expression suggests a role in adaptation to a broad spectrum of environments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Since our data clearly demonstrated CadCmediated repression of ompR gene-expression ( Fig. 1 ) , we speculated that CadC may be involved in the control of fla-gellation and motility , at least during acid adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>MICROBIOLOGY LETTERS R E S E A R C H L E T T E R A phosphotransferase system permease is a novel component of CadC signaling in Salmonella enterica Yong Heon Lee1 , Sinyeon Kim1 , Ji Hye Kim1 , Iel Soo Bang2 , In Soo Lee3 , Seong Ho Bang4 & Yong Keun Park1 1 2 School of Life Sciences and Biotechnology , Korea University , Seoul , South Korea ; Department of Microbiology and Immunology , Chosun University School of Dentistry , Gwangju , South Korea ; Department of Biotechnology , Hannam University , Daejeon , South Korea ; and 3 4 Department of Biological Science , Hanseo University , Seosan , South Korea Correspondence : Yong Keun Park , School of Life Sciences and Biotechnology , Korea Abstract In Salmonella enterica serovar Typhimurium , proteolytic cleavage of the mem-brane-bound transcriptional regulator CadC acts as a switch to activate genes of the lysine decarboxylase system in response to low pH and lysine signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Results and Discussion Inverse correlation between the acid-sensing regulator CadC and the response regulator OmpR S. enterica serovar Typhimurium CadC is known to act as a repressor of ompR transcription during acid adaptation ( Lee et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>S. Typhimurium GfrD was reported to modulate the activity of CadC ( 31 ) , a positive regulator of the cadBA genes which encode a lysine/cadaverine antiporter and lysine decarboxylase , respectively , and are involved in acid stress response in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26100043" target="_blank">26100043</a>]<br></li>
+<li>In Salmonella enterica serovar Typhimurium , the transcriptional regulator CadC activates genes of lysine decarboxylase system in response to external acidiﬁcation and exogenous lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>In addition , the PTS permease STM4538 is positively involved in regulation of CadC proteolysis through an unknown mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>( A ) Immunoblot ( IB ) analysis of acid stress-induced CadC degradation in the cadC strain harboring pACYC184-CadC-HA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>In acidic minimal medium , CadC activates the cadBA operon , which is involved in the recovery from acid stress ( Lee et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>( A ) Under acidic conditions in vitro ( NCE glucose medium with 10 mM lysine at pH 4.4 ) , the transcriptional regulator CadC activates the cadBA operon which is involved in the recovery from acid stress , but represses autoinduction of the ompR gene possibly through direct CadC-OmpR interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>We also show that only the low pH signal is involved in the proteolytic processing of CadC , but the lysine signal plays a role in the repression of the lysP gene encoding a lysine-speciﬁc permease , which negatively controls expression of the cadBA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>b-Galactosidase assays Results Genetic screening for candidate genes required To identify genes involved in the proteolytic activation of CadC , we performed a genome-wide screen to isolate mutants that prevent cadBA expression , even in the presence of the cadC gene , under acid stress conditions ( pH 5.8 , 10 mM lysine ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>Thus , it would appear that under the conditions used ( pH 4.4 for 1 h ) , CadC regulates a large number of proteins that may be important for acid adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Taken together , our ﬁndings strongly suggest that CadC may be a global regulator involved in the OmpR regulatory system during acid adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Taken together , these ﬁndings strongly support the notion that CadC is a global regulator in acid adaptation a Proteins were identiﬁed using ProFound and MASCOT against the NCBI database .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>Two-dimensional gel electrophoresis analyses showed that S. enterica serovar Typhi-murium CadC is a global regulator that controls the expression of 36 proteins , either positively or negatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>S. enterica serovar Typhimurium CadC was also shown to act as a global regulator that controls the expression of at least 36 proteins ( Lee et al. , 2007 ) , although there has been no demonstration that these genes are regulated directly or indirectly by CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">CadC binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The nucleotide sequences of the coding regions for the CadC proteins and their 0.1 kb upstream regions were determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+<li>Both the PT4 and PT14b LDC-negative strains exhibited a single-base deletion at position 973 ( cytosine ) of the 1542 bp coding region ( 514 aa ) , which was predicted to result in a truncated CadC ( 338 aa ) on the basis of the predicted amino acid sequence ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16553811" target="_blank">16553811</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by CadC</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Since OmpR is known to autoinduce its own expression ( 1 ) , ompR-lacZ merodiploid strains ( putPA1303 : : Kanr-ompR-lacZ ) were used to monitor regulation of ompR transcription by CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>The cadBA operon , encoding lysine decarboxylase ( cadA ) and a lysine/cadaverine antiporter ( cadB ) , is controlled by acid pH through a membrane sensor protein called CadC ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9882690" target="_blank">9882690</a>]<br></li>
+<li>However , despite wild-type Usually , a positive test is indicated by a purple color and levels of cadC transcription ( data not shown ) , HA-CadC ( b ) ( a ) Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>CadC activates the cadAB operon , an important system expressed under acidic conditions ( 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Cells harboring pBAD24-CadC-HA were grown in E glucose me-dium to early log phase ( OD600 of 0.4 ) , and then arabinose was added to induce CadC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>( B ) ( A ) ( C CadC exerts a positive effect on fliC expression and motility during acid adaptation The EnvZ-OmpR TCS was shown to negatively regulate trans-cription of the master flagellar control operon flhDC in E. coli ( Shin and Park , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+<li>We compared ompR mRNA levels by using RT-PCR and determined that the presence of CadC has a negative inﬂuence on expression ( Fig. 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>pACYC184-HA-CadC was constructed by PCR ampliﬁcation of the cadC gene and its promoter from S. enterica serovar Typhimurium chromosomal DNA using the two primer pairs , PcadC-F/PcadC-R and ORFcadC-F/ORFcadC-R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>N-terminally HA-tagged CadC ( HA-CadC ) was expressed under the control of its own promoter in the low-copy plasmid pACYC184 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>C-terminally HA-tagged CadC ( CadC-HA ) was expressed under the control of its own promoter to ensure regulation as observed in wild-type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The marT gene is located on SPI3 and encodes a protein of 285 amino acids , which is most closely related ( 41 % sequence identity ) to the transcriptional activator CadC of E. coli ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17351045" target="_blank">17351045</a>]<br></li>
+<li>We report here that CadC is located on the inner membrane under normal growth conditions but rapidly cleaved under acid stress conditions , leading to the induction of target gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487329" target="_blank">18487329</a>]<br></li>
+<li>The cadBA operon encodes lysine decarboxylase ( CadA ) and lysine-cadaverine antiporter ( CadB ) ; its expression is dependent upon the transcriptional activator CadC , the gene for which is located immediately upstream of the cadBA locus ( 21 , 29 , 30 , 40 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>As expected , there was no induction of cadA transcription in the UK1 cadC strain ( Fig. 1C ) , indicating that CadC is necessary for expression of the cadBA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17209022" target="_blank">17209022</a>]<br></li>
+<li>The transposon insertion in STM4538 reduces the expression of the CadC target operon cadBA under permissive conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>We also show that only the low pH signal is involved in the proteolytic processing of CadC , but the lysine signal plays a role in the repression of the lysP gene encoding a lysine-speciﬁc permease , which negatively controls expression of the cadBA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23066934" target="_blank">23066934</a>]<br></li>
+<li>( A ) Under acidic conditions in vitro ( NCE glucose medium with 10 mM lysine at pH 4.4 ) , the transcriptional regulator CadC activates the cadBA operon which is involved in the recovery from acid stress , but represses autoinduction of the ompR gene possibly through direct CadC-OmpR interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29214489" target="_blank">29214489</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

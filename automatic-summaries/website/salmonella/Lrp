@@ -1,0 +1,973 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Lrp</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Lrp</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Lrp transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>After Lrp targets are de-repressed , PhoP is no longer active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Lrp activity is not restricted to transcriptional control : it can affect other DNA transactions , such as site-specific recombination ( Kelly et al. , 2006 ; Roesch & Blomfield , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>PapI binds to Lrp ( Kaltenbach et al. , 1995 ) , increasing its affinity for pap DNA sites [ 4,5,6 ] ( Kaltenbach et al. , 1998 ) ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Thus , Lrp and Dam activate pef transcription , similar to their function in pap gene regulation ( Nou et al. , 1993 ; 1995 ; Braaten et al. , ± 1994 ; van der Woude et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Lrp can induce DNA bending ( 73 , 92 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp can repress or activate gene expression , and its action can either be modulated ( stimulated or inhibited ) or not by leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>Lrp can activate or repress gene expression , and depending on the system subject to Lrp regulation , leucine can play a stimulatory , inhibitory or neutral role ( Brinkman et al. , 2003 ; Calvo & Matthews , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>We further demonstrate that Lrp could be acetylated by Pat and deacetylated by NAD + - dependent CobB in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Lrp regulates type 1 ﬁmbrial genes in E. coli by participating in a DNA inversion event that is mediated by site-speciﬁc recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp constitutive expression dramatically attenuates virulence , leading to defects in invasion , cytotoxicity , and coloni-zation , whereas lrp deletion enhances these activities .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Lrp + and Lrp - strains harbouring these plasmid-borne fusions , all in a pSLT - background , were grown in liquid minimal medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>OmpR , Lrp and Fur are involved in pESI fimbriae regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Hence , an attractive idea is that Lrp and Dam methylation might regulate mating in response to environmental or physiological stimuli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>One may thus hypothesize that host-encoded functions such as Lrp , Dam methylation and ArcA might be part of signal transduction pathways that regulate bacterial conjugation in response to cellular or environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Lrp is known to regulate many ﬁmbrial genes , and its contributions have been studied in detail for Escherichia coli pap and ﬁm ﬁmbrial operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18776023" target="_blank">18776023</a>]<br></li>
+<li>Lrp in E. coli K-12 represses several genes , including CpxP , PhoP , and RpoS ( 48 ) , that are known to regulate virulence traits in some pathogenic bacteria ( 30 , 40 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth-phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>These results indicate that both Lrp and FimZ independently bind to PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Among them , ﬁmZ and ﬁmA are shown to be activated by Lrp and consequently allow S. Typhimurium to produce type 1 ﬁmbriae ( McFarland et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>To test this hypothesis , matings were performed to compare pSLT plasmid transfer from isogenic Lrp + and Lrp - donors ( SV4201 and SV4305 respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Because Dam methylation is known to repress conjugal transfer of F-like plasmids ( Torreblanca and Casadesús , 1996 ) , we also examined pSLT transfer from Dam - Lrp + and Dam - Lrp - donors ( SV4202 and SV4306 respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>It would appear that Lrp has a mild repressing effect on Dad expression , and it can be mutated to be an inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>Lrp binds strongly to PhilA and tightly represses hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp activates ilvIH expression ( 60 ) and is thought to repress ilvGM expression ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>The Lrp directly binds the fimZ promoter and assists fimZ expression , and consequently fimA is activated ( McFarland et al. 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Lrp activates fimZ expression by binding directly to the PfimZ promoter [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Lrp binds to the fimZ promoter region and can thereby enhance fimZ expression [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In an Lrp + Dam - background , reduced FinP RNA synthesis permits increased translation of traJ mRNA , resulting in tra operon derepression ( Torreblanca et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>This amino acid influences the oligomeric state of Lrp , with octamer formation being favoured in its presence ( Chen et al. , 2001 , 2005 ; Chen & Calvo , 2002 ; De los Rios & Perona , 2007 ; Peterson et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Specialty section : This article was submitted to Food Microbiology , a section of the journal Frontiers in Microbiology Keywords : lysine acetylation , bacterial two-hybrid , Lrp , DNA-binding , Salmonella Typhimurium INTRODUCTION Nε-lysine ( de ) acetylation , as a key post-translational modiﬁcation , plays critical roles in various biological processes , including transcriptional regulation , aging , and metabolism ( Grunstein , 1997 ; Cohen et al. , 2004 ; Lu et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The Salmonella typhimurium spv genes , which are required for the systemic phase of infection , are also regulated by IHF and H-NS , as well as Lrp ( O'Byrne and Dorman , 1994 ; Robbe-Saule et al. , 1997 ; Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123690" target="_blank">11123690</a>]<br></li>
+<li>Notably , four proteins including , RhaR , FliT and Lrp are transcriptional-regulators , suggesting that acetylation is an important regulation mechanism for the activity of regulators in bacteria ( Thao et al. , 2010 ; Hu et al. , 2013 ; Ren et al. , 2016 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>For example , Lrp negatively regulates the porin gene ompC expression in E. coli ( Ferrario et al. 1995 ) , and OmpC are required for optimal growth at an acidic pH ( Ferrario et al. 1995 ; Sato et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Conjugal transfer of pSLT decreased 50-fold in a Lrp -- background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>As expected , transfer of pSLT DﬁnO from a Dam - Lrp - donor restored repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Again , the use of a derepressed plasmid magniﬁes these effects : transfer of pSLT DﬁnO decreases 1000-fold from an LrpDam + donor and 300-fold from an Lrp - Dam - donor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>When a FinO -- derivative of pSLT was used , conjugal transfer from an Lrp -- donor decreased 1000-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>However , when an Lrp - donor was used , the frequency of pSLT FinO - plasmid transfer decreased > 103-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Furthermore , this indicates that a relA-dependent source of ppGpp can compensate for any leucine-mediated inactivation of Lrp , either through elevated lrp expression or through other ppGpp-dependent mechanisms ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Increasing concentrations of Lrp protein were added , followed by incubation for 20 min at room temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Increasing concentrations of Lrp protein were added , and the mixtures were incubated for 20 min at room temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_42">
+Peterson SN , Dahlquist FW , Reich NO ( 2007 ) The role of high affinity non-specific DNA binding by Lrp in transcriptional regulation and DNA organization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></label>
+<input id="act_similarity_42", type="checkbox">
+<div class="ACT_similar">
+<li>The role of high affinity non-specific DNA binding by Lrp in transcriptional regulation and DNA organization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>The role of high afﬁnity nonspeciﬁc DNA binding by Lrp in transcriptional regulation and DNA organization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The role of high afﬁnity non-speciﬁc DNA binding by Lrp in transcriptional regulation and DNA organization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li></div>
+<li>Modulation of Lrp action in Escherichia coli by leucine : effects on nonspeciﬁc binding of Lrp to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_47">
+Differential binding of Lrp to two sets of pap DNA binding sites mediated by PapI regulates Pap phase variation in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20979070" target="_blank">20979070</a>]<br></label>
+<input id="act_similarity_47", type="checkbox">
+<div class="ACT_similar">
+<li>Differential binding of Lrp to two sets of pap DNA binding sites mediated by Pap I regulates Pap phase variation in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li></div>
+<li>Kaltenbach , L.S. , Braaten , B.A. , and Low , D.A. ( 1995 ) Specific binding of PapI to Lrp ± pap DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Nou , X. , Braaten , B. , Kaltenbach , L. , and Low , D.A. ( 1995 ) Differential binding of Lrp to two sets of pap DNA binding sites mediated by Pap I regulates Pap phase variation in Escherichia Park , K.R. , Giard , J.C. , Eom , J.H. , Bearson , S. , and Foster , J.W. ( 1999 ) Cyclic AMP receptor protein and TyrR are required for acid pH and anaerobic induction of hyaB and aniC in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_51">
+PefI appeared to be required for binding of Lrp to GATC II based on methylation protection analysis ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></label>
+<input id="act_similarity_51", type="checkbox">
+<div class="ACT_similar">
+<li>Moreover , PefI appeared to be required for binding of Lrp to GATC II at low pH based on methylation protection analysis ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li></div>
+<li>This result is consistent with previous reports that Lrp acts as a repressor when bound to motifs closer to or within the promoter and as an activator when bound to motifs further upstream [ 35,42 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>These results suggest that Lrp binds to the pef GATC sites , similar to its function in pap , blocking their methylation by Dam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>In our study , we demonstrate that the acetylated Lrp failed to activate ﬁmZ and ﬁmA due to its decreased DNA-binding ability , reducing ﬁmbriae production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Mutations affecting the ability of Escherichia coli Lrp to-bind DNA , activate transcription , or respond to leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_57">
+EMSA was used to test the binding of Lrp at indicated concentrations to 6 ′ - FAM-labeled ﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></label>
+<input id="act_similarity_57", type="checkbox">
+<div class="ACT_similar">
+<li>EMSA was used to test the binding of the indicated concentrations of Lrp ( lanes 2 to 5 , 7 to 10 , 12 to 15 ) to 6 ′ - FAM-labeled ﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li></div>
+<li>In particular , the operons for amino acid biosynthesis and transport are positively regulated by Lrp , while those for amino acid catabolism are negatively regulated , which would promote synthesis of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>The interaction of Lrp with PinvF and PssrA was also strong , although the mobility shift pattern was different than it was for PhilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp protein expression was induced and the protein was puriﬁed as described previously ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>This cellular Lrp concentration is enough to inhibit type 1 fimbriae production , even when the Salmonella cells are grown in LB broth , a rich medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The absence of the Lrp protein resulted in increased lrp promoter activity in cultures growing in LB ( Fig. 1b ) or in minimal MOPS ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Mannose-sensitive yeast agglutination was dramatically reduced in the Salmonella cells grown in MOPS minimal medium , which is the condition generating the highest cellular Lrp level ( Fig. 8B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In addition , positive regulation of fimA expression by FimZ is dominant over the negative regulation by Lrp when fimZ is overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimZ-dependent PfimA activation dominates the Lrp effect on PfimA when fimZ is overexpressed ( Fig. 6 ) and in fact , does not require Lrp when expressed from a multicopy plasmid [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Leucine-Responsive Regulatory Protein , Lrp , Activates Transcription o The f the ﬁm Operon in Salmonella enterica Serovar Typhimurium via the ﬁmZ Regulatory Gene Kirsty A. McFarland ,1 Sacha Lucchini ,2 Jay C. D. Hinton ,2 and Charles J. Dorman1 * Department of Microbiology , Moyne Institute of Preventive Medicine , Trinity College Dublin , Dublin 2 , Ireland ,1 and Molecular Microbiology Group , Institute of Food Research , Norwich Research Park , Colney , Norwich NR4 7UA , United Kingdom2 Received 27 August 2007/Accepted 24 October 2007 The ﬁm operon of Salmonella enterica serovar Typhimurium encodes type 1 ﬁmbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp Acts as Both a Positive and Negative Regulator for Type 1 Fimbriae Production in Salmonella enterica Serovar Typhimurium Chang-Ho Baek , Ho-Young Kang , Kenneth L. Roland , Roy Curtiss , III * 1 3 1 1,2 1 The Biodesign Institute at Arizona State University , Tempe , Arizona , United States of America , 2 School of Life Sciences at Arizona State University , Tempe , Arizona , United States of America , 3 Department of Microbiology , Pusan National University , Pusan , Korea Abstract subunit FimH ( adhesin ) [ 11 ] , and fimbrial-like protein FimF [ 6,11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>ACKNOWLEDGMENTS This work was supported by National Institutes of Health grant DK12121 to G.F.-L.A. We thank J. M. Calvo for providing the sequence of lrp from S. typhimurium before publication , for supplying Lrp antibodies , and for valuable discussion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>Binding of Lrp to these promoter-distal sites is necessary for transcription activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Maybe acetylation of Lrp is a prompt and effective way for Salmonella to regulate this switch .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Cooperative interactions between Lrp and other nucleoidbinding proteins such as H-NS are thought to repress transcription of some genes [ 39 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_73">
+Wang , Q. , and Calvo , J.M. ( 1993 ) Lrp , a global regulatory protein of Escherichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10931352" target="_blank">10931352</a>]<br></label>
+<input id="act_similarity_73", type="checkbox">
+<div class="ACT_similar">
+<li>Lrp , a global regulatory protein of Esch-erichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li></div>
+<li>Conversely , binding of Lrp at GATC I blocks Dam methylation of this site and is required to activate pap transcription ( van der Woude et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>This seems reasonable , as binding of Lrp to the pap GATC II region specifically inhibits pap transcription ( Weyand and Low , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>( B ) Western blot analysis for Lrp synthesis and mannose-sensitive yeast agglutination assay in the wild-type strain x3761 grown statically in u various combination of MOPS and LB media at 37 C for 24 h. Agglutination was scored as follows : - , no ; + / - , very weak ; + , weak ; and + + , good .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Expression and Puriﬁcation of His-Tagged Lrp , Lrp Derivative Mutants , RhaR , , NrdF , FliT , Pat , and CobB For puriﬁcation of Lrp and its derivative mutants , pET22b-lrp , pET22b-lrp K36Q , pET22b-lrp K36R , and pET22b-lrp K25Q were constructed and veriﬁed by sequencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>After Pat treatment at 37 ◦ C for 3 h , the acetylation levels of ( Figure 2A ) , RhaR ( Figure 2B ) , NrdF ( Figure 2C ) , and Lrp ( Figure 3A ) increased 1.24 , 1.77 , 1.56 , and 1.89-fold , respectively , indicating that NrdF , , RhaR and Lrp can be acetylated by Pat in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Effect of cellular Lrp levels on FimZ synthesis and PfimA-FimZ interaction in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>These observations led us to postulate that Lrp acts as both an activator and a repressor for type 1 fimbriae expression mediated by differential interactions with Lrp-PfimA , depending on cellular concentration of Lrp and on environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>[ High ] , at high concentration of Lrp or FimZ ; and [ Low ] , at low concentration of Lrp or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Control of conjugal transfer by Lrp and Dam methylation 1591 Binding of Lrp protein to the traJ upstream activating sequence : gel retardation assays Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>The effects of Lrp on expression of hilA and invF were pronounced , particularly when Lrp was overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In our model , Lrp modulates expression of fimA and fimZ , either positively or negatively , depending on growth conditions and the amount of Lrp present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The concomitant observation that the tra operon remains repressed in an Lrp + TraJ - background ( Fig. 2 ; data not shown ) is also relevant , as it suggests that Lrp activates the tra operon indirectly by enhancing traJ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>[ 59 ] E. Holmqvist , C. Unoson , J. Reimegård , E.G.H. Wagner , A mixed double negative feedback loop between the sRNA MicF and the global regulator Lrp , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28302471" target="_blank">28302471</a>]<br></li>
+<li>Regulation studies showed that the klf genes expression is negatively and positively controlled by the pESI-encoded regulators KlfL and KlfB , respectively , and are activated by the ancestral leucine-responsive regulator ( Lrp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>We show the role of both core ( Lrp , Fur and OmpR ) and horizontally acquired ( KlfB and KlfL ) regulators in orchestrating these fimbriae expression and demonstrate that they are induced under micro-aerobic conditions and at the avian physiological temperature ( 41 ˚C ) compared to 37 ˚C or the ambient temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>We concluded from these analyses that KlfB and KlfL are positive and negative transcriptional-regulators of the klf genes and that together with the core protein Lrp , are and the klfA , klfB and klfL mutant strains expressing KlfC-2HA were grown to the stationary phase in LB under microaerobic conditions at 37 ˚C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Lrp -- DNA interaction in this region was fully consistent with the observed repression of lrp transcription by this protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_92">
+When the concentration of FimZ was held constant at 50 nM , the intensity of shifted DNA-protein complex was increased by adding Lrp in a concentration dependent manner ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></label>
+<input id="act_similarity_92", type="checkbox">
+<div class="ACT_similar">
+<li>Similarly , when the Lrp concentration was held constant at 50 nM , the intensity of shifted DNA-protein complex was increased by adding FimZ in a concentration dependent manner ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li></div>
+<li>Therefore , it appears that even if Lrp binding is reduced at the Lrp-binding motif 2 when the b mutation is present , no fimA is expressed due to repression of fimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>These results are consist-ent with the observation that PefI is a negative regulator of pef transcription , assuming that binding of Lrp to the pef GATC II site inhibits transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>These data support the hypothesis , discussed above , that PefImediated binding of Lrp to GATC II represses pef transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>This result suggested that Lrp activates the transcription of traJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>We thus propose that binding of Lrp to the UAS upstream of traJ activates traJ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Lrp is not required for growth recovery in the presence of a relA allele in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>These observations indicated that in the presence of a functional relA gene , Lrp is dispensable for ilvIH ( AHAS III ) expression TABLE 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>The analysis of expression changes for Lrp targets revealed that this global regulator is repressed in the beginning of infection because most of its targets are down-regulated ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Lrp is a global regulator of gene expression whose activity can be modulated by the presence of L-leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>Lrp is a global regulator ; a variety of genes may be activated or repressed at the presence of excess Lrp during an acidic condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Next , K36Ac was used to evaluate the effect of acetylation at K36 on DNA-binding afinity of Lrp by EMSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The effect of adding leucine is not to abolish Lrp -- DNA interaction , but to remodel it so that the negative influence of the Lrp protein on lrp promoter function is attenuated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In contrast to Lrp , we could not confirm any effect of Fnr on the expression of KlfC-2HA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>It seems that BCAA promoted the recovery by promoting protein synthesis either directly through their use in translation or indirectly through stimulation of protein synthesis by activation of the Lrp protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>In light of the positive regulation of ﬁmZ by the FimZ protein , H-NS displacement could be achieved by Lrp alone or by Lrp acting in combination with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Further , the expression of Lrp is upregulated by cellular guanosine 30,50-bispyrophosphate ( ppGpp ) in response to the growth rate reduction mediated by nutrient limitation ( 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>Our ﬁnding ( Fig. 2 ) that Lrp can activate ﬁmZ transcription by at least 10-fold under growth conditions comparable to those used in the H-NS transcriptomic experiments is consistent with the hypothesis that Lrp derepresses ﬁmZ by the displacement of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Puriﬁed Lrp protein was added to ﬁmZ regulatory region DNA at the indicated concentrations in the presence or absence of L-leucine , as indicated above each lane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The labelled DNA fragment was incubated with Lrp protein at a range of concentrations , and parallel incubations were performed in the presence of leucine or glycine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>The formation of the slowest-migrating Lrp -- DNA complexes was unaffected by the presence of leucine or glycine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In the presence of arabinose , lacI expression is induced and lrp expression , which is transcribed from the Ptrc promoter in lrp-1281 , is repressed , leading to low levels of Lrp ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In the resulting strain 9449 , the expression of Lrp is regulated by LacI , whose expression is under the control of the araC PBAD system ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In contrast , invF repression does require leucine , whereas expression of the spvABCD genes , which is prevented by Lrp protection of the transcriptional start site of the spvA gene , is antagonized by leucine ( 302 , 312 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>These results showed that Lrp could bind to the lrp regulatory region in the absence of amino acids and that leucine could modulate this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>However , the absence of growth of the ilvG relA strains on M9/17 supplemented with isoleucine indicates that neither end product ( valine ) repression nor leucine sensitivity ( Lrp inactivation ) is sufﬁcient to explain the growth requirements ; under such conditions , all branched-chain pathways should have been derepressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>This magniﬁcation of the difference in the absence of fertility inhibition further supports the model that Lrp acts as an activator of pSLT plasmid transfer : a FinO - plasmid is no longer derepressed when an lrp mutation reduces traJ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Microbiology ( 2008 ) , 154 , 2008 -- 2016 DOI 10.1099 / mic .0.2008 / 018358-0 Autoregulated expression of the gene coding fo the leucine-responsive protein , Lrp , a global regulator in Salmonella enterica serovar Typhimurium r Kirsty A. McFarland3 and Charles J. Dorman Correspondence Department of Microbiology , Moyne Institute of Preventive Medicine , Trinity College , Dublin 2 , Ireland Charles J. Dorman cjdorman@tcd.ie In this study , the lrp gene encoding the leucine-responsive regulatory protein ( Lrp ) in Salmonella enterica serovar Typhimurium was found to be negatively autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In the case of Lrp , retention of the lrp gene in Salmonella is likely to be beneﬁcial either for efﬁcient transmission in the host , survival in nonhost environments , or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In the absence of cooperative binding , as is the case in the double or triple mutants , PfimA expression would not be under direct Lrp control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>This DNA topology change may contribute to activation of type 1 fimbriae production under normal growth conditions in cells ( neither the absence nor overproduction of the regulators Lrp or FimZ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Since Lrp can positively regulate the expression of the type 1 ﬁmbriae ( Blomﬁeld et al. , 1993 ; Baek et al. , 2011 ) , we used the yeast agglutination assay to conﬁrm the role of acetylation in regulating activity of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Presumably , the role of methylation of GATC II is to either inhibit or enhance the binding of additional regulatory proteins , such as Lrp or H-NS , which participate in the formation of the active transcriptional complex ( van der Woude et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>The general lack of isoleucine compensation for the leucine sensitivity in the presence of the non-branched-chain amino acids ( M9/17 medium ) might stem from the observations of Chen et al. , who found that the - ketoglutarate or oxaloacetate families of amino acids also resulted in repression of Lrp expression ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>( A ) DNA fragments from the regulatory regions of the ﬁmA , ﬁmW-ﬁmU , and ﬁmZ genes were incubated with increasing concentrations of puriﬁed Lrp protein in the presence or absence of L-leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>These EMSA analyses showed no direct interaction of Lrp either with the promoter region of ﬁmA or with ﬁmW-ﬁmU , either in the presence or in the absence of leucine ( Fig. 4A , panel 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>In contrast , the presence of both dam and lrp mutations in the donor strain restored the repression of pSLT transfer to a level similar to that of an Lrp - mutant ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Since Lrp action is known to be modulated in some cases by the presence of leucine ( 9 ) , and was shown to do so also in S. typhimurium ( Table 3 ) , the effects of L-leucine on the level of transport proteins and on the ability of Lrp1 and Lrp2 strains to utilize D-histidine were investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>The presence of leucine enhanced Lrp binding to PinvF in vitro and the addition of leucine to growth medium decreased the level of invF transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Hatched vertical bars indicate regions of the DNA that were protected from DNase I digestion by the Lrp protein ; open arrowheads show bases that became hypersensitive to DNase I digestion in the presence of Lrp with and without leucine ; filled arrowheads show bases that became hypersensitive to DNase I in the presence of Lrp and leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In addition , in the presence of both Lrp and FimZ , we observed an increase in the apparent size of the PfimA ( WT ) complex ( supershift ) compared to the shift when each protein was present alone ( Fig. 7C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The modifications to the patterns of protection and hypersensitivity seen in the lrp regulatory region in the presence and absence of leucine are consistent with an adjustment to the Lrp -- DNA contacts due to the influence of the amino acid on Lrp protein structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>The presence of the Lrp protein results in hypersensitivity to DNase I digestion in the case of certain bases on both the coding and noncoding strands .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>When leucine was added to the MOPS culture , the level of lrp-gfp expression increased by between 1.5 - and 2-fold , provided the Lrp protein was present ; leucine did not have this effect in the lrp knockout mutant ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>This modest positive effect of leucine on lrp transcription was contingent on the presence of the Lrp protein ; the lrp knockout mutant expressed the lrp-gfp fusion to the same level in the presence or the absence of leucine ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>These data showed that Lrp repressed the transcription of the lrp gene and that this negative effect was partially alleviated by the presence of leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Based on these observations , we suggest that Lrp acts as an antagonist of HilD , which induces expression of the hilA gene by derepressing the silencing effect of H-NS and Hha on the hilA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Binding of the purified Lrp to the wild-type PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Since the simple explanation that the lrp suppressors act by raising the level of the permease has been excluded , it is likely that Lrp , which has multiple effects , can be mutated to allow increased expression of one or more of the enzymes responsible for a D-histidine racemization step .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>FimZ is known to regulate the expression of its own gene positively , raising the possibility that Lrp can potentiate the positive effect of FimZ at the PﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_143">
+J Bacteriol 179 : Nou , X. , Skinner , B. , Braaten , B. , Blyn , L. , Hirsch , D. , and Low , D. ( 1993 ) Regulation of pyelonephritis-associated pili phasevariation in Escherichia coli : binding of the PapI and the Lrp regulatory proteins is controlled by DNA methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></label>
+<input id="act_similarity_143", type="checkbox">
+<div class="ACT_similar">
+<li>Nou , X. , Skinner , B. , Braaten , B. , Blyn , L. , Hirsh , D. , and Low , D.A. ( 1993 ) Regulation of pyelonephritis-associated pili phase variation in Escherichia coli : binding of the PapI and Lrp regulatory proteins is controlled by DNA methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li></div>
+<li>In conclusion , we demonstrate that ( de ) acetylation of Lrp is regulated by Pat and CobB , and the reversible acetylation of Lrp modulates its DNA-binding ability , changing the ﬁmbriae production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Transcription of the hilA , invF , and ssrA genes is repressed by Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Collectively , we concluded from the above set of experiments that Lrp is an activator of the klf genes , and that the ipf operon is repressed by Fur and positively regulated by OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>ORIGINAL RESEARCH published : 17 November 2016 doi : 10.3389 / fmicb .2016.01864 The Bacterial Two-Hybrid System Uncovers the Involvement of Acetylation in Regulating of Lrp Activity in Salmonella Typhimurium Ran Qin1 † , Yu Sang2 † , Jie Ren2 , Qiufen Zhang2 , Shuxian Li2 , Zhongli Cui1 * and Yu-Feng Yao2 ,3 * 1 Key Laboratory of Agricultural Environmental Microbiology , Ministry of Agriculture , College of Life Sciences , Nanjing Agricultural University , Nanjing , China , 2 Laboratory of Bacterial Pathogenesis , Department of Microbiology and Immunology , Institutes of Medical Sciences , Shanghai Jiao Tong University School of Medicine , Shanghai , China , 3 Department of Laboratory Medicine , Shanghai East Hospital , Tongji University School of Medicine , Shanghai , China Nε-lysine acetylation is an abundant and important Post-translational modiﬁcation in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Acetylation of K36 inhibits DNA-binding ability of Lrp , and further alters the transcription of lrp and lrp-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>In the presence of leucine , binding of Lrp is reduced , resulting in reduced transcriptional activation of ilvIH expression ( references 60 and 61 and references therein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Certainly , the cooperative binding of DNA is a recurring theme in studies of Lrp ( 20 , 36 , 37 , 62 , 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>( iii ) Increase of traJ expression in the presence of an hns mutation was also observed in a Lrp background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16077115" target="_blank">16077115</a>]<br></li>
+<li>Expression of an lrp-gfp transcriptional fusion in the presence and absence of Lrp in LB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Lysine 36 of Lrp Is the Acetylation Site Modiﬁed by Pat Although the role of acetylation in Lrp activity has not been studied , a whole-proteome analysis uncovers that Lrp can be acetylated in E. coli , and lysine 25 ( K25 ) and lysine 36 ( K36 ) are the acetylated sites ( Baeza et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Therefore , we propose that acetylation of K36 may be involved in regulating Lrp activity , speciﬁcally the DNA-binding ability of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Although the level of Lrp produced in this strain may be higher than what is physiologically relevant , this strain was useful in identifying a number of genes that may be regulated by Lrp and provided clues as to the extent of the Lrp regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The lack of b-galactosidase synthesis in the Dlrp and lrp mutant backgrounds indicates that transcription from C PfimA is not active in the absence of Lrp or when Lrp is overproduced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>We also constructed the K36 mutation in chromosome to detect the effect of acetylation of K36 in vivo , and demonstrated that acetylation of K36 inhibited the Lrp activity as transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>These results suggest that acetylation of K36 inhibits the DNA-binding of Lrp and thus alters the transcription of target genes of Lrp in S. Typhimurium in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Analysis of b-galactosidase activity in Lrp + and Lrp - backgrounds indicated that Lrp-mediated activation of traJ transcription requires the presence of the Lrp binding site located upstream of traJ ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Effect of deleting the traJ UAS on the activity of traJ : : lac fusions in Lrp + and Lrp -- backgrounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>In conclusion , at least three ppGpp-dependent means of regulation appear to contribute to branched-chain amino acid biosynthesis : ( i ) effects of ppGpp on transcriptional activation , as suggested for ilvGp2 ( 55 ) ; ( ii ) indirect effects of ppGpp on expression of auxiliary factors such as Lrp or IHF ; and ( iii ) a ppGpp-dependent reduction in the RNA chain elongation rate , enhancing the pausing required for derepression , as suggested here for ilvBN and possibly the other ilv genes and operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Complex transcriptional control of the ars-dependent stationary-phase-in-duced and osmotically regulated osmY ( csi-5 ) gene suggests novel roles for Lrp , cyclic AMP ( cAMP ) receptor protein-cAMP complex , and integration host factor in the stationary-phase response of Eschenichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8045891" target="_blank">8045891</a>]<br></li>
+<li>qRT-PCR analysis that was applied for ipfD exhibited a negative regulatory role for Fur and showed moderately ( two-fold or less ) lower transcription of ipfD in the absence of Lrp , RpoS , SoxR , PhoP , OmpR , and OxyR compared to the wild-type background ( Fig 7E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Weyand , N. , and Low , D. ( 1999 ) Lrp is sufficient for the establishment of the phase off pap DNA methylation pattern and repression of pap transcription in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Instead , it seems likely that other factor ( s ) , such as the sequences and locations of Lrp binding sites within pef and pap , contribute to the differences in the activities of PefI and PapI in their respective hosts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Similarly , in Salmonella , methylation of pef GATC II triggers Pef fimbrial expression .7 However , PefI acts in tandem with Lrp to block methylation of this site and , hence , represses transcription of pef genes .7 Remarkably , expression of PefI activates pap transcription in E. coli .7 Moreover , the E. coli ortholog FaeA represses K88 fimbrial production by an analogous mechanism .29,30 These findings suggest that the different biological roles of these functional homologs in bacterial fimbrial production are dependent upon factors in addition to their intrinsic biochemical and structural properties .7 Deciphering the exact nature of the interaction between FaeA-like proteins and their cognate Lrp and the mechanism of their regulation of fimbrial transcription awaits further biochemical and structural studies , which will be enabled by protein sample production protocols , NMR chemical shift data , and structural information such as that presented here for stPefI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20979070" target="_blank">20979070</a>]<br></li>
+<li>Due to the requirement of motif 1 for FimA and type 1 fimbriae synthesis ( Fig 4 ) , we infer an interaction between Lrp and FimZ under these conditions that enhance FimZ-mediated activation of fimA expression by changing the regional DNA secondary structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In the absence of leucine ( Fig. 4C , middle panel , lanes 2 to 6 ) , complexes 1 and 2 predominated at Lrp concentrations in the range from 27 to 53 nM ( lanes 3 and 4 ) , with increasing formation of complex 3 at Lrp concentrations in the range from 27 to 266 nM ( lanes 3 to 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The involvement of the global regulators Lrp and H-NS in addition to the ﬁm-speciﬁc proteins FimW , FimY , and FimZ is likely to make the ﬁm gene cluster sensitive to environmental stimuli and to the physiological state of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp binding to the the a , b , c , ac , ab , and bc ( single and double ) mutant promoters was indistinguishable from binding to PfimA ( WT ) regardless of Lrp concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Binding of the purified Lrp and FimZ proteins to PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Lrp acts as both positive and negative regulator of fimZ expression The increase in fimA expression observed in the b mutant ( Fig. 4B ) raised the possibility that the binding of Lrp to motif 2 , adjacent to the FimZ binding site ( Fig. 3C ) , may affect FimZ binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>We assume that the binding of Lrp to motifs 2 and 3 may allow binding of the silencing factor H-NS to the high affinity H-NS-binding motifs in the FimZ-binding region , and competitively exclude FimZ binding to the PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Site directed mutagenesis of putative Lrp-binding sites in the fimA promoter indicated that binding of Lrp to the fimA promoter is necessary for both activation and repression of type 1 fimbriae expression ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>At a lower range of Lrp concentrations ( about 1,000,2400 dimers per cell ) , the levels of FimZ are high , such as occurs when cells are grown in nutrient-rich conditions ( e.g. LB broth ) , FimZ is better able to occupy its activation site in PfimA , presumably due to the fact the affinity of Lrp to motifs 2 , 3 , and 4 is relatively weak ( Fig. 3B ) and there is an abundance of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>STY3070 in Salmonella was later determined to be the casC gene of the CRISPR/Cas system ; and its repression was found to depend also on Lrp , and its expression induced in minimal media independent of LeuO ( 78 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Recently , expression of the lrp gene in serovar Typhimurium SL1344 was found to be autoregulated by direct interaction between Lrp and its promoter , Plrp ( 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The markedly periodic pattern of hypersensitivity to DNase I digestion is consistent with wrapping of the DNA around the Lrp protein , resulting in enhanced exposure of certain bases to DNase I ( Nickerson & Achberger , 1995 ; Wagner , 2000 ) , and has been reported previously for other DNA sequences that bind Lrp ( McFarland et al. , 2008 ; Wang & Calvo , 1993 ; Wiese et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Although it is unusual for Lrp to be both a positive and a negative regulator in the same operon , this type of dual regulation has been reported for the papBA operon [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Ge Lrp binds to the ﬁmZ promoter region in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp is known to coordinate cell metabolism in response to the availability of nutrients in the external environment ( D'Ari et al. , 1993 ; Calvo and Matthews , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Therefore , we postulate that Lrp , which responds to the nutritional environment , provides another layer of regulation to aid the bacterial cell in determining in which host compartment it ﬁnds itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Too much or too little Lrp results in no type 1 fimbriae production , allowing the cell to tightly regulate production of these complex extracellular structures in response to the nutritional environment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In strain x9449 , Lrp synthesis and the ability to agglutinate yeast cells were dependent on the arabinose concentration in LB medium ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Conversely , in the absence of arabinose , no LacI is produced and Lrp is synthesized ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>When Lrp is present in excess ( more than 3,000 dimers per cell ) , as is the case in the lrp mutant or during growth in nutritionC poor media , no fimZ is expressed , and Lrp binds to all four motifs 1 , 2 , 3 , and 4 in PfimA resulting in complete repression of fimA ( Fig. 9B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In contrast to these conditions , in presence of Lrp ( 50 nM ) or FimZ ( 12.5 nM ) alone , the PfimA-Lrp or PfimA-FimZ complexes ran as a smear in the gel ( Fig. 7A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>As shown in Fig. 8B , Lrp synthesis was proportional to the nutritional content of the growth medium : with more Lrp produced under poor nutritional conditions and less Lrp produced under rich nutritional conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Based on the Lrp titration results from the western blot analyses in Fig. 7B , we conclude that mannose-sensitive type 1 fimbriation in Salmonella is inhibited by Lrp at a concentration of 3,000 or more Lrp dimers per cell ( Fig. 8B ) under nutrient-poor conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>As shown in Fig. 8B , the addition of Lrp induced a shift in mobility for Plrp , PhilA , PinvF , and PssrA DNA , indicating that Lrp had bound to these DNA fragments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Interestingly , while Lrp was previously reported to negatively regulate the fae operon ( by cooperative binding with FaeA ) in E. coli [ 51 ] , here we showed that in S. Infantis , Lrp acts as an activator , indicating substantial differences in the regulatory setup between the fae genes in ETEC and the klf genes in S. Infantis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>These observations suggest that Lrp plays important roles in type 1 fimbriation by acting as both a positive and negative regulator and its effect depends , at least in part , on the cellular concentration of Lrp in response to the nutritional environment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Both negative control DNAs , Up-PhilA and MCS-pBS , showed no signiﬁcant interactions with Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp was present at 0 , 26.6 , 53.2 , 106.4 , 160 , 212.8 and 266 nM for probes F102 , R111 , F200 and R202 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In general , Lrp activates genes for bio-synthetic enzymes and represses genes for catabolic enzymes ( 12 , 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In that case , Lrp interacts with H-NS for repression and PapI for activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Lrp protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Operons regulated by Lrp range in function , including those for amino acid biosynthesis , amino acid degradation , transport and pili formation ( Calvo and Matthews 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>This consensus motif is of particular interest because it has dyad symmetry , although imperfect , and dyad symmetry has been implicated to be important for speciﬁc interaction with Lrp ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>DNase I protection data suggest that Lrp binding occurs as far downstream as base +15 , and a leucine-sensitive and DNase-I-hypersensitive base is located at position +35 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Paul L , Blumenthal RM & Matthews RG ( 2001 ) Activation from a distance : roles of Lrp and integration host factor in transcriptional activation of gltBDF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842356" target="_blank">16842356</a>]<br></li>
+<li>A model of Lrp based on sequence comparison and mutant analysis depicts a typical transcription regulation factor with an N-terminal DNA-binding domain , an intermediate transactivation domain , and a C-terminal leucine-binding domain ( 9 , 16a , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>The Lysine 36 ( K36 ) Is a Key Residue for DNA-Binding Ability of Lrp With sequence alignment , we found Lrp K36 is highly conserved in bacteria ( Figure 4A ) , and this residue was also conserved in several other DNA-binding proteins ( Figure 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Moreover , K36 of Lrp is more conserved than K25 among different bacteria and other DNA-binding proteins containing AsnC-type HTH domain ( Willins et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>g001 Lrp directly interacts with PfimA Based on our previously described consensus sequences [ 34 ] , we detected four putative Lrp-binding motifs in the P region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>All four putative Lrp-binding motifs were protected by Lrp ( Fig. 3A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>This result suggests that both Lrp and FimZ competitively interact with the overlapped motif in PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Previous acetylation proteome identiﬁed that Lrp is an acetylated protein ( Baeza et al. , 2014 ) , and the lysine 36 ( K36 ) is an acetylation site located in its amino-proximal helix-turn-helix DNA-binding domain ( Hart et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Recognition of DNA by the helix-turn-helix global regulatory protein Lrp is modulated by the amino terminus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The suppressor mutations are located in the helix-turn-helix region of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>The fit of each H-T-H motif in the DNA requires adjustment to the Lrp protein structure , suggesting that an induced-fit mechanism operates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Speciﬁcally , the conserved lysine residue 36 ( K36 ) in helix-turn-helix ( HTH ) DNA-binding domain of Lrp was acetylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Therefore , both in vivo and in vitro ﬁndings demonstrate that the acetylation of K36 in its HTH domain crippled the DNA-binding activity of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The locations of the suppressor mutations in B40 and strain GA470 ( lrp-11 and lrp-12 , respectively ) at residues 47 and 48 , which are in the presumed helix-turn-helix DNA-binding domain , indicate a likely involvement of Lrp in a DNA-binding regulatory function also in these cases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>These ﬁndings indicate that K36 residue is indispensable for DNA-binding ability of Lrp , and suggest that the acetylation of K36 is associated with DNA-binding ability of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>K25Q mutation possessed a similar DNA-binding ability to the wild type Lrp , although K25 is also located HTH domain of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>In the Lrp octamer , the eight helix -- turn -- helix ( H-T-H ) DNA-binding motifs located in the amino-terminal domains of each monomer are arranged around the circumference of the octameric structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>It is possible that the binding of leucine to the Regulation of Amino acid Metabolism ( RAM ) domain in the carboxyl terminus of each Lrp monomer may provide the structural adjustment required to strengthen or to weaken Lrp -- DNA interaction , depending on the gene regulatory sequence involved ( de los Rios & Perona , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>To identify the Lrp-binding motif ( s ) responsible for the supershift , we estimated the binding of Lrp and Figure 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>We assume that the binding of Lrp to motifs 2 and 3 may allow binding of the silencing factor H-NS to the high affinity H-NS-binding motifs in the FimZ-binding region , and competitively exclude FimZ binding to the PfimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Analysis of b-galactosidase activity in Lrp + and Lrp - backgrounds indicated that Lrp-mediated activation of traJ transcription requires the presence of the Lrp binding site located upstream of traJ ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Based on results from site-directed mutagenesis of the multiple Lrp-binding motifs in PfimA , we assume that the organization ( proximity , number , and orientation ) of Lrp-binding motifs and their cooperative interaction with Lrp play a crucial role for on/off switching of the fimZ gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The closest is centered at position 100 , making it unlikely that the positive effect of Lrp on ﬁmZ transcription involves direct protein-protein interaction with RNA polymerase unless the intervening DNA is looped .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The EMSA data suggest that Lrp forms three complexes upstream of the ﬁmZ promoter and that this interaction is modulated by L-leucine ( Fig. 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Site I , centered at 100 and having a mismatch of ﬁve bases , is located in the region covered by ﬁmZ probe I ( Fig. 4B ) , which did not show any interaction with Lrp in the EMSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Lrp evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Salmonella enterica serovar Typhimurium has an Lrp homologue with 99 % amino acid sequence identity to the E. coli sequence ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( B ) Conservation analysis of Lrp with other Lrp/AsnC family proteins by sequence alignment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The Lrp family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_4">
+Brinkman AB , Ettema TJ , de Vos WM , van der Oost J ( 2003 ) The Lrp family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></label>
+<input id="evo_similarity_4", type="checkbox">
+<div class="EVO_similar">
+<li>Brinkman , A.B. , Ettema , T.J. , de Vos , W.M. , and van der Oost , J. ( 2003 ) The Lrp family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16999831" target="_blank">16999831</a>]<br></li></div>
+<li>This protein , which is almost identical to Lrp in S. Fig. 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Consider that AsnC/Lrp-like proteins are present in both bacteria and archaea ( Kyrpides and Ouzounis , 1995 ) and K36 site is highly conserved , we speculate that the acetylation of this conserved site is likely a general way to modulate the activity of transcription regulators of the AsnC/Lrp family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The activator CyuR , which is homologous to the leucine-responsive regulatory protein ( Lrp ) , is required for synthesis of both CdsH and the anaerobic enzyme ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28607157" target="_blank">28607157</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Lrp</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>A A R A A A A A HU MarT SpvR FimWYZ FlhDC FliZ A A A A A R A R A A R CsgD RtsB A A * R * R Lrp Lon DnaK Fur Mlc RNase E R R R A A A A R FadD Pag A R SlyA A a A , activation ; R , repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Pure Lrp protein for gel retardation experiments was also a generous gift from David Low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Citation : Baek C-H , Kang H-Y , Roland KL , Curtiss R III ( 2011 ) Lrp Acts as Both a Positive and Negative Regulator for Type 1 Fimbriae Production in Salmonella enterica Serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_4">
+Lrp acts as both a positive and negative regulator for type 1 ﬁmbriae production in Salmo-nella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></label>
+<input id="rp_similarity_4", type="checkbox">
+<div class="RP_similar">
+<li>Lrp acts as both a positive and negative regulator for type 1 ﬁmbriae production in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li></div>
+<li>These results suggest that Lrp acts as a transcriptional repressor for these key virulence regulators in serovar Typhimurium , acting either directly or indirectly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( Lrp ) acts as a virulence repressor in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26238722" target="_blank">26238722</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_8">
+Leucine-responsive regulatory protein ( Lrp ) acts as a virulence repressor in Salmo-nella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></label>
+<input id="rp_similarity_8", type="checkbox">
+<div class="RP_similar">
+<li>Leucine-responsive regulatory protein ( Lrp ) acts as a virulence repressor in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28911037" target="_blank">28911037</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28270274" target="_blank">28270274</a>]<br></li>
+<li>Leucine-responsive regulatory protein ( Lrp ) acts as virulence repressor in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886215" target="_blank">27886215</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_11">
+71 6446 -- 6452 Baek CH , Wang S , Roland KL and Curtiss III R 2009 Leucine-responsive regulatory protein ( Lrp ) acts as a virulence repressor in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></label>
+<input id="rp_similarity_11", type="checkbox">
+<div class="RP_similar">
+<li>Baek CH , Wang S , Roland KL , Curtiss R , III ( 2009 ) Leucine-responsive regulatory protein ( Lrp ) acts as a virulence repressor in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20585446" target="_blank">20585446</a>]<br></li></div>
+<li>Lrp has also been shown to act as a virulence repressor in S. Typhimurium [ 43 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24664308" target="_blank">24664308</a>]<br></li>
+<li>Thus , it is likely that Lrp will also act as a global regulator in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Gene , operon or Location Cellular function locus Phenotype affected Molecular mechanism Known regulators ﬂjBA , ﬂiC ﬁm gtr Chromosome Chromosome Motility , adhesion and virulence Adhesion to the intestinal epithelium Lipopolysaccharide O-antigen glycosylation Modiﬁcation of O-antigen chain length Adhesion to the intestinal epithelium Adhesion to the intestinal epithelium Epithelial cell invasion Bioﬁlm formation Motility , adhesion and virulence Flagella Fimbriae LPS Site-speciﬁc recombination Unknown DNA-methylation pattern Hin FimB , FimE OxyR Chromosome and prophage P22 Chromosome Virulence plasmid Chromosome Chromosome Chromosome Chromosome Chromosome Chromosome opvAB pef std SPI-1 csgD ﬂiC lpf iol LPS Fimbriae DNA-methylation pattern DNA-methylation pattern DNA-methylation pattern Unknown Unknown Unknown Unknown Unknown OxyR Lrp , PefI Fimbriae TTSS Extracellular matrix Flagella Fimbriae myo-inositol utilization Dam , HdfR , RosE , SeqA StdE , StdF , FliZ c-di-GMP FliA , ClpX , FliZ , YdiV IolR , ReiD Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>Description [ parental strain ] a Strains Source S. Typhimurium Wild-type strain UK-1 , highly virulent for chicks and mice x3761 [ 52,53 ] Dlrp-13 ( lrp-deletion mutation ) [ x3761 ] x9411 [ 34 ] lrp-1281 ( DPlrp : : Ptrc lrp , chromosomal deletion-insertion mutation to drive constitutive expression of Lrp ( lrp ) ) [ x3761 ] C x9448 [ 34 ] x9449 DrelA198 : : araC PBAD lacI TT DaraBAD23 lrp-1281 [ x9509 ] PfimA : : pYA4311 ( PfimA-lacZ ) , Amp Gm [ x3761 ] r r [ 34 ] x9455 This study Dlrp-13 PfimA : : pYA4311 ( PfimA-lacZ ) , Amp Gm [ x9411 ] r r x9467 This study x11107 PfimA413 ( a mutation ) [ x3761 ] This study PfimA529 ( b mutation ) [ x3761 ] x11111 This study x11115 PfimA1225 ( c mutation ) [ x3761 ] This study x11153 lrp-1281 PfimA529 [ x9448 ] This study lrp-1281 PfimA : : pYA4311 ( PfimA-lacZ ) , Amp Gm [ x9448 ] r r x11263 This study PfimA413 : : pYA4311 ( PfimA413-lacZ ) , Amp Gm [ x11107 ] r r x11264 This study PfimA529 : : pYA4311 ( PfimA529-lacZ ) , Amp Gm [ x11111 ] r r x11265 This study P : : pYA4311 ( P - lacZ ) , Amp r r x11266 fimA1225 fimA1225 Gm [ x11115 ] This study lrp-1281 PfimA529 : : pYA4311 ( PfimA529-lacZ ) , Amp Gm [ x11153 ] r r x11267 This study x11377 PfimA1325 ( ac double mutation ) [ x11115 ] This study PfimA1329 ( ab double mutation ) [ x11107 ] x11378 This study x11379 This study PfimA2925 ( bc double mutation ) [ x11115 ] x11380 This study PfimA395 ( abc triple mutation ) [ x11379 ] E. coli thr-1 leuB6 fhuA21 lacY1 glnV44 recA1 DasdA4 thi-1 RP4-2-Tc : : Mu [ l-pir ] , Km r [ 54 ] MGN-617 ( x7213 ) Plasmids pRE112 Positive selection suicide vector ( R6K ori ) for gene replacement , Cm r [ 55 ] [ 49 ] pSG3 a suicide vector ( R6K ori ) for construction of promoter-lacZ fusion into chromosome pWSK29 a low-copy-number cloning vector ( pSC101 ori ) , Amp r [ 47 ] pYA4124 Derivative of pET SUMO containing His Tag from pET-14b , Km r [ 34 ] pYA4311 Derivative of pSG3 for insertion of the PfimA-lacZ fusion into the chromosome , Amp Gm r r This study pYA4758 Derivative of pRE112 for replacement of the PfimA with PfimA413 , Cm r This study pYA4759 Derivative of pRE112 for replacement of the PfimA with PfimA529 , Cm r This study pYA4801 Derivative of pRE112 for replacement of the PfimA with PfimA1225 , Cm r This study pYA4865 Derivative of pWSK29 harboring a recombinant fimZ gene , Amp r This study a r r r r Amp , ampicillin resistance ; Gm , gentamicin resistance ; Cm , chloramphenicol resistance ; Km , kanamycin resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In general , Lrp activates genes for bio-synthetic enzymes and represses genes for catabolic enzymes ( 12 , 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( B ) Expression of lrp , rpoS , invF and sseB mRNA from LB5010 ( WT ) cultured in pH 7 LB broth ; those gene-expression were also monitored from LB5010 ( WT ) , LB5010 lrp ( lrp ) , LB5010 ( pLrp ) ( WT + pLrp ) , and LB5010 ( pTA ) ( WT + pTA ) strains cultured in pH 4 LB broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Appl Environ Biol 66 ( 12 ) :5128 -- 5133 Haney SA , Platko JV , Oxender DL , Calvo JM ( 1992 ) Lrp , a leucine-responsive protein , regulates branched-chain-amino-acid-transport genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>As shown in Fig. 5A , Lrp status had no effect on hilD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Specialty section : This article was submitted to Food Microbiology , a section of the journal Frontiers in Microbiology Keywords : lysine acetylation , bacterial two-hybrid , Lrp , DNA-binding , Salmonella Typhimurium INTRODUCTION Nε-lysine ( de ) acetylation , as a key post-translational modiﬁcation , plays critical roles in various biological-processes , including transcriptional regulation , aging , and metabolism ( Grunstein , 1997 ; Cohen et al. , 2004 ; Lu et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Data from DNA microarray studies in E. coli and studies targeted to speciﬁc systems show that Lrp ha widespread effects in the cell playing a key role in controlling amino-acid-metabolism and showing an overlap with the RpoS regulon ( see below ) ( Hung et al. , 2002 ; Tani et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>Lrp and Dam methylation control of tra operon expression is a feature shared by ﬁmbrial operons such as the pap operon of E. coli uropathogenic strains ( Blyn et al. , 1989 ; Braaten et al. , 1992 ) , the pef operon of S. enterica ( Nicholson and Low , 2000 ) and others ( van der Woude and Low , 1994 ; van der Woude et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>, is a pTrc99A derivative that carries the E. coli lrp gene and permits Lrp overproduction ( Ernsting et al. , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>A global regulator , leucine-responsive regulatory protein ( Lrp ) , and other genes outside the ﬁm gene cluster were also implicated in regulating type 1 ﬁmbriae ( Baek et al. , 2009 ; Chuang et al. , 2008 ; McFarland et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>On the Salmonella chromosome , the Lrp protein regulates type 1 fimbrial gene-expression through a mechanism that is completely distinct from that used to control type 1 fimbrial genes in E. coli ( Kelly et al. , 2006 ; McCusker et al. , 2008 ; McFarland et al. , 2008 ; Roesch & Blomfield , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Thus , Lrp and Dam activate pef transcription , similar to their function in pap gene regulation ( Nou et al. , 1993 ; 1995 ; Braaten et al. , ± 1994 ; van der Woude et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>As a global gene regulator , Lrp regulates the expression of a large number of genes including virulence-related genes in E. coli ( Jakel et al. , 2001 ; Hung et al. , 2002 ) and Salmonella ( Wang et al. , 1993 ; Friedberg et al. , 1995 ; Hecht et al. , 1996 ; McFarland et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>For example , Lrp negatively regulates the porin gene ompC expression in E. coli ( Ferrario et al. 1995 ) , and OmpC are required for optimal growth at an acidic pH ( Ferrario et al. 1995 ; Sato et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Reverse transcription-PCR assays were used to monitor ﬁm gene transcription in wild-type SL1344 , the SL1344 lrp knockout mutant ( SL1344 lrp ) , and the complemented SL1344 lrp knockout mutant that harbors pKMC102 , a plasmid expressing functional Lrp protein [ SL1344 lrp ( pKMC102 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp constitutive expression dramatically attenuates virulence , leading to defects in invasion , cytotoxicity , and coloni-zation , whereas lrp deletion enhances these activities .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>We report here that constitutive expression of Lrp [ lrp ( Con ) ] dramatically attenuates Salmonella virulence while an lrp deletion ( lrp ) mutation enhances virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Effect of Lrp expression on Salmonella virulence in BALB/c micea LD ( CFU ) b 50 Strain Description Oral i.p. 6.3 102 7 100 1.9 102 * 7 100 2.0 108 * 1.0 103 * 3761 9411 Wild type lrp-13 ( lrp , lrp deletion mutant ) lrp-1281 [ lrp ( Con ) , constitutive expression of Lrp ] 9448 ACKNOWLEDGMENTS We thank Ho Young Kang and Ah Young Yoo for the anti-SipA rabbit antiserum .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>To identify the correlation between Lrp and Salmonella virulence , we carried out comparative analyses of virulence-re-lated phenotypes among the wild type , a lrp mutant , and an lrp ( Con ) mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp represses the expression of key virulence factors and an lrp deletion mutant displays hypervirulence ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>[ 59 ] E. Holmqvist , C. Unoson , J. Reimegård , E.G.H. Wagner , A mixed double negative feedback loop between the sRNA MicF and the global regulator Lrp , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28302471" target="_blank">28302471</a>]<br></li>
+<li>For expression of site-speciﬁcally acetylated Lrp ( K36Ac ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Overproduction of Lrp also abrogates fimZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Leucine-Responsive Regulatory Protein ( Lrp ) Acts as a Virulence Repressor in Salmonella enterica Serovar Typhimurium Chang-Ho Baek ,1 Shifeng Wang ,1 Kenneth L. Roland ,1 and Roy Curtiss III1 ,2 * The Biodesign Institute1 and School of Life Sciences ,2 Arizona State University , P.O. Box 875401 , 1001 S. McAllister Ave. , Tempe , Arizona 85287 Received 14 August 2008/Accepted 28 November 2008 Leucine-responsive regulatory protein ( Lrp ) is a global gene regulator that inﬂuences expression of a large number of genes including virulence-related genes in Escherichia coli and Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp Acts as Both a Positive and Negative Regulator for Type 1 Fimbriae Production in Salmonella enterica Serovar Typhimurium Chang-Ho Baek , Ho-Young Kang , Kenneth L. Roland , Roy Curtiss , III * 1 3 1 1,2 1 The Biodesign Institute at Arizona State University , Tempe , Arizona , United States of America , 2 School of Life Sciences at Arizona State University , Tempe , Arizona , United States of America , 3 Department of Microbiology , Pusan National University , Pusan , Korea Abstract subunit FimH ( adhesin ) [ 11 ] , and fimbrial-like protein FimF [ 6,11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_41">
+Characterization of Lrp , an Escherichia coli regulatory protein that mediates a global response to leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></label>
+<input id="rp_similarity_41", type="checkbox">
+<div class="RP_similar">
+<li>Characterization of Lrp , and Escherichia coli regulatory protein that mediates a global response to leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li></div>
+<li>J Bacteriol 175:7492 -- 7494 Peekhuis N , Tolner B , Poolman B , Kraemer R ( 1995 ) The glutamate uptake regulatory protein ( Grp ) of Zymomonas mobilis and its relation to the global regulator Lrp of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_44">
+Wang , Q. , and Calvo , J.M. ( 1993 ) Lrp , a global regulatory protein of Escherichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10931352" target="_blank">10931352</a>]<br></label>
+<input id="rp_similarity_44", type="checkbox">
+<div class="RP_similar">
+<li>Lrp , a global regulatory protein of Esch-erichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li></div>
+<li>Lrp is a master regulatory protein that co-ordinates the expression of a large number of bacterial operons in response-to-nutrient availability ( D'Ari et al. , 1993 ; Calvo and Matthews , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>It was reported that Lrp is a master regulatory protein that coordinates expression of most bacterial operons in response-to-nutrient availability [ 52 , 53 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>This study also found that the leucine-responsive regulatory protein ( Lrp ) affects nearly three-quarters of these genes , including those involved in response-to-nutrient limitation , high concentrations of organic acids , and osmotic stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20691712" target="_blank">20691712</a>]<br></li>
+<li>In addition , we screened for potential regulatory roles of global regulators , previously reported to control Salmonella pathogenicity including RpoS , PhoP , OmpR and Fur [ 30 ] as well as the leucine-responsive regulatory protein ( Lrp ) that was shown to regulate different types of fimbriae in E. coli [ 31,32 ] and Salmonella [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Studies also demonstrated that a global regulator , leucine-responsive regulatory protein ( Lrp ) , and other genes outside the fim gene cluster also take part in the regulatory expression of type-1 fimbriae [ 13,14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>In addition , the leucine-responsive regulatory protein ( Lrp ) is a global gene regulator that controls a variety of genes in Salmonella , among which fimZ was shown to be activated by Lrp and consequently allows S. Typhimurium to produce type 1 fimbriae ( McFarland et al. 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Lrp has been shown to affect many stationary phase induced genes including those involved in the response-to-nutrient limitation , high concentrations of organic acids , and osmotic stress [ 42 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24664308" target="_blank">24664308</a>]<br></li>
+<li>Based on these observations , we hypothesize that pathogenic bacteria use Lrp to coordinate the expression of virulence traits in response to nutritional state ( feast or famine ) and host environments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Nucleoid-binding global regulators that modulate DNA topology , such as Lrp , integration host factor ( IHF ) , and H-NS affect phase variation and synthesis of type 1 fimbriae in E. coli [ 22 -- 27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>We present evidence that Lrp represses transcription of key virulence regulator genes -- hilA , invF , and ssrA -- in Salmonella pathogenicity island 1 ( SPI-1 ) and 2 ( SPI-2 ) , by binding directly to their promoter regions , PhilA , PinvF , and PssrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp homologues appear to be widely distributed among bacteria and archaea as a modulator of genes involved in amino-acid-metabolism and related processes ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The effect of Lrp expression on cell-division remains to be addressed in future studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The global regulator Lrp contributes to mutualism , pathogenesis and phenotypic variation in the bacterium Xenorhabdus nematophila .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The leucine-Lrp regulon in Escherichia coli : a global response in search of a raison d'etre .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp is a global regulator controlling expression of several operons in E. coli , while AstB regulates genes of sulfur-metabolism in Zymomonas mobilis ( Peekhuis et al. 1995 ; Newman and Lin 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>The Lrp global regulator of metabolism is involved in several bacterial processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_62">
+Complex transcriptional-control of the ars-dependent stationary-phase-in-duced and osmotically regulated osmY ( csi-5 ) gene suggests novel roles for Lrp , cyclic AMP ( cAMP ) receptor protein-cAMP complex , and integration host factor in the stationary-phase response of Eschenichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8045891" target="_blank">8045891</a>]<br></label>
+<input id="rp_similarity_62", type="checkbox">
+<div class="RP_similar">
+<li>Complex transcriptional-control of the sS-dependent stationary-phase-induced and osmotically regulated osmY ( csi-5 ) gene suggests novel roles for Lrp , cyclic AMP ( cAMP ) receptor protein-cAMP complex , and integration host factor in the station-ary-phase response of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li></div>
+<li>In addition , Crp , IHF , Lrp , and H-NS ( 5 , 23 , 29 , 30 , 44 , 49 , 55 , 57 ) have been identiﬁed as modulating factors in the control of various sS-dependent genes ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_65">
+Bouvier , J. , Gordia , S. , Kampmann , G. , Lange , R. , Hengge-Aronis , R. , and Gutierrez , C. ( 1998 ) Interplay between global regulators of Escherichia coli : effect of RpoS , Lrp and H-NS on transcription of the gene osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843227" target="_blank">19843227</a>]<br></label>
+<input id="rp_similarity_65", type="checkbox">
+<div class="RP_similar">
+<li>Interplay between global regulators of Escherichia coli : effect of RpoS , Lrp and H-NS on the transcription of the gene osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>Interplay between global regulators of Escherichia coli : effect of RpoS , Lrp and H-NS on transcription of the gene osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12511488" target="_blank">12511488</a>]<br></li></div>
+<li>Use of an in vivo titration method to study a global regulator : effect of varying Lrp levels on expression of gltBDF in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Evidence for global regulatory control of pilus expression in Escherichia coli by Lrp and DNA-methylation : model building based on analysis of pap .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>No systematic studies examining the regulation of virulence genes by Lrp have been reported in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Previous studies have identiﬁed a role for Lrp in the regulation of the plasmid virulence genes spvRABCD ( 64 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp is a global regulator of gene-expression whose activity can be modulated by the presence of L-leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>Negative control of fae ( K88 ) expression by the ` global ' regulator Lrp is modulated by the ` local ' regulator FaeA and affected by DNA-methylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20979070" target="_blank">20979070</a>]<br></li>
+<li>These observations indicated that in the presence of a functional relA gene , Lrp is dispensable for ilvIH ( AHAS III ) expression TABLE 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Reduced tra operon expression in an Lrp -- background is caused by lowered transcription of the traJ gene , which encodes a transcriptional activator of the tra operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>In the presence of arabinose , lacI expression is induced and lrp expression , which is transcribed from the Ptrc promoter in lrp-1281 , is repressed , leading to low levels of Lrp ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp is known to regulate the ﬁmbrial genes of a number of bacterial species ( 11 , 60 , 76 ) , including the ﬁm genes encoding the type 1 ﬁmbriae of E. coli ( 6 , 46 , 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Lrp has been shown to inﬂuence the expression of the spv virulence genes in a way that is dependent on L-leucine ( Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15790293" target="_blank">15790293</a>]<br></li>
+<li>While Lrp has been shown to act as a positive or negative regulator for each of the genes in the Lrp regulon , no systematic study of the mechanism has been undertaken .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In addition , Lrp controls the expression of the virulence plasmid traJ gene ( Camacho & Casadesús , 2005 ) , allowing Lrp to influence the conjugal transfer of this episome ( Camacho & Casadesús , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>In certain Salmonella enterobacteria strains , one such class of fimbriae , the virulence plasmid-encoded fimbriae encoded by the pef operon ,3,4 has been shown to be important for adhesion to murine small intestine and fluid accumulation ,5 as well as biofilm-formation on eukaryotic cell surfaces .6 Transcription of the pef operon , induced under acidic conditions , is modulated by the PefI regulatory protein .7 PefI represses plasmid-encoded fimbrial protein production by activating the leucine-responsive regulatory protein ( Lrp ) mediated inhibition of DNA-methylation within the pef promoter region .7 PefI expression also inhibits transcription of flagellar proteins and consequently cell-motility .8 Here we present the solution NMR structure of the 70-residue PefI transcription regulator from Salmonella enterica serovar Typhimurium LT2 [ UniProtKB/TrEMBL ID , ; NESG ID , StR82 ; hereafter referred to as stPefI ] , a member of the FaeA like protein domain family ( Pfam identifier , PF04703 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20979070" target="_blank">20979070</a>]<br></li>
+<li>As expected , the FinO - derivative of pSLT was transferred at higher frequency than the wild-type Discussion Here , we identify the leucine-responsive regulatory protein ( Lrp ) as a positive regulator of tra operon expression in the virulence plasmid of Salmonella enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Jan. 1996 , p. 327 -- / 96 / $ 04.0010 Copyright q 1996 , American Society for Microbiology D-Histidine Utilization in Salmonella typhimurium Is Controlled by the Leucine-Responsive Regulatory Protein ( Lrp ) KATRIN HECHT ,1 † SUE ZHANG ,1 TADEUSZ KLOPOTOWSKI ,2 AND GIOVANNA FERRO-LUZZI AMES1 * Department of Molecular and Cell Biology , University of California at Berkeley , Berkeley , California 94720,1 and Institute of Biochemistry and Biophysics , 02-106 Warsaw , Poland2 Received 12 September 1995/Accepted 7 November 1995 A new class of D-histidine-utilizing mutants which carry mutations in the gene encoding the leucine-responsive regulatory protein ( Lrp ) has been identiﬁed in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>For a quantitative analysis of the effect of Lrp on expression of these key virulence genes , we constructed chromosomal promoter-lacZ fusions ( PhilA-lacZ , PinvF-lacZ , and PssrA-lacZ ) in the three different Lrp backgrounds using the suicide lacZ fusion vector pSG3 ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The quorum-sensing regulator HapR downregulates the expression of the virulence gene transcription factor AphA in Vibrio cholerae by antagonizing Lrp - and VpsR-medi-ated activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Sub-network enrichment analyses of the expression time-course of Salmonella genes during human macrophage invasion identified several transcription factors ( PhoP , IHF , SlyA , and Lrp ) that were previously shown in the literature to be significant for infection and survival in phagosomes and therefore were components of our SPI pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20861532" target="_blank">20861532</a>]<br></li>
+<li>Our data indicate that the global regulator Lrp has been adapted to play a role in modulating the expression of a number of virulence factors involved in invasion and secretion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Instead of influencing the efficiency of a site-specific recombination process that moves the E. coli fim genes between ON and OFF expression states , Lrp in Salmonella enterica controls fim gene-expression by governing the supply of a regulatory protein , FimZ ( McFarland et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>strain , indicating that the reduced expression of Dps and Lrp was not involved in the loss of SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16905537" target="_blank">16905537</a>]<br></li>
+<li>Based on results from site-directed mutagenesis of the multiple Lrp-binding motifs in PfimA , we assume that the organization ( proximity , number , and orientation ) of Lrp-binding motifs and their cooperative interaction with Lrp play a crucial role for on/off switching of the fimZ gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>It is possible that Lrp precedes other regulators and acts as a master repressor for the expression of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>We also provide evidence that Lrp and Dam methylation play opposite roles in the regulation of tra operon expression : Lrp is an activator of conjugal transfer , whereas Dam methylation is a repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Lrp is a global transcription regulator that affects expression of a number of genes in Escherichia coli , acting as both an activator and a repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp is a global regulator that can function as a repressor or activator of transcription , controlling the expression of numerous operons in E. coli and Salmonella [ 48 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>These observations led us to postulate that Lrp acts as both an activator and a repressor for type 1 fimbriae expression mediated by differential interactions with Lrp-PfimA , depending on cellular concentration of Lrp and on environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>The cellular level of Lrp is a key factor for on/off switching of type 1 fimbriae production in serovar Typhimurium To examine Lrp-dependent on/off switching of type 1 fimbriae production , we employed S. Typhimurium strain x9449 harboring an arabinose-dependent Lrp expression system ( araC PBAD lacI and Ptrc lrp ) [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Regulation of expression of the spvR gene is very complex , and besides RpoS , other proteins that exert control over spvR include H-NS , Crp , and Lrp as negative regulators and integration host factor ( IHF ) as a positive regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>Like Lrp ( 14 , 32 ) , IHF accumulation and expression is growth phase dependent ( 3 , 16 ) and expression of the genes encoding IHF ( ihfA and ihfB ) apparently requires ppGpp ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Since Lrp and H-NS can also modulate ﬁmA expression , the regulatory circuit of ﬁm expression will involve both speciﬁc ﬁmbrial regulators and global regulatory proteins that act in concert to modulate adherence factor production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Dam is involved in epigenetic phase variation in conjunction with either Lrp or OxyR for phase variation of the family of pap ﬁmbrial operons and the agn43 gene family respectively ( van der Woude and Baumler , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Dam in conjunction with Lrp controls expression of the pap and related ﬁmbrial operons in both E. coli and Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>Genes encoding the regulators ( Dps , Lrp , and RtsA/B ) , only RtsA/B have been global regulators fis and fur also showed elevated expression shown to be involved in hilA gene-expression ( 51 , 52 ) , and both levels in the relA spoT strain under low oxygen growth congenes showed 3 -- 5-fold reductions in expression in the absence ditions ( Fig. 3 , B and D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16905537" target="_blank">16905537</a>]<br></li>
+<li>To determine whether additional regulators were involved in the attenuation of the bacterial growth rate within ﬁbroblasts , we tested mutants affected in the following regulatory proteins : ( i ) RpoE , an alternative sigma factor ( 38 ) ; ( ii ) SpiR ( SsrA ) and SpiA , a regulator and a type III structural protein , respectively , both encoded in SPI-2 ( 34 , 51 ) ; ( iii ) OmpR , a transcriptional regulator controlling outer membrane protein content ( 43 ) ; ( iv ) Dam , a DNA-adenine meth-ylase required for systemic disease ( 23 , 33 ) ; ( v ) the global regulators Crp , RelA , and Lrp ( 18 ) ; ( vi ) OxyR and SoxRS , related to oxidative stress ( 13 , 67 ) ; ( vii ) MviA , a regulator required for eliciting systemic disease in mice ( 66 ) ; and ( viii ) Fnr , which controls switching to anaerobic metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>En second lieu , la Dam MT et les protéines régulatrices , telles que la protéine Cap ( Global positive regulator of transcription ) , Lrp ( Global regulatory protein ) ou OxyR ( Regulatory protein and sensor for oxidative stress ) , concurrencent pour les sites GATC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18722983" target="_blank">18722983</a>]<br></li>
+<li>Notably , Lrp ( leucine-responsive regulatory protein ) , the leucine-responsive global regulator ( GR ) , has a strong interaction with Pat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>The leucine-responsive regulatory protein ( Lrp ) is a DNA binding protein that acts as a global regulator to inﬂuence transcription ( 5 , 6 , 29 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18776023" target="_blank">18776023</a>]<br></li>
+<li>Lrp , a leucine-responsive regulatory protein and global regulator , was shown to interact with Pat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Leucine-responsive regulatory protein ( Lrp ) activates fimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>Leucine-regulated selfassociation of leucine-responsive regulatory protein ( Lrp ) from Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The structural gene products are the major type 1 fimbrial subunit FimA [ 7,8 ] , fimblin-like protein FimI [ 9 ] , periplasmic chaperone FimC [ 10 ] , outer membrane usher protein FimD [ 6 ] , minor fimbrial Results Lrp acts as both positive and negative regulator for fimA expression In our previous study using RT-PCR , we observed that an lrp C ( constitutive Lrp expression ) mutation abrogated fimA transcription [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Leucine-responsive regulatory protein ( Lrp ) is known to be an indirect activator of type 1 fimbriae synthesis in Salmonella enterica serovar Typhimurium via direct regulation of FimZ , a direct positive regulator for type 1 fimbriae production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Mutations that decreased tra operon expression mapped in the lrp gene , which encodes the leucine-responsive regulatory protein ( Lrp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>We discovered that a knockout mutation in lrp , the gene that codes for the leucine-responsive regulatory protein ( Lrp ) , inhibited ﬁm transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_115">
+The leucine-responsive regulatory protein , Lrp , activates transcription of the ﬁm operon in Salmonella enterica serovar Typhimurium via the ﬁmZ regulatory gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></label>
+<input id="rp_similarity_115", type="checkbox">
+<div class="RP_similar">
+<li>McFarland KA , Lucchin S , Hinton JCD , Dorman CJ : The leucine-responsive regulatory protein , Lrp , activates transcription of the fim operon in Salmonella enterica serovar Typhimurium via the fimZ regulatory gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li></div>
+<li>DISCUSSION This study establishes that the leucine-responsive regulatory protein , Lrp , plays a positive role in controlling the expression of type 1 ﬁmbriae in serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Microbiology ( 2008 ) , 154 , 2008 -- 2016 DOI 10.1099 / mic .0.2008 / 018358-0 Autoregulated expression of the gene coding fo the leucine-responsive protein , Lrp , a global regulator in Salmonella enterica serovar Typhimurium r Kirsty A. McFarland3 and Charles J. Dorman Correspondence Department of Microbiology , Moyne Institute of Preventive Medicine , Trinity College , Dublin 2 , Ireland Charles J. Dorman cjdorman@tcd.ie In this study , the lrp gene encoding the leucine-responsive regulatory protein ( Lrp ) in Salmonella enterica serovar Typhimurium was found to be negatively autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Am J Physiol Endocrinol Metabol 285 : E854 -- E863 McFarland KA , Dorman CJ ( 2008 ) Autoregulated expression of the gene coding for the leucine-responsive protein , Lrp , a global regulator in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>Autoregulated expression of the gene coding for the leucine-responsive protein , Lrp , a global regulator in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>This study shows that a bacterial global regulator , the leucine-responsive regulatory protein ( Lrp ) , is required for traJ transcription and , hence , for tra operon expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Its expression is tightly regulated by several transcription regulators including the leucine responsive regulatory protein ( Lrp ) , H-NS-like protein ( StpA ) and histone-like protein ( HU ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28302471" target="_blank">28302471</a>]<br></li>
+<li>Lrp regulates type 1 ﬁmbrial genes in E. coli by participating in a DNA inversion event that is mediated by site-speciﬁc recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>In serovar Typhimurium , Lrp is required for type 1 fimbriae production by activating FimZ synthesis [ 33 ] , whereas in E. coli , Lrp is involved in inversion-dependent phase variation [ 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Hence , an attractive idea is that Lrp and Dam methylation might regulate mating in response to environmental or physiological stimuli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>One may thus hypothesize that host-encoded functions such as Lrp , Dam methylation and ArcA might be part of signal-transduction-pathways that regulate bacterial conjugation in response to cellular or environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>OmpR , Lrp and Fur are involved in pESI fimbriae regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>In addition to operons involved in amino-acid-metabolism , Lrp was previously shown to regulate different fimbrial operons including pap ( P pilus ) and fan ( K99 ) [ 31 ] , fim [ 33,49 ] , sfa , daa [ 50 ] , as well as the nonfimbrial adhesin TosA in uropathogenic E. coli [ 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Lrp in E. coli K-12 represses several genes , including CpxP , PhoP , and RpoS ( 48 ) , that are known to regulate virulence traits in some pathogenic bacteria ( 30 , 40 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>We have proposed that dynamic change in cellular Lrp levels in response to nutritional state ( feast or famine ) is important for coordinating virulence traits in Salmonella [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Like Lrp , other core global regulators including , Fur and OmpR were found to control ipf expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>) p , v Replication in macrophages8 PhoPQ , SsrAB , EnvZ/OmpR p , v Mouse spleen ( IVET ) ; macrophage line ( DFI ) m Gifsy-2 Defence against killing by macrophages q Cation levels , pH n PhoPQ , PmrAB n , r Resistance to cationic peptides and killing by macrophages and PMNs n , r PmrA ¬ Liver/spleen Macrophage line ( IVET and other fusion studies ) m dependent pags RpoS , cAMP-CRP , Mouse spleen ( IVET ) m Lrp , IHF , H-NS , SpvR s Replication in Anaerobiosis , growth phase , spvABCD extraintestinal tissues s N - , Pi - , and C-starvation , iron limitation , high temperature , acid stress , and short-chain fatty acids s Lipid A modifications , promotes inflammatory cytokine and inducible nitric oxide responses , induces death of host t waaN a. Slauch et al. ( 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844688" target="_blank">10844688</a>]<br></li>
+<li>Operons regulated by Lrp range in function , including those for amino acid biosynthesis , amino acid degradation , transport and pili formation ( Calvo and Matthews 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21584761" target="_blank">21584761</a>]<br></li>
+<li>The Lrp regulon in E. coli includes genes responsible for amino-acid-metabolism , carbon and energy metabolism , pilus synthesis , macromolecular biosynthesis , stress response , outer membrane proteins ( OMPs ) , and gene regulators ( 12 , 48 , 89 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Lrp binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>It seems that Lrp recognizes various features such as DNA bending , spacing , or AT repetitions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>This consensus motif is of particular interest because it has dyad symmetry , although imperfect , and dyad symmetry has been implicated to be important for speciﬁc interaction with Lrp ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>When a 372-bp region encompassing the ﬁmZ transcriptional start site ( 1 ) plus 125 bp upstream ( fragment I ) was incubated with increasing concentrations of Lrp , no interaction was seen ( Fig. 4A , panel 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>However , when this region was extended to 291 bp upstream of the ﬁmZ transcriptional start site ( fragment II ) , an interaction with Lrp was demonstrated ( Fig. 4A , panel 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_5">
+Wang , Q. , and Calvo , J.M. ( 1993 ) Lrp , a global regulatory protein of Escherichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10931352" target="_blank">10931352</a>]<br></label>
+<input id="sit_similarity_5", type="checkbox">
+<div class="SIT_similar">
+<li>Lrp , a global regulatory protein of Esch-erichia coli , binds co-operatively to multiple sites and activates transcription of ilvIH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li></div>
+<li>Three complexes with Z202 were observed , suggesting that Lrp binds to up to three sites within this region ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The 418 bp fragment encompasses a 203 bp subfragment that binds Lrp , forming up to four Lrp -- DNA complexes in EMSAs ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>EMSAs showed that Lrp binds to a 418 bp DNA fragment and that this binding is not abrogated by the addition of leucine ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>( d ) Binding of the Lrp protein [ 13.3 ( lane 1 ) , 26.6 ( 2 ) , 53.2 ( 3 ) , 133.38 ( 4 ) nM ] to a 203 bp DNA fragment with a core sequence that is common to probes R310 and F311 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>The pap regulatory region GATC sites are present in the Lrp consensus binding sequence GNN ( N ) TTTt ( Nou et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Putative pef Lrp binding sites [ ( GNN ( N ) TTTt ) ] ( Nou et al. , 1995 ) are denoted by arrows and overlap the pef GATC sequences shown in bold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+<li>Although the ilvIH , ﬁmZ , pefB , and spvA genes are known to be regulated by Lrp in Salmonella ( 64 , 67 , 74 , 93 ) , the upstream regions of these genes have short Lrp-binding motifs , 5 - HNDWTTATTHND-3 [ where H not G ; W A or T ; D not C ; N all bases ; and ( N ) all bases or none ] and 5 - GNN ( N ) TTTT-3 ( 75 ) , termed consensus III and IV , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The underlined sequence matched the Lrp DNA-binding consensus sequence in E. coli , 5 - YAGHAWATTWTDCT R-3 ( where Y C or T ; H not G ; W A or T ; D not C ; and R A or G ) ( 11 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Based on analysis of the known Lrp-binding sites , including the Plrp ( 66 ) and PtraJ ( 13 ) regions in Salmonella and the E. coli consensus sequence , we propose a new Lrp-binding consensus sequence : 5 - YRGHW W ( G ) DTTDWDSYR-3 [ where Y C or T ; H not G ; W A or T ; D not C ; R A or G ; S C or G ; and ( G ) G or none ] , termed Lrp consensus II , for both E. coli and Salmo-nella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Several matches to the degenerate consensus sequence for Lrp binding sites ( Wang et al. , 1994 ) were identified in the region between -- 110 and +15 ; these are summarized in Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>The sequences showing homology to the consensus sequence for Lrp binding sites are in boldface type and are underlined and labeled sites I , II , and III .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>This result suggests that Lrp and FimZ compete for binding to PfimA at the overlapping sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Certainly , the relative locations of the putative FimZ binding site at 352 and the Lrp sites at 152 and 100 are consistent with such a model .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>These operons all have the signature sequence of the two GATC ` boxes ' conserved at 102 bp spacing and a PapI-like protein that modiﬁes Lrp binding affinity [ reviewed in Casadesus and Low ( 2006 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20487280" target="_blank">20487280</a>]<br></li>
+<li>These ﬁndings , along with data from the EMSA analysis , suggest that there are three binding sites for Lrp amid the hypersensitive bases in the protected region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The Lrp binding sites identiﬁed in the ﬁmZ regulatory region are located far upstream from the transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>This allows the protein to dock with Lrp binding sites distributed along the DNA with a spacing of approximately three helical turns , or 30 bp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Integration host factor ( IHF ) binds to DNA sequences upstream of the spvR regulatory region , and the leucine-responsive regulatory protein ( Lrp ) binds to sequences upstream of the spvABCD operon and regulate spv expression ( Marshall et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19447191" target="_blank">19447191</a>]<br></li>
+<li>Identifying the lrp transcription start site Purified Lrp binds to the lrp promoter region Purified Lrp protein ( McFarland et al. , 2008 ) was used in a series of EMSAs to assess Lrp interaction with the transcriptional regulatory region of the SL1344 lrp gene ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Binding of the Lrp protein to the lrp regulatory sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>DNase I footprinting showed that Lrp binds within a region between 65 and 170 with respect to the ﬁmZ transcription start site , consistent with the binding and wrapping of the DNA in this upstream region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Because the 313 bp and the 84 bp fragments both contain the region homologous to the Lrp binding site , these observations provided evidence that Lrp binds to the UAS of traJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Taken together , the data from the EMSAs showed that Lrp bound to DNA sequences located between positions -- 167 and +36 , numbered with respect to the transcription start site ( +1 ) of the S. Typhimurium lrp gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>These results suggest that Lrp binds to the consensus motifs and modulates expression of the linked genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Computer analysis of DNA sequences upstream of the traJ promoter of plasmid pSLT revealed a region homologous to the consensus sequence for Lrp binding ( Calvo and Matthews , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Sequences showing signiﬁcant similarity to the Lrp consensus binding site identiﬁed upstream of the traJ promoters of plasmids pSLT , R100 and F. Shadowed nucleotides indicate matches with the Lrp consensus target .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>This conclusion is based on the assumption that mutation of the pef GATC II sequence to GCTC specifically blocks methylation of this site but does not significantly alter Lrp binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_34">
+The promoter-distal site is referred to as GATC I ( at 2 153 relative to the papBA transcript start site ) and is located in Lrp site 5 of the [ 4,5,6 ] binding region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></label>
+<input id="sit_similarity_34", type="checkbox">
+<div class="SIT_similar">
+<li>The promoter-proximal site , GATC II ( 2 52 relative to the papBA transcript start site ) is in Lrp site 2 of the [ 1,2,3 ] binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692151" target="_blank">10692151</a>]<br></li></div>
+<li>Particularly , Lrp represses transcription of the hilA , invF ( SPI-1 ) , ssrA ( SPI-2 ) , and spvA ( pSLT plasmid ) genes by direct binding to a consensus DNA motif ( 302 , 312 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>Additionally , this region also includes 12 putative Lrp binding sites , all containing the consensus sequence GN ( 2 -- 3 ) TTT recognized by Lrp [ 35 ] ( S1A Fig ) , suggesting direct binding of Fnr and Lrp to this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Each of these regions of protection contains a match to the consensus sequence for Lrp binding sites ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>A consensus sequence for binding of Lrp to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>These regions were examined for sequences with similarity to the Lrp consensus sequence YAGHAWATTWTDCTR ( 24 , 25 , 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>g001 Lrp directly interacts with PfimA Based on our previously described consensus sequences [ 34 ] , we detected four putative Lrp-binding motifs in the P region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Because Salmonella Lrp has 99 % amino acid sequence identity with E. coli Lrp , we looked for Lrp-binding motifs in Salmonella DNA sequences using the E. coli Lrp-binding consensus sequence 5 - YAGHAWATTWTDCTR-3 ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In addition , although the Salmonella Plrp interacted strongly with Lrp , the Lrp-binding motif in Plrp was an imperfect match with the E. coli consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp binds DNA not only by speciﬁc interaction with its target sequence but also in a nonspeciﬁc manner ( 14 , 16 , 78 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( A ) Conservation analysis of Lrp K36 by sequence alignment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Lrp</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>It has been reported that Lrp strongly represses its own promoter in E. coli ( 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( B ) Expression of lrp , rpoS , invF and sseB mRNA from LB5010 ( WT ) cultured in pH 7 LB broth ; those gene expression were also monitored from LB5010 ( WT ) , LB5010 lrp ( lrp ) , LB5010 ( pLrp ) ( WT + pLrp ) , and LB5010 ( pTA ) ( WT + pTA ) strains cultured in pH 4 LB broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Lrp can repress or activate gene expression , and its action can either be modulated ( stimulated or inhibited ) or not by leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>For example , Lrp negatively regulates the porin gene ompC expression in E. coli ( Ferrario et al. 1995 ) , and OmpC are required for optimal growth at an acidic pH ( Ferrario et al. 1995 ; Sato et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Dad is apparently repressed by Lrp in E. coli ( 10a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>Lrp binds strongly to PhilA and tightly represses hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Lrp activates ilvIH expression ( 60 ) and is thought to repress ilvGM expression ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>Lrp protein expression was induced and the protein was puriﬁed as described previously ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Expression and Puriﬁcation of His-Tagged Lrp , Lrp Derivative Mutants , RhaR , , NrdF , FliT , Pat , and CobB For puriﬁcation of Lrp and its derivative mutants , pET22b-lrp , pET22b-lrp K36Q , pET22b-lrp K36R , and pET22b-lrp K25Q were constructed and veriﬁed by sequencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27909434" target="_blank">27909434</a>]<br></li>
+<li>Lrp represses the expression of key virulence factors and an lrp deletion mutant displays hypervirulence ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In pSLT , Dam methylation and Lrp regulate the expression of different genes ( ﬁnP and traJ respectively ) , and their targets do not overlap .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Like Lrp ( 14 , 32 ) , IHF accumulation and expression is growth phase dependent ( 3 , 16 ) and expression of the genes encoding IHF ( ihfA and ihfB ) apparently requires ppGpp ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>3.4 lrp gene expression in RAW264 .7 macrophages and in static broth culture The Lrp is a positive regulatory protein of S. Typhimurium type 1 fimbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>The growth rate decrease-mediated ppGpp-Lrp stress response demonstrated by Dr. Calvo 's group ( 66 ) is likely to also be responsible for the transient leuO expression during the late-log/stationary phase ( 69 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12882514" target="_blank">12882514</a>]<br></li>
+<li>The concomitant observation that the tra operon remains repressed in an Lrp + TraJ - background ( Fig. 2 ; data not shown ) is also relevant , as it suggests that Lrp activates the tra operon indirectly by enhancing traJ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Reduced tra operon expression in an Lrp -- background is caused by lowered transcription of the traJ gene , which encodes a transcriptional activator of the tra operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>In an Lrp - background , a dam mutation is unable to derepress the tra operon because of inefﬁcient traJ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>STY3070 in Salmonella was later determined to be the casC gene of the CRISPR/Cas system ; and its repression was found to depend also on Lrp , and its expression induced in minimal media independent of LeuO ( 78 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25566242" target="_blank">25566242</a>]<br></li>
+<li>Recently , expression of the lrp gene in serovar Typhimurium SL1344 was found to be autoregulated by direct interaction between Lrp and its promoter , Plrp ( 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Mutations that decreased tra operon expression mapped in the lrp gene , which encodes the leucine-responsive regulatory protein ( Lrp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Microbiology ( 2008 ) , 154 , 2008 -- 2016 DOI 10.1099 / mic .0.2008 / 018358-0 Autoregulated expression of the gene coding fo the leucine-responsive protein , Lrp , a global regulator in Salmonella enterica serovar Typhimurium r Kirsty A. McFarland3 and Charles J. Dorman Correspondence Department of Microbiology , Moyne Institute of Preventive Medicine , Trinity College , Dublin 2 , Ireland Charles J. Dorman cjdorman@tcd.ie In this study , the lrp gene encoding the leucine-responsive regulatory protein ( Lrp ) in Salmonella enterica serovar Typhimurium was found to be negatively autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>These observations indicated that in the presence of a functional relA gene , Lrp is dispensable for ilvIH ( AHAS III ) expression TABLE 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11591661" target="_blank">11591661</a>]<br></li>
+<li>In addition , positive regulation of fimA expression by FimZ is dominant over the negative regulation by Lrp when fimZ is overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Interestingly , both regulons are controlled by the argR repressor , while the biosynthesis genes of the other amino acids are controlled by the transcription factors Lrp and TrpR ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22941081" target="_blank">22941081</a>]<br></li>
+<li>Regulation studies showed that the klf genes expression is negatively and positively controlled by the pESI-encoded regulators KlfL and KlfB , respectively , and are activated by the ancestral leucine-responsive regulator ( Lrp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Transcription of the hilA , invF , and ssrA genes is repressed by Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Collectively , we concluded from the above set of experiments that Lrp is an activator of the klf genes , and that the ipf operon is repressed by Fur and positively regulated by OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>In the presence of arabinose , lacI expression is induced and lrp expression , which is transcribed from the Ptrc promoter in lrp-1281 , is repressed , leading to low levels of Lrp ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>The lack of b-galactosidase synthesis in the Dlrp and lrp mutant backgrounds indicates that transcription from C PfimA is not active in the absence of Lrp or when Lrp is overproduced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>In addition , Lrp represses expression of the spvABCD operon ( 64 ) , which is required for the establishment of a systemic infection by Salmonella in mice ( 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In the resulting strain 9449 , the expression of Lrp is regulated by LacI , whose expression is under the control of the araC PBAD system ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>In contrast , invF repression does require leucine , whereas expression of the spvABCD genes , which is prevented by Lrp protection of the transcriptional start site of the spvA gene , is antagonized by leucine ( 302 , 312 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>strain , indicating that the reduced expression of Dps and Lrp was not involved in the loss of SPI1 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16905537" target="_blank">16905537</a>]<br></li>
+<li>FimZ is known to regulate the expression of its own gene positively , raising the possibility that Lrp can potentiate the positive effect of FimZ at the PﬁmZ promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>These data showed that Lrp repressed the transcription of the lrp gene and that this negative effect was partially alleviated by the presence of leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18599829" target="_blank">18599829</a>]<br></li>
+<li>Effect of lrp mutations on the expression of tra , ﬁnP and traJ transcriptional units To identify the promoter regulated by Lrp in the transfer regulon of pSLT , we investigated the effect of lrp mutations on the expression of traY , the ﬁrst gene of the tra operon , and on the expression of the regulatory genes traJ and ﬁnP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12067346" target="_blank">12067346</a>]<br></li>
+<li>Based on these observations , we suggest that Lrp acts as an antagonist of HilD , which induces expression of the hilA gene by derepressing the silencing effect of H-NS and Hha on the hilA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Although it is unusual for Lrp to be both a positive and a negative regulator in the same operon , this type of dual regulation has been reported for the papBA operon [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Expression of the type I ﬁmbrial operon in serovar Typhi-murium is regulated by Lrp ( 67 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Expression of the spv operon is regulated by Lrp ( 64 ) , and we observed a shift similar to Plrp with PspvA ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

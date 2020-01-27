@@ -1,0 +1,621 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - UxuR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">UxuR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">UxuR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Escherichia coli Fructuronic Acid Transporter and to the UxuR Regulon GntP Is the Belongs Cristina Bates Utz ,1 Ann B. Nguyen ,2 Darren J. Smalley ,2 April B. Anderson ,2 and Tyrrell Conway2 * Department of Microbiology , Ohio State University , Columbus , Ohio ,1 and Department of Botany and Microbiology , University of Oklahoma , Norman , Oklahoma2 Received 2 July 2004/Accepted 11 August 2004 Escherichia coli has four gluconate transporters , GntP , GntU , GntT , and IdnT , which are members of the major facilitator superfamily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Crp , GalS MglAB Crp , RbsR RbsAB Crp , GalS MglA Crp , GntR GntK Crp , EbgR EbgA Crp , LacI LacZ Crp , RhaS RhaBD Crp , AraC AraBD Crp , FucR FucK Crp , YiaJ LyxK Crp , FucR FucA Crp , YiaJ SgbE RcsB WcaB CpxR LpxA RcsB WcaB CpxR LpxD RcsB B2060 PhoB PhnCKLN RcsB B2060 PhoB PstB RcsB B2060 PhoB PhoH MhpR MhpF Fur EntA FecI , Fur FecI UidR , UxuR UidR Crp , FucR FucR Crp , Fur Fur Homologous pairs of transcription factors with autoregulation IdnR PurR AsnC Lrp Fnr Crp Homologous triplets of transcription factors with autoregulation TorR PhoB CpxR EmrR PdhR ExuR Eight homologous transcription factors with autoregulation DsdC GcvA CynR Hcar IlvY LysR OxyR CysB Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12582243" target="_blank">12582243</a>]<br></li>
+<li>mparative Genomic Analysis of the Hexuronate Metabolism G and Their Regulation in Gammaproteobacteria † Co enes Inna A. Suvorova ,1 Maria N. Tutukina ,2 Dmitry A. Ravcheev ,1,3 Dmitry A. Rodionov ,1,3 Olga N. Ozoline ,2 * and Mikhail S. Gelfand1 ,4 * Institute for Information Transmission Problems RAS ( The Kharkevich Institute ) , Moscow 127994 , Russia1 ; Institute of Cell Biophysics RAS , Pushchino , Moscow Region 142290 , Russia2 ; Sanford-Burnham Medical Research Institute , La Jolla , California 920373 ; and Faculty of Bioengineering and Bioinformatics , Moscow State University , Moscow 119991 , Russia4 Received 25 February 2011/Accepted 13 May 2011 The hexuronate metabolism in Escherichia coli is regulated by two related transcription factors from the FadR subfamily of the GntR family , UxuR and ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Lanes 2 to 9 contain increasing amounts of UxuR : 0.9 , 1.8 , 3.6 , 7.2 , 14.4 , 28.8 , 57.6 , and 115.2 nmol , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Lane 1 contains no protein and lanes 2 to 7 contain increasing amounts of UxuR protein : 0.9 , 1.8 , 3.6 , 7.2 , 14.4 , and 28.8 nmol , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>As was mentioned earlier , the typical distance between GT and AC in most FADR-subfamily TF-binding sites is 3 nt ( DgoR , ExuR , FadR , GlcC , LldR , PdhR etc ) , although in several orthologous groups it is 2 nt ( e.g. , GntR , HpxS , HypR , MdcY , PrpR , UxuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>In contrast , in cells containing pAA-F , p A A - H or p N MF , the fl-galactosidase synthesis was more sensitive to the presence of UxuR than that of UidR ( 73 % to 90 % repression with UxuR versus 27 % to 52 % repression with UidR ) ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2823062" target="_blank">2823062</a>]<br></li>
+<li>Site 01 certainly has no physiological significance for repression of uidA expression by UxuR , since in strains containing the pAA-X or pNM-X plasmids the repression offl-galactosidase synthesis by UxuR is not increased when the fragment X bears both 01 and 02 over fragments containing only 02 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2823062" target="_blank">2823062</a>]<br></li>
+<li>The abundance of the hns mRNA within the pGEMU-transformants appeared to be the same as in the cells transformed by pGEM , while the amount of the uxuB mRNA signiﬁcantly decreased , conﬁrming its negative regulation by UxuR ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Repressor : b-glucuronide induction b-Glucuronide hydrolase b-Glucuronide transport kdgT eda exuR exuT uxaCA ExuR uxaB 4552.6 4549.5 4551.2 UxuR 58 58 58 uxuR uxuA uxuB uxuR uxuAB gntP uidR 4548.3 1694.8 1693.2 1691.6 38 11 11 11 gntP uidR uidA uidB UidR uidAB OTHER PROPOSED ROLES FOR THE ED ENZYMES A growing number of studies have shown that eda expression is regulated in response to several conditions in addition to its role in sugar acid catabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>Values in parentheses are percentage activity in the presence of the uxuR + or uidR + plasmid to that obtained in the presence of the control plasmid of UxuR had a lower effect ( about 20 % repression ) and UidR a higher effect ( 80 % repression ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2823062" target="_blank">2823062</a>]<br></li>
+<li>Such interactions were previously predicted to explain the partial interchangeability of UxuR and UidR repressors for the control of uidA ( RITZENTHALEBRL a , ANCOnd MATA-GILSIN-GER 1983 ) : full repression of uidA expression is achieved only in the simultaneous presence of both UxuR and uidR repressors , even when UidR or UxuR is overproduced in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>The isolation of negative dominant mutations affecting the exuR regulatory gene indicates that the active form of the ExuR repressor is multimeric like that of UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>It seems that overproduction of negative dominant UxuR monomers can interact with the repressor activity of the regulatory mole-cule encoded by the chromosomal exuR gene and vice versa for the negative dominant ExuR monomers relative to the UxuR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>Consequently , the uxuR gene is no longer autoregulated and the negative dominant UxuR monomers are synthesized in a larger amount than that of the wild-type UxuR + monomers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>gene derepression caused by addition of uidR-d alleles is strong in the absence of a functional uxuR gene and is significantly reduced when an active UxuR repressor is synthesized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>This strain was used to select among the UxuR repressor negative mutations those having a trans-dominant effect ; addition of the uxuR negative alleles in strain 2510 caused the derepression of the uxuAB operon in 12 % of the transformants , despite the presence of a wild-type uxuR + allele on the chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>Nevertheless , in a wildtype strain , the uxuR negative dominant plasmids caused a weak derepression of the exu genes , this derepression can not be due to UxuR repressor inactivation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>In the first case , catabolite repression was studied in a strain containing a chromosomal fusion uxu-lae controlled by the chromosomal UxuR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>Moreover , an excess of UidR repressor causes full uidA repression in some uxuR missense mutants , such as P R l , suggesting that even the altered UxuR repressor helps UidR to-bind to the uidA operator site or vice versa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>The expression of uidA is primarily controlled by the UidR repressor and secondarily by the UxuR repressor ( Novel and Novel , 1976a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3934044" target="_blank">3934044</a>]<br></li>
+<li>Glucuronate is able to relieve the repression produced by the UxuR repressor on uidA expression , whereas methyl-@-glucuronide antagonizes the repression exerted by UidR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>Catabolite repression of uxua-lacZ gene fusions and UxuR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>Repression by the UxuR repressor does not seem to occur for the uidR gene contrary to that observed for uidA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3934044" target="_blank">3934044</a>]<br></li>
+<li>The following abbreviations are used : uxuR , for the structural gene of the uxuR repressor , Gur ' ( Gur - ) and Gar ' ( Gar - ) , for the ability ( inability ) to catabolize glucuronate and galacturonate , respectively ; , UxuR - ( UxuR ' ) , for constitutive ( inducible ) expression of the uxuA-uxuB op-eron ; `` uxu operon , '' for the `` uxuA-uxuB operon ; '' and `` exu regulon , '' for the various operons ( exuT , uxaC-uxaA , uxaB , and uxuA-uxuB ) controlled by the exuR gene product ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7007313" target="_blank">7007313</a>]<br></li>
+<li>The presence of UxuR binding sites on the three plasmids was also tested by the ability of these plasmids to cause constitutive expression of the chromosomal uxu operon by titrating out the intracellular UxuR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>We have previously shown that the UxuR repressor was unable to repress the exu genes even in the presence of a large amount of repressor , probably because the exu operator sites are only recognized specifically by the ExuR repressor ( Ritzenthaler et al. 1983 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>The synthesis of fi-glucuronidase is principally regulated by the UidR repressor , while the UxuR repressor has only a partial effect , uidA , uidR and uxuR have been cloned into plasmid pBR322 ( Blanco et al. 1982 ; Ritzenthaler et al. 1980 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2823062" target="_blank">2823062</a>]<br></li>
+<li>The presence of the uxuAo operator site on a multicopy plasmid titrates out the UxuR repressor present in the cell and thereby derepresses the chromosomal uxu operon , resulting in constitutive synthesis of the uxuA and uxuB gene products ( Ritzenthaler et al. 1980 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>In order to validate the predicted UxuR regulation for the yjjM and yjjN genes in E. coli , the content of corresponding mRNAs was ﬁrst estimated in bacteria grown in conditions requiring expression of UxuR-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>That assumes positive correlation in the amount of UxuR and RNA products of genes negatively regulated by this transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>To determine the inducer of the UxuR regulon , various pure sugars were tested for their ability to inhibit formation of the UxuR-DNA complex ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Although increased transcription of uxuR in this case is explained by the relieved autorepression ( due to the presence of fructuronate ) and by the functionality of cyclic AMP-CRP ( due to the absence of glucose ) , this assumes `` unreasonable '' interference with the required induction of UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Fructuronate is the ﬁrst intermediate of the glucuronate pathway and is the inducer of the UxuR regulon ( 8 , 17 , 21 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Genes in the UxuR regulon are known to be induced by glucuronate via its conversion to fructuronate and are under the negative control of UxuR ( 17 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Glucuronate , because it proceeds through a fructuronate intermediate , must induce the UxuR regulon and must also induce the ExuR regulon , which encodes the glucuronate transporter , ExuT , and the ﬁrst step in its catabolism , UxaC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Thus , hexuronate catabolism in E. coli requires both the ExuR and UxuR regulons , while fructuronate catabolism requires only the UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Glucuronate catabolism requires ﬁrst the ExuR regulon , which controls transport of glucuronate and galactu-ronate and their conversion to fructuronate and tagaturonate , respectively , and then the UxuR and KdgR regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Although D-fructuronate is required to relieve this repression ( 3 ) , the expression of UxuR regulon should be dependent on intracellular concentration of UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The UxuR regulon , on the other hand , can be thought of as a module that is principally involved in catabolism of fructuronate , which is transported by GntP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Frn , fructuronate ; SD , standard deviation DISCUSSION The primary ﬁndings of the present study are that gntP is a member of the UxuR regulon , induced by fructuronate , and that GntP is required for growth on fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Fructuronate is the true inducer of the UxuR genes , including gntP , a member of the UxuR regulon that encodes the fructuronate transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We show here that gntP is induced by fructuronate , regulated by UxuR , and requires activation by cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Binding of UxuR to the gntP operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Binding of UxuR to the gntP operator in the presence of various sugars .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We show that gntP is induced by fructuronate and is a new member of the UxuR regulon : gntP is derepressed in an uxuR strain , UxuR binds in vitro speciﬁcally to an operator site that overlaps the gntP promoter , and UxuR binding is eliminated by fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Since fructuronate inhibits UxuR binding to the gntP operator , we tested whether fructuronate was able to induce genes of the UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Since glucuronate does not inhibit binding of UxuR to the gntP operator , the results conﬁrm that fructuronate formed from glucuronate is responsible for induction of the UxuR regulon during growth on glucuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>These results indicate that UxuR binding to the UxuR operator is sequence speciﬁc and that binding is inhibited by fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Furthermore , we demonstrated that binding of the UxuR operator in the gntP regulatory region is speciﬁcally inhibited by fructuronate ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The transport of glucur-onides and their subsequent interconversion to the glucuronate in E. coli is mediated by the genes of the uidAB operon , which is under negative regulation by UidR and UxuR ( Blanco , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Another transcription factor , UxuR , regulates the uxuAB operon specifically involved in the catabolism of glucuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>UxuR controls the D-glucuronate metabolism by repressing uxuAB , uidABC , gntP , and its own gene uxuR ( 3 , 7 , 17 , 24 -- 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Even though a detailed molecular mechanisms underlying UxuR / ExuR regulatory action remains to be elucidated , it seems likely that yjjM and yjjN are regulated by at least UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>This is probably also the case for the repressor domains implied in the binding of the inducer since mannonic amide , a gratuitous inducer , inactivated ExuR as well as UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>Thus , we conclude that the physiological conditions yielding the hexuronate metabolism also increase the expression of regulators UxuR and ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>In a wild-type exuR + strain carrying plasmid pRU12 ( uxuR + ) , the large amount of UxuR + repressor subunits caused an increase in the hybrid ExuR-UxuR molecule concentration and therefore a decrease in the concentration of the active ExuR repressor , but a sufficient amount of the homogeneous ExuR repressor remained in the cell to repress totally the expression of the exu regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>In contrast , the UxuR and ExuR repressors failed to repress the expression of the hybrid 1acZgene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3934044" target="_blank">3934044</a>]<br></li>
+<li>The complicated case of cross-talking UxuR and ExuR factors is preserved only in Y. pestis , but the latter has lost the GntR regulation of the ED pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The ExuR and UxuR repressors are antagonized by glucuronate and mannonic amide resulting in the derepression of the uxuAB , uxaCA , e x u T and uxaB operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>The two UxuR and ExuR repressors are cornpletely interchangeable with respect to u x u A B control provided that UxuR or ExuR is overproduced in the cell ; however ExuR can not substitute for UxuR in the regulation of the exu regulon operons ( Ritzenthaler et al. 1983 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_62">
+The repressors ExuR and UxuR apparently act together to mediate regulation of the UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></label>
+<input id="act_similarity_62", type="checkbox">
+<div class="ACT_similar">
+<li>The ExuR and UxuR repressors apparently act together to mediate regulation of the UxuR regulon by the true inducer , fructuronate ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li></div>
+<li>Among the Enterobacteriales , UxuR mostly represses the uxuABR and gntP genes , whereas ExuR mostly represses the exuR , exuT , and uxaABC genes , as well as the uxuAB genes in some genomes that lack UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Previous studies showed that synthesis of enzymes encoded by uxuAB is principally regulated by UxuR and partially regulated by ExuR ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>There are no obvious differences between the sites upstream of genes regulated by both UxuR and ExuR and those upstream of genes regulated by ExuR only .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Transport and catabolism of galacturonate and glucuronate are mediated by genes regulated by UxuR and ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>UxuR controls the D-glucuronate metabolism , while ExuR represses genes involved in the metabolism of all hexuronates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Colors : red , UxuR ; blue , ExuR ; outgroups , black .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>, both the UxuR and the ExuR regulators are present and control the D-glucu-ronate and D-galacturonate catabolic pathways , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>, where it was always found under the control of either UxuR or ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">UxuR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The behaviour of the exuR and uxuR negative dominant plasmids suggests that the altered subunits are still able to form multimers and the hypothesis given here implies that the domain of the UxuR monomer involved in the UxuR subunit aggregation probably presents some homo-logies with that of the ExuR monomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>The detailed comparative analysis of candidate DNA-binding sites allowed us to build two distinct recognition rules for UxuR - and ExuR-binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">UxuR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Two transcription factors of this regulon , ExuR and UxuR , are highly similar ( 49 % identity ) and capable of cross-talk ( Ritzenthaler et al. , 1985 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The hexuronate metabolism in E. coli is regulated by two related transcription factors ( TFs ) from the FadR subfamily of the GntR family , UxuR and ExuR , whose amino acid sequences are 46 % identical .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by UxuR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>In Escherichia , Shigella ( except S. dysenteriae tha lacks UxuR ) , Yersinia , and Pectobacterium spp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>This behavior probably results from UidR-UxuR repressor interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>This duplication may be a result of a recent specialization of the paralogs toward catab-olism of either pectin ( regulated by KdgR ) or hexuronate , and its localization suggests that yjgV could be a part of the UxuR regulon , involved in the transport of some intermediates of the hexuronate catabolic pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The UxuR regulon , on the other hand , can be thought of as a module that is principally involved in catabolism of fructuronate , which is transported by GntP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Thus , the UxuR regulon is a module of sugar acid catabolism whose physiological role is for growth on fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The UxuR regulon is best described as a sugar acid catab-olism module whose role , ﬁrst and foremost , is for growth on FIG. 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Fructuronate is the true inducer of the UxuR genes , including gntP , a member of the UxuR regulon that encodes the fructuronate transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>In several genomes , the UxuR regulon is ex-yjjN/yjjML panded to include the genes of the downstream KDG catabolic pathway , kdgK and eda .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Repressor : b-glucuronide induction b-Glucuronide hydrolase b-Glucuronide transport kdgT eda exuR exuT uxaCA ExuR uxaB 4552.6 4549.5 4551.2 UxuR 58 58 58 uxuR uxuA uxuB uxuR uxuAB gntP uidR 4548.3 1694.8 1693.2 1691.6 38 11 11 11 gntP uidR uidA uidB UidR uidAB OTHER PROPOSED ROLES FOR THE ED ENZYMES A growing number of studies have shown that eda expression is regulated in response to several conditions in addition to its role in sugar acid catabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>A. succinogenes has an additional D-glucuronate utilization locus containing paralogs of the uxuAB , kdgK , eda , and uxuPQM genes and a gene encoding a different GntR family TF that is related but not orthologous to UxuR ( , named uxuR * in Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>There is also an additional GntR family TF in Salmonella enterica serovar Typhimurium strain LT2 , related to UxuR and ExuR , but not close enough to be considered an orthologous repressor ( STM3084.S , named uxuR * in Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Mol Gen Genet ( 1985 ) 199:507 -511 © Springer-Verlag1985 Genetic analysis of uxuR and exuR genes : evidence for ExuR and UxuR monomer repressors interactions Paul Ritzenthaler , Carlos Blanco , and MireiHe Mata-Gilsinger Summary .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>Genetic analysis of uxuR and exuR genes : evidence for ExuR and UxuR monomer repressors interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>, , C. BLANCOand M. MATA-GILSINGE1R9 ,85 Genetic analysis of uxuR and exuR genes : evidence for ExuR and UxuR monomer repressors interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>We have also identiﬁed new candidate members of the UxuR / ExuR regulons , a novel predicted TRAP transporter for hexu-ronates ( uxuPQM ) , hypothetical carbohydrate catabolic genes ( lfaR/lfaTA ) , and the L-galactonate utilization gene cluster ( ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>In order to validate the predicted UxuR regulation for the yjjM and yjjN genes in E. coli , the content of corresponding mRNAs was ﬁrst estimated in bacteria grown in conditions requiring expression of UxuR-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The obtained data revealed a complex response of yjjN on the induced production of UxuR , as well as unexpected , positive correlations in the expression pattern of genes encoding repressors UxuR/ExuR and members of the corresponding regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Other researchers have searched all known genes involved in hexuronate catabolism to derive a putative UxuR operator consensus sequence , AAAT TGGTNNACCAATTT ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The UxuR training set included known UxuR-regulated genes from E. coli ( uxuR , uxuAB , gntP , and uidABC ) and their orthologs from uxuR-containing genomes ( PLU , STM , VPA , VVU , PPR , HSM , HIT , MSU , and ASU ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The transport of glucur-onides and their subsequent interconversion to the glucuronate in E. coli is mediated by the genes of the uidAB operon , which is under negative regulation by UidR and UxuR ( Blanco , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Another transcription factor , UxuR , regulates the uxuAB operon specifically involved in the catabolism of glucuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>UxuR controls the D-glucuronate-metabolism , while ExuR represses genes involved in the metabolism of all hexuronates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>UxuR controls the D-glucuronate-metabolism by repressing uxuAB , uidABC , gntP , and its own gene uxuR ( 3 , 7 , 17 , 24 -- 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The following abbreviations are used : uxuR , for the structural gene of the uxuR repressor , Gur ' ( Gur - ) and Gar ' ( Gar - ) , for the ability ( inability ) to catabolize glucuronate and galacturonate , respectively ; , UxuR - ( UxuR ' ) , for constitutive ( inducible ) expression of the uxuA-uxuB op-eron ; `` uxu operon , '' for the `` uxuA-uxuB operon ; '' and `` exu regulon , '' for the various operons ( exuT , uxaC-uxaA , uxaB , and uxuA-uxuB ) controlled by the exuR gene product ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7007313" target="_blank">7007313</a>]<br></li>
+<li>Catabolite repression of uxua-lacZ gene fusions and UxuR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>The UxuR repressor also controls negatively , although only partially , the expression of the uidA gene ( Novel and Novel 1976 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>Correlation in the gene-expression for the UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Thus , we conclude that the physiological conditions yielding the hexuronate metabolism also increase the expression of regulators UxuR and ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>As in the wild-type uxu operon , the expression of the uxulac fusion on plasmid pNM-U1 was thus under the dual control of the UxuR and ExuR repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">UxuR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>continued Operons Position Score Binding site ( s ) * S f R f pelD 279 2126 5.21 5.17 ggAcaAAAtggcGTTTCATTT AAATGAAACgcaGgTTtATTT pemB E. coli kduID 132 6.16 5.34 6.01 5.93 5.11 AAATGAAACATTGTTTtATTT AAAcGAAACAgTGTTTCAcTa AAATGAAACgTTGTTTtAaTT AAATaAAACAgcGTTTCAaTT tAATGgAACAcTGTTTtAaTa yjgK kdgT kdgK S. typhi kduID 6.15 5.2 5.62 4.59 AAATGAAACgTTGTTTtATTT AAtcaAAACAgTGTTTtgaTT AAATaAAACgcTGTTTtAacT tAATGgAcCgATGTTTtAaTa yjgK kdgK K. pneumoniae kduD/ogl 230 5.64 4.95 5.3 5.18 5.59 AAATGAAACATcGTTTtAaaT AAAcGgAACtcTGTTTtATTT AAtTaAAACggTGTTTtATaa tAATGgAACgATGTTTtAaTa AAATGAAAtgcTGTTTtATaT ogtABCD kdgK yjgK Y. pestis kduID pelW-ogtABCD 5.92 4.65 5 5.81 5.84 4.94 5.5 tAATaAAACATcaTTTCATTT AAtcaAAACAAcGTTcCgacT gAtTGAnACgATGTTTCtaTT AAATGAAACATTGTTTCtaTa tAATaAAACAgcaTTTCATTT AttTaAAACAccGTTTtAaTc AAATGgAAtggcGTTTCATTT AAATGAAACAnTGTTTCATTT ogl yjgK kdgK pmeA Consensus D. CRP regulation E. coli uxaB uidAB kduID uxaCA/exuT AAccaTGATCcgcgcCACAcTT tAATGcGATCTAtATCACgcTg AttcGTGATCgAcActgCAcTT AAAgGTGAgagccATCACAaaT tttatTGATCTAacTCACgaaa tAATaTGAcCaAccTCtCATaa AAATtTGAagTAGcTCACAcTT tttTGTGATCaAttTCAaAaTa tgATGTGgTtTtGATCACtTTT AttTGTGATgaAGATCACgTca tAAcGTGATgTgccTtgtAaTT AttgGTtAaCcAcATCACAaga ggATGTGAcaTtcATCgCAaca AAATtTGATtaAccgCACcTaa ± ± 112 2158 ± 3.61 4.21 3.4 4.15 3.9 3.85 4.73 4.62 3.95 4.44 3.55 3.58 3.56 3.78 g gntT S g gntKU kdgT R gntV/idnDOTR g gntP/uxuAB S UxuR S. typhi AttgGctAgCcAaATCACAaaT ttATtTGATCTgcgTCAatTTT AAcTtTGAagTAGcTCACAcTT AtATGTtAcCcgtATCAttcTT 3.95 ± ExuT/uxuABC 4.05 4.48 3.75 gntKU gntT Y. pestis uxuB/uxuA uxuR uxaCBA gntT/gntK 3.8 ttggtTGATCcActTCACgaaT AAcTGTtAcCTAccTCtaATaT AAAgtTGAgtgAcATCACAaaa AgATGTGActTttATCACAaca tAtcaTGATaccGgTaACAaaT tAtaGTGATCTgcATCACAgTT AAtcaTGAcgTgccTCAaAaaa tAtTGTGAcaTtcAaCtCAaaa AAATtTGATtTttATCAtAgag ± 2193 3.56 4.04 4.18 3.71 4.59 3.71 3.66 3.77 idnO-gntV kduID pelW-ogtABCD , pmeA E. chrysanthemi kduID g 4.23 3.49 3.81 4.43 3.45 2.95 4.34 ttgTGTGAaCaAGgTaACAcaa cAtTtTtATtgAatTCACATcT ttATGTGAaCggttaCACcaTT tttTGTGATCgAaggCACAaTa ttgTtTGcaagcGATCACtTTT AAATaaaAcCacGATCACggaa AAtTtTGAgCctGgTCgCAaaa ± S pelW g kdgT ogl outT S g S Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Other researchers have searched all known genes involved in hexuronate catabolism to derive a putative UxuR operator consensus sequence , AAAT TGGTNNACCAATTT ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>UxuR is known to bind to a consensus operator site that is conserved in several species ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The DNA probe used for the gel retardation assays was PCR ampliﬁed with primers 5 - TCATGGTTGTTGCTGCAAA-3 and 5 - TTTCATAGTGTGCAGCAGCG-3 , which produced a 113-bp fragment containing the putative UxuR binding site upstream of gntP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>These results indicate that UxuR binding to the UxuR operator is sequence speciﬁc and that binding is inhibited by fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The UxuR operator of gntP has the sequence ACAATGGTTGACCAATTT , which matches the right-half site exactly and six of eight positions in the left-half site of the consensus binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>To prove that UxuR binds speciﬁcally to the putative consensus UxuR operator sequence , we constructed mutants carrying two base pair substitutions in either the leftor right-half sites ; both mutations drastically reduced binding ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>The gntP UxuR operator lies within the promoter region , centered at 22 with respect to the transcriptional start site ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We show that gntP is induced by fructuronate and is a new member of the UxuR regulon : gntP is derepressed in an uxuR strain , UxuR binds in vitro speciﬁcally to an operator site that overlaps the gntP promoter , and UxuR binding is eliminated by fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We identiﬁed a putative UxuR binding site overlapping the gntP promoter and conﬁrmed that this site is bound in vitro ( Fig. 3 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We found two distinct motifs ( Fig. 3 ) , differing in the 3 - box , ACCA for UxuR and AYAA for ExuR , and in the length of the spacer between the boxes ( 2 and 3 bp , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Among enterobacteria , candidate UxuR-binding sites with low similarity to the consensus UxuR motif were detected between the yjjN and yjjM genes in E. coli , Shigella , and Serratia but not in Pectobacterium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>UxuR binding sites are indicated as black diamonds , ExuR binding sites are indicated as light blue diamonds , sites predicted to be recognized by both UxuR and ExuR are indicated as violet diamonds , and KdgR binding sites ( upstream of ygjV ) are indicated as dark blue squares .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Although previous studies assumed that candidate UxuR - and ExuR-binding sites both match the consensus sequence AAATTGGTATACCAATTT and are too similar to be distinguished by sequence analysis ( 30 ) , we observed that if the larger set of sites from different related genomes is used and sites are attributed to the TFs based on the function of the regulated genes , it is possible to separate UxuR and ExuR binding motifs and detect subtle differences between the regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The UxuR binding motif is a 18-bp palindromic sequence ; the 19-bp palindromic ExuR binding motif is rather similar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>New candidate members of the UxuR and ExuR regulons were attributed to the regulon if they were preceded by candidate regulator binding sites in at least three genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Sequence logo for the UxuR and ExuR binding motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>No binding sites for either UxuR or ExuR have been mapped experimentally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>We have distinguished UxuR and ExuR candidate binding sites by positional and sequence analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by UxuR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Frn , fructuronate ; SD , standard deviation DISCUSSION The primary ﬁndings of the present study are that gntP is a member of the UxuR regulon , induced by fructuronate , and that GntP is required for growth on fructuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Fructuronate is the true inducer of the UxuR genes , including gntP , a member of the UxuR regulon that encodes the fructuronate transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Glucuronate , because it proceeds through a fructuronate intermediate , must induce the UxuR regulon and must also induce the ExuR regulon , which encodes the glucuronate transporter , ExuT , and the ﬁrst step in its catabolism , UxaC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Genes in the UxuR regulon are known to be induced by glucuronate via its conversion to fructuronate and are under the negative control of UxuR ( 17 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Although glucuronate also induces the UxuR regulon , it does so via its conversion to fructuronate ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>We show here that gntP is induced by fructuronate , regulated by UxuR , and requires activation by cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>]<br></li>
+<li>Although increased transcription of uxuR in this case is explained by the relieved autorepression ( due to the presence of fructuronate ) and by the functionality of cyclic AMP-CRP ( due to the absence of glucose ) , this assumes `` unreasonable '' interference with the required induction of UxuR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>UxuR blocks the transcription of the target genes , including its own gene , by speciﬁc interaction with corresponding operator sites and can do so without any cofactor ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>That assumes positive correlation in the amount of UxuR and RNA products of genes negatively regulated by this transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Among the Enterobacteriales , UxuR mostly represses the uxuABR and gntP genes , whereas ExuR mostly represses the exuR , exuT , and uxaABC genes , as well as the uxuAB genes in some genomes that lack UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>have two copies of both kdgK and eda genes , one of which is regulated by UxuR , whereas the other one is under the KdgR control ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>In several genomes , the UxuR regulon is ex-yjjN/yjjML panded to include the genes of the downstream KDG catabolic pathway , kdgK and eda .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The abundance of the hns mRNA within the pGEMU-transformants appeared to be the same as in the cells transformed by pGEM , while the amount of the uxuB mRNA signiﬁcantly decreased , conﬁrming its negative regulation by UxuR ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>If D-glucose is used as a sole carbon source , expression of the uxa/uxu operons is repressed by UxuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>As in the wild-type uxu operon , the expression of the uxulac fusion on plasmid pNM-U1 was thus under the dual control of the UxuR and ExuR repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3083215" target="_blank">3083215</a>]<br></li>
+<li>Another transcription factor , UxuR , regulates the uxuAB operon specifically involved in the catabolism of glucuronate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>UxuR controls the D-glucuronate metabolism by repressing uxuAB , uidABC , gntP , and its own gene uxuR ( 3 , 7 , 17 , 24 -- 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The transport of glucur-onides and their subsequent interconversion to the glucuronate in E. coli is mediated by the genes of the uidAB operon , which is under negative regulation by UidR and UxuR ( Blanco , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The uidAB operon is controlled by two transcriptional factors , UxuR and UidR , the latter being encoded by the upstream gene of the operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The ExuR and UxuR repressors are antagonized by glucuronate and mannonic amide resulting in the derepression of the uxuAB , uxaCA , e x u T and uxaB operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>The first hypothesis may be ruled out because the formation of the UidR-UxuR complex in cells that overproduce UidR repressor would titrate out UxuR repressor , resulting in the derepression of uxuAB operon ; this is not the case .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>Consequently , the uxuR gene is no longer autoregulated and the negative dominant UxuR monomers are synthesized in a larger amount than that of the wild-type UxuR + monomers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>gene derepression caused by addition of uidR-d alleles is strong in the absence of a functional uxuR gene and is significantly reduced when an active UxuR repressor is synthesized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>The UxuR repressor also controls negatively , although only partially , the expression of the uidA gene ( Novel and Novel 1976 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3929016" target="_blank">3929016</a>]<br></li>
+<li>The expression of uidA is primarily controlled by the UidR repressor and secondarily by the UxuR repressor ( Novel and Novel , 1976a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3934044" target="_blank">3934044</a>]<br></li>
+<li>Repression by the UxuR repressor does not seem to occur for the uidR gene contrary to that observed for uidA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3934044" target="_blank">3934044</a>]<br></li>
+<li>Expression of uidA is principally regulated by the uidR encoded repressor and secondarily by the UxuR repressor ( NOVELand NOVEL1976 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3079718" target="_blank">3079718</a>]<br></li>
+<li>When plasmid pRU12 containing the uxuR regulatory gene was added in trans in strain 2510 ( pREG11 ) or 2510 ( pREG12 ) transformants , we observed no significant effect on the expression of the exuT and uxaCA operons , as expected , since the UxuR repressor does not affect the expression of the exuT , uxaCA , and uxaB operons ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=6309752" target="_blank">6309752</a>]<br></li>
+<li>The following abbreviations are used : uxuR , for the structural gene of the uxuR repressor , Gur ' ( Gur - ) and Gar ' ( Gar - ) , for the ability ( inability ) to catabolize glucuronate and galacturonate , respectively ; , UxuR - ( UxuR ' ) , for constitutive ( inducible ) expression of the uxuA-uxuB op-eron ; `` uxu operon , '' for the `` uxuA-uxuB operon ; '' and `` exu regulon , '' for the various operons ( exuT , uxaC-uxaA , uxaB , and uxuA-uxuB ) controlled by the exuR gene product ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7007313" target="_blank">7007313</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

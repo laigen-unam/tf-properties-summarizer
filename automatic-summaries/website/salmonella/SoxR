@@ -1,0 +1,592 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - SoxR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">SoxR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">SoxR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>FNR functions alone or in synchronization with other regulators such as ArcA , RpoS , NarL , Fur or SoxR ( Spiro & Guest , 1991 ; Hassan & Sun , 1992 ; Gunsalus & Park , 1994 ; Schröder et al. , 1994 ; Park & Gunsalus , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>]<br></li>
+<li>For example , superoxide dismutase is transcriptionally regulated by SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28193547" target="_blank">28193547</a>]<br></li>
+<li>DNA-mediated redox signaling for transcriptional activation of SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23645605" target="_blank">23645605</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>NO · interactions with NsrR and SoxR are coordinated through iron-sulfur clusters ( FeS ) , whereas NorR and Fur interact directly with Fe2 + .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_5">
+NsrR senses very low concentrations of NO · The iron-containing transcriptional-regulators NsrR , NorR , SoxR and Fur have been shown to respond to NO · in E. coli ( Crack et al. , 2012 ; Fleischhacker and Kiley , 2011 ; Spiro , 2006 ; Zheng and Storz , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></label>
+<input id="act_similarity_5", type="checkbox">
+<div class="ACT_similar">
+<li>Several iron-containing transcriptional-regulators , including NsrR , NorR , Fur , and SoxR , have been previously shown to respond to NO · ( Crack et al. , 2012 ; Fleischhacker and Kiley , 2011 ; Spiro , 2006 ; Zheng and Storz , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li></div>
+<li>Leatherhead Food Research Demple , B. and Amabile-Cuevas , C.F. ( 1991 ) Redox redux : the control Foster , J.W. and Spector , M.P. ( 1995 ) How Salmonella survive against Gaudu , P. and Weiss , B. ( 1996 ) SoxR , a [ 2Fe-2S ] transcription factor , is active only in its oxidized form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15479411" target="_blank">15479411</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_8">
+SoxR , a [ 2Fe-2S ] transcription factor , is active only in its oxidized form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></label>
+<input id="act_similarity_8", type="checkbox">
+<div class="ACT_similar">
+<li>Gaudu P , Weiss B. SoxR , a [ 2Fe-2S ] transcription factor , is active only in its oxidized form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li></div>
+<li>Abbreviations : Acn , aconitase ; cAcn , cytoplasmic aconitase ; CRP , cyclic-AMP receptor protein ; Fis , factor for inversion stimulation ; FNR , fumarate -- nitrate reduction regulator ; Fur , ferric uptake regulator ; IRE , iron-responsive element ; IRP-1 , iron-responsive protein 1 ; LB , Luria -- Bertani broth ; LIC , ligation-independent cloning ; PacnA , promoter region of the acnA gene ; PacnB , promoter region of the acnB gene ; SoxR ; superoxide response protein ; S. Typhimurium , Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>Nitric oxide directly activates SoxR by forming a dinitrosyl-iron-dithiol complex with the ( 2Fe-2S ) clusters ( Nunoshiba et al. , 1993 ; Ding and Demple , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>One possibility is that the constitutive SoxR protein encoded in St46 is simply more active than wild-type SoxR following PQ activation under our conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>The oxidative-stress-responsive regulator SoxR is activated by the redox stress reagent methyl viologen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>OxyR and SoxR regulate the oxidative-stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>When oxidized , SoxR activates transcription of soxS ( Wu and Weiss , 1991 ) which in turn activates transcription of at least six genes in S. typhimurium , including sodA ( superoxide dismutase A ) and yggX , a putative Fe-S repair protein ( Pomposiello and Demple , 2000 ; Thorgersen and Downs , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>The activation of acnA expression by CRP and SoxR and repression by FNR are in accord with observations reported for the E. coli acnA promoter ( Cunningham et al. , 1997 ; Fig. 3b ) and indicate that these are conserved regulatory features in both bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>S. Typhimurium was treated with varying concentrations of the NO · - releasing compound diethylamine NONOate ( DEA/NO ) , and hmp , norV , entC and soxS expression was determined by quantitative RT-PCR as a measure of NsrR , NorR , Fur and SoxR expression , respectively ( Experimental Procedures ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Nitrosylation of cysteines or iron cofactors in OxyR , SoxR , and NorR activates transcription , whereas the iron-nitrosyl complexes in NsrR and Fur derepress gene expression ( 12 , 13 , 15 , 18 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22311927" target="_blank">22311927</a>]<br></li>
+<li>For example , NsrR and NorR are dedicated sensors of NO , and the transcriptional-regulators OxyR , SoxR , fumarate-nitrate reduction ( FNR ) , and Fur , which primarily function as sensors of O2 , reactive oxygen species ( ROS ) , and iron , also respond to RNS ( 10 , 12 , 15 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22311927" target="_blank">22311927</a>]<br></li>
+<li>The proteins NsrR and NorR are NO-dedicated sensors that regulate genes encoding antinitrosative activity in aerobic and anaerobic bacteria ( 15 , 16 ) , whereas OxyR , SoxR , FNR , DksA , and Fur , which primarily serve as sensors of reactive oxygen species , O2 , nutritional starvation , and iron , contribute important aspects of the antinitrosative arsenal of enteric bacteria ( 17 -- 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>]<br></li>
+<li>SoxS expression is activated by an oxidized form of SoxR produced following exposure to superoxides , nitric oxide and redox-cycling compounds such as paraquat ( 13 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Expression of soxS is activated by superoxide-generating agents via the conversion of its local transcriptional-activator SoxR into an active form ( SoxR * ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>SoxR , a transcription factor that is responsive to redox-cycling agents , has been shown to be activated by NO · , although the functional importance of SoxR activation by NO · is unclear ( Ding and Demple , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>It would be interesting to determine whether expression or activity of the ArcAB system is induced by RNI and whether the sensor ArcB is modiﬁed by nitrosylation , as OxyR and SoxR are .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>The type of Fe-S cluster in S. Typhimurium NsrR has not yet been determined , but the ability of NsrR to respond to very low NO · concentrations in comparison to NorR , SoxR or Fur ( Fig. 1 ) , suggests that the NsrR Fe-S cluster in NsrR is configured to optimize NO · responsiveness .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Oxidized SoxR then activates transcription of soxS , which in turn activates the Sox regulon ( reviewed in Spiro , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>The redox state of the [ 2Fe-2S ] clusters in SoxR protein regulates its activity as a transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>Proteins encoded by the soxRS locus include the transcriptional-activator SoxS , and a protein , SoxR , whose oxidized form can activate soxS expression [ 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li>
+<li>MarR negatively regulates the expression of marRAB by binding to the marO operator region .17 On the other hand , proteins encoded by the soxRS locus include the transcriptional-activator , SoxS , and another protein , SoxR , the oxidized form of which can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16201927" target="_blank">16201927</a>]<br></li>
+<li>Expression of SoxS alone can activate genes in the absence of SoxR or inducing agents such as paraquat ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>qRT-PCR analysis that was applied for ipfD exhibited a negative regulatory role for Fur and showed moderately ( two-fold or less ) lower transcription of ipfD in the absence of Lrp , RpoS , SoxR , PhoP , OmpR , and OxyR compared to the wild-type background ( Fig 7E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>However , acnA expression was enhanced ( 1.7-fold ) in the parent , but not in the soxR mutant , which is consistent with SoxR activation of PacnA ( Fig. 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>When it is converted to an active form , SoxR , which increased speciﬁcally in the recovering cells in this study , enhances transcription of soxS and increases the level of SoxR protein , a positive regulator stimulating transcription of superoxide anion -- responsive genes such as zwf , which encodes glucose-6-phos-phate dehydrogenase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15895724" target="_blank">15895724</a>]<br></li>
+<li>Upon exposure to O2 and/or ammonium 2 quaternary compounds , SoxR is oxidized and converted to an active form that induces the transcription of soxS , which binds to the promoter regions of several genes whose products are involved in the response to oxidative damage ( Storz & Imlay , 1999 ; Scandalios , 2002 ; Imlay , 2008 ; Gu & Imlay , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>RseC maintains the reduced state of SoxR , one of two transcription factors that sense the presence of oxidants and induce genes against oxidative-stress ( Koo et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441919" target="_blank">26441919</a>]<br></li>
+<li>In the absence of oxidative-stress , the clusters are in a reduced state , and SoxR is inactive ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>In contrast , the inactivation of RamA , MarR , MarA , SoxR , and SoxS did not affect the susceptibilities of the strain [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21858134" target="_blank">21858134</a>]<br></li>
+<li>Therefore , in this study , we investigated the roles of MarR , MarA , SoxR , SoxS , and RamA in the MDR and quinolone resistance of serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></li>
+<li>SdiA is a quorum-sensing regulator , but SdiA of Salmonella is not functional during infection with Salmonella alone , without other bacteria that produce the SdiA inducer .33 SoxS is activated through SoxR by superoxide ions , H2O2 and paraquat .34 Since Salmonella is faced with oxidative-stress in the macrophages , it is not surprising that intracellular bacteria levels of soxS mRNA are 3.7-fold higher compared with those in extracellular bacteria .31,32 Bile salts were shown to induce the expression of AcrAB by activation of RamA ; 35 however , it is possible that RamA contributes to the induction of AcrAB in macrophages by the detection of other signals in the host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20237076" target="_blank">20237076</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>It is possible that in the normally reduced environment of the cytoplasm ( 83 ) , NO does not nitrosylate either the 2Fe-2S cluster of SoxR or the redox active cysteines of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>The regulation of the SoxRS regulon is mediated by the conversion of the SoxR protein to an active form , which induces the transcription of soxS , with the later binding of the SoxS protein to the promoters of many genes that take part in the response to oxidative damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>The CysB regulon was induced when cells were grown in the presence of the oxidant methyl viologen and the most stressed auxotrophs had increased OxyR and SoxR activity in low-level oxidative-stress conditions compared to wild-type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>Bradley , T.M. , Hidalgo , E. , Leautaud , V. , Ding , H. , and Demple , B. ( 1997 ) Cysteine-to-alanine replacements in the Escherichia coli SoxR protein and the role of the [ 2Fe-2S ] centers in transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></li>
+<li>Ding , H. , Hidalgo , E. and Demple , B. ( 1996 ) The redox state of the [ 2Fe-2S ] clusters in SoxR protein regulates its activity as a Dodd , C.E.R. and Aldsworth , T.G. ( 2002 ) The importance of RpoS in the survival of bacteria through food processing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14723688" target="_blank">14723688</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">SoxR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>NO · interactions with NsrR and SoxR are coordinated through iron-sulfur clusters ( FeS ) , whereas NorR and Fur interact directly with Fe2 + .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Species-speciﬁc residues calibrate SoxR sensitivity to redox-active mole-cules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23645605" target="_blank">23645605</a>]<br></li>
+<li>This change would convert glycine-121 , which is located within the cysteine cluster that anchors the [ ● ● ] centers to SoxR ( 5 ) , to an aspartic acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>Redox signal transduction via iron-sulfur clusters in the SoxR transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>The synthesis of SoxS is controlled by the redox-sensing molecule SoxR , a homodimeric protein composed of two 17-kDa subunits , each of which contains a [ 2Fe-2S ] cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>The soxR mutation mapped to the helix-turn-helix region of the SoxR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>A mutation at position E16 in the helix-turn-helix region of the SoxR protein in E. coli has previously been reported , and it is thought that alterations in this region of the protein could disrupt DNA-binding ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19917752" target="_blank">19917752</a>]<br></li>
+<li>Reversible oxidation of the Fe-S centers of SoxR in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Nitrosylation of the iron in the 2Fe-2S cluster activates SoxR ( 61 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>It is possible that in the normally reduced environment of the cytoplasm ( 83 ) , NO does not nitrosylate either the 2Fe-2S cluster of SoxR or the redox active cysteines of OxyR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>The redox state of the [ 2Fe-2S ] clusters in SoxR protein regulates its activity as a transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>Binuclear [ 2Fe-2S ] clusters in the Escherichia coli SoxR protein and role of the metal centers in transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>DNA-mediated redox signaling for transcriptional activation of SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>An iron-sulfur center essential for transcriptional activation by the redox-sensing SoxR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>Each SoxR protein contains a single ( 2Fe-2S ) cluster , which is necessary for sensing superoxide and nitric oxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Each SoxR monomer contains a [ 2Fe-2S ] cluster which is required for functional activity but not for DNA-binding at the soxS promoter region ( 17 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>SoxR contains an [ 2Fe -- 2S ] iron -- sulfur cluster that becomes activated by oxidation , which is triggered by superoxide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>SoxR is a constitutively expressed homodimeric transcriptional regulator that contains redox-active iron-sulfur clusters [ 2Fe-2S ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>The SoxR protein is expressed constitutively and is a homodimeric transcriptional regulator that contains redox-active iron-sulfur clusters ( 18 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">SoxR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>SoxS is a member of the AraC/XylS family of transcriptional regulators and is positively regulated by SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>The SoxR protein is homologous to the MerR family of transcriptional activators ( 1 ) , while the SoxS protein has signiﬁcant homology to the C-terminal DNA-binding region of the AraC family of transcriptional regulatory proteins ( 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by SoxR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Expression of constitutive SoxR protein in laboratory strains of E. coli and Salmonella was shown to lead to an increase in resistance to nalidixic acid , chloramphenicol and tetracycline by 2 - to 4-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>https://doi.org/10.1371/journal.ppat.1006559.g006 Lrp controls klf expression , while Fur and OmpR regulate ipf Since the expression of both fimbriae was highly affected by microaerobic conditions , we sought to test a possible role of regulators known to be involved in oxygen homeostasis including OxyR , SoxR , ArcA , ArcB and FNR , [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>The gene encoding Zwf is part of the SoxR regulon , an [ Fe -- S ] cluster-containing transcription factor activated by NO in E. coli ( Ding and Demple , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21833325" target="_blank">21833325</a>]<br></li>
+<li>The proteins NsrR and NorR are NO-dedicated sensors that regulate genes encoding antinitrosative activity in aerobic and anaerobic bacteria ( 15 , 16 ) , whereas OxyR , SoxR , FNR , DksA , and Fur , which primarily serve as sensors of reactive-oxygen-species , O2 , nutritional starvation , and iron , contribute important aspects of the antinitrosative arsenal of enteric bacteria ( 17 -- 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24166960" target="_blank">24166960</a>]<br></li>
+<li>When oxidized , SoxR activates transcription of soxS ( Wu and Weiss , 1991 ) which in turn activates transcription of at least six genes in S. typhimurium , including sodA ( superoxide dismutase A ) and yggX , a putative Fe-S repair protein ( Pomposiello and Demple , 2000 ; Thorgersen and Downs , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>Overproduction and physical characterization of SoxR , a [ 2Fe-2S ] protein that governs an oxidative response regulon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_7">
+Two-stage control of an oxidative stress regulon : the Escherichia coli SoxR protein triggers redox-inducible expression of the soxS regulatory gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></label>
+<input id="rp_similarity_7", type="checkbox">
+<div class="RP_similar">
+<li>Two-stage control of an oxidative stress regulon : the Escherichia coli SoxR protein triggers redox-inducible expression of the soxS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9068629" target="_blank">9068629</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796342" target="_blank">11796342</a>]<br></li></div>
+<li>SoxR dependent response-to-oxidative-stress and virulence of Erwinia chrysanthemi : the key role of SufC , an orphan ABC ATPase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27704705" target="_blank">27704705</a>]<br></li>
+<li>To determine the relative responsiveness of the NsrR , NorR , Fur and SoxR transcriptional regulators , the expression of individual genes that are specifically dependent on each regulator was measured following exposure to NO · .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>A fourth MerR-family member ( SoxR ) , in addition to ZntR , CueR , and GolS , is also present that contains an iron-sulfur center for sensing redox stress ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21722794" target="_blank">21722794</a>]<br></li>
+<li>Several iron-containing transcriptional regulators , including NsrR , NorR , Fur , and SoxR , have been previously shown to respond to NO · ( Crack et al. , 2012 ; Fleischhacker and Kiley , 2011 ; Spiro , 2006 ; Zheng and Storz , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Examples of molecules associated with stress response or nutrient availability that have been shown to activate MerR-type proteins include mercury ( MerR ) ( Summers , 1992 ) , zinc ( ZntR ) ( Outten et al. , 1999 ) and other metal ions , excess nitrogen sources ( GlnR ) ( Fisher , 1999 ) , the antibiotic thiostrepton ( TipA ) ( Chiu et al. , 1999 ) and Fe2S2 accumulation from oxidative / nitrosative stress ( SoxR ) ( Bradley et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11489123" target="_blank">11489123</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by SoxR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>SoxR , a [ 2Fe-2S ] transcription factor , is active only in its oxidized form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>SoxS expression is activated by an oxidized form of SoxR produced following exposure to superoxides , nitric oxide and redox-cycling compounds such as paraquat ( 13 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>SoxS is induced by derepression of SoxR ( Gaudu et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>S. Typhimurium was treated with varying concentrations of the NO · - releasing compound diethylamine NONOate ( DEA/NO ) , and hmp , norV , entC and soxS expression was determined by quantitative RT-PCR as a measure of NsrR , NorR , Fur and SoxR expression , respectively ( Experimental Procedures ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>NsrR-dependent expression of hmp was significantly greater at DEA/NO concentrations as low as 1 μM ( corresponds to approximately 1.5 μM of released NO · ) in comparison to genes regulated by NorR , Fur or SoxR ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Oxidized SoxR has high affinity for the soxS promoter , whereas reduced SoxR binds to this promoter but it does not recruit the σ70 RNA polymerase ( 80 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>Oxidized SoxR then activates transcription of soxS , which in turn activates the Sox regulon ( reviewed in Spiro , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>When oxidized , SoxR activates transcription of soxS ( Wu and Weiss , 1991 ) which in turn activates transcription of at least six genes in S. typhimurium , including sodA ( superoxide dismutase A ) and yggX , a putative Fe-S repair protein ( Pomposiello and Demple , 2000 ; Thorgersen and Downs , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20600858" target="_blank">20600858</a>]<br></li>
+<li>MarR negatively regulates the expression of marRAB by binding to the marO operator region .17 On the other hand , proteins encoded by the soxRS locus include the transcriptional activator , SoxS , and another protein , SoxR , the oxidized form of which can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16201927" target="_blank">16201927</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_10">
+The transcriptional activator SoxS and a protein SoxR , whose oxidized form can activate soxS expression , are encoded by the soxRS locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28926285" target="_blank">28926285</a>]<br></label>
+<input id="tu_similarity_10", type="checkbox">
+<div class="TU_similar">
+<li>Proteins encoded by the soxRS locus include the transcriptional activator SoxS and a protein , SoxR , whose oxidized form can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></li>
+<li>Proteins encoded by the soxRS locus include the transcriptional activator SoxS , and a protein , SoxR , whose oxidized form can activate soxS expression [ 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li></div>
+<li>As previously reported , yggX mutant strains have increased expression of the SoxR reporter fpr , which is exacerbated by a gshA mutation ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18835989" target="_blank">18835989</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_14">
+Two-stage control of an oxidative stress regulon : the Escherichia coli SoxR protein triggers redox-inducible expression of the soxS regulatory gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></label>
+<input id="tu_similarity_14", type="checkbox">
+<div class="TU_similar">
+<li>Two-stage control of an oxidative stress regulon : the Escherichia coli SoxR protein triggers redox-inducible expression of the soxS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9068629" target="_blank">9068629</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796342" target="_blank">11796342</a>]<br></li></div>
+<li>Promoter fusion experiments indicated that acnB transcription was ~ 10-fold greater than that of acnA and that acnA expression was regulated by the cyclic-AMP receptor protein ( CRP , glucose starvation ) , the fumarate nitrate reduction regulator ( FNR , oxygen starvation ) , the ferric uptake regulator ( Fur , iron starvation ) and the superoxide response protein ( SoxR , oxidative stress ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>( b ) E. coli RpoS CRP SoxR FNR Fur acnA P2 P1 S. Typhimurium Expression of S. Typhimurium acnA is regulated by CRP , FNR , Fur and SoxR Enhanced expression of the acnA gene in the acnB mutant suggested that PacnA was regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>The gene encoding Zwf is part of the SoxR regulon , an [ Fe -- S ] cluster-containing transcription factor activated by NO in E. coli ( Ding and Demple , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21833325" target="_blank">21833325</a>]<br></li>
+<li>Expression of SoxS alone can activate genes in the absence of SoxR or inducing agents such as paraquat ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>However , acnA expression was enhanced ( 1.7-fold ) in the parent , but not in the soxR mutant , which is consistent with SoxR activation of PacnA ( Fig. 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23637460" target="_blank">23637460</a>]<br></li>
+<li>When marA and soxS levels were analyzed in the different genetic backgrounds , we observed the same response to NaOCl found in the wild-type strain , therefore indicating that their expression is independent of MarA , SoxS , or Rob , which suggests a role for other factors such as SoxR for SoxS ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>It would be interesting to speculate that the additional SoxR mutations acquired by the reverted mutants ( E16G in 104-revert and R113C in 1A-revertC2 ) were responsible for the observed decrease in expression of soxS an the associated decrease in acrB expression , even in the genetic background of elevated marA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19917752" target="_blank">19917752</a>]<br></li>
+<li>Upon exposure to O2 and/or ammonium 2 quaternary compounds , SoxR is oxidized and converted to an active form that induces the transcription of soxS , which binds to the promoter regions of several genes whose products are involved in the response to oxidative damage ( Storz & Imlay , 1999 ; Scandalios , 2002 ; Imlay , 2008 ; Gu & Imlay , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In the soxRS system , SoxR protein is activated by oxidation ( 18 ) or nitrosylation ( 11 ) to trigger transcription of the soxS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>The regulation of the SoxRS regulon is mediated by the conversion of the SoxR protein to an active form , which induces the transcription of soxS , with the later binding of the SoxS protein to the promoters of many genes that take part in the response to oxidative damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>One-electron oxidation of the FeS center allows SoxR to activate transcription of the soxS gene ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>SdiA is a quorum-sensing regulator , but SdiA of Salmonella is not functional during infection with Salmonella alone , without other bacteria that produce the SdiA inducer .33 SoxS is activated through SoxR by superoxide ions , H2O2 and paraquat .34 Since Salmonella is faced with oxidative stress in the macrophages , it is not surprising that intracellular bacteria levels of soxS mRNA are 3.7-fold higher compared with those in extracellular bacteria .31,32 Bile salts were shown to induce the expression of AcrAB by activation of RamA ; 35 however , it is possible that RamA contributes to the induction of AcrAB in macrophages by the detection of other signals in the host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20237076" target="_blank">20237076</a>]<br></li>
+<li>When it is converted to an active form , SoxR , which increased speciﬁcally in the recovering cells in this study , enhances transcription of soxS and increases the level of SoxR protein , a positive regulator stimulating transcription of superoxide anion -- responsive genes such as zwf , which encodes glucose-6-phos-phate dehydrogenase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15895724" target="_blank">15895724</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>SoxR is an activator of soxS , which in turn can upregulate the expression of efﬂux pumps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25805724" target="_blank">25805724</a>]<br></li>
+<li>It would be interesting to determine whether expression or activity of the ArcAB system is induced by RNI and whether the sensor ArcB is modiﬁed by nitrosylation , as OxyR and SoxR are .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>SoxS is a member of the AraC/XylS family of transcriptional regulators and is positively regulated by SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>Expression of soxS is activated by superoxide-generating agents via the conversion of its local transcriptional activator SoxR into an active form ( SoxR * ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

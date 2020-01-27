@@ -1,0 +1,631 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - TrpR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">TrpR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">TrpR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>TA BL Act 0 0 0 Pr Reg Op AraC AraC AraC ArgR ArgR ArgR ArgR ArgR ArgR BioB BioB CRP CRP CRP CytR CytR CytR DeoR DeoR DnaA FNR Fur Fur Fur Fur GaIR GaIR GlpR IlvY LacI LexA LexA LexA LexA LexA LexA LexA LexA LexA MetJ MetJ MetJ MetJ MetR MetJ NR ( I ) NR ( I ) OxyR PapB PifC PurR PurR PurR PurR PurR PurR PurR PurR PurR PutA PutA RafR TetR TetR TetR TrpR araBAD araC araE argCBH argE argF argl argRpl carABp2 bioA bioB cya ompA spf ccd cytR tsx deopi deop2 rpoHp4 fnr cir pl cir p2 ffhuA * iucApl galpl galp2 glpD ilv Y lac cloDF14 colElpl lexA recA ssb sulA uvrA uvrBp2 uvrD metApi metB * metJpl * metE metR metF glnApi glnL oxyR papB pifC purC purE purF purH purL purM purR pyrC pyrD * putA * putP * rafA * tet tetRpl tetRp2 aroH 1,2 1,2 1 69 , 102 , 135 71 1 1 R R 1 0 1 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 0 0 0 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 2 1,4 1 4 4 2 1,2 1 1 2 2 4 4 1 4 1,2 1,2 2 4 2 2 4 2 1,2 1,2 2 3 1,2 4 2,4 2 2 4 4 2,4 2 2 4 1,2 1,2 1,4 1,3 1,4 1,2 1,2 3 2 1 3 3,4 1,3 3 3,4 4 1,2 1,3,4 4 2 2 3 2 2 2 2 145 25 25 25 25 76 18 , 125 24 , 104 24,104 2 97 109 86 142 86 , 142 4 , 86 , 163 , 164 4 , 86 , 163 , 164 167 35 45 45 23 , 30 16 , 29 , 30 1 , 85 1 , 36,101 166 33 , 34 11 , 77 11 , 77 32 92,160 140 , 160 140 , 160 106 , 158 20 , 146 , 149 37 64 49 49 , 168 122 , 123 49 49 , 89 89,141 89 , 124 19 , 171 171 47 47 6 52 , 53 52 , 53 52 , 53 65 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 P P P P P P 0 0 0 0 0 0 0 0 R R P 0 0 0 0 P R R P P R 0 P P 0 0 0 0 0 0 0 0 0 0 0 0 P 0 0 R 0 0 0 0 0 0 0 R only 0 0 0 0 P P P P 0 0 P P P P 0 0 0 P ( ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943993" target="_blank">1943993</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>Bands of interest were excised and analyzed by gas-phase sequencing at the Biomo ¬ I Abbreviations : aa , amino acid ; BisTris , [ bis ( 2-hydroxyethyl ) - amino ] tris ( hydroxymethyl ) methane ; BME , 8-mercaptoethanol ; CNBr , cyanogen bromide ; CRP , cataboliterepressorprotein ; CTNE , N-carbo-benzoxy-L-tyrosine-p-nitrophenyl ester ; dATP , 2 ' - deoxyadenosine 5 ' - triphosphate ; DEAE , diethylaminoethyl ; DNA , deoxyribonucleic acid ; DNase I , deoxyribonuclease I ; DTT , m-dithiothreitol ; EDTA , ethyl-enediaminetetraaceticacid ; IDA , iminodiacetic acid ; LacR , lac repressor ; MOPS , 3 - ( N-morpholino ) propanesulfonicacid ; PMSF , phenylmethanesulfonyl fluoride ; SDS-PAGE , sodiumdodecyl sulfate-polyacrylamide gel electrophoresis ; TAME , p-tosyl-L-arginine methyl ester ; TPCK , L-1-tosylamino-2-phenylethylchloromethyl ketone ; Tris , tris ( hydroxy-methy1 ) aminomethane ; TrpR , trp repressor ; UV , ultraviolet lecular Resource Center , University of California , San Francisco .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1868094" target="_blank">1868094</a>]<br></li>
+<li>Abbreviations used : AB , analysis buffer ; AdoMet , S-adenosylmethionine ; DTT , dithiothreitol ; EMSA , electrophoretic mobility-shift assay ; LB , Luria -- Bertani ; RNAP , RNA polymerase ; RT , reverse transcriptase ; SELEX , systematic evolution of ligands by exponential enrichment ; SPR , surface plasmon resonance ; TrpR , tryptophan repressor ; UPP , undecaprenyl pyrophosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16515535" target="_blank">16515535</a>]<br></li>
+<li>Chemistry Department Princeton University Princeton , NJ 08544-1009 , USA 7 1996 Academic Press Limited Keywords : afﬁnity ; cooperativity ; compensation ; stoichiometry ; footprinting * Corresponding author Introduction Much effort has been devoted to elucidating the DNA sequence requirements for TrpR binding over the years .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>To determine the order in which half-site pairs of this operator become occupied by TrpR in the course of a titration , dimethyl sulfate ( DMS ) chemical modiﬁcation-protection was carried out on a series of samples at increasing TrpR concentrations as described in Materials and Methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Electrostatic interactions with the phosphate groups add to the energy of the repressor-operator interaction , but the phosphate groups can contribute to the speci - ® city of the complex formation by direct hydrogen bonding to amino acid side-chains of the repressor as suggested , for instance , for the l repressor ( Nelson & Sauer , 1986 ) and for TrpR ( Otwinowski et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>1991 ; Carey et al. , 1991 ; Haran et al. , 1992 ; Sutton et al. , 1993 ; LeTilly & Royer , 1993 ; Liu & Matthews , 1993 ; Joachimiak et al. , 1994 ) consistently pointed to the self-symmetric sequence 5 ' CTAG 3 ' as being an essential part of the recognition motif for TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The functional deﬁnition of the half-site presented here permits a self-consistent interpretation of a large body of previous work on DNA sequence requirements for TrpR binding ( Bennett & Yanofsky , 1978 ; Gunsalus & Yanofsky , 1980 ; Haydock et al. , 1983 ; Kumamoto et al. , 1987 ; Bass et al. , 1987 , 1988 ; Carey , 1989 ; Staacke et al. , 1990 ; Marmorstein et al. , 1991 ; Carey et al. , 1991 ; Haran et al. , 1992 ; Sutton et al. , 1993 ; LeTilly & Royer , 1993 ; Liu & Matthews , 1993 ; Joachimiak et al. , 1994 ; Czernik et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Alternatively , the additional protections in the trpEDCBA operator could be related to the WrbA protein , proposed to affect TrpR regulation in stationary phase ( Yang et al. , 1993 ) , although the footprinting was carried out on cells in the log phase of growth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Rather , the answer may be related to the function of TrpR in differentially modulating the activity of RNA polymerase at each promoter , as proposed originally by Kumamoto et al. ( 1987 ) , since the three regulated operons studied here by in vivo footprinting also differ in their degree of repression in response to TrpR ( Klig et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>In vitro data indicate that under some conditions multiple TrpR dimers may be bound to some of these operators ( Kumamoto et al. , 1987 ; Liu & Matthews , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>In particular , Kumamoto et al. ( 1987 ) proposed that three TrpR dimers bind to the trpEDCBA operator , two to aroH , and one to trpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Kmr Srs colonies were repurified , and a Lac - Pro- Ara-Thi - TrpR - strain was designated RG42 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3106331" target="_blank">3106331</a>]<br></li>
+<li>In Bacteria , an abrupt slope in the NWD curve reveals the presence of a handful of high-scoring binding sites for highly speciﬁc TFs ( e.g. TrpR , LexA ) , whereas a progressive increase of the NWD slope is indicative of global factors , such as CRP , FNR ( Figure 3 ) , Fur , FruR , IHF and FIS ( Supplementary Data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>The fractions of each species as a function of TrpR concentration were ﬁt simultaneously to equations describing the cooperativity ( Senear & Brenowitz , 1991 ; see Materials and Methods ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The concentration of TrpR ( nM ) in each reaction mixture is indicated above the corresponding lane ; DNA concentration was 00.5 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>This result could be consistent with the low residual expression of the trpR gene observed under repressing conditions when TrpR is produced using its chromosomal signals for transcription and translation ( Kelley & Yanofsky , 1982 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Binding of TrpR to three of its E. coli operators , analyzed by in vivo DMS footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>( 1996 ) 258 , 37 -- 52 In vivo and in vitro Studies of TrpR-DNA Interactions Jie Yang † , Angelo Gunasekera † , Teresa A. Lavoie , Lihua Jin Dale E. A. Lewis and Jannette Carey * The binding of tryptophan repressor ( TrpR ) to its operators was examined quantitatively using in vitro and in vivo methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Yang , J. , Gunasekera , A. , Lavoie , T.A. , Jin , L. , Lewis , D. & Carey , J. ( 1996 ) In vivo and in vitro studies of TrpR ± DNA interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10518785" target="_blank">10518785</a>]<br></li>
+<li>Although in vivo aroL-lacZ fusions and in vitro binding studies suggest that TrpR protein plays an important role in the regulation of the aroL gene , previously reported studies on the regulation of shikimate kinase activity indicated that there were no changes in the regulation of shikimate kinase synthesis in a trpR mutant strain ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>The data allow us to address the roles of afﬁnity , stoichiometry , and cooperativity for in vitro DNA binding and in vivo regulation of gene expression by TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Many repressor proteins , such as LacR , TrpR , and CRP , have been found to have a two-domain structure , in which one domain is involved in DNA binding while the other is involved in ligand binding ( Steitz , 1990 ; Pabo & Sauer , 1984 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1868094" target="_blank">1868094</a>]<br></li>
+<li>For most regulatory proteins ( regulators ) , the ligand binding reduces ( e.g. , TetR and LacI ) or increases ( e.g. , TrpR and cyclic AMP receptor protein ) their binding afﬁnity to their target DNA by several orders of magnitude ( 14 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626295" target="_blank">8626295</a>]<br></li>
+<li>This is in contrast to other binding of SAM plus such as TrpR or that undergo large regulatory proteins , CRP , on the binding of effector which affect conformational changes specific binding to target DNAs ( 5,6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7862523" target="_blank">7862523</a>]<br></li>
+<li>Cooperative binding of TrpR and polymerase would also have the effect of increasing the otherwise relatively low speciﬁcity of TrpR ( Carey , 1988 ) , by enhancing operator but not non-operator binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>By increasingthe length of the operator it is possible to alter the consensus sequence to avoid both palindromeformation and interferencefrom TrpR binding , whilst maintaining adequate levels of repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+<li>DNA sequence requirements for TrpR binding The principal goal of this part of the work was to test quantitatively the functional importance of bases implicated in the structurally redeﬁned TrpR half-site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Because cooperativity must act reﬂexively , it could also help to explain the large repression factor through stabilization of TrpR binding to the adjacent weak half-site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Thus , there may be two different situations in which TyrR and TrpR proteins interact to regulate one promoter , although further work is required to determine the precise nature of these interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>TrpR PSSM annotated in RegulonDB and permutation examples .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>Deletion of the last 10 residues of the TrpR repressor also resulted in loss of repression which , however , was largely restored in heterodimers ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8449883" target="_blank">8449883</a>]<br></li>
+<li>AroA synthase speciﬁc activity was reduced signiﬁcantly in cells grown in a medium containing all 20 amino acids , but aroA expression was considered constitutive with respect to repression by aromatic amino acids and the TyrR and TrpR repressors ( 18 , 48 , 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9171388" target="_blank">9171388</a>]<br></li>
+<li>The tryptophan operon provides a clear example of a negatively regulated repression system ( TrpR repressor plus tryptophan corepressor ) , but no example of a positively controlled repression system has been reported .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1505031" target="_blank">1505031</a>]<br></li>
+<li>The possible involvement of TrpR in tryptophan-medi-ated repression of aroP was tested by using aroP-lacZ fusions in isogenic strains that were either trpR1 or trpR363 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>In particular , rpoS appears to promote tryptophan degradation by inducing the tryptophanase gene tnaA , which results in the production of indole , and by stimulating expression of the WrbA protein , which might strengthen negative regulation of the trp biosynthetic operon via binding to the TrpR repressor protein ( 100 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489429" target="_blank">15489429</a>]<br></li>
+<li>Repression of mtr expression is controlled by the TrpR protein and its binding site is located betvtreen the - 1 0 and -35 region of the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943694" target="_blank">1943694</a>]<br></li>
+<li>Instead of using TrpR as a repressor , the aroP gene uses a mechanism that employs activation by the TyrR protein of a divergent promoter to repress the expression of its major promoter , P1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>TyrR protein represses the expression of six of these transcription units , represses and activates one and activates another which , in turn , is repressed by the TrpR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943694" target="_blank">1943694</a>]<br></li>
+<li>This result may suggest some form of cooperative action between TrpR and TyrR , as implied by some of the in vivo results .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>These results could indicate some tyrosine-medi-ated interaction between the activation-negative TyrR protein and TrpR protein , which results in tighter binding of TrpR to its operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407813" target="_blank">8407813</a>]<br></li>
+<li>These results indicate some form of physical interaction or cooperativity between and alternaTrpR TyrR ; tively , the binding of TyrR may cause a conformational change in DNA which allows TrpR to-bind more easily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Thus , TrpR may also play a role in stabilizing the binding of TyrR , although TyrR is able to repress aroL transcription in the absence of TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In the absence of a functional box 3 , the regulation of aroL expression by either TyrR or TrpR was completely lost under all growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>This would suggest that elevated levels of the activationnegative TyrR protein can repress mtr expression even in the absence of a functional TrpR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407813" target="_blank">8407813</a>]<br></li>
+<li>These results confirm the hypothesis that aroL is regulated by both TyrR and TrpR proteins , and the TrpR repressor appears to be active only in the presence of functional TyrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>This was abolished in a trpR363 ( Table 3 ) or tyrR366 strain ( results not shown ) , indicating that TrpR may be able to partially repress aroL in the absence of a functional TYR R box 1 , but only in the presence of functional TyrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Expression of the mtr gene of Escherichia ccli K-12 is regulated by both TyrR and TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1904443" target="_blank">1904443</a>]<br></li>
+<li>Recently , it was shown that aroL is , in fact , under the dual control of TrpR and TyrR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>The concentrations of TyrR and TrpR proteins are shown above the gels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Figure 3C shows the footprinting pattern of the strong box 2 mutant in the presence of various combinations of effectors and TrpR and TyrR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Also , when the TrpR site is inactivated in a strong box 2 mutant , repression in the presence or absence of any effector drops to six - to sevenfold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In trying to understand why a 4-bp insertion between TyrR box 1 and the TrpR binding site should result in enhanced tyrosine-mediated repression , we searched this region for possible binding sites of other regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Interestingly , when the TrpR binding site is inactivated in the wild-type aroL template , TyrR-mediated repression in the presence of tyrosine drops from 10 - to 6-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Inserting 4 bp between TYR R box 1 and the TrpR binding site results in increased tyrosine repression and the abolition of the tryptophan effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>A putative TrpR binding site downstream of the TYR R boxes was identified , and TrpR was shown to mediate the repression of aroL , but only in the presence of tryptophan and in tyrR + strains ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In vivo results indicate that TrpR regulation is significant only in the presence of TyrR protein and is greatest when TyrR is bound to all three TYR R boxes , i.e. , when the wild-type strain is grown in the presence of tyrosine ( and tryptophan ) or in the strong box 2 mutant ( in the presence of tryptophan ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In this study , DNase I footprinting incorporating purified TrpR protein showed protection of the predicted binding site in the presence of tryptophan .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Purified TrpR protein protected the putative TrpR binding site in the presence of tryptophan , and this protection was slightly enhanced in the presence of TyrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In the absence of TyrR protein , the predicted TrpR site is protected ; in the presence of tryptophan , the TrpR site is protected at levels of TrpR protein as low as 25 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>When footprints are carried out in the presence of TyrR protein , tyrosine , ATP , and tryptophan , the TrpR site is protected by levels of TrpR protein as low as 10 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Two other genes of the TyrR regulon , aroL and mtr , are repressed by tryptophan , but in both cases repression has been shown to involve the TrpR protein ( 7 , 12 , 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>Expression of aroL is primarily repressed by tyrosine acting through TyrR , with-tryptophan augmenting repression with TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12207706" target="_blank">12207706</a>]<br></li>
+<li>Our data , which confirm the results of Heatwole and Som-erville ( 18 ) , show that the presence of TyrR is essential for TrpR-mediated regulation of aroL and that ( to a lesser extent ) TrpR appears to enhance TyrR-mediated repression in the presence of tyrosine ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>This tyrosinemediated repression is trpR dependent and implies an interaction between TrpR and TyrR proteins in the presence of tyrosine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407813" target="_blank">8407813</a>]<br></li>
+<li>This mutant loses enhanced tryptophan-mediated repression and shows six - to eightfold repression in the presence of TyrR , whether TrpR is present or not ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>This would indicate that the tyrosine-mediated repression of mtr-lacZ b these activation-deficient mutants is dependent on a functional TrpR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407813" target="_blank">8407813</a>]<br></li>
+<li>In the absence of functional TrpR , however , tyrosine - and phenylalanine-medi-ated repression remained while tryptophan-mediated repression was not observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Unexpectedly , this resulted in a threeto fourfold increase in tyrosine-mediated repression ( compared with wild-type levels ) which was independent of tryptophan and TrpR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Growth presence in the presence of tryptophan results in repression that is mediated by the TrpR protein ( 12 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407813" target="_blank">8407813</a>]<br></li>
+<li>The results presented in this report exclude the involvement of the TrpR repressor in the tryptophan-mediated repression of aroP expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>The tryptophan-mediated repression of aroP does not involve the TrpR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>Is TrpR involved in the tryptophan-mediated repression of aroP ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>This is likely due to the presence of the tetranucleotide CTAG in TrpR sites ( Figure 1A ) , which is heavily under-represented in the E. coli K12 genome due to the so-called ` very short patch repair system ' ( 22 ) A B C D E Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>For example , in both the mtr and aroL operators , it seems likely that TrpR will bind in tandem to the sites indicated in Figure 1 , despite the fact that in each case one half-site ( the right-most of mtr and the left-most of aroL ) provides rather poor match to the consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>This led us previously to suggest that TrpR might bind to its operators in the same tandem fashion as MetJ , and that the two regulatory proteins might cross-talk between regulons [ 14,19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16515535" target="_blank">16515535</a>]<br></li>
+<li>, 1989 ) and that TrpR might bind in tandem arrays to such sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">TrpR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Thus , there may be two different situations in which TyrR and TrpR proteins interact to regulate one promoter , although further work is required to determine the precise nature of these interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>The results indicate that the optimal half-site sequence for recognition by one helix-turn-helix motif of one TrpR dimer is 5 ' GNACT 3 ' 3 ' CNTGA 5 ' , consistent with contacts observed by X-ray diffraction analysis of cocrystalline 1:1 and 2:1 complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Some regulators , including TrpR repressor , Met repressor , and Cro repressor , are compact and globular ( 3-5 ) , but others , such as the LexA , phage A , and phage 434 repressors , consist of a DNA-binding domain connected to a dimerization domain ( 6-12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8516313" target="_blank">8516313</a>]<br></li>
+<li>Many repressor proteins , such as LacR , TrpR , and CRP , have been found to have a two-domain structure , in which one domain is involved in DNA-binding while the other is involved in ligand binding ( Steitz , 1990 ; Pabo & Sauer , 1984 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1868094" target="_blank">1868094</a>]<br></li>
+<li>The 3-D crystallographic structures of proteins involved in transcriptional regulation of E. coli and its phages ( e.g. , TrpR , CRP , CI repressor and Cro protein from phages 2 and 434 ) have a common structural motif , the ` helix-turn-helix ' motif ( Dodd and Egan , 1987 ; Brennan and Matthews , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>Further evidence that helix-turn-helix motifs can be found with relatively low scores is the fact that E. coli TrpR , known from its three-dimensional structure to have this motif at its DNA-binding site ( 40 ) , scores only 1026 , below the minimum to be considered a member of the master set .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>DNA-binding proteins of known crystal structure , such as catabolite activator protein , Cro , cI , and TrpR , interact with their target sites through specific hydrogen bonds made by amiflo acid side chains present in a characteristic helix-turn-helix motif ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3301805" target="_blank">3301805</a>]<br></li>
+<li>Filled circles mark protected guanine residues , and underlining and overlining indicate occupancy by TrpR ( see c ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>In the first model the binding of the second TrpR dimer at these two complementary sequences is explained by the water-mediated interaction observed in the crystal structure of the Trp-repressor ± trpO s operator complex [ 18 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10518785" target="_blank">10518785</a>]<br></li>
+<li>Purified TrpR protein protected the putative TrpR binding site in the presence of tryptophan , and this protection was slightly enhanced in the presence of TyrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Two protected residues , at positions − 34 and − 35 , do not ﬁt the pattern expected for TrpR binding ( see Discussion ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Previous studies have indicated that the bases at positions +6 and -6 of a TrpR binding site may be important for TrpR binding ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Interestingly , the trpEDCBA operator has two TrpR-dependent protections at positions − 35 and − 34 that do not lie in any identiﬁable TrpR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">TrpR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Previously , we speculated that the natural operator sequence variation has arisen from the need to avoid cross-talk with the TrpR ( tryptophan repressor ) , which has a consensus binding site with 50 % identity to the sequence at the junction between met-boxes ( - CTAG - ) [ 13,19,20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16515535" target="_blank">16515535</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by TrpR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>This hypothesis is consistent with the notion that a genome evolves from a set of precursor genes to a mature size by gene duplications and increasing modiﬁcations ( Yanai et al. , 2000 ) Table 1 TFs identiﬁed in complete genomes Family DBD Role PFAM Annotations Total 63 328 Function MarR w R 502 Multiple antibiotic resistance response Mercury resistance regulator MerR c R 244 MetJ -- Helmann et al. ( 1989 ) ; Zeng et al. ( 1998 ) Old et al. ( 1993 ) ; Wu et al. ( 1993 ) 48 235 10 R 0 Methionine biosynthesis repressor Molybdenum metabolism regulation R ModE 30 NadRa c 798 w 0 20 12 R 0 Foster and Penfound ( 1993 ) Regulation of NAD-synthesis and nucleotide-transport Regulation of the nag ( N-acetylglucosamine ) operon Biosynthesis of membrane components Probable growth inhibitor regulator NagR/XylRa w 244 A 2 31 1 A 135 OmpR w 722 638 n/d n/d 0 PemK -- PhoU -- Pérez - Rueda and Collado-Vides ( 2000 ) 36 62 0 0 -- -- Phosphate assimilation Ribose phosphate isomerase 137 R R 94 RpiR c Sorensen and Hove-Jensen ( 1996 ) Aramaki et al. ( 1995 ) 157 6 865 12 897 TetR/AcrR m Tetracycline resistance repressors Tryptophan operon repressor 12 29 TrpR WrbA R m Yang et al. ( 1993 ) Yang et al. ( 1993 ) -- -- R -- Enhancer in the formation and/or stability of noncovalent complexes between TrpR and DNA The notation is as follows : family name ( Hyp : hypothetical families ) ; DBD structure ( w , winged ; m , miscellaneous , and c , classic ) ; HLH , helix-loop-helix ; , beta-strand antiparallel ; CSD , cold shock DNA-binding domain-like ; and Zn , zinc-ﬁnger ; ND , not determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>Furthermore , none of these sites meets the logical , independent criterion for consideration as a new potential binding site , namely , localization in or near the promoter region of a gene whose physiological role places it credibly in the trp regulon , but in no case has TrpR binding been tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>( d ) Plot of fractional species distribution as a function of log ( TrpR concentration ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>This hypotShesis however remains to bv tested A number of regulatory proteins that control transcription in E. coli and its phages ( c.g , TrpR ' , CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>The 3-D crystallographic structures of proteins involved in transcriptional regulation of E. coli and its phages ( e.g. , TrpR , CRP , CI repressor and Cro protein from phages 2 and 434 ) have a common structural motif , the ` helix-turn-helix ' motif ( Dodd and Egan , 1987 ; Brennan and Matthews , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>These results indicate that TrpR does play a role in regulating the expression of wild-type shikimate kinase II .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>HipA , GutM , FhlD , FhlC , GcvR , TrpR , and FrvR families might be involved in horizontal gene transfer among bacterial genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>The tryptophan repressor ( TrpR ) is a speciﬁc TF involved in regulating tryptophan-biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>Is TrpR involved in the tryptophan-mediated repression of aroP ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>Another excellent example is trp operon repressor ( TrpR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11448880" target="_blank">11448880</a>]<br></li>
+<li>The tryptophan operon provides a clear example of a negatively regulated repression system ( TrpR repressor plus tryptophan corepressor ) , but no example of a positively controlled repression system has been reported .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1505031" target="_blank">1505031</a>]<br></li>
+<li>Instead of using TrpR as a repressor , the aroP gene uses a mechanism that employs activation by the TyrR protein of a divergent promoter to repress the expression of its major promoter , P1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>In particular , rpoS appears to promote tryptophan-degradation by inducing the tryptophanase gene tnaA , which results in the production of indole , and by stimulating expression of the WrbA protein , which might strengthen negative regulation of the trp biosynthetic operon via binding to the TrpR repressor protein ( 100 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489429" target="_blank">15489429</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">TrpR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>EcoRI PCR primer I GAATTCAGAC CGGCGGACCA GATAGCCTTT CACAACGTGA CCGCCAGGCC TTTGGCCGCG 6 > 1 ^ o # o ro oo ^ oo C ' , - m ¬ 0 CTTAAGTCTG GCCGCCTGGT CTATCGGAAA GTGTTGCACT GGCGGTCCGG AAACCGGCGC 0o 0 u C N Pb 0 o ' -00 C t 0 N 0 e ^ N N \ 00 o Box 3 0 GAGCTGGAGA AGTGGTGGCT GGAAGTGCAA CGTAGTCGTG GCTA AATGTA ATTTAIPTATT 120 CTCGACCTCT TCACCACCGA CCTTCACGTT GCATCAGCAC CGAT TTACAT TAAATAATAA H -35 o -10 Box 2 o N t 00 Cl4 10 0 0 '' ` I0C c ` O - r 00 en N - Cl4 ON ON TACACTTCAT TCTTGAATAT TTATTGG TAT AGTAAGGQGTOTAAGAT TTTCACTTT A 180 ATGTGAAGTA AGAACTTATA AATAACC ATA TCATTCCCCA CTA AAAGTQAAA T C 0 ClC \ f N 0 0 - N t0t0Oof N i # ^ oq C oo q q q o N Box 1 TrpR o b nding mite 00 AGTTGAA TTT AT CGAAATTG TACT TO ATGOTATGAT CGCTATTCTC 240 , TC , CT = Aw X TA0GTT1AAC AGT TACCATACTA GCGATAAGAG 2 ¬ 4 ATGACACCGG CTTTCGCCGC ATTGCGACCT ATTGGGGAAA ACCCACGATO ACACAACCTC 300 TACTGTGGCC GAAAGCGGCG TAACGCTGGA TAACCCCTTT TGGGTGCTAC TGTGTTGGAG 0q 0,4 0 ` ic t 0 \ , 0 m , TTTTTCTGAT CGGGCCTCGG GGCTGTGGTA AAACAACGGT CGGAATGGCC CTTGCGGATCC 361 AAAAAGACTA GCCCGGAGCC CCGACACCAT TTTGTTGCCA GCCTTACCGG GAACGCCTAQC PCR primer II BamHI FIG. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>u birA331 I 35 40 [ Ala Ala Ile Asn LYS His m Gln Gln Thr Val Ser Arg Val Val Asn Val m Asn Gly Ser Asn Leu Phe Asn Ala m His m Gln Tyr Asp Val BirA LacI GalR TrpR CI Cro Lys Asp Val Ala Arg Leu Ar Glu Lys Asn Glu rc $ lu Ser Ala Asp Lys Tyr Lys Thr Ala Lys Asp *** === Ala Ile/Val GUY DNA Backbone Binding Helix DNA Sequence Specificity Helix Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3536662" target="_blank">3536662</a>]<br></li>
+<li>Matrix Consensus ( IUPAC ) order sites Total IC IC per FPR50 % ( LOO ) FPR90 % ( LOO ) FPR100 % ( LOO ) FPR50 % FPR90 % FPR100 % ( matrix sites ) LOO/Matrix sites ( FPR 50 % ) ( matrix sites ) ( matrix sites ) colum n 1 0 1 1 e e e e mem mem mem mem TrpR CRP CysB NanR 24 24 30 20 6 tyGtACtmGykaACtaGTaCratr aaawwtgtGayryagaTCACawww gGAavGrrrtaAyKrmwtrmcarakykm ktATAmMwGktataMmrGww 13.62 7.29 10.67 10.28 0.57 0.30 0.36 0.51 6.67 E 1.38 E 9.29 E 1.53 E + + + + 03 00 03 05 1.30 E-10 6.40 E-242 1900 8.30 E-07 1.00 E 6.20 E 2.60 E 2.30 E -08 -05 -04 -06 7.70 E-06 3.70 E-03 1.40 E-01 1.60 E-03 7.70 E-06 2.80 E-02 1.40 E-01 1.60 E-03 1.50 E 4.50 E 2.80 E 1.50 E -12 -05 -08 -11 1.50 E 2.70 E 3.20 E 6.40 E -09 -03 -05 -07 1.50 E 2.10 E 3.20 E 6.40 E -09 -02 -05 -07 198 8 6 kt 1 1 0 meme meme LexA HipB FNR 21 4 72 22 18 20 wwtrCTGtayatamammCAGya ATCCsskagmGCGGATAA tdywwwtTGaTwwmraTCaa 11.65 10.95 6.94 0.53 0.61 0.35 1.33 E 3.33 E 1.71 E + + + 01 03 0 2.60 E-46 0.00022 2.09 E-71 2.00 E 5.00 E 1.30 E -08 -08 -04 4.60 E-04 4.30 E-06 5.30 E-03 3.10 E-03 4.30 E-06 1.80 E-02 1.50 E 1.50 E 7.60 E -09 -11 -05 1.50 E 3.10 E 2.90 E -05 -09 -03 1.50 E 3.10 E 9.80 E -04 -09 -03 consensus B C Figure 8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>As an example , scores for annotated TrpR sites range from 14.90 to 19.42 ( Figure 2C , orange curve ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>) Interestingly , theoretical analysis of DNA sequence information content identiﬁed these nucleotides as the distinguishing feature of TrpR operators before the ﬁrst X-ray cocrystal structure was determined ( Schneider et al. , 1986 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>1991 ; Carey et al. , 1991 ; Haran et al. , 1992 ; Sutton et al. , 1993 ; LeTilly & Royer , 1993 ; Liu & Matthews , 1993 ; Joachimiak et al. , 1994 ) consistently pointed to the self-symmetric sequence 5 ' CTAG 3 ' as being an essential part of the recognition motif for TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>An obvious reason for avoidance of this sequence in vivo is the fact that it is the key recognition target for TrpR ( Czernik et a / .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+<li>Sequences of the operator regions of ﬁve E. coli operons regulated by TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Probing met and trp cross-talk Tandem consensus met-boxes share sequence identity with operator sites recognized by the helix -- turn -- helix motif of the TrpR Data for the met regulon comparing wild-type [ LU106/pFM20 ( metJ + ) ] versus Q44K [ LU106 / pFM45 ( metJQ44K + ) ] strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16515535" target="_blank">16515535</a>]<br></li>
+<li>TrpR is a symmetrized form of the right-hand s side of the wild-type trpR sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10518785" target="_blank">10518785</a>]<br></li>
+<li>Brackets mark locations of potential TrpR target sequences indicated in ( a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The results indicate that the optimal half-site sequence for recognition by one helix-turn-helix motif of one TrpR dimer is 5 ' GNACT 3 ' 3 ' CNTGA 5 ' , consistent with contacts observed by X-ray diffraction analysis of cocrystalline 1:1 and 2:1 complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The functional deﬁnition can also be used to evaluate the likelihood that TrpR will bind at potential sites identiﬁed in the available E. coli genomic sequence database .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>, 1989 ) and that TrpR might bind in tandem arrays to such sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+<li>Joachimiak et al. ( 1994 ) examined the effects of symmetric residue replacements on 1:1 complex form-ation by short DNAs , and found that DNAs with sequence 5 ` GNACC3 ' ( identical to the half-site at positions − 20 to − 16 of the natural operator ) bound TrpR almost as well as the perfect consensus site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>By increasingthe length of the operator it is possible to alter the consensus sequence to avoid both palindromeformation and interferencefrom TrpR binding , whilst maintaining adequate levels of repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+<li>Previously , we speculated that the natural operator sequence variation has arisen from the need to avoid cross-talk with the TrpR ( tryptophan repressor ) , which has a consensus binding site with 50 % identity to the sequence at the junction between met-boxes ( - CTAG - ) [ 13,19,20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16515535" target="_blank">16515535</a>]<br></li>
+<li>Whilst the sequences of natural met operators have been selec-ted to avoid binding by TrpR , the repressor sequence has been selected to discourage the corollary because T3 , which has a sequence conservation of 73 % in the trp box half-site consensus , is the least acceptable replacement .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8898382" target="_blank">8898382</a>]<br></li>
+<li>Applying our structure based approach to binding site deﬁnition also improved performance for TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11448880" target="_blank">11448880</a>]<br></li>
+<li>In this paper we examine the functional deﬁnition of a binding site for TrpR by evaluating binding in vitro and in vivo on a range of DNAs that differ in sequence and sequence context .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Previous studies predicted a TrpR binding site downstream of TYR R box 1 and showed that TrpR protected an RsaI restriction site within this region ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Changes at the invariant GN14C bases of the TyrR boxes or the C and G bases at positions ± 6 in the TrpR binding site interfere with the binding of regulatory proteins to these regions and affect the ability of the box to function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>To determine the importance of the position of the TrpR binding site with respect to the TYR R boxes , we separated the TrpR binding site and TYR R box 1 by inserting 4 bp between the two sites to create pMU4651 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In an attempt to look for possible interactions between TrpR and TyrR proteins , we inserted 4 bp between the TrpR binding site and TYR R box 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>A 4-bp insertion between TyrR box 1 and the TrpR binding site reduces this IHF binding site to 40 % homology with the consensus sequence , as well as placing TrpR and TyrR on different faces of the helix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>In addition to the weak-strong box combination downstream of the promoter , there is a second strong box just upstream of the − 35 sequence , a TrpR binding site downstream of the TyrR boxes and a putative IHF site that overlaps the two downstream TyrR boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12207706" target="_blank">12207706</a>]<br></li>
+<li>26 bp of local sequence around each potential target is shown ; a bound TrpR dimer binding on either half of the CTAG core sequence would have no contacts outside this length .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Cloning of the tandem TrpR target ( Figure 2 ( a ) and Materials and Methods ) into the SalI site of the polylinker permits excision of a 264-bp restriction fragment containing a total of six CTAG sequences in various sequence contexts ( Figure 4 ( a ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Effects of distal and ﬂanking sequence Several restriction sites in the polylinker region of pBend3 , a plasmid used for bending studies with cloned operators , contain the CTAG sequence that forms the core of a tandem TrpR binding target , but with different bases immediately ﬂanking it and in the potential distal half-sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The tandem TrpR-binding sequence used for cocrystallization ( Figure 2 ( a ) ) , resynthesized to contain ﬂanking SalI sites ( see Materials and Methods ) , was cloned into the SalI site in the polylinker region of plasmid pBend3 , and excised from the resulting clone on a 260 bp EcoRI-HindIII restriction fragment bearing several other potential TrpR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The results of TrpR binding to the cloned tandem target DNA and to the SpeI sites suggested the possibility that a minimal target for tandem TrpR binding could be as short as 10 bp containing only two directly abutted ideal half-sites of 5 bp each ( 5 ' GNACT · AGTNC 3 ' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Tandem binding should thus be optimal when the distal DNA sequences also match the structurally deﬁned half-site , and the ideal site for tandem binding of two TrpR dimers is expected to be 5 ' GNACTNNNGNACTAGTNCNNNAGTNC 3 ' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>DNA sequence requirements for 1:1 and tandem 2:1 ( TrpR : DNA ) binding in various sequence contexts were studied .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Thus , single and tandem binding of TrpR occur sequentially and with an obligate hierarchy of site occupancy .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Potential binding sites were considered to be any sequences containing the CTAG palindrome ( boldface ) that forms the core of a tandem TrpR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>For example , in both the mtr and aroL operators , it seems likely that TrpR will bind in tandem to the sites indicated in Figure 1 , despite the fact that in each case one half-site ( the right-most of mtr and the left-most of aroL ) provides rather poor match to the consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Occupancy of half-sites by TrpR is indicated by underlining and overlining The choice of 1:1 or tandem 2:1 binding modes also depends on sequence and sequence context , and represents a balance between intrinsic afﬁnity for each 1:1 site and cooperativity in forming the 2:1 complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>In the aroL regulatory region , the TyrR binding sites are immediately adjacent to the left-most half-site of the TrpR operator , which has the poorest match to the consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>The adaptability of binding mode exhibited by TrpR permits this protein to use a wider range of operator sequences because half-site modules can be combined to yield different occupancy states , and the positive cooperativity in tandem binding can compensate for lower afﬁnity of sites with imperfect match to the consensus sequence , further extending the range of sequences compatible with operator function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>In order to determine whether all binding sites form higher-order complexes with TrpR , we examined binding to variant operator sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10518785" target="_blank">10518785</a>]<br></li>
+<li>The discrepancies between SELEX and natural binding site data for MetJ have been interpreted as the result of evolutionary pressure to avoid binding by TrpR and constraints imposed by the tandem repeat nature of natural MetJ sites ( Wild et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>The inverted-repeat found in this region is analogous to the inverted-repeat sequences implicated as the target binding sites for both the Met and Trp repressor ( MetJ and TrpR ) proteins ( 21 , 32 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550508" target="_blank">8550508</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by TrpR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul>				<label class="TU_collapse_similarity" for="tu_similarity_1">
+Expression of the mtr gene of Escherichia ccli K-12 is regulated by both TyrR and TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1904443" target="_blank">1904443</a>]<br></label>
+<input id="tu_similarity_1", type="checkbox">
+<div class="TU_similar">
+<li>Expression of the mtr gene of Escherichia coli K-12 is regulated by both TyrR and TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1938967" target="_blank">1938967</a>]<br></li></div>
+<li>In the absence of a functional box 3 , the regulation of aroL expression by either TyrR or TrpR was completely lost under all growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Recently , it was shown that aroL is , in fact , under the dual control of TrpR and TyrR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7961453" target="_blank">7961453</a>]<br></li>
+<li>Expression of aroL is primarily repressed by tyrosine acting through TyrR , with tryptophan augmenting repression with TrpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12207706" target="_blank">12207706</a>]<br></li>
+<li>In particular , rpoS appears to promote tryptophan degradation by inducing the tryptophanase gene tnaA , which results in the production of indole , and by stimulating expression of the WrbA protein , which might strengthen negative regulation of the trp biosynthetic operon via binding to the TrpR repressor protein ( 100 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489429" target="_blank">15489429</a>]<br></li>
+<li>Repression of mtr expression is controlled by the TrpR protein and its binding site is located betvtreen the - 1 0 and -35 region of the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943694" target="_blank">1943694</a>]<br></li>
+<li>Instead of using TrpR as a repressor , the aroP gene uses a mechanism that employs activation by the TyrR protein of a divergent promoter to repress the expression of its major promoter , P1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9209035" target="_blank">9209035</a>]<br></li>
+<li>TyrR protein represses the expression of six of these transcription units , represses and activates one and activates another which , in turn , is repressed by the TrpR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943694" target="_blank">1943694</a>]<br></li>
+<li>These results suggest that under repressing conditions in vivo , the trpEDCBA operator is occupied by three TrpR dimers , the aroH operator by two dimers , and the trpR operator by one dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>Analogous observations for the position of the TrpR operators for the aroH , trpEDCBA , and trpR operons led to the suggestion that these operators evolved independently ( 60 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17720788" target="_blank">17720788</a>]<br></li>
+<li>Lanes CY15071/pBRG : no TrpR ; lanes DH1/pBRG : autoregulated chromosomal copy of trpR gene ; lanes DH1/pRPG16 : modest , autoregulated levels of TrpR plus autoregulated chromosomal copy of trpR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+<li>This result could be consistent with the low residual expression of the trpR gene observed under repressing conditions when TrpR is produced using its chromosomal signals for transcription and translation ( Kelley & Yanofsky , 1982 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8613990" target="_blank">8613990</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

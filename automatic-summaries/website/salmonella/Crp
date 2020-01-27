@@ -1,0 +1,605 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Crp</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Crp</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Crp transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul>				<label class="ACT_collapse_similarity" for="act_similarity_1">
+Crp activates pat expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></label>
+<input id="act_similarity_1", type="checkbox">
+<div class="ACT_similar">
+<li>FIG 10 Crp activates pat expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li></div>
+<li>Notably , during growth-on-glucose , less Acs is made because Crp can not fully activate acs expression when cyclic AMP ( cAMP ) levels are low ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>Variability was seen aerobically in Crp + strains during growth-on-glucose or pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>It has been demonstrated that certain genes encoded by the Salmonella virulence plasmid , found in some serovars , are downregulated by Crp , upregulated by H-NS , and strongly expressed inside macrophages [ 19,38,39 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_6">
+aldB , an RpoS-dependent gene in Escherichia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></label>
+<input id="act_similarity_6", type="checkbox">
+<div class="ACT_similar">
+<li>aldB , an RpoS-dependent gene in Esche-richia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li></div>
+<li>As arabinose was diluted away , synthesis of Crp , Fur and LacI decreased , but PspA synthesis increased , as expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20585446" target="_blank">20585446</a>]<br></li>
+<li>The 17 regulators required for survival in Nramp1 / BALB/c mice are SpvR , FruR , YbdM , HimD , PhoP/PhoQ , SsrA/SsrB , SlyA , Hnr , STM2575 , RpoE , SmpB , CsrA , STM2912 , RpoS , Crp , OmpR/EnvZ , and Hfq ( see Table S1 in the supplemental material ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21041489" target="_blank">21041489</a>]<br></li>
+<li>For example , cAMP-Crp and H-NS activate class 1 expression in E. coli and S. enterica ( 29 , 31 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>It has ﬁve promoters and is activated by global regulators , including Crp , ArcA , and integration host factor , and by a speciﬁc activator , PocR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>The expression of these sRNAs is controlled by diverse transcription factors , i.e. sE , HilD , Crp and OmpR , and activated by a speciﬁc stress or growth condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007416" target="_blank">19007416</a>]<br></li>
+<li>A detailed expression analysis further revealed that in contrast to the Salmonella Csr system , both CsrB and CsrC are counter-regulated and respond to different TCS in response to metabolites ( UvrY/BarA-CsrB ) or ions ( PhoP/PhoQ-CsrC ) and are oppositely controlled by the Crp protein ( Heroven et al. , 2008 ; Nuss et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Apart of its inﬂuence on the RovM-RovA-InvA regulatory cascade , the Yersinia Csr system and Crp are part of a large adaptive response network , adjusting metabolic , and physiological processes , stress adaptation and virulence gene expression in response to changing environmental conditions ( Heroven et al. , 2012a ; LeGrand et al. , 2015 ; Nuss et al. , 2015 ; Vakulskas et al. , 2015 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>crp mutants of Y. pseudotuberculosis and Y. enterocolitica are strongly attenuated , and comparative transcriptomics , metabolomics , and phenotypic microarrays showed that Crp is required for growth on different carbon sources and promotes survival under carbon , nitrogen , and phosphate limitation ( Petersen and Young , 2002 ; Heroven et al. , 2012b ; Nuss et al. , 2015 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>The cobalamin and PDU pathways are under the control of several regulators , including ArcA and Crp ( 68 ) and CsrA ( 69 ) , but are not known to be regulated by RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23104408" target="_blank">23104408</a>]<br></li>
+<li>Under standby conditions , the P1 promoter is activated by IHF with Fnr or Crp proteins acting alternatively at their nearby binding site ; this binding occludes the pdu promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>If Crp were acting as a repressor of the tcuABC operon , we would expect tcuA-lacZ expression to be activated during growth-on-glucose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>tcuABC expression was negatively affected by the cAMP receptor protein ( Crp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>The crp * mutation alters the Crp protein such that it activates gene expression even without cAMP ( 15 , 30 , 31 ) ; the cya mutation prevents cAMP synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2687249" target="_blank">2687249</a>]<br></li>
+<li>This mutation alters the Crp protein so it can activate transcription even in the absence of cAMP ( 13 , 27 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3032913" target="_blank">3032913</a>]<br></li>
+<li>Propanediol did not stimulate aerobic cob operon expression during growth-on-glucose unless a crp * mutation was present ; the effect of this mutation is equivalent to increasing cAMP levels in a Crp + strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>The pdu operon was induced in Crp + cells growing on glucose with the addition of both propanediol and cAMP , but there was no induction in a crp null mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Anaerobically , variability was seen only during growth-on-glucose , when the cAMP level is low and Crp is largely inactive ; slight changes in active ArcA levels due to differences in oxygenation of dense cultures could affect induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>This suggests that cAMP levels are higher on pyruvate than on glycerol but that the Crp protein is not needed to induce genes required for breakdown of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Catabolite repression in enteric gram-negative bacteria is dependent on the interaction of cyclic AMP ( cAMP ) with cAMP receptor protein ( Crp ) to form an active DNA-binding complex that activates transcription from some promoters and represses transcription at others .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>Expression was higher in a crp * mutant than in a Crp + strain and was further stimulated by adding exogenous cAMP , indicating that the particular crp * allele used encodes a protein that is still responsive to cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>At present , it is unclear whether the effect of Crp is direct or indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Stability of Crp , Fur , RpoS , and PhoP proteins during incubation of cultures induced for expression of these proteins prior to addition of 50 g/ml chloramphenicol of culture .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>Stability of Crp , Fur , RpoS , and PhoP proteins and their decline during growth in the absence of arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>Decrease in amounts of Crp , Fur , RpoS , and PhoP proteins as a consequence of growth of 9021 ( Pcrp527 ) , 8848 ( Pfur33 ) , 8956 ( PrpoS183 ) , and 8918 ( PphoPQ107 ) in the absence of arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>Transcription of pla is controlled by the cAMP receptor protein Crp [ 39 ] , and expression of Pla is partially repressed in glucose-contain-ing medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26149012" target="_blank">26149012</a>]<br></li>
+<li>It is possible that Crp acts as a repressor of tcuR and that Crp repression of tcuA-lacZ expression is at least partially the result of Crp-mediated repression of tcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_34">
+Moreover , addition of glucose to the growth medium results in decreasing the hlyE mRNA , suggesting that there is another factor related to catabolite repression different from Crp and involved in downregulation of hlyE in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></label>
+<input id="act_similarity_34", type="checkbox">
+<div class="ACT_similar">
+<li>Moreover , the addition of glucose to the growth medium results in decreasing the hlyE mRNA , suggesting that there is another factor related to catabolite repression , different from Crp , involved in downregulation of hlyE Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li></div>
+<li>Thus , following colonization of lymphoid tissues , the Fur , Crp , PhoPQ , and/or RpoS proteins cease to be synthesized due to the absence of arabinose such that attenuation is gradually manifest in vivo to preclude induction of diseases symptoms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>The cyclic AMP ( cAMP ) - independent ( Crp * ) phenotype of the transductants was scored on MacConkey maltose plates but is also evident from the ability of the resulting strain to grow in minimal acetate medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10438755" target="_blank">10438755</a>]<br></li>
+<li>This result shows that the mechanism of fnr-dependent posttranscriptional control of OmpD in response to anaerobiosis apparently acts independently of the mechanism of transcriptional control that results in a decrease in its abundance in response to low pH. Transcription from the ompD promoter is activated by the cAMP/Crp complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>The cyclic AMP ( cAMP ) receptor protein , Crp , is also thought to be involved in rpoS transcriptional control , and yet the effect of the mutants is modest and interpretation is difﬁcult due to the growth deﬁciency of the crp or cya ( defective in adenylate cyclase ) mutants in combination with growth rate transcriptional control of rpoS ( 36 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716427" target="_blank">15716427</a>]<br></li>
+<li>Mutant forms of the Crp protein ( termed Crp * ) are able to activate their target genes to some extent even in the absence of cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Addition of cAMP ( 1 mM ) to the medium reduced tcuA-lacZ expression in the presence of tricarballylate > 3.5-fold , and the introduction of plasmid pHY26-1 , which carried an allele of crp that encoded a cAMP-independent Crp protein , reduced tcuA-lacZ expression ~ 2-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Hence in the absence of Crp , and consequently of the putative repressor , tcuABC expression would increase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Here we provide in vivo evidence that the TcuR protein uses tricarballylate as its co-inducer for transcription of the tcuABC operon , and that the catabolite repression protein ( Crp ) negatively regulates expression of the operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Reasons that pHY26-1 resulted in lower repression compared to the addition of cAMP may include improper gene dosage and/or partial activity of the constitutive Crp variant protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Since all the strains deficient in the synthesis of cAMP or the Crp protein ( strains TT10855 , and TT10856 ) grew in the absence of exogenous cAMP or L-methionine , it follows that cAMP is not required for the synthesis of cobalamin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3032913" target="_blank">3032913</a>]<br></li>
+<li>When cells were grown aerobically on pyruvate , the arcA mutation caused a small reduction in the induced level of the pduF transcription , while a crp mutation caused a 15-fold decrease ; this is expected since Crp is the major activator under aerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>We propose that in the on state , Arc protein stimulates the P2 promoter and Crp stimulates the PPoc promoter ; thus these global controls would independently stimulate PocR production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>is the primary global regulator under aerobic conditions , while both the Crp and Arc systems act additively to stimulate anaerobic expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>In the presence of arabinose , the AraC protein changes its conformation and forms a dimer that binds the I1 and I2 sites , and then Crp and RNA polymerase bind the complex and activate the transcription of the araBAD genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>As can be seen by the results presented in Fig. 3 , the Crp , Fur , and PhoP proteins are very stable and not subject to breakdown , whereas the RpoS protein displays no stability in the log phase ( 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>In the absence of these eficiently utilizable sugars , the signal metabolite cAMP is produced by the adenylate cyclase , which then binds to Crp to form an active cAMP-Crp complex ( Hanamura and Aiba , 1991 ; Ishizuka et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Other results suggest that the PPoc promoter is stimulated by the Crp protein , which might explain the high basal levels of transcription under these growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>These results suggested that the cob operon is subject to global control by Crp and by some additional system sensing anaerobic conditions ; the effects of Crp on the pdcc operon were not tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Under anaerobic conditions , induction of the regulon is stimulated by additive effects of both the Crp and the Arc systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Having separate pocR promoters activated by Arc or Crp would account for the additive effects of these global regulatory proteins on induced expression levels of the pdu , cob , and pocR transcripts ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>During anaerobic-growth on poor carbon sources , induction of the cob and pdu operons requires either the Arc or Crp global system ; maximal induction requires both the Arc and Crp During systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>The positive regulatory protein , PocR , is necessary for the induction of the cob and pdu operons and is subject to global regulatory control via ArcA and/or Crp [ 69,70 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The cAMP-Crp complex is activated when glucose is scarce in the culture medium ; consequently , numerous genes are up/downregulated [ 30 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>The Crp regulator is involved in transcriptional repression of S. Typhi hlyE Crp is a transcriptional-regulator previously reported to be an activator of hlyE transcription in E. coli [ 62 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Crp is involved in transcriptional repression of S. Typhi hlyE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Crp protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>McLeod , S.M. , Aiyar , S.E. , Gourse , R.L. , and Johnson , R.C. ( 2002 ) The C-terminal domains of the RNA polymerase alpha subunits : contact site with Fis and localization during co-activation with Crp at the Escherichia coli proP P2 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16999831" target="_blank">16999831</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17784910" target="_blank">17784910</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Crp</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>THE GENES PREDICTED BY MICROARRAY TO BE REGULATED IN SALMONELLA ENTERICA TYPHIMURIUM 14028 EXPOSURED TO 1.6 MG/ML OF NALIDIXIC ACID , SORTED ACCORDING TO FOLD REGULATION ( 50 AND 50 INDICATE FOLD REGULATION ESTIMATED BEYOND 50-FOLD ) ( CONTINUED ) 4.5 4.6 4.6 4.8 5.0 5.0 5.1 5.3 DNA polymerase IV Cytochrome b ( 561 ) dinP cybB ftsN uvrA AppB pagK talA rfaB transferase 0.005 0.002 0.002 0.001 0.000 0.010 0.008 0.008 16418815 16420165 16422660 16422812 16418863 16420400 16421014 16422287 oxidoreductase cell-division dna damage oxidoreductase virulence transferase transferase Essential cell-division protein DNA excision repair enzyme Cytochrome BD2 subunit II Phopq-activated protein Transaldolase A UDP-D-galactose : ( glucosyl ) LPS-1 , 6-D-galactosyltransferase Sulfate permease A protein Putative hlyd family secretion protein Putative cytoplasmic protein 5.7 6.0 6.4 cysA AcrA yodD membrane membrane cytoplasmic protein dna damage 0.001 0.000 0.000 6.8 Error-prone repair : SOS-response transcriptional repressor Putative lipoprotein Putative outer membrane efflux protein Gifsy-2 prophage ATP-binding sugar-transporter-like protein Putative cytoplasmic protein umuD 0.011 16420532 6.8 7.9 8.3 yehR TolC lipoprotein membrane transport 0.006 0.001 0.003 16420691 16421236 16419549 fisy binding 10.2 yjbJ cytoplasmic protein atp binding 0.011 16422798 10.9 Putative heatshock protein , homolog of 0.001 16419172 hsp70 in Hsc66 subfamily 11.4 Putative cytoplasmic protein 0.000 16420086 hscC yddX cytoplasmic protein virulence dna damage 12.7 13.3 Phop regulated pagD recA 0.002 0.002 16419763 16421374 DNA strand exchange and recombination protein Transcriptional repressor of marrab operon Membrane permease predicted cation efflux pump Ornithine carbamoyltransferase I Putative inner membrane protein Mg2 transport protein Glutamate synthase , large subunit Fimbrial subunit Gifsy-2 prophage putative reca/rada recombinase Putative cytoplasmic protein 13.7 19.1 transcription membrane marR EmrA 0.003 0.001 16420041 16419324 20.4 20.9 21.5 22.8 25.1 27.5 argI Crp transferase membrane 0.000 0.001 0.012 0.002 0.005 0.001 16423033 16423163 16422333 16421888 16418518 16419548 mgtC gltB bcfD recA/radA recombinase STM1999 membrane oxidoreductase fimbria dna damage 16420533 0.000 41.2 cytoplasmic protein transcription 16421718 0.003 Putative arac/xyls family transcriptional regulator Putative outer membrane lipoprotein Flagellar flij protein Putative cytoplasmic protein 42.8 yiaF fliJ 16422212 16420508 16422813 0.001 0.000 0.000 45.0 50 50 lipoprotein flagellum cytoplasmic protein dna damage dna damage STM4255 16420531 16419678 0.000 0.000 Error-prone repair protein DNA damage-inducible protein I 50 50 umuC dinI GI , Gene Index number of the genetic sequence from which the associated microarray element was designed ; Pvalue B-H , statistically significant differentially regulated genes following the Benjamini and Hochberg correction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17600486" target="_blank">17600486</a>]<br></li>
+<li>The catabolite repressor protein ( Crp ) posi - tively regulated expression of pat while having no effect on cobB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>In addition , global regulatory proteins/systems such as Crp , CsrABC , SlyA ( RovA ) , and LrhA ( RovM ) , which adjust virulence gene-expression with stress responses , physiological features ( bioﬁlm formation/motility ) and crucial metabolic functions are included into this network .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Crp is a regulator that acts as a cAMP receptor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Transcription factors of sRNA genes that are associated with membrane perturbation ( OmpR , sE ) are shown in black circles , whereas those of general ( Crp ) or virulence ( HilD ) regulons are shown in green circles .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007416" target="_blank">19007416</a>]<br></li>
+<li>Our results also demonstrate a role for the global regulator , Crp , in tricarballylate catabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>In E. coli , Crp controls the expression of acs ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>Here we provide in vivo evidence that the TcuR protein uses tricarballylate as its co-inducer for transcription of the tcuABC operon , and that the catabolite repression protein ( Crp ) negatively regulates expression of the operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>If the Crp effect were indirect , we would hypothesize that Crp would act as an activator of a protein that represses tcuABC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Catabolite repression in enteric gram-negative bacteria is dependent on the interaction of cyclic AMP ( cAMP ) with cAMP receptor protein ( Crp ) to form an active DNA-binding complex that activates transcription from some promoters and represses transcription at others .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>The cyclic AMP ( cAMP ) receptor protein , Crp , is also thought to be involved in rpoS transcriptional-control , and yet the effect of the mutants is modest and interpretation is difﬁcult due to the growth deﬁciency of the crp or cya ( defective in adenylate cyclase ) mutants in combination with growth rate transcriptional-control of rpoS ( 36 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716427" target="_blank">15716427</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_12">
+Moreover , addition of glucose to the growth medium results in decreasing the hlyE mRNA , suggesting that there is another factor related to catabolite repression different from Crp and involved in downregulation of hlyE in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></label>
+<input id="rp_similarity_12", type="checkbox">
+<div class="RP_similar">
+<li>Moreover , the addition of glucose to the growth medium results in decreasing the hlyE mRNA , suggesting that there is another factor related to catabolite repression , different from Crp , involved in downregulation of hlyE Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li></div>
+<li>Apparently , Crp is involved in opposite functions in E. coli and S. Typhi with respect to hlyE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>All these results together suggest that Crp is involved in downregulation of hlyE in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>On the other hand , the transcriptional regulator Crp , previously described as an activator of hlyE transcription in Escherichia coli , is involved in transcriptional repression of hlyE in S. Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>The Crp regulator is involved in transcriptional repression of S. Typhi hlyE Crp is a transcriptional regulator previously reported to be an activator of hlyE transcription in E. coli [ 62 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Crp is involved in transcriptional repression of S. Typhi hlyE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Finally , we show that Crp , a global regulator of carbon metabolism , regulates pat and acs expression in S. enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>The Crp protein is a positive regulator required for maximal expression of a variety of genes involved in carbon source breakdown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Its extended role is comparable to that of Crp as a regulator of carbohydrate-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550449" target="_blank">8550449</a>]<br></li>
+<li>In addition , Crp , IHF , Lrp , and H-NS ( 5 , 23 , 29 , 30 , 44 , 49 , 55 , 57 ) have been identiﬁed as modulating factors in the control of various sS-dependent genes ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626324" target="_blank">8626324</a>]<br></li>
+<li>It has ﬁve promoters and is activated by global regulators , including Crp , ArcA , and integration host factor , and by a speciﬁc activator , PocR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>For example , cAMP-Crp and H-NS activate class 1 expression in E. coli and S. enterica ( 29 , 31 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>utilizing regulated delayed attenuation strategies that affect Crp and O-antigen synthesis and screened them for virulence and protective efﬁcacy in Rhode Island Red chickens .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23261043" target="_blank">23261043</a>]<br></li>
+<li>This group included most of the global regulators and many were differentially affected under the different growth conditions including Crp , Fis , ArcA , SlyA , Fur , and H-NS ( Figures 1D -- F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25713562" target="_blank">25713562</a>]<br></li>
+<li>Functional interactions between the carbon and iron utilization regulators , Crp and Fur , in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>To determine whether additional regulators were involved in the attenuation of the bacterial growth rate within ﬁbroblasts , we tested mutants affected in the following regulatory proteins : ( i ) RpoE , an alternative sigma factor ( 38 ) ; ( ii ) SpiR ( SsrA ) and SpiA , a regulator and a type III structural protein , respectively , both encoded in SPI-2 ( 34 , 51 ) ; ( iii ) OmpR , a transcriptional regulator controlling outer membrane protein content ( 43 ) ; ( iv ) Dam , a DNA-adenine meth-ylase required for systemic disease ( 23 , 33 ) ; ( v ) the global regulators Crp , RelA , and Lrp ( 18 ) ; ( vi ) OxyR and SoxRS , related to oxidative stress ( 13 , 67 ) ; ( vii ) MviA , a regulator required for eliciting systemic disease in mice ( 66 ) ; and ( viii ) Fnr , which controls switching to anaerobic metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>Regulation of the S. Typhi taiA-hlyE operon ( SPI-18 ) and the role of global regulators RpoS and Crp in this process are shown in this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+<li>Similarly , Crp of Salmonella enterica serovar Typhimurium was shown to coregulate carbon metabolism and virulence directly and indirectly through the Csr system ( see below and Section Attachment and Invasion of the Intestinal Epithelium ; Teplitski et al. , 2006 ) , indicating that this regulator fulﬁlls a similar role in this enteric pathogen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>These virulence regulators were varied , including two-component regulators ( PhoP / PhoQ , SsrA/SsrB , and OmpR/EnvZ ) , alternative sigma factors ( RpoE , RpoS , and FliA ) , post-transcriptional/post-translational regulators ( SmpB , CsrA , Hfq , and RseA ) , a response regulator for which the signal sensor is unknown ( Hnr ) , a bending protein essential for some types of recombination ( IHF ) , and an assortment of other transcriptional/putative transcriptional regulators ( SlyA , Crp , FruR , RelA/SpoT , STM1547 , STM3121 , SpvR , and RcsA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21687430" target="_blank">21687430</a>]<br></li>
+<li>Regulation of expression of the spvR gene is very complex , and besides RpoS , other proteins that exert control over spvR include H-NS , Crp , and Lrp as negative regulators and integration host factor ( IHF ) as a positive regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>is the primary global regulator under aerobic conditions , while both the Crp and Arc systems act additively to stimulate anaerobic expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>[ 117 ] Ailion , M. , Bobik , T.A. and Roth , J.R. ( 1993 ) Two global regulatory systems ( Crp and Arc ) control the cobalamin [ 125 ] Lombardo , M.J. , Bagga , D. and Miller , C.G. ( 1991 ) Mutations in rpoA affect expression of anaerobically regulated genes in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Ailion M , Bobik TA , Roth JR : Two global regulatory systems ( Crp and Arc ) control the cobalamin/propanediol regulon of Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_36">
+aldB , an RpoS-dependent gene in Escherichia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></label>
+<input id="rp_similarity_36", type="checkbox">
+<div class="RP_similar">
+<li>aldB , an RpoS-dependent gene in Esche-richia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_38">
+Perrenoud A , Sauer U : Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Cya , Fnr , and Mlc on glucose-catabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="rp_similarity_38", type="checkbox">
+<div class="RP_similar">
+<li>04553.x Perrenoud A , Sauer U ( 2005 ) Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Fnr , and Mlc on glucose-metabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Crp binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The banded rectangle indicates a putative hybrid Fnr-Crp binding site ; the black rectangle is an IHF binding site ; the white rectangle is the Crp binding site ; and ovals are putative pocR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>consensus cAMP/Crp binding site located 160 to 139 bp upstream of the ATG start codon of ompD ; this may be the site required for the positive regulation of the ompD gene by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Crp</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Notably , during growth on glucose , less Acs is made because Crp can not fully activate acs expression when cyclic AMP ( cAMP ) levels are low ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>Recently , it has been reported that Crp is able to repress rpoS expression by binding to its promoter zone in Vibrio vulniﬁcus [ 33 ] , suggesting that this mechanisms might also be possible in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19835951" target="_blank">19835951</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_3">
+aldB , an RpoS-dependent gene in Escherichia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15256548" target="_blank">15256548</a>]<br></label>
+<input id="tu_similarity_3", type="checkbox">
+<div class="TU_similar">
+<li>aldB , an RpoS-dependent gene in Esche-richia coli encoding an aldehyde dehydrogenase that is repressed by Fis and activated by Crp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8752327" target="_blank">8752327</a>]<br></li></div>
+<li>Expression of both operons is induced by propanediol and globally controlled by the ArcA and Crp systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>The expression of these sRNAs is controlled by diverse transcription factors , i.e. sE , HilD , Crp and OmpR , and activated by a speciﬁc stress or growth condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007416" target="_blank">19007416</a>]<br></li>
+<li>It is not obvious why the cell would use Crp to repress tcuABC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>Propanediol did not stimulate aerobic cob operon expression during growth on glucose unless a crp * mutation was present ; the effect of this mutation is equivalent to increasing cAMP levels in a Crp + strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>The pdu operon was induced in Crp + cells growing on glucose with the addition of both propanediol and cAMP , but there was no induction in a crp null mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>E. coli is known to upregulate ﬂagellar synthesis under low-nutrient conditions through cAMP-Crp control of the class 1 operon ( 76 , 77 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>The crp * mutation alters the Crp protein such that it activates gene expression even without cAMP ( 15 , 30 , 31 ) ; the cya mutation prevents cAMP synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2687249" target="_blank">2687249</a>]<br></li>
+<li>Transcription of pla is controlled by the cAMP receptor protein Crp [ 39 ] , and expression of Pla is partially repressed in glucose-contain-ing medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26149012" target="_blank">26149012</a>]<br></li>
+<li>tcuABC expression was negatively affected by the cAMP receptor protein ( Crp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+<li>In E. coli , Crp controls the expression of acs ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26199328" target="_blank">26199328</a>]<br></li>
+<li>These results suggested that the cob operon is subject to global control by Crp and by some additional system sensing anaerobic conditions ; the effects of Crp on the pdcc operon were not tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Since Crp positively enhances transcription from PBAD such that transcription is reduced 10-fold in the absence of Crp ( 45 ) , the inclusion of the Pcrp527 : : TT araC fur phoPQ FIG. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19103774" target="_blank">19103774</a>]<br></li>
+<li>Thus , the transcription of the ompD gene is dependent on positive activation by the cAMP/Crp complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>Here we show that both the Crp / cAMP and the ArcA/ArcB systems regulate expression of the pocR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+<li>Here we provide in vivo evidence that the TcuR protein uses tricarballylate as its co-inducer for transcription of the tcuABC operon , and that the catabolite repression protein ( Crp ) negatively regulates expression of the operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19284970" target="_blank">19284970</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

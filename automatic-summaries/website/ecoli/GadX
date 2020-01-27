@@ -1,0 +1,861 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - GadX</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">GadX</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">GadX transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The percent survival of cells containing pGAD10 , pGadXY , pGadX , and pGadY in the pre-sence of 1.3 ng/ml of His6-tagged ColE7/ImE7 were 41.7 , 95.5 , 71.4 , and 73.5 % , respectively , and 1.5 , 63.9 , 3.6 , and 9.1 % , respectively , in the presence of 2.6 ng / ml of His6-tagged ColE7/ImE7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>DNA probes encompassing the gadA , gadBC , and gadC promoter regions ( see Materials and Methods ) were used in pro-tein-binding assays with increasing amounts of the MalEGadX protein in the presence of a 500-fold molar excess of poly ( dI-dC ) as the competitor ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Genes induced at the onset of stationary phase with s - dependent expression as identiﬁed by microarray analyses Functional Mean WT d Ratio classa valueb ( WT/rpoS ) Regulation SDc Gene Gene product Starvation and stress response genes dpsS DNA protection protein , bacterial ferritin IHFS , OxyRS , rssBTC , MMC , PQ , NaSal , Lrp , BG , DHCP , OS FisS , NaSal , Lrp , OS CRPS , LrpS , IHFS , H-NSS , arcBTC , MMC , Lrp , Rcs , BG , DHCP ompR/envZTC , CD uvrYTC , arcBTC SSR 1,597 2.5 0.4 osmES osmYS Stress-inducible outer membrane lipoprotein Hyperosmotically inducible periplasmic protein Induced by phosphate-starvation Superoxide dismulase precursor ( Cu-Zn ) SSR SSR 1,728 424 9.6 4.4 2.1 1.3 656 459 psiF sodCS 4.8 2.7 0.4 0.5 SSR Protein synthesis rpsVS infA Amino acid transport and metabolism artP artI 5.2 2.8 FISS , IHFS , ppGppS 2.7 0.8 30S ribosomal subunit protein S22 Protein chain initiation factor IF-1 3,466 1,011 PS PS Arginine transport , ATP-binding component Arginine transport , periplasmic binding protein L-Asparagine permease Dihydroxyacid dehydratase Tryptophanase AATM AATM 714 346 2.6 0.7 PQ , NaSal , Lrp 3.8 1.9 PQ , Lrp ansP ilvD tnaA AATM AATM AATM 572 364 DHCP ompR/envZTC 2.5 4.8 0.4 2.1 4.3 phoQTC , ompR/envZTC , CRP , uvrYTC , arcATC , arcBTC , rcsBTC , citABTC , MMC , PQ ( ilvG : Lrp ) NaSal , Lrp , BG , DHCP , OS 13.7 7,808 wrbAS Flavodoxin-like protein ; binds the trp repressor SSR 364 5.0 2.0 Iron uptake and storage bfr entD Carbohydrate metabolism crr Bacterioferrin , iron storage homoprotein Enterochelin synthetase , component D IUS IUS 905 508 5.1 2.1 DHCP , ryhB RNA 4.2 0.5 acrBTC Phosphotransferase system , glucose-speciﬁc IIA component Fructose 1,6-bisphosphate aldolase ( b2097 ) Glyoxylate-induced protein Putative oxidase , glycolate utilization ( b2977 ) Glucosamine-6-phosphate deaminase Phosphofructokinase-2 Transaldolase A CHM 443 2.7 0.6 CD 1,264 1,097 CHM 4.6 3.6 3.0 2.6 2.5 2.9 1.4 1.0 1.7 0.6 2 1.8 MMC , Lrp kdpABCDETC fbaB gip uvrYTC , arcATC , arcBTC ompR/envZTC , arcBTC MMC , CD , DHCP rssBTC , MMC , DHCP , CreBC CHM CHM CHM CHM glcG nagB pfkB talA Miscellaneous function or unknown function deoD moeB msyB yafN yahOS ybgA 3.0 1.2 4.0 0.1 2.2 1.7 4.8 3.4 6.1 2.6 4.5 4.5 349 Purine nucleoside phosphorylase Molybdopterin biosynthesis NM CB 1,100 2,038 CD , Lrp , DHCP MMC , GadX Lrp Membrane protein , protein export ( b1051 ) Hypothetical ( adherence ) protein ( b0232 ) Hypothetical protein ( b0329 ) Hypothetical ( inner membrane ) protein ( b0707 ) Putative enzyme ( b0865 ) Hypothetical protein , bioﬁlm dependent ( b1481 ) Hypothetical protein ( b1724 ) Hypothetical protein ( b2427 ) Putative dehydrogenase protein ( b2660 ) Putative immunogenic protein ( b2922 ) Putative transport periplasmic protein ( b3020 ) Hypothetical ( outer membrane ) protein ( b3024 ) Hypothetical ( regulatory ) protein ( b3555 ) Hypothetical protein ( b4045 ) Hypothetical ( membrane ) protein ( b1582 ) Hypothetical ( periplasmic ) protein ( b3097 ) Hypothetical protein ( b4217 ) MF ( MF ) rssBTC , baeSRTC , atoSCTC , Lrp ybjP yddX 2.5 1.4 4.2 4.2 1,317 376 ( EF ) rssBTC , OS ompR/envZTC ydiZ yfeT ygaF yggE ygiS 1.7 0.9 0.5 1.7 0.8 3.1 3.5 2.8 4.8 2.7 436 rssBTC , NarXLTC rssBTC , MMC ; Rcs , phoQP ( EF ) ( MF ) rssBTC , citABTC , arcATC , NaSal ( MF ) ygiW 1.9 4.0 892 rssBTC , ntrBCTC , NaSal yiaG yjbJ ynfA yqjC ytfK 0.5 1.2 1.1 1.3 3.0 2.7 4.5 3.5 5.9 3.9 1,227 601 3,334 1,121 556 ( MF ) PQ , Fur , BG a SSR , starvation and stress response ; PS , protein synthesis ; AATM , amino acid transport and metabolism ; IUS , iron uptake and storage ; CHM , carbohydrate metabolism ; NM , nucleoside metabolism ; CB , cofactor biosynthesis ; MF , membrane function ; EF , extracellular function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489429" target="_blank">15489429</a>]<br></li>
+<li>Among these predicted targets under the direct control of RgrR , as many as 11 genes are included , including PgrR , LeuO , YagP , MarR , YpdA , XapR , YhgF , GadX and IdnR ( indicated in star in Table 1 ) , indicating that a number of genes must be regulated indirectly by PgrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>In this case , form II appeared to be prevalent , but the binding afﬁnity of the promoter was apparently lower than that of PgadA , as indicated by the fact that a substantial amount of the PgadB remained unbound in the presence of 10 pmol of MalE-GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Thus , while complex I is stably retained up to saturating concentrations of MalE-GadX , complexes II and III appear to be mutually exclusive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>In fact , it is reasonable to imagine that at low concentrations of GadX ( 0 -- 25 nM ) , heterologous H-NS-GadX-DNA complexes , which are transcriptionally inactive , are formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>For example , in steady-state cultures , as aerobiosis increased , the excretion of acidic fermentation end-products decreased [ 4 ] , and the acid responsive regulators EvgA and GadX exhibited correspondingly lower activities ( figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Chimeric MalE-GadX was found to activate the gad system in vivo , although to a much lesser extent than the wild-type GadX protein , as expressed from pQEgadX and pBsX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>The induction of mdtE by indole is independent of the EvgSA two-component signal transduction system that regulates the mdtE gene , but mediated by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>The global regulator cyclic AMP receptor protein ( CRP ) administers additional control over GadX production , tying it to the carbon energy state of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>The higher concentration of cobalamin in cytoplasm will initiate riboswitch mechanism to repress the translation of BtuB receptor , which is in good accord with the repression of btuB transcription by the acid-induced GadX for bacteria to decrease the production of BtuB in response to this acidic stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Altogether , these data demonstrate that acetylation of lysine 154 of RcsB impairs its function , affecting flagella biosynthesis and B A flhDC FlhDC RcsB RcsA fliLMNOPQR fliE flgMN flgKL fliFGHIJK fliC 1 -3 -2 -1 0 2 3 4 flgAMN FlgM CobB flgBCDEFGHIJK RcsB RcsB AcK Acetyl-P motAB cheAW flhBAE Signal transduction Response to external stimulus fliDST FliA fliAZY Chemotaxis Locomotion Ciliary or flagellar motility Cell motility Cellular component organization or biogenesis Cellular component organization Response to chemical stimulus Cell projection organization Response to pH Metabolic process Cellular metabolic process Cellular response to stress Response to stress Response to abiotic stimulus Response to DNA damage stimulus Cellular catabolic process Catabolic process Small molecular metabolic process Carboxylic acid metabolic process Small molecule catabolic process Carboxylic acid catabolic process C GadX RcsB GadE GadX RcsB GadE RcsB GadE gadE mdtEF gadA gadX slp dctR gadBC cadBA GadW gadW hdeAB ydeP hdeD Figure 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25518064" target="_blank">25518064</a>]<br></li>
+<li>The data also showed that each protein binds strongly to the 20 bp Gad box region , although GadX can weakly bind adjacent areas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>Since GadX control over gadE appeared to require the region upstream of 2360 bp , we tested whether GadX , purified as a maltose-binding fusion , could bind to this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>This binding could inhibit GadX activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Discussion In this study , we performed a genome-wide search for a regulator of multidrug resistance in E. coli by random shotgun cloning and discovered GadX , which upregulates mdtEF , thereby increasing resistance to β-lactams , erythro-mycin , rhodamine 6G , and SDS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Here , we report that the AraC-family regulator GadX increases multidrug resistance in E. coli through activation of the MdtEF efﬂux pump .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+Ma , Z. , Richard , H. , and Foster , J.W. ( 2003 ) pH-dependent modulation of cyclic AMP levels and GadW-dependent repression of RpoS affect synthesis of the GadX regulator and Escherichia coli acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>Ma , Z. , Richard , H. , and Foster , J.W. ( 2003b ) pH-dependent modulation of cyclic AMP levels and GadW-dependent repression of RpoS affect synthesis of the GadX regulator and Escherichia coli acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_22">
+Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19861135" target="_blank">19861135</a>]<br></label>
+<input id="act_similarity_22", type="checkbox">
+<div class="ACT_similar">
+<li>Richard , H. , and Foster , J.W. ( 2007 ) Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>Richard , H. and Foster , J.W. ( 2007 ) Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20189963" target="_blank">20189963</a>]<br></li></div>
+<li>The inability of GadX to induce yhiE might explain its lack of acid resistance induction in exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Not only CarA and CarB , but also GadX and GadC , are required for acid resistance , for maintenance of the intracellular pH homeostasis under external acidic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Acid resistance appears to contribute to the low infectious dose of pathogenic E. col and aids the gastric passage of commensal strains .28,29 One of the most efﬁcient acid resistance systems in E. coli , the Gad system , is based on the coordinated action of two isoforms of glutamate decarboxylase ( GadA and GadB ) and of a speciﬁc glutamate/gamma-aminobutyrate antiporter ( GadC ) .30,31 The gadA/BC genes , activated in response to acid stress and in stationary phase cells , are subject to complex circuits of regulation involving the AraC-family regulator GadX .32 In this study , we show that GadX contributes to multi-drug resistance as well as acid resistance in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Identiﬁcation of the effectors involved in GadX activation and further investigation of the interactions between regulatory components of the gad system ( H-NS , RpoS , CRP , and GadX ) may provide further insight into the molecular circuitry underlying the glutamic acid-based acid stress response of E. coli A. Tramonti and P. Visca contributed equally to this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Such an autoregulatory loop would imply that expression of both GadA and GadX is coordinated and responsible for superinduction of the whole gad system ; primary stimuli ( stationary phase and acid ) acting on PgadX would lead to increased expression of GadX and , in turn , to an ampliﬁcation of the response through GadX-de-pendent activation of the gadAX and gadBC promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Interestingly , the gadBC operon coding for both components ( glutamic acid decarboxylase and cognate antiporter ) , necessary for gad system functioning , is more stimulated than gadA by GadX , thereby providing a prompt response to the acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>In addition , gadE-mtdEF belongs to the AFI and was shown to be controlled by GadX and GadW ( Kobayashi et al. , 2006 ; Sayed et al. , 2007 ) , while ybaST is not included in the AFI but is known to be signiﬁcantly induced under acidic conditions and to belong to the GadX -- GadW regulon ( Tucker et al. , 2002 ; 2003 ; Hommais et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>12.38 -8.24 -59.96 1.13 ± 0.55 ± 0.50 ± 0.02 0.04 0.02 1.27 ± 0.50 ± 0.20 ± 0.03 0.03 0.03 / h ) / h ) Fig. 2 Comparison of the transcript levels of the E. coli wild type under different pH values at 7.0 and 6.0 : a global regulatory genes , b PhoB regulatory genes , c acid-inducible genes , d metabolic pathway genes , e respiratory chain genes during micro-aerobic continuous culture at the dilution rate of 0.1 h -1 Fig. 3 a , b Overall metabolic regulation of the E. coli during acidic condition ( a ) Acid Condition Hns ATP ADP PhoQ PhoQ P ATP ADP ¬ EvgS EvgS P cAMP - evgA Pho P PhoP Crp EvgA P B1500 EvgA cAMP-Crp ¬ RpoS b1500 ydeo ¬ YdeO gadE GadE O O GadW GadX hdeA gadB gadc gadW gadA gadX HdeA GadA GadB GadC Acid resistance ( b ) Acidic Condition ( H + ) ( indirect ) EnvZ PhoR fnr OxyR ldhA arcA P Fnr ArcA SoxR / S L PhoR - P OmpR OmpR - P DH pfl yfiD ompC TCA cycle genes : gltA sdhC mdh sodA PhoB - P PhoB Lactate OmpC ompF asr YfiD Pfl OmpF Asr Formate Acetate ackA pta Acid resistance Moreover , in accord with the proteomic analysis , the expression of yﬁD : : lac reporter fusion and the intracellular content of YﬁD were found to be high during growth at low pH for both aerobic and anaerobic cultures ( Neil et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>Thus , in the present study , we ﬁrst examined whether previously identiﬁed regulators , such as EvgA , YdeO , MnmE , GadE , GadX , and H-NS , also participate in the anaerobic activation of mdtEF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>Interestingly , except for mnmE , deletion of the regulators previously shown to participate in the regulation of mdtEF under aerobic condition , such as EvgA , YdeO , GadE , and GadX , caused no or only a moderate decrease ( 17 -- 40 % ) of the transcription of PgadE-lacZ , and deletion of H-NS caused a moderate increase of PgadE-lacZ activity , suggesting that these regulators are not responsible for the activation of mdtEF under anaerobic condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>Involvement of EvgA , YdeO , H-NS , CRP , GadX , as well as a small RNA DsrA in the regulation of the mdtEF gene in the same operon has also been reported ( Nishino and Yamaguchi , 2002 , 2004 ; Oshima et al. , 2006 ; Nishino et al. , 2008a , b , 2009 , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>These include the EvgA-YdeO-GadE feed forward regulatory loop which is effective in minimal glucose medium under aerobic condition ( Ma et al. , 2004 ) , the conditional activation of the operon in a MnmE dependent manner in LB containing glucose ( LBG ) ( Gong et al. , 2004 ) , as well as the GadX or GadW dependent activation which functions primarily in rich media in stationary growth-phase ( Sayed et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>GadX binds to the gadE control region Regulators EvgA , YdeO and GadE bind to subfragments of the 798 bp gadE upstream control region ( Ma et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Regulation of gadE expression involves such regulators as EvgA , YdeO , GadE , PhoP , TrmE , GadX , and GadW ( 12 , 21 , 24 , 30 , 33 ) , which makes GadE the center of regulation for the induction of acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>More than ten transcription regulators including EvgA , YdeO , GadE , TorR , H-NS , PhoP , RpoS , CRP , MnmE , GadX , and GadW have been found to participate in the regulation of gadE during various circumstances of acid stresses through at least ﬁve different regulatory circuits ( Ma et al. , 2004 ; Sayed and Foster , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>INVOLVEMENT OF DIFFERENT REGULATORS IN THE ANAEROBIC EXPRESSION OF mdtEF FROM THAT OF AEROBIC CONDITION Previous studies focusing on the expression of gadE-mdtEF operon during acid resistance have revealed that several regulators , such as EvgA , YdeO , MnmE , GadE , GadX , CRP , and H-NS , are involved in the regulation of gadE-mdtEF operon ( Gong et al. , 2004 ; Ma et al. , 2004 ; Hirakawa et al. , 2006 ; Tramonti et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>Given the role of GadX in activating genes involved in glu-tamate-dependent AR , more speciﬁcally , the diminished induction in gadX mutants , the decrease in acid tolerance shown by gadX and gadX-gadW mutants was expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Data revealed that YdeO and GadX activate P3 , P2 and P3P2 , while GadE autoactivates P1 and represses P3 and P3P2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>In contrast to the effect of YdeO and GadX on the P2 and P3 promoters , overexpression of GadE , as predicted , did not activate P2 , P3 or the combined P3 P2 fusions in Salmonella during exponential-growth ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>All of the genes and operons identiﬁed in this study fulﬁll the criteria established for inclusion in the GadX regulon : they were all induced by acid and regulated by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>GadX activates some of the YdeO-regulated genes but does not activate yhiEUV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Several genes induced by overexpression of YdeO and GadX overlapped ; however , yhiE was induced only by YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Many of the YdeO-activated genes were also activated by GadX , whereas yhiEUV were induced only by YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>The fusions were transferred to Salmonella , which lacks this AR system , and plasmid-borne E. coli-speciﬁc regulators EvgA , YdeO , GadE and GadX were introduced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>Our results suggest that the gad system is positively regulated by at least two AraC/XylS-type regulators , YdeO and GadX , and also suggest that EvgA and YdeO regulate acid resistance genes more globally than GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>However , even if we could not rule out some false positives , our results showed that several genes could be identiﬁed as signiﬁcantly induced at low pH , demonstrating that GadE and GadX act as transcriptional-activators of genes of the H-NS regulon under acidic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>This suggests that overexpression of either GadX or GadE alone , in an FB8 genetic background , is not sufﬁcient to induce expression of genes involved in the bacterial response to low pH when cells are grown at neutral pH. Overexpression of gadX signiﬁcantly induced the expression of 48 genes of the H-NS regulon ( Table 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>This further supports a role for GadX in the positive regulation of genes involved in low pH response , especially in the presence of glutamate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>In addition , gel mobility shift assays demonstrated that GadE could be autoregulated , and regulated GadX , suggesting that an indirect effect of GadE on the transcriptional control of some of the target genes identiﬁed here could not be ruled out .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>On the other hand , genes encoding several transcriptional factors , such as Fur , RcsA , SoxS , and ZraR , are up-regu-lated , and others , such as GadE , GadX , GcvA , and MetR , are down-regu-lated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16418169" target="_blank">16418169</a>]<br></li>
+<li>However , as indole obviously does not cause acidiﬁcation of the medium , our results indicate that GadX responds to indole even under non-acidic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>Thus , GadX appears to function as a transcriptional-activator under acidic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>This can again be attributed to an increase in GadX levels , which leads to an increase in gadY transcription and indirectly affects gadW P2 promoter activity , and also a decrease in gadW transcription from the P1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>When H-NS repression is relieved , GadX levels increase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The observed increase in the gadW P1 transcript is probably due to the removal of GadX repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The increase in the lower band could also be the result of increased gadW transcription due to increased GadX levels or could correspond to other gadX-gadW fragments derived from processing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21147125" target="_blank">21147125</a>]<br></li>
+<li>It can therefore be argued that GadX is not involved in activation of transcription arising from PgadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Indeed , as GadX is synthesized and its concentration rises over a threshold level , it can successfully relieve H-NS repression at the gadA promoter ( as shown in Fig. 7A , a ratio GadX : H-NS ranging between 1:10 and 1:20 is required to alleviate the H-NS-dependent inhibition ) , further causing its own production from the dicistronic gadAX mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>H-NS is still capable of repressing gadA transcription in the presence of low concentrations of GadX ( below 25 nM ) , thus significantly counteracting the GadX-dependent activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Furthermore , it is important to notice that the activation of gadA transcription by GadX in the absence of H-NS is not cooperative , whereas it shows a substantial degree of cooperativity in terms of effects in the presence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Therefore , possible antagonistic effects between GadX and H-NS , resulting in activation/repression of gadA gene , have been investigated in vitro by monitoring promoter activity in the presence of both purified proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>This observation is in line with the finding that even at the highest GadX concentration tested , in vitro gadA promoter activity in the presence of H-NS never attains the values obtained with GadX alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Although gadA transcription is stimulated more than 2-fold by GadX alone and strongly repressed ( up to 70 % ) by H-NS alone , as also shown in Figs. 4 and 6 , the effect of simultaneously adding both proteins to the reaction mixture gives rise to the gadA transcription profiles shown in Fig. 7A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>The GadX-dependent stimulation , without and with different amounts of H-NS , is more apparent when data from Fig. 7A are plotted as the relative increase ( - fold ) of gadA transcription versus GadX concentration ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>The authors observed that the increase in gadA transcription , obtained as an indirect effect of counteracting H-NS inhibition , was greater than the direct stimulation of gadA transcription in the presence of GadX alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Interestingly , the indirect effect , by counteracting H-NS inhibition , is more productive than the direct stimulation of gadA promoter activity by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>The signal GTPase MnmE is required for P2 expression in LB glucose The induction of gadE , gadA/BC , and AR all exhibit RpoS and GadX dependence during growth in LB medium , but become independent of both when grown in glucose-supplemented LB ( Castanie-Cornet et al. , 1999 ; Gong et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>The cAMP receptor protein ( CRP ) also plays a role in this RpoS-GadX pathway by tempering expression of RpoS during growth under conditions that result in high cAMP levels ( Ma et al. , 2003b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>Elevated RpoS levels , in turn , increase expression of GadX , which increases expression of gadE ( Zhou and Gottesman , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>That the degree of increase in the expression levels of regulator genes was relatively lower than that of mdtEF ( 41-fold ) may be due to the fact that GadX acts as a dimer in transcriptional regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>The transcriptional-regulator GadX also induces gadE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Since GadX is a known transcriptional-regulator [ 14-16 ,18,19,42 ] , the decrease in BtuB expression is due to its transcriptional repression by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>The expression of this small RNA is highly induced during stationary phase in a manner that is dependent on the alternative sigma factor S. Overexpression of the three GadY RNA forms resulted in increased levels of the mRNA encoding the GadX transcriptional-activator , which in turn caused increased levels of the GadA and GadB glutamate decarboxylases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466020" target="_blank">15466020</a>]<br></li>
+<li>Since indole induces the expression of mdtEF via transcriptional-regulator GadX ( 5 ) , we examined whether the growth-phase-dependent induction of mdtEF is mediated by gadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>In summary , the growth-phase-dependent control of mdtEF was mediated through modiﬁcation of the amounts of RpoS-dependent small-RNA GadY and transcriptional-regulator GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>Growth phase-dependent elevation of mdtEF expression was found to be mediated by the stationary-phase factor rpoS and the RpoS-dependent signaling pathway , Hfq , GadY , and GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>GadX , Hfq , and RpoS are essential for indole-induced mdtEF expression , and the expression is induced via rpoS , gadY , and gadX up-regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>This would mean that the intracellular GadX level is sufﬁcient to activate transcription of the chromosomal copies of the gad structural genes , including gadC , resulting in increased expression of the GadC antiporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>We provide evidence that GadX is a DNA-binding protein which recognizes the promoters of gadA and gadBC genes to a different extent and that GadX expression results in upregulation of target genes during exponential-growth in rich neutral medium , i.e. , when the gad system is normally repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>To correlate GadX expression with the upregulation of gad structural genes , we expressed the gadX gene under the control of the heterologous T5-lacO promoter-operator element and monitored transactivation of gad structural genes under conditions in which the gad genes are not expressed , i.e. , during exponential-growth in LB medium at pH 7.4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Many AraC-like regulators bind ligands that alter their function ( 5 ) , but whether or not GadX or GadW binds speciﬁc cytoplasmic ligands remains unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Glucose induction of P3 and P3P2 is independent of YdeO , GadXW , EvgAS and Crp We then asked whether any of the E. coli-speciﬁc regulators YdeO , GadX , GadW or EvgAS were needed for glucose-dependent induction of P3P2 -- lacZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>GadX and GadW appear to play a role in gadE induction regardless of whether glucose is present in the growth medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>GadX is known to induce various genes including gadA , hdeAB and yhiE under low pH conditions ( Masuda and Church , 2003 ; Ma et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>RcsB-dependent regulation of gadABC is not mediated by the regulation of gadEWX genes The expression of gadA and gadBC is regulated by a complex network involving notably the GadE , GadW and GadX regulators ( Ma et al. , 2003 ; see Foster , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185552" target="_blank">17185552</a>]<br></li>
+<li>The resulting increase in GadX somehow activates gadA and gadBC ( Giangrossi et al. , 2005 ; Ma et al. , 2002 ; Shin et al. , 2001 ; Tramonti et al. , 2002 , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Microarray studies indicate that GadX may actually activate gadE , which , in turn , would activate gadA and gadBC ( Hommais et al. , 2004 ; Tucker et al. , 2003 ; Weber et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The AraC-like regulator GadX , for example , is needed to activate the gadA/BC genes only when cells are grown in complex media , not in minimal salts media ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867448" target="_blank">12867448</a>]<br></li>
+<li>The AraC-family regulators GadX and GadW , previously found to activate gadA/BC in vitro , are now shown in vivo to directly activate gadE expression , which , in turn , activates the gadA/BC genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The goal is to increase the production of the GadX regulator , which , in turn , activates gadA/BC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>GadX transcriptionally activates GadA and GadB expression , and some studies suggest that GadW acts as a repressor to oppose this action ( 24 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466020" target="_blank">15466020</a>]<br></li>
+<li>GadX activates expression from PgadA , while GadW inhibits expression ( in the presence of GadX ) from PgadA and PgadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Within the S-dependent circuit during the stationary phase of growth , either in rich or in minimal medium , the increase in gadA and gadBC transcription requires GadX , which directly binds the gadA and gadB regulatory regions and , under some circumstances , acts in combination with GadW ( 8 -- 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>This hypothesis is supported by the ﬁnding that in minimal medium under fermentative growth conditions and independent of the pH , GadW repression of gadA and gadBC is not due to inhibition of GadX and the latter protein is responsible for gadW repression ( 20 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>Consistent with this interpretation , the abundance of transcripts encoding the acid-responsive regulators of gadA , gadBC , and hdeAB expression , GadE and GadX , decreased as aerobiosis increased ( Tables 3 and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21252224" target="_blank">21252224</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Overexpression of either EvgA or GadX induced the expression of gadA , gadBC , and hdeABD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Another unusual aspect of GadW is seen in Fig. 6A and B. Whereas removing GadW allowed GadX to activate gadA-lacZ expression at both growth pH values , removing GadX allowed W to activate expression only at pH 8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Unlike LB , where they were needed to activate gadA/BC , GadX and GadW acted as negative regulators in minimal media ( in exponential phase ) such that removing them allowed additional , acid-induced expression ( Fig. 1E , lanes 1 and 2 versus 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>However , when GadW was removed through mutation , GadX activated gadA and gadBC expression under acid or alkaline conditions ( Fig. 2A , lanes 5 and 6 versus lanes 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Thus , the mechanism by which GadX activates gadA and gadB is unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>One model , discussed brieﬂy above , is that GadW might bind gadA and gadBC promoters best when cells are grown at pH 8 , which either prevents GadX from binding or attenuates GadX activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>It seems that , while either GadX or GadW can induce gadA and gadBC , when both AraC-like regulators are present , they inhibit each other 's function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>It represses the expression of gadX and inhibits the activation of gadA and gadBC by GadX [ 15,18,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>GadX levels increase and overcome repression of gadA and gadBC by GadW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadX , however , activates only gadA and gadBC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadW clearly represses gadX and , in situations where GadX is missing , activates gadA and gadBC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>However , when GadX is missing , GadW could inadvertently activate gadA and gadBC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>An interesting question is why does GadW , in the absence of GadX , activate gadA and gadBC only at pH 8 ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Thus , GadX serves as an activator of gadA and gadBC , while GadW can inhibit activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadW inhibits activation of gadA and gadBC by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Thus , GadW is a negative regulatory protein that inhibits the activation of gadA and gadBC by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Results we report elsewhere indicate that GadW inhibits the GadX-dependent activation of gadA and gadBC transcription , yet GadW activates their transcription in the absence of GadX ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>GadX activates expression of gadA and gadBC at any pH , while GadW inhibits GadX-dependent activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Thus , we propose a complex regulatory cascade in which global regulators ( RpoS , CRP , HN-S , EvgA , etc. ) inﬂuence the expression levels and/or activities of GadX and GadW , which in turn activate the expression and/or activities of transcription activators ( e.g. , YdeO and YhiE ) that directly activate subsets of target genes involved in AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The gadA/BC genes , activated in response to acid stress and in stationary phase cells , are subjected to complex circuits of regulation involving 70 , S , cAMP receptor protein , H-NS , EvgAS , TorRS , GadE , GadX , GadW , and YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Transcription of hdeAB depends on complex circuits of regulation involving RpoD ( 70 ) , RpoS ( 38 ) , H-NS , cyclic AMP receptor protein , GadE , GadX , GadW , GadY , EvgAS , YdeO , Lrp , MarA , SoxRS , TorRS , and TrmE , among other regulators ( see Fig. 1 and references in the legend ; see Fig. 2 for the DNA binding sites of some of these regulators in the hdeAB promoter ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>In the merodiploid strain , GadX and + GadW stimulate the wild-type gadE allele , and the resulting GadE protein activates the 2360 and 2195 gadE -- lacZ fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>GadW , though less effective than GadX , still activated gadE -- lacZ between four - and fivefold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Moreover , repression of hdeAB by MarA was greater in the absence of GadX or Lrp in exponential phase at pH 7.0 and in the absence of GadW or RpoS in stationary phase at pH 5.5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>In turn , MarA enhanced repression of hdeAB by H-NS and hindered activation by GadE in stationary phase and also reduced the activity of GadX , GadW , RpoS , and Lrp on hdeAB under some conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>Promoters P3 and P2 can be activated by GadX and GadW during growth to stationary phase , or by YdeO during log-phase growth in minimal medium below pH 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>GadE was the main activator of hdeAB in LB medium under all the conditions studied , whereas GadX repressed or activated hdeAB depending on the growth conditions , and GadW repressed hdeAB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>The different effects that GadX and GadW had under diverse conditions , sometimes opposite to that of GadE , support the idea that they can regulate hdeAB independently of GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>GadX and GadW initially appeared to activate and repress the core gad genes , depending on the situation ( 13 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>GadX and GadW have been reported to activate and repress these promoters under different conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">GadX protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The b-galactosi-dase activity of cells containing pCB1285lacZ and pGadXY , pGadX , or pGadY was compared to those containing pGAD10 and pCB1285lacZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>If the T25-GadX and GadX-T18 hybrids dimerize in vivo , the two CyaA fragments will be brought together , reconstituting an active adenylate cyclase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Gene product OD 4a NaClb pH 5c Metabolism ( 26 ) adhP b1478 b1927 b3012 b2097 b2661 b1619 b2720 b0186 b1469 b1467 b0871 b4051 b2464 b1519 b2465 b3449 b0485 Alcohol dehydrogenase , propanol preferring Cytoplasmic alpha-amylase 5.38 12.21 4.37 8.00 4.81 2.71 10.67 3.76 2.75 5.24 17.67 2.39 6.79 2.76 14.08 2.30 14.05 9.19 11.02 6.33 9.61 4.08 6.97 24.06 3.72 3.62 5.70 45.89 2.73 13.08 8.68 35.87 3.69 9.46 3.43 10.57 2.37 9.33 2.89 2.43 9.11 3.88 2.07 4.57 29.60 2.64 13.83 3.53 10.76 2.01 2.70 amyA dkgV fbaB gabD hdhA hycF IdcC narU narY poxB qor talA tam tktB ugp ybaS ybaY ycaC yfcF ygjG yhfW yjcS yjgB yncG 2,5-Diketo-D-gluconate reductase A Fructose-bisphosphate-aldolase-class I Succinate-semialdehyde-dehydrogenase NADP dependent alpha-hydroxysteroid dehydrogenase , NAD dependent Hydrogenase 3 , putative quinone oxidoreductase , FeS related Lysine decarboxylase 2 , constitutive Nitrate extrusion protein Nitrate reductase 2 , beta-subunit Pyruvate dehydrogenase/oxidase : FAD and thiamine PPi-binding Quinone oxidoreductase , NADPH dependent Transaldolase A Trans-aconitate methyltransferase Transketolase 2 , thiamin binding , isozyme Glycerophosphodiester phosphodiesterase , cytosolic Putative glutaminase/carboxypeptidase with beta-lactamase/D-Ala-carboxypeptidase domain Glycoprotein/polysaccharide metabolism Putative enzyme with cysteine hydrolase domain Putative glutathione S-transferase enzyme with thioredoxin-like domain Putrescine :2 - oxoglutaric acid aminotransferase Putative phosphopentomutase , alkaline phosphatase-like domain Putative enzyme with 2 metallohydrolase/oxidoreductase domains Putative alcohol dehydrogenase with NAD ( P ) - binding and GroES domains Putative glutathione S-transferase with thioredoxin-like and glutathione Stransferases , C-terminal domain Putative dienelactone hydrolase b0453 b0897 b2301 b3073 b3380 b4083 b4269 b1454 6.15 13.34 2.55 8.93 4.00 10.73 6.98 3.42 8.67 5.92 2.44 16.90 6.67 10.38 10.80 13.77 6.09 5.88 2.40 7.45 4.46 4.71 7.40 3.64 ysgA b3830 2.69 2.27 3.68 Regulation ( 11 ) bolA b0435 b1217 b2664 b3515 Transcriptional activator of morphogenic pathway ( BolA-family ) , important in general stress response Cation transport regulator Putative transcriptional repressor with DNA-binding winged helix domain ( GntR-family ) Transcriptional-regulator for GadX ( regulatory protein ) , glutamic acid decarboxylase ( GadA , - B ) , and glutamate transport protein ( GadC ) ( AraC-XylS family ) Transcriptional-regulator for glutamic acid decarboylase and transporter ( GadA , GadBC ) ( AraC/XylS-family ) RNase II modulator with PYP-like sensor domain Transcriptional repressor for pyruvate dehydrogenase complex ( GntR-family ) Response regulator involved in protein turnover , controls stability of RpoS Flavodoxin-like protein , trp repressor-binding protein Putative-transcriptional-regulator with DNA-binding domain Putative regulator with homeodomain-like DNA-binding domain ( TetR/AcrR-family ) 4.77 3.38 4.30 3.09 4.74 3.36 4.84 6.12 8.47 5.54 10.09 5.98 chaB csiR gadW gadX gem pdhR rssB wrbA yiaG yjdC b3516 b1285 b0113 b1235 b1004 b3555 b4135 6.09 6.78 5.01 4.68 9.38 8.40 2.49 7.45 3.83 3.42 7.19 6.83 9.20 2.34 3.14 6.94 2.86 4.08 14.77 4.08 2.46 Transport and membrane ( 20 ) artM artP blc eutH gabP mscL potF rssA ugpB b0861 b0864 b4149 b2452 b2663 b3291 b0854 b1234 b3453 2.61 4.71 8.10 2.59 2.83 2.59 2.24 2.26 3.29 2.79 4.56 8.99 3.06 4.70 2.31 4.25 3.19 5.55 2.20 3.50 4.77 3.11 4.06 2.94 2.76 2.50 3.29 Arginine transport protein ( ABC superfamily , membrane ) Arginine transport protein ( ABC superfamily , ATP-binding subunit ) Outer membrane lipoprotein ( lipocalin ) Putative transport protein , ethanolamine utilization Gamma-aminobutyrate transport protein Mechanosensitive channel Putrescine transport protein ( ABC superfamily , periplasmic-binding-protein ) Putative transmembrane protein Sn-Glycerol 3-phosphate transport protein ( ABC superfamily , periplasmic-binding-protein ) Sn-Glycerol 3-phosphate transport protein ( ABC superfamily , ATP-binding subunit ) Putative transport protein , integral membrane location Putative transmembrane protein ( N terminal ) ; putative phosphatase ( C terminal ) Putative transport protein ( ABC superfamily , periplasmic-binding-protein ) Putative multidrug resistance membrane protein Putative membrane protein Putative membrane protein Putative permease ( PerM family ) Putative membrane protein Putative transmembrane protein Putative transport protein ( YqaE family ) ugpC ybiO ybiP ydcS ydhJ yeaY yebS yhhT yhiD yphA yqaE 2.39 8.49 7.73 21.66 2.21 2.43 2.08 2.30 4.11 2.35 2.42 b3450 b0808 b0815 b1440 b1644 b1806 b1833 b3474 b3522 b2543 b2666 2.44 2.02 2.43 4.36 2.22 4.06 2.48 2.92 7.24 2.53 3.16 2.50 4.51 5.89 4.83 4.29 3.21 2.50 3.89 5.93 3.38 4.78 Continued on following pag TABLE 1 -- Continued Ratio Function ( reference ) and gene b no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>At higher protein-DNA ratios , the coexistence of both forms I and III ( Fig. 7 , left panels ) indicates that MalE-GadX can occupy either one or three of four sites at the same time .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Such bending may bring the activator protein , GadX or GadW at around position 220.5 , into contact either with the RNA polymerase or with an additional factor binding in the nucleotide region close to the 35 sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>In doing so , we expected the C-terminal portion of GadX not to be affected by physical hindrance of fused MalE , thereby retaining the helix-turn-helix domains competent for interaction with target DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Therefore , it is possible that speciﬁc nucleotides must be present at the indicated positions in each site to allow for the correct binding of the recognition helix by the relevant HTH motif in each GadX ( GadW ) subunit , and any mutation may affect the overall binding affinity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The length of the binding site suggests that GadW and GadX bind as dimers to the gadA promoter region , with the recognition helix of each of the four helix-turn-helix motifs occupying one of four consecutive DNA major grooves .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>GadW is 60 and 30 % homologous to GadX in the DNA-binding and dimerization domains , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>This observation is in line with a report showing that GadX and GadW , via their N-terminal domains , form not only homodimers but also heterodimers ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>This feature , which has previously been reported for a number of proteins of the AraC/XylS-family ( 13 , 26 , 33 ) , led us to use the soluble MalE-GadX fusion protein for preliminary in vitro DNA-binding studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Therefore , we split each binding site into two ; each half-site ( shown in Fig. 11A ) was of sufficient length ( 21 bp ) to allow the binding of the two HTH motifs present in the C-terminal domain of a GadX ( or GadW ) monomer , as in the case of the AraC / XylS-like proteins ( Gallegos et al. , 1997 ; Egan , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Similar to other members of the AraC/XylS-family , GadX and GadW have an N-terminal domain that is composed of approximately 200 amino acids and is involved in dimerization ( Ma et al. , 2002 ; Tramonti et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>GadX and GadW are both members of the AraC/XylS-family ( PS01124 ) , which typically comprises ª300-amino-acid-long transcriptional regulators that bind an unusually extended 17 -- 21 bp sequence at target promoters via two helix -- turn -- helix ( HTH ) motifs localized within the 100-amino-acid-long C-terminal domain ( Gallegos et al. , 1997 ; Egan , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>GadW and GadX are members of the AraC/XylS protein family of transcriptional regulators , which are characterized by the presence in the C-terminal domain of two helix-turn-helix motifs ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">GadX evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>From the sequence alignment of GadX binding sites on btuB , gadA , and gadBC regulatory regions [ 42 ] , we found that sequence in the region I ( the 31 nucleotides ) has 62.5 % identity ( +52 - AGCGGTAAGGAAAGGTGCGAT-GATTGCGTTAT - +82 , underlined nucleotides indicate the protected region ) with gadBC and sequence in the region III ( the 26 nucleotides ) has 60.7 % identity ( +106 - AAGTCATCATCTCTTAGTATCTTAGATA - +133 , underlined nucleotides indicate the protected region ) with gadA regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>To simplify the puriﬁcation protocol of GadX and to overcome problems deriving from the poor solubility of AraC/XylS family proteins ( 15 ) , a soluble MalE-GadX fusion was used for in vitro studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>This feature , which has previously been reported for a number of proteins of the AraC/XylS family ( 13 , 26 , 33 ) , led us to use the soluble MalE-GadX fusion protein for preliminary in vitro DNA-binding studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>As a member of the AraC protein family , GadX is expected to bind speciﬁc sequence motifs located within or in the proximity of the target promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Evidence has recently emerged that the activation of the gad system is mediated by the GadX protein ( 17 , 30 , 34 ) , a member of the AraC/XylS family of transcriptional regulators ( 15 ) , encoded by the gadX gene ( formerly designated yhiX ) , located downstream of gadA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Similar to other members of the AraC/XylS family , GadX and GadW have an N-terminal domain that is composed of approximately 200 amino acids and is involved in dimerization ( Ma et al. , 2002 ; Tramonti et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>GadX and GadW are both members of the AraC/XylS family ( PS01124 ) , which typically comprises ª300-amino-acid-long transcriptional regulators that bind an unusually extended 17 -- 21 bp sequence at target promoters via two helix -- turn -- helix ( HTH ) motifs localized within the 100-amino-acid-long C-terminal domain ( Gallegos et al. , 1997 ; Egan , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>GadW and GadX are members of the AraC/XylS protein family of transcriptional regulators , which are characterized by the presence in the C-terminal domain of two helix-turn-helix motifs ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>GadX belongs to the AraC/XylS family of bacterial transcriptional regulators , known to be activators of functions as diverse as sugar catabolism , responses to stress , and virulence ( 15 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>BLASTP analysis ( 1 ) disclosed a substantial similarity between the GadX protein and a number of transcriptional regulators belonging to the AraC/XylS family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>The role of GadX , GadW , and YdeO , all of which are members of the AraC-like family of transcriptional regulators , is restricted to spe-ciﬁc circuits .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>GadW , like GadX , belongs to the family of AraC-like regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>The consensus binding sequences we used were the following : 5 WYAGGMWWWWDYTW YWWW for binding of GadE , GadX , and GadW ( gadbox [ 26 , 43 ] ) ; 5 YAGHA WATTWTDCTR for Lrp ( 11 ) ; and 5 CTGTTCATAT for TorR ( 2 , 40 ) ; where D is A , T , or G ; H is A , C , or T ; M is A or C ; R is A or G ; W is A or T ; and Y is C or T. Only sequences with 70 % or higher identity to the consensus sequences were selected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>The association of GadX and GadW in heterodimers is likely to occur because these proteins exhibit certain levels of sequence identity and similarity ( 14 % and 38 % ) in the N-termi-nal dimerization domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>The ﬁnding that GadX and GadW recognize the same site is in agreement with previous results ( Tramonti et al. , 2006 ) and is not unexpected because their C-terminal DNA-binding domains show high sequence identity and similarity ( 41 % and 66 % respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>GadX and GadW are DNA binding proteins that form homodimers in vivo and are 42 % homologous to each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadW is 60 and 30 % homologous to GadX in the DNA binding and dimerization domains , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by GadX</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Genes induced at the onset of stationary phase with s - dependent expression as identiﬁed by microarray analyses Functional Mean WT d Ratio classa valueb ( WT/rpoS ) Regulation SDc Gene Gene product Starvation and stress response genes dpsS DNA-protection protein , bacterial ferritin IHFS , OxyRS , rssBTC , MMC , PQ , NaSal , Lrp , BG , DHCP , OS FisS , NaSal , Lrp , OS CRPS , LrpS , IHFS , H-NSS , arcBTC , MMC , Lrp , Rcs , BG , DHCP ompR/envZTC , CD uvrYTC , arcBTC SSR 1,597 2.5 0.4 osmES osmYS Stress-inducible outer membrane lipoprotein Hyperosmotically inducible periplasmic protein Induced by phosphate starvation Superoxide dismulase precursor ( Cu-Zn ) SSR SSR 1,728 424 9.6 4.4 2.1 1.3 656 459 psiF sodCS 4.8 2.7 0.4 0.5 SSR Protein synthesis rpsVS infA Amino acid transport and metabolism artP artI 5.2 2.8 FISS , IHFS , ppGppS 2.7 0.8 30S ribosomal subunit protein S22 Protein chain initiation factor IF-1 3,466 1,011 PS PS Arginine transport , ATP-binding component Arginine transport , periplasmic binding protein L-Asparagine permease Dihydroxyacid dehydratase Tryptophanase AATM AATM 714 346 2.6 0.7 PQ , NaSal , Lrp 3.8 1.9 PQ , Lrp ansP ilvD tnaA AATM AATM AATM 572 364 DHCP ompR/envZTC 2.5 4.8 0.4 2.1 4.3 phoQTC , ompR/envZTC , CRP , uvrYTC , arcATC , arcBTC , rcsBTC , citABTC , MMC , PQ ( ilvG : Lrp ) NaSal , Lrp , BG , DHCP , OS 13.7 7,808 wrbAS Flavodoxin-like protein ; binds the trp repressor SSR 364 5.0 2.0 Iron uptake and storage bfr entD Carbohydrate metabolism crr Bacterioferrin , iron storage homoprotein Enterochelin synthetase , component D IUS IUS 905 508 5.1 2.1 DHCP , ryhB RNA 4.2 0.5 acrBTC Phosphotransferase system , glucose-speciﬁc IIA component Fructose 1,6-bisphosphate aldolase ( b2097 ) Glyoxylate-induced protein Putative oxidase , glycolate utilization ( b2977 ) Glucosamine-6-phosphate deaminase Phosphofructokinase-2 Transaldolase A CHM 443 2.7 0.6 CD 1,264 1,097 CHM 4.6 3.6 3.0 2.6 2.5 2.9 1.4 1.0 1.7 0.6 2 1.8 MMC , Lrp kdpABCDETC fbaB gip uvrYTC , arcATC , arcBTC ompR/envZTC , arcBTC MMC , CD , DHCP rssBTC , MMC , DHCP , CreBC CHM CHM CHM CHM glcG nagB pfkB talA Miscellaneous function or unknown function deoD moeB msyB yafN yahOS ybgA 3.0 1.2 4.0 0.1 2.2 1.7 4.8 3.4 6.1 2.6 4.5 4.5 349 Purine nucleoside phosphorylase Molybdopterin-biosynthesis NM CB 1,100 2,038 CD , Lrp , DHCP MMC , GadX Lrp Membrane protein , protein export ( b1051 ) Hypothetical ( adherence ) protein ( b0232 ) Hypothetical protein ( b0329 ) Hypothetical ( inner membrane ) protein ( b0707 ) Putative enzyme ( b0865 ) Hypothetical protein , bioﬁlm dependent ( b1481 ) Hypothetical protein ( b1724 ) Hypothetical protein ( b2427 ) Putative dehydrogenase protein ( b2660 ) Putative immunogenic protein ( b2922 ) Putative transport periplasmic protein ( b3020 ) Hypothetical ( outer membrane ) protein ( b3024 ) Hypothetical ( regulatory ) protein ( b3555 ) Hypothetical protein ( b4045 ) Hypothetical ( membrane ) protein ( b1582 ) Hypothetical ( periplasmic ) protein ( b3097 ) Hypothetical protein ( b4217 ) MF ( MF ) rssBTC , baeSRTC , atoSCTC , Lrp ybjP yddX 2.5 1.4 4.2 4.2 1,317 376 ( EF ) rssBTC , OS ompR/envZTC ydiZ yfeT ygaF yggE ygiS 1.7 0.9 0.5 1.7 0.8 3.1 3.5 2.8 4.8 2.7 436 rssBTC , NarXLTC rssBTC , MMC ; Rcs , phoQP ( EF ) ( MF ) rssBTC , citABTC , arcATC , NaSal ( MF ) ygiW 1.9 4.0 892 rssBTC , ntrBCTC , NaSal yiaG yjbJ ynfA yqjC ytfK 0.5 1.2 1.1 1.3 3.0 2.7 4.5 3.5 5.9 3.9 1,227 601 3,334 1,121 556 ( MF ) PQ , Fur , BG a SSR , starvation and stress response ; PS , protein-synthesis ; AATM , amino-acid-transport and metabolism ; IUS , iron uptake and storage ; CHM , carbohydrate-metabolism ; NM , nucleoside-metabolism ; CB , cofactor-biosynthesis ; MF , membrane function ; EF , extracellular function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489429" target="_blank">15489429</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access Repression of btuB gene transcription in Escherichia coli by the GadX protein Guang-Sheng Lei1 , Wan-Jr Syu1 , Po-Huang Liang2 , Kin-Fu Chak3 , Wensi S Hu4 , Shiau-Ting Hu1 ,5 * Abstract Background : BtuB ( B twelve uptake ) is an outer membrane protein of Escherichia coli , it serves as a receptor for cobalamines uptake or bactericidal toxin entry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Construction of plasmids for gene-expression YdeO , YdeP , YhiE and GadX expression plasmids , pQEydeO , pQEydeP , pQEyhiE and pQEgadX , respectively , were constructed as follows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Altogether , these data demonstrate that acetylation of lysine 154 of RcsB impairs its function , affecting flagella biosynthesis and B A flhDC FlhDC RcsB RcsA fliLMNOPQR fliE flgMN flgKL fliFGHIJK fliC 1 -3 -2 -1 0 2 3 4 flgAMN FlgM CobB flgBCDEFGHIJK RcsB RcsB AcK Acetyl-P motAB cheAW flhBAE Signal transduction Response to external stimulus fliDST FliA fliAZY Chemotaxis Locomotion Ciliary or flagellar motility Cell motility Cellular component organization or biogenesis Cellular component organization Response to chemical stimulus Cell projection organization Response to pH Metabolic process Cellular metabolic-process Cellular response-to-stress Response to stress Response to abiotic stimulus Response to DNA damage stimulus Cellular catabolic-process Catabolic process Small molecular metabolic-process Carboxylic acid-metabolic-process Small molecule catabolic-process Carboxylic acid-catabolic-process C GadX RcsB GadE GadX RcsB GadE RcsB GadE gadE mdtEF gadA gadX slp dctR gadBC cadBA GadW gadW hdeAB ydeP hdeD Figure 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25518064" target="_blank">25518064</a>]<br></li>
+<li>Gene product OD 4a NaClb pH 5c Metabolism ( 26 ) adhP b1478 b1927 b3012 b2097 b2661 b1619 b2720 b0186 b1469 b1467 b0871 b4051 b2464 b1519 b2465 b3449 b0485 Alcohol dehydrogenase , propanol preferring Cytoplasmic alpha-amylase 5.38 12.21 4.37 8.00 4.81 2.71 10.67 3.76 2.75 5.24 17.67 2.39 6.79 2.76 14.08 2.30 14.05 9.19 11.02 6.33 9.61 4.08 6.97 24.06 3.72 3.62 5.70 45.89 2.73 13.08 8.68 35.87 3.69 9.46 3.43 10.57 2.37 9.33 2.89 2.43 9.11 3.88 2.07 4.57 29.60 2.64 13.83 3.53 10.76 2.01 2.70 amyA dkgV fbaB gabD hdhA hycF IdcC narU narY poxB qor talA tam tktB ugp ybaS ybaY ycaC yfcF ygjG yhfW yjcS yjgB yncG 2,5-Diketo-D-gluconate reductase A Fructose-bisphosphate aldolase class I Succinate-semialdehyde dehydrogenase NADP dependent alpha-hydroxysteroid dehydrogenase , NAD dependent Hydrogenase 3 , putative quinone oxidoreductase , FeS related Lysine decarboxylase 2 , constitutive Nitrate extrusion protein Nitrate reductase 2 , beta-subunit Pyruvate dehydrogenase/oxidase : FAD and thiamine PPi-binding Quinone oxidoreductase , NADPH dependent Transaldolase A Trans-aconitate methyltransferase Transketolase 2 , thiamin binding , isozyme Glycerophosphodiester phosphodiesterase , cytosolic Putative glutaminase/carboxypeptidase with beta-lactamase/D-Ala-carboxypeptidase domain Glycoprotein/polysaccharide-metabolism Putative enzyme with cysteine hydrolase domain Putative glutathione S-transferase enzyme with thioredoxin-like domain Putrescine :2 - oxoglutaric acid aminotransferase Putative phosphopentomutase , alkaline phosphatase-like domain Putative enzyme with 2 metallohydrolase/oxidoreductase domains Putative alcohol dehydrogenase with NAD ( P ) - binding and GroES domains Putative glutathione S-transferase with thioredoxin-like and glutathione Stransferases , C-terminal domain Putative dienelactone hydrolase b0453 b0897 b2301 b3073 b3380 b4083 b4269 b1454 6.15 13.34 2.55 8.93 4.00 10.73 6.98 3.42 8.67 5.92 2.44 16.90 6.67 10.38 10.80 13.77 6.09 5.88 2.40 7.45 4.46 4.71 7.40 3.64 ysgA b3830 2.69 2.27 3.68 Regulation ( 11 ) bolA b0435 b1217 b2664 b3515 Transcriptional activator of morphogenic pathway ( BolA family ) , important in general stress response Cation-transport regulator Putative transcriptional repressor with DNA-binding winged helix domain ( GntR family ) Transcriptional regulator for GadX ( regulatory protein ) , glutamic acid decarboxylase ( GadA , - B ) , and glutamate transport protein ( GadC ) ( AraC-XylS family ) Transcriptional regulator for glutamic acid decarboylase and transporter ( GadA , GadBC ) ( AraC/XylS family ) RNase II modulator with PYP-like sensor domain Transcriptional repressor for pyruvate dehydrogenase complex ( GntR family ) Response regulator involved in protein turnover , controls stability of RpoS Flavodoxin-like protein , trp repressor-binding protein Putative transcriptional regulator with DNA-binding domain Putative regulator with homeodomain-like DNA-binding domain ( TetR/AcrR family ) 4.77 3.38 4.30 3.09 4.74 3.36 4.84 6.12 8.47 5.54 10.09 5.98 chaB csiR gadW gadX gem pdhR rssB wrbA yiaG yjdC b3516 b1285 b0113 b1235 b1004 b3555 b4135 6.09 6.78 5.01 4.68 9.38 8.40 2.49 7.45 3.83 3.42 7.19 6.83 9.20 2.34 3.14 6.94 2.86 4.08 14.77 4.08 2.46 Transport and membrane ( 20 ) artM artP blc eutH gabP mscL potF rssA ugpB b0861 b0864 b4149 b2452 b2663 b3291 b0854 b1234 b3453 2.61 4.71 8.10 2.59 2.83 2.59 2.24 2.26 3.29 2.79 4.56 8.99 3.06 4.70 2.31 4.25 3.19 5.55 2.20 3.50 4.77 3.11 4.06 2.94 2.76 2.50 3.29 Arginine transport protein ( ABC superfamily , membrane ) Arginine transport protein ( ABC superfamily , ATP-binding subunit ) Outer membrane lipoprotein ( lipocalin ) Putative transport protein , ethanolamine utilization Gamma-aminobutyrate transport protein Mechanosensitive channel Putrescine transport protein ( ABC superfamily , periplasmic binding protein ) Putative transmembrane protein Sn-Glycerol 3-phosphate-transport protein ( ABC superfamily , periplasmic binding protein ) Sn-Glycerol 3-phosphate-transport protein ( ABC superfamily , ATP-binding subunit ) Putative transport protein , integral membrane location Putative transmembrane protein ( N terminal ) ; putative phosphatase ( C terminal ) Putative transport protein ( ABC superfamily , periplasmic binding protein ) Putative multidrug-resistance membrane protein Putative membrane protein Putative membrane protein Putative permease ( PerM family ) Putative membrane protein Putative transmembrane protein Putative transport protein ( YqaE family ) ugpC ybiO ybiP ydcS ydhJ yeaY yebS yhhT yhiD yphA yqaE 2.39 8.49 7.73 21.66 2.21 2.43 2.08 2.30 4.11 2.35 2.42 b3450 b0808 b0815 b1440 b1644 b1806 b1833 b3474 b3522 b2543 b2666 2.44 2.02 2.43 4.36 2.22 4.06 2.48 2.92 7.24 2.53 3.16 2.50 4.51 5.89 4.83 4.29 3.21 2.50 3.89 5.93 3.38 4.78 Continued on following pag TABLE 1 -- Continued Ratio Function ( reference ) and gene b no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>Gene Gene product OD 4 NaCl OD 4 pH 5 ( Irp mutant ) b 5.80 3.96 3.48 9.16 4.46 2.07 2.79 1.38 8.68 32.38 16.44 10.28 11.26 6.61 2.52 3.68 3.48 13.06 2.33 2.22 2.22 1.65 1.28 1.27 1.08 0.99 1.14 Glutamate decarboxylase A , isozyme , PLP dependent 39.58 21.23 29.72 9.17 5.87 3.64 5.19 3.23 19.38 gadA gadB gadC hdeA hdeB hdeD slp yhiU gadE b3517 b1493 b1492 b3510 b3509 b3511 b3506 b3513 b3512 Glutamate decarboxylase , PLP dependent , isozyme beta Putative glutamate gamma-aminobutyric acid antiporter ( APC family ) Conserved protein with protein HNS-dependent expression Conserved hypothetical protein Putative membrane protein Outer membrane protein , induced after carbon starvation Multidrug-resistance protein ( lipoprotein ) Transcriptional regulator for gadABC operon , activates glutamate decarhboxylase-dependent acid resistance Transcriptional regulator for GadX ( regulatory protein ) , glutamic acid decarboxylase ( GadA , - B ) , and glutamate transport protein ( GadC ) Transcriptional regulator for glutamic acid decarboylase and transporter ( gadA , gadBC ) 12.39 gadW b3515 5.98 6.12 3.09 gadX b3516 9.39 3.14 7.45 6.09 a For explanations of data , see the footnotes to Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>The global regulator cyclic AMP receptor protein ( CRP ) administers additional control over GadX production , tying it to the carbon energy state of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>The higher concentration of cobalamin in cytoplasm will initiate riboswitch mechanism to repress the translation of BtuB receptor , which is in good accord with the repression of btuB transcription by the acid-induced GadX for bacteria to decrease the production of BtuB in response to this acidic stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Interestingly , the genes coding for local regulators of the genes for individual amino acids are under the control of Lrp , including AdiY ( a regulator of Arg regulon ) , CysB ( a regulator of the Cys regulon ) , GadW ( a regulator of Glu reg ¬ Lrp Network Y J YhjI AdiY OLm r pR BluR YbaO YedW CadX CadW SdiA PhoP H-NS Cbl CysB TyrR TdcR DeoT TdcA CadX CadW DctR SdiA EnvR TdcA TdcA FabR StpA GadW LeuO GadE GadW GadX DtcR SlyA LeuO BglG StpA QseB Rob LrhA MatA NanR ~ 20 TFs FlhDC FliE LrhA FlhDC ~ 10 TFs FliZ MatA FlhDC QseCB Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>The cAMP receptor protein ( CRP ) also plays a role in this RpoS-GadX pathway by tempering expression of RpoS during growth under conditions that result in high cAMP levels ( Ma et al. , 2003b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>The transcriptional regulator GadX also induces gadE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Indole signaling for mdtEF expression is independent of the EvgSA pathway but mediated by GadX , which is also an AraC / XylS regulator that cooperates with YdeO ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885453" target="_blank">16885453</a>]<br></li>
+<li>In order to characterize the RpoS-GadY ( Hfq ) - GadX signaling-pathway , we measured the growth phase-dependent changes in the expression of the rpoS , gadY , hfq , and gadX genes by means of the - galactosidase reporter assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>Moreover , an involvement of GadX in the RpoS-inde-pendent , acid-responsive pathway of induction of the gad genes ( 7 ) is inferred by the evidence that stationary-phase expression of gadA and gadBC genes in the gadX mutant is more drastically reduced at acidic than at neutral pH. However , the observation that transcription of gadA and gadBC is only partially abrogated in the gadX mutant raises the possibility that additional positive regulators are also involved in the transcriptional tuning of the gad system , as found for other genes controlled by transcriptional regulators of the AraC/XylS family ( 22 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Based on evidence that GadX is involved in controlling this AR regulon and that the genes of interest are acid inducible , the following criteria for membership in the regulon were established : ( i ) expression is affected by mutation of gadX and ( ii ) induction occurs in acid conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>This would mean that the intracellular GadX level is sufﬁcient to activate transcription of the chromosomal copies of the gad structural genes , including gadC , resulting in increased expression of the GadC antiporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>This suggests that overexpression of either GadX or GadE alone , in an FB8 genetic background , is not sufﬁcient to induce expression of genes involved in the bacterial response to low pH when cells are grown at neutral pH. Overexpression of gadX signiﬁcantly induced the expression of 48 genes of the H-NS regulon ( Table 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Chromosomal localization of genes involved in the low pH response Many genes identiﬁed by DNA array analysis ( Table 3 ) are regulated by both GadX and GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>plays a key role in the de novo synthesis of pyrimidine nucleotides ( Bouvier et al. , 1984 ) , the gadAX operon encoding glutamate decarboxylase A and a global regulator GadX of the gad regulon ( Ma et al. , 2002 ; 2003 ) , the gadBC operon coding for glutamate decarboxylase B and glutamate-gamma aminobutyrate ( GABA ) antiporter ( Richard and Foster , 2003 ) , the ygiF-glnE operon for glutamine-synthesis from glutamate ( Van Heeswijk et al. , 1993 ) , and the gcl-hyi-glxR operon for degradation of allantoin ( Cusa et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The latter circuit is also the most complex because apart from GadX and GadW , it also involves the global regulators H-NS and CRP , which act as transcriptional repressors , and RpoS , which positively affects gadA and gadBC transcription ( De Biase et al. , 1999 ; Castanie-Cornet and Foster , 2001 ; Hommais et al. , 2001 ; Tramonti et al. , 2002 ; Giangrossi et al. , 2005 ; Weber et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Using genome-wide technologies such as transcriptome analysis ( Velculescu et al. , 1997 ) , GadX was identiﬁed as a regulator of the glutamate decarboxylase genes from the AraC family in E. coli ( Hommais et al. , 2001 ; Ma et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>GadX has been previously demonstrated to be involved in the transcriptional activation of the glutamate decarboxylase system ( gadA/B , gadC ) as a direct activator of these genes , which were up-regulated by overexpression of gadX ( Hommais et al. , 2001 ; Ma et al. , 2002 ; Tramonti et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Discussion In this study , we performed a genome-wide search for a regulator of multidrug-resistance in E. coli by random shotgun cloning and discovered GadX , which upregulates mdtEF , thereby increasing resistance to β-lactams , erythro-mycin , rhodamine 6G , and SDS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Then we investigated the susceptibility of the ΔacrB strain overexpressing gadX to various drugs , including common substrates of multidrug efﬂux pumps , and found that GadX stimulated E. coli resistance to oxacillin , cloxacillin , nafcillin , erythromycin , rhodamine 6G , and SDS ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>J Infect Chemother ( 2008 ) 14:23 -- 29 DOI 10.1007 / s10156-007-0575-y © Japanese Society of Chemotherapy and The Japanese Association for Infectious Diseases 2008 ORIGINAL ARTICLE Kunihiko Nishino · Yasuko Senda · Akihito Yamaguchi The AraC-family regulator GadX enhances multidrug-resistance in Escherichia coli by activating expression of mdtEF multidrug efﬂux genes Received : August 24 , 2007 / Accepted : October 29 , 2007 Abstract Multidrug efﬂux pumps contribute to the resistance of Escherichia coli to many antibiotics and biocides .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Quantitative real-time polymerase chain reaction ( PCR ) showed that GadX activated the expression of mdtEF but none of the other drug efﬂux pumps in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>12.38 -8.24 -59.96 1.13 ± 0.55 ± 0.50 ± 0.02 0.04 0.02 1.27 ± 0.50 ± 0.20 ± 0.03 0.03 0.03 / h ) / h ) Fig. 2 Comparison of the transcript levels of the E. coli wild type under different pH values at 7.0 and 6.0 : a global regulatory genes , b PhoB regulatory genes , c acid-inducible genes , d metabolic pathway genes , e respiratory chain genes during micro-aerobic continuous culture at the dilution rate of 0.1 h -1 Fig. 3 a , b Overall metabolic regulation of the E. coli during acidic condition ( a ) Acid Condition Hns ATP ADP PhoQ PhoQ P ATP ADP ¬ EvgS EvgS P cAMP - evgA Pho P PhoP Crp EvgA P B1500 EvgA cAMP-Crp ¬ RpoS b1500 ydeo ¬ YdeO gadE GadE O O GadW GadX hdeA gadB gadc gadW gadA gadX HdeA GadA GadB GadC Acid resistance ( b ) Acidic Condition ( H + ) ( indirect ) EnvZ PhoR fnr OxyR ldhA arcA P Fnr ArcA SoxR / S L PhoR - P OmpR OmpR - P DH pfl yfiD ompC TCA-cycle genes : gltA sdhC mdh sodA PhoB - P PhoB Lactate OmpC ompF asr YfiD Pfl OmpF Asr Formate Acetate ackA pta Acid resistance Moreover , in accord with the proteomic analysis , the expression of yﬁD : : lac reporter fusion and the intracellular content of YﬁD were found to be high during growth at low pH for both aerobic and anaerobic cultures ( Neil et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>Identiﬁcation of the effectors involved in GadX activation and further investigation of the interactions between regulatory components of the gad system ( H-NS , RpoS , CRP , and GadX ) may provide further insight into the molecular circuitry underlying the glutamic acid-based acid stress response of E. coli A. Tramonti and P. Visca contributed equally to this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_29">
+Giangrossi M , Zattoni S , Tramonti A , De Biase D , Falconi M. Antagonistic role of H-NS and GadX in the regulation of the glutamate decarboxylase-dependent acid resistance system in Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></label>
+<input id="rp_similarity_29", type="checkbox">
+<div class="RP_similar">
+<li>Giangrossi , M. , Zattoni , S. , Tramonti , A. , De Biase , D. , and Falconi , M. ( 2005 ) Antagonistic role of H-NS and GadX in the regulation of the glutamate decarboxylase-dependent acid resistance system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li></div>
+<li>It is also possible that another negative regulator prevents the expression of gadA/BC in complex media and that GadX or W , two AraC-like acid control of gadA/BC and E. coli acid resistance 1317 regulators , can help GadE to overcome this putative repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>In addition to induction by acid and GadX control , the adjacent AraC-like transcription factor GadW plays a role in regulating the glutamate-dependent AR system ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_33">
+Ma Z , Richard H , Tucker DL , Conway T , Foster JW : Collaborative regulation of Escherichia coli glutamate-dependent acid resistance by two AraC-like regulators , GadX and GadW ( YhiW ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21034467" target="_blank">21034467</a>]<br></label>
+<input id="rp_similarity_33", type="checkbox">
+<div class="RP_similar">
+<li>Collaborative regulation of Escherichia coli glutamate-dependent acid resistance by two AraC-like regulators , GadX and GadW ( YhiW ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185552" target="_blank">17185552</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21147125" target="_blank">21147125</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19426207" target="_blank">19426207</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867448" target="_blank">12867448</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601715" target="_blank">15601715</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14594828" target="_blank">14594828</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466020" target="_blank">15466020</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17259322" target="_blank">17259322</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_35">
+Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19861135" target="_blank">19861135</a>]<br></label>
+<input id="rp_similarity_35", type="checkbox">
+<div class="RP_similar">
+<li>Richard , H. , and Foster , J.W. ( 2007 ) Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>Richard , H. and Foster , J.W. ( 2007 ) Sodium regulates Escherichia coli acid resistance , and inﬂuences GadX - and GadW-dependent activation of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20189963" target="_blank">20189963</a>]<br></li></div>
+<li>By performing functional clustering analysis on GadX and GadE regulons , we have presented evidence that both GadX and GadE are activators of the global bacterial acid response involved in the general adaptation of pH homeostasis maintenance in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Acid resistance appears to contribute to the low infectious dose of pathogenic E. col and aids the gastric passage of commensal strains .28,29 One of the most efﬁcient acid resistance systems in E. coli , the Gad system , is based on the coordinated action of two isoforms of glutamate decarboxylase ( GadA and GadB ) and of a speciﬁc glutamate/gamma-aminobutyrate antiporter ( GadC ) .30,31 The gadA/BC genes , activated in response to acid stress and in stationary phase cells , are subject to complex circuits of regulation involving the AraC-family regulator GadX .32 In this study , we show that GadX contributes to multi-drug-resistance as well as acid resistance in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>GadX is the AraC-family regulator that controls genes involved in acid resistance , such as glutamate decarboxylase genes ( gadA and gadB ) and a speciﬁc glutamate/gamma-aminobutyrate antiporter ( gadC ) .30,31 It seemed likely that , in cells carrying this plasmid , overexpressed GadX caused the transcriptional activation of genes involved in oxacillin resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>GadX has been shown to suppress the expression of perA encoded by a plasmid of enteropathogenic E. coli [ 14 ] , but activate gadX , gadA , gadB , and gadC in response to acid stress [ 15-19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>As for ToxR from Vibrio cholerae , which is an acid-induced factor and a virulence regulator , GadX has been shown to be involved in the appropriate expression of genes required for virulence of enteropathogenic E. coli ( Shin et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Shortly after , a role of GadX in the transcriptional-control of the plasmid-encoded regulator ( per ) of enteropathogenic E. coli virulence genes was demonstrated ( 30 ) , linking pH sensing with differential expression of genes involved in acid resistance and synthesis of virulence factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Given the role of GadX in activating genes involved in glu-tamate-dependent AR , more speciﬁcally , the diminished induction in gadX mutants , the decrease in acid tolerance shown by gadX and gadX-gadW mutants was expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>This further supports a role for GadX in the positive regulation of genes involved in low pH response , especially in the presence of glutamate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>RESULTS Identiﬁcation and characterization of genes involved in the acid stress response We have previously investigated the regulation underlying glutamate-dependent acid resistance and demonstrated a positive role for GadX in this process ( Hommais et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>These results strongly support an important role for GadX in the control of the genes involved in acid stress resistance with glutamate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>A growing body of evidence indicates that GadX regulates genes known to be involved in glutamate-dependent AR ( 11 , 22 , 26 ) and other genes that are induced by acid ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Our results indicate that the GadX regulator , in addition to its role in acid resistance , increases multidrug-resistance in E. coli by activating the MdtEF multidrug efﬂux pump .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>It belongs to the AraC/XylS family of bacterial transcriptional regulators , known to be activators of functions as diverse as sugar catabolism , responses to stress , and virulence .43,44 Expression analysis of the gad gene system in the gadX mutant indicates that GadX is required for maximal expression during stationary phase and acid induction .45 We have previously found that GadX participates in the mdtEF induction by indole and growth phase .46 In addition to the roles of GadX in acid resistance , we found that it contributed to multidrug-resistance in E. coli by activating the MdtEF multidrug efﬂux pump ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Intriguingly , two genes encoding cooperative transcriptional regulators , GadX ( yhiX ) and GadE ( yhiE ) , are severely repressed ; it is known that high expression of these genes leads to increased resist-ance of E. coli strains under high acid conditions ( supplemental Table III ) ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16418169" target="_blank">16418169</a>]<br></li>
+<li>INVOLVEMENT OF DIFFERENT REGULATORS IN THE ANAEROBIC EXPRESSION OF mdtEF FROM THAT OF AEROBIC CONDITION Previous studies focusing on the expression of gadE-mdtEF operon during acid resistance have revealed that several regulators , such as EvgA , YdeO , MnmE , GadE , GadX , CRP , and H-NS , are involved in the regulation of gadE-mdtEF operon ( Gong et al. , 2004 ; Ma et al. , 2004 ; Hirakawa et al. , 2006 ; Tramonti et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>In this regulatory process H-NS represses the expression of gadE ( encoding the central activator of the glutamate-dependent acid resistance pathway ) both in a direct and an indirect way , via EvgA , YdeO , GadX and GadW [ 1,7,8 ] , while it decreases rcsD expression , essential to the phosphorylation of RcsB ( the capsular synthesis regulator component ) required for the formation of the regulatory complex with GadE [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21034467" target="_blank">21034467</a>]<br></li>
+<li>Identification of the targets directly controlled by H-NS H-NS modulates the expression of several regulators controlling acid stress resistance including HdfR , RcsD , EvgA , YdeO , YdeP , GadE , GadW , GadX , AdiY and CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21034467" target="_blank">21034467</a>]<br></li>
+<li>DISCUSSION In the present study , we focused on the molecular mechanism adopted by the nucleoid-associated protein H-NS and the AraC-like activator GadX to cause antagonistic effects , negative and positive , respectively , on the expression of gad genes that play a major role in E. coli acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>To elucidate the mechanism underlying this higher resistance to acid stress via GadX and/or GadE , we analysed the effect of their overexpression on gene-expression focusing our attention on H-NS gene targets .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Effect of GadX and GadE on expression proﬁling at low pH To determine the role of GadE or GadX in bacterial acid resistance we used a transcriptomic approach .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>The role of S , GadX , and GadE in the expression of acid resistance genes under different stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>Cross lines , negative control ; arrows , positive control This result for the strain lacking GadW but possessing GadX suggests that GadW functions as a repressor of at least some GadX-activated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>RpoS , which is directly involved in transcription from the P1 promoter , activates the P2 and P3 promoters via transcriptional regulators GadX and GadW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Thus , we propose a complex regulatory cascade in which global regulators ( RpoS , CRP , HN-S , EvgA , etc. ) inﬂuence the expression levels and/or activities of GadX and GadW , which in turn activate the expression and/or activities of transcription activators ( e.g. , YdeO and YhiE ) that directly activate subsets of target genes involved in AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>This system likely includes several regulons , which are under hierarchical control of a number of regulatory proteins : the two-component signal-transduction-system EvgA/EvgS , GadE , YdeO , GadX , GadW as well as the global regulators RpoS and H -- NS [ 18,19,22,23,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>Components involved include a two-component signal-transduction-system ( EvgAS ) , three activators ( GadE , X , W ) , two sigma factors ( sigma S and sigma 70 ) , two global regulators ( Crp , H-NS ) and at least one regulatory loop ( GadX -- GadW ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>Expression of these components is under the control of a complex network of transcription factors , including GadE , GadX , GadW , EvgA , YdeO , and H-NS [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>The gadA/BC genes , activated in response to acid stress and in stationary phase cells , are subjected to complex circuits of regulation involving 70 , S , cAMP receptor protein , H-NS , EvgAS , TorRS , GadE , GadX , GadW , and YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>The expression of the gadAXW and gadBC operons varies , depending on the culture medium , growth phase and environmental pH. The balance of three transcription factors , GadE , GadX and GadW , is involved in this complex regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Two other genes in this region , GadX and GadW , are involved in modulating gadE expression as well as the expression of gadA and gadBC ( 16 , 32 , 33 , 44 , 48 -- 50 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17259322" target="_blank">17259322</a>]<br></li>
+<li>GadX or GadW alone activated this expression ( Fig. 3a , d , fourth bars ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The goal of the gene-expression pro-ﬁling experiments was to identify target genes under GadX control and to investigate the role of the associated transcription factor , GadW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">GadX binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>pGAD10 PADHI GAL4-AD BamHI EcoRI -10 -35 gcacgggaaactttgtgctctcagtaagttaaatataacttttactggaaataagatcagccattttttt 3664086 PgadX 3662617 gadX gadY pGadXY PADHI GAL4-AD gadW ( 825 bp ) EcoRI EcoRI NcoI DraIII ) -35 -10 +1 tcaatTTGACttaagagggcggcgtgctacatTAATaaacagtaatatgtttatgtaatattaagtcaactATGcaatcac RpoS SD PgadX gadX pGadX PADHI GAL4-AD ( 825 bp ) NcoI DraIII ) EcoRI EcoRI P gadX ΔgadX ( 224 bp ) gadW pGadY PADHI GAL4-AD gadY PgadY ) EcoRI EcoR I NcoI/DraIII Figure 1 Structures of pGAD10 , pGadXY , pGadX , and pGadY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>MalE-GadX and MalE Oligonucleotide Restriction site Wfor ( 201 ) Wfor ( 14 ) Wfor ( 1 ) Wrev ( 731 ) Wrev ( 879 ) PgadB-307for PgadBrev PCgadArev PCgadBrev PCgadAforH PCgadAforB PCgadBforH PCgadBforB Xfor ( 221 ) Xrev ( 854 ) gadEfor 5 - GGGAATTCATAAACATAAGCTATACGCTG-3 5 - GGGAATTCTATAAGGGATAATCATGACT-3 5 - GGCATATGACTCATGTCTGCTC-3 5 - CCGGATCCTGTCAGGAAAAGGTACC-3 5 - GGGGATCCAAACATGCCGAGTCTTTTCC-3 5 - GGGGATCCGGGGATTTTATCAATAATCGC-3 5 - GGAAGCTTCGTGAATCGAGTAGTTCCGAC-3 5 - CCGGATCCATTTCGAACTCCTTAAA-3 5 - CCGGATCCATCCATTTTAAACTCCTTAA-3 5 - CCAAGCTTCCGTACTTCCATCGCG-3 5 - CCAGATCTCCGTACTTCCATCGCG-3 5 - GGAAGCTTCGCTATTTTTATGTAATAATTT-3 5 - GGAGATCTCGCTATTTTTATGTAATAATTT-3 5 - GATATATGTTATATGAATGTTTA-3 5 - CTATAATCTTATTCCTTCCG-3 5 - AGCAAGTTATGATTTTTCTCATGACGAAAGATTCT TGTGTAGGCTGGAGCTGCTGCTTC-3 5 - CTAAAAATAAGATGTGATACCCAGGGTGACGATG TCGCATTCCGGGGATCCGTCGACC-3 5 - CGTTACCCGCAGAAGAAGC-3 5 - GTGGACTACCAGGGTATCTAATCC-3 5 - GGCGCATTCCACAGATCG-3 5 - TTGTCGATCCAGTTTTTGTTAATG-3 5 - GGAGTTTAAAATGGATAAGAAGCAAG-3 5 - CTTATTCTGCGATAGTTGCG-3 5 - AATATTAAGTCAACTATGCAATCACTAC-3 EcoRI EcoRI NdeI BamHI BamHI BamHI HindIII BamHI BamHI HindIII BglII HindIII BglII gadErev rRNA16Sfor rRNA16Srev gadA/Brev gadBrev gadBfor gadXrev gadXfor a Restriction sites are underlined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>Arrows indicate bands of DNA probes not bound by GadX G ( +56 ) T A A G G A A A G G T G C G A T G A T T G C G T ( +81 ) T A T ( +96 ) T C G G T G G G ( +105 ) T ( +123 ) A T C T T A G A T A C C C C ( +137 ) MalE-GadX 4 8 ( pmole ) C T A G 0 2 A B. -90 -80 -70 -60 -51 CGATTGTAGGGATTGCTCATCAGATGTCCAGATCTTGATGAATTCCTATT -40 -30 -20 -10 TGTGAGCTACGTCTGGACAGTAACTTGTTACAACCTGTAGCATCCACTTG I +1 +10 +20 +30 +40 +50 CCGGTCCTGTGAGTTAATAGGGAATCCAGTGCGAATCTGGAGCTGACGCG II +60 +70 +80 +90 +100 CAGCGGTAAGGAAAGGTGCGATGATTGCGTTATGCGGACACTGCCATTCG III +110 +120 +130 +140 +150 GTGGGAAGTCATCATCTCTTAGTATCTTAGATACCCCTCCAAGCCCGAAG +160 +170 +180 +190 +200 ACCTGCCGGCCAACGTCGCATCTGGTTCTCATCATCGCGTAATATTGATG +210 +220 +230 +240 AAACCTGCGGCATCCTTCTTCTATTGTGGATGCTTTACAATG RBS Met Figure 5 Binding sequence of GadX on btuB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>MalE-GadX preferentially binds to the distal upstream promoter region of gadB , as inferred by the protection exerted by 14 pmol of the protein on an extended region spanning from positions 87 to 131 ( site II ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Interestingly , GadX binds to a region in the hdeA promoter ( 35 ) which overlaps the MarAbinding site , marbox 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14701822" target="_blank">14701822</a>]<br></li>
+<li>GadX binds to the gadE control region Regulators EvgA , YdeO and GadE bind to subfragments of the 798 bp gadE upstream control region ( Ma et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>MalE -- GadX binds to the 32 bp Gad box fragments ( 20 bp Gad box plus 6 bp ﬂanking sequences ) but , unlike GadE , it also binds to adjacent 32 bp fragments that do not contain the Gad box ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>The data also showed that each protein binds strongly to the 20 bp Gad box region , although GadX can weakly bind adjacent areas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>The consensus binding sequences we used were the following : 5 WYAGGMWWWWDYTW YWWW for binding of GadE , GadX , and GadW ( gadbox [ 26 , 43 ] ) ; 5 YAGHA WATTWTDCTR for Lrp ( 11 ) ; and 5 CTGTTCATAT for TorR ( 2 , 40 ) ; where D is A , T , or G ; H is A , C , or T ; M is A or C ; R is A or G ; W is A or T ; and Y is C or T. Only sequences with 70 % or higher identity to the consensus sequences were selected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>Our data showed that the btuB promoter activity was reduced by approximately 50 % in the presence of gadXY ( Table 2 ) , most likely due to binding of GadX to the 5 ' untranslated region of btuB as DNase I footprinting experiment revealed binding of GadX to nucleotides positions +56 - +81 ( I ) , +96 - +105 ( II ) and +123 - +137 ( III ) downstream from the btuB transcription initiation site ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>From the footprinting result , the GadX binding sites on 5 ' untranslated region of btuB share only partial homology with the 42 nucleo-tides consensus sequence which was reported by Tramonti et .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Although the results of footprinting and reporter assay revealed that the GadX binding sites on btuB 5 ' untranslated region share only partial homology with the GadX binding consensus sequence [ 42 ] and showing 50 % down regulation in the reporter assay , the expression of btuB was indeed controlled by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>A plausible explanation for these observations is that , at low protein-DNA ratios , high-afﬁnity binding of MalE-GadX either to site III or IV generates complex I ( 1:1 protein-DNA ratio ) , while binding to both sites results in complex II ( 2:1 protein-DNA ratio ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Therefore , it is possible that speciﬁc nucleotides must be present at the indicated positions in each site to allow for the correct binding of the recognition helix by the relevant HTH motif in each GadX ( GadW ) subunit , and any mutation may affect the overall binding affinity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>To optimize the alignment , the non-coding strand of the slpbinding sequence was included because the GadX binding site appears in a ` backward ' orientation with respect to the slp promoter ( Alexander and St John , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Such bending may bring the activator protein , GadX or GadW at around position 220.5 , into contact either with the RNA polymerase or with an additional factor binding in the nucleotide region close to the 35 sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>The observation that MalE-GadX speciﬁcally interacts with the promoter sequences of the gadA and gadBC genes , but not with the intergenic region between gadB and gadC , prompted us to map the binding sites of GadX on gadA and gadB promoters by DNase I footprinting assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>The GadX bound regions are indicated with vertical lines , and the binding sequence of GadX are shown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>This 20-bp sequence might be the target of binding by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>It has been shown that both GadX and GadW bind to the gadA/BC promoter regions and that the 20 bp GAD box enhances GadX binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>From the sequence alignment of GadX binding sites on btuB , gadA , and gadBC regulatory regions [ 42 ] , we found that sequence in the region I ( the 31 nucleotides ) has 62.5 % identity ( +52 - AGCGGTAAGGAAAGGTGCGAT-GATTGCGTTAT - +82 , underlined nucleotides indicate the protected region ) with gadBC and sequence in the region III ( the 26 nucleotides ) has 60.7 % identity ( +106 - AAGTCATCATCTCTTAGTATCTTAGATA - +133 , underlined nucleotides indicate the protected region ) with gadA regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>In a previous study ( Tramonti et al. , 2006 ) , we noted that GadX and GadW recognize the same 44 bp binding site in the gadA or gadBC 5 ′ regulatory region and that the two binding sites share a signiﬁcant degree of sequence identity ( 57 % ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>By aligning the GadX/GadW binding site on the gadY promoter with the GadX / GadW binding sites previously identiﬁed in the gadA and gadBC 5 regulatory regions , we generated a 42 bp GadX/GadW consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Identiﬁcation of MalE-GadW and MalE-GadX binding sites in gadA and gadBC regulatory regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_25">
+A. Sequence alignment of the GadX and GadW binding sites on the gadA , gadBC and gadY regulatory regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></label>
+<input id="sit_similarity_25", type="checkbox">
+<div class="SIT_similar">
+<li>B. Sequence alignment of the GadX and GadW binding sites in the gadA , gadBC , gadY , hdeAB , slp and gadE regulatory regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li></div>
+<li>DNase I footprinting analyses conﬁrmed that a 42 bp GadX / GadW binding site , which matched the consensus sequence 5 - WANDNCTDWTWKTRAYATWAWMATG KCTGATNTTTWYNTYAK-3 , is also present in the regulatory region of the slp-yhiF , hdeAB and gadE-mtdEF operons , all of which belong to the AFI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>We also showed for the ﬁrst time that GadX and GadW speciﬁcally bind to a 42 bp sequence that is found in ﬁve of the eight 5 ′ regulatory regions of the AFI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The binding site of GadX in the hdeAB 5 ′ regulatory region ( Fig. 12B ) spans positions -87 to -46 on the coding strand and positions -79 to -47 on the noncoding strand , relative to the hdeAB transcriptional start site ( Arnqvist et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The 42-bp-long GadX/GadW binding site clearly arises from the tandem arrangement of two 21 bp sequences , which were analysed separately in the ﬁnal consensus because we hypothesized that the binding of each monomer in the functional GadX ( and/or GadW ) dimer does not necessarily occur with similar affinity and/or strength at each site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The position of the GadX ( GadW ) binding site , centered 110 bp from the gadA transcriptional start site , is compatible with a model in which GadX and GadW contact this promoter as class I activators , i.e. , activators that bind to a site upstream of the promoter 35 element and contact the C-terminal domain of the subunit of RNA polymerase , thereby recruiting the polymerase to the promoter ( 3 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>In this study , we identiﬁed a new 41 bp GadX / GadW binding site that was centred 41.5 bp upstream of the gadY ( 105 ) transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The newly identiﬁed GadX and GadW binding site , centered at 220.5 bp upstream of the transcription start site of gadBC , is consistent with the hypothesis that stimulation of transcription mediated by these two regulators may occur through a DNA looping mechanism ( for a review , see reference 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>The length of the binding site already suggested that GadX ( or GadW ) binds as a dimer ( Tramonti et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The length of the binding site suggests that GadW and GadX bind as dimers to the gadA promoter region , with the recognition helix of each of the four helix-turn-helix motifs occupying one of four consecutive DNA major grooves .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>It should be noted , however , that a version of this site ( TGGCAAatTaGCCA ) is also located at -55 bp from the start of the T3 transcript making it tempting to suggest this sequence might allow YdeO and GadX to activate both promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>As a member of the AraC protein family , GadX is expected to bind speciﬁc sequence motifs located within or in the proximity of the target promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>GadX and GadW are both members of the AraC/XylS family ( PS01124 ) , which typically comprises ª300-amino-acid-long transcriptional regulators that bind an unusually extended 17 -- 21 bp sequence at target promoters via two helix -- turn -- helix ( HTH ) motifs localized within the 100-amino-acid-long C-terminal domain ( Gallegos et al. , 1997 ; Egan , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Therefore , we split each binding site into two ; each half-site ( shown in Fig. 11A ) was of sufficient length ( 21 bp ) to allow the binding of the two HTH motifs present in the C-terminal domain of a GadX ( or GadW ) monomer , as in the case of the AraC / XylS-like proteins ( Gallegos et al. , 1997 ; Egan , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by GadX</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Gene Gene product OD 4 NaCl OD 4 pH 5 ( Irp mutant ) b 5.80 3.96 3.48 9.16 4.46 2.07 2.79 1.38 8.68 32.38 16.44 10.28 11.26 6.61 2.52 3.68 3.48 13.06 2.33 2.22 2.22 1.65 1.28 1.27 1.08 0.99 1.14 Glutamate decarboxylase A , isozyme , PLP dependent 39.58 21.23 29.72 9.17 5.87 3.64 5.19 3.23 19.38 gadA gadB gadC hdeA hdeB hdeD slp yhiU gadE b3517 b1493 b1492 b3510 b3509 b3511 b3506 b3513 b3512 Glutamate decarboxylase , PLP dependent , isozyme beta Putative glutamate gamma-aminobutyric acid antiporter ( APC family ) Conserved protein with protein HNS-dependent expression Conserved hypothetical protein Putative membrane protein Outer membrane protein , induced after carbon starvation Multidrug resistance protein ( lipoprotein ) Transcriptional regulator for gadABC operon , activates glutamate decarhboxylase-dependent acid resistance Transcriptional regulator for GadX ( regulatory protein ) , glutamic acid decarboxylase ( GadA , - B ) , and glutamate transport protein ( GadC ) Transcriptional regulator for glutamic acid decarboylase and transporter ( gadA , gadBC ) 12.39 gadW b3515 5.98 6.12 3.09 gadX b3516 9.39 3.14 7.45 6.09 a For explanations of data , see the footnotes to Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>In addition to these trans-acting proteins , the production of GadX is also controlled by gadY that is located between gadX and gadW in an opposite orientation to gadX [ 28,29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Only GadX was assayed because gadY does not encode any proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>It can therefore be argued that GadX is not involved in activation of transcription arising from PgadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Although gadA transcription is stimulated more than 2-fold by GadX alone and strongly repressed ( up to 70 % ) by H-NS alone , as also shown in Figs. 4 and 6 , the effect of simultaneously adding both proteins to the reaction mixture gives rise to the gadA transcription profiles shown in Fig. 7A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>In a recent report it was shown that GadX is capable of directly stimulating gadA transcription both in vivo and in vitro ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>All of the genes and operons identiﬁed in this study fulﬁll the criteria established for inclusion in the GadX regulon : they were all induced by acid and regulated by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The second hierarchical cluster contained 10 genes that appeared to be regulated by GadX ; all but 2 of these genes ( ybaS and gadB ) are adjacent to gadA on the genome , and all are signiﬁcantly induced in acid conditions ( Fig. 1C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>0218 * Gene names in bold type are genes induced by both GadE and GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>However , the fact that YdeO induced yhiE but GadX did not suggests that YdeO binds to the downstream region of hdeD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Many of the YdeO-activated genes were also activated by GadX , whereas yhiEUV were induced only by YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Several genes induced by overexpression of YdeO and GadX overlapped ; however , yhiE was induced only by YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Hommais pression induced yhiE , whereas GadX overexpression did not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>DacrB/pQEevgA DacrB/pQEevgA -- + -- + -- + + + + 4 64 125 8 > 125 > 16 000 > 16 000 > 16 000 62.5 128 8 8 8 8 DacrBDydeO/pQEevgA DacrBDydeO/pQEevgA D / acrB pQEydeO DacrB/pQEydeO DacrBDevgAS/pQEydeO DacrBDhdeA-D/pQEydeO DacrBDhdeD-yhiE/pQEydeO 4 4 4 4 Comparison of YdeO and GadX regulons It has been reported that overexpression of GadX , another member of the AraC/XylS transcriptional regulators , induces gadBC , hdeD and gadA ( Hommais et al. , 2001 ; Shin et al. , 2001 ; Tramonti et al. , 2002 ) , which were also induced by YdeO overexpression ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>In addition , overexpressing MalE-GadX successfully induced gadA and gadB in E. coli ( Giangrossi et al. , 2005 ; Gong et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>In addition , gadE-mtdEF belongs to the AFI and was shown to be controlled by GadX and GadW ( Kobayashi et al. , 2006 ; Sayed et al. , 2007 ) , while ybaST is not included in the AFI but is known to be signiﬁcantly induced under acidic conditions and to belong to the GadX -- GadW regulon ( Tucker et al. , 2002 ; 2003 ; Hommais et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Effect of tolC deletion on multidrug resistance modulated by the GadX regulator The results described above indicate that the expression of a multidrug efﬂux pump may be induced by overexpression of gadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Together , these data indicate that multidrug resistance conferred by the GadX regulator is due to increased expression of the mdtEF multidrug efﬂux genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Based on these results , we suggest that GadX controls the intracellular levels of its own mRNA by positively affecting the expression of the small RNA GadY , which has been shown to act at the post-transcriptional level by stabilizing the 3 ′ - UTR of the gadX mRNA ( Opdyke et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Construction of plasmids for gene expression YdeO , YdeP , YhiE and GadX expression plasmids , pQEydeO , pQEydeP , pQEyhiE and pQEgadX , respectively , were constructed as follows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>To investigate the effect of GadX on btuB expression , pGadX was constructed as follows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>In order to characterize the RpoS-GadY ( Hfq ) - GadX signaling pathway , we measured the growth phase-dependent changes in the expression of the rpoS , gadY , hfq , and gadX genes by means of the - galactosidase reporter assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>Since indole induces the expression of mdtEF via transcriptional regulator GadX ( 5 ) , we examined whether the growth phase-dependent induction of mdtEF is mediated by gadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>These results indicate that indole controls mdtEF gene expression via increasing the amounts of RpoS , GadY , and GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>GlcNAc-induced mdtEF gene expression is mediated by neither the EvgSA-YdeO nor the RpoS-GadX signaling pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885453" target="_blank">16885453</a>]<br></li>
+<li>GadX , Hfq , and RpoS are essential for indole-induced mdtEF expression , and the expression is induced via rpoS , gadY , and gadX up-regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>whereas when the gadX , hfq , or rpoS gene was deleted , the expression of mdtEF was no longer increased by indole at all ( Fig. 7B ) ; therefore , the induction of mdtEF by indole is also mediated by the RpoS-GadY ( Hfq ) - GadX signaling pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885437" target="_blank">16885437</a>]<br></li>
+<li>Indole signalling to cause yhiE gene expression is transmitted via GadX As shown in Fig. 2C , the expression of the yhiE gene induced by indole was independent of the EvgSA system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>The induction of mdtE by indole is independent of the EvgSA two-component signal transduction system that regulates the mdtE gene , but mediated by GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>These results suggest that there are at least two independent pathways for the induction of mdtEF expression , that is , the indole-driven GadX pathway and the two-component system , EvgSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885453" target="_blank">16885453</a>]<br></li>
+<li>( b ) Transcriptional fusions of the b1500-ydeO , gadE , gadBC , and asr gene promoters were constructed in the pLUX vector , and the response of each of these promoters to a shift from pH 7 to pH values ranging between 6.3 and 4.9 ( as well as a mock induction at pH 7 ) was assayed in an E. coli MG1655 wild-type genetic back ¬ GadX and GadW , along with the small regulatory RNA GadY , collaborate with RpoS to relieve H-NS-mediated repression of the system when cultures enter into stationary phase16 but have also been reported to have a role during low pH response .20,29 In addition , GadW is under direct control of the PhoPQ two-component system ,30 and it has been shown that EvgAS can cross-talk to PhoPQ via the connector protein encoded by b1500 ( also known as safA26 ) , which resides directly upstream of and in the same operon as YdeO .18,31 As a first step to building a mathematical description of this complex network , we wished to assess whether a dynamic approach to monitoring gene expression within the network was both feasible and valid and in particular whether such an approach would reveal any novel aspects of the network that had not been detected to date .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Such an autoregulatory loop would imply that expression of both GadA and GadX is coordinated and responsible for superinduction of the whole gad system ; primary stimuli ( stationary phase and acid ) acting on PgadX would lead to increased expression of GadX and , in turn , to an ampliﬁcation of the response through GadX-de-pendent activation of the gadAX and gadBC promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Autoregulation of the whole gad system is inferred by the positive effect of GadX on the gadA promoter and gadAX cotranscription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Interestingly , the gadBC operon coding for both components ( glutamic acid decarboxylase and cognate antiporter ) , necessary for gad system functioning , is more stimulated than gadA by GadX , thereby providing a prompt response to the acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>YdeO is an AraC-like transcription factor , as are GadX and the product of the gadW gene , which lies immediately downstream of gadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Expression analysis of the gad gene system in the gadX mutant indicates that GadX is required for maximal expression during the stationary phase and acid induction , though it is not essential for basal expression of the system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>It belongs to the AraC/XylS family of bacterial transcriptional regulators , known to be activators of functions as diverse as sugar catabolism , responses to stress , and virulence .43,44 Expression analysis of the gad gene system in the gadX mutant indicates that GadX is required for maximal expression during stationary phase and acid induction .45 We have previously found that GadX participates in the mdtEF induction by indole and growth phase .46 In addition to the roles of GadX in acid resistance , we found that it contributed to multidrug resistance in E. coli by activating the MdtEF multidrug efﬂux pump ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18297445" target="_blank">18297445</a>]<br></li>
+<li>Evidence has recently emerged that the activation of the gad system is mediated by the GadX protein ( 17 , 30 , 34 ) , a member of the AraC/XylS family of transcriptional regulators ( 15 ) , encoded by the gadX gene ( formerly designated yhiX ) , located downstream of gadA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>At present , it is known that the expression of the essential regulator GadE , a LuxR-like protein that is encoded by the gadE gene and located in the AFI ( Fig. 1 ) , is under the control of three different activation circuits ( for review , see Foster , 2004 ) : ( i ) the EvgAS/YdeO-dependent circuit activates gadE during the exponential phase of growth in minimal medium ( pH 5.5 ) containing glucose and relies on the activity of both the EvgAS two-component system and the activator YdeO , a member of the AraC/XylS family of transcriptional regulators , ( ii ) the TrmE-dependent circuit activates gadE in the stationary phase in unbuffered LB medium containing glucose and relies on the activity of TrmE , an Era-like molecular switch GTPase , and ( iii ) the GadX/GadW-dependent circuit is required for gadE activation upon entry into the stationary phase in buffered LB medium and involves the transcriptional regulators GadX and GadW , the genes of which are located downstream of gadA and gadX respectively ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>When using the -222 / +121 gadX : : lacZ construct , which contains the entire gadX 5 ′ regulatory region ( Tramonti et al. , 2002 ; Giangrossi et al. , 2005 ) , we observed that the transcription of the gadX gene from its native promoter increases in the stationary phase but is not appreciably affected by the pH of the growth medium or any of the known regulators of the GadX/GadW-dependent circuit of activation in the gad system , such as GadX , GadW , GadE and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The data from the gadX : : lacZ transcriptional fusions indicate that transcription of the gadX gene from its own promoter is not signiﬁcantly affected by either the pH of the growth medium or any of the regulators of the gad system , such as GadX itself , GadW , GadE and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>However , during growth in glucose ( pH 5.5 ) , GadX and GadW activation of gadE was additive ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>GadX and GadW appear to play a role in gadE induction regardless of whether glucose is present in the growth medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Elevated RpoS levels , in turn , increase expression of GadX , which increases expression of gadE ( Zhou and Gottesman , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>MarA seems also to compete functionally with GadX , GadW , RpoS , and Lrp under some conditions , which might ensure that hdeAB expression is not repressed more than needed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18083817" target="_blank">18083817</a>]<br></li>
+<li>We also found that neither GadX nor GadW activated expression of the 2360 to +331 fusion , confirming that sequences upstream of 2360 are important for activation by these proteins ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>RpoS does not appear to activate gadE through a GadXW-independent pathway , since rpoS , DgadXW and rpoS DgadXW mutants are equally acid sensitive , and the overexpression of RpoS does not induce gadE in a DgadXW mutant ( data not shown ) The '' 360 to '' 804 region is required for GadX and GadW activation of gadE The intergenic region controlling gadE expression is large ( 798 bp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The transcriptional regulator GadX also induces gadE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>However , the fact that RpoS is not needed for gadE expression in glucose , yet GadX and GadW remain important , suggests the presence of an RpoS-independent route for gadX induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Effects of GadX and GadW on gadE expression in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>However , neither GadX nor GadW is required for gadE expression ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>The expression of ybaS is also under the control of GadX transcription factor ( Tucker et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The expression of the gadAXW and gadBC operons varies , depending on the culture medium , growth phase and environmental pH. The balance of three transcription factors , GadE , GadX and GadW , is involved in this complex regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>As GadE is also required for stationary phase expression of gadA/BC We demonstrated previously that either GadX or GadW was required by stationary phase cells to express gadA / BC ( Ma et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>RcsB-dependent regulation of gadABC is not mediated by the regulation of gadEWX genes The expression of gadA and gadBC is regulated by a complex network involving notably the GadE , GadW and GadX regulators ( Ma et al. , 2003 ; see Foster , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185552" target="_blank">17185552</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_57">
+GadX and GadW together participate the regulation of expression of the gadAXW and gadBC operons ( Ma et al. , 2002 ; 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></label>
+<input id="tu_similarity_57", type="checkbox">
+<div class="TU_similar">
+<li>GadX and GadW together participate the regulation of expression of the gadAXW and gadBC operons ( Ma et al. , 2002 ; 2003 ) ( see Fig. 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li></div>
+<li>GadX is known to induce various genes including gadA , hdeAB and yhiE under low pH conditions ( Masuda and Church , 2003 ; Ma et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>In fact , GadX directly binds to gadW promoter region , where GadX and GadW collaborate to repress gadA/BC gene expressions under alkaline conditions ( Ma et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>This suggests that in vivo , the most important role played by GadX ( GadW ) on the gadA promoter is as an H-NS countersilencer , not as a transcriptional activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The two AraC-like regulators , GadX and GadW , reside downstream of gadA but are transcribed , for the most part , by independent promoters ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>GadX and GadW have been reported to activate and repress these promoters under different conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The finding that GadX and GadW do not appear to directly activate gadA/BC promoters in vivo , but do so indirectly by activating gadE , contradicts earlier models , including our own .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Results GadY promoter activity is positively affected by GadX Northern blot analyses showed that the transcription proﬁles of the gadX and gadY genes parallels those of the gadA and gadBC structural genes , i.e. transcription of these genes is induced in the stationary phase under acidic conditions and is abolished in an rpoS mutant background ( Tramonti et al. , 2002 ; Opdyke et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>The positive regulatory role of GadX was inferred both by transactivation assays of gad structural genes under physiological and nonphysiological conditions and by reduced transcription of gadA and gadBC in a gadX mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Moreover , an involvement of GadX in the RpoS-inde-pendent , acid-responsive pathway of induction of the gad genes ( 7 ) is inferred by the evidence that stationary-phase expression of gadA and gadBC genes in the gadX mutant is more drastically reduced at acidic than at neutral pH. However , the observation that transcription of gadA and gadBC is only partially abrogated in the gadX mutant raises the possibility that additional positive regulators are also involved in the transcriptional tuning of the gad system , as found for other genes controlled by transcriptional regulators of the AraC/XylS family ( 22 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Mechanisms of transcription activation exerted by GadX and GadW at the gadA and gadBC gene promoters of the glutamate-based acid resistance system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17873038" target="_blank">17873038</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Thus , the mechanism by which GadX activates gadA and gadB is unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>GadX has been shown to suppress the expression of perA encoded by a plasmid of enteropathogenic E. coli [ 14 ] , but activate gadX , gadA , gadB , and gadC in response to acid stress [ 15-19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Figure 4 shows that GadX was highly expressed in a crp gadW mutant ( Fig. 4B ) but that GadE remained essential for gadA/BC expression ( Fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>This hypothesis is supported by the ﬁnding that in minimal medium under fermentative growth conditions and independent of the pH , GadW repression of gadA and gadBC is not due to inhibition of GadX and the latter protein is responsible for gadW repression ( 20 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980449" target="_blank">16980449</a>]<br></li>
+<li>Under these growth conditions , the GadE activator is primarily implicated in gadA and gadBC transcription ( its overexpression causes GAD production even in cells lacking both GadX and GadW regulators ) , and gadE itself turns out to be acid-induced ( 14 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Nevertheless , since the in vivo data presented indicate that GadX and GadW activate gadE , and that GadE is essential for gadA and gadBC induction , it seemed possible that the in vivo roles of GadX and GadW in inducing gadA and gadBC may have more to do with their triggering the expression of GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>At least under certain conditions , the regulators GadX and GadW seem to play opposite roles in the expression of gadA , gadBC , and the hde genes , whereas GadE seems to be an essential activator for these genes ( 27 , 43 , 44 , 47 , 66 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>The fact that expression of gadA and gadBC in minimal glucose media is mostly RpoS independent and GadX independent supports that idea ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>At this growth stage in neutral LB medium , gadA and gadBC are transcribed exclusively by RpoS ( 9 , 7 ) , and their reduced expression in the gadX mutant points to an interplay between GadX and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Effects of GadX and GadW on pH-regulated gadA and gadBC expression in exponential - and stationary-phase cells grown in LB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Thus , the accelerated production of RpoS under acidic conditions was not the result of an early entry into stationary phase but was a consequence of low pH. H-NS conditionally represses gadA and gadBC expression independent of GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadX expression was positively correlated with both upregulation of gadA and gadBC genes and resistance to acidic pH ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>GadX , however , activates only gadA and gadBC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Overexpression of either EvgA or GadX induced the expression of gadA , gadBC , and hdeABD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>In this report , we focus on gadX regulation and on the mechanism by which GadX positively controls the expression of the gadA and gadBC gene system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>It represses the expression of gadX and inhibits the activation of gadA and gadBC by GadX [ 15,18,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Since the gadW gene is located downstream of gadA and gadX , it was necessary to determine if independent promoters drive expression of each gene before analyzing the individual roles of GadX and GadW in controlling gadA and gadBC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>Strain EF861 , possessing GadX but lacking GadW , highly expressed the gadA and gadBC messages under both acid and alkaline conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>However , when GadW was removed through mutation , GadX activated gadA and gadBC expression under acid or alkaline conditions ( Fig. 2A , lanes 5 and 6 versus lanes 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>However , when GadX is missing , GadW could inadvertently activate gadA and gadBC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadW clearly represses gadX and , in situations where GadX is missing , activates gadA and gadBC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>GadX levels increase and overcome repression of gadA and gadBC by GadW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446650" target="_blank">12446650</a>]<br></li>
+<li>To correlate GadX expression with the upregulation of gad structural genes , we expressed the gadX gene under the control of the heterologous T5-lacO promoter-operator element and monitored transactivation of gad structural genes under conditions in which the gad genes are not expressed , i.e. , during exponential growth in LB medium at pH 7.4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>Since gadX and gadY genes are more highly expressed under acidic conditions , the transcriptional level of btuB in cells cultured in pH 7.4 or pH 5.5 medium was examined by quantitative real-time PCR to investigate the effect of GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>This would mean that the intracellular GadX level is sufﬁcient to activate transcription of the chromosomal copies of the gad structural genes , including gadC , resulting in increased expression of the GadC antiporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11976288" target="_blank">11976288</a>]<br></li>
+<li>This generates a feed-forward loop in which the target genes gadA and gadB and probably others are under both direct and indirect control of GadX ( the latter via GadE ) ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>This suggests that overexpression of either GadX or GadE alone , in an FB8 genetic background , is not sufﬁcient to induce expression of genes involved in the bacterial response to low pH when cells are grown at neutral pH. Overexpression of gadX signiﬁcantly induced the expression of 48 genes of the H-NS regulon ( Table 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>This could argue that both regulators have a role in cell adaptation to low pH. Under low pH conditions 30 and 19 genes were induced by overexpression of gadX and gadE , respectively , and 18 genes were induced by both regulators ( GadX and GadE ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Thus , in contrast to other highly low-pH-responsive E. coli genes , asr does not appear to depend on the hierarchical control exerted by the EvgA/S two-component system and the downstream GadE , GadX and GadW regulatory proteins [ 8,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>The goal of the gene expression pro-ﬁling experiments was to identify target genes under GadX control and to investigate the role of the associated transcription factor , GadW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The regulation of the target genes by GadX and GadW is summarized in Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The role of S , GadX , and GadE in the expression of acid resistance genes under different stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>The expression of glutamate-dependent acid resistance genes is induced at low pH and is subject to regulation by GadE , GadW , GadX , TrmE , HNS , TorR , Crp , YdeO , the EvgSA two-component regulatory system and the sigma factor RpoS ( reviewed in Foster 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17273855" target="_blank">17273855</a>]<br></li>
+<li>GadE , GadX and YdeO differentially affect the expression of individual gadE promoters Plasmids expressing the E. coli-speciﬁc gadE , gadX and ydeO genes were then introduced into the Salmonella strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>Intriguingly , two genes encoding cooperative transcriptional regulators , GadX ( yhiX ) and GadE ( yhiE ) , are severely repressed ; it is known that high expression of these genes leads to increased resist-ance of E. coli strains under high acid conditions ( supplemental Table III ) ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16418169" target="_blank">16418169</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

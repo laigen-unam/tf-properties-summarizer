@@ -1,0 +1,820 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - AtoC</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">AtoC</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">AtoC transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>These data further demonstrate the presence of rAtoC in the EMSA complexes with the atoD1 probe .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Contents lists available at ScienceDirect Journal of Molecular Graphics and Modelling journal homepage : www.elsevier.com/locate/JMGM Dimerization of the AtoC response-regulator and modelling of its binding to DNA G. Papadopoulos a , A.I. Grigoroudis b , D.A. Kyriakidis b , c , ∗ a Department of Biochemistry & Biotechnology , University of Thessaly Ploutonos 26 & Aeolou , Larisa , GR-41221 , Greece b Laboratory of Biochemistry , Department of Chemistry , Aristotle University of Thessaloniki , GR-54124 , Greece c National Hellenic Research Foundation , 48 Vas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>On the other hand , nine species of RR ( AtoC , CheY , CusR , HydG , KdpE , NarL , NarP , NtrC , and YfhA ) were phosphoryl-ated by non-cognate HKs besides their cognate HKs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>Both probes identiﬁed the same proteins : AtoC , the product of b1201 , FhlA , HyfR , NRI , PrpR , PspF , RtcR , YfhA YgaA , YgeV , and ZraR ( HydH ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>We have shown that polyamines and synthetic polyamine analogues can induce atoC transcription in E. coli resulting in increased AtoC accumulation and subsequent inhibition of ODC activity [ 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>[ 15 ] P.S. Filippou , E.E. Lioliou , C.A. Panagiotidis , C.M. Athanassopoulos , T. Garnelis , D. Papaioannou , D.A. Kyriakidis , Effect of polyamines and synthetic polyamine-analogues on the expression of antizyme ( AtoC ) and its regulatory genes , BMC Biochem .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The afﬁnitypuriﬁed rAtoC ( 16 ) used in these experiments was in its unphosphorylated state , since we were unable to phosphorylate it to a signiﬁcant extent in vitro either with its cognate AtoS HK or with low-molecular-weight phosphodonors like carbamoyl phosphate , phosphoramidate , and acetyl phosphate ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Low-molecular weight-phosphodonors such as carbamoyl phosphate and phosphoramidate that have been previously shown to phosphorylate and thus to activate response-regulators [ 42 ] failed to phosphorylate His10-AtoC ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This indicates that alteration of the putative phospho-ryl-acceptor aminoacids by site-directed mutagenesis did not result in gross alterations in AtoC protein structure that render it inactive as a transcriptional-activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>This finding is not unusual [ 53 ] , and it can be possibly due to the generation of populations of active AtoC oligomers , due to the high AtoC concentrations produced in these cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>1770 ( 2007 ) 1248 -- 1258 Biochimica et Biophysica Acta www.elsevier.com/locate/bbagen Molecular modeling and functional analysis of the AtoS -- AtoC two-component signal transduction system of Escherichia coli A.I. Grigoroudis a , C.A. Panagiotidis b , E.E. Lioliou a ,1 , M. Vlassi c , , D.A. Kyriakidis a , d a Laboratory of Biochemistry , Department of Chemistry , Aristotle University of Thessaloniki , Thessaloniki , 54124 , Greece b Department of Pharmaceutical Sciences , Aristotle University of Thessaloniki , Thessaloniki , 54124 , Greece c Institute of Biology , National Centre for Scientific Research `` DEMOKRITOS '' , Agia Paraskevi , 15310 , Greece d The National Hellenic Research Foundation , 48 Vas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>[ 11 ] E.E. Lioliou , E.P. Mimitou , A.I. Grigoroudis , C.H. Panagiotidis , C.A. Panagiotidis , D.A. Kyriakidis , Phosphorylation activity of the response-regulator of the two-component signal transduction system AtoS -- AtoC / Az in E. coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>elsevier.com/locate/bba http://ww Phosphorylation activity of the response-regulator of the two-component signal transduction system AtoS -- AtoC in E. coli Efthimia E. Lioliou , Eleni P. Mimitou , Asterios I. Grigoroudis , Cynthia H. Panagiotidis , a ,1 b ,2 a b Christos A. Panagiotidis , Dimitrios A. Kyriakidis b a , * a Laboratory of Biochemistry , Department of Chemistry , Aristotle University of Thessaloniki , Thessaloniki 54124 , Greece b Department of Pharmaceutical Sciences , Aristotle University of Thessaloniki , Thessaloniki 54124 , Greece Received 9 December 2004 ; received in revised form 30 June 2005 ; accepted 30 June 2005 Available online 26 August 2005 Abstract Antizyme , long known to be a non-competitive inhibitor of ornithine decarboxylase , is encoded by the atoC gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The importance of TCS-mediated signal transduction processes in such a multitude of essential bacterial processes makes their Abbreviations : Az , antizyme ; ODC , ornithine decarboxylase ; TCS , two-component system ; HK , histidine kinase ; RR , response-regulator ; atoSC , genetic locus encoding the AtoS and AtoC proteins ; AcAc , acetoacetate Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The recognition of signal and phosphotransfer are attributed to a `` sensor '' histidine kinase ( HK ) and a response-regulator ( RR ) whose phosphorylation Abbreviations : TCS , two-component system ; HK , histidine kinase ; RR , response-regulator ; trAtoC , truncated form of AtoC ; IPTG , isopropyl-β-D-thiogalactoside ; PMSF , phenylmethylsulfonylfluoride Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>We have recently shown that the AtoS -- AtoC / Az system , acting directly on the atoDAEB operon transcription , regulates positively the short-chain poly - ( R ) -3 - hydroxy-butyrate ( cPHB ) biosynthesis in E. coli , upon acetoacetatemediated induction [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Constantinou , Athens 11636 , Greece Received 1 February 2007 ; received in revised form 2 April 2007 ; accepted 6 April 2007 Available online 19 April 2007 Abstract The AtoS -- AtoC two-component signal transduction system positively regulates the expression of the atoDAEB operon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Keywords : AtoC ; Antizyme ; AtoS ; atoDAEB ; Two-component system ; Phosphorylation 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>We have previously shown that AtoC is the response-regulator of the AtoS-AtoC two-component signal transduction system that activates atoDAEB when Escherichia coli is exposed to acetoacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The present study reveals another role for AtoC , that of a response-regulator of the AtoS -- AtoC two component system regulating the expression of the atoDAEB operon upon acetoacetate induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The AAA + region of AtoC , as well as its Walker A and B motifs , which are commonly found in other ATPases and ATP binding proteins , are indicated in Fig. 1b .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The backbone RMSD ( root mean squared deviations ) of the equilibrated model relative to the starting model was 5.570 Å , while AtoC binding caused a farther increase in RMSD ( 6.693 Å ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>AtoC binding induces signiﬁcant DNase I hypersensitivity ( Fig. 3 ) , especially at positions 101 , 109 , and 128 , indicating that signiﬁcant structural DNA alterations take place upon AtoC binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Figure 4 shows that AtoC binds in vivo to the plasmid-borne atoDAEB sequence containing an AtoC binding site ( atoD1 , 206 to 73 ) whereas it fails to-bind sequences lacking this site ( atoD2 , 120 to 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>These data indicate that the same cis element , i.e. , the region from 206 to 120 , is involved in both AtoC binding and the acetoacetate responsiveness of atoDAEB and support the notion that AtoC is the transcription factor involved in the induction of atoDAEB by acetoacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The in vitro ﬁndings were veriﬁed by ChIP experiments , which demonstrated that the exposure of E. coli to acetoacetate induces the binding of AtoC to the atoDAEB regulatory sequences from 206 to 120 in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>By necessity , therefore , we used unphosphor-ylated AtoC in the in vitro protein-DNA binding experiments performed in the course of this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Thus , AtoC displayed the same sequence requirements for DNA binding both in vitro and in vivo , and the abundance of the AtoC-DNA complexes increased upon the activation of the AtoS-AtoC TCS by acetoacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Thus , AtoC appears to display the same DNA binding speciﬁcity both in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Effect of the putative phosphorylation site mutations of AtoC on its DNA-binding and ATPase activities We have recently shown ( manuscript submitted ) that AtoC binds both in vitro and in vivo , to an inverted palindrome that is located at the − 146 / − 106 region of the atoDAEB operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Moreover , the mechanism of transcriptional activation of the atoDAEB operon by AtoC in response to acetoacetate , and the respective DNA sequences that are necessary for AtoC binding , are also being studied by our group ( manuscript in preparation ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>A B-DNA 3D model of the inverted palindrome , comprising the AtoC binding target in the atoDAEB operon , was constructed and equilibrated by MDS , exhibiting several structural distortions , also reported in cases of other regulators binding to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Besides its role as a transcriptional-regulator , AtoC possesses a second biological activity , as it was first discovered by Canellakis and co-workers to function as antizyme ( Az ) [ 7,8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Much remains to be determined , however , regarding : ( i ) the possible role of polyamines in atoC expression since the AtoC protein is induced by polyamines [ 7 ] , ( ii ) the mode of oligomerization of AtoC , since binding of the response-regulator to an enhancer stimulates oligomer formation , ATPase activity and transcriptional activation [ 23 ] , and ( iii ) the in vivo role of AtoC phosphorylation on its function as a regulator of polyamine biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>In addition , these AtoC mutants displayed reduced DNA-dependent ATPase activity , although their ability to-bind their target DNA sequences in a sequence-specific manner was found to be unaltered .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Therefore , the functional relevance of the AtoC-DNA interactions displays different requirements for its transactivator function that requires sequence-specific binding of AtoC to DNA versus its antizyme activity that can be affected by single - , or double-stranded oligonucleotides in a relatively sequence-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>ATPase assay The ATPase activity of wild type , truncated and mutant forms of AtoC was analysed by quantitating the free Pi liberated during ATP hydrolysis as described by Seals et al. [ 20 ] and modified by Wei and Hendershot [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>These data indicate that D55 is involved both in the phosphorylation of AtoC and in its ATPase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>ATPase activity of His10-AtoC and its mutated forms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Influence of DNA binding and phosphorylation on the ATPase activity of His10-AtoC The ATPase activity of σ54-RNA polymerase transcriptional-activators is stimulated upon phosphorylation and subsequent DNA-binding [ 41 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The basal levels of ATPase activity of membrane fractions in the absence of AtoC were also analysed ( -- ♦ -- ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The effect of DNA on ATPase activity of His10-AtoC in the presence of DH5α / pUC-Az membranes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>To determine the effect of DNA binding on ATP hydrolysis , the ATPase activity of AtoC ∼ P was assayed in the absence or presence of pUC-Az plasmid DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The weak ATPase activity of AtoC could be stimulated by DNA fragments that carry its complete binding site from the atoDAEB enhancer-like element ( Figs. 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>AtoC , like its well-characterised counterparts has already been shown to possess ATPase activity that is phosphorylationdependent and stimulated by site-speciﬁc DNA-binding [ 6,31,5 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>In contrast , the ATPase activity of AtoC was stimulated ( Fig. 8a ) in the presence of increasing concentrations of the patoD1 DNA fragment containing the − 220 / + 73 region of atoDAEB , that is encompassing the AtoC binding sites ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The specificity of the stimulation was underscored by the finding that equal concentrations of related atoDAEB fragments lacking the AtoC binding sites , i.e. patoD2 ( − 120 / + 73 ) and patoD3 ( − 42 / + 73 ) , failed to stimulate the ATPase activity of AtoC ( Fig. 8b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>AtoC response-regulator has been found to exhibit characteris-In silico methods , correlating protein and DNA sequences and Table 5 Geometrical properties of the equilibrated DNA model before and after AtoC bindinga .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>One of the DBDs might bind to DNA changing its conformation a fact that destabilizes locally the dimer allowing for further binding of the second DBD understanding the mechanism in which the AtoC response-regulator functions as a transcriptional-activator , while predicting complex structures of protein -- DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Docking of the AtoC DBD to the B-DNA structure seems to force drastic changes to the B-form , a feature common to such activator -- DNA interactions ( Figs. 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Since the DBDs bind DNA with Gbd-DNA = − 14.161 kcal/mol and the binding energy between the domains themselves is GDBD = − 10.226 kcal/mol , it can be concluded that AtoC forms stable AtoC -- DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Experimental veriﬁcation of AtoC oligomerization potential Response regulators are widely considered to-bind as dimmers to DNA , as previously reported .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Response regulators are reported to-bind to their target sequences in the form of dimers , and our data provide strong evidence that this is also the case with AtoC , in the scenario of two DBDs docking to the B-DNA structure of the inverted palindrome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Finally , to further verify the presence of AtoC in the atoD1 EMSA complexes , we included in the reaction mixtures either a MAb that speciﬁcally recognizes polyhistidine stretches , such as the His10 tag of rAtoC , or a nonspeciﬁc MAb ( 58S ) that recognizes an unrelated viral protein ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The speciﬁcity of the above-described DNA-AtoC interactions was veriﬁed by competition experiments to evaluate the association of AtoC with biotinylated atoD1 in the presence of increasing concentrations of an unlabeled speciﬁc ( atoD1 ) or nonspeciﬁc ( atoD2 ) DNA competitor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Probes labeled in either the upper or lower strand were subjected to DNase I nicking in the presence of increasing concentrations of AtoC ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Histidine-73 ( H73 ) appears to be a second AtoC phosphorylation site since it is located within a characteristic `` H-box '' and since its alteration in the D55G/H73L double AtoC mutant leads to almost complete inhibition of AtoC phosphorylation in vitro ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Mutation of either residue , D55G or H73L , resulted in severe reduction of AtoC phosphorylation in vitro , whereas AtoC carrying both mutations failed to phosphorylate [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The latter finding , combined with the fact that very low concentrations of recombinant AtoC have to be used to detect AtoS autopho-sphorylation , explains why it is difficult to observe this autophosphorylation under our experimental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The ability of AtoC to form dimers/oligomers in vitro was here determined by glutaraldehyde cross-linking of its recombinant , puriﬁed His-tagged form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>The latter suggests that genes under the control of AtoC ( i.e. , the atoDAEB operon ) may respond to multiple external signals indicating the presence of signaling networks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The AtoC is long known to positively regulate the expression of genes of the atoDAEB operon , encoding enzymes involved in short-chain fatty acid metabo-lism [ 4,5 ] , upon acetoacetate induction [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The structural genes for the enzymes involved in short chain fatty acid metabolism , atoD , atoA , atoE and atoB are organised in the ato operon [ 21 ] , the transcription of which is activated by AtoC upon acetoacetate induction [ 21,22,24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>EvgS failed to phosphorylate EvgA under the reaction conditions employed , whereas trans-phosphorylation level for AtoS ¬ AtoC was hard to detect because these two components could not be separated onto SDS-PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>AtoC binding to this enhancer-like element ( ELE ) is essential for the induction of this σ54 polymerasetranscribed promoter in the presence of acetoacetate , which is the normal inducer of the AtoS -- AtoC TCS [ 18 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>Note that the binding of AtoC to its target sequences is not enhanced when acetoacetate is included in the in vitro binding reactions ( data not shown ) , which is consistent with the notion that acetoacetate acts by triggering the AtoS-AtoC TCS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>These data suggested that cytoAtoS can autophosphorytate in vitro in the absence of acetoacetate , which is the natural inducer of the AtoS -- AtoC TCS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>To understand the order of the biochemical events that lead to AtoC phosphorylation and its activation we used molecular modeling of the 3D structures of both AtoC and the sensor kinase AtoS , which is involved in the regulation of its activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Overexpression and purification of `` tagged '' AtoC , AtoS and cytoAtoS The study of the possible phosphorylation of AtoC by the putative sensor kinase AtoS and its other biochemical properties necessitated the preparation of ample amounts of purified AtoC protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>This could be due to either an AtoC-mediated induction of AtoS dephosphorylation or , more likely , to AtoSmediated dephosphorylation of P ∼ AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Upon acetoacetate induction , AtoS sensor kinase autophosphorylates and subsequently phosphorylates , thereby activating , the response-regulator AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Indeed , our in vivo data have indicated that overexpressed AtoC can activate its target atoDAEB promoter even when it is unable to phosphorylate due either to a lack of its cognate AtoS HK or to phosphorylation site mutations ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Aceto-acetate or a product of acetoacetate metabolism probably binds AtoS and stimulates AtoC phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>AtoC phosphorylation is catalyzed by the AtoS sensor kinase , which is stimulated by acetoacetate or one of its metabolic products .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Recently , we presented both biochemical evidence on the phosphorylation of AtoC by AtoS and functional data on the positive regulation of the atoDAEB operon by the AtoS-AtoC TCS upon acetoacetate induction ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>We have previously shown that AtoC phosphorylation by the HK AtoS is required for the induction of atoDAEB expression upon the exposure of E. coli to aceto-acetate ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The fact that all three mutants ( the tw single and the double ) activated the atoDAEB promoter , in the absence of acetoacetate , almost as efficiently as wild-type AtoC indicates that the observed phenotypes are specific and not due to gross alterations in AtoC structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The effector constructs provided expression of both AtoS and wild-type ( pEM-Az ) or mutant AtoC ( pEM-Az-D55 , pEM-Az-H73 , pEM-Az-D55 / H73 ) under the control of their cognate promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The activity of the ato-DAEB-lacZ reporter construct ( pEMZ-patoD1 ) was measured in the absence or presence of 10 mM acetoacetate in ΔatoSC E. coli BW28878 transformed either with control pUC19 ( negative control ) or pUC-Az , expressing wild-type AtoS and AtoC , or pUCcytoSC , expressing cytoAtoS ( AtoS lacking the N-terminal 231 amino acid residues ) and wildtype AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>( b ) The activity of the atoDAEB-lacZ reporter construct was measured , in the presence of 10 mM acetoacetate , in E. coli cells that also contained multicopy plasmids expressing AtoS and wild-type or mutant forms of AtoC from their cognate promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The results are expressed as fold activation of the atoDAEB promoter following induction by acetoacetate ( 10 mM ) in cells expressing wild-type or mutant forms of AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The introduction of AtoC in trans resulted in acetoacetate-independent activation of atoDAEB expression in both atoSC + and DatoSC genetic backgrounds ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>However , the AtoC phosphorylation site mutants demonstrated various degrees of impairment in atoDAEB promoter activation , which also depended on whether they were expressed in atoSC and + DatoSC genetic backgrounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Specifically , the D55G mutation resulted in significant diminution of AtoC 's ability to respond to acetoacetate induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The alteration of either of these two putative phosphorylation sites affected the biological activity of AtoC , i.e. , its ability to induce ato operon expression upon acetoacetate induction , although the D55 mutation produced a significantly more pronounced phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>However , the D55 mutation in comparison to H73 had a more pronounced effect in vivo , on the activation of atoDAEB promoter after acetoacetate induction , although it was the presence of both mutations that rendered AtoC totally unresponsive to induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The effects of the H73L mutation were milder , resulting in only a partial defect in the ability of AtoC to activate atoDAEB promoter in the presence of acetoacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>To answer this question , wild-type AtoC or AtoC with mutations at either or both putative phosphorylation sites were compared for their effects on acetoacetate-dependent induction of atoDAEB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Effects of the mutations in the putative AtoC phosphorylation sites on its ability to activate the atoDAEB promoter in the presence of acetoacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The phosphoryl group is subsequently transferred to the acceptor residue of the AtoC response-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>It is not obvious yet how the phosphate is transferred from D55 to H73 on AtoC , although a phosphorelay mechanism can not be excluded [ 31,36 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Such phosphate transfer could occur either intramolecularly , or intermolecularly , through interaction of the dimerised AtoC receiver domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Substitution of either D55 or H73 in His10 -- AtoC diminished but did not abrogate AtoC phosphorylation suggesting that either both residues can be phosphorylated independently or that the phosphate group can be transferred between them .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Substitution of either D55 or H73 in His10 -- AtoC suggested that either both residues can be phosphorylated independently or that a phosphate group transfer can take place between them .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Addition of recombinant AtoC to the AtoS phosphorylation reactions resulted in AtoC phosphorylation and a concomitant disappearance of phosphorylated AtoS , possibly due to the quick transfer of the phosphate group from AtoS ¨ P to AtoC ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Phosphorylation of AtoC indeed takes place within the first minute of the phosphorylation reaction ( Fig. 4 ) and even on ice ( data not shown ) suggesting that the transfer of the phosphate group from AtoS to AtoC is a very rapid process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>AtoS is a membrane protein which can autophosphorylate and then transfer that phosphoryl group to AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The above prediction can be tested experimentally since it posits that mutant AtoC forms lacking D55 should be unable to act as phosphoacceptors in AtoS -- AtoC protein -- protein phosphate transfer reactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>It has to be restated however , that the loss of the phosphate form P ∼ AtoS is not due to a non-specific phosphatase but to protein -- protein phosphate transfer to AtoC , since it is observed only in the presence of phosphorylationcompetent forms AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Molecular modelling predicts that upon AtoS interaction with AtoC , AtoS ' phosphoacceptor histidine-398 lies in close proximity to the conserved D55 residue of AtoC , thus facilitating protein -- protein phosphate transfer [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The produced structural model indicated that aspartate 55 , but not histidine 73 , of AtoC is in close proximity to the conserved , putative phosphate-donor , histidine ( H398 ) of AtoS suggesting that aspartate 55 may be directly involved in the AtoS -- AtoC phosphate transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The structural model predicted a direct role of D55 of AtoC in the AtoS -- AtoC phosphate transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The proximity of these residues and their proper alignment in the model suggested that a phosphoryl transfer from the potential H398 phosphorylation site of AtoS to D55 of AtoC may be structurally feasible attributing thus a direct role to D55 , as opposed to H73 , in the AtoS -- AtoC phosphate transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Conserved residues potentially involved in the AtoS -- AtoC phosphate transfer ( D55 of AtoC and H398 of AtoS ) are drawn as ball-and-sticks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>H398 of AtoS is in close proximity to D55 of AtoC suggesting that transfer of a phosphoryl group from AtoS to AtoC through these residues is feasible both structurally and energetically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>It is not clear yet whether this failure to obtain signiﬁcant amounts of phosphorylated AtoC represents a lack of phosphorylation or rapid AtoC-P dephosphorylation due to either chemical instability or phosphatase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Both the rate and the level of phosphorylation were very low for AtoC and YehU , supposedly because the contents of active HK molecules were low for these preparations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>It is interesting , though , that in AtoC , the Asp to Gly substitution still allows phosphorylation of the mutated protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>When various amounts of membranes containing or lacking AtoS were included in the assay mixture , phosphorylation of the various forms of AtoC was allowed to take place for 5 min prior to the ATPase reaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>When both residues are substituted though , phosphorylation of AtoC probably takes place on an alternative site , albeit at low levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>We have already shown that , apart from the conserved D55 phosphorylation , AtoC is also phosphorylated on a histidine residue , i.e. H73 , and that alteration of this histidine residue by site-specific mutagenesis affects both AtoC phosphorylation and activity [ 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Moreover , the presence of a characteristic `` H-box '' [ 17 ] in AtoC , with H73 as a possible phosphorylation site , pointed towards the direction that histidine might be the phosphorylated residue in His10 -- AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>To define which AtoC residue first accepts the phosphate group from P ∼ AtoS , mutant forms of AtoC carrying alterations in the putative phosphorylation sites were expressed and they were compared with wild-type AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>When the kinetics of AtoC phosphorylation were studied , it was shown that the phosphotransfer reaction is quicker from AtoS to AtoCD55G than to AtoCH73L , which indicates the importance of H73 of the H-box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>As shown in Fig. 4b , the wild type His10 -- AtoC is phosphorylated even in the first minute of the reaction while substitution of H73 affects more profoundly the phosphorylation kinetics of His10 -- AtoC than substitution of D55 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The phosphorylation kinetics of doublemutated His10 -- AtoC shows the same profile as the H73 mutant , i.e. , the specificity of the phosphotransfer from AtoS to AtoC is reduced , since the rate of phosphorylation reaction is significantly lower compared to that of wild type His10 -- AtoC or even His10 -- AtoCD55G .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Indeed , the relative effects of D55G and H73L on AtoC phosphorylation appeared slightly different when AtoS-enriched membranes were used as the source of AtoS HK [ 11 ] compared to the data presented here , which were obtained from recombinant AtoS lacking its N-terminal transmembrane and periplasmic domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Using AtoS-enriched membrane preparations as a kinase source and wild-type and mutant forms of AtoC as substrates in the phosphorylation reactions , we showed that mutant AtoC that lacks the conserved aspartic acid-55 ( D55 ) due to a D55G substitution can be phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Using AtoS-enriched membrane preparations as kinase source , we showed that AtoC is phosphorylated both on aspartic and histidine residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>Since the phosphate bond in AtoC ¨ P appeared to be stable in alkaline conditions , it was more likely that the phosphorylated amino acid in AtoC ¨ P might be linked to the phosphate group via an N-phosphate bond .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Chemical stability of the phosphate bond in His10 -- AtoC The phosphorylated His10 -- AtoC was analysed by SDS-PAGE and transferred to nitrocellulose membranes by electroblotting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Chemical stability of the phosphate bond in His10 -- AtoC ¨ P and identification of a putative H-box in AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>AtoC was phosphorylated by a non-cognate pUhpB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>The D55 - and H73-mutated proteins appeared phosphorylated after 15 min incubation time , with H73 mutation causing a small reduction in phosphorylation of His10 -- AtoC , while the doubly mutated protein was only phosphorylated to a minor degree ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Protein -- protein phosphate transfer was observed when the phosphorylated His6-cytoAtoS was incubated with 45 μg of purified His10-AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>However , only a small portion of the His6-cytoAtoS-associated phosphate appeared to be stably incorporated in the phosphorylated AtoC ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The supernatants ( S1 -- S4 ) were checked for the presence of AtoS by immunoblotting and phosphorylation of His10 -- AtoC , combined and subsequently purified by immunoaffinity chromatography as described [ 35 ] using a Protein A-Sepharose CL-4B column ( Pharmacia Biotech Inc. , Uppsala , Sweden ) with affinity purified polyclonal anti-AtoS bound to it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>A membrane fraction from control DH5a cells ( lane 1 , 15 Ag total protein ) was assayed in the absence of His10 -- AtoC , as a control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>A phosphorylation assay was also performed with purified His10 -- AtoC ( 6.23 Ag ) in the absence of membrane fraction ( lane 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>( a ) His10 -- AtoC ( 4 Ag , ¨ 3 AM/reaction ) was phosphorylated in vitro using 14 Ag DH5a/pUC-Az membranes ( AtoS concentration ¨ 0.37 AM/reaction ) as AtoS kinase source , analysed by SDS-PAGE and transferred to a nitrocellulose membrane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>( b ) Increasing amounts of F0F1-ATPase stripped membranes from DH5a ( 2 , 5 and 12 Ag total protein , lanes 1 -- 3 ) or DH5a/pUC -- Az ( 12 Ag total protein , AtoS concentration ¨ 0.3 AM , lane 4 ) were assayed for kinase activity in the presence ( + ) of purified recombinant His10 -- AtoC ( 1.25 Ag , ¨ 0.9 AM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>( c ) Membrane fractions from DH5a/pUC-Az ( 12 Ag total protein , AtoS concentration ¨ 0.3 AM ) were assayed for kinase activity in the absence ( lane 2 ) or presence of increasing amounts of purified His10 -- AtoC ( lanes 3 -- 5 , 1.25 Ag ( ¨ 0.9 AM ) , 6.23 Ag ( ¨ 4.5 AM ) and 12.46 Ag ( ¨ 9 AM ) , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>This phosphorylation of His10-AtoC was also very rapid , being detectable even after 10 s .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Trans-phosphorylation of His10-AtoC and its mutated forms by phosphorylated His6-cytoAtoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Chemical stability of phosphorylated His10 -- AtoC suggested that histidine phosphorylation is favoured at least under the in vitro experimental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Minimal AtoC phosphorylation was observed when membranes from a DatoSC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Despite the obvious lack of AtoS phosphorylation , both membrane preparations , i.e. , AtoC and + AtoC , were able to phosphorylate exogenously added purified His10 -- AtoC to approximately the same extent ( Fig. 2d , lanes 2 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Autophosphorylation of AtoS and phosphorylation of His10 -- AtoC by AtoS As described above , the purified recombinant GST-AtoS or GST-cytoAtoS fusion proteins failed to autophosphorylate in vitro under the conditions described in Materials and methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>His10 -- AtoC did not result in further enhancement of the phosphorylation levels , probably due to the limiting amount of AtoS kinase in the membranes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Autophosphorylation of AtoS and phosphorylation of His10 -- AtoC by AtoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>It must be noted that no autophosphorylation of His10 -- AtoC was observed in the absence of membranes ( Fig. 2c , lane 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Furthermore , His10 -- AtoC ¨ P , was sensitive t Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Addition of increasing amounts of purified recombinant His10 -- AtoC to a constant amount of AtoS-enriched membranes showed that the intensity of the phosphorylated band corresponding to His10 -- AtoC increased roughly to the point where the molecular ratio of AtoS : His10 -- AtoC was ¨ 1:15 ( Fig. 2c , lanes 3 -- 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Therefore , it appears that the presence of AtoS in E. coli membranes is a prerequisite for the localisation of AtoC in the membrane fraction , possibly due to specific interactions When the purified AtoS-enriched membranes from E. coli DH5a/pUC-Az were incubated with affinity purified His10 -- AtoC in the standard phosphorylation assay , the phosphorylation of a protein corresponding to the AtoC molecular weight was enhanced significantly , thus supporting the notion that the phosphorylated protein is indeed AtoC ( Fig. 2a , lane 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>His10 -- AtoC was phosphorylated even when purified membranes from wild-type E. coli DH5a cells were used as AtoS source ( Fig. 2b , lanes 1 -- 3 ) but , as expected , the levels of His10 -- AtoC phosphorylation were lower than those observed with AtoS enriched membranes ( Fig. 2b , lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>When phosphorylated His10 -- AtoC was boiled for 3 min , the intensity of the phosphorylated band was profoundly reduced ( Fig. 3a , treatment with 1 M HCl ( Fig. 3a , lane 3 ) but stable in the presence of 1 M NaOH ( Fig. 3a , lane 4 ) , when incubated for 30 min at room temperature , a property characteristic of phosphoramidates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The appearance of a band corresponding to the molecular mass of His10-AtoC , which increased in intensity during the reaction progress , was also observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The presence of a second phosphorylated protein whose molecular weight correlated well with that of AtoC was also obvious in these phosphorylated membrane preparations ( Fig. 2a , lane 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>We note that the elevated levels of lacZ reporter gene expression in the absence of acetoacetate inducer in cells transformed either with pUC-Az or pUCcytoSC , compared to the pUC19 control , is due to AtoC overexpression in these cells , as described previously [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The presence of native AtoC in the membranes of DH5a/pUC-Az cells was confirmed by immunostaining of the SDS-PAGE-analysed membrane preparation with anti-AtoC antibody ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Membranes prepared from E. coli of DatoSC genetic background ( BW28878 ) or BW28878/pUC-Az ( atoC ) ( see Table 1 ) were negative for the presence of AtoC ( Fig. 2e ) , thus strengthening the possibility that the immunostained 55 kDa membrane protein was indeed AtoC and not a protein that cross-reacts with the anti-AtoC antibody .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>AtoC was present only in membrane preparations from cells transformed with pUC-Az , which express increased levels of both AtoS and AtoC , irrespective of whether their initial genetic background was atoSC ( DH5a ) or DatoSC + ( BW28878 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>However , no AtoC was detectable in membranes from cells overexpressing AtoC in the absence of AtoS ( Fig. 2e ) , i.e. , in cells of DatoSC genetic background ( BW28878/pCPC-Az ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The levels of membrane-bound AtoS , as detected by immunoblotting , were very similar both in the presence or absence of AtoC ( Fig. 2e ) However , the absence of AtoC , from the BW28878/pUC-Az ( atoC ) membranes , did not improve the level of AtoS phosphorylation , which was hardly visible both in the presence or absence of AtoC ( Fig. 2d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>However , it was possible that the presence of AtoC in E. coli membranes was due to contamination of the membranes with cytosolic proteins , rather than to a specific interaction with membrane components .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>To clarify this issue , the presence of AtoC in membrane preparations from E. coli expressing AtoC in the presence or absence of AtoS was evaluated by immunoblotting with anti-AtoC antibodies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Other RRs also control ﬂagellar expression : ArcA and AtoC both activate it , while CitB and YpdB both repress it ( 330 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15755952" target="_blank">15755952</a>]<br></li>
+<li>Proteins homologous to AtoC usually activate 54-dependent promoters , although two activate 70-dependent promoters ( 59 , 113 , 173 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Therefore , it is likely that AtoC activates from a 54-dependent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">AtoC protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The DNA-binding activity of the puriﬁed rAtoC ( 16 ) was determined by nonradioactive EMSAs using biotin-labeled probes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>the program DCOMPLEX ( 24 ) to be GAtoC = − 59.713 kcal/mol , while the corresponding value for the DBDs part is According to our model the dimer of the aa 6 -- 384 domain The dimerization binding free energy has been calculated using GDBD = − 10.226 kcal/mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Since the DBDs bind DNA with Gbd-DNA = − 14.161 kcal/mol and the binding energy between the domains themselves is GDBD = − 10.226 kcal/mol , it can be concluded that AtoC forms stable AtoC -- DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>A dimer for the interaction domain of the AtoC model has been constructed using the PQS server ( http://www.ebi.ac.uk/msdsrv/pqs/ ) for PDB :1 ny5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Numbers across the top and bottom refer to amino acids positions for ArcB and AtoC respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Based on the susceptibility of AtoC ¨ P to acid treatment , the possibility that the phosphorylated amino acid was linked to the phosphate group via an O-phosphate bond was excluded and thus serine , threonine and tyrosine were ruled out as possible phosphoaccepting amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Since the phosphate bond in AtoC ¨ P appeared to be stable in alkaline conditions , it was more likely that the phosphorylated amino acid in AtoC ¨ P might be linked to the phosphate group via an N-phosphate bond .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Properties of the AtoC dimmer model Structural details concerning putative AtoC dimerization might give a new insight to its potential oligomerization function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Nevertheless , the issue of AtoC oligomerization remained vague , while never before a model of the AtoC protein as a whole , let alone in its putative dimerization state was presented , and the present study aimed towards ﬁlling this void .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Indeed , the relative effects of D55G and H73L on AtoC phosphorylation appeared slightly different when AtoS-enriched membranes were used as the source of AtoS HK [ 11 ] compared to the data presented here , which were obtained from recombinant AtoS lacking its N-terminal transmembrane and periplasmic domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>However , our data here are in good agreement with a recent biochemical analysis of all the E. coli TCS 's , which also showed that a recombinant form of AtoS , lacking the Nterminal region containing its two transmembrane domains , could not phosphorylate AtoC efficiently .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The activity of the ato-DAEB-lacZ reporter construct ( pEMZ-patoD1 ) was measured in the absence or presence of 10 mM acetoacetate in ΔatoSC E. coli BW28878 transformed either with control pUC19 ( negative control ) or pUC-Az , expressing wild-type AtoS and AtoC , or pUCcytoSC , expressing cytoAtoS ( AtoS lacking the N-terminal 231 amino acid residues ) and wildtype AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>Experimental evidence for such a role for the periplasmic region of AtoS comes from our experiments which show that truncated AtoS , lacking the 231 N-terminal amino acid residues encompassing the periplasmic region , is unable to transduce the acetoacetate-mediated signal leading to activation of the expression of its target the atoDAEB operon , which is a physiological target of the AtoS -- AtoC TCS ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>However , it provides further support to the notion that the inability of mutant AtoC forms containing the D55G mutation is not due to large alterations in AtoC protein structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This indicates that alteration of the putative phospho-ryl-acceptor aminoacids by site-directed mutagenesis did not result in gross alterations in AtoC protein structure that render it inactive as a transcriptional activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>To define which AtoC residue first accepts the phosphate group from P ∼ AtoS , mutant forms of AtoC carrying alterations in the putative phosphorylation sites were expressed and they were compared with wild-type AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>In vitro autophosphorylation of His6-cytoAtoS and phosphotransfer from His6-cytoAtoS-P to His10-AtoC and its mutated forms A recombinant truncated version of AtoS ( His6-cytoAtoS ) lacking its 233 N-terminal aminoacids , including the two putative transmembrane regions has been recently expressed and purified in our laboratory .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Since the cytosolic AtoS is able to autophoshorylate in vitro [ 14 ] , His6-cytoAtoS was used in protein -- protein phosphotransfer experiments to dissect the role of the two putative AtoC phosphorylation sites , i.e. D55 and H73 [ 11 ] , in this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This suggests that both these two residues are critical for phosphorylation of AtoC in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Histidine-73 ( H73 ) appears to be a second AtoC phosphorylation site since it is located within a characteristic `` H-box '' and since its alteration in the D55G/H73L double AtoC mutant leads to almost complete inhibition of AtoC phosphorylation in vitro ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The single histidine residue ( H73 ) within this `` H box '' of AtoC ( Fig. 1a ) appeared to be a potential second site for phosphorylation , since an H73L mutation impaired AtoC phosphorylation and a D55G/H73L double mutation nullified it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The possibility that the phosphorylated histidine in AtoC was part of a histidine-containing phosphotransfer ( HPt ) domain [ 55 ] was unlikely since AtoC presented no significant homology To identify the phosphorylation site of His10 -- AtoC , the conserved aspartic acid-55 ( D55 ) , which represents a typical phosphorylation site , and histidine-73 of the `` H-box '' were substituted by glycine and leucine , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The sequence alignment of the putative receiver-domain of AtoC with receiver-domains of other response regulators , including the conserved aspartic acid that corresponds to an AtoC phosphorylation site [ 11 ] , are shown in Fig. 1a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The characteristic `` H-box '' is indicated with the consensus sequence SHETRTPV , spanning residues 72 -- 79 of AtoC , with H73 being a putative site of phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The above data indicate that D55 is the primary site of AtoC phosphorylation by AtoS , without precluding a significant subsequent role for the H73 residue in phosphorylation and/or activity of AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>These data indicate that D55 is involved both in the phosphorylation of AtoC and in its ATPase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>We have already shown that , apart from the conserved D55 phosphorylation , AtoC is also phosphorylated on a histidine residue , i.e. H73 , and that alteration of this histidine residue by site-specific mutagenesis affects both AtoC phosphorylation and activity [ 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>However , H73 , which is also important for the biological activity of AtoC [ 11 ] , represents a second putative phosphorylation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>To further clarify which is the phosphorylated residue in His10 -- AtoC , site-directed mutagenesis was used to construct the following mutant proteins : ( i ) His10 -- AtoCD55G substituting the conserved residue D55 , which is the putative phosphorylation site of His10 -- AtoC , as indicated by alignment of AtoC sequence with multiple response regulators by BLAST analysis , ( ii ) His10 -- AtoCH73L substituting H73 , which is the residue that was indicated as a putative phosphorylation site by our analysis and ( iii ) doubly mutated His10 -- AtoCD55G/H73L .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Studies on the phosphorylation site of His10 -- AtoC ¨ P Chemical stability tests were initially used to characterise the type of amino acid residue that is phosphorylated in His10 -- AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Moreover , the presence of a characteristic `` H-box '' [ 17 ] in AtoC , with H73 as a possible phosphorylation site , pointed towards the direction that histidine might be the phosphorylated residue in His10 -- AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Thus , the chemical stability data suggested that His10 -- AtoC was phosphorylated on a histidyl -- rather than an aspartyl -- residue .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Protein -- protein phosphate transfer was observed when the phosphorylated His6-cytoAtoS was incubated with 45 μg of purified His10-AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Substitution of either D55 or H73 in His10 -- AtoC diminished but did not abrogate AtoC phosphorylation suggesting that either both residues can be phosphorylated independently or that the phosphate group can be transferred between them .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Substitution of either D55 or H73 in His10 -- AtoC suggested that either both residues can be phosphorylated independently or that a phosphate group transfer can take place between them .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The D55 - and H73-mutated proteins appeared phosphorylated after 15 min incubation time , with H73 mutation causing a small reduction in phosphorylation of His10 -- AtoC , while the doubly mutated protein was only phosphorylated to a minor degree ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Trans-phosphorylation of His10-AtoC and its mutated forms by phosphorylated His6-cytoAtoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>ATPase activity of His10-AtoC and its mutated forms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The electrostatic potential surface of the model revealed that the AtoS-binding surface of AtoC features an acidic surface ( pocket ) involving conserved aspartic acid residues ( D12 and D55 ) , whereas the equivalent surface of AtoS exhibits a more basic character , with H398 protruding towards the AtoC acidic pocket ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Lower right : close up of the interaction domain showing the acidic character of the binding pocket of AtoC with conserved acidic residues depicted as balls-and-sticks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Such phosphate transfer could occur either intramolecularly , or intermolecularly , through interaction of the dimerised AtoC receiver-domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Using AtoS-enriched membrane preparations as kinase source , we showed that AtoC is phosphorylated both on aspartic and histidine residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>AtoS is a membrane protein which can autophosphorylate and then transfer that phosphoryl group to AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The above prediction can be tested experimentally since it posits that mutant AtoC forms lacking D55 should be unable to act as phosphoacceptors in AtoS -- AtoC protein -- protein phosphate transfer reactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>It has to be restated however , that the loss of the phosphate form P ∼ AtoS is not due to a non-specific phosphatase but to protein -- protein phosphate transfer to AtoC , since it is observed only in the presence of phosphorylationcompetent forms AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The produced structural model indicated that aspartate 55 , but not histidine 73 , of AtoC is in close proximity to the conserved , putative phosphate-donor , histidine ( H398 ) of AtoS suggesting that aspartate 55 may be directly involved in the AtoS -- AtoC phosphate transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The proximity of these residues and their proper alignment in the model suggested that a phosphoryl transfer from the potential H398 phosphorylation site of AtoS to D55 of AtoC may be structurally feasible attributing thus a direct role to D55 , as opposed to H73 , in the AtoS -- AtoC phosphate transfer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Conserved residues potentially involved in the AtoS -- AtoC phosphate transfer ( D55 of AtoC and H398 of AtoS ) are drawn as ball-and-sticks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>H398 of AtoS is in close proximity to D55 of AtoC suggesting that transfer of a phosphoryl group from AtoS to AtoC through these residues is feasible both structurally and energetically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Molecular modelling predicts that upon AtoS interaction with AtoC , AtoS ' phosphoacceptor histidine-398 lies in close proximity to the conserved D55 residue of AtoC , thus facilitating protein -- protein phosphate transfer [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>Histidine-398 , that is located within this putative H-box of AtoS , represented a likely phosphorylation site especially since structural modelling had indicated that it lies in close proximity to the conserved D55 of the receiver-domain of AtoC , when AtoS complexes to AtoC [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The activation domain of AtoC , like that of NtrC , belongs to the AAA + ( for `` ATPases associated with diverse cellular activities '' ) superfamily [ 38 ] , members of which participate in diverse cellular functions ( [ 39 ] and references therein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Ribbon representation of the 3Dmodel of a region of AtoC ( aa :7 -- 381 ; in green ) in complex with the potential dimerization domain of AtoS ( aa :382 -- 449 ; in yellow and red ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The 3D-model of the receiver-domain of AtoC containing the conserved D55 consisted of a central β-sheet of five parallel β-strands surrounded by five α-helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The secondary structure of the AtoC model is shown in Fig. 2 ( interaction domain part in yellow , DBD in cyan ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>The secondary structure of the AtoC model ( H : - helix , S : - strand ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>The 3D model of the putative receiver and σ54 interaction domains of AtoC was constructed using the crystal structure of the transcriptional activator NtrC1 from Aquifex aeolicus ( RCSB code : 1NY5 ) [ 29 ] as template .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Comparative three-dimensional modeling of AtoC complexed with a domain of AtoS The sequence similarity searches showed that a region of AtoC comprising the receiver and the σ54 interaction domain ( aa : 6 -- 374 ) is highly homologous ( 43 % identity and 68 % similarity ) to the equivalent region of the NtrC1 response regulator from A. aeolicus ( Fig. 1b ) , the crystal structure of which is known ( RCSB code : 1NY5 ) [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>In this study , based on known threedimensional structures of other two component regulatory systems , we modeled the 3D-structure of the receiver-domain of AtoC in complex with the putative dimerization/autophosphorylation domain of the AtoS sensor kinase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Thus , the 3D structure of AtoC was modeled ( Fig. 2 ) using the crystal structure of the highly homologous NtrC1 from A. aeolicus as template , whereas the structure of the dimerization/phosphoacceptor domain of AtoS was modeled using the known solution structure of the equivalent domain of the EnvZ histidine kinase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The AAA + region of AtoC , as well as its Walker A and B motifs , which are commonly found in other ATPases and ATP-binding proteins , are indicated in Fig. 1b .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This result is not unexpected since the 3D molecular modeling predictions indicate that there is no obvious physical interaction between the N-terminal receiver-domain and the C-terminal region of AtoC ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>These data indicate that there is functional communication between the receiver-domain of AtoC and its central ATPase region , containing the `` Walker A and B '' and the AAA motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This mutation lay within one of the two putative IHF binding sites that are located at 62 to 50 and 37 to 25 , between the AtoC and RNA polymerase binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>AtoC homologies with σ54-polymerase transcriptional regulators BLAST searches over the conserved domain database indicated that AtoC comprises three conserved domains , namely the receiver-domain containing the putative phosphor-ylation site ( aa 6 -- 120 ) , the σ54 interaction domain ( aa 145 -- 374 ) and the DNA-binding domain ( aa 433 -- 452 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>BLAST analysis revealed that AtoC belongs to the NtrCNifA family of σ54-RNA polymerase transcriptional activators and that it comprises three conserved domains : the receiver-domain containing the phosphorylation site ( s ) ( aa 6 -- 120 ) ( Fig. 1a ) , the σ54 interaction domain ( aa 145 -- 374 ) and the DNA-binding domain ( aa 433 -- 452 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The domain of AtoC that interacts-with-RNA-polymerase is homologous throughout its length to the corresponding region of other 54-dependent activators ( 113 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Discussion AtoC is highly homologous to members of the NtrC-NifA family of σ54-RNA polymerase transcriptional activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The identiﬁcation of residues located at the interface between AtoC monomers , as well as of residues at the interface between protein and DNA will be very useful for the planning of further experiments , which can either conﬁrm or reject our proposed models .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Properties of the AtoC -- DNA model As pointed out in `` Section 2 '' , four docking models representing the interaction between DNA and the DBD have been chosen as those satisfying the condition that positions − 140 , − 121 and − 111 might be important for AtoC binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>After energy minimization and equilibration ( ∼ 18 ns each ) of the four complexes the one with minimum protein -- DNA interaction energy has been adopted as the model representing the AtoC -- DNA interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Among the four equilibrated models the one with minimum protein -- DNA interaction energy has been adopted as the model representing the AtoC -- DNA interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Besides we provide for the ﬁrst time additional experimental evidence of the AtoC oligomerization activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>In vitro AtoC oligomerization via chemical cross-linking .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>AtoC has also been shown to contain a GAFTGA motif , the presence of which has been associated with the ability of the bacterial enhancer binding proteins to promote transcriptional activation [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The exact location of AtoC binding was examined further using DNase I footprinting analysis , which revealed that AtoC binds two 20-bp regions constituting an inverted palindrome that are located at 146 to 127 and 126 to 107 relative to the predicted atoDAEB transcription start site ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>To investigate whether the D55G and H73L mutations of AtoC alter its DNA-binding activity we performed in vitro electrophoretic mobility shift experiments with purified wild-type or mutant recombinant AtoC proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The ATPase activity of AtoC is minimally affected by the H73L mutation , since purified recombinant AtoC mutants carrying this mutation display almost wild-type ATPase activity ( Fig. 6b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Both the in vitro DNA-binding data and in vivo Chromatin Immunoprecipitation ( ChIP ) analyses demonstrated that recombinant AtoC binds upstream the predicted atoDAEB transcription start sites [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Thus , AtoC appears to display the same DNA-binding speciﬁcity both in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Model of two AtoC DNA-binding domains bound to DNA 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>However , the H-to-L substitution does not have any effect on AtoC ATPase activity , in contrast to D-to-G substitution , while neither of the two affects the in vitro DNA-binding activity of AtoC It has been reported that Asp to Asn ( or Glu ) substitutions allow response regulator phosphorylation at an alternative residue , whereas other substitutions do not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Influence of DNA-binding and phosphorylation on the ATPase activity of His10-AtoC The ATPase activity of σ54-RNA polymerase transcriptional activators is stimulated upon phosphorylation and subsequent DNA-binding [ 41 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>To determine the effect of DNA-binding on ATP hydrolysis , the ATPase activity of AtoC ∼ P was assayed in the absence or presence of pUC-Az plasmid DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Following acetoacetate sensing , the AtoS kinase phosphorylates AtoC on its receiver-domain , while the AtoC central domain possesses ATPase activity , and its HTH domain is responsible for binding to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">AtoC evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Comparative three-dimensional modeling of AtoC complexed with a domain of AtoS The sequence similarity searches showed that a region of AtoC comprising the receiver and the σ54 interaction domain ( aa : 6 -- 374 ) is highly homologous ( 43 % identity and 68 % similarity ) to the equivalent region of the NtrC1 response regulator from A. aeolicus ( Fig. 1b ) , the crystal structure of which is known ( RCSB code : 1NY5 ) [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Second , expression of the ato operon requires AtoC , which is homologous to other activators of 54-dependent promoters ( 42 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The activation domain of AtoC , like that of NtrC , belongs to the AAA + ( for `` ATPases associated with diverse cellular activities '' ) superfamily [ 38 ] , members of which participate in diverse cellular functions ( [ 39 ] and references therein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>BLAST analysis revealed that AtoC belongs to the NtrCNifA family of σ54-RNA polymerase transcriptional activators and that it comprises three conserved domains : the receiver domain containing the phosphorylation site ( s ) ( aa 6 -- 120 ) ( Fig. 1a ) , the σ54 interaction domain ( aa 145 -- 374 ) and the DNA-binding domain ( aa 433 -- 452 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>However , the pattern of AtoC phosphorylation appears to be more complicated than that of other members of the NtrC-NifA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Computational analysis of homologies to other transcriptional regulators of TCS indicated that AtoC belongs to the NtrC-NifA family of the σ54-RNA polymerase transcriptional activators [ 44 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Discussion AtoC is highly homologous to members of the NtrC-NifA family of σ54-RNA polymerase transcriptional activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>AtoC is a member of the NtrC -- NifA family of j54-RNA polymerase transcriptional activators [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by AtoC</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Table 1 Bacterial strains and plasmids Source or reference Invitrogen E. coli strain or plasmid TOP10F ' Strain genotype or plasmid information F ' -LCB- lacIq Tn10 ( TetR ) -RCB- mcrA Δ ( mrr-hsdRMS-mcrBC ) φ80 lacZΔΜ15 ΔlacX74 deoR recA1 araD139 Δ ( ara-leu ) 7697 galU galK rpsL ( StrR ) endA1 nupG F − ompT hsdSB ( r − − B mB ) gal dcm ( DE3 ) lacIqrrnB3 ΔlacZ4787 hsdR514 DE ( araBAD ) 567 DE ( rhaBAD ) 568 rph-1 BW25113 ( ΔatoSC ) lacking AtoS -- AtoC system Wild-type , λ − , F − , sup0 , galK2 pUC19 containing the atoS , atoC genes and part of the ato operon Ampr -- expresses both AtoS and AtoC pUC-Az with a H398L mutation in AtoS -- expresses mutant AtoS ( H398L ) and wild-type AtoC-Ampr pZErO ™ 2.1 vector ( Invitrogen ) carrying T-overhangs at the EcoRV site for TA cloning PCR product of atoS ORF in vector pZeta -- Kanr PCR product of sequences encoding the cytoplasmic region ( a.a. 232 -- 608 ) of atoS cloned in vector pZeta ( Invitrogen ) -- Kanr Expression vector for production of C-terminal His-tag fusions-Ampr pET21b overexpressing a AtoS-His6 fusion protein-Ampr pET21b overexpressing a cytoAtoS-His6 fusion protein - Ampr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>These plasmids can direc PCR product of atoS ORF in vector pCRII -- Amp and Kan r r PCR product of sequences encoding the cytoplasmic region ( a.a. 234 -- 608 ) of atoS cloned in vector pCRII ( InVitrogen ) -- Amp and Kan r r Expression vector for production of N-terminal GST fusions -- Amp r pGEX-3X overexpressing a GST -- AtoS fusion protein -- Amp r pGEX-3X overexpressing a GST -- cytoAtoS fusion protein -- Amp r Expression vector for production of N-terminal His10 fusions -- Amp r pET-16b overexpressing His10 -- AtoC -- Amp r pET-16b overexpressing mutant His10 -- AtoCD55G -- Amp r pET-16b overexpressing mutant His10 -- AtoCH73L -- Amp r pET-16b overexpressing mutant His10 -- AtoCD55G/H73L -- Amp r pZEro2 .1 ( InVitrogen ) containing a PCR product of a promoterless lacZ gene , lacking the first four codons -- Kan r Promoterless lacZ , also lacking the first four codons , in pDP8-Tet r AtoDAEB promoter and atoD coding sequences ( 206 to +73 ) cloned in pEMZ and driving the expression of lacZ reporter -- the synthesis of wild-type or mutant forms of AtoC under the control of the atoC gene promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>However , H73 , which is also important for the biological activity of AtoC [ 11 ] , represents a second putative phosphorylation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The above data indicate that D55 is the primary site of AtoC phosphorylation by AtoS , without precluding a significant subsequent role for the H73 residue in phosphorylation and/or activity of AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Effects of the mutations in the putative AtoC phosphorylation sites on its biological activity The finding that AtoC can be phosphorylated on two sites ( i.e. , D55 and H73 ) , at least , raised the question as to which of these two sites was involved in signal-transduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The single histidine residue ( H73 ) within this `` H box '' of AtoC ( Fig. 1a ) appeared to be a potential second site for phosphorylation , since an H73L mutation impaired AtoC phosphorylation and a D55G/H73L double mutation nullified it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>AtoC amino acid sequence contains both the conserved aspartic acid ( D55 ) , which is the putative phosphorylation site , as well as an `` H box '' consensus sequence ( SHETRTPV ) , common to histidine kinases , with histidine contained therein ( H73 ) being a second potential target for phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>[ 15 ] P.S. Filippou , E.E. Lioliou , C.A. Panagiotidis , C.M. Athanassopoulos , T. Garnelis , D. Papaioannou , D.A. Kyriakidis , Effect of polyamines and synthetic polyamine-analogues on the expression of antizyme ( AtoC ) and its regulatory genes , BMC Biochem .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>12 [ 31 ] A.B. Wedel , S. Kustu , The bacterial enhancer-binding protein NTRC is a molec - [ 32 ] A.H. West , A.M. Stock , Histidine kinases and response regulator proteins in [ 33 ] L. Xiang-Jun , W.K. Olson , 3DNA : a software package for the analysis , rebuilding [ 34 ] B. Xu , Y. Yang , H. Liang , Y. Zhou , An all-atom knowledge-based energy [ 35 ] X.F. Yang , Y. Ji , B.L. Schneider , L. Reitzer , Phosphorylation-independent [ 36 ] X. Zhang , M. Chaney , S.R. Wigneshweraraj , J. Schumacher , P. Borders , W. CanInteractions of the antizyme AtoC with regulatory elements of the Escherichia coli atoDAEB operon , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>In addition to its role as a transcriptional regulator , AtoC also functions as an antizyme ( Az ) to the key polyamine biosynthetic enzyme ornithine decarboxylase ( ODC ) , i.e. as a poly-amine-inducible , noncompetitive proteinaceous inhibitor [ 8,12 -- 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The aim of the experiments reported here was to identify regulatory elements and factors that are involved in the transcriptional regulator function of AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_12">
+The role of bacterial antizyme : from an inhibitory protein to AtoC transcriptional regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></label>
+<input id="rp_similarity_12", type="checkbox">
+<div class="RP_similar">
+<li>[ 15 ] E.E. Lioliou , D.A. Kyriakidis , The role of bacterial antizyme : From an inhibitory protein to AtoC transcriptional regulator , Microb .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>[ 12 ] E.E. Lioliou , D.A. Kyriakidis , The role of bacterial antizyme : from an inhibitory protein to AtoC transcriptional regulator , Microb .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li></div>
+<li>These results indicate that both putative phosphorylation sites of AtoC are involved in the transduction of the acetoacetate signal to a biological effect , i.e. , the induction of the ato operon and the expression of the atoD , atoA , atoE and atoB gene products .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>DISCUSSION AtoC possesses diverse biological roles both as a posttranslational inhibitor of polyamine biosynthetic enzymes and as a transcriptional regulator of atoDAEB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>It remains to be elucidated why AtoC evolved both as a posttranslational regulator of polyamine biosynthetic enzymes and as a transcriptional factor for genes that encode proteins involved in other aspects of the E. coli physiology and metab-olism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Constantinou , Athens 11636,3 Greece Received 8 February 2007/Accepted 21 June 2007 AtoC has a dual function as both an antizyme , the posttranslational inhibitor of polyamine biosynthetic enzymes , and the transcriptional regulator of genes involved in short-chain-fatty-acid-catabolism ( the atoDAEB operon ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The structural genes for the enzymes involved in short chain fatty-acid-metabolism , atoD , atoA , atoE and atoB are organised in the ato operon [ 21 ] , the transcription of which is activated by AtoC upon acetoacetate induction [ 21,22,24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>AtoC has been long known to act as the positive regulator of the expression of the atoDAEB operon , whose genes encode enzymes involved in the catabolism of short-chain fatty acids [ 8 -- 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The AtoC is long known to positively regulate the expression of genes of the atoDAEB operon , encoding enzymes involved in short-chain fatty acid metabo-lism [ 4,5 ] , upon acetoacetate induction [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The importance of TCS-mediated-signal-transduction processes in such a multitude of essential bacterial processes makes their Abbreviations : Az , antizyme ; ODC , ornithine decarboxylase ; TCS , two-component system ; HK , histidine kinase ; RR , response regulator ; atoSC , genetic locus encoding the AtoS and AtoC proteins ; AcAc , acetoacetate Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The recognition of signal and phosphotransfer are attributed to a `` sensor '' histidine kinase ( HK ) and a response regulator ( RR ) whose phosphorylation Abbreviations : TCS , two-component system ; HK , histidine kinase ; RR , response regulator ; trAtoC , truncated form of AtoC ; IPTG , isopropyl-β-D-thiogalactoside ; PMSF , phenylmethylsulfonylfluoride Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>elsevier.com/locate/bba http://ww Phosphorylation activity of the response regulator of the two-component signal-transduction-system AtoS -- AtoC in E. coli Efthimia E. Lioliou , Eleni P. Mimitou , Asterios I. Grigoroudis , Cynthia H. Panagiotidis , a ,1 b ,2 a b Christos A. Panagiotidis , Dimitrios A. Kyriakidis b a , * a Laboratory of Biochemistry , Department of Chemistry , Aristotle University of Thessaloniki , Thessaloniki 54124 , Greece b Department of Pharmaceutical Sciences , Aristotle University of Thessaloniki , Thessaloniki 54124 , Greece Received 9 December 2004 ; received in revised form 30 June 2005 ; accepted 30 June 2005 Available online 26 August 2005 Abstract Antizyme , long known to be a non-competitive inhibitor of ornithine decarboxylase , is encoded by the atoC gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Kyriakidis , Involvement of the AtoS -- AtoC signal-transduction-system in poly - ( R ) -3 - hydroxybutyrate-biosynthesis in Escherichia coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_26">
+[ 19 ] M.C. Theodorou , C.A. Panagiotidis , C.H. Panagiotidis , A.A. Pantazaki , D.A. Kyriakidis , Involvement of the AtoS -- AtoC signal-transduction-system in poly - ( R ) -3 - hydro-xybutyrate-biosynthesis in Escherichia coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></label>
+<input id="rp_similarity_26", type="checkbox">
+<div class="RP_similar">
+<li>[ 13 ] M.C. Theodorou , C.A. Panagiotidis , C.H. Panagiotidis , A.A. Pantazaki , D.A. Kyriakidis , Involvement of the AtoS -- AtoC signal-transduction-system in poly - ( R ) -3 - hydroxybutyrate-biosynthesis in Escherichia coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li></div>
+<li>[ 11 ] E.E. Lioliou , E.P. Mimitou , A.I. Grigoroudis , C.H. Panagiotidis , C.A. Panagiotidis , D.A. Kyriakidis , Phosphorylation activity of the response regulator of the two-component signal-transduction-system AtoS -- AtoC / Az in E. coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_29">
+Phosphorylation activity of the response regulator of the two-component signal-transduction-system AtoS-AtoC in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></label>
+<input id="rp_similarity_29", type="checkbox">
+<div class="RP_similar">
+<li>D.A. Kyriakidis , Phosphorylation activity of the response regulator of the two-component signal-transduction-system AtoS -- AtoC in E. coli , Biochim .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li></div>
+<li>Recent data posit the involvement of the AtoS-AtoC TCS in the expression of a number of E. coli genes other than those of the atoDAEB operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>We have recently shown that the AtoS -- AtoC / Az system , acting directly on the atoDAEB operon transcription , regulates positively the short-chain poly - ( R ) -3 - hydroxy-butyrate ( cPHB ) biosynthesis in E. coli , upon acetoacetatemediated induction [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>The present study reveals another role for AtoC , that of a response regulator of the AtoS -- AtoC two component system regulating the expression of the atoDAEB operon upon acetoacetate induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The AtoS -- AtoC two component system , functionally modulated by various agents , inﬂuences fundamental cellular-processes such as short-chain-fatty-acid-catabolism and poly - ( R ) -3 - hydroxybutyrate-biosynthesis in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Constantinou Ave 11635 , Athens , Greece A R T I C L E A B S T R A C T I N F O Article history : Received 21 December 2007 The Escherichia coli AtoS -- AtoC two-component signal-transduction-system regulates the expression of the atoDAEB operon genes , whose products are required for short-chain-fatty-acid-catabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>Constantinou , Athens 11636 , Greece Received 1 February 2007 ; received in revised form 2 April 2007 ; accepted 6 April 2007 Available online 19 April 2007 Abstract The AtoS -- AtoC two-component signal-transduction-system positively regulates the expression of the atoDAEB operon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Plasmid pUC-Az ( H398L ) produces the mutant protein AtoS ( H398L ) and the wildtype AtoC , under the control of their normal promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The effector constructs provided expression of both AtoS and wild-type ( pEM-Az ) or mutant AtoC ( pEM-Az-D55 , pEM-Az-H73 , pEM-Az-D55 / H73 ) under the control of their cognate promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Conserved residues potentially involved in the AtoS -- AtoC phosphate transfer ( D55 of AtoC and H398 of AtoS ) are drawn as ball-and-sticks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>To understand the order of the biochemical events that lead to AtoC phosphorylation and its activation we used molecular modeling of the 3D structures of both AtoC and the sensor kinase AtoS , which is involved in the regulation of its activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Aceto-acetate or a product of acetoacetate-metabolism probably binds AtoS and stimulates AtoC phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Autophosphorylation of AtoS and phosphorylation of His10 -- AtoC by AtoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Given the importance of the above processes for bacterial homeostasis and motility , the development of specific AtoS -- AtoC TCS could provide an additional means for the treatment of bacterial diseases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>These findings demonstrate that the study of AtoS -- AtoC TCS might reveal evidence for the biochemical mechanism and the significance of the regulation of diverse processes such as fatty-acid-metabolism , regulation of the intracellular cationic environment ( poly-amines ) and cell-motility and chemotaxis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>However , it is clear that AtoC is more than a regulator of the genes that participate in short-chain-fatty-acid-catabolism since it affects a number of other physiological-processes , such as ﬂagellum biosynthesis and motility , the biosynthesis of the biopolymer poly - ( R ) -3 - hydroxybutyrate , and processes that inﬂuence the sodium sensitivity but not the potassium sensitivity of E. coli cells or their susceptibility to membrane-acting agents and aminoglycoside antibiotics ( 21 , 38 , 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>It is interesting that a recent transcriptome analysis of the E. coli TCSs [ 28 ] revealed possible involvement , positive and/or negative , for the AtoS -- AtoC TCS in a number of processes other than short chain fatty-acid-metabolism , including flagellar synthesis and chemotactic behaviour of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Doubling component regulated regulated of altered time Identiﬁed function system ( HK/RR ) Relevant functions genes genes genes ( min ) in this experiment Strain name Mutation Class DcuS/DcuR Response to C4-dicarboxylate ( Golby et al. , 1999 ) Chemotaxis ( Stock and Surette , 1996 ) 10 29 39 27 BW 27878 DE ( dcuSR ) 1330 28079a Flagellar synthesis CheA/CheB , CheYa 13 28 41 25 BW DE ( ﬂhEAB cheZYBR tap tar cheWA motBA ﬂhCD IS1 ) 1218a DE ( atoSC ) 569 11 32 43 27 Flagellar synthesis BW28878 AtoS/AtoC Acetoacetate-metabolism ( Chen et al. , 1991 ; Rhie and Dennis , 1995 ) YpdA/YpdB Energy metabolism , BW27875 ﬂagellar synthesis BW27865 DE ( ypdAB ) 1334 24 18 42 31 NarQ / DnarQ1314 25 45 29 Nitrate regulation ( Stewart and Rabin , 1995 ) 20 / YfhA / RcsB DyfhA1326 DrcsB1320 17 11 46 46 28 38 BW BW 29430 27870 29 35 Capsular synthesis ( Stout and Gottesman , 1990 ) Regulation of the citrate fermentation ( Kaspar and Bott , 2002 ) Sigma-S degradation ( Klauck et al. , 2001 ) Flagellar synthesis , maltose-transport Flagellar synthesis , maltose-transport CitA/CitB DE ( citAB ) 1289 23 61 BW 27876 31 38 / RssB BW27555 23 64 25 41 DrssB1273 rpoS regulon Drastic alteration Respiratory control ( Iuchi and Lin , 1995 ) / ArcA 72 38 49 110 DarcA43 TCA-cycle , ﬂagellar synthesis Respiration , rpoS regulon , maltose-transport Amino acid metabolism ( cys , leu ) , transporter , ﬂagellar synthesis , enterochelin TCA-cycle , chemotaxis , osmotic adaptation , protein peptide secretion , purine-ribonucleotide-biosynthesis , rpoS regulon , enterochelin , maltose-transport BW 27422 Hydrogen peroxide sensitivity ( Pernestig et al. , 2001 ) / UvrY 86 37 45 123 DuvrY1296 BW 27874 EnvZ/OmpR 71 54 125 35 DE ( ompR-envZ ) 520 Osmotic regulation BW 26424 ( Pratt and Silhavy , 1995 ) Respiratory control ( Iuchi and 147 Lin , 1995 ) ArcB / 112 259 44 BW26422 DarcB41 a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>These results suggest that many TCSs have not only unique physiological roles ( PhoQ/PhoP for mgtA expression ; CpxA/CpxR for ppiA and cpxP expression ; and RssB for rpoS regulon expression ) , but also common physiological roles ( CpxA / CpxR , FimZ and RstA/RstB for enterochelin-biosynthesis ; AtoS/AtoC , CitA/CitB , RcsB and YpdA/YpdB for ﬂagellar gene-expression ; and CitA/CitB and RcsB for maltose-transport gene-expression ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>Other RRs also control ﬂagellar expression : ArcA and AtoC both activate it , while CitB and YpdB both repress it ( 330 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15755952" target="_blank">15755952</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">AtoC binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>To construct His10-trAtoC , the atoC sequence encoding amino-acids 140 -- 461 was amplified by PCR , using plasmid pUC-Az [ 10 ] as template with the following primers : 5 ′ - AAA CAT ATG ATC CGT CAT CTG CAC CAG GCA-3 ′ and 5 ′ - TTG GGA TCC GTG CAA ATT TCT GCA TAG CAA-3 ′ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>It is not clear whether any of these sites are recognized in vivo by either AtoC or an AtoC-containing complex or if they represent targets of regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The `` H box '' motif was revealed after AtoC sequence alignment with the multi-domain sensor ArcB [ 35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_4">
+AtoC contains in its amino acid sequence a conserved aspartic acid ( D55 ) , which is the putative phosphorylation site , as well as an unexpected `` H box '' consensus sequence ( SHETRTPV ) , common to histidine kinases , with the histidine contained therein ( H73 ) being a second potential target for phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></label>
+<input id="sit_similarity_4", type="checkbox">
+<div class="SIT_similar">
+<li>AtoC amino acid sequence contains both the conserved aspartic acid ( D55 ) , which is the putative phosphorylation site , as well as an `` H box '' consensus sequence ( SHETRTPV ) , common to histidine kinases , with histidine contained therein ( H73 ) being a second potential target for phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li></div>
+<li>When the possibility of a second AtoC phosphorylation site was investigated , it was found that AtoC possesses an `` H box '' , i.e. a consensus sequence ( SHETRTPV , residues 72 -- 79 ) common to histidine kinases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>AtoC sequence alignment with the multi-domain sensor ArcB [ 44 ] was performed by T-Coffee Program [ 45 ] and revealed the presence of the characteristic `` H-box '' [ 17 ] found in HKs with the consensus sequence SHETRTPV , spanning residues 72 -- 79 of AtoC , and H73 being a putative site of phosphorylation ( Fig. 3b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The characteristic `` H-box '' is indicated with the consensus sequence SHETRTPV , spanning residues 72 -- 79 of AtoC , with H73 being a putative site of phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Among the already reported characteristic properties , AtoC binds to a speciﬁc site , a palindromic repeat of 20 nucleotides within the atoDAEB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>The sequence of each 20-bp AtoC binding site conforms to the consensus GCTATGCAGAAAWTTGCRCA , and their locations are in good agreement with the relative positioning o other ELEs present in 54-dependent promoters ( references 26 and 41 and references therein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The sequence of the inverted palindrome , comprising the AtoC binding site , conforms to a 20 bp-consensus and its location coincides with the relative positioning of other enhancer-like elements present in 54-dependent promoters [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>DNase I protection footprinting analysis revealed that AtoC binds two 20-bp stretches , constituting an inverted palindrome , that are located at 146 to 107 relative to the transcription initiation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The exact location of AtoC binding was examined further using DNase I footprinting analysis , which revealed that AtoC binds two 20-bp regions constituting an inverted palindrome that are located at 146 to 127 and 126 to 107 relative to the predicted atoDAEB transcription start site ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>AtoC is a sequence-speciﬁc DNA-bindin protein that recognizes an inverted-repeat consisting of two 20-bp stretches that is located upstream ( − 146 to − 107 ) of the atoDAEB operon transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>AtoC is a sequencespecific DNA binding protein that recognizes two 20-bp stretches , constituting an inverted palindrome , that are located at an enhancer-like element upstream ( − 146 to − 107 ) of the atoDAEB operon transcription start ( Matta et .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>This mutation lay within one of the two putative IHF binding sites that are located at 62 to 50 and 37 to 25 , between the AtoC and RNA polymerase binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Interestingly enough , one mutation that mapped at position 53 , i.e. , between the AtoC and the polymerase binding sequences ( Fig. 3B ) , produced a more pronounced phenotype than any of the AtoC binding site mutations ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>To determine whether the mutation at position 53 affects AtoC binding , as well as to conﬁrm that the AtoC binding site mutations do affect the binding of AtoC , we tested the ability of probes carrying wild-type or mutant sequences to bind AtoC in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>The in vitro DNA binding data presented here demonstrated that puriﬁed rAtoC binds speciﬁcally within the same sequences that are involved in the acetoacetate responsiveness of the atoDAEB operon , i.e. , the region from 206 to 120 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>To locate the AtoC binding sites within the atoDAEB promoter , we generated three overlapping DNA fragments that shared the same 3 end ( at 73 relative to the putative transcription start site ) but differed at the 5 end ( Fig. 1 ) and tested them for the ability to bind AtoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>In vitro analysis of AtoC binding to atoDAEB regulatory sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>ChIP analysis of in vivo AtoC binding to atoDAEB regulatory sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>EMSA analysis revealed that while AtoC binds atoD1 ( 206 to 73 ) , it fails to bind atoD2 ( 120 to 73 ) and atoD3 ( 47 to 73 ) ( Fig. 2A ) , suggesting that the sequences necessary for AtoC binding lie within the region from 206 to 120 relative to the predicted atoDAEB transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Figure 4 shows that AtoC binds in vivo to the plasmid-borne atoDAEB sequence containing an AtoC binding site ( atoD1 , 206 to 73 ) whereas it fails to bind sequences lacking this site ( atoD2 , 120 to 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>In addition , these AtoC mutants displayed reduced DNA-dependent ATPase activity , although their ability to bind their target DNA sequences in a sequence-specific manner was found to be unaltered .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Response regulators are reported to bind to their target sequences in the form of dimers , and our data provide strong evidence that this is also the case with AtoC , in the scenario of two DBDs docking to the B-DNA structure of the inverted palindrome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Since experimental structures of AtoC or its complex with DNA are not yet available , an almost complete homology model of AtoC and of its putative entity as a dimer is constructed for this study , as well as a model of its binding to its target DNA sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+<li>Modelling DNA ( − 146 to − 106 ) binding has been provided by server http://www.scfbio-iitd.res.in/software/drugdesign/bdna.jsp [ 1 ] using as input the following palindrome : A starting B-DNA model for the target sequence of AtoC -146 -106 1 10 20 30 40 GCTATGCAGAAATTTGCACA G TGCGCAATTTTCTGCATAGC imized and equilibrated for 5.6 ns in cylindrical boundary conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by AtoC</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Indeed , the deletion of the E. coli atoSC locus results in the up-regulation of 11 genes and the downregulation of 32 genes ( 21 ) , suggesting both positive and negative roles for the AtoS-AtoC TCS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Interestingly , it was found that all phosphor-ylation site mutants of AtoC , i.e. , D55G , H73L and D55G / H73L , were also able to activate atoDAEB expression ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>These results indicate that both putative phosphorylation sites of AtoC are involved in the transduction of the acetoacetate signal to a biological effect , i.e. , the induction of the ato operon and the expression of the atoD , atoA , atoE and atoB gene products .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>The structural genes for the enzymes involved in short chain fatty acid metabolism , atoD , atoA , atoE and atoB are organised in the ato operon [ 21 ] , the transcription of which is activated by AtoC upon acetoacetate induction [ 21,22,24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>AtoC has been long known to act as the positive regulator of the expression of the atoDAEB operon , whose genes encode enzymes involved in the catabolism of short-chain fatty-acids [ 8 -- 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18534200" target="_blank">18534200</a>]<br></li>
+<li>The AtoC is long known to positively regulate the expression of genes of the atoDAEB operon , encoding enzymes involved in short-chain fatty acid metabo-lism [ 4,5 ] , upon acetoacetate induction [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17537579" target="_blank">17537579</a>]<br></li>
+<li>Since both in yivo and in vitro protein analyses were performed in atoC ' hosts , loss of AtoC in pLJ16 did not prevent the expression of the ato genes ( Fig. 3f ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3025185" target="_blank">3025185</a>]<br></li>
+<li>Moreover , we showed that this induction is not due to altered levels of the AtoS-AtoC TCS proteins , since acetoacetate does not augment the expression of their genes , i.e. , atoS and atoC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Recent data posit the involvement of the AtoS-AtoC TCS in the expression of a number of E. coli genes other than those of the atoDAEB operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>Based on sequence analyses , their location on the E. coli genome and previous genetic data , the products of atoS and atoC genes were predicted to constitute a TCS ( AtoS -- AtoC ) that positively regulates expression of the atoDAEB operon upon induction by acetoacetate [ 12,15,19 -- Fig. 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16153782" target="_blank">16153782</a>]<br></li>
+<li>Genetic analyses identi-ﬁed AtoC , a 48-kDa protein encoded by atoC , as the positive gene regulatory factor required for the inducible expression of the atoDAEB operon ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616594" target="_blank">17616594</a>]<br></li>
+<li>AtoC is required for expression of the atoDAEB operon ( 82 , 124 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Properties of the AtoC model tion in the expression of the atoDAEB operon in E. coli , an almost complete model ( 6 -- 454 ) of its structure has been constructed ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115262" target="_blank">21115262</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

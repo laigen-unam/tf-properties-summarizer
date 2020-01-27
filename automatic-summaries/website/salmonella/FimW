@@ -1,0 +1,612 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - FimW</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">FimW</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">FimW transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Moreover , an equally likely hypothesis is that repression by FimW is indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimW may also act as an autoregulator , since this protein was found to negatively regulate its own expression under static liquid conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW negatively regulates ﬁmA expression , and FimW mutants exhibited an increased ﬁmbriate phenotype compared to wild-type bacteria and increased ﬁmA gene expression ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimZ , FimY , FimW , STM0551 , and an arginine transfer RNA ( ﬁmU ) were previously demonstrated to regulate ﬁmbrial expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>FimZ , FimY , FimW and an arginine transfer RNA fimU regulate fimbrial expression through a complicate circuit involving transcriptional and translational levels ( Tinker and Clegg 2001 ; Tinker et al. 2001 ; Yeh et al. 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_6">
+In addition , FimW and FimZ form a coupled feedback loop where they activate their own and each other 's expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></label>
+<input id="act_similarity_6", type="checkbox">
+<div class="ACT_similar">
+<li>In type 1 ﬁmbriae , FimW and FimZ form a coupled feedback loop where they can activate their own and each other 's expression ( 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li></div>
+<li>Moreover , FimW and FimY interact within a negative feedback loop , as FimY was found to activate the PﬁmW promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Furthermore , FimW participates in a negative feedback loop as FimY was found to enhance PﬁmW expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>We hypothesize that this negative feedback loop involving FimW prevents the runaway expression of FimY and FimZ arising from their participation in interacting positive feedback .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Speciﬁcally , we hypothesize that when FimY and FimZ reach their optimum expression levels , the FimW negative feedback loop is activated and halts expression from the PﬁmY and PﬁmZ promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimY and FimW also participate in a negative-feedback loop , where FimY activates FimW expression and FimW represses FimY expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Moreover , FimY and FimZ protein expression levels are controlled by a negative feedback loop involving FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>These results , using bacteria grown under conditions inﬂuencing phenotypic expression of ﬁmbriae in salmonellae ( 49 ) , indicate that FimW functions as a negative regulator that is expressed and acts to reduce ﬁmbrial expression when sero-var Typhimurium is subcultured in aerobic static broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW also appears to act as an autoregulator , since expression from the ﬁmW-lacZ reporter was increased in a ﬁmW mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>Consistent with the role of this protein as a negative regulator , ﬁmA-lacZ expression in serovar Typhimurium , as well as in Escherichia coli , was increased twofold in the absence of functional FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In addition , ﬁmA expression from a ﬁmA-lacZ reporter was increased in the absence of a functional FimW , in both an E. coli and a serovar Typhimurium background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>However , in the case of the PﬁmY promoter , FimW expression led to about a threefold decrease in PﬁmY activity ( 7,462 319 RFU/OD [ uninduced ] versus 2,781 188 RFU/OD [ induced ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>However , Saini et al. reported that FimY independently activates the fimA promoter , and FimW acts as a negative regulator by repressing FimY transcription [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimY activates the PﬁmW promoter , and FimW represses the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In this loop , FimY activates the expression of the PﬁmW promoter , and FimW represses the expression of the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>As mentioned above , FimW negatively regulates FimY , a multifunctional protein that positively regulates production of ﬁmbriae by activating the ﬁmA promoter ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>We found that FimW negatively regulates ﬁm gene expression by repressing expression from the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>This would suggest that FimW has a higher afﬁnity for the phosphorylated or activated FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>While these results agree with previously published data regarding the ﬁm system in serovar Typhimurium , they still do not tell us how FimW , FimY , and FimZ individually contribute to PﬁmA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In order to conﬁrm that the decreased interaction of FimZD56A is speciﬁc for this amino acid , we also constructed mutations ( FimZL55A and FimZI57A ) immediately adjacent to aspartate 56 and examined their ability to interact with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>A signiﬁcant interaction ( ** , P 0.05 ) of FimZ with FimW was observed only when FimZ was produced as a Lex-Fim fusion molecule ( FimW-FimZY or FimWY-FimZ ) in this system , and no interaction could occur when it was produced as a native protein ( FimW-FimYZ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>The interaction between FimZ and FimW was found to repress sulA-lacZY expression by 12-fold , indicating a stronger interaction between FimZ and FimW than between HilE and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>As mentioned above , FimW has not been shown to-bind to any DNA targets , and its repressive activity may be one of inhib-iting FimZ alone to activate ﬁmA expression by facilitating binding of the FimZ-FimW complex to a different site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimW represses fimA expression and FimW interacts with FimZ physically to consume FimZ , diminishing available FimZ to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>Consequently , the negative regulatory effect of FimW is most likely due to downmodulation of the active FimZ protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Possibly , if FimW is a DNA-binding protein , it binds to its target only in the context of interacting with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Earlier reports suggested that FimW binds FimZ and somehow inhibits the FimZ-dependent activation of ﬁm promoters ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In addition , the interaction of FimZ with FimW , a repressor of ﬁmA expression , occurs only when FimZ is phosphorylated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Initially , we believed that the interaction of FimW with FimZ may be most stable when FimZ is not activated ( FimZD56A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Possibly , in its inactive state ( FimZD56A ) , modulation of FimZ activity by FimW is not necessary , but once it is phosphorylated , FimW may decrease its activity by interacting with FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Finally , our investigations indicate that phosphorylated FimZ is necessary for optimal activation of ﬁmA and that this activation may be modulated by interaction with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In all cases examined , the presence of a functional ﬁmY gene did not affect the FimZ-FimW interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>To better understand the role of FimW in ﬁmbrial regulation , FimW was partially puriﬁed by the construction of mal-tose-binding protein and histidine-tag fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>This system demonstrated signiﬁcant repression in the presence of the FimW and FimZ fusion molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>This repression was not observed in the presence of FimY and FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>Interestingly , these results suggest that FimY is both an activator and a repressor of ﬁm gene expression , as it can directly activate the PﬁmZ , PﬁmY , and PﬁmA promoters and indirectly repress them by enhancing FimW expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>The involvement of the global regulators Lrp and H-NS in addition to the ﬁm-speciﬁc proteins FimW , FimY , and FimZ is likely to make the ﬁm gene cluster sensitive to environmental stimuli and to the physiological state of the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>The expression of ﬁm is controlled in response to environmental signals through a complex regulatory cascade involving the proteins FimW , FimY , and FimZ and a genetic locus , ﬁmU , that encodes a rare arginine tRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>Expression of the ﬁm gene cluster is known to be regulated by three proteins -- FimW , FimY , and FimZ -- and a tRNA encoded by ﬁmU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>It is unknown whether any of the additional gene products , such as FimY or FimW , directly interact with FimZ to mediate ﬁmA expression or if these polypeptides regulate ﬁmZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592479" target="_blank">7592479</a>]<br></li>
+<li>Instead , FimW may function by inﬂuencing the ability of FimZ to activate transcription from this promoter , either by inhibiting the binding of FimZ to the ﬁmA promoter or by inhibiting activation by FimZ once this protein has bound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW was found to negatively regulate ﬁm gene expression by repressing transcription from the PﬁmY promoter , independent of FimY or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In the case of ﬁmU , the expression of this gene was not found to be regulated by FimW , FimY , or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimY Does Not Interfere with FimZ-FimW Interaction during Type 1 Fimbria Production by Salmonella enterica Serovar Typhimurium Sarah A. Zeiner , Brett E. Dwyer , Steven Clegg Department of Microbiology , Roy J. and Lucille A. Carver College of Medicine , University of Iowa , Iowa City , Iowa , USA The production of type 1 ﬁmbriae in Salmonella enterica serovar Typhimurium is controlled , in part , by three proteins , FimZ , FimY , and FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimW inhibition of type 1 ﬁmbrial production may be mediated by consumption of the positive regulator , FimZ or by physical interactions , or may be mediated by repression of the promoter activity of ﬁmY ( Saini et al. , 2009 ; Tinker et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>Saini et al. suggested that inhibition of fim gene expression occurs through the direct repression of PfimY by FimW , resulting in prevention of FimY-mediated fimZ activation [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>ﬁmY The PﬁmU promoter is not regulated by FimW , FimY , or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Based on these results , FimW would appear ﬁmW to repress the PﬁmY promoter by preventing FimZ from activating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">FimW protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Finally , our investigations indicate that phosphorylated FimZ is necessary for optimal activation of ﬁmA and that this activation may be modulated by interaction with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In order to conﬁrm that the decreased interaction of FimZD56A is speciﬁc for this amino acid , we also constructed mutations ( FimZL55A and FimZI57A ) immediately adjacent to aspartate 56 and examined their ability to interact with FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In order to more fully understand the relationship between the three ﬁmbrial regulatory proteins , we investigated whether FimY inﬂuences the ability of FimW to interact with FimZ and also to determine if FimY is necessary for FimZ activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>A signiﬁcant interaction between FimW and the DNA-binding activator protein , FimZ , was detected using this system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In previous studies , we have shown that FimZ and FimW are the only two of the three regulatory proteins in which an interaction can be demonstrated in pairwise combinations ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>As can be seen in Fig. 3 , these two mutations did not alter the FimZ-FimW interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimY does not affect the FimZ-FimW interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>In all cases examined , the presence of a functional ﬁmY gene did not affect the FimZ-FimW interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimW has a C-terminal LuxR-type helix-turn-helix domain ( Letunic et al. 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li>
+<li>Consistent with our model , FimW has a C-terminal LuxR-type helix-turn-helix DNA domain ( SM00421 ) ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>However , an analysis of the 300 FimW amino acid sequence predicts that it has a DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>This region of the BpdT response regulator contains strong homology to a helix-turn-helix DNA-binding domain ; however , FimW exhibits only weak homology to this structural motif ( 16 ) FIG. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>Although FimW was predicted to possess a DNA-binding domain , we were unable to demonstrate binding to target DNA molecules in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>Although FimW possesses a helix-turn-helix DNA-binding motif in its C-terminal region , we and others have not been able demonstrate DNA-binding to ﬁm targets using puriﬁed FimW alone ( data not shown ) ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">FimW evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>This region of the BpdT response regulator contains strong homology to a helix-turn-helix DNA-binding domain ; however , FimW exhibits only weak homology to this structural motif ( 16 ) FIG. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>Both response regulators possess approximately 30 % identity to FimW over a 50-amino-acid region in the C-terminus of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>The three genes encoding FimWYZ constitute the main activation complex of type I ﬁmbriae : FimZ belongs to the response regulator family of proteins showing DNA binding ability ( 215 ) , FimY cooperatively acts with FimZ to activate the ﬁmbrial genes ( 216 ) , and FimW exerts a negative inﬂuence on the expression of the ﬁm genes ( 243 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by FimW</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Thus , based upon chromosomal location and amino acid sequence similarity , it was hypothesized that FimW is also involved in ﬁmbrial regulation ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW may be involved in this phosphorylation cascade , such that it is able to inactivate FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>As mentioned above , FimW negatively regulates FimY , a multifunctional protein that positively regulates production of ﬁmbriae by activating the ﬁmA promoter ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>We found that FimW negatively regulates ﬁm gene-expression by repressing expression from the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_5">
+Tinker JK , Hancox LS , Clegg S. FimW is a negative regulator affecting type 1 ﬁmbrial expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></label>
+<input id="rp_similarity_5", type="checkbox">
+<div class="RP_similar">
+<li>Tinker JK , Hancox LS , Clegg S : FimW is a negative regulator affecting type 1 fimbrial expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_7">
+Saini S , Pearl JA , Rao CV : Role of FimW , FimY , and FimZ in regulating the expression of type 1 fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></label>
+<input id="rp_similarity_7", type="checkbox">
+<div class="RP_similar">
+<li>64 2765 -- 2773 Saini S , Pearl JA and Rao CV 2009 Role of FimW , FimY and FimZ in regulating the expression of type 1 fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23938383" target="_blank">23938383</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_9">
+Role of FimW , FimY , and FimZ in regulating the expression of type I ﬁmbriae in Salmonella enterica sero-var Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></label>
+<input id="rp_similarity_9", type="checkbox">
+<div class="RP_similar">
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i fimbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21852351" target="_blank">21852351</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Sal-monella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type I ﬁmbriae in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23462115" target="_blank">23462115</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type I ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21478311" target="_blank">21478311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22778099" target="_blank">22778099</a>]<br></li>
+<li>Role of FimW , FimY , and FimZ in regulating the expression of type 1 ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>[ 39 ] S. Saini , J.A. Pearl , C.V. Rao , Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>Saini , S. , Pearl , J.A. , and Rao , C.V. ( 2009 ) Role of FimW , FimY , and FimZ in regulating the expression of type i ﬁmbriae in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></li></div>
+<li>This protein is encoded by a gene on the ﬁm cluster located between the regulators ﬁmY and ﬁmU , and the studies presented here indicate that FimW is also involved in serovar Typhimurium type 1 ﬁmbrial regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW has recently been shown to downregulate production of type 1 ﬁmbriae by inhibiting FimY , a protein that enhances expression of the ﬁm structural genes by activating the ﬁmA promoter ( 83 ) , and chromosomal ﬁmW mutants expressed 4-to 8-fold more type 1 ﬁmbriae than the parent strain ( 96 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>FimW negatively regulates production of type 1 ﬁmbriae by interacting with FimY ( 83 ) and possibly with FimZ ( 96 ) ; the latter two proteins independently activate the PﬁmA promoter , which controls the expression of the ﬁm structural genes ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>In this loop , FimY activates the expression of the PﬁmW promoter , and FimW represses the expression of the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>This system has also been used to demonstrate an interaction between the regulatory proteins FimZ and FimW that control the expression of Salmonella type 1 ﬁmbriae ( 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12595445" target="_blank">12595445</a>]<br></li>
+<li>The expression of FimH on the bacterial surface is tightly controlled by the fim regulatory proteins ( FimZ , FimY and FimW ) in response to environmental signals [ 45,46,47 ] and , due to involvement of fim regulatory proteins in the global regulatory network , FimH expression is coupled with the expression of other virulence factors including flagella [ 48 ] , T3SS [ 49,50,51 ] and LPS [ 52 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22685400" target="_blank">22685400</a>]<br></li>
+<li>The expression of ﬁm is controlled in response to environmental signals through a complex regulatory cascade involving the proteins FimW , FimY , and FimZ and a genetic locus , ﬁmU , that encodes a rare arginine tRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17981960" target="_blank">17981960</a>]<br></li>
+<li>FimZ , FimY , STM0551 , FimW , and an arginine transfer RNA ( ﬁmU ) regulate ﬁmbrial expression through a complicated circuit involving both transcriptional and translational levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24462182" target="_blank">24462182</a>]<br></li>
+<li>The major regulatory proteins that control ﬁm expression have been identiﬁed as FimZ , FimY , and FimW ( 14 -- 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>These results , using bacteria grown under conditions inﬂuencing phenotypic expression of ﬁmbriae in salmonellae ( 49 ) , indicate that FimW functions as a negative regulator that is expressed and acts to reduce ﬁmbrial expression when sero-var Typhimurium is subcultured in aerobic static broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW negatively regulates ﬁmA expression , and FimW mutants exhibited an increased ﬁmbriate phenotype compared to wild-type bacteria and increased ﬁmA gene-expression ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24042120" target="_blank">24042120</a>]<br></li>
+<li>FimW is a negative regulator of ﬁm gene-expression ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In addition , we also deleted FimY so that regulation was dependent entirely on FimZ ( FimW is a negative regulator of type 1 ﬁmbrial gene-expression and operates through FimY [ 72 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FimY and FimW also participate in a negative-feedback loop , where FimY activates FimW expression and FimW represses FimY expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_32">
+RESULTS FimZ and FimY are activators and FimW is a repressor of ﬁm gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></label>
+<input id="rp_similarity_32", type="checkbox">
+<div class="RP_similar">
+<li>FimY and FimZ are activators and FimW is a repressor of ﬁm gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li></div>
+<li>FimW may also act as an autoregulator , since this protein was found to negatively regulate its own expression under static liquid conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>In addition to these two positive regulators , a third regulator , FimW , is known to repress ﬁm gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">FimW binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The maltose-binding protein -- FimW fusion was separated from the crude extract by binding to an amylose-agarose bead resin and eluted from the resin by washing with Column Buffer plus 10 mM maltose according to the manufacturer 's instructions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by FimW</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>FimW represses fimA expression and FimW interacts with FimZ physically to consume FimZ , diminishing available FimZ to activate fimA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22716649" target="_blank">22716649</a>]<br></li>
+<li>However , Saini et al. reported that FimY independently activates the fimA promoter , and FimW acts as a negative regulator by repressing FimY transcription [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimY and FimW also participate in a negative-feedback loop , where FimY activates FimW expression and FimW represses FimY expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Moreover , FimY and FimZ protein expression levels are controlled by a negative feedback loop involving FimW .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Expression of the ﬁm gene cluster is known to be regulated by three proteins -- FimW , FimY , and FimZ -- and a tRNA encoded by ﬁmU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>Interestingly , these results suggest that FimY is both an activator and a repressor of ﬁm gene expression , as it can directly activate the PﬁmZ , PﬁmY , and PﬁmA promoters and indirectly repress them by enhancing FimW expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_7">
+RESULTS FimZ and FimY are activators and FimW is a repressor of ﬁm gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></label>
+<input id="tu_similarity_7", type="checkbox">
+<div class="TU_similar">
+<li>FimY and FimZ are activators and FimW is a repressor of ﬁm gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li></div>
+<li>Saini et al. suggested that inhibition of fim gene expression occurs through the direct repression of PfimY by FimW , resulting in prevention of FimY-mediated fimZ activation [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>FimW was found to negatively regulate ﬁm gene expression by repressing transcription from the PﬁmY promoter , independent of FimY or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>We found that FimW negatively regulates ﬁm gene expression by repressing expression from the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimW negatively regulates production of type 1 ﬁmbriae by interacting with FimY ( 83 ) and possibly with FimZ ( 96 ) ; the latter two proteins independently activate the PﬁmA promoter , which controls the expression of the ﬁm structural genes ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118264" target="_blank">20118264</a>]<br></li>
+<li>In this loop , FimY activates the expression of the PﬁmW promoter , and FimW represses the expression of the PﬁmY promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In the case of ﬁmU , the expression of this gene was not found to be regulated by FimW , FimY , or FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In serovar Typhimurium , the expression of the structural genes is regulated by three transcription factors , FimY , FimZ , and FimW ( 44 , 46 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>These results , using bacteria grown under conditions inﬂuencing phenotypic expression of ﬁmbriae in salmonellae ( 49 ) , indicate that FimW functions as a negative regulator that is expressed and acts to reduce ﬁmbrial expression when sero-var Typhimurium is subcultured in aerobic static broth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW is a negative regulator of ﬁm gene expression ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimW has previously been observed to repress ﬁm gene expression ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>In addition to these two positive regulators , a third regulator , FimW , is known to repress ﬁm gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+<li>FimW may also act as an autoregulator , since this protein was found to negatively regulate its own expression under static liquid conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133935" target="_blank">11133935</a>]<br></li>
+<li>FimW has also been suggested to autoregulate its expression , as enhanced PﬁmW activity has been observed in the ﬁmW mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

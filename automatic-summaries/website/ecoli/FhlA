@@ -1,0 +1,801 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - FhlA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">FhlA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">FhlA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>YRVGGYAPVKV DVRIIAATHQNLEQRVQEG KFREDLFHRLNVIRVHLPPLRERREDI YRVGGYAPVKV DVRIIAATHQNLELRVQEG KFREDLFHRLNVIRVHLPPLRERREDI TTVGGRTPIKT DVRIVAASNKDLRILIQQG LFREDLFFRLNVVPLRVPPLRERIEDL ALPD PPRIMATTQVDLGALMEAGRRFRQDLYYRLGGVTLAVPALRERVEDI TPLGTNEVRPV NLRVVAAAKIDLGDPAVRG DFREDLYYRLNVVTISIPPLRERRDDI TPLGTNLTRPV DIRWAAAKVDLGDPAARG DFREDLYYRLNVVTLSIPPLRERRDDI RP FRLVGVGSASLVEQAAAN QIAAELYYCFAMTQIACQSLSQRPDDI ERVGDPVTRRA DVRILAATNRDLGAMVAQG QFREDLLYRLNVIVLNLPPLRERAEDI QRVGSNQIISV DVRLIAATHRDLAAEVNAG RFRQDLYYRLNVVAIEVPSLRQRREDI ERVGGDRTRKV DVRLITATNENLEEAVKMG RFRADLFFRLNVFPVHIPPLRERVEDI ERVGGSKPVKV DVRIIAATNRNLVEMVEQG TFREDLYYRLNVFPITVPPLRERGSDV ERVGGNTTIHV DLRVIAATNRNLAEMVADG TFAEDLYYRLNVFPITIPPLRERGSDI ERLGSNKIIQT DVRLIAATNRDLKKMVADR EFRSDLYYRLNVFPIHLPPLRERPEDI ERVGGDETLRV NVRIIAATNRHLEEEVRLG HFREDLYYRLNVMPIALPPLRERQEDI DRVGGSKPVKV NIRILATSNRDLAQAVKDG TFREDLLYRLNVVNLRLPPLRERPADV ERLGGTKTLKV DVRVICATNKNLEVAVLRG EFRADLYYRINVVPIILPPLRQRDGDI ERVGGTKTLKV DVRLIFATNKDLEMAVQNG EFREDLYYRISGVPLILPPLRHRDGDI ERVGGTRTLKV NVRLVCATNKDLETAVAAG EFRADLYYRINVVPITLPPLRQRDGDI ERVGGAKTIKV DTRT ~ AATNRDLEDAVARG QSRADLHPRICVVPSVLPPLRCRRSDI ERVGGNRTLKV DqRLVCATNKNLEEAVSKG EFRADLYYRIHVVPLILPPLRERPGDI ERVGSNHTIKV DVRVIAATNRNLEEAVARS EFRADLYYRISVVPLLLPPLRERESDI RRVGEDHEVHV DVRVICATQKNLVELVQKG MFREDLYYRLNVLTLNLPPLRDCPQDI NRLGESEHKRTSNVLFICATTENPSSALLKT FLRRIPMTIHIPSLEERSLNE NtrC Eco NtrC Kpn NtrC Bpa NifRl Rca DctD Rle DctD Rme PgtA Sty AIgB Pae HydG Eco XylR Ppu AnfA Avi VnfA Avi FhlA Eco NifA Kpn FIbD Ccr NifA Rle NifA ~ me NifA rlBT NifA Rca NifA Aca Ni fA Bj a TyrR Eco LevR Bsu ERVGG ... .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7699720" target="_blank">7699720</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>This core network was extended to include local regulators ( CpxR , CusR , FhlA , Fur , IscR , ModE , NarL , NrdR and PdhR ) that exhibited responses in the stable environments o steady-state cultures across the aerobiosis scale and in the unstable environments of the transitions ( figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Kinetics of ATP hydrolysis by wild-type FhlA and FhlA-E363K Apparent Km Vmax ( pmol of Pi z min21 z pmol of 21 ( mM ATP ) FhlA monomer ) Vmax/Km Components added Wild-type FhlA 1.0 0.29 FhlA-E363K 0.28 0.18 Wild-type FhlA 5.0 29.4 FhlA-E363K 28.6 37.7 Wild-type FhlA 5.0 101.4 FhlA-E363K None 102.1 209.4 Formate 1 SL1-2 FIG. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Jan. 1997 , p. 41 -- / 97 / $ 04.0010 Copyright q 1997 , American Society for Microbiology Characterization of fhlA Mutations Resulting in Ligand - Independent Transcriptional Activation and ATP Hydrolysis INGRID KORSA AND AUGUST BÖCK * Lehrstuhl für Mikrobiologie der Universität München , D-80638 Munich , Germany Received 19 August 1996/Accepted 21 October 1996 The FhlA protein belongs to the NtrC family of transcriptional-regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>LabeUing was achieved by a `` 611-in '' reaction in the presence of [ cx - ~ ZP ~ ~ ATMPo.bility shifts with 0.6 pg FhlA were perfonned as described ( Schlensog et al. 1994 ) , but 4 % nondenaturing polyacrylamide gels were used .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8661925" target="_blank">8661925</a>]<br></li>
+<li>These sites are located between 75 and 140 bp upstream of the norV promoter [ 4 ] and each contains the Key words : σ54 , Escherichia coli ﬂavorubredoxin , cGMP-speciﬁc and - stimulated phosphodiesterases , Anabaena adenylate cyclases and Escherichia coli FhlA domain ( GAF domain ) , nitric Abbreviations used : AAA + , ATPase associated with various cellular activities ; EBP , enhancer binding protein ; IHF , integration host factor ; GAF , cGMP-speciﬁc and - stimulated phosphodiesterases , Anabaena adenylate cyclases and Escherichia coli FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16417519" target="_blank">16417519</a>]<br></li>
+<li>Abbreviations used : AAA + , ATPase associated with various cellular activities ; GAF , cGMP speciﬁc and stimulated phosphodiesterases , Anabaena adenylate cyclases and Escherichia coli FhlA ; IHF , integration host factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15667300" target="_blank">15667300</a>]<br></li>
+<li>Transcriptional activation by sigma 54 ( j ) - dependent activators 54 is usually controlled by sensory modules11 , and in the case of NorR the amino-terminal GAF domain ( named for cyclic GMP-speciﬁc and stimulated phosphodiesterases , Anabaena adenylate cyclases and E. coli FhlA ) is the probable site of signal sensing ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16193057" target="_blank">16193057</a>]<br></li>
+<li>The GAF domain is commonly found in cyclic GMP ( cGMP ) - speciﬁc phosphodiesterases , adenylyl cyclases , and the FhlA protein ( hence GAF ) and is capable , e.g. , of binding cGMP and ions ( 12 ) , but its function in most proteins is still unknown ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22685278" target="_blank">22685278</a>]<br></li>
+<li>These observations demonstrate that FhlA binds to one side of the DNA , a binding mode also pointed out for XylR [ 48 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>A consensus sequence could be deduced and a model is presented and supported by in vivo data in which a FhlA tetramer binds to the UAS on one side of the DNA helix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>When the spacing of the protected bases and the pattern on both strands are taken into consideration one can conclude that FhlA binds to the DNA at only one side of the double helix , probably as a tetramer ( Fig. 8B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>54-DEPENDENT GENES THAT ARE NOT INVOLVED IN NITROGEN METABOLISM Formate Catabolic Genes and the FhlA Regulon Formate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>FEMS Microbiology Letters 184 ( 2000 ) 47 ^ 52 www.fems-microbiology.org Isolation and characterization of mutated FhlA proteins which activate transcription of the hyc operon ( formate hydrogenlyase ) o a coli in h absence of molybdate1 f Escherichi t e William T. Self 2 , K.T. Shanmugam * Department of Microbiology and Cell Science , Box 110700 , University of Florida , Gainesville , FL 32611 , USA Received 10 November 1999 ; received in revised form 7 January 2000 ; accepted 7 January 2000 Abstract Escherichia coli growing under anaerobic conditions produces H2 and CO2 by the enzymatic cleavage of formate catalyzed by formate hydrogenlyase ( FHL ) consisting of a molybdoenzyme formate dehydrogenase H ( fdhF ) , hydrogenase 3 ( hyc ) , and intermediate electron carriers ( hyc ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>We further report that hyfA-lacZ can be activated in the presence of ef-fector-independent mutated forms of FhlA ( FhlA132 and Three hydrogenase isoenzymes have been identiﬁed , puri-ﬁed , and characterized from Escherichia coli ( 6 , 10 , 16 , 27 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Overexpression of HycA neither led to reduction of the activity ( Table 3 ) , showing that FhlA-C is no longer subject to the antagonistic effect of HycA , even though the levels of FhlA are lowered when a second plasmid is present in the cells ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Immu-noblot assays confirmed that the levels of the endogenous FhlA protein were also repressed in wild-type K12 cells constitutively expressing the oxyS RNA ( Figure 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>( B ) Immunoblot of Dps , GAD , FhlA , and ss levels in K12 cells carrying pKK177-3 , poxyS , and psyxO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>Salmonella typhimurium , Citrobacter freundii , Enterobacter aerogenes , Klebsiella oxytoca , K. terrigena , Proteus vulgaris , P. mirabilis and Serratia marcescens were screened for the presence of a protein reacting with antibodies raised against E. coli FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>In summary , if the genes of the FhlA regulon and the psp , ato , and prp operons alleviate conditions that are detrimental to nitrogen assimilation , the vast majority of 54-dependent genes in E. coli have a function that is related to nitrogen assimilation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>[ 3 ] Skibinski , D.A.G. , Golby , P. , Chang , Y.S. , Sargent , F. , Ho ¡ man , R. , Harper , R. , Guest , J.R. , Attwood , M.M. , Berks , B.C. and Andrews , S.C. ( 2002 ) Regulation of the hydrogenase-4 operon of Escherichia coli by the c54-dependent transcriptional-activators FhlA and HyfR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14612240" target="_blank">14612240</a>]<br></li>
+<li>R egulation of the Hydrogenase-4 Operon of Escherichia coli by the 54-Dependent Transcriptional Activators FhlA and HyfR David A. G. Skibinski ,1,2 Paul Golby ,1 † Yung-Sheng Chang ,1 Frank Sargent ,3 Ralf Hoffman ,1 R. Harper ,1 John R. Guest ,2 Margaret M. Attwood ,2 Ben C. Berks ,4 and Simon C. Andrews1 * School of Animal and Microbial Sciences , The University of Reading , Reading RG6 6AJ ,1 Department of Molecular Biology & Biotechnology , University of Shefﬁeld , Shefﬁeld S10 2TN ,2 The Centre of Metalloprotein Spectroscopy & Biology , School of Biological Sciences , University of East Anglia , Norwich NR4 7TJ ,3 and Department of Biochemistry , University of Oxford , Oxford ,4 United Kingdom Received 6 May 2002/Accepted 30 August 2002 The hyf locus ( hyfABCDEFGHIJ-hyfR-focB ) of Escherichia coli encodes a putative 10-subunit hydrogenase complex ( hydrogenase-4 [ Hyf ] ) ; a potential 54-dependent transcriptional-activator , HyfR ( related to FhlA ) ; and a putative formate transporter , FocB ( related to FocA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>If , as previously assumed [ 8 ] , HycA interacts directly with FhlA this would mean that domain A of FhlA may be involved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>It is not known whether HycA acts by directly interacting with FhlA or by preventing FhlA binding to upstream activating sequence regions ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>It is not known whether HycA acts by directly interacting with FhlA , the transcriptional-activator ( Schlensog and Bock , 1990 ) , or by preventing binding of FhlA to the upstream activatory sequence ( Birkmann and Bock , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1625581" target="_blank">1625581</a>]<br></li>
+<li>It is possible that the MoeA-catalyzed product , activated molybdenum ( [ Mo ] ) , interacts with FhlA and the mutated FhlA proteins mimic this conformation of FhlA - [ Mo ] complex to varying degrees .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Both probes identiﬁed the same proteins : AtoC , the product of b1201 , FhlA , HyfR , NRI , PrpR , PspF , RtcR , YfhA YgaA , YgeV , and ZraR ( HydH ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>This possibility will be tested in future experiments by using puriﬁed HyfR , FhlA , and FhlA165 proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>In a detailed study of the function of HydH/G employing hycA ' - ` lacZ reporter gene fusions , it was shown that HydH/G indeed led to a stimulation of activation of the hycA promoter responsible for hydrogenase 3 synthesis but only when hydG is overexpressed from a plasmid in a strain lacking FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>Since expression of K. oxytoca hydG led to the apparent activation of the hycA ' - ` lacZ reporter gene fusion , which is normally under the control of FhlA , the sequences of the two regulatory proteins were aligned ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>Curiously , if autogenous regulation is excluded ( for ZraR ) , then only two of these regulators , NRI and FhlA , are known to activate more than one operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>FhlA is able to activate transcription of a hycA ± lacZ fusion leading to the formation of b-galactosidase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Activity of FhlA of K. oxytoca and E. aerogenes As both FhlAKo and FhlAEa were identified by their ability to activate an E. coli hycA ± lacZ fusion it is probable that these proteins are able to functionally replace FhlAEc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA was purified [ 12 ] and its ability to-bind to UAS , hydrolyze ATP and activate transcription in vitro were investigated in detail [ 12 ± 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>To investigate the properties of this region of FhlA , the corresponding gene fragment was cloned and the ability of FhlA-C to activate transcription under different conditions was determined in an in vivo assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Keywords : formate , hydrogenase , complex I , FhlA , FocA INTRODUCTION During fermentative growth , glycolytic pyruvate generated from diverse carbon sources is converted in Escherichia coli to acetyl-CoA and formate by pyruvateformate lyase ( Kessler & Knappe , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>FhlA is reported to utilize Mo ( apparently associated with MoeA [ 43 ] ) and formate as coeffectors during fermentative growth at a low external pH. Low external pH is not thought to be directly sensed by FhlA ; instead , formate uptake is believed to be activated by low pH , resulting in higher intracellular formate levels at a low external pH ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>FhlA was incubated with an excess of FhlA-N , or BSA as a control , before ATP hydrolysis was measured .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>In the present study , we have examined the coupling between ligand binding and ATP hydrolysis by the isolation and characterization of constitutive or semiconstitutive mutants of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Several mutations in the N-terminal half of FhlA were obtained ; we show that the mutations affect the kinetics of ATP hydrolysis and of transcription activation in the same manner as ligand binding does with wild-type FhlA ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>The availability of intact FhlA in a puriﬁed form allowed the detailed analysis of the effect of ligand binding on the kinetics of ATP hydrolysis and on transcription activation ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Binding of the ligand , which could be demonstrated in a puriﬁed system ( 15 , 16 ) , leads to a signiﬁcant stimulation of the intrinsic ATPase activity of FhlA ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>That means that the in vivo activity of FhlA is almost completely abolished in the presence of FhlA-N .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The ability of FhlA-N to impair the activity of FhlA was further characterized using the in vitro ATPase assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Effect of FhlA-N on the ATPase activity of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>As Fig. 5 illustrates , FhlA-N reduced the ATPase activity of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>As Fig. 6 illustrates FhlA-C possesses ATPase activity that , under all tested conditions , was higher than the activity of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA-N is not active itself but able to reduce the activity of full-length FhlA in trans , probably by formation of nonfunctional heterooligomers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>As it holds true for full-length FhlA [ 13 ] , the ATPase activity of FhlA-C can also be stimulated by the addition of unspecific DNA , but to a lower extent ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The function of the FhlA regulon is to increase the pH in an acidic environment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The FhlA regulon , which increases the external pH , perhaps just locally , might alleviate this problem and facilitate nitrogen assimilation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The results reported corroborate the general information of the model of activity of FhlA and they also add new features to it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The extent of this stimulation is identical to that of full-length FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The ATP hydrolyzing activity of FhlA , FhlA-C and FhlA-C after preincubation with a 10-fold molar excess of Table 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Footprinting experiments have established the binding sites for FhlA ( 73 ) Like other 54-dependent activators , it can activate when bound to distant sites ( 104 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>However , it is stimulated in the presence of the FhlA-specific UAS , indicating that this region of FhlA is responsible for DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>On the other hand , the activity of FhlA-C can still be increased by the addition of DNA containing specific FhlA binding sites ( UAS ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The putative product of one gene of the operon , hyfR , is homologous to FhlA and may bind the same sites as FhlA because of conservation of the DNA binding residues ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Whether binding to these sites is independent or cooperative and whether two FhlA tetramers bind to them remains to be investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Hydroxyradical footprinting of FhlA bound to the UAS of intergenic region 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Activation of a fdhF ± lacZ fusion by FhlA bound to the wild-type or mutated UAS of intergenic region 2 was measured .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>OxyS is an abundant stable untranslated RNA that binds to the FhlA mRNA and blocks its translation ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Keywords : Molybdate ; Regulation ; ModE ; MoeA ; FhlA ; Formate hydrogenlyase 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>( B , E ) Control density scan of the hydroxyradical reaction products in the absence of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>When FhlA is present , overproduced HydG is without any effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>FhlA and ribonucleoside triphosphates were added as indicated in the ﬁgure legends .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Purification of FhlA FhlA was purified as described [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Apparently , in this conformation interaction of FhlA with FhlA-N is more efficient .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Effect of overproduced HycA on the transcriptional activation Considering the fact that residues 131 and 132 of NtrC were assigned to the linker region between domain A and C [ 46 ] we chose to separate FhlA between residue 378 and 379 for further investigations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>To analyze the biochemical basis of the constitutive activation by mutant FhlA proteins , puriﬁcation of the mutant variants FhlA-E183K and FhlA-E363K was attempted .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_74">
+The nucleotide concentration determines the speci ® city of in vitro transcription activation by the s54-dependent activator FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></label>
+<input id="act_similarity_74", type="checkbox">
+<div class="ACT_similar">
+<li>The nucleotide concentration determines the speciﬁcity of in vitro transcription activation by the s54-dependent activator FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>The nucleotide concentration determines the speciﬁcity of in vitro transcription activation by the σ & % - dependent activator FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10537212" target="_blank">10537212</a>]<br></li></div>
+<li>Influence of mutations in the UAS on the transcription activation by FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>In vitro transcription activation by wild-type and mutant FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>HycA is a regulator that antagonizes the activation of FhlA ( unpublished results cited in reference 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Quantification of the transcriptional activation by FhlAKo and FhlAEa showed the same susceptibility to HycA as the E. coli FhlA ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>HyfR-depen-dent induction was unaffected by the fhlA mutation , indicating that FhlA does not participate in the transcriptional activation of hyf by HyfR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>It was found that hycA , the promoter-proximal gene , is a regulatory gene and that it codes for a product counteracting transcriptional activation by FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1625581" target="_blank">1625581</a>]<br></li>
+<li>The effect of FhlA-N in trans on the transcriptional activation by FhlA was investigated under anoxic growth conditions in MC4102 , which carries a chromosomally located hycA ± lacZ fusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The UAS was disrupted by the insertion of three , six or 11 nucleotides and the effect on the transcriptional activation by FhlA was determined ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Both point mutations and deletions in the N-terminal domain of the FhlA protein were found to be effector independent , and some of the deletion derivatives activated hyc to a higher level than did the native protein ( 23 , 25 , 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Furthermore , the N-terminal domain of FhlA has also been reported to inhibit hyc activation by the deletion derivatives of FhlA ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>The maximum level of expression of PhyclacZ in the presence of FhlA57 ( strain WS127-pWS57 ) was only about 50 % of the levels observed in the presence of native FhlA ( strain WS127-pWS2 ; Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>This is in contrast to a 4-fold decrease in PhyclacZ-dependent L-galactosidase activity attributable to molybdate starvation in the presence of native FhlA as the activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Although Skibinski et al. ( 43 ) reported that the FhlA activated hyfA-lac , the level of - galac-tosidase activity produced by these cultures was only about 20 nmol min 1 ( mg of protein ) 1 , and this was increased to about 50 U of activity in the presence of formate in the growth medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>However , a mutation in fnr increased the level of - galactosidase activity produced by the culture about threefold with HyfR as the activator ( Table 3 ) but had no signiﬁcant effect on expression activated by the mutant FhlA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>oxyS activates and represses the expression of numerous genes in E. coli , and eight targets , including genes encoding the transcriptional-regulators FhlA and ss , were identified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>FhlA is a member of a group of dependent transcriptional-regulators that are activated when an effector-molecule binds to the N-terminal domain ( Shingler , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>Analysis of the domain structure and the DNA binding site of the transcriptional-activator FhlA Susanne Leonhartsberger , Armin Ehrenreich * and August Bo È ck Lehrstuhl fuÈr Mikrobiologie der UniversitaÈt MuÈnchen , Germany FhlA is the transcriptional-activator of the genes coding for the formate hydrogen lyase system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Keywords : domain structure ; FhlA ; hydrogenase ; s regulator ; transcriptional-activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Protein engineering of the transcriptional-activator FhlA to enhance Escherichia coli hydrogen production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21181144" target="_blank">21181144</a>]<br></li>
+<li>Effector-mediated stimulation of ATPase activity by the s54-dependent transcriptional-activator FhlA from Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>The role of the FhlA protein as a putative transcriptional-activator in regulation of theflzlB gene was deduced from the t Florida Agricultural Experiment Station journal series no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>In this proposal , the FhlA protein is still the primary transcriptional-activator interacting with the a5 ' RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10206709" target="_blank">10206709</a>]<br></li>
+<li>On the basis of sequence homology with other transcriptional-activators such as NtrC , HydG , and KlebsieUa pneumoniae NifA proteins , the FhlA protein was deduced to be a transcriptional-activator controlling the production of FHL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>In this regard , the FhlA protein is similar to the NifA protein of K. pneumoniae and is distinct from the NtrC protein ' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>Based on these results , a working model is proposed in which ModE-molybdate serves as a secondary transcriptional-activator of both the hyc and narXL operons which are activated primarily by the transcriptional-activators , FhlA and NarL , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10206709" target="_blank">10206709</a>]<br></li>
+<li>In this paper , we present evidence that the ModE protein is a secondary transcriptional-activator for the hyc and n a r X L operons which are primarily activated by the transcriptional-activators , FhlA and NarL-I ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10206709" target="_blank">10206709</a>]<br></li>
+<li>Based on the results presented , a working model is proposed for hyc expression , in which ModEmolybdate binds to the DNA upstream of the FhlA-binding site ( Fig. 4 ) and helps to increase the level of transcription activation by FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10206709" target="_blank">10206709</a>]<br></li>
+<li>ModE , the DNA-binding protein of the pair , binds to hyc upstream DNA and enhances transcription mediated by the activator protein , FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16205910" target="_blank">16205910</a>]<br></li>
+<li>FhlA also appears to sense molybdate , and it seems that full induction of the formate regulon requires adequate levels of this element ( an essential component of the active site of the Fdh-H component of Fhl-1 ) ( 43 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The latter was shown for DmpR , XylR and PhhR , which respond to aromatic inducers [ 19 ± 21 ] and other regulators , among them FhlA , which is activated by formate , the substrate of the FHL complex [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Addition of 10 mm formate or 1 mm ATP did not lead to a change in the protection pattern ( data not shown ) indicating that FhlA binds to the DNA in the presence or absence of the inducer and the substrate in the same way .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA induces expression of the hyc , fdhF , hydN-hypF and h y p genes ( the ` formate regulon ' ) in response to elevated intracellular formate levels ( Schlensog & Bock , 1990 ; Rossmann et al. , 1991 ; Maier et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The presence of formate , which activates the transcription factor FhlA thereby increasing hydrogenase-3 expression ( Sawers et al. , 1985 ; Rossmann et al. , 1991 ) , caused a shift in PrcnA-lacZ expression to higher extracellular nickel concentrations , similar to that seen for the Pnik repression curve ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+<li>The formate-sensing regulator is the FhlA protein that activates transcnption at d4-dependent promoters ( Hopper et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8661925" target="_blank">8661925</a>]<br></li>
+<li>Other systems , such as the FhlA regulator of the formate regulon , respond indirectly to O2 availability ( Rossmann et al. 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8588737" target="_blank">8588737</a>]<br></li>
+<li>In analogy with other regulatory components of two-component regulatory systems , the FhlA protein , a putative transcriptional-activator for the fhiB operon , would be expected to undergo phosphorylation or dephosphorylation , depending on the presence or absence of the environmental stimulus , formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>The presence of genes encoding homologues of the formate-responsive transcriptional-regulator ( FhlA ) and the formate channel ( FocA ) in the hyfoperon reinforces the view that Hyf functions in formate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The formate and oxygen control are regulated via FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Effect of formate and oxygen on the transcriptional activation by FhlA and FhlA compared to FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Together they form the formate regulon , which is under the control of the transcriptional-activator FhlA , a protein encoded by the last gene of the hyp operon [ 6,7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA ( encoded by fhlA ) is the formate-sensing transcriptional-activator that directly controls the formate regulon ( 27 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The 54-dependent transcriptional-activator , FhlA , induces expression of the genes of the formate regulon in response to elevated intracellular formate levels ( 27 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The transcription of these units is dependent on the presence of formate and on the function of a transcriptional-activator , FhlA ( 29 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>This induction is regulated by the formate-sensing , c54-dependent transcriptional-activator , FhlA ( Hopper & Bock , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>These results are consistent with HycA acting as an antiactivator of FhlA and with FhlA in turn acting as a formate-dependent transcriptional-activator of the hyf operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>FhlA activation requires formate and appropriate concentrations of its cognate upstream activator sequence ( UAS ) ( Hopper et al. , 1994 ; Hopper & Bock , 1995 ) and activation is inhibited by the HycA protein ( S. Hopper & A. Bock , unpublished , cited by Hopper et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>y , 0002-2697 0 1999 SGM Transcription of fdhF and the hyc operon requires FhlA as an activator and formate , the substratefor FHL , as an effector ( Bock & Sawers , 1996 ; Maupin & Shanmugam , 1990 ; Schlensog & Bock , 1990 ; Schlensog et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10206709" target="_blank">10206709</a>]<br></li>
+<li>Transcription of the fdhF and hyc operons , both in vivo and in vitro , requires a c54-dependent transcriptional-activator , FhlA , and formate [ 1,4 ^ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Transcription of both the fdhF and hyc operons requires the activator , FhlA protein , as well as formate and molybdate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Transcription of the hyc operon and fdhF requires the FhlA protein , a formate-depen-dent transcriptional-activator ( 28 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA binds to an upstream activating sequence located about 100 bp upstream of cognate transcriptional start sites and , in the presence of formate , activates transcription from the 54-dependent promoters ( 8 , 9 , 11 , 23 , 24 , 25 , 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>In the presence of formate , FhlA activates the transcription of a regulon required to assemble the formate-hydrogenlyase complex ( Maupin and Shanmugam , 1990 ; Schlensog and Böck , 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9774350" target="_blank">9774350</a>]<br></li>
+<li>In the presence of formate , the regulator FhlA ( encoded by the fhlA gene ) activates expression of the formate hydrogenlyase system ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626281" target="_blank">8626281</a>]<br></li>
+<li>Formate stimulates the ATPase activity of FhlA ( 74 ) and is required for in vitro transcription , which implies that formate binds FhlA ( 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>In vitro transcription at different FhlA and nucleotide concentrations in the absence of formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Next we addressed whether FhlA-N interacts with FhlA-C and , if this is the case , whether both protein partners form a functional FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Besides the FhlA protein , the FhlB protein is also needed for production of active FHL complex by E. coli ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>Alternatively , the NorR N-termi-nal domain could activate transcription by interacting with a signal transducing protein as described for NifL/NifA ( 45 ) or by binding NO directly as the formate-sensing transcription regulator FhlA binds formate ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12529359" target="_blank">12529359</a>]<br></li>
+<li>Based on these studies , it is proposed that the N-terminal region of FhlA binds the e ¡ ector molecule formate , and the FhlA-formate complex is the active form in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Based on these results , a working model is proposed in which the FhlA protein also binds the MoeA-catalyzed product , besides formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>This segment of the protein is crucial for the biological activity of the FhlA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>This N-terminal segment of the FhlA protein was proposed to be essential for formate binding in vivo ( 23 , 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Equilibrium kinetics would predict that the amount of formate needed to produce the amount of stable complex necessary to maximally express the fhIB gene can be reduced by increasing the concentration of the FhlA protein , which is in agreement with the observed results .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>Two lines of evidence suggest that formate could interact with the FhlA - protein and that formate-FhlA protein is th active complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>If formate is a biochemical effector for modulation of the FhlA protein , transcription of the fhIlA gene would be independent of formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>Increasing the copy number of the JhlA gene by introducing plasmid pSE133 , which raised the level of the FhlA protein in the cell , decreased the needed formate concentration from 15 to 3 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>needed for tranThe optimum ` concentration of formate scription of D ( fhlB-lacZ + ) depends on the FhlA protein concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>This regulation is controlled by the level of formate and the concentration of the FhlA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>( regulated by NrdR ) , over-metabolite production ( formate and pyruvate ; sensed by FhlA and PdhR ) and cell-envelope stress ( sensed by CpxR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>However , at the borderline concentration ( 12.5 mM for FhlA-E363K and 50 mM for wild-type FhlA ) , the formation of transcript is greatly dependent on the presence of formate in both instances .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Catalytic efﬁciency of ATP hydrolysis of the mutant FhlA was increased in the absence of formate in the same manner as formate inﬂuences the activity of wild-type FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>It is evident that the mutant protein has a signiﬁcantly increased ATPase activity in the absence of formate which is stimulated to a lesser degree than wild-type FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>In previous experiments , it had been shown that there is a direct link between the binding of formate to wild-type FhlA and the stimulation of ATP hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>The kinetic parameters of FhlA-E363K in ATP hydrolysis are qualitatively and also quantitatively similar to those conferred to wild-type FhlA by the binding of formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>It is not clear whether this weak formate effect is signiﬁcant or whether , like FhlA , HyfR responds to intracellular formate concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>FhlA activates ﬁve of these operons , which code for proteins associated with formate hydrogen lyase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730324" target="_blank">12730324</a>]<br></li>
+<li>The intrinsic ATPase activity associated with the c54-dependent enhancer-binding proteins like NtrC and NifA is also present in FhlA and this activity of FhlA also responded positively to the presence of formate [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>reaction of FhlA , the addition of formate does not stimulate this activity , which confirms that the N-terminal domain is responsible for binding of formate and auto regulation of FhlA [ 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Unlike full-length FhlA , however , the addition of formate did not result in an increase in the activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>As a consequence , any condition that affects the binding of formate to FhlA would render the activator ` resistant ' to the influence of HycA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>It was found that the binding of formate phenome-nologically affects these activities of FhlA in the same way that phosphorylation affects NtrC activity ( 40 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>A possible explanation for this finding is that binding of formate leads to a conformational change of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>DISCUSSION FhlA , like XylR ( 7 , 18 , 27 ) and DmpR ( 37 , 38 , 40 ) , is activated not by phosphorylation but by binding of a ligand , in this case formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>FhlA is activated by binding of the ligand formate and does not require phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Unlike NtrC , however , FhlA is activated not by phosphorylation but rather by direct binding of the effector formate ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>FhlA activates its own expression from the major promoter of the hyp operon , but secondary promoters ensure basal synthesis ( 24 , 105 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>However , mutant FhlA proteins ( constitutive activators of the hyc-encoded hydrogenase 3 isoenzyme ) activated hyf-lacZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Effect of FhlA , 54 , hydrogenase-3 , and HycA on the expression of the hyf operon ( hyfA-lacZ fusion ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>To determine whether HyfR , like its homologue , FhlA , regulates transcription of the hyf operon , the effect of hyfR inactivation on hyfA-lacZ expression was studied ( Fig. 5 ; note use of logarithmic scale ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>HyfR , an FhlA homolog encoded by the hyfR gene present at the end of the hyf operon , also activated transcription of hyf-lacZ but did so only when hyfR was expressed from a heterologous promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA protein is also a molybdenum sensor Since the transcription of fhlA and thus the level of FhlA protein in the cell was not signi cents cantly changed by molybdate availability , mutations in other genes which might alter the molybdate-dependent control of hyc-lac expression were sought .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The di ¡ erential e ¡ ect of molybdate in the presence of FhlA132 protein in the mod and mod , p # mutants , WS113 ( pWS132 ) and WS118 ( pWS132 ) , respectively , suggests that externally added formate failed to saturate the internal formate pools for e ¡ ective activation of FhlA protein and apparently molybdate can substitute for formate , although partially , in maximizing hyc activation by the FhlA132 protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Mutated FhlA proteins activate transcription of PhyclacZ in a modE , moeA double mutant The molybdate requirement for hyc expression is transduced through two proteins , ModE and MoeA and the hyc operon is not transcribed in a modE , moeA double mutant [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The requirement for ModE and MoeA for hyc expression is in addition to FhlA protein and formate since the modE , moeA double mutant , strain WS172 , is fhlA and produces formate internally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9851041" target="_blank">9851041</a>]<br></li>
+<li>Since the mutated FhlA proteins activated hyc-lac in the absence of molybdate , the ability of these proteins to overcome the requirement for the two proteins from the molybdate metabolism for hyc-lac expression was investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Conclusion The ability of mutated FhlA proteins , notably FhlA132 , to activate transcription of the hyc operon in the absence of molybdate supports the likelihood that the FhlA protein plays a role in the molybdenum-dependent transcription of this operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The ability of mutated forms of FhlA proteins to activate this operon represents a unique way to activate transcription of what seems to be a vestigial , unexpressed operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Several fhlA mutants with an altered response to the required effector molybdate were isolated and these FhlA mutated proteins activated hyc transcription in the absence of molybdate , but only in the presence of formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_175">
+Isolation and characterization of mutated FhlA proteins which activate transcription of the hyc operon ( formate hydrogenlyase ) of Escherichia coli in the absence of molybdate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></label>
+<input id="act_similarity_175", type="checkbox">
+<div class="ACT_similar">
+<li>Isolation and characterization of mutated FhlA proteins which activate transcription of the hyc operon ( formate hydrogenlyase ) of Escherichia coli in the absence of molybdate ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li></div>
+<li>Nonetheless , FhlA132 is similar to FhlA57 in its response to formate and molybdate , except that the FhlA132 activated transcription of the hyc operon to twice the level of native FhlA and four times that of FhlA57 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The hyc operon , which encodes hydrogenase 3 and various components of formate hydrogenlyase , is activated by FhlA with formate as an e ¡ ector but only in the presence of molybdate [ 7,8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9851041" target="_blank">9851041</a>]<br></li>
+<li>FhlA hyp and hyc , operons , fdhF , and hydN-hypF hyf operon ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>This suggests that the FhlA protein plays a direct role in the molybdate-dependent activation of the hyc operon besides its putative interaction with ModE-molybdate [ 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The product of the ﬁrst gene of the hyc operon , hycA , negatively regulates transcription of the genes in the formate/FhlA regulon ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The first gene of the hyc operon codes for HycA , a protein that counteracts the activation by FhlA [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The other major targets for activation by FhlA are the hyc operon and the fdhF gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>These point mutants , which still required formate for activation of hyc operon , carried mutations in the FhlA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>These results show that certain mutations in FhlA can replace the need for both ModE and MoeA in the activation of transcription of the hyc operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>The effector for AppY might be formate since we found that both the hya operon ( 9 ) and the cyx-appA operon were induced by formate and that the formate inductions were independent of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626281" target="_blank">8626281</a>]<br></li>
+<li>FhlA and 54 mediate the formate-dependent induction of hyf transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Taken together , these results imply that FhlA mediates the formate-dependent induction of hyf-operon transcription and suggest that the expression of hyf is limited by the cellular levels of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>It was considered possible that the effects of the fhlA and ntrA mutations on hyf operon expression could be an indirect consequence of weak hyc expression ( which is also 54 and FhlA dependent ) , resulting in low levels of Fhl-1 and a subsequent inability to decompose formate under fermentative conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The hyf operon was found to resemble the hyc operon in being induced anaerobically by formate at a low pH in an FhlA - and 54-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The transcriptional regulation of the hyf ( hyfA-hyfJ ) operon appears similar to that exhibited by the closely related hyc operon in that both are induced by FhlA under fermentative conditions in response to formate and low pH. Likewise , the FhlA-dependent activation of hyf expression resembles that of hyc in being inhibited by the antiactivator HycA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">FhlA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Further inspection of this region revealed a potential a5 * - dependent promoter , ATGGCAT-5-ATGCA ( 1210-1226 bp , conserved residues in larg-e caps ; Thony & Hennecke , 1989 ) which is located 110 bp downstream of a putative FhlA - and/or HyfR-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The effect of FhlA-N in trans on the transcriptional activation by FhlA was investigated under anoxic growth conditions in MC4102 , which carries a chromosomally located hycA ± lacZ fusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>This suggests that the FhlA protein plays a direct role in the molybdate-dependent activation of the hyc operon besides its putative interaction with ModE-molybdate [ 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>These include the CheY-like receiver-domain in NtrC , the GAF-domain in FhlA , the ACT and PAS domains in TyrR , and the 4-vinyl reductase ( 4VR ) domain in XylR ( Fig. 5 ; Anantharaman et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15037234" target="_blank">15037234</a>]<br></li>
+<li>Within the central domain of FhlA , the amino acid sequence SGRNN ( positions 426 ^ 430 ) was observed , suggesting that this region might be important in FhlA-molybdenum interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>To target the central domain of FhlA more closely , this region of fhlA was mutated by PCR ampli cents cation techniques , and two stable mutants were isolated ( fhlA126 and fhlA132 , Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Since the two mutations in FhlA57 which altered the dependence on molybdate for transcription of the hyc op-eron mapped in both the central ( amino acids 382 ^ 617 ) [ 19,20 ] and N-terminal domains , the amino acid sequence of FhlA in these regions was analyzed for a motif corresponding to the putative molybdate-binding motif , us FhlA derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Alignment of the FhlA and HyfR amino acid sequences showed that , although the N-terminal signal-sensing A domains of the two proteins are similar , the HyfR protein possesses an amino acid motif absent in FhlA ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Since the central and C-terminal domains of FhlA and HyfR are more than 60 % identical ( 70 % similar ) , it is possible that the effector-independent forms of the FhlA protein would activate hyfA-lacZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Region I is unique to FhlA and includes the first 370 amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>If formate indeed binds to the FhlA protein , this domain may lie within the unique N-terminal 370 amino acids , in the C-terminal end of the FhlA protein , or in a structure combining the two regions of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>The amino acid changes of the four mutants characterized are located within the large , N-terminal half of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>FhlA-C ( amino acids 379 ± 693 of FhlA ) is constitutively active The C-terminal half of FhlA spanning the amino acids 379 ± 693 contains ATP-binding motifs and regions that in related proteins have been shown to be the site of interaction with s - associated RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>By analyzing the N-terminal domain of FhlA of E. coli ( amino acids 1 ± 378 ; FhlA-N ) and the rest of the protein ( amino acids 379 ± 693 ; FhlA-C ) as separate proteins in vivo and in vitro the functions of the different domains of FhlA were elucidated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA-N ( amino acids 1 ± 378 of FhlA ) interferes with the activity of full-length FhlA The N-terminal domain of FhlA is unusually large and shows no similarity to other proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Among this class of proteins , the FhlA protein is the largest ( 686 amino acids ) and is 162 amino acids larger than the K. pneumoniae NifA protein ( 524 amino acids ) ( 12 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>HyfR , a protein with 663 amino acids , is missing the amino acids corresponding to the ﬁrst 43 amino acids of the FhlA protein , which contains the region similar to the ABC-ATPases ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Like full-length FhlA [ 12 ] the protein eluted from a gel filtration column with the apparent size of a tetramer ( data not shown ) , which suggests that regions responsible for oligomerization are located in the N-terminal half of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Gel filtration experiments indicated that under the conditions used the protein eluted as a monomer ( data not shown ) , again suggesting that oligo-merization of FhlA is mediated by the N-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Several mutations in the N-terminal half of FhlA were obtained ; we show that the mutations affect the kinetics of ATP hydrolysis and of transcription-activation in the same manner as ligand binding does with wild-type FhlA ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>If , as previously assumed [ 8 ] , HycA interacts directly with FhlA this would mean that domain A of FhlA may be involved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Since mutations in FhlA suppressed the requirement for MoeA and not ModE in the expression of hyc-lacZ , it has been suggested that the MoeA product interacts with the unique N-terminal domain of FhlA protein ( Self and Shanmugam 2000 ; Self et al. 2001b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16205910" target="_blank">16205910</a>]<br></li>
+<li>Both point mutations and deletions in the N-terminal domain of the FhlA protein were found to be effector independent , and some of the deletion derivatives activated hyc to a higher level than did the native protein ( 23 , 25 , 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Furthermore , the N-terminal domain of FhlA has also been reported to inhibit hyc activation by the deletion derivatives of FhlA ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>Point mutations in the N-terminal region of FhlA confer partial independence from formate in the activation of transcription of hyc op-eron [ 7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>This may be a consequence of the N-terminal domain ( although carrying point mutations ) signiﬁcantly affecting the activation of transcription of hyf by the C-terminal domain of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>These differences in the N-terminal domain of the two proteins may be responsible for the inability of FhlA to activate hyfA-lacZ since the fhlA gene is constitutively expressed in anaerobic E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA is a member of a group of dependent transcriptional regulators that are activated when an effector molecule binds to the N-terminal domain ( Shingler , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The N-terminal domain of FhlA ( A domain , residues 1-357 ) is thought to be involved in formate-sensing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>reaction of FhlA , the addition of formate does not stimulate this activity , which confirms that the N-terminal domain is responsible for binding of formate and auto regulation of FhlA [ 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>We have recently demonstrated that the N-terminal GAF ( cGMP-speciﬁc and - stimulated phosphodiesterases , Anabaena adenylate cyclases and Escherichia coli FhlA ) domain of NorR contains a non-haem mononuclear iron centre and senses NO by formation of a mono-nitrosyl iron complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16417519" target="_blank">16417519</a>]<br></li>
+<li>NorR contains three domains : ( i ) a C-terminal DNA-binding domain predicted to interact with enhancer sequences , ( ii ) a central domain belonging to the AAA + ( ATPase associated with various cellular activities ) family of proteins , which is responsible for ATPase activity and interaction with σ 54 , and ( iii ) an N-terminal GAF ( cGMPspecific and - stimulated phosphodiesterases , Anabaena ad-enylate cyclases and E. coli FhlA ) domain , a ubiquitous signalling domain that is the site of signal sensing [ 3 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16417519" target="_blank">16417519</a>]<br></li>
+<li>It contains a central AAA + ( ATPase associated with various cellular activities ) domain required for the interaction with σ 54 and coupling of ATP hydrolysis to open promoter complex formation [ 11 ] , a C-terminal DNA-binding domain implicated in DNA sequence recognition and an N-terminal GAF ( cGMP specific and stimulated phosphodiesterases , Anabaena adenylate cyclases and Escherichia coli FhlA ) domain which is probably responsible for detection of the NO signal [ 8,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15667300" target="_blank">15667300</a>]<br></li>
+<li>Effect of overproduced HycA on the transcriptional activation Considering the fact that residues 131 and 132 of NtrC were assigned to the linker region between domain A and C [ 46 ] we chose to separate FhlA between residue 378 and 379 for further investigations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Sequence comparison had shown that FhlA exhibits a structure composed of three domains , which is typical for s54-dependent regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Sequence comparisons had shown that FhlA fits the domain model very well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Keywords : domain structure ; FhlA ; hydrogenase ; s regulator ; transcriptional activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Analysis of the domain structure and the DNA-binding site of the transcriptional activator FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>However , it is stimulated in the presence of the FhlA-specific UAS , indicating that this region of FhlA is responsible for DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Alignment of possible DNA-binding motifs in the NtrC , FhlA , and HydG proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>There is only one substitution in the predicted ` reading ` helix of HyfR relative to that of FhlA , suggesting that they recognize similar DNA-binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The putative helix-turn-helix motif in the D domain is conserved in HyfR and FhlA , as are the two ATP-binding motifs in the C domain ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The spacing of the contact sites in IR1 and IR2 provide some evidence that the overall UAS is made up of two FhlA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">FhlA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Taken together these results indicate that the FhlA regulatory system is conserved among many members of the family Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Other members of the FhlA subclass are NifA ( 8 ) , DmpR ( 37 , 38 ) , and XylR ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>NorR contains three domains : ( i ) a C-terminal DNA-binding domain predicted to interact with enhancer sequences , ( ii ) a central-domain belonging to the AAA + ( ATPase associated with various cellular activities ) family of proteins , which is responsible for ATPase activity and interaction with σ 54 , and ( iii ) an N-terminal GAF ( cGMPspecific and - stimulated phosphodiesterases , Anabaena ad-enylate cyclases and E. coli FhlA ) domain , a ubiquitous signalling domain that is the site of signal sensing [ 3 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16417519" target="_blank">16417519</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Jan. 1997 , p. 41 -- / 97 / $ 04.0010 Copyright q 1997 , American Society for Microbiology Characterization of fhlA Mutations Resulting in Ligand - Independent Transcriptional Activation and ATP Hydrolysis INGRID KORSA AND AUGUST BÖCK * Lehrstuhl für Mikrobiologie der Universität München , D-80638 Munich , Germany Received 19 August 1996/Accepted 21 October 1996 The FhlA protein belongs to the NtrC family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>FhlA is a member of a group of dependent transcriptional regulators that are activated when an effector molecule binds to the N-terminal domain ( Shingler , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>FhlA belongs to the large NtrC family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Significant regions of the FhlA protein were also found to be homologous with other transcriptional activators of two-component regulatory systems , including the recently described HydG protein ( 35 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>HyfR is similar to the FhlA protein ( 44 % identical and 54 % similar ) , which is the formate - and molybdenum-dependent activator of the hyc operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA is homologous to other 54-dependent activators ( reference 141 and references therein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The hyfR gene encodes an FhlA homologue that is a potential formatesensing , 54-dependent transcriptional activator , and focB encodes a putative formate transporter homologous with FocA 54 ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>HyfR , a protein with 663 amino acids , is missing the amino acids corresponding to the ﬁrst 43 amino acids of the FhlA protein , which contains the region similar to the ABC-ATPases ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>The HyfR protein is closely related ( 46YO identity ) to the homotetrameric FhlA protein of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>HyfR and FhlA possess good similarity in their central ( 6970 identity ) and C-terminal ( 69 % identity ) regions , but are less similar in their N-terminal regions ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>HyfR is closely similar to FhlA at the primary-structure level ( 46 % identity [ 1 ] ) and might therefore be expected to possess similar sensory properties .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The overall homology is about 30 % between the three proteins , although the FhlA protein is considerably larger than the other two .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>FhlA-N ( amino acids 1 ± 378 of FhlA ) interferes with the activity of full-length FhlA The N-terminal domain of FhlA is unusually large and shows no similarity to other proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Except for a stretch of about 60 amino acids ( 139 to 195 in HyfR and 179 to 234 in FhlA ) in which the two proteins are 56 % identical , HyfR and FhlA are dissimilar in their unique N-terminal regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by FhlA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>E. coli operons with conﬁrmed 54-dependent promoters Promoter sequencea Operon Regulator Function argT-hisJQMP NRI-NRII Arginine , histidine-transport astCADBE NRI-NRII-ArgR Arginine catabolism atoDAEB AtoC-AtoS Acetoacetate-catabolism fdhF FhlA FDH glnALG NRI-NRII Nitrogen assimilation glnHPQ NRI-NRII Glutamine-transport glnK-amtB NRI-NRII PII paralog , NH3 transport hycABCDEFGHI FhlA Hydrogenase hydN-hypF FhlA Hydrogenase hypABCDE-fhlA FhlA Hydrogenase nac NRI-NRII Nitrogen assimilation prpBCDE PrpR Propionate catabolism pspABCDE PspF Phage shock and other stresses rtcBA RtcR RNA terminal cyclase ygjG NRI-NRII ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>... 4 Product of amtB and ammonia-transport ... 4 ac ... 4 atabolism of Arginine , Agmatine , Ornithine , Putrescine , and - Aminobutyrate ... 4 astCADBE operon and catabolism of arginine and ornithine ... 4 GABA and putrescine-catabolism and the gabDTPC operon ... 4 ygjG ... 4 54-dependent Amino Acid Transport Systems ... 4 Arginine ... 4 ( i ) The three transport systems ... 4 ( ii ) Repression by arginine ... 4 ( iii ) Transport and activation during nitrogen limitation ... 4 Histidine ... 4 Glutamine ... 4 Glutamate-aspartate ... 4 ddpXABCDE operon ... 4 Peptide transport and ompF ... 4 otential 54-Dependent Genes That Are Induced by Nitrogen Limitation ... 4 - DEPENDENT GENES THAT ARE NOT INVOLVED IN NITROGEN METABOLISM ... 4 ormate Catabolic Genes and the FhlA Regulon ... 4 Formate metabolism ... 4 The four conﬁrmed 54-dependent operons of formate-metabolism ... 4 Hydrogenase 4 ... 4 to Operon and Acetoacetate Catabolism ... 4 T N I 23 23 23 23 23 24 27 27 27 27 27 27 27 28 29 29 30 30 31 31 31 31 32 32 32 32 32 32 33 33 33 34 34 34 34 34 34 35 35 35 35 35 36 36 36 36 36 37 37 S S U C O O S P E 5 N C C 4 N g g n C P 5 F 4 a * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>54-DEPENDENT GENES THAT ARE NOT INVOLVED IN NITROGEN METABOLISM Formate Catabolic Genes and the FhlA Regulon Formate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Table 3 summarizes the kinetic parameters of wild-type and mutant FhlA for ATP-hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>FhlA regulon genes are thought to contribute to pH homeostasis during fermentation , which potentially facilitates growth or survival in an acidic , energy-limited , anaerobic environment ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730324" target="_blank">12730324</a>]<br></li>
+<li>Lane C , control assay lacking FhlA ; lanes S , size standard .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>Sankar , P. ( 1987 ) Biochemical Genetics of Hydrogen Metabolism of Escherichia coli : hydB , hydF , and FhlA Genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10446207" target="_blank">10446207</a>]<br></li>
+<li>In summary , if the genes of the FhlA regulon and the psp , ato , and prp operons alleviate conditions that are detrimental to nitrogen assimilation , the vast majority of 54-dependent genes in E. coli have a function that is related to nitrogen assimilation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>sRNAs can also affect the expression of larger sets of genes by targeting the mRNAs of global transcriptional regulators ; e.g. , RpoS or FhlA ( Lease et al. 1998 ; Majdalani et al. 1998 ; Argaman and Altuvia 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17974919" target="_blank">17974919</a>]<br></li>
+<li>oxyS activates and represses the expression of numerous genes in E. coli , and eight targets , including genes encoding the transcriptional regulators FhlA and ss , were identified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>Results Cloning and sequencing analysis of hydH and hydG from K. oxytoca M5a1 and E. coli In our project on the analysis of the mechanism of the action of FhlA of E. coli , we had initiated the cloning and expression of the fhlA genes from several other enteric bacteria , including K. oxytoca .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>The studies described here have revealed that E. coli possesses an operon ( hyf ; bdrogenase four ) that appears to encode a new nine-subunit [ Ni-Fe ] hydrogenase ( Hyf ) complex , a formate-sensing transcription regulator ( HyfR , homologous to FhlA ) , and a formate-transporter ( FocB , homologous to FocA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>R egulation of the Hydrogenase-4 Operon of Escherichia coli by the 54-Dependent Transcriptional Activators FhlA and HyfR David A. G. Skibinski ,1,2 Paul Golby ,1 † Yung-Sheng Chang ,1 Frank Sargent ,3 Ralf Hoffman ,1 R. Harper ,1 John R. Guest ,2 Margaret M. Attwood ,2 Ben C. Berks ,4 and Simon C. Andrews1 * School of Animal and Microbial Sciences , The University of Reading , Reading RG6 6AJ ,1 Department of Molecular Biology & Biotechnology , University of Shefﬁeld , Shefﬁeld S10 2TN ,2 The Centre of Metalloprotein Spectroscopy & Biology , School of Biological Sciences , University of East Anglia , Norwich NR4 7TJ ,3 and Department of Biochemistry , University of Oxford , Oxford ,4 United Kingdom Received 6 May 2002/Accepted 30 August 2002 The hyf locus ( hyfABCDEFGHIJ-hyfR-focB ) of Escherichia coli encodes a putative 10-subunit hydrogenase complex ( hydrogenase-4 [ Hyf ] ) ; a potential 54-dependent transcriptional activator , HyfR ( related to FhlA ) ; and a putative formate-transporter , FocB ( related to FocA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>To determine whether HyfR , like its homologue , FhlA , regulates transcription of the hyf operon , the effect of hyfR inactivation on hyfA-lacZ expression was studied ( Fig. 5 ; note use of logarithmic scale ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Effect of FhlA , 54 , hydrogenase-3 , and HycA on the expression of the hyf operon ( hyfA-lacZ fusion ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>In analogy with other regulatory components of two-component regulatory systems , the FhlA protein , a putative transcriptional activator for the fhiB operon , would be expected to undergo phosphorylation or dephosphorylation , depending on the presence or absence of the environmental stimulus , formate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>The regulators of aerobic-respiration ( ArcA ) and of formate-hydrogen lyase ( FhlA ) share sequence similarities with regulators of ` two component regulatory systems ' ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1854188" target="_blank">1854188</a>]<br></li>
+<li>FhlA hyp and hyc , operons , fdhF , and hydN-hypF hyf operon ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Isolation and characterization of mutated FhlA proteins which activate transcription of the hyc operon ( formate hydrogenlyase ) of Escherichia coli in the absence of molybdate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>N-terminal truncations in the FhlA protein result in formate - and MoeA-independent expression of the hyc ( formate hydrogenlyase ) operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Res Microbiol 152:311 -- 321 Self WT , Hasona A , Shanmugam KT ( 2001b ) N-terminal truncations in the FhlA protein result in formate - and MoeA - independent expression of the hyc ( formate hydrogenlyase ) operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16205910" target="_blank">16205910</a>]<br></li>
+<li>The presence of genes encoding homologues of the formate-responsive transcriptional regulator ( FhlA ) and the formate channel ( FocA ) in the hyfoperon reinforces the view that Hyf functions in formate-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>FhlA induces expression of the hyc , fdhF , hydN-hypF and h y p genes ( the ` formate regulon ' ) in response to elevated intracellular formate levels ( Schlensog & Bock , 1990 ; Rossmann et al. , 1991 ; Maier et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>The 54-dependent transcriptional activator , FhlA , induces expression of the genes of the formate regulon in response to elevated intracellular formate levels ( 27 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>In the presence of formate , the regulator FhlA ( encoded by the fhlA gene ) activates expression of the formate hydrogenlyase system ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626281" target="_blank">8626281</a>]<br></li>
+<li>Together they form the formate regulon , which is under the control of the transcriptional activator FhlA , a protein encoded by the last gene of the hyp operon [ 6,7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The product of the ﬁrst gene of the hyc operon , hycA , negatively regulates transcription of the genes in the formate/FhlA regulon ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">FhlA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Alignment of the predicted of sequences FhlA , NtrC , ACOAAT6GCG66A6TATCCACT66A6TTACAGCCGAA6TTGCT6C6TTT6TCAG6AACA66A6T6TGAAC6TCTCOGGCACAACAAAATCATTCAGAC G I E V D P L E L Q P K L L R V L S K T Q E Q E F E R L I Q 6 6G6C6T6C6TCTAATC6CC6C6ACTAACCGCGATCTG6A66AAATC6CC6ATCCCCGTGA60TCCGTAGCGATCTCTATTTACC6CCT6AAC6TATTCCC6 D V R L I A R D L K K4N V AD R E F R S D L Y Y R L V F P 1800 ATTCACCTGCCGCCACTACGCGAOC6TCCGGAAGATATTCCGCT6CT6GC6G6AGCCTTTACCTTCAAAATTOCCCGTCC6TCTG666C6CAATATC6ACA 2000 L L T K I A R R L G R I D S I H L P P R E R P E D I P L F F A K 1 GCATTCCTGCCGAGRCGCTGCGCACCTTGA6CAACATG6G66G6CCGG66T6AC6TA6C6CAACTG66AAAACGTCATT RGC6C6CGGTATT6CTAACAC6 2100 I P A E T L R T L S N E W P 6 N V R E L E N V I E R V L L T R PstI C6GTA6C6TGCT6CAcT6TCATT6CCA6AATATTGTTTTACCG66CCTGAAAC6CC6CCTOCCGCAAC66TT6TCGCcCCTGGAG666CAA6AT6AATAT 2200 G N V L Q L S L P D I V L P E P E T P P A A T V V A L E 6 E D E Y TnS ,0 -- v CAGTTGATTGTGCGCGTGCTGAAAGAAACCAACGGCGTGGTTGCCG6GCCTAAAGGCC6TGCGCAACGTCTGGGGCT6AAACGCACGACCCTGCTGTCAC 2300 0 L I V R V L K E T 6N V V A G P K 6 R A 0 R LG L K R T T L L S R GGATGMAGCG6CTGGGAATTGATAAATCG6CATTGATTTAACTGCAAMTT6CCGACaTC6CTGTCCkG6CATACTATTCATGAGGTTTTTTCGGAC 2400 N K R L G I D K S A L I * - Clal 6ATATTTTTCC66CA6TTCT66CACCGGAC6CTTGTCATC6GT 2443 FIG. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>A consensus sequence could be deduced and a model is presented and supported by in vivo data in which a FhlA tetramer binds to the UAS on one side of the DNA helix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Finally , a binding site for FhlA was mapped by mobility shifts of a fragment containing the intergenic region between hydN and the preceding ascG gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8661925" target="_blank">8661925</a>]<br></li>
+<li>Hydroxyradical footprinting of FhlA bound to the UAS of intergenic region 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>Whether binding to these sites is independent or cooperative and whether two FhlA tetramers bind to them remains to be investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>It is not known whether HycA acts by directly interacting with FhlA or by preventing FhlA binding to upstream activating sequence regions ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>It is not known whether HycA acts by directly interacting with FhlA , the transcriptional activator ( Schlensog and Bock , 1990 ) , or by preventing binding of FhlA to the upstream activatory sequence ( Birkmann and Bock , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1625581" target="_blank">1625581</a>]<br></li>
+<li>A 12-gene hyf operon at min 56 contains a possible 54-dependent promoter with a score of 68.7 , and upstream sequences suggest the presence of FhlA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>By restriction of the DNA pnor to incubation with FhlA , it was possible to narrow down the binding site to a region of 89 bp located between a Hinfi site and an AseI site ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8661925" target="_blank">8661925</a>]<br></li>
+<li>Further inspection of this region revealed a potential a5 * - dependent promoter , ATGGCAT-5-ATGCA ( 1210-1226 bp , conserved residues in larg-e caps ; Thony & Hennecke , 1989 ) which is located 110 bp downstream of a putative FhlA - and/or HyfR-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>A potential - dependent promoter is located upstream of the hyf operon and approximately 110 bp downstream of a putative FhlA ( and/or HyfR ) - binding site ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>A cyclic AMP receptor protein-cyclic AMP complex ( CRP-cAMP ) consensus sequence is also present in the hyf upstream sequence centered at position 160.5 ( Fig. 2 ) , which is 30 bp upstream of the HyfR/FhlA consensus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>It had been proven also that FhlA binds to certain DNA 0 sequences in the 5 region of the promoters of the formate regulon [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>The FhlA protein binds formate , and this complex is probably the actual control element forfhlB gene transcription , which in turn interacts with the upstream regulatory sequence of thefdhF gene ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>In the case of hyc , the ModE-molybdate complex is thought to bind about 95 bp upstream of the main formate-dependent positive transcriptional regulator , FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11092866" target="_blank">11092866</a>]<br></li>
+<li>Transcription of the genes of the formate regulon occurs from 212/224 promoters and therefore requires the function of s54 plus the presence of a cis DNA element located between 2100 and 2140 bp upstream of the transcriptional start site , the upstream regulatory sequence ( upstream activator sequence [ UAS ] ) to which FhlA binds ( 4 , 5 , 14 , 22 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8981978" target="_blank">8981978</a>]<br></li>
+<li>To start the transcription , the RNA polymerase has to interact with FhlA bound to upstream activating sequences ( UAS ) , which are located about 100 bp 5 0 of the transcriptional start sites [ 7,9 ± 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA binds to an upstream activating sequence located about 100 bp upstream of cognate transcriptional start sites and , in the presence of formate , activates transcription from the 54-dependent promoters ( 8 , 9 , 11 , 23 , 24 , 25 , 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by FhlA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Immu-noblot assays confirmed that the levels of the endogenous FhlA protein were also repressed in wild-type K12 cells constitutively expressing the oxyS RNA ( Figure 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>oxyS activates and represses the expression of numerous genes in E. coli , and eight targets , including genes encoding the transcriptional regulators FhlA and ss , were identified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230301" target="_blank">9230301</a>]<br></li>
+<li>Mutated FhlA proteins activate transcription of PhyclacZ in a modE , moeA double mutant The molybdate requirement for hyc expression is transduced through two proteins , ModE and MoeA and the hyc operon is not transcribed in a modE , moeA double mutant [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Although the hyf operon is apparently silent in wild-type E. coli , two mutant FhlA proteins ( FhlA132 and FhlA165 ) and constitutively expressed HyfR protein were able to activate transcription of hyf .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>A potential - dependent promoter is located upstream of the hyf operon and approximately 110 bp downstream of a putative FhlA ( and/or HyfR ) - binding site ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>To determine whether HyfR , like its homologue , FhlA , regulates transcription of the hyf operon , the effect of hyfR inactivation on hyfA-lacZ expression was studied ( Fig. 5 ; note use of logarithmic scale ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>HyfR , an FhlA homolog encoded by the hyfR gene present at the end of the hyf operon , also activated transcription of hyf-lacZ but did so only when hyfR was expressed from a heterologous promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA protein is also a molybdenum sensor Since the transcription of fhlA and thus the level of FhlA protein in the cell was not signi cents cantly changed by molybdate availability , mutations in other genes which might alter the molybdate-dependent control of hyc-lac expression were sought .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>FhlA activates its own expression from the major promoter of the hyp operon , but secondary promoters ensure basal synthesis ( 24 , 105 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The hyfR gene encodes an FhlA homologue that is a potential formatesensing , 54-dependent transcriptional activator , and focB encodes a putative formate transporter homologous with FocA 54 ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The hypA gene of E. coli is the promoter-proximal gene of the hyp operon and is transcribed from the 54-dependent promoter Pp , which requires the FhlA transcriptional activator plus formate for activation ( 12 , 19 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12081959" target="_blank">12081959</a>]<br></li>
+<li>In the presence of formate , the regulator FhlA ( encoded by the fhlA gene ) activates expression of the formate hydrogenlyase system ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626281" target="_blank">8626281</a>]<br></li>
+<li>Together they form the formate regulon , which is under the control of the transcriptional activator FhlA , a protein encoded by the last gene of the hyp operon [ 6,7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10848985" target="_blank">10848985</a>]<br></li>
+<li>FhlA ( encoded by fhlA ) is the formate-sensing transcriptional activator that directly controls the formate regulon ( 27 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The effector for AppY might be formate since we found that both the hya operon ( 9 ) and the cyx-appA operon were induced by formate and that the formate inductions were independent of FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626281" target="_blank">8626281</a>]<br></li>
+<li>The hycB-hycH mutation had no signiﬁcant effect on hyf expression , conﬁrming that the positive effects of FhlA on hyf expression were not caused by metabolic changes arising from lack of expression of the hyc operon ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>It was considered possible that the effects of the fhlA and ntrA mutations on hyf operon expression could be an indirect consequence of weak hyc expression ( which is also 54 and FhlA dependent ) , resulting in low levels of Fhl-1 and a subsequent inability to decompose formate under fermentative conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The hyf operon was found to resemble the hyc operon in being induced anaerobically by formate at a low pH in an FhlA - and 54-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The transcriptional regulation of the hyf ( hyfA-hyfJ ) operon appears similar to that exhibited by the closely related hyc operon in that both are induced by FhlA under fermentative conditions in response to formate and low pH. Likewise , the FhlA-dependent activation of hyf expression resembles that of hyc in being inhibited by the antiactivator HycA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Obviously , the FhlA protein is rate limiting for expression of the fhlB operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2118503" target="_blank">2118503</a>]<br></li>
+<li>N-terminal truncations in the FhlA protein result in formate - and MoeA-independent expression of the hyc ( formate hydrogenlyase ) operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>Transcription of the fdhF and hyc operons , both in vivo and in vitro , requires a c54-dependent transcriptional activator , FhlA , and formate [ 1,4 ^ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Transcription of both the fdhF and hyc operons requires the activator , FhlA protein , as well as formate and molybdate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10689164" target="_blank">10689164</a>]<br></li>
+<li>Transcription of the hyc operon and fdhF requires the FhlA protein , a formate-depen-dent transcriptional activator ( 28 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702328" target="_blank">14702328</a>]<br></li>
+<li>FhlA hyp and hyc , operons , fdhF , and hydN-hypF hyf operon ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The product of the ﬁrst gene of the hyc operon , hycA , negatively regulates transcription of the genes in the formate/FhlA regulon ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>The other major targets for activation by FhlA are the hyc operon and the fdhF gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12426353" target="_blank">12426353</a>]<br></li>
+<li>FhlA induces expression of the hyc , fdhF , hydN-hypF and h y p genes ( the ` formate regulon ' ) in response to elevated intracellular formate levels ( Schlensog & Bock , 1990 ; Rossmann et al. , 1991 ; Maier et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9387241" target="_blank">9387241</a>]<br></li>
+<li>It has also been proposed that FhlA provides for nitrate-dependent suppression of fdhF gene expression ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12923080" target="_blank">12923080</a>]<br></li>
+<li>It has been proposed that nitrate control of fdhF expression is mediated by the formate FhlA regulator ( 21 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12923080" target="_blank">12923080</a>]<br></li>
+<li>Since expression of K. oxytoca hydG led to the apparent activation of the hycA ' - ` lacZ reporter gene fusion , which is normally under the control of FhlA , the sequences of the two regulatory proteins were aligned ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>Resíriction : FhlA : Aguilar OM , Reilhder H.Arnold W , Whler A ( 1987 ) Rhizobiurn nreliloti nifl VmF ) gene is part of an operon regulated by nifA-dependent promoter and codes for a polypeptide homologous to the nifK gene product .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8661925" target="_blank">8661925</a>]<br></li>
+<li>It was found that hycA , the promoter-proximal gene , is a regulatory gene and that it codes for a product counteracting transcriptional activation by FhlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1625581" target="_blank">1625581</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

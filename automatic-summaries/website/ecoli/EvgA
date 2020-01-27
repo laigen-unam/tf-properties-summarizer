@@ -1,0 +1,893 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - EvgA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">EvgA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">EvgA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>EvgA of the Two-Component Signal Transduction System Modulates Production of the YhiUV Multidrug Transporter in Escherichia coli Kunihiko Nishino and Akihito Yamaguchi * Department of Cell Membrane Biology , Institute of Scientiﬁc and Industrial Research , Osaka University , Ibaraki , Osaka 567-0047 , Faculty of Pharmaceutical Science , Osaka University , Suita , Osaka 565-0871 , and CREST , Japan Science and Technology Corporation , Osaka 567-0047 , Japan Received 28 September 2001/Accepted 8 January 2002 Overexpression of the EvgA regulator of the two-component signal transduction system was previously found to modulate multidrug resistance of Escherichia coli by increasing efﬂux of drugs ( K. Nishino and A. Yamagu-chi , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Escherichia coli Gene Expression Responsive to Levels of the Response Regulator EvgA Nobuhisa Masuda and George M. Church * Departm ent of Genetics , Harvard Medical School , Boston , Massachusetts 02115 Received 8 January 2002/Accepted 22 August 2002 To investigate the function of the EvgA response-regulator , we compared the genome-wide transcription proﬁle of EvgA-overexpressing and EvgA-lacking Escherichia coli strains by oligonucleotide microarrays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Results and Discussion Genes downstream of EvgA are optimally activated between pH 5.7 and 5.5 We modified a micro-plate reader-based assay34 ,35 to measure low pH response dynamics of a set AR promoters fused to the Photorhabdus luminescens lux operon on a low copy plasmid ( Table 2 ; see Materials and Methods for details ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>The results of Western blot analysis presented in Fig. 1 indicate that elevating EvgA levels will increase GAD production in log-phase cells grown in minimal medium ( Fig. 1A , compare strains EF1149 [ lane 1 ] and EF1151 [ lanes 3 and 4 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The resulting plasmid , designated pQEevgA , expresses an EvgA fusion protein ( composed of full-length EvgA with an amino-terminal Met-Arg-Gly-Ser-His-His-His-His-His-His-Gly-Ser ) under transcriptional control of an isopropyl - - D-thiogalacto-pyranoside ( IPTG ) - regulated phage T5 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>1 pmol of the template was incubated with 0 , 25 , 50 or 100 pmol His-tagged EvgA for 10 min at 37 uC in the presence or absence of 10 mM acetylphosphate in a total volume of 33 ml .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>The acrB evgAS strain harboring pQEevgA showed elevated resistance to these agents in the presence of IPTG , suggesting that the His-tagged EvgA functions as EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_9">
+The expression of His-tagged EvgA was induced by adding 1 mM IPTG to the LB broth before inoculation of cells , when required .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></label>
+<input id="act_similarity_9", type="checkbox">
+<div class="ACT_similar">
+<li>The expression of His-tagged EvgA was induced by adding 1 mM IPTG to the LB broth before inoculation of the culture , when required .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li></div>
+<li>An increase in the transcript level of several regulators from two-component systems ( PhoP , EvgA and YedW ) was observed in the hns strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>Other represented functions in our dataset relate to sensing and stimulus responses , mostly proteins belonging to two component systems , such as ArcA , RcsB , CpxR and EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25518064" target="_blank">25518064</a>]<br></li>
+<li>For example , in steady-state cultures , as aerobiosis increased , the excretion of acidic fermentation end-products decreased [ 4 ] , and the acid responsive regulators EvgA and GadX exhibited correspondingly lower activities ( figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>For example , another report found that EvgA could bind upstream of yhiU in a region that also lacks the proposed EvgA consensus site ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Another adjacent aspartate , Asp54 in EvgA , which does not seem to be a phosphorylation site , was used as a control in the following experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>To understand the whole picture of EvgA regulation , DNA macroarray analysis of the effect of EvgA overproduction was performed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Although gadX is predicted to be co-transcribed with gadA ( Tramonti et al. , 2002 ) , EvgA overexpression in the absence of ydeO or YdeO overexpression upregulated gadA but not gadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Recently gadE ( yhiE ) has been identiﬁed as inducible by low pH , its inactivation being detrimental to acid resistance in minimal medium ( Tucker et al. , 2002 ) , or to acid resistance caused by EvgA overexpression ( Masuda & Church , 2002 , 2003 ) , and gadE has been proposed to be regulated by YdeO ( Masuda & Church , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+<li>Recently , Tucker et al. ( 2002 ) reported that 28 genes , including slp , yhiF , hdeAB , hdeD , yhiE , gadA and gadB , which are induced by EvgA overexpression ( Masuda and Church , 2002 ) , were induced at pH 5.5 or 4.5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Genes highly increased by EvgA overexpression in the absence of ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>d. Gene not highly and signiﬁcantly increased by EvgA overexpression in the previous study ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Nineteen of the 23 ORFs listed in Table 2 were also highly induced by EvgA overexpression ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Twelve of the 15 ORFs listed in Table 1 were also highly induced by EvgA overexpression in the presence of ydeO ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>The expression of gadX was 1.7 - to 4.9-fold induced by EvgA overexpression , and the changes were signiﬁcant in all four comparisons ( http://arep.med.harvard.edu/cgi-bin/Express DBecoli/EXDStart ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>This latter set of genes was induced by EvgA overexpression in the presence of ydeO ( Masuda and Church , 2002 ) , but not by EvgA overexpression in the absence of ydeO ( http://arep.med.harvard.edu/cgi-bin/ ExpressDBecoli/EXDStart ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Although we reported low-level induction of gadX by EvgA overexpression ( Masuda and Church , 2002 ) , we could not detect gadX induction by either EvgA overexpression in the absence of ydeO or YdeO overexpression ( http://arep.med.harvard.edu/cgi-bin/ ExpressDBecoli/EXDStart ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>vealed a 65-amino-acid small membrane protein that was directly induced by EvgA and directly interacted with the sensor PhoQ at the inner membrane ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>This protein , named protein X , was induced by EvgA because E. coli KAM3 cells did not yield this protein band ( Fig. 1A , lane 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11157960" target="_blank">11157960</a>]<br></li>
+<li>Induction of these genes by H-NS deletion might be the secondary effect of the EvgA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Data presented in that study suggested that EvgA regulates ydeO , the product of which regulates gadE ( yhiE ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>Figure 9A illustrates , using a Northern blot , that ydeO is also acid induced and that EvgA is needed to activate ydeO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>However , EvgA can also activate ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>In a previous study , we eliminated emrY from the list of highly upregulated genes by EvgA overexpression because of marginally signiﬁcant P-values in three out of four experiments , even though the expression of emrY was induced 4.6-fold on average .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>yhiW , appY , and adiY showed no signiﬁcant change by EvgA overexpression except that the expression of yhiW was signiﬁcantly induced 28-fold by IPTG in the evgAS strain harboring pQEevgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The multidrug resistance caused by overexpression of EvgA and YdeO is due to the induction of mdtEF gene expression ( 6 , 7 , 14 , 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885453" target="_blank">16885453</a>]<br></li>
+<li>The authors used overexpression of EvgA artiﬁcially to activate acid resistance in pH 2.5 LB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Overexpression of either EvgA or GadX induced the expression of gadA , gadBC , and hdeABD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>These results suggest that yhiE is essential for acid resistance induced by YdeO overexpression and that EvgA overexpression induces yhiE via the induction of YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>To identify genes responsible for the acid resistance caused by EvgA overexpression , we constructed deletion mutants of the genes that were induced more than eightfold on average by EvgA overexpression , transformed pQEevgA to the constructed mutants , and then tested acid resistance in the presence of IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The deletions of ydeP-b1500-ydeO and yhiE decreased acid resistance caused by EvgA overexpression more than those of gadC and hdeA , suggesting that ydeP-b1500-ydeO and yhiE are more critical for acid resistance induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Altogether , EvgA overexpression induced ﬁve genes , gadA , gadB , gadC , hdeA , and hdeB , known to provid acid protection and at least three novel acid resistance genes , ydeP , ydeO , and yhiE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_43">
+This acid resistance was abolished by deletion of ydeP , ydeO , or yhiE , which was induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></label>
+<input id="act_similarity_43", type="checkbox">
+<div class="ACT_similar">
+<li>This acid resistance is partially abolished by deletion of ydeP , yhiE or ydeO , genes induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>This acid resistance is partly abolished by deletion of ydeP , ydeO or yhiE , genes induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li></div>
+<li>We eliminated the other four genes from further consideration , as these genes might be false positives or induced only by the higher level of YdeO relative to the YdeO levels induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>EvgA overexpression induced the expression of ydeO , an AraC/XylS regulator , indicating that some of the genes induced by EvgA overexpression might be directly induced by YdeO instead of EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>YdeO , one of the genes directly induced by phosphorylated EvgA , then up-regulates gadE , the master regulator of acid resist-ance genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The expressions of three efﬂux pump genes , emrK , yhiU , and yhiV , were signiﬁcantly induced by EvgA overexpression , as shown in Table 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Of 30 genes induced more than eightfold by EvgA overexpression , 18 , including ydePO and yhiE , are also induced by H-NS deletion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Because we were primarily interested in genes induced by EvgA overexpression , we did not give further consideration to the gene repressed by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Operons in the second class were induced by EvgA overexpression only in the presence of ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Effect of deletion of yhiUV on MDR induced by overexpression of the EvgA regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>AppY regulates the appCBA operon ( 5 ) , which was induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Several genes induced by EvgA are involved in the response to high osmolarity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Five of the genes whose expression was induced by EvgA overexpression code for proteins that are known to provide protection against acid stress in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Indole signalling is transmitted via BaeSR and CpxAR , two-component signal transduction pathways , to cause the induction of acrD and mdtABC gene expression We previously reported that the acrD gene is upregulated by response-regulators BaeR and CpxR ( Hirakawa et al. , 2003a ) , and that the mdtEF gene is upregulated by EvgA ( Nishino and Yamaguchi , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>However , an EMSA study by Nishino et al. showed that EvgA , one of the regulators that can activate the expression of mdtEF , could bind to the intergenic region between gadE and mdtEF , indicating that this region might serve as a potential promoter of mdtEF under certain conditions ( Nishino and Yamaguchi , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>In MG1655 cultured in rich medium the EvgA response-regulator might be in an active form , resulting in the expression of some EvgA-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Nishino et al. reported that expression of asr is upregulated in E. coli overproducing the response-regulator EvgA [ 25 ] , although this observation was not conﬁrmed by recent DNA gene array analyses and studies of the individual genes controlled by EvgA [ 22,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>[ 22 ] N. Masuda , G.M. Church , Escherichia coli gene expression responsive to levels of response-regulator EvgA , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>EvgA binds the intergenic region of evgAS and emrKY and regulates the expression of both operons ( 13 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>EvgA also significantly regulates the expression of yfdX , whose function is unknown ( 32 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>In previous studies , Nishino and Yamaguchi reported that overproduction of EvgA increases the expression of yhiUV , emrKY , and yfdX ( 32 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>BaeR and EvgA also upregulate the mdtABC and emrKY genes respectively ( Nishino and Yamaguchi , 2001b ; Nagakubo et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>In our previous study , we found that EvgA and BaeR upregulate the expression of drug exporter genes such as emrKY , yhiUV , and mdtABC ( 13 , 17 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618449" target="_blank">12618449</a>]<br></li>
+<li>qRT-PCR showed decreased expression of all of these genes , and decreased values were larger than the values obtained from the macroarray analysis , just as in the case of genes whose expression was increased by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Most of the putative multidrug eﬄux-related genes were below the detection level under the steady-state of the exponential-growth-phase , but at least ﬁve genes or operons , emrKY , mdtEF ( formerly yhiUV ) , acrA , mdfA , and tolC , showed increased expression in the presence of the constitutive mutant EvgS1 .8 ) This was supported by reports of overexpression of the regulator EvgA conferring multidrug resistance to a drug-hypersuscep-tible E. coli strain , which lacked the major multidrug eﬄux pump gene , acrB .9 -- 11 ) EvgA overexpression also conferred acid resistance to exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Here we present data showing that EvgA contributes to multidrug resistance through increased expression of the multidrug transporter yhiUV gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Very recently , Nishino and Yamaguchi ( 21 ) also reported that EvgA contributes to multidrug resistance through increased expression of YhiUV , and YhiUV transporter requires TolC for its function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>These results are consistent with the microarray data and suggest that EvgA binds to the six consensus sequences in the genome to induce the expression of ydeP , b1500-ydeO , yegR-b2084-yegZ , emrKY , evgAS , yfdX and yfdWUVE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Based on our ﬁndings , EvgA binds six consensus sequences and induces Fig. 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>However , since the six genes besides gadE in Fig. 4 possess the consensus sequences , further investigation is required to determine whether EvgA directly regulates gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>12.38 -8.24 -59.96 1.13 ± 0.55 ± 0.50 ± 0.02 0.04 0.02 1.27 ± 0.50 ± 0.20 ± 0.03 0.03 0.03 / h ) / h ) Fig. 2 Comparison of the transcript levels of the E. coli wild type under different pH values at 7.0 and 6.0 : a global regulatory genes , b PhoB regulatory genes , c acid-inducible genes , d metabolic pathway genes , e respiratory chain genes during micro-aerobic continuous culture at the dilution rate of 0.1 h -1 Fig. 3 a , b Overall metabolic regulation of the E. coli during acidic condition ( a ) Acid Condition Hns ATP ADP PhoQ PhoQ P ATP ADP ¬ EvgS EvgS P cAMP - evgA Pho P PhoP Crp EvgA P B1500 EvgA cAMP-Crp ¬ RpoS b1500 ydeo ¬ YdeO gadE GadE O O GadW GadX hdeA gadB gadc gadW gadA gadX HdeA GadA GadB GadC Acid resistance ( b ) Acidic Condition ( H + ) ( indirect ) EnvZ PhoR fnr OxyR ldhA arcA P Fnr ArcA SoxR / S L PhoR - P OmpR OmpR - P DH pfl yfiD ompC TCA cycle genes : gltA sdhC mdh sodA PhoB - P PhoB Lactate OmpC ompF asr YfiD Pfl OmpF Asr Formate Acetate ackA pta Acid resistance Moreover , in accord with the proteomic analysis , the expression of yﬁD : : lac reporter fusion and the intracellular content of YﬁD were found to be high during growth at low pH for both aerobic and anaerobic cultures ( Neil et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>Given the importance of AR in the ecology of E. coli , it is not surprising that several regulatory inputs , involving at least four global regulators , HN-S , CRP , RpoS , and EvgA , regulate the AR response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The regulation of these genes is complex and involves the transcription factors RpoS ( 3 , 14 ) , cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) ( 3 ) , HN-S ( 11 ) , and EvgA ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Thus , we propose a complex regulatory cascade in which global regulators ( RpoS , CRP , HN-S , EvgA , etc. ) inﬂuence the expression levels and/or activities of GadX and GadW , which in turn activate the expression and/or activities of transcription activators ( e.g. , YdeO and YhiE ) that directly activate subsets of target genes involved in AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Our results suggest that the gad system is positively regulated by at least two AraC/XylS-type regulators , YdeO and GadX , and also suggest that EvgA and YdeO regulate acid resistance genes more globally than GadX .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results suggest that EvgA binds to the inverted repeats and upregulates the downstream genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results suggest that YdeO is essential for YhiUV induction by EvgA , consistent with our EvgA-binding motif analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>It is now known that E. coli possesses a number of effectors that enable it to survive otherwise lethal doses of inorganic and organic acid stress ( termed acid resistance or AR ) , many of which are not present in closely related bacteria such as Salmonella spp .8 The function of each AR effector depends on the precise nature of the acid stress .9 -- 13 For example , two isomeric glutamate decarboxylases encoded by gadA and gadB and a glutamate-γ-aminobutyric acid antiporter gadC contribute to AR only when glutamate is available in the extracellular environment ,10 a phenomenon termed glutamate-dependent AR or AR2 , whereas the periplasmic chaperone encoded by hdeA only appears to contribute to AR in dense cell populations .11,14 Several effectors reside within a 15-kb genomic patch termed the `` acid fitness island '' ( AFI ) and , along with the non-proximal gadBC locus , are co-regulated under diverse situations .15 -- 18 In E. coli K-12 , these effectors are subject to tight transcriptional control and are expressed at low levels during rapid growth at neutral pH , due in part to global H-NS-mediated repression15 ,19 and Lon-mediated degradation of the central activator protein GadE .20 For induction of this latter set of genes , distinct regulatory networks operate depending on the inducing conditions , which include a shift to sublethal pH21 and growth into stationary phase .19,22 A drop from pH 7 to sub-lethal pH 5.5 induces a number of AR effectors via the two-component system EvgA/EvgS , which is encoded outside of the AFI .23,24 Two intermediate transcription factors , YdeO and the AFI-encoded GadE , are transcriptionally activated by the presumably phosphorylated response-regulator EvgA .18,24 -- 26 YdeO can also activate gadE transcription forming a coherent feed-forward loop18 ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>However , it is not clear what purpose this regulation serves in vivo since several studies have shown that EvgA can activate the gadE promoter in a ydeO mutant .24,26 GadE directly activates its own expression while repressing production of YdeO .24 Many structural genes within the AFI , as well as the gadBC locus , are activated directly by GadE , although effectors such as slp appear not to be under GadE control .15,18,27 The contribution of the alternate general stress and stationary phase sigma factor RpoS may also have a role under low pH inducing conditions , since GadE positive feedback can be further supported by its presence .28 The homologous transcription factors * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Furthermore , data to be presented below will suggest that EvgA alone may in fact have little effect on gadE promoter activity , as additional regulatory interactions linked to EvgAS are required for residual induction of the gadE promoter in the absence of YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Finally , the data set confirmed that all the effects of EvgA and YdeO ( and B1500 ) were specific to pH 5.7 inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Promoters are named according to the first gene in the operon they control and have been grouped according to regulatory factors required for activation during the first hour after shift to pH 5.7 , as deduced from ( c ) below : group 1 : EvgA ; group 2 : EvgA , B1500 , and PhoP ; group 3 : EvgA and YdeO ; group 4 : EvgA , YdeO , and GadE ; and group 5 : no activation observed during this period .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Group 1 ( b1500p and ydePp ) is activated by EvgA only ; group 2 ( mgtAp , phoPp and gadWp ) is activated by EvgA , B1500 , and PhoP ; group 3 ( gadEp , gadYp , and slpp ) is activated by EvgA and YdeO ; and group 4 ( hdeAp , hdeDp , gadAp , and gadBp ) is activated by EvgA , YdeO , and GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Expression of the ﬁrst major regulator immediately downstream of EvgA , YdeO , is itself completely dependent on RcsB , making a direct effect of RcsB on EvgS or EvgA more likely .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>The overexpression results suggested a linear control circuit proceeding from EvgA to YdeO to GadE , which would then activate the gadA or gadBC genes ( 13 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>This would not happen if YdeO or EvgA activated other genes necessary for AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The previous result established that EvgA and YdeO activate glutamate-depen dent AR under physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The fusions were transferred to Salmonella , which lacks this AR system , and plasmid-borne E. coli-speciﬁc regulators EvgA , YdeO , GadE and GadX were introduced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>The phosphorylated EvgA induces the b1500-ydeO operon , and the transcriptional-regulator , YdeO , sequentially induces another transcriptional-regulator , GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Thus , EvgA , YdeO , and GadE appear to affect only induction of glutamate-dependent AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The published overexpression study found that the increase in AR caused by overexpressing EvgA was dependent on YdeO and GadE ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The Northern blot shown in Fig. 1C indicates that EvgA overexpression does induce GadE and that this induction is heavily dependent on YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Figure 7 indicates that GadE bound to fragments F1 and F2 ( Fig. 7A ) , EvgA bound to F2 and F3 ( Fig. 7B ) , while YdeO bound to F1 and F3 but not to F2 ( Fig. 7C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The results in Fig. 1A , lanes 4 and 6 versus lanes 8 and 10 , illustrate that when EvgA was overexpressed , GAD production increased in a GadE-dependent fashion but was only partially YdeO-dependent ( Fig. 1A , lanes 12 and 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The effects of EvgA and YdeO on GAD production also appear additive ( Fig. 3A , EK596 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Chromosomal knockout mutations indicate the system is a branched control circuit ( diagrammatically summarized in the Discussion ) where EvgA activates gadE expression directly and indirectly through a ydeO feed-forward loop and where gadE autoregulates its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The response-regulator EvgA activates gadE directly and indirectly via induction of the AraC-like regulator ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>A cascade reaction model , in which EvgA stimulates gadE expression directly and indirectly via ydeO , was proposed to explain the induction of GadE during acid challenge ( 16 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15795232" target="_blank">15795232</a>]<br></li>
+<li>Among them , we selected ORFs that are directly regulated by EvgA ( ydeP , ydeO , yfdX , frc , yegR , and emrK ) 12 ) and those that are presumed to be regulated by YdeO and GadE ( gadE , gadA , gadB , hdeA , and hdeD ) 12 ) for precise estimation of the transcriptional activation of these genes in the presence of the constitutive evgS1 mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>As shown in EvgS/EvgA up-regulated genes targeted by EvgA , YdeO , and GadE Next , we constructed an evgS1 and ydeO-disrupted strain ( MGR2001 ydeO ) and an evgS1 and gadE-disrupted strain ( MGR2001 gadE ) in order to classify the genes regulated by YdeO or GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>EvgA is likely to directly upregulate operons in the ﬁrst class , and indirectly upregulate operons in the second class via YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results suggest that EvgA directly regulates the former genes , and indirectly regulates the latter genes via YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>The accumulated data suggest that EvgA , YdeO , and GadE all contribute to gadE induction in response to acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Regulation of gadE expression involves such regulators as EvgA , YdeO , GadE , PhoP , TrmE , GadX , and GadW ( 12 , 21 , 24 , 30 , 33 ) , which makes GadE the center of regulation for the induction of acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>EvgA and YdeO activate GAD expression in exponentialphase cells grown in minimal medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>B , EvgA dependent and YdeO partly dependent expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Next we tested whether EvgA and YdeO affected gadE expression under physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>However , neither EvgA nor YdeO is required for gadE expression in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Further studies are necessary to clarify how EvgA and YdeO regulate the gadE-mdtEF operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>EvgA , GadE , and YdeO directly bind the gadE promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>We presented evidence above that EvgA and YdeO directly activate gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>EvgA directly activates gadE without assistance from YdeO , and YdeO can activate gadE without EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>First , the response-regulator EvgA and the AraC-family activator YdeO create a feed-forward gadE activation circuit that functions in minimal glucose medium ( Ma et al. , 2004 ; Masuda & Church , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>GadX binds to the gadE control region Regulators EvgA , YdeO and GadE bind to subfragments of the 798 bp gadE upstream control region ( Ma et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>For instance , EvgA , YdeO and GadE itself form a branched regulatory loop that activates gadE during exponential-growth in pH 5.5 minimal medium ( Ma et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>In another study ,13 ) Ma et al. used an acidiﬁed minimal medium to induce an EvgA-YdeO-GadE circuit without overexpressing EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Involvement of EvgA , YdeO , H-NS , CRP , GadX , as well as a small RNA DsrA in the regulation of the mdtEF gene in the same operon has also been reported ( Nishino and Yamaguchi , 2002 , 2004 ; Oshima et al. , 2006 ; Nishino et al. , 2008a , b , 2009 , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>More than ten transcription regulators including EvgA , YdeO , GadE , TorR , H-NS , PhoP , RpoS , CRP , MnmE , GadX , and GadW have been found to participate in the regulation of gadE during various circumstances of acid stresses through at least ﬁve different regulatory circuits ( Ma et al. , 2004 ; Sayed and Foster , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>INVOLVEMENT OF DIFFERENT REGULATORS IN THE ANAEROBIC EXPRESSION OF mdtEF FROM THAT OF AEROBIC CONDITION Previous studies focusing on the expression of gadE-mdtEF operon during acid resistance have revealed that several regulators , such as EvgA , YdeO , MnmE , GadE , GadX , CRP , and H-NS , are involved in the regulation of gadE-mdtEF operon ( Gong et al. , 2004 ; Ma et al. , 2004 ; Hirakawa et al. , 2006 ; Tramonti et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>DELETION OF EvgA , YdeO , H-NS DOES NOT HAVE OBVIOUS EFFECT ON THE TRANSCRIPTION FROM INDIVIDUAL PROMOTERS UNDER ANAEROBIC CONDITION Our investigation above showed that ArcA and MnmE are the major activators responsible for the expression of gadE-mdtEF under anaerobic condition , whereas other regulators tested did not show obvious regulatory effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>Thus , in the present study , we ﬁrst examined whether previously identiﬁed regulators , such as EvgA , YdeO , MnmE , GadE , GadX , and H-NS , also participate in the anaerobic activation of mdtEF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>Interestingly , except for mnmE , deletion of the regulators previously shown to participate in the regulation of mdtEF under aerobic condition , such as EvgA , YdeO , GadE , and GadX , caused no or only a moderate decrease ( 17 -- 40 % ) of the transcription of PgadE-lacZ , and deletion of H-NS caused a moderate increase of PgadE-lacZ activity , suggesting that these regulators are not responsible for the activation of mdtEF under anaerobic condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>AR system 1 is catabolite repressed by glucose and induced in complex medium ; arginine-dependent AR system 3 is regulated by CysB and induced only in stationary phase ; glutamate-dependent AR system 2 is independently regulated by extracellular-pH , HN-S , RpoS , and EvgA ( 3 , 4 , 8 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The data revealed that an EvgA regulatory circuit does activate gadE , but the circuit is used only in exponential-phase cultures growing at low pH ( pH 5.5 ) in a minimal medium containing salts and glucose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>In contrast to the situation in LB , the acid-induced ( pH 5.8 ) , exponential-phase expression of P3P2 -- lacZ during growth in minimal medium primarily required EvgA and YdeO ( Fig. 7C , bars 6 , 8 and 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19220752" target="_blank">19220752</a>]<br></li>
+<li>However , induction of gadE can not be due solely to a potential change in EvgA activity , since gadE was induced by acid in an evgA mutant , although to a reduced level ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>We noted that a putative PhoP binding site has also been identified in the gadE promoter , although this was proposed as an activating site , not repression as here .30 In order to shed light on whether PhoP could regulate the gadE and gadB promoters independently of YdeO , we measured the activities of the gadE and gadB promoters in the ydeO phoP double-mutant background and compared the activities obtained t those in a ydeO single mutant , where gadE and gadB promoter activity was induced after a delay in an EvgA - and RpoS-dependent fashion ( Fig. 3a , vii -- viii ; Fig. 3c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>EvgA auto-activation has been reported ,18 although this was only observed following overexpression of EvgA under neutral pH conditions .18 The data presented here agree with a model whereby transcriptional induction of this two-component system does not occur .24 The fact that both EvgA and EvgS are required for downstream promoter induction suggests that EvgS-mediated phosphor-ylation of EvgA occurs under low pH conditions leading to transcriptional activation of downstream promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>This order of induction is consistent with YdeO first inducing the gadE promoter and then GadE in turn activating the gadB promoter .18,27 A transcriptional cascade from EvgA to YdeO to GadE to GadB must be completed to enable a rapid increase in glutamate-dependent AR To start to assign the regulators responsible for the kinetics seen in Fig. 2b , we re-assayed this set of promoters , in addition to a similarly constructed evgAS -- Lux promoter fusion ( Table 2 ) , in strain derivatives in which the key regulators EvgS , EvgA , YdeO , GadE , and RpoS had been removed by mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>As expected , low pH activation of ydeO , gadE , and gadB transcription was at all time points dependent on the presence of EvgA ( Fig. 3a , ii -- iv ) and EvgS ( data not shown ) , whereas evgAS transcription was mildly repressed in the presence of EvgA ( Fig. 3a , i ) and EvgS ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Following pH 5.7 induction , a sharp increase in AR2 was observed in the wild-type strain and this depended on the regulation conferred by EvgA for up to 2 h after induction ( Fig. 3b ) , in agreement with earlier findings that also showed a key role for evgA in mounting AR2 in low pH shifted log-phase but not stationary-phase cells .24 The initial increase in AR2 was also entirely dependent on YdeO , but at later time points post-induction , an increase in AR2 occurred in the absence of ydeO ( Fig. 3b ) , consistent with our findings concerning the kinetics of gadB promoter regulation ( Figs. 2 and 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>EvgS failed to phosphorylate EvgA under the reaction conditions employed , whereas trans-phosphorylation level for AtoS ¬ AtoC was hard to detect because these two components could not be separated onto SDS-PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>Although it was reported that EvgA is phosphorylated by the EvgS sensor protein as determined by phosphotransfer analysis using radiolabeled ATP ( 21 ) , EvgA also can be phosphorylated by acetylphosphate without EvgS ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>It is not known whether EvgA phosphorylation leads to activation of the network and whether change in the expression level of EvgA plays a physiological role in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Thus , phosphorylation of EvgA is required for modulation of MDR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Thus , in cells Gene Fold change overexpressing EvgA , it may be phosphorylated by an EvgS-independent process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Upon pH downshift , the membrane-bound sensor kinase EvgS is activated , and EvgS phosphorylates the response-regulator EvgA using ATP , where it has been reported that EvgA confers acid resistance to exponentially growing E.coli , where EvgA induces 37 genes including gadABC and hdeAB ( Masuda and Church 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>EvgA is activated by EvgS SK cascade and regulates the genes involved in acid resistance and multidrug resistance ( Eguchi et al. 2003 ; Itou et al. 2009 ; Johnson et al. 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>Overexpression of EvgA , the response-regulator of the EvgS/EvgA system , is known to induce the expression of a number of acid resistance and multidrug resistance genes , in which the EvgA-YdeO-GadE circuit is involved , but the role of the sensor EvgS in this circuit has remained unsolved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>This circuit activates the glutamate-dependent acid resistance system in exponential-phase cells and is largely dependent on EvgA , but the role of the sensor EvgS in this circuit remains unsolved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>These results clearly indicate that phosphotransfer from phospho-EvgS to EvgA is essential for the increased transcription of the EvgA/EvgS-enhanced PhoP regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126461" target="_blank">15126461</a>]<br></li>
+<li>html ) , activation of the EvgS/EvgA system increased the expression of as many as 225 open reading frames ( ORFs ) including ones encoding transcriptional factors such as YdeO and GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>When the EvgS/EvgA system was activated by the evgS1 mutation , mgtA expression was enhanced ( Fig. 2 A and B , column 3 ) as reported ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>The EvgS/EvgA system is activated in strain MG1655/pOH2001D52A , whereas it is inactivated in MG1655 evgA/pOH2001D52A because EvgA in this strain can not be phosphorylated by the activated EvgS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Moreover , enhanced transcription of the phoPQ genes did not further activate expression of the PhoQ/PhoP regulated genes , and no EvgA binding consensus sequence ( 12 , 18 ) was found in the promoter regions of the PhoP regulon genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>A , Genes directly regulated by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The activation of the sensor EvgS phosphorylates its cognate EvgA and directly upregulates at least six genes/operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>It has recently been shown that EvgS/EvgA system activates PhoQ/PhoP system by the signal transduction cascade , where a small inner membrane protein , B1500 , is involved in this cascade , where the expression of b1500 gene is directly regulated by EvgS/EvgA system ( Eguchi et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>In conclusion , the present study identified B1500 as a factor connecting the EvgS/EvgA and PhoQ/PhoP systems by directly interacting with PhoQ and increasing the level of PhoP phosphor-ylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>However , in the present study , we have identified the gene , b1500 , whose expression is directly induced by the EvgS/EvgA system , and expression of this gene from a heterologous promoter simultaneously activated the expression of PhoP regulon genes in a PhoQ/PhoP-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>In our previous study ( 10 ) , activation of the EvgS/EvgA system promoted transcriptional activity of PhoP regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Another possibility was the indirect interaction of EvgA in cooperation with PhoP , where another transcriptional factor regulated by the EvgA/EvgS system directly interacted with the promoters of PhoP/PhoQ-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126461" target="_blank">15126461</a>]<br></li>
+<li>Activation of the EvgS/EvgA system directly induces connector SafA ; SafA directly activates the PhoQ/PhoP system ; the PhoQ/PhoP system directly induces connector IraM ; and IraM directly binds to response-regulator RssB and stabilizes RpoS ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_158">
+EvgS/EvgA induces the EvgA-YdeO-GadE cascade of AR gene regulation , and a branched pathway operating via SafA activates the PhoQ/PhoP system , leading to an enhanced level of cellular RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></label>
+<input id="act_similarity_158", type="checkbox">
+<div class="ACT_similar">
+<li>EvgS/EvgA induces the EvgA-YdeO-GadE cascade of AR gene regulation , and a branched pathway operating via SafA activates the PhoQ/PhoP system , leading to an enhanced level of cellular RpoS via IraM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li></div>
+<li>Acid resistance in exponentially growing cells is induced by the overexpression of EvgA ( 18 , 25 , 39 ) and the activation of the sensor EvgS ( unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Since RpoS is a general stress response sigma factor , involved in responses to such stresses as starvation and high osmolarity , activation of the EvgS/EvgA system may induce responses to other stresses in addition to acid stress due to the enhanced level of cellular RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Contribution of SafA to acid resistance conferred by EvgS / EvgA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Connector SafA contributes to acid resistance conferred by EvgS/EvgA activation by low pH in minimal medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Besides the transcriptional cascade , EvgS/EvgA system activation also activates the PhoQ/PhoP system via the small membrane protein SafA .18 ) This pathway also contributes to acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Since the activation of the EvgS/EvgA system induces acid resistance , we examined whether the SafA-activated PhoQ/PhoP system is also involved in the acid resistance induced by EvgS/EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Using a constitutively active evgS1 mutant for the activation of EvgS/EvgA , we found that SafA , PhoQ , and PhoP all contributed to the acid resistance phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Therefore , the transcriptional activation of mgtA was not due to the activation of the EvgS/EvgA system by b1500 but to a PhoQ/PhoP-dependent pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Induction of iraM by EvgS/EvgA activation requires SafA , PhoP , and PhoQ and is directly regulated by PhoP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Thus , it was presumed that the activation of EvgS / EvgA increased the cellular RpoS level in a SafA-PhoQ/PhoP-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Moreover , EvgS/EvgA activation resulted in the accumulation of cellular RpoS in the exponential-phase cells in a SafA - , PhoQ - , and PhoP-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>( A ) Accumulation of RpoS at the exponential phase by EvgS/EvgA activation requires SafA , PhoP , and PhoQ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Upregulation of RpoS-regulated genes by EvgS/EvgA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Induction of gadE by EvgS/EvgA activation involves RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Accumulation of RpoS induced by EvgS/EvgA activation at the exponential phase requires SafA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>We examined whether IraM was involved in the accumulation of RpoS induced by EvgS / EvgA activation at the exponential phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Next , we checked whether iraM was actually induced by EvgS/EvgA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Transcripts induced by EvgS/EvgA activation are indicated by arrows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Another cascade of signal transduction , in which the phosphorylated EvgA activates the PhoPQ system followed by the up-regulation of tolC , was suggested ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Promoter p2 appears to be activated by phosphorylated EvgA ( in a strain with a mutant evgS ) and PhoPQ together ( Eguchi et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18673442" target="_blank">18673442</a>]<br></li>
+<li>Moreover , it is difﬁcult to interpret the transcriptional changes resulting from the overexpression : did it occur from the increased level of non-phosphorylated EvgA or from EvgA phosphorylated by sources other than its cognate sensor EvgS , such as acetyl phosphate ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>On the other hand , the increased amount of EvgA did not enhance the transcriptional level of evgA , which is transcribed divergently from emrK , neither in the absence nor in the presence of acetylphosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>This fact suggests that EvgA may directly regulate yfdE , yfdW , yfdX , and ypdI as well as emrK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>EvgS EvgS P PhoQ EvgS SafA PhoQ P inner ATP EvgA membrane ATP ADP P EvgA ADP yegZ yegR ydeO safA ydeP yfdX yfdE yfdV oxc frc ( yfdU ) ( yfdW ) emrY emrK evgA evgS YdeO ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Given the fact that RcsB often forms active heterodimers , it is tempting to speculate that it may do so with phosphorylated EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>Electrophoretic mobility shift assay showed that both the pyhiU and pemrK DNA fragments exhibited changes in mobility in the presence of 5 g of His6-EvgA ( Fig. 3 ) , indicating that EvgA directly binds to both the yhiU and emrK promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>If EvgA regulates transcription of yhiUV directly , it may bind to the yhiU promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Activation by EvgA of in vitro transcription of emrK To conﬁrm the transcriptional activation of multi-drug efﬂux genes emrKY and yhiUV by phosphorylated EvgA , in vitro transcription of truncated DNA templates containing either the emrK or yhiU promoter region was carried out in the presence or absence of EvgA , which was phosphor-ylated by acetylphosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>3-fold by 100 pmol EvgA , indicating that the phosphorylated EvgA directly activates emrK transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Transcription in vitro of emrK increased by the addition of phosphorylated EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Effect of phosphorylated EvgA on in vitro transcription of emrK and yhiU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Activation of EvgA could be achieved upon exposure to an acidic condition ( Eguchi & Utsumi 2014 ) , whereas UhpA was activated after the addition of inducer glucose-6-phosphate ( Weston & Kadner 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>( B ) Test promoter RR Test promoter Gene product Protein function EvgA NarL NarP RcsB UhpA UvrY ydeO nirB nirB wza uhpT csrB AraC family transcription factor Nitrite reductase enzyme Regulation of acid resistance genes Reduction of nitrite to ammonia Reduction of nitrite to ammonia Capsular polysaccharide translocation Hexose-6-phosphate : phosphate antiporter Regulatory sRNA for carbon storage Nitrite reductase enzyme Outer membrane lipoprotein Major facilitator superfamily ( MFS ) transporter Small regulatory RNA ( sRNA ) Cross talk in vivo in promoter recognition between six NarL-family RRs The stage 3 cross talk in vivo was examined for a total of 30 combinations between six RRs and ﬁve representative promoters [ note that NarL and NarP recognize the same nirB promoter ] under the induction condition characteristic to each RR or in the presence and absence of over-expressed RRs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>Construction of arabinose-inducible expression system of RRs The coding sequences of six species of NarL-family RR ( EvgA , NarL , NarP , RcsB , UhpA , and UvrY ) were PCR-ampliﬁed using 5 - proximal and 3 - proximal primers of 0 0 each open reading frame ( for the sequence , see Table S1 0 in Supporting Information ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>In the presence of AcP , however , the binding afﬁnity to the cognate promoters signiﬁcantly increased for EvgA , NarL , UhpA , and UvrY , but little enhancement was observed for NarP and RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>In the presence of acetyl phosphate for in vitro phosphorylation of RRs , the promoter-binding afﬁnity was signiﬁcantly enhanced for EvgA , NarL , UhpA , and UvrY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>As an initial attempt to identify the stage 3 cross talk at the step of target promoter recognition by RR , we analyzed in this study the cross-recognition of target promoters by six NarL-family RRs , EvgA , NarL , NarP , RcsB , UhpA , and UvrY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>Multifactor promoters Among the NarL-family RR-dependent promoters analyzed in this study , the ydeP promoter was found to be activated by ﬁve RRs , EvgA , NarL , NarP , RcsB , and UvrY ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">EvgA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The EvgA gene regulator also contains the conserved motif 50IID52 , and the aspartate ( D ) 52 is thought to be a phosphorylation site ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>Given the fact that RcsB often forms active heterodimers , it is tempting to speculate that it may do so with phosphorylated EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>Percent Survival Percent Surviva G a d E ¬ d e p e n d e n t EvgA ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12940989" target="_blank">12940989</a>]<br></li>
+<li>Since these two clusters contain several EvgA-binding motifs ( Fig. 1 ) , most of these are probably controlled directly by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">EvgA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The two-component regulators EvgS ( sensor-kinase ) and EvgA ( response regulator ) are highly homologous to the vir-ulence-related BvgAS system of Bordetella pertussis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>EvgA exhibits sequence similarity to the BvgA gene regulator , which controls the expression of adhesins , toxins , and other virulence factors in Bordetella pertussis ( 1 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11157960" target="_blank">11157960</a>]<br></li>
+<li>Other represented functions in our dataset relate to sensing and stimulus responses , mostly proteins belonging to two component systems , such as ArcA , RcsB , CpxR and EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25518064" target="_blank">25518064</a>]<br></li>
+<li>Arabinose ( % ) 0 0.002 0.02 0.2 EvgA NarL NarP RcsB UhpA UvrY Figure 1 Artiﬁcial expression of RRs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by EvgA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Involved in accelerating the dephosphorylation of phosphorylated CheY ; involved in generating a regulating signal for bacterial ﬂagellar rotation ; increases at phosphonate growth 179 179 5.56 / 24,008.4 5.1 / 66,325.63 P13000 Dethiobiotin synthetase Q93SE0 Vitamin B12 transporter BtuB BioD BtuB 179 179 4.81 / 20,469.56 Vitamin B12 transport P06610 BtuE 179 periplasmic protein BtuE Carbamoyl-phosphate synthase small chain CarA 5.91 / 44,088 5.94 / 43,827 5.91 / 41,431.01 P0A6F1 5.88 / 42,128 ( DIGE 4.5 -- 6.5 ) 5.82 / 42,128 ( DIGE 4.5 -- 6.5 ) 5.79 / 41,417 ( DIGE 4.5 -- 6.5 ) 5.49 / 127,208 5.22 / 117,710.53 Carbamoyl-phosphate synthase large chain P00968 CarB 293 5.36 / 32,716 ( DIGE 4.5 -- 6.5 ) 5.42 / 31,539.87 Cytidine deaminase P0ABF6 Cdd 97 , 321 , 325 4.78 / 71,382.39 Chemotaxis protein P07363 CheA CheY 4.89 / 13,966.17 4.95 / 9,698 ( 4 -- 5 ) P0AE67 Chemotaxis protein 179 , 287 CheZ 4.44 / 23,976.03 4.51 / 28,668 P0A9H9 Chemotaxis protein 228 , 293 , 294 Continued on facing pag Participates in iron-transport ; induced by iron and cAMP and increases after benzoic acid treatment Part of a stress-induced multichaperone system ; involved in the recovery of the cell from heat-induced damage in cooperation with DnaK , DnaJ , and GrpE ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol and after benzoic acid treatment ; induced by heat shock , phosphate limitation , phosphonate growth , and other environmental stresses ; controlled by RpoH Cleaves peptides in various proteins in a process that requires ATP-hydrolysis ; has a chymotrypsin-like activity ; plays a major role in the degradation of misfolded proteins ; may play the role of a master protease which is attracted to different substrates by different speciﬁcity factors such as ClpA or ClpX ; induced by heat shock ; controlled by RpoH Involved in the modulation of the speciﬁcity of the ClpAPmediated ATP-dependent protein-degradation ATP-dependent speciﬁcity component of the Clp protease ; directs the protease to speciﬁc substrates ; may bind to the lambda O substrate protein and present it to the ClpP protease in a form that can be recognized and readily hydrolyzed by ClpP ; can perform chaperone functions in the absence of ClpP ; induced by heat shock Colicin I receptor 5.03 / 71,149.34 5.06 / 73,587 ( DIGE 4.5 -- 6.5 ) ClpB Chaperone P63284 71 , 179 , 228 , 249 , 287 , 293 , 294 , 321 5.37 / 95,585.02 5.30 / 88,421 5.38 / 73,900 5.33 / 88,745 ( DIGE 4.5 -- 6.5 ) 5.44 / 34,853 ( 5 -- 6 ) ClpP 5.52 / 23,186.65 5.60 / 24,224 ( 5 -- 6 ) P0A6G7 ATP-dependent Clp protease proteolytic subunit 179 , 249 , 287 4.94 / 12,179.06 5.40 / 10,645 ( 4.5 -- 5.5 ) P0A8Q6 ATP-dependent Clp protease adaptor protein ClpS 287 P0A6H1 ATP-dependent Clp protease ATP-binding subunit ClpX 179 5.24 / 46,224.82 179 179 5.56 / 24,746.34 7.04 / 43,306.95 P0A6I0 Cytidylate kinase Cmk CoaBC catalyzes two steps in the biosynthesis of CoA ; in the ﬁrst step , cysteine is conjugated to 4-phosphopantothenate to form 4-phosphopantothenoylcysteine ; in the second , compound is decarboxylated to form 4-phosphopantotheine Involved in CoA-biosynthesis ; catalyzes the phosphorylation of the 3 - hydroxyl group of dephospho-CoA to form CoA Catalyzes two consecutive reactions converting 2 ,3 - cyclic nucleotide to 3-nucleotide and then 3-nucleotide to nucleic acid and phosphate Cmk P0ABQ0 CoA-biosynthesis bifunctional protein CoaBC 79 5.77 / 22,621.71 Dephospho-CoA kinase CoaE P0A6I9 ( YacE ) 1 5.38 / 68,914.86 2 ,3 - Cyclic-nucleotide 2-phosphodiesterase CpdB 9 P08331 17 Continued on following pag The phosphoenolpyruvate-dependent-sugar-phosphotransferase-system ( PTS ) , a major carbohydrate active-transport system , catalyzes the phosphorylation of incoming sugar substrates concomitant with their translocation across the cell membrane ; involved in glucose-transport ; plays an important role not only in the transcriptional-control but also in the translational control of rpoS expression Induced by low temp ; cold shock protein Induced by low temp ; cold shock protein Induced during a stationary phase and starvation Inhibits DNA-replication at both initiation and elongation steps , most probably by binding to the opened , single-stranded regions at replication forks ; plays a regulatory role in chromosomal replication in nutrient-depleted cells ; induced by stationary phase and starvation 4.73 / 18,119.88 4.68 / 18,985 4.57 / 20,069 phosphotransferase enzyme IIA component 4.95 / 14,761 ( 4 -- 5 ) 4.86 / 14,800 ( 4 -- 5 ) 4.95 / 13,865 ( 4 -- 5 ) 4.95 / 18,479 ( 4.5 -- 5.5 ) P0A9X9 Cold shock protein CspA 5.57 / 7,272.09 133 , 163 6.54 / 7,716.72 P36995 Cold shock-like protein CspB 163 6.82 / 7,271.17 6.71 / 10,366 P0A9Y6 Cold shock-like protein CspC 54 , 163 , 228 , 293 , 294 163 , 320 5.81 / 7,968.97 P0A968 Cold shock-like protein CspD 8.06 / 7,332.26 5.64 / 7,780.73 P0A972 Cold shock-like protein P0A978 Cold shock-like protein CspE CspG 179 207 Induced by low temp ; cold shock protein Involved in cysteine-biosynthesis ; repressed by sulfate or cysteine ( protein induced by sulfate starvation ) ; induced by high pH CysK 5.83 / 34,358.46 5.81 / 36,027 P0ABK5 Cysteine synthase A 5.83 / 34,342 ( DIGE 4.5 -- 6.5 ) 4.95 / 24,032 ( 4 -- 5 ) 5.01 / 26,270 ( 4 -- 5 ) 4.95 / 25,586 ( 4 -- 5 ) 4.93 / 22,204 ( 4 -- 5 ) 5.06 / 29,410 ( 4.5 -- 5.5 ) 5.32 / 32,815 ( 4.5 -- 5.5 ) 5.04 / 28,256 ( 4.5 -- 5.5 ) 4.95 / 28,122 ( 4.5 -- 5.5 ) 5.78 / 42,978 ( 5 -- 6 ) 5.10 / 41,867 ( 5 -- 6 ) 5.47 / 31,383 ( 4.5 -- 5.5 ) Like a CysK , catalyzes the same reaction of cysteine-biosynthesis ; can also use thiosulfate in place of sulﬁde to give cysteine thiosulfonate as a product Part of the ABC transporter complex cysAWTP , involved in sulfate/thiosulfate import ; speciﬁcally binds thiosulfate and is involved in its transmembrane transport Could help control the pool of 3 - phosphoadenoside-5-phosphosulfate or its use in sulﬁte synthesis Removes C-terminal D-alanyl residues from sugar-peptide cell wall precursors Not involved in transpeptidation but in peptidoglycan-synthesis Involved in oxidative deamination of D-amino acids such as alanine-catabolism Involved in L-lysine-biosynthesis-via diaminopimelate-pathway : tetrahydrodipicolinate from L-aspartate ( third step ) ; sensitive to lysine inhibition 5.81 / 36,027 P0ABK5 Cysteine synthase A 5.83 / 34,342 ( DIGE 4.5 -- 6.5 ) 4.95 / 24,032 ( 4 -- 5 ) 5.01 / 26,270 ( 4 -- 5 ) 4.95 / 25,586 ( 4 -- 5 ) 4.93 / 22,204 ( 4 -- 5 ) 5.06 / 29,410 ( 4.5 -- 5.5 ) 5.32 / 32,815 ( 4.5 -- 5.5 ) 5.04 / 28,256 ( 4.5 -- 5.5 ) 4.95 / 28,122 ( 4.5 -- 5.5 ) 5.78 / 42,978 ( 5 -- 6 ) 5.10 / 41,867 ( 5 -- 6 ) 5.47 / 31,383 ( 4.5 -- 5.5 ) Cysteine synthase B P16703 CysM 5.42 / 32,664.16 287 6.43 / 35,057.44 6.58 / 39,151 ( 6 -- 11 ) Thiosulfate-binding protein P16700 CysP 5.59 / 27,175.86 CysQ protein CysQ 79 P22255 1 6.68 / 41,337.2 P0AEB2 Penicillin-binding protein 5 DacA 179 179 8.73 / 49,568.63 P24228 Penicillin-binding protein 4 DacB DadA 6.17 / 47,607.29 P0A6J5 D-Amino acid dehydrogenase small subunit 179 DapA P0A6L2 Dihydrodipicolinate synthase 5.98 / 31,269.97 6.10 / 32,361 5.94 / 32,916 179 , 228 , 286 , 294 Continued on facing pag See DapA : fourth step ; its activity is repressed by lysine ; it decreases after benzoic acid treatment Involved in L-lysine-biosynthesis-via diaminopimelate-pathway : dl-diaminopimelate from lldiaminopimelate See DapD Required for phage C1 adsorption ; increases after benzoic acid treatment Required for cell-wall-formation Reassigned CsdA ; plays a key role in optimal cell-growth at low temp and required for normal cell-division ; exclusively localized in the ribosomal fraction and becomes a major ribosomal-associated protein in cells grown at low temp ; decreases after benzoic acid treatment but induced by cold shock or acid condition Serine protease ; required at high temp and involved in the degradation of damaged proteins ; induced by heat shock Protease with a shared speciﬁcity with DegP ; induced by high pH during anaerobic growth Phosphotransfer between the C1 and C5 carbon atoms of pentose Involved in nucleotide and deoxyribonucleotide-catabolism ; increases during high-cell-density cultivation Cleaves guanosine or inosine to respective bases and sugar-1-phosphate molecules ; decreases after benzoic acid treatment Involved in glycerol utilization ; dihydroxyacetone-binding subunit of the dihydroxyacetone kinase , which is responsible for phosphorylating dihydroxyacetone ; binds covalently dihydroxyacetone in hemiaminal linkage ; acts also as a corepressor of DhaR by binding to its sensor domain in the absence of dihydroxyacetone ; induced by high pH during anaerobic growth Involved in glycerol utilization ; ADP-binding subunit of the dihydroxyacetone kinase , which is responsible for phosphorylating dihydroxyacetone ; DhaL-ADP receives a phosphoryl group from DhaM and transmits it to dihydroxyacetone ; DhaLADP acts also as a coactivator by binding to the sensor domain of dhaR ; DhaL-ATP is inactive ; induced by high pH during anaerobic growth TABLE 2 -- Continued Dihydrodipicolinate reductase 5.45 / 28,756.61 5.37 / 27,969 ( DIGE 5.11 / 37,922 ( 5 -- 6 ) 5.33 / 31,023 ( 5 -- 6 ) 4.5 -- 6.5 ) DapD 2,3,4,5-Tetrahydropyridine-2 ,6 - dicarboxylate Nsuccinyltransferase P0A9D8 5.56 / 29,892.10 5.51 / 31,680 179 , 228 , 294 , 321 5.49 / 32,476 ( DIGE 4.5 -- 6.5 ) Diaminopimelate epimerase Protein P0A6K1 P37620 DapF DcrB 179 5.86 / 30,208.56 4.76 / 17,786.96 179 , 321 4.50 / 18,143 ( DIGE 4.5 -- 6.5 ) DdlA DeaD P0A6J8 D-Alanine-D-alanine ligase A P0A9P6 Cold shock DEAD-box protein A 5.02 / 39,315.81 8.76 / 70,414.96 179 5.41 / 37,079 ( DIGE 4.5 -- 6.5 ) 132 , 274 , 321 DegP 7.87 / 46,829.14 8.01 / 66,440 ( 6 -- 11 ) P0C0V0 Protease Do 179 , 287 DegQ 5.39 / 44,445.75 5.34 / 46,509 Protease P39099 179 , 286 , 323 5.11 / 44,369.96 P0A6K6 Phosphopentomutase DeoB 179 P0A6L0 Deoxyribose-phosphate aldolase 5.50 / 27,733.80 5.52 / 33,657 ( 5 -- 6 ) DeoC 70 , 287 , 325 4.5 -- 6.5 ) 5.40 / 25,098 ( DIGE 5.42 / 25,818.72 Purine nucleoside phosphorylas DeoD P0ABP8 e 321 PTS-dependent DhaK P76015 ( YcgT ) 4.93 / 39,494.75 323 dihydroxyacetone kinase , dihydroxyacetone-binding subunit PTS-dependent DhaL P76014 ( YcgS ) 5.31 / 22,631.75 323 dihydroxyacetone kinase , ADP-binding subunit Continued on following pag DhaM P37349 ( YcgC ) PTS-dependent See DhaL ; serves as the 4.61 / 51,579.81 4.69 / 50,800 ( DIGE 4.5 -- 6.5 ) 179 , 321 , 323 dihydroxyacetone kinase , phosphotransferase subunit phosphoryl donor ; induced by high pH during anaerobic growth Dosage-dependent suppressor of a dnaK deletion mutation ; suppressed not only the temp-sensitive growth but also the ﬁlamentous phenotype of the dnaK deletion strain , while the defect of lambda growth is not suppressed ; induced by high pH Participates in initiation and elongation during chromosome replication ; exhibits DNA-dependent ATPase activity and contains distinct active sites for ATP binding , DNA binding , and interaction with DnaC protein , primase , and other prepriming proteins Interacts with DnaK and GrpE to disassemble a protein complex at the origins of replication of phage lambda and several plasmids ; participates actively in the response to hyperosmotic and heat shock by preventing the aggregation of stressdenatured proteins and by disaggregating proteins , also in an autonomous , DnaK-independent fashion ; induced by heat shock under the control of the htpR regulatory protein Involved in chromosomal DNA-replication , possibly through an analogous interaction with the DnaA protein , and participates actively in the response to hyperosmotic shock ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol and after benzoic acid treatment ; induced by temp , ethanol , nalidixic acid , puromycin , and overexpression of bioproducts DksA P0ABS1 DnaK suppressor protein 5.06 / 17,527.75 4.90 / 18,723 5.01 / 17,853 179 , 274 , 286 , 321 5.08 / 19,656 ( DIGE 4.5 -- 6.5 ) DnaB P0ACB0 Replicative DNA helicase 4.95 / 52,390.08 4.94 / 49,355 179 , 228 , 294 8.03 / 40,969.14 DnaJ 79 Chaperone protein P08622 1 DnaK 4.81 / 69,647 4.83 / 68,983.76 P0A6Y8 Chaperone protein 71 , 97 , 138 , 179 , 212 , 228 , 287 , 294 , 297 , 321 4.92 / 74,532 ( DIGE 4.5 -- 6.5 ) 4.94 / 73,587 ( DIGE 4.5 -- 6.5 ) 4.91 / 74,850 ( DIGE 4.5 -- 6.5 ) 4.95 / 60,559 ( 4 -- 5 ) 4.98 / 67,563 ( 4 -- 5 ) 4.98 / 66,075 ( 4 -- 5 ) 4.96 / 61,267 ( 4 -- 5 ) 4.97 / 61,125 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.48 / 59,582 ( 4 -- 5 ) 5.00 / 44,877 ( 4 -- 5 ) 4.93 / 52,435 ( 4 -- 5 ) 4.96 / 60,841 ( 4 -- 5 ) 4.96 / 60,234 ( 4.5 -- 5.5 ) 4.97 / 59,766 ( 4.5 -- 5.5 ) 4.95 / 53,032 ( 4.5 -- 5.5 ) 4.97 / 41,400 DNA polymerase III is a complex , multichain enzyme responsible for most of the replicative synthesis in bacteria ; exhibits 3 - to-5 exonuclease activity ; required for initiation of replication once it is clamped onto DNA See DnaN ; contains the editing function and is a proofreading 3 - to-5 exonuclease Dipeptide-binding protein of a transport system that can be subject to osmotic shock and is also required for peptide chemotaxis ; increases in the physiological short-term adaptation to glucose limitation P0A6Y8 Chaperone protein 71 , 97 , 138 , 179 , 212 , 228 , 287 , 294 , 297 , 321 4.92 / 74,532 ( DIGE 4.5 -- 6.5 ) 4.94 / 73,587 ( DIGE 4.5 -- 6.5 ) 4.91 / 74,850 ( DIGE 4.5 -- 6.5 ) 4.95 / 60,559 ( 4 -- 5 ) 4.98 / 67,563 ( 4 -- 5 ) 4.98 / 66,075 ( 4 -- 5 ) 4.96 / 61,267 ( 4 -- 5 ) 4.97 / 61,125 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.48 / 59,582 ( 4 -- 5 ) 5.00 / 44,877 ( 4 -- 5 ) 4.93 / 52,435 ( 4 -- 5 ) 4.96 / 60,841 ( 4 -- 5 ) 4.96 / 60,234 ( 4.5 -- 5.5 ) 4.97 / 59,766 ( 4.5 -- 5.5 ) 4.95 / 53,032 ( 4.5 -- 5.5 ) 4.97 / 41,400 P0A988 DNA polymerase III beta subunit DnaN 294 5.25 / 40,586.60 DNA polymerase III epsilon subunit 5.54 / 27,098.93 5.65 / 26,832 P03007 DnaQ 228 , 294 DppA 5.47 / 52,481 5.69 / 52,170 5.75 / 57,407.06 Periplasmic dipeptide-transport protein P23847 179 , 286 , 287 , 311 5.71 / 52,000 ( 5 -- 6 ) 5.71 / 50,118 ( 5 -- 6 ) 5.81 / 52,000 ( 5.5 -- 6.7 ) Continued on facing pag Unspeciﬁcally binds and Dps P0ABT2 DNA-protection during starvation protein 5.72 / 18,564.11 5.53 / 18,722 ( DIGE 4.5 -- 6.5 ) 5.78 / 17,897 ( 5 -- 6 ) 5.27 / 16,787 ( 5 -- 6 ) 5.21 / 16,164 ( 5 -- 6 ) 5.94 / 17,273 ( 5.5 -- 6.7 ) protects DNA from oxidative damage mediated by hydrogen peroxide ; induced by prolonged starvation , stationary phase , and acetic acid accumulation ; controlled by ClpXP and ClpAP proteases , which affect logphase stability and stationary-phase synthesis of Dps , respectively Transfers its disulﬁde bond to other proteins and is reduced in the process and then reoxidized by DsbB ; induced by high pH during aerobic or anaerobic growth See DsbA ; required for disulﬁde bond formation in some periplasmic proteins Involved in de novo synthesis of thymidylate ; produces dUMP , the immediate precursor of thymidine nucleotides , and decreases the intracellular concn of dUTP so that uracil can not be incorporated into DNA General inhibitor of pancreatic serine proteases ; inhibits chymotrypsin , trypsin , elastases , factor X , and kallikrein as well as a variety of other proteases Key enzyme in the EntnerDoudoroff pathway and participates in the regulation of the intracellular level of glyoxylate ; induced at the stationary phase and in the presence of gluconate or hexuronic acids ; increases after benzoic acid treatment , phosphate limitation , and phosphonate growth Involved in peptide bond synthesis ; stimulates efﬁcient translation and peptide bond synthesis on native or reconstituted 70S ribosomes in vitro ; probably functions acceptors for peptidyl transferase May be involved in the early steps of isoprenoid-biosynthesis GTP-dependent nucleic acidbinding protein which may act as a translation factor Involved in the pathway of glycolysis ; also involved in the RNA degradosome , a multienzyme complex important in RNA-processing and mRNA-degradation ; increases during anaerobic growth 5.53 / 18,722 ( DIGE 4.5 -- 6.5 ) 5.78 / 17,897 ( 5 -- 6 ) 5.27 / 16,787 ( 5 -- 6 ) 5.21 / 16,164 ( 5 -- 6 ) 5.94 / 17,273 ( 5.5 -- 6.7 ) DsbA P0AEG4 Thiol : disulﬁde interchange protein 5.42 / 21,132.07 5.34 / 22,426 5.31 / 21,942 179 , 228 , 274 , 294 , 321 , 323 5.34 / 22,606 ( DIGE 4.5 -- 6.5 ) P0AEG6 Thiol : disulﬁde interchange protein 5.86 / 23,460 DsbC 179 Dut 5.03 / 16,155.47 Deoxyuridine 5 - triphosphate nucleotidohydrolase P06968 5.03 / 16,145 179 , 228 , 294 , 321 5.10 / 17,526 ( DIGE 4.5 -- 6.5 ) 5.94 / 16,099.52 Ecotin P23827 Eco 179 Eda P0A955 2-Keto-4-hydroxyglutarate / 2-keto-3-deoxy-6 - phosphogluconate aldolase 99 , 179 , 287 , 293 , 321 4.93 / 23,247 ( DIGE 4.5 -- 6.5 ) 5.43 / 27,937 ( 5 -- 6 ) 5.57 / 22,284.03 Efp 179 4.9 / 20,460.12 P0A6N4 Elongation factor P 179 , 287 ElbB P0ABU5 Enhancing lycopene biosynthesis 4.68 / 22,981.55 4.92 / 25,756 ( 4 -- 5 ) ( YhbL ) protein 2 5.03 / 42,217 ( DIGE 4.5 -- 6.5 ) 5.02 / 42,547 ( 4.5 -- 5.5 ) 4.87 / 39,536.13 EngD P0ABU2 GTP-dependent nucleic acidbinding protein 287 , 321 Eno 5.34 / 46,509 5.29 / 46,234 5.32 / 45,523.75 P0A6P9 Enolase 29 , 179 , 228 , 271 , 286 , 287 , 294 , 321 5.35 / 43,401 ( DIGE 4.5 -- 6.5 ) 4.74 / 22,872 ( 4 -- 5 ) 5.46 / 45,494 ( 4.5 -- 5.5 ) 5.20 / 40,116 ( 4.5 -- 5.5 ) 5.16 / 31,510 ( 4.5 -- 5.5 ) 5.29 / 51,580 ( 5 -- 6 ) 5.27 / 51,301 ( 5 -- 6 ) 5.16 / 51,319 ( 5 -- 6 ) 5.00 / 50,698 ( 5 -- 6 ) 5.02 / 50,647 ( 5 -- 6 ) 5.26 / 50,000 ( 5 -- 6 ) 6.95 / 24,005 ( 6 -- 11 ) 6.72 / 25,314 ( 6 -- 9 ) Continued on following pag 2,3-Dihydro-2 ,3 - EntA P15047 4.97 / 26,249.66 179 dihydroxybenzoate ( 2,3-DHB ) dehydrogenase Isochorismatase Involved in siderophore-biosynthesis and enterobactin-biosynthesis Required for production of 2,3-DHB and serves as an aryl carrier protein ; plays a role in enterobactin assembly : proteins EntB , EntD , EntE , and EntF form a multienzyme complex called enterobactin-synthetase Member of the two-component regulatory system EvgS/EvgA ; regulates the expression of emrKY operon and yfdX ; also seems to control expression of at least one other multidrug efﬂux operon Catalyzes the condensation reaction of fatty-acid-synthesis by the addition to an acyl acceptor of two carbons from malonyl-ACP Involved in fatty-acid-biosynthesis 4.97 / 26,249.66 179 P0ADI4 EntB 21 5.08 / 34,633 ( DIGE 4.5 -- 6.5 ) 5.05 / 32,554.34 3 EvgA 79 P0ACZ4 Positive transcription regulator 6.83 / 22,690.2 1 P0A953 3-Oxoacyl - acyl-carrier-protein 5.35 / 42,613.32 5.76 / 44,039 synthase I FabB 294 FabD 4.95 / 32,286.01 5.37 / 44,881 4.95 / 33,409 P0AAI9 Malonyl CoA-acyl carrier protein transacylase 179 , 228 , 287 , 294 , 321 5.03 / 33,449 ( DIGE 4.5 -- 6.5 ) 5.03 / 32,221 ( 4.5 -- 5.5 ) See FabB ; has a preference for short chain acid substrates and may function to supply the octanoic substrates for lipoic-acid-biosynthesis Involved in fatty-acid-biosynthesis pathway See FabB ; catalyzes the ﬁrst condensation reaction , which initiates fatty-acid-synthesis and may therefore play a role in governing the total rate of fatty acid production ; possesses both acetoacetyl-ACP synthase and acetyl transacylase activities Involved in second reduction step of fatty-acid-biosynthesis ; decreases after benzoic acid treatment Involved in saturated fatty-acid-biosynthesis Catalyzes the ﬁnal step of fatty-acid-oxidation in which acetyl-CoA is released and the CoA ester of a fatty acid two carbons shorter is formed ; involved in the aerobic and anaerobic degradation of long-chain-fatty-acids ; induced in the presence of fatty acids and is under the control of the fadR repressor Catalyzes the formation of a hydroxyacyl-CoA by addition of water on enoyl-CoA ; also exhibits 3-hydroxyacyl-CoA epimerase and 3-hydroxyacyl-CoA dehydrogenase activities ; involved in the aerobic and anaerobic degradation of long-chain-fatty-acids ; induced in the presence of fatty acids and is under the control of the fadR repressor Involved in translocation of long-chain-fatty-acids across the outer membrane ; induced in the presence of long-chain-fatty-acids and under the control of the fadR repressor 5.03 / 33,449 ( DIGE 4.5 -- 6.5 ) 5.03 / 32,221 ( 4.5 -- 5.5 ) 5.71 / 42,914.57 n i e t o r p FabF ¬ r e i r r a c acyl-II xoacylsynthase 3 - O 5 I A A 0 P 179 6.76 / 25,560.29 P0AEK2 3-Oxoacyl - acyl-carrier-protein reductase 3-Oxoacyl - acyl-carrier-protein synthase III FabG 179 5.08 / 33,515.12 P0A6R0 FabH 179 FabI 5.60 / 32,613 ( DIGE 4.5 -- 6.5 ) 5.40 / 32,959 ( DIGE 4.5 -- 6.5 ) 5.37 / 38,366 ( 5 -- 6 ) 5.33 / 37,266 ( 5 -- 6 ) 5.58 / 27,732.75 P0AEK4 Enoyl - acyl-carrier-protein reductase ( NADH ) 179 , 287 , 321 6.84 / 17,032.95 FabZ P0A6Q6 ( 3R ) - hydroxymyristoyl - acyl carrier protein dehydratase P21151 3-Ketoacyl-CoA thiolase 179 6.31 / 40,876.20 FadA 46 5.84 / 79,593.91 Fatty oxidation complex alpha subunit P21177 FadB 4 6 FadL 26 Long-chain fatty-acid-transport 4.91 / 45,906.47 protein P10384 Continued on facing pag Involved in the pathway of glycolysis ; increases in poly ( 3-hydroxybutyrate ) - accumulating cells FbaA P0AB71 Fructose-bisphosphate aldolase class II 5.52 / 39,016.07 5.55 / 40,651 5.43 / 39,776 5.49 / 39,104 ( DIGE 5.56 / 50,220 ( 5 -- 6 ) 5.56 / 49,421 ( 5 -- 6 ) 5.68 / 32,568 4.5 -- 6.5 ) Necessary for growth on Fbp P0A993 Fructose-1 ,6 - bisphosphatase 179 , 228 , 294 5.67 / 36,833.93 substances such as glycerol , succinate , and acetate ; inhibited by AMP , which affects the turnover of bound substrate and not the afﬁnity for substrate Outer membrane receptor protein in the Fe3 dicitrate-transport system ; for induction , the TonB and the ExbB proteins have to be active Involved in the initial step of iron uptake by binding ferrienterobactin , an iron chelatin siderophore that allows E. coli to extract iron from the environment ; acts as a receptor for colicins B and D ; increases after benzoic acid treatment Binds the ferrichrome-iron ligand ; interacts with the TonB protein , which is responsible for energy coupling of the ferrichromepromoted iron-transport system ; acts as a receptor for bacteriophage T5 as well as for T1 , phi80 , and colicin M ; can also transport the antibiotic albomycin Activates rRNA-transcription ; plays a direct role in upstream activation of rRNA promoters ; binds to a recombinational enhancer sequence that is required to stimulate Hinmediated DNA inversion ; prevents initiation of DNA-replication from OriC PPIases accelerate the folding of proteins ; catalyzes the cistrans isomerization of proline imidic peptide bonds in oligopeptides ; strongly inhibited by FK506 See FklB Iron ( III ) dicitrate-transport protein P13036 FecA 79 5.36 / 81,707.21 1 5.23 / 79,771.07 Ferrienterobactin receptor P05825 FepA 321 5.24 / 79,447 ( DIGE 4.5 -- 6.5 ) 5.13 / 78,742.19 Ferrichrome-iron receptor P06971 FhuA 179 9.34 / 11,239.93 P0A6R3 DNA-binding protein Fis 79 1 FklB 4.5 -- 6.5 ) 4.84 / 24,436 ( DIGE 4.85 / 22,085.00 P0A9L3 FKBP-type 22-kDa peptidylprolyl cis-trans isomerase 179 , 321 P45523 FKBP-type peptidyl-prolyl cis - 6.73 / 26,223.63 7.08 / 33,268 trans isomerase Flavodoxin 1 4.21 / 19,605.75 4.65 / 21,200 FkpA 179 , 286 Low-potential electron donor to a no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>Functionb Other regulator ( s ) Reference ( s ) Rich Minimal Medium Medium No 15 12 Yes 24 18 No 6 6 ybaY gabP ugpE Unknown GABA-transporter protein b0453 b2663 b3451 GabC ( ) , Nac ( ) PhoBR ( ) 55 , 66 , 93 15 G-3-P transporter membrane bound component ATP binding protein of G-3-P transporter Putative binding protein of ABC transporter Hypothetical ATP-binding protein of ABC transporter Beta subunit of nitrate reductase-II Subunit of cytochrome bd-II oxidase Lysine decarboxylase Induced by alkylating agents ; protects DNA from alkylation damage Hydroperoxidase II Universal stress protein B ; required for ethanol resistance Periplasmic protein induced by high osmolarity ; function unknown Multidrug efﬂux pump No 20 9 Yes 6 2 No 28 21 ugpC ydcS yehX b3450 b1440 b2129 PhoBR ( ) Nac ( ) 15 93 narY appB IdcC aidB b1467 b0979 b0186 b4187 13 23 Yes Yes Yes Yes 10 25 7 36 2 7 AppR ( ) 47 , 79 45 , 46 11 33 Lrp ( ) Yes 40 66 Yes 4 8 katE uspB b1732 b3494 74 26 Yes 35 64 osmY Lrp ( ) , Crp ( ) , IHF ( ) EvgA ( ) , Lrp ( ) b4376 20 , 90 , 91 No 31 yhiV b3514 56 , 57 , 74 , 78 56 , 57 , 78 25 72 , 74 12 77 24 4 yhiU mltB otsA ecnB argH aroM Multidrug efﬂux pump EvgA ( ) b3513 b2701 b1896 8 2 Yes No Yes Yes No No 39 2 31 23 2 15 Membrane-bound lytic transglycosylase B Trehalose phosphate synthase Bacteriolytic lipoprotein entericidin B Argino-succinate lyase Unknown ; may play a role in aromatic-amino-acid biosynthesis Putative lipase 2,5-diketo-D-gluconic acid reductase A ; catalyzes the conversion of 2,5-KGDR to 2-KLG Aldehyde dehydrogenase B ; converts lactaldehyde and NAD to lactate and NADH Succinate-semialdehyde dehydrogenase Membrane-bound subunit of carbonphosphorus lyase complex Transaldolase A ; converts Sed-7-P and Gly-3-P to Fru-6-P and Ery-4-P Putative glutathione S-transferase Putative dehydrogenase Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Lrp ( ) 57 74 5 78 ( ) EnvZ/OmpR ArgR ( ) TyrR ( ) b3960 b0390 No 15 No 8 yhjY yqhE b3548 b3012 9 92 11 aldB 22 Yes 21 b3588 74 , 87 gabD phnP B2661 B4092 16 8 No No GabC ( ) , Nac ( ) PhnF and PhnO ( ) 55 , 93 51 13 2 talA B2464 26 20 No CreBC ( ) 7 , 70 yfcG yliI yjbJ yjbE ygaU ygdI ygaF yjgR ydaM ydcK yhiN yebF yjiN yeaG yodC ybiO yhjG yphA yhjD B2302 B0837 B4045 B4026 B2665 B2809 B2660 B4263 B1341 B1428 B3492 B1847 B4336 B1783 B1957 B0808 B3524 B2543 B3522 52 37 37 17 22 22 4 7 3 6 16 15 5 41 4 13 41 13 17 24 5 No Yes No No No No No No No No No No No Yes No No No No Yes SdiA ( ) 84 66 179 58 12 5 7 3 23 9 7 25 6 10 17 26 15 18 34 Lrp ( ) 74 63 , 74 Lrp ( ) Lrp ( ) 63 a Genes were identiﬁed using the BLAST algorithm ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15576800" target="_blank">15576800</a>]<br></li>
+<li>Doubling regulated regulated of altered time Identiﬁed function Class system ( HK/RR ) Relevant functions genes genes genes ( min ) in this experiment Strain name Mutation ntrol o o C N 1 4 5 27 BW25113 WT or little signiﬁcant alteration CreC/CreB 1 1 2 Catabolite repression ( Wanner , 1996 ) Drug resistance ( Kato et al. , 2000 ) BW26983 DE ( creABCD ) 154 29 2 3 5 EvgS/EvgA BW27869 DE ( evgAS ) 1291 29 2 6 8 YgiY/YgiX NarX/NarL BW27551 BW27864 DE ( ygiXY ) 1302 DE ( narXL ) 1316 27 29 5 4 9 Nitrate regulation ( Stewart and Rabin , 1995 ) Hexose phosphate uptake ( Kadner , 1995 ) Phosphate regulation ( Wanner , 1995 ) Copper response ( Munson et al. , 2000 ) Nitrate regulation ( Stewart and Rabin ,1995 ) UhpB/UhpA 6 3 9 BW27871 DE ( uhpAB ) 1322 28 PhoR/PhoB 1 8 9 BW24476 DE ( phoBR ) 580 28 CusS/CusR 2 7 BW28077 DE ( cusRS ) 1204 27 9 / NarP 9 BW27873 DnarP1312 33 12 3 YedV/YedW YfhK / YehU/YehT KdpD/KdpE DE ( yedWV ) 1298 DyfhK1328 DE ( yehUT ) 1324 DE ( kdpABCDE ) 1224 26 28 27 27 13 15 20 20 6 7 7 8 BW BW BW BW 27550 27872 27877 27564 13 10 7 10 Potassium transport ( Walderhaug et al. , 1992 ) Nitrogen regulation ( Porter et al. , 1995 ) NtrB/NtrC BW27880 DE ( ntrBC ) 1318 31 20 8 12 Signiﬁcant alteration BaeS/BaeR HydH/HydG ( Nagasawa et al. , 1993 ) Response to zinc and lead ( Leonhartsberger et al. , 2001 ) Hydrogen peroxide sensitivity ( Pernestig et al. , 2001 ) 14 11 BW27553 BW27867 DE ( baeSR ) 579 DE ( hydHG ) 1336 8 22 24 29 31 13 2 BarA / BW29434 DbarA1358 24 26 30 7 / FimZ BW28078 BW27558 Enterochelin DﬁmZ1214 22 27 29 31 28 27 4 PhoQ/PhoP Response to magnesium ( Kato et al. , 1999 ) ( Nagasawa et al. , 1993 ) Response to cell envelope stress ( De Wulf et al. , 1999 ) DE ( phoPQ ) 1244 20 16 12 16 BasS/BasR CpxA/CpxR BW27848 BW27559 DE ( basRS ) 1287 DE ( cpxRA ) 623 32 32 29 29 Enterochelin 12 20 22 17 RstB/RstA YojN ( Hpt ) BW27552 BW27866 DE ( rstAB ) 1278 DyojN1332 34 37 26 29 Enterochelin Capsular synthesis ( Takeda et al. , 2001 ) 14 Control of TMAO respiratory system ( Simon et al. , 1994 ) 38 24 TorS/TorR BW26423 26 DE ( torSTRCAD ) 518 a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>The ﬁfty most highly induced E. c Gene product L-Idonate dehydrogenase 5-Ketogluconate : gluconate oxidoreductase ORFd hypothetical protein Putative export protein for general secretion pathway Gluconate kinase ORF , hypothetical protein ORF , hypothetical protein Putative transport protein ORF , hypothetical protein Cryptic nitrate reductase 2 , delta subunit Flagellar biosynthesis ; possible export function ORF , hypothetical protein Acetylation of N-terminal alanine protein S5 ORF , hypothetical protein ORF , hypothetical protein Putative kinase Nitrate reductase 1 , delta subunit , assembly function Nitrite extrusion protein 2 ORF , hypothetical protein ORF , hypothetical protein Hydoxyethylthiazole kinase Possible chaperone ORF , hypothetical protein ORF , hypothetical protein Nickel incorporation into hydrogenase 1 proteins ORF , hypothetical protein ORF , hypothetical protein Formate-dependent nitrite reductase , assembly function ORF , hypothetical protein Pyruvate dehydrogenase ( decarboxylase component ) Putative sensor for regulator EvgA Putative ATP binding component of a transport system Synthesis of queuine in tRNA L-Idonate operon regulator L-Idonate transporter Putative EC 3.5 amidase-type enzyme IS2 hypothetical protein Carbonic anhydrase ORF , hypothetical protein ORF , hypothetical protein IS2 hypothetical protein Putative resistance protein ( transport ) Putative oxidoreductase ORF , hypothetical protein ORF , hypothetical protein Anthranilate synthase component II ORF , hypothetical protein ORF , hypothetical protein 2,3-dihydroxybenzoate dehydrogenase , enterochelin ORF , hypothetical protein P valuec Gene 1.4 10 6 1.9 10 7 2.4 10 4 9.1 10 4 2.1 10 3 4.8 10 4 5.9 10 4 8.9 10 4 5.0 10 5 5.4 10 4 2.9 10 3 1.6 10 4 2.6 10 8 2.0 10 3 6.2 10 4 3.8 10 4 8.9 10 5 9.7 10 4 5.0 10 4 1.1 10 4 2.0 10 3 5.9 10 4 7.3 10 4 2.3 10 3 2.5 10 5 2.5 10 3 4.7 10 4 2.3 10 3 2.8 10 3 5.8 10 4 7.4 10 7 6.9 10 5 2.7 10 3 1.2 10 3 6.0 10 5 1.7 10 3 1.3 10 3 2.2 10 5 1.5 10 4 6.6 10 10 1.3 10 3 1.8 10 4 2.7 10 3 3.2 10 5 2.3 10 3 1.2 10 5 1.2 10 3 4.0 10 5 2.4 10 4 1.4 10 4 idnD idnO b2790 yheH idnK yfeK yhfP yicM yhdT narW ﬂhA ymfL rimJ ymfO b2459 yggC narJ narU yjiW yiaC thiM b1600 ycal b1152 hyaF b2460 ymfA nrfE yibK aceE evgS ycjV queA idnR idnT yafV yi21-2 cynT yhgG b1565 yi21-6 yihN b2931 ychM b1141 trpD yrdB yhfY entA yjgH a Intensity normalized to transcript levels in cells grown on L-idonate and expressed as a percentage of the sum ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>In order to test this possibility , we constructed plasmid pQE30evgA , which encodes a His6-tagged EvgA ( His6-EvgA ) under control of the T5 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>The resulting plasmid , designated pQEevgA , expresses an EvgA fusion protein ( composed of full-length EvgA with an amino-terminal Met-Arg-Gly-Ser-His-His-His-His-His-His-Gly-Ser ) under transcriptional-control of an isopropyl - - D-thiogalacto-pyranoside ( IPTG ) - regulated phage T5 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Resistance of KAM3 transporter gene-deletion strains harbouring a plasmid carrying baeR or evgA MIC ( mg/L ) a Genotype Regulator Strain expression AMP OXA CLO NAF CAR CMZ FAM CAZ FMOX ATM CRMN acrD mdtABC yhiUV emrKY KAM3 KAM3 ∆ acrD none none none none none none none BaeR BaeR BaeR BaeR EvgA EvgA EvgA EvgA + + + + 1.56 1.56 1.56 1.56 1.56 1.56 0.78 1.56 1.56 1.56 1.56 3.13 3.13 3.13 1.56 1.56 0.78 1.56 0.78 1.56 1.56 1.56 50 6.25 12.5 0.78 25 3.13 25 3.13 3.13 1.56 3.13 1.56 3.13 3.13 3.13 50 25 25 1.56 25 3.13 25 3.13 3.13 3.13 3.13 3.13 3.13 3.13 3.13 50 12.5 50 3.13 50 3.13 50 3.13 6.25 1.56 6.25 1.56 6.25 6.25 6.25 50 12.5 50 1.56 12.5 12.5 12.5 12.5 0.78 0.78 0.78 0.78 0.78 0.78 0.39 1.56 1.56 1.56 0.78 1.56 1.56 1.56 0.78 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.78 0.39 0.39 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.78 0.39 0.39 0.20 0.39 0.39 0.39 0.39 0.05 0.05 0.05 0.05 0.05 0.05 0.025 0.05 0.05 0.05 0.05 0.10 0.10 0.10 0.05 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.78 0.39 0.78 0.10 0.20 0.20 0.20 0.20 0.20 0.10 0.20 0.10 0.20 0.20 0.20 1.56 0.39 0.78 0.10 0.20 0.20 0.20 0.20 -- + + + + -- + + KAM3 ∆ mdtABC KAM3 ∆ acrDmdtABC KAM3 ∆ yhiUV KAM3 ∆ emrKY KAM3 ∆ emrKYyhiUV KAM3/pKbaeR KAM3 ∆ acrD/pKbaeR KAM3 ∆ mdtABC/pKbaeR KAM3 ∆ acrDmdtABC/pKbaeR KAM3/pKevgA KAM3 ∆ yhiUV/pKevgA KAM3 ∆ emrKY/pKevgA KAM3 ∆ emrKYyhiUV/pKevgA -- -- + + + + -- + + + + -- + + -- -- + + + + + -- + + + -- + + + -- -- + + + + + -- + + + -- + + + -- -- + + AMP , ampicillin ; OXA , oxacillin ; CLO , cloxacillin ; NAF , nafcillin ; CAR , carbenicillin ; CMZ , cefmetazole ; FAM , cefamandole ; CAZ , ceftazidime ; FMOX , flomoxef ; ATM , aztreonam ; CRMN , carumonam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12951338" target="_blank">12951338</a>]<br></li>
+<li>Table 1 NarL-family RRs and their promoters ( A ) Test response regulator SK RR Regulatory roles Regulation target operons ( total number of operons ) EvgA NarL NarP RcsB UhpA UvrY gadE-mdtEF , acrD , evgAS , emrKY , -- ( 8 ) EvgS NarX Regulator for acid and multidrug-resistance Regulator against high-level nitrate and nitrite Regulator against low-level nitrate and nitrite Regulator of colanic acid in bioﬁlm formation citCDEFXG , nirBDC , hyaABCDEF , narGHJI , -- ( 33 ) hyaABCDEF , napFDAGHEC , nirBDC , -- ( 11 ) leuO , bglGFB , yidL , sfsB , ynbABCD , -- ( 35 ) uhpT ( 1 ) NarQ RcsCD Regulator of hexose phosphate uptake Regulator of carbon storage system UhpBC BarA csrB , csrC ( 2 ) Bold indicates the tested RR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>Stage-3 -- AcP + AcP K R Signal S R Promoter NarL ( pmol ) 0 1 5 10 50 100 ydeP NarL ( pmol ) 0 1 5 10 50 100 ydeP ydeP Low pH Na + K + EvgS EvgA NarL nirB NarQ NarX Nitrate Nitrite NarL NarP ( pmol ) NarP ( pmol ) nirB Nitrate Nitrite NarQ NarX 0 1000 ydeP 0 1000 ydeP NarP arP N wza Saturated fatty acid * RcsB RcsD uhpT Glucose UhpB UhpA RcsB ( pmol ) RcsB ( pmol ) 0 1 5 10 50 100 0 1 5 10 50 100 RcsB ydeP ydeP 6-phosphate csrB BarA UvrY Formate Figure 5 Cross talks in the three stages of signal-transduction involving six NarL-family RRs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>For example , expression of the EmrAB multidrug pump ( 9 ) is controlled by EmrR , a MarR type of repressor protei E. coli strains W3104 TG1 DH5 M15 CJ236 ZK796 KAM3 KAM3 yhiUV KAM3 evgS Wild type , used as the donor of chromosomal DNA for PCR ampliﬁcation 30 28 supE hsd 5 thi ( lac-proAB ) F [ traD36 proAB lacIq lacZ M15 ] , used as the cloning host recA endA1 hsdR17 supE4 gyrA96 relA1 ( lacZYA-argF ) U169 ( 80dlacZ M15 ) , used as the cloning host recA uvr F mtl gal ara lac ( pREP4 ) , used for overexpression of hexahistidine-tagged EvgA dut-1 ung thi-1 relA1/pCJ105 ( Cmr F ) , used for mutagenesis by the Kunkel method ( 7 ) Tetr ; same as MC4100 but tolC : : Tn10 Derivative of TG1 that lacks a restriction system and acrAB Derivative of KAM3 that lacks yhiUV Derivative of KAM3 that lacks evgS 24 Qiagen 7 32 13 This study This study Plasmids pUC119 Vector ; Apr ; multiple cloning site in lacZ His expression vector ; Apr ; multiple cloning site downstream of T5 promoter 31 Qiagen pQE30 pKO3 pKO3 yhiUV pKO3 evgS pUCA repA ( Ts ) Cmr sacB BamHI-BamHI fragment for yhiUV deletion cloned into pKO3 BamHI-BamHI fragment for evgS deletion cloned into pKO3 HindIII-SalI fragment containing evgA ( gene regulator of two-component system ) with 366-bp upstream ﬂanking sequence cloned into pUC119 to be in the same orientation as the lactose promoter ; Apr D52A derivative of pUCA D54A derivative of pUCA SphI-PstI fragment containing emrKY ( MFP / MFS transporter ) genes cloned into pQE30 ; Apr SphI-PstI fragment containing evgA gene cloned into pQE30 ; Apr PstI-BamHI fragment containing yhiUV ( MFP / RND transporter ) genes with 180-bp upstream ﬂanking sequence cloned into pUC119 to be in the same orientation as the lactose promoter ; Apr 8 This study This study 16 pUCA-D52A pUCA-D54A pQE30emrKY pQE30evgA pUCyhiUV This study This study 16 16 15 ligonucleotidesb evgA-D52A CCGGGGATGTCGACAGCAATGATGACG , mutagenic primer for D52A of evgA O evgA-D54A CCGGGGATAGCGACGTCAATGATGACG , mutagenic primer for D54A of evgA yhiU-No CGCGGATCCCAGTTCAAAATTATGCAACTGATTCTG , used for crossover PCR for the in-frame deletion of yhiUV yhiU-Ni CACGCAATAACCTTCACACTCCAAATTTATAACCATTTTAGTCCCTGAAAATTCTTGAG , used for crossover PCR for the in-frame deletion of yhiUV yhiV-Co CGCGGATCCCGTCAAATTCCTCTGCATACTATTGC , used for crossover PCR for the in-frame deletion of yhiUV yhiV-Ci GTTATAAATTTCGAGTGTGAAGGTTATTGCGTGTAACGTGTAAATGAGAGTAAGGTTGA , used for crossover PCR for the in-frame deletion of yhiUV evgS-No CGCGGATCCGGGTGGAAACACTTAAGCCTGA , used for crossover PCR for the in-frame deletion of evgS evgS-Ni CACGCAATAACCTTCACACTCCAAATTTATAACCATGTGGTTAGCCGATTTTGTTAC , used for crossover PCR for the in-frame deletion of evgS evgS-Co CGCGGATCCCATGGCACCTTTTGATGTTTTCAATACT , used for crossover PCR for the in-frame deletion of evgS evgS-Ci GTTATAAATTTGGAGTGTGAAGGTTATTGCGTGTAAATAGCGGCTCCCACAATGTTC , used for crossover PCR for the in-frame deletion of evgS yhiUpr-F CTCTCTACCGCCAGCAATGCCCGC , used for ampliﬁcation of yhiU probe yhiUpr-R CCCGTAATCGGCGAGGTGACATTCGCG , used for ampliﬁcation of yhiU probe evgAF GGGGCATGCAACGCAATAATTATTG , used for ampliﬁcation of evgA cloned into pQE30 evgAR CCCCTGCAGTTAGCCGATTTTGTTACGTTGT , used for ampliﬁcation of evgA cloned into pQE30 macAPF ACATTGAGATTAGGCCAGGGAAAGTTCG , used for ampliﬁcation of macA promoter region macAPR TCCGGGTCATTAACTTCAACGAAATATCAA , used for ampliﬁcation of macA promoter region emrKPF AGAAAATCTGAGCTTCCTTAAG , used for ampliﬁcation of emrK promoter region emrKPR CTGTTCCACTATTATCTCTCATTTC , used for ampliﬁcation of emrK promoter region yhiUPF TCAGGACATAAGCAACTGAAATTG , used for ampliﬁcation of yhiU promoter region yhiUPR TTTAGTCCCTGAAAATTCTTGAG , used for ampliﬁcation of yhiU promoter region a Ap , ampicillin ; Cm , chloramphenicol ; MFP , membrane fusion protein ; MFS , major facilitator superfamily ; RND , resistance-nodulation-cell-division family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>E. coli possesses five such phosphorelay systems [ ArcB/ArcA , RcsC/YojN/RcsB , BarA/YecB ( UvrY ) , EvgS/EvgA , and TorS/TorR ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16291649" target="_blank">16291649</a>]<br></li>
+<li>E. coli genes whose relative expression levels were increased or decreased by evgA ampliﬁcation Effect of EvgA on gene-expression ( fold change ) Functional classiﬁcationc b no.b Genea Known or predicted function Increased expression hdeAd , e Not known Not known Not known Regulation Metabolism Metabolism Cell structure Metabolism None b3510 b2375 b3509 b2369 b3517 b1501 b4184 b2374 b1051 Protein regulated by H-NS , chaperone Protein regulated by EvgA Protein regulated by H-NS , predicted chaperone Regurator of EvgAS two-component system Glutamate decarboxylase-alpha Putative reductase Putative membrane protein Putative formyl-coenzyme A transferase Acidic protein suppresses mutants lacking function of protein export Stress response DNA-binding protein Putative regulator Putative amidase Acid shock RNA controlled by phoBR Putative transferase Predicted amino-acid-transporter Function unknown Putative cysteine hydrolase Function unknown Putative replication protein Multidrug-transport protein Putative glutaminase Magnesium transporter Putative formyl-coenzyme A transferase 84.3 54.4 42.2 41.8 41.4 15.3 9.2 6.8 6.5 yfdX hdeBd , e evgAe gadAd , e ydePe yjfL yfdWe msyB dpse yhiEe Adaptation ( starvation ) Regulation Metabolism Adaptation ( stress ) Extrachromosomal ( phage ) Transport None Metabolism None Extrachromosomal ( phage ) Transport Metabolism Transport Metabolism b0812 b3512 b0867 b1597 b2359 b1492 b2390 b0897 b0329 b2358 b3514 b0485 b4242 b2371 6.3 6.2 5.5 5.3 5.2 5.2 5.2 5.0 4.7 4.6 4.4 4.3 4.1 4.0 ybjR asr yfdM gadC ( xasA ) d , e ypeC ycaC yahO yfdO yhiV ybaS mgtA yfdE Decreased expression tnaA tnaL glpQ b3708 Metabolism Tryptophan deaminase b3707 Metabolism Tryptophanase leader peptide b2239 Metabolism Glycerophosphodiester phosphodiesterase 7.1 5.0 4.5 a Based on information from the EcoGene database ( http://bmb.med.miami.edu/ecogene/ecoweb/ ) ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Overexpression of EvgA in the background of a deﬁciency of E. coli major multidrug exporter AcrB ( 25 ) confers drug-resistance against antibiotics , dyes , and bile salts ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>EvgA regulates the expression of emrKY ( 7 , 15 ) , which encodes a major facilitator superfamily ( MFS ) - type bile salt-speciﬁc exporter , and yhiUV ( 17 ) , which encodes a resistance-nodulation-cell-division ( RND ) - type multidrug exporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>The response regulator EvgA modulates the expression of emrKY ( 20 ) , which encodes a bile salt-speciﬁc exporter ( 31 , 33 ) , and yhiUV , which encodes a multidrug exporter ( 31 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Active efﬂux of doxorubicin ( A ) and rhodamine 6G ( B ) from E. coli KAM3 and KAM3 yhiUV cells overproducing EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>The EvgA gene regulator also contains the conserved motif 50IID52 , and the aspartate ( D ) 52 is thought to be a phosphorylation site ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>EvgA exhibits sequence similarity to the BvgA gene regulator , which controls the expression of adhesins , toxins , and other virulence factors in Bordetella pertussis ( 1 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11157960" target="_blank">11157960</a>]<br></li>
+<li>The response regulator EvgA and sensor kinase EvgS in © 2003 Blackwell Publishing Lt E. coli are highly similar to BvgA and BvgS , respectively , which control the expression of adhesins , toxins and other virulence factors in Bordetella pertussis ( Arico et al. , 1991 ; Stibitz and Yang , 1991 ; Utsumi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Escherichia coli gene-expression responsive to levels of the response regulator EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14729718" target="_blank">14729718</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185552" target="_blank">17185552</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126461" target="_blank">15126461</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659689" target="_blank">15659689</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22685278" target="_blank">22685278</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17259322" target="_blank">17259322</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14702398" target="_blank">14702398</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_21">
+Microb Cell Fact 10:39 Masuda N , Church GM ( 2002 ) Escherichia coli gene-expression responsive to levels of response regulator EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></label>
+<input id="rp_similarity_21", type="checkbox">
+<div class="RP_similar">
+<li>Masuda , N. , and Church , G.M. ( 2002 ) Escherichia coli gene-expression responsive to levels of response regulator EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>[ 22 ] N. Masuda , G.M. Church , Escherichia coli gene-expression responsive to levels of response regulator EvgA , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li></div>
+<li>In previous papers , Nishino and Yamaguchi reported a mechanism for E. coli to express multidrug-resistance by overexpression of the response regulator EvgA , which stimulates the expression of novel multidrug exporters ( 15 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>NOTES lobal Analysis of Genes Regulated by EvgA of the T Regulatory System in Escherichia coli G wo-Component The response regulator EvgA controls expression of multiple genes conferring antibiotic resistance in Escherichia coli ( K. Nishino and A. Yamaguchi , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>We analyzed the role of EvgA in the response-to-osmotic-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>We hypothesized that EvgA must control the expression of a wide range of genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Known genes in EvgA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Several genes induced by EvgA are involved in the response to high osmolarity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Also , EvgA overproduction moderately increased the expression of tolC ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>In order to investigate whether EvgA regulates the expression of yhiUV , we constructed a yhiUV deletion mutant of E. coli KAM3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>To eliminate basal expression of EvgA regulon genes , a markerless in-frame evgAS deletion mutant , evgAS , was constructed from MG1655 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Since RpoS is a general stress response sigma factor , involved in responses to such stresses as starvation and high osmolarity , activation of the EvgS/EvgA system may induce responses to other stresses in addition to acid stress due to the enhanced level of cellular RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_34">
+EvgS/EvgA induces the EvgA-YdeO-GadE cascade of AR gene regulation , and a branched pathway operating via SafA activates the PhoQ/PhoP system , leading to an enhanced level of cellular RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></label>
+<input id="rp_similarity_34", type="checkbox">
+<div class="RP_similar">
+<li>EvgS/EvgA induces the EvgA-YdeO-GadE cascade of AR gene regulation , and a branched pathway operating via SafA activates the PhoQ/PhoP system , leading to an enhanced level of cellular RpoS via IraM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li></div>
+<li>Results Cloning and Sequencing of a Gene Involved in Signal Transduction Between EvgS/EvgA and PhoQ/PhoP Systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results suggest that b1500 is involved in signal-transduction between EvgS/EvgA and PhoQ / PhoP TCSs , thus , associating a novel function with this small ORF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Besides the transcriptional cascade , EvgS/EvgA system activation also activates the PhoQ/PhoP system via the small membrane protein SafA .18 ) This pathway also contributes to acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>SafA ( sensor associating factor A ) ( formerly B1500 ) , a small ( 65-amino-acid [ 65-aa ] ) membrane protein , is among such connectors and links Escherichia coli TCSs EvgS/EvgA and PhoQ/PhoP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>It has recently been shown that EvgS/EvgA system activates PhoQ/PhoP system by the signal-transduction cascade , where a small inner membrane protein , B1500 , is involved in this cascade , where the expression of b1500 gene is directly regulated by EvgS/EvgA system ( Eguchi et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>Expression and puriﬁcation of MBP-GadE , MBP-YdeO , and His6-EvgA fusion proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Expression of these components is under the control of a complex network of transcription factors , including GadE , GadX , GadW , EvgA , YdeO , and H-NS [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>Activation of this system initiates a transcriptional cascade of AR genes encoding regulators EvgA , YdeO , and GadE ( see Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Based on the ﬁnding that overproduction of the two-component regulator EvgA identiﬁed target genes involved in AR , including putative transcription factor genes , it was recently suggested that induction of the AR genes is controlled by a complex regulatory cascade ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Thus , we propose a complex regulatory cascade in which global regulators ( RpoS , CRP , HN-S , EvgA , etc. ) inﬂuence the expression levels and/or activities of GadX and GadW , which in turn activate the expression and/or activities of transcription activators ( e.g. , YdeO and YhiE ) that directly activate subsets of target genes involved in AR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>The ﬁrst one involves EvgA , which regulates drug exporter genes ( 7 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>The regulation of these genes is complex and involves the transcription factors RpoS ( 3 , 14 ) , cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) ( 3 ) , HN-S ( 11 ) , and EvgA ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>INVOLVEMENT OF DIFFERENT REGULATORS IN THE ANAEROBIC EXPRESSION OF mdtEF FROM THAT OF AEROBIC CONDITION Previous studies focusing on the expression of gadE-mdtEF operon during acid resistance have revealed that several regulators , such as EvgA , YdeO , MnmE , GadE , GadX , CRP , and H-NS , are involved in the regulation of gadE-mdtEF operon ( Gong et al. , 2004 ; Ma et al. , 2004 ; Hirakawa et al. , 2006 ; Tramonti et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23874328" target="_blank">23874328</a>]<br></li>
+<li>In this regulatory process H-NS represses the expression of gadE ( encoding the central activator of the glutamate-dependent acid resistance pathway ) both in a direct and an indirect way , via EvgA , YdeO , GadX and GadW [ 1,7,8 ] , while it decreases rcsD expression , essential to the phosphorylation of RcsB ( the capsular synthesis regulator component ) required for the formation of the regulatory complex with GadE [ 6 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21034467" target="_blank">21034467</a>]<br></li>
+<li>Identification of the targets directly controlled by H-NS H-NS modulates the expression of several regulators controlling acid stress resistance including HdfR , RcsD , EvgA , YdeO , YdeP , GadE , GadW , GadX , AdiY and CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21034467" target="_blank">21034467</a>]<br></li>
+<li>It has been reported that EvgA also directly induces GadE expression , forming a branched pathway of regulation ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results also conﬁrm that EvgA affects gadE expression in YdeO-dependent and - independent pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Figure 9A illustrates , using a Northern blot , that ydeO is also acid induced and that EvgA is needed to activate ydeO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Concomitant with upre-gulation of tolC , EvgA upregulated several multidrug-resistance genes ( acrAB , emrKY , mdfA and yhiUV ) and showed increased antibiotic resistance that was fully dependent on TolC but only partially dependent on AcrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18673442" target="_blank">18673442</a>]<br></li>
+<li>Key words : transcriptional cascade ; EvgS/EvgA ; YdeO ; GadE ; acid resistance The EvgS/EvgA two-component signal-transduction-system in Escherichia coli ( E. coli ) 1 ) is highly homologous to the virulence-related BvgS/BvgA system of Bordetella pertusis and the KvgS/KvgA system , which is present only in virulent strains of Klebsiella pneumoniae .2 ) A BLAST search also indicated the presence of homologous systems in other microorganisms such as Shigella ﬂexineri , Pseudomonas aeruginosa , and Yersi-nia pestis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>In a previous study ( Masuda and Church , 2002 ) , we found that EvgA overexpression induces 37 genes , including gadABC and hdeAB , and confers acid resistance to exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results indicate that EvgA overexpression confers acid resistance to exponential-phase E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Thus , acid resistance conferred by EvgA overexpression includes amino acid-independent mechanism ( s ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>EvgA overexpression conferred acid resistance to exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>EvgA overexpression confers acid resistance to exponentialphase cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>EvgA is activated by EvgS SK cascade and regulates the genes involved in acid resistance and multidrug-resistance ( Eguchi et al. 2003 ; Itou et al. 2009 ; Johnson et al. 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>These results suggest that ydeP , ydeO , and yhiE are novel genes related to acid resistance and that EvgA regulates several acid resistance genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>These data indicate that the EvgS/EvgA system regulates the expression of acid resistance genes ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results indicate that both EvgS / EvgA and PhoQ/PhoP are involved in the expression of acid resistance genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>The EvgS/EvgA TCS is involved in acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results suggest that EvgA is involved in acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Altogether , EvgA overexpression induced ﬁve genes , gadA , gadB , gadC , hdeA , and hdeB , known to provid acid protection and at least three novel acid resistance genes , ydeP , ydeO , and yhiE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>It has been reported that EvgA regulates at least eight genes related to acid resistance ( Masuda and Church 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+<li>A model for regulatory network of acid resistance genes In this study , we have identiﬁed genes directly upregulated by EvgA and genes upregulated by EvgA-induced YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Thus , the physiological role of EvgA appears to be the control of acid resistance genes rather than control of multidrug-resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>EvgA activated genes related to acid resistance , osmotic adaptation , and drug-resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>Furthermore , we knocked out several genes induced by EvgA overexpression and identiﬁed novel genes related to acid resistance and multidrug-resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The fact that EvgA overexpression induced these acid protection genes prompted us to study the effect of EvgA overexpression on resistance to acidic stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>We also tested whether or not the genes induced by EvgA overexpression were involved in stationary-phase acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>It has been found that acid resistance is a critical system for the survival of E. coli , and that various factors are involved in this system .24 ) The present study has solved part of the intricate transcriptional cascade of acid resistance genes initiated by EvgS/EvgA system activation , as one of the mechanisms of E. coli acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The EvgS/EvgA system confers acid resistance and multidrug-resistance to E. coli , and it is very similar to the virulence-related BvgS/BvgA system in Bordetella pertussis ( 12 , 13 , 14 ) , whereas the PhoQ/PhoP system responds to external Mg2 and Ca2 levels , regulating expression of the genes including Mg2 transporters and LPS modification genes ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Since the PhoQ/PhoP system induces expression of AR genes gadW and hdeA ( 33 ) , we focused on whether connector SafA played a role in the acid resistance conferred by the EvgS/EvgA system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Overexpression of EvgA , the response regulator of the EvgS/EvgA system , is known to induce the expression of a number of acid resistance and multidrug-resistance genes , in which the EvgA-YdeO-GadE circuit is involved , but the role of the sensor EvgS in this circuit has remained unsolved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Ratios of expression levels for promoters with and without acid induction Promoter dependencya Relative activityb Promoter GadE EvgA Expc Statd RcsB is required for acid resistance in E. coli O157 : H7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>Most of the putative multidrug eﬄux-related genes were below the detection level under the steady-state of the exponential growth phase , but at least ﬁve genes or operons , emrKY , mdtEF ( formerly yhiUV ) , acrA , mdfA , and tolC , showed increased expression in the presence of the constitutive mutant EvgS1 .8 ) This was supported by reports of overexpression of the regulator EvgA conferring multidrug-resistance to a drug-hypersuscep-tible E. coli strain , which lacked the major multidrug eﬄux pump gene , acrB .9 -- 11 ) EvgA overexpression also conferred acid resistance to exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>DISCUSSION It has been reported that overexpression of the regulator EvgA confers MDR to a drug-hypersusceptible E. coli strain which lacks the major multi-drug efﬂux pump gene , acrB ( Nishino & Yamaguchi , 2001a , 2002 ) , and acid resistance to exponentially growing cells ( Masuda & Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Results and discussion Induction of acid resistance by overexpression of YdeP , YdeO and YhiE in exponentially growing cells We have reported that overexpression of the response regulator EvgA confers acid resistance to exponentially growing E. coli ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>It is now known that E. coli possesses a number of effectors that enable it to survive otherwise lethal doses of inorganic and organic acid stress ( termed acid resistance or AR ) , many of which are not present in closely related bacteria such as Salmonella spp .8 The function of each AR effector depends on the precise nature of the acid stress .9 -- 13 For example , two isomeric glutamate decarboxylases encoded by gadA and gadB and a glutamate-γ-aminobutyric acid antiporter gadC contribute to AR only when glutamate is available in the extracellular environment ,10 a phenomenon termed glutamate-dependent AR or AR2 , whereas the periplasmic chaperone encoded by hdeA only appears to contribute to AR in dense cell populations .11,14 Several effectors reside within a 15-kb genomic patch termed the `` acid fitness island '' ( AFI ) and , along with the non-proximal gadBC locus , are co-regulated under diverse situations .15 -- 18 In E. coli K-12 , these effectors are subject to tight transcriptional-control and are expressed at low levels during rapid growth at neutral pH , due in part to global H-NS-mediated repression15 ,19 and Lon-mediated degradation of the central activator protein GadE .20 For induction of this latter set of genes , distinct regulatory networks operate depending on the inducing conditions , which include a shift to sublethal pH21 and growth into stationary phase .19,22 A drop from pH 7 to sub-lethal pH 5.5 induces a number of AR effectors via the two-component system EvgA/EvgS , which is encoded outside of the AFI .23,24 Two intermediate transcription factors , YdeO and the AFI-encoded GadE , are transcriptionally activated by the presumably phosphorylated response regulator EvgA .18,24 -- 26 YdeO can also activate gadE transcription forming a coherent feed-forward loop18 ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>12.38 -8.24 -59.96 1.13 ± 0.55 ± 0.50 ± 0.02 0.04 0.02 1.27 ± 0.50 ± 0.20 ± 0.03 0.03 0.03 / h ) / h ) Fig. 2 Comparison of the transcript levels of the E. coli wild type under different pH values at 7.0 and 6.0 : a global regulatory genes , b PhoB regulatory genes , c acid-inducible genes , d metabolic pathway genes , e respiratory chain genes during micro-aerobic continuous culture at the dilution rate of 0.1 h -1 Fig. 3 a , b Overall metabolic regulation of the E. coli during acidic condition ( a ) Acid Condition Hns ATP ADP PhoQ PhoQ P ATP ADP ¬ EvgS EvgS P cAMP - evgA Pho P PhoP Crp EvgA P B1500 EvgA cAMP-Crp ¬ RpoS b1500 ydeo ¬ YdeO gadE GadE O O GadW GadX hdeA gadB gadc gadW gadA gadX HdeA GadA GadB GadC Acid resistance ( b ) Acidic Condition ( H + ) ( indirect ) EnvZ PhoR fnr OxyR ldhA arcA P Fnr ArcA SoxR / S L PhoR - P OmpR OmpR - P DH pfl yfiD ompC TCA-cycle genes : gltA sdhC mdh sodA PhoB - P PhoB Lactate OmpC ompF asr YfiD Pfl OmpF Asr Formate Acetate ackA pta Acid resistance Moreover , in accord with the proteomic analysis , the expression of yﬁD : : lac reporter fusion and the intracellular content of YﬁD were found to be high during growth at low pH for both aerobic and anaerobic cultures ( Neil et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23274360" target="_blank">23274360</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">EvgA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>PCR Primers Target Primer Sequence promoter 50-CATCGGGAGTGGGTGTCACTC-30 50-ACCACCTGCAGCACCCTGGT-30 50-TGAAATGCATGCGACCACAGTGAAA-30 50-TGCGTACGAACAGCGTTATCTACCA-30 50-TATAGCTCCTCTCACTTCCACCACC-30 50-CAGCCCATACAGTTGAAGATGCCAG-30 0 5 - TATTTGGCGCTCGCGGTGCT-30 0 0 5 - GGCCAGATTGCACACCGGTG-3 50-ACCGGCAATCACCGTTGCGA-30 50-CATTATGCACAGCACAACCAGAC-30 50-AGCGTTGATGCTATGGGCGGTTAAA-30 50-TCTTTCAACTGCCAAAAGCCCTGTA-30 50-TGTGCAACTTGTCATGGTGGT-30 50-TCGCGCATTTCGTGCAGCGGA-30 0 5 - GATATCCAACAGCGTAGCGT-30 50-GAATCGAGTAGTTCCGACCT-30 50-ACTGCGACGAGGAAACCGGATAATA-30 50-TGCATTGCTCACAACTGGCAGAAGA-30 50-CCTGAGTACAAGCCTGAACGA-30 50-GATACACAGCAACCCGACGA-30 ydeP ydeP ydeO ydeO yfdX yfdX frc frc yegR yegR gadE gadE gadA gadA gadB gadB hdeA hdeA hdeD hdeD YDPF YDPR YDOF YDOR3 YFDXF YFDXR BAIFF BAIFR YGRF YGRR YHEF YHER gadA-R gadA-F gadB-R gadB-F2 HDAF HDAR hdeD-F hdeD-R Puriﬁcation of EvgA and GadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Electrophoretic mobility shift assays ( EMSA ) were used to test whether His-tagged EvgA , MBP-YdeO , and MBP-GadE proteins bound to different regions within the hdeD-gadE intergenic sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>These results indicate that both 18 bp motifs are necessary for ydeP and ydeO induction by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Taken together , these results demonstrate that both 18 bp motifs are necessary for EvgA-dependent acid resistance and suggest that EvgA binds to the 18 bp motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Gel mobility shift assays showed the speciﬁc binding of EvgA to the six sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>To test whether EvgA could interact with the 18 bp sequences directly , we performed gel mobility shift assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results are consistent with the microarray data and suggest that EvgA binds to the six consensus sequences in the genome to induce the expression of ydeP , b1500-ydeO , yegR-b2084-yegZ , emrKY , evgAS , yfdX and yfdWUVE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Cy3-labelled probes corresponding to the six consensus sequences produced bandshifts when incubated with His-tagged EvgA ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Therefore , interactions between His-tagged EvgA and the six consensus sequences are speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results suggest that EvgA binds only the six 18 bp consensus sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Based on our ﬁndings , EvgA binds six consensus sequences and induces Fig. 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Approximately 1 kb fragments ﬂanking the gene to be deleted or replaced or ﬂanking the 18 bp sequence to be mutated were ampliﬁed from genomic DNA of MG1655 or strains with EvgA binding site mutation in two separate PCRs using the No and Ni primer pairs or the Ci and Co primer pairs ( Table 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Blue boldface letters mark a major transcript start site ( base `` T '' below asterisk ) and inferred − 10 sequence , with consensus bases capitalised .26 Green boldface letters mark the EvgA consensus site .18 Red boldface letters mark putative PhoP binding site based on the consensus ( T/G ) GTTTA -- 5n -- ( T/G ) GTTTA49 ( red arrows under letters mark direct repeat ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>The EvgA consensus sequence was recently proposed on the basis of sequence comparisons between six EvgA-regulated genes ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>The 18 bp consensus sequence is also present in the promoter region of emrK , and EvgA binding has been conﬁrmed by previous DNaseI footprinting analysis .7,12 ) EvgA bound to region 43 nt upstream of the transcriptional start site of safA .18 ) We also performed footprinting analyses for the upstream region of ydeO , but no footprint was obtained ( data not shown ) , indicating that EvgA bound only to the upstream region of safA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The putative PhoP box ( Kato et al. , 1999 ) and the proposed 18 bp consensus sequence for EvgA binding ( Masuda & Church , 2002 ) are boxed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Closed bars indicate the 18 bp consensus sequence for EvgA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The 18 bp consensus sequences for EvgA binding are boxed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Moreover , enhanced transcription of the phoPQ genes did not further activate expression of the PhoQ/PhoP regulated genes , and no EvgA binding consensus sequence ( 12 , 18 ) was found in the promoter regions of the PhoP regulon genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>In addition , an EvgA binding consensus sequence is present in the b1500/ydeO promoter ( 18 ) ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These 5 genes all possess the 18 bp consensus sequence for EvgA binding within their promoter regions ,12 ) and we conﬁrmed by DNaseI footprinting analyses that EvgA actually bound to these consensus sequences ( Fig. 3 and ref .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Consensus sequence weight matrix for EvgA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>However , no sites were found corresponding to a predicted EvgA binding consensus sequence , and nothing is known of potential YdeO binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>They have shown by gel shift assay that EvgA bound to the promoter region of gadE , although the consensus sequences for EvgA binding were not found .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>No consensus sequence for EvgA binding was found in the promoter region of gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Analysis using the motif-ﬁnding program ALIGNACE identiﬁed an 18 bp inverted-repeat motif in six upstream regions of all seven operons directly regulated by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Open arrows indicate the proposed inverted-repeat for EvgA binding ( Kato et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Tanabe et al. ( 36 ) and Kato et al. ( 13 ) proposed that the 5 - TTCTTA-3 sequence and its inverted-repeat , 5 - TAAGAA-3 , separated by a 15-bp spacer sequence , were important for EvgA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>3 Previously , Kato et al. ( 2000 ) proposed an inverted-repeat located in the emrK promoter region between 175 and 200 nt upstream of the translation start codon as the binding site for EvgA ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>On the other hand , Masuda & Church ( 2002 ) proposed an 18 bp inverted-repeat motif for EvgA binding located between 174 and 191 nt upstream of the ATG start codon of emrK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Masuda and Church ( 18 ) reported that EvgA binds to an 18-bp consensus sequence ( 5 - TTCPyTACA-3 and its inverted-repeat , 5 - TGT APuGAA-3 , separated by two random bases [ Py is a pyrimidine , and Pu is a purine ] ) for the direct regulation of the EvgA regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126461" target="_blank">15126461</a>]<br></li>
+<li>It was previously reported that EvgA binds upstream of emrK , and this region contains the inverted-repeat sequence TTCTTAC-GTAA GAA ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>For example , another report found that EvgA could bind upstream of yhiU in a region that also lacks the proposed EvgA consensus site ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>GadX binds to the gadE control region Regulators EvgA , YdeO and GadE bind to subfragments of the 798 bp gadE upstream control region ( Ma et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>Distance from transcription start site -- 100 +1 +100 -- 300 -- 200 +200 +300 CTTATTTTTTATATTGA TATTTAATCTATTGTTA ATAAGTA TGTAAGAA AATCCTA AATCCTA ydeP RcsB RcsB NarL/NarP TACCTCT EvgA NarL/NarP NagC PhoP Figure 6 Location of TF-binding sites on the ydeP promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>The black bar in the safA promoter represents the inverted-repeat for EvgA binding , gray bars in the iraM , hdeA , and gadW promoters represent PhoP boxes , and white bars in the gadA , hdeA , and gadB promoters represent GadE boxes FIG. 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Open and gray bars indicate EvgA and GadE binding sites , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by EvgA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>On the other hand , the increased amount of EvgA did not enhance the transcriptional level of evgA , which is transcribed divergently from emrK , neither in the absence nor in the presence of acetylphosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Overproduction of EvgA did not change the expression level of hns detected either by macroarray or by qRT-PCR analysis ( Table 4 ) , but the expression level of evgA is increased in the H-NS-deﬁcient strain compared to that of its wild-type parent strain ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>The fact that EvgA did not autoregulate its expression seems to contradict previous in vitro gel shift results , indicating that puriﬁed EvgA caused a shift in an upstream evgA sequence that contained a putative EvgA box ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>AR system 1 is catabolite repressed by glucose and induced in complex medium ; arginine-dependent AR system 3 is regulated by CysB and induced only in stationary phase ; glutamate-dependent AR system 2 is independently regulated by extracellular pH , HN-S , RpoS , and EvgA ( 3 , 4 , 8 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Nishino et al. reported that expression of asr is upregulated in E. coli overproducing the response regulator EvgA [ 25 ] , although this observation was not conﬁrmed by recent DNA gene array analyses and studies of the individual genes controlled by EvgA [ 22,35 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>That is , two genes ( emrKY ) upstream and six genes ( yfdXWUVE and ypdI ) downstream of evgAS were controlled by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>That is , seven genes ( hdeABD , slp , and yhiDEF ) upstream and three genes ( gadAX and yhiW ) downstream of yhiUV were controlled by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>S1 nuclease assays were performed with three genes ( katE , gadE , and ydeO ) that were activated by the EvgS/EvgA system ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Transcriptional Changes of EvgS/EvgA Up-Regulated Genes by Deletion of ydeO and gadE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Similar transcription levels of the 5 genes directly regulated by EvgA ( ydeP , ydeO , yfdX , frc , and yegR ) were detected among the evgS1 , evgS1 ydeO , and evgS1 gadE strains ( Fig. 2A , lanes 4 , 5 , 6 ) except for ydeO , which of course did not show any transcripts in the evgS1 ydeO strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>All three of these genes have been reported to be directly regulated by EvgA , and b1500 composes an operon with ydeO ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Among the genes regulated by EvgA are gadX and ydeO , which encode AraC-like transcription factors similar to GadW , and yhiF and yhiE , which encode LuxR-like transcription factors ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730179" target="_blank">12730179</a>]<br></li>
+<li>Overexpression of EvgA induces the efﬂux pump genes yhiUV and confers multidrug resistance to a strain that lacks the major efﬂux pump genes acrAB ( Masuda and Church , 2002 ; Nishino and Yamaguchi , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Using a different gadE probe encompassing the P1 to P3 promoters , we conﬁrmed that the P3 promoter was also induced by activation of EvgS/EvgA ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>Next , we checked whether iraM was actually induced by EvgS/EvgA activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>This protein , named protein X , was induced by EvgA because E. coli KAM3 cells did not yield this protein band ( Fig. 1A , lane 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11157960" target="_blank">11157960</a>]<br></li>
+<li>We investigated the changes of the expression levels of these transporter genes ( listed in Table 3 , except for acrAB ) and the evgA-induced yfdX gene ( 16 ) when EvgA was overproduced in E. coli KAM3 ( lacking acrAB ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>To con-ﬁrm whether an acid resistance system ( s ) induced by EvgA overexpression requires amino acid or not , exponential-phase MG1655 harboring pQEevgA grown in LB broth ( pH 7.0 ) containing IPTG was incubated in EG ( pH 2.5 ) for 1 h and percent survival values were determined as described in Materials and Methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Most of the putative multidrug eﬄux-related genes were below the detection level under the steady-state of the exponential growth phase , but at least ﬁve genes or operons , emrKY , mdtEF ( formerly yhiUV ) , acrA , mdfA , and tolC , showed increased expression in the presence of the constitutive mutant EvgS1 .8 ) This was supported by reports of overexpression of the regulator EvgA conferring multidrug resistance to a drug-hypersuscep-tible E. coli strain , which lacked the major multidrug eﬄux pump gene , acrB .9 -- 11 ) EvgA overexpression also conferred acid resistance to exponentially growing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The multidrug resistance caused by overexpression of EvgA and YdeO is due to the induction of mdtEF gene expression ( 6 , 7 , 14 , 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16885453" target="_blank">16885453</a>]<br></li>
+<li>These results suggest that yhiUV is essential for the multidrug resistance caused by EvgA overexpression and that emrKY is not involved in the resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Genes highly increased by EvgA overexpression in the absence of ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Genes most affected by overexpression of EvgA Log2 ratioc Expression level and b no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Recently , Tucker et al. ( 2002 ) reported that 28 genes , including slp , yhiF , hdeAB , hdeD , yhiE , gadA and gadB , which are induced by EvgA overexpression ( Masuda and Church , 2002 ) , were induced at pH 5.5 or 4.5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>This latter set of genes was induced by EvgA overexpression in the presence of ydeO ( Masuda and Church , 2002 ) , but not by EvgA overexpression in the absence of ydeO ( http://arep.med.harvard.edu/cgi-bin/ ExpressDBecoli/EXDStart ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Nineteen of the 23 ORFs listed in Table 2 were also highly induced by EvgA overexpression ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Twelve of the 15 ORFs listed in Table 1 were also highly induced by EvgA overexpression in the presence of ydeO ( Masuda and Church , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>In a previous study , we eliminated emrY from the list of highly upregulated genes by EvgA overexpression because of marginally signiﬁcant P-values in three out of four experiments , even though the expression of emrY was induced 4.6-fold on average .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Five of the genes whose expression was induced by EvgA overexpression code for proteins that are known to provide protection against acid stress in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Of 37 genes whose expression was highly up-regulated by EvgA overexpression , 21 code for uncharacterized or hypothetical proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Several genes induced by EvgA are involved in the response to high osmolarity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>We also tested whether or not the genes induced by EvgA overexpression were involved in stationary-phase acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>GadX regulates the acid resistance genes gadA , gadBC , and hdeABD ( 12 ) , which were also induced by EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Altogether , EvgA overexpression induced ﬁve genes , gadA , gadB , gadC , hdeA , and hdeB , known to provid acid protection and at least three novel acid resistance genes , ydeP , ydeO , and yhiE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The deletions of ydeP-b1500-ydeO and yhiE decreased acid resistance caused by EvgA overexpression more than those of gadC and hdeA , suggesting that ydeP-b1500-ydeO and yhiE are more critical for acid resistance induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_36">
+This acid resistance was abolished by deletion of ydeP , ydeO , or yhiE , which was induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></label>
+<input id="tu_similarity_36", type="checkbox">
+<div class="TU_similar">
+<li>This acid resistance is partly abolished by deletion of ydeP , ydeO or yhiE , which were induced by EvgA overexpression , suggesting that the three genes are related to acid resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>This acid resistance is partially abolished by deletion of ydeP , yhiE or ydeO , genes induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>This acid resistance is partly abolished by deletion of ydeP , ydeO or yhiE , genes induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li></div>
+<li>These results suggest that yhiE is essential for acid resistance induced by YdeO overexpression and that EvgA overexpression induces yhiE via the induction of YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>These results are similar to our previous observation that EvgA overexpression does not confer acid resistance to the ydeP-b1500-ydeO deletion strain , and are consistent with the hypothesis that YdeO induces yhiE expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>The ﬁrst class contains seven operons induced by EvgA overexpression in the absence of ydeO , an AraC/XylS regulator gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>This acid resistance was eliminated by the deletion of ydeP , ydeO , or gadE , genes induced by EvgA overexpression .11 ) Microarray analysis identiﬁed two classes of operons or genes .12 ) The ﬁrst class contains seven operons or genes induced by EvgA overexpression in the absence of ydeO , encoding an AraC-like regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>EvgA overexpression induced the expression of ydeO , an AraC/XylS regulator , indicating that some of the genes induced by EvgA overexpression might be directly induced by YdeO instead of EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Operons or genes in the second class were induced by EvgA overexpression only in the presence of ydeO , which suggests the following model of the regulatory network of the acid resistance genes : EvgA directly upregulates operons or genes containing ydeO in the ﬁrst class and indirectly upregulates operons or genes in the second class containing gadE , a LuxR-family regulator gene , via YdeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>The expressions of three efﬂux pump genes , emrK , yhiU , and yhiV , were signiﬁcantly induced by EvgA overexpression , as shown in Table 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>This conserved motif can be detected in the upstream regions of several highly induced genes ( ydeP , b1500 , yegR , emrK , yfdX and yfdW ) by overexpression of EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14523115" target="_blank">14523115</a>]<br></li>
+<li>Altogether , microarray analysis allowed the identiﬁcation of 12 genes induced by EvgA overexpression in the ydeO deletion strain , ydeP-b1500 , yegR-b2084-yegZ , emrKY and yfdXWUVE ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>A. Sequences found upstream of the genes induced by EvgA overexpression in the ydeO deletion strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Of 30 genes induced more than eightfold by EvgA overexpression , 18 , including ydePO and yhiE , are also induced by H-NS deletion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Because we were primarily interested in genes induced by EvgA overexpression , we did not give further consideration to the gene repressed by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Operons in the second class were induced by EvgA overexpression only in the presence of ydeO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>AppY regulates the appCBA operon ( 5 ) , which was induced by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The expression of gadX was 1.7 - to 4.9-fold induced by EvgA overexpression , and the changes were signiﬁcant in all four comparisons ( http://arep.med.harvard.edu/cgi-bin/Express DBecoli/EXDStart ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The tolC homologues yjcP , yohG , and ylcB ( 35 ) showed no signiﬁcant change in expression by EvgA overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>yhiW , appY , and adiY showed no signiﬁcant change by EvgA overexpression except that the expression of yhiW was signiﬁcantly induced 28-fold by IPTG in the evgAS strain harboring pQEevgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>Figure 9A illustrates , using a Northern blot , that ydeO is also acid induced and that EvgA is needed to activate ydeO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Overexpression of either EvgA or GadX induced the expression of gadA , gadBC , and hdeABD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>The gadX promoter , which is not activated by GadE or ( unlike all the above promoters ) by induction via EvgA but does require RpoS for induction by low pH ( 1 ) , also showed signiﬁcantly reduced acid-induced expression in the rcsB strain ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21571995" target="_blank">21571995</a>]<br></li>
+<li>The ompA deletion mutant is signiﬁcantly more sensitive than that of its parent strain to acidic environment and high osmolarity ( 47 ) , and the expression of this gene was induced by EvgA overproduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>The EvgS/EvgA system is activated in strain MG1655/pOH2001D52A , whereas it is inactivated in MG1655 evgA/pOH2001D52A because EvgA in this strain can not be phosphorylated by the activated EvgS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19352034" target="_blank">19352034</a>]<br></li>
+<li>Expression of the b1500 gene is directly regulated by the EvgS/EvgA system , and b1500 expression from a heterologous promoter simultaneously activated the expression of mgtA and other PhoP regulon genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>When the EvgS/EvgA system was activated by the evgS1 mutation , mgtA expression was enhanced ( Fig. 2 A and B , column 3 ) as reported ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>The expression of ydeO is activated by the two-component system EvgSA [ 9,10,11 ] , forming a regulatory cascade , EvgA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>Expression of mgrB is also activated by the EvgS-EvgA two-component system in a PhoP-dependent manner ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734312" target="_blank">19734312</a>]<br></li>
+<li>Since the PhoQ/PhoP system induces expression of AR genes gadW and hdeA ( 33 ) , we focused on whether connector SafA played a role in the acid resistance conferred by the EvgS/EvgA system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193607" target="_blank">21193607</a>]<br></li>
+<li>These data indicate that the EvgS/EvgA system regulates the expression of acid resistance genes ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results indicate that both EvgS / EvgA and PhoQ/PhoP are involved in the expression of acid resistance genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>Moreover , enhanced transcription of the phoPQ genes did not further activate expression of the PhoQ/PhoP regulated genes , and no EvgA binding consensus sequence ( 12 , 18 ) was found in the promoter regions of the PhoP regulon genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>This regulatory network between the two systems also occurred as a result of overproduction of the EvgA regulator ; however , enhanced transcription of the phoPQ genes did not further activate expression of the PhoP/PhoQ-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15126461" target="_blank">15126461</a>]<br></li>
+<li>However , it is not clear what purpose this regulation serves in vivo since several studies have shown that EvgA can activate the gadE promoter in a ydeO mutant .24,26 GadE directly activates its own expression while repressing production of YdeO .24 Many structural genes within the AFI , as well as the gadBC locus , are activated directly by GadE , although effectors such as slp appear not to be under GadE control .15,18,27 The contribution of the alternate general stress and stationary phase sigma factor RpoS may also have a role under low pH inducing conditions , since GadE positive feedback can be further supported by its presence .28 The homologous transcription factors * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20603130" target="_blank">20603130</a>]<br></li>
+<li>Chromosomal knockout mutations indicate the system is a branched control circuit ( diagrammatically summarized in the Discussion ) where EvgA activates gadE expression directly and indirectly through a ydeO feed-forward loop and where gadE autoregulates its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>It has been reported that EvgA also directly induces GadE expression , forming a branched pathway of regulation ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17998538" target="_blank">17998538</a>]<br></li>
+<li>These results also conﬁrm that EvgA affects gadE expression in YdeO-dependent and - independent pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>Next we tested whether EvgA and YdeO affected gadE expression under physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489450" target="_blank">15489450</a>]<br></li>
+<li>However , neither EvgA nor YdeO is required for gadE expression in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17660422" target="_blank">17660422</a>]<br></li>
+<li>The pUC19 vectors , pUCevgA and pQEevgA , which are constitutive and conditional EvgA expression plasmids , respectively , were transformed into the evgAS and acrB evgAS strains by electroporation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+<li>These results are consistent with the microarray data and suggest that EvgA binds to the six consensus sequences in the genome to induce the expression of ydeP , b1500-ydeO , yegR-b2084-yegZ , emrKY , evgAS , yfdX and yfdWUVE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12694615" target="_blank">12694615</a>]<br></li>
+<li>Since EvgA is known to positively regulate emrKY gene expression ( 5 ) , we cloned emrKY into the pQE30 expression vector and observed that E. coli cells overexpressing EmrKY acquire resistance only to deoxycholate ( eightfold ) ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11914367" target="_blank">11914367</a>]<br></li>
+<li>EvgA affects the expression of gene clusters located near emrKY and yhiUV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>]<br></li>
+<li>EvgA binds the intergenic region of evgAS and emrKY and regulates the expression of both operons ( 13 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12399493" target="_blank">12399493</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

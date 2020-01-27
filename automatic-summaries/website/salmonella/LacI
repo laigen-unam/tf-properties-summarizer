@@ -1,0 +1,584 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LacI</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LacI</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LacI transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The presence of LacI in all strains reduced pspA expression in vitro , resulting in a faster growth rate ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>Conversely , in LB medium with 0.1 % arabinose , where all strains expressed LacI , no PspA protein was detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805538" target="_blank">19805538</a>]<br></li>
+<li>Western blot analysis of LacI and 6-PGD expression , plasmids stability test and preparing Salmonella outer membrane proteins ( SOMPs ) To evaluate arabinose dependent regulation of heterologous protein , RDAS strains rSC0011 harboring 6-PGD protein wer grown in NB medium with 0.2 % arabinose at 37 ◦ C with aeration [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26238722" target="_blank">26238722</a>]<br></li>
+<li>pYA3856 pYA3879 This study 70 pYA4064 70 This study This study pYA4085 pYA4088 This study This study This study pYA4090 pYA4349 pYA4365 a Apr , ampicillin resistance ; Salmonella strains were constructed and evaluated for level of LacI synthesis , antigen synthesis , and the ability to induce a protective immune response in mice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>Comparative Venn diagram for proteins analyzed by k-core , EV centrality and Microarray datasets of LacI condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25128737" target="_blank">25128737</a>]<br></li>
+<li>[ 29 ] M.A. Schumacher , K.Y. Choi , H. Zalkin , R.G. Brennan , Crystal [ 30 ] F. Lu , R.G. Brennan , H. Zalkin , Escherichia coli purine repressor : [ 31 ] P. Modrich , Mechanisms and biological effects of mismatch [ 32 ] E. Heidenreich , U. Wintersberger , Adaptive reversions of a [ 33 ] T. Nohmi , H. Ohmori , Multiple pathways for SOS-induced muta - [ 34 ] P. Modrich , R. Lahue , Mismatch repair in replication ﬁdelity , [ 35 ] E.S. Slechta , J. Harold , D.I. Andersson , J.R. Roth , The effect Structure of LacI member , PurR , bound to DNA : minor groove binding by alpha helices , Science 266 ( 1994 ) 763 -- 770 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16414087" target="_blank">16414087</a>]<br></li>
+<li>The Ptrc promoter in our plasmid constructs is repressed by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18458067" target="_blank">18458067</a>]<br></li>
+<li>It has been proposed that LacI was lost within S. Typhimurium to facilitate the acquisition of SPI-2 , as it was found to repress virulence genes within this island and remains present in S. bongori , which lacks SPI-2 ( Eswarappa et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29034217" target="_blank">29034217</a>]<br></li>
+<li>Mutating Gln to Gly and inserting three extra glycines 60 after 60 amino acid of LacI abolishes its ability to-bind to the th operator sequence without affecting its folding , assembly and inducer ( IPTG ) - binding property .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>LacI has a nearly optimal binding afﬁnity to its cognate operator ( 15 ) ; therefore , we may have to modify both LacI and lacO to achieve higher repression and higher expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>There are two possibilities by which LacI can inhibit the virulence of S. enterica : either by binding to DNA or by binding to a protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>In addition , this result suggests that this inhibitory effect of LacI may be due to its binding to operator DNA and also it rules out the possible role of binding of LacI to a non-operator DNA sequence in this effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>S. enterica expressing LacI thus appears to be sensitive to serum-mediated killing ; this might also contribute to the diminished virulence of S. enterica expressing LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>As a result of growth in an arabinosepoor environment , LacI production will decrease and antigen expression will increase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18458067" target="_blank">18458067</a>]<br></li>
+<li>The concentration of LacI will decrease by dilution as the RASV cells divide and derepress antigen gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>The LacI protein binds to the Ptrc promoter on pYA4088 , preventing pspA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805538" target="_blank">19805538</a>]<br></li>
+<li>This Salmonella strain contains the deletion-insertion mutation ΔrelA198 ∷ araC PBAD lacI TT , that encodes for arabinose regulated LacI synthesis , which regulates the expression from Ptrc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20002189" target="_blank">20002189</a>]<br></li>
+<li>This strategy should be balanced against the negative impact of increased LacI concentration on growth , which could lead to overattenuation and loss of immunogenicity ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>LacI negatively represses the expression from the Ptrc promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>LacI negatively regulates the expression from trc promoter that drives the synthesis of heterologous antigens .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913025" target="_blank">23913025</a>]<br></li>
+<li>Additionally , the cjaA present on the recombinant plasmid pUWM1161 is under the control of trc promoter , which is regulated by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913025" target="_blank">23913025</a>]<br></li>
+<li>Expression of htrA is controlled by the trc promoter , which is repressed by LacI , also encoded on the plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19246758" target="_blank">19246758</a>]<br></li>
+<li>This phenomenon was described for the first time for lactose utilization by Escherichia coli requiring the expression of the lac operon that is negatively regulated by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28027601" target="_blank">28027601</a>]<br></li>
+<li>To further confirm this hypothesis , the kil gene was cloned into the pUA1085 plasmid ( Table 2 ) , downstream the Ptac promoter that is negatively regulated by the LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16713610" target="_blank">16713610</a>]<br></li>
+<li>Anti-PspA antibody titers were inversely correlated to the level of LacI synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>The truncated dctD is under control of Ptrc and subject to repression by the vector-encoded LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24007446" target="_blank">24007446</a>]<br></li>
+<li>When IPTG is added to the medium , it diffuses into the cell , where it binds to the LacI repressor , causing a conformational change that decreases its afﬁnity for lacO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18458067" target="_blank">18458067</a>]<br></li>
+<li>For example , lactose is converted to allolactose , which binds to LacI thereby lowering binding to the lac operator and derepressing the lac operon in E. coli ; as lactose is metabolized and eventually depleted from the growth media , the lac operon is downregulated ( Wilson et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22921935" target="_blank">22921935</a>]<br></li>
+<li>Therefore , when arabinose is added to the growth medium , LacI is produced , inhibiting transcription from the Ptrc promoter , leading to decreased antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18458067" target="_blank">18458067</a>]<br></li>
+<li>In the presence of arabinose LacI is produced , which binds to Ptrc , blocking antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>When grown in the presence of arabinose , LacI is produced , which binds to Ptrc , blocking antigen gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>In vivo , where arabinose is absent , LacI synthesis ceases and is diluted at each cell division , leading to the derepressed synthesis of the LcrV196 antigen to stimulate the induction of immunity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20308296" target="_blank">20308296</a>]<br></li>
+<li>Wang et al. also used araC PBAD cassette to regulate the express of chromosomal lacI repressor gene , which binds to Ptrc on the plasmid and blocks antigen synthesis in the presence of arabinose ; once Salmonella reach host immunocompetent sites , which is arabinose-free , the concentration of LacI decreases with each cell division , allowing upregulate antigen synthesis and induce the desired antigen-speciﬁc immune responses [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26238722" target="_blank">26238722</a>]<br></li>
+<li>In the resulting strain 9449 , the expression of Lrp is regulated by LacI , whose expression is under the control of the araC PBAD system ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_35">
+( C ) In the RASV strains with regulated delayed lysis and synthesis of heterologous antigens , in the presence of arabinose , the transcription of the genes under the araC PBAD promoter is induced on the chromosome and on the plasmid , for the biosynthesis of the cell wall and the synthesis of the repressor proteins C2 and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></label>
+<input id="act_similarity_35", type="checkbox">
+<div class="ACT_similar">
+<li>During the growth of RASV 9447 ( pYA4535 ) in the presence of arabinose , the Ptrc repressor LacI is synthesized ( due to the presence of the relA198 : : araC PBADlacI TT insertion-deletion mutation ) , and this blocks the synthesis of the Ptrc-controlled synthesis of the LcrV196 protective antigen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20308296" target="_blank">20308296</a>]<br></li></div>
+<li>IPTG binds with high affinity to LacI and lowers its affinity for the operator DNA , the natural target of LacI [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Typically , induction of expression from LacI-repressed promoters is accomplished by the addition of chemical agents that bind to LacI , causing an allosteric change in the protein that leads to its release from lacO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>Our next aim was to investigate the mechanism of action of LacI that leads to the above observed effects in S. enterica ; is DNA binding property of LacI responsible for these effects ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>To address this , we investigated the effect of LacI on the ability of S. enterica to multiply inside macrophages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>g003 Ability of LacI to-bind to the operator sequence is not responsible for its effect on the virulence of S. enterica In E. coli , LacI binds to the operator sequence present in the lac operon [ 25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>These results clearly demonstrate that the effect of LacI on the virulence of S. enterica is independent of its ability to-bind to the operator sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Conversely , in the absence of arabinose , no LacI is produce and lrp is highly expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Conversely , in the absence of arabinose , no LacI is produced and Lrp is synthesized ( Fig. 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22046399" target="_blank">22046399</a>]<br></li>
+<li>Strains carrying pYA4088 grown in the absence of arabinose produced PspA , but not LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805538" target="_blank">19805538</a>]<br></li>
+<li>( C ) Kinetics of LacI disappearance and PspA synthesis in cells grown in the absence of arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>We demonstrated in this study that the presence of LacI in S. Typhimurium 14028 did not inﬂuence bacterial invasion of epithelial cells ( see Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></li>
+<li>An araC PBAD lacI TT cassette was engineered to synthesize different levels of LacI when strains with these constructions were grown in the presence of arabinose ( Fig. 1C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>The lack of available arabinose in tissues removes the LacI repression of SO7 synthesis , enabling Salmonella to express this antigen in vivo during colonization of lymphoid tissues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18809658" target="_blank">18809658</a>]<br></li>
+<li>However , there was substantial degradation by 24 h. Therefore , during colonization of host tissues over the course of several days , w expect that the concentration of LacI in our strains will decrease due to a combination of dilution , as a result of cell division , and protein degradation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>No LacI was detected when the strains were grown in LB medium without 0.1 % arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805538" target="_blank">19805538</a>]<br></li>
+<li>This medium mimics intra-phagosomal environment as it is low in magnesium and phosphorous and acidic in pH. When grown in F medium for 2 h , there was significant decrease in the SseB protein level in the strain harboring pTrc99A but not in the strain harboring pTrc ( - LacI ) ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>PspA and LacI synthesis is regulated by 0.1 % arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19805538" target="_blank">19805538</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_54">
+In vivo , an arabinose-poor environment , the concentration of LacI decreases with each cell division , allowing increased antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></label>
+<input id="act_similarity_54", type="checkbox">
+<div class="ACT_similar">
+<li>In animal tissues , an arabinose-poor environment , the concentration of LacI decreases with each cell division , allowing increased antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li></div>
+<li>In animal tissues , where arabinose is unavailable , the concentration of LacI decreases with each bacterial cell division , thus allowing increased antigen synthesis ( Fig. 1D ) ( reviewed in reference 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>In animal tissues , where arabinose is unavailable , the concentration of LacI decreases , thus allowing increased antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913025" target="_blank">23913025</a>]<br></li>
+<li>As arabinose was diluted away , synthesis of Crp , Fur and LacI decreased , but PspA synthesis increased , as expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20585446" target="_blank">20585446</a>]<br></li>
+<li>The results showed that the synthesis of LacI was decreased with the passage , while 6-PGD synthesis increased in strain rSC0011 ( pS6-PGD ) as arabinose was diluted away ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26238722" target="_blank">26238722</a>]<br></li>
+<li>Although 2 % arabinose induced the maximum amount of LacI synthesis , repression of antigen synthesis was not complete ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LacI protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul>				<label class="DOM_collapse_similarity" for="dom_similarity_1">
+Escherichia coli Wild-type S. Typhimurium strain Lab collection This study This study S. Typhimurium 14028 contain plasmid pYM S. Typhimurium 14028 contain plasmid pYM - LacZYA - LacZ id pYM-LacY id pYM-LacA id pACYC-LacI 14028 contain plasm 14028 contain plasm 14028 contain plasm urium urium urium S. Typhim S. Typhim S. Typhim This study This study This study Wild-type E. coli strain for cloning lac sequence K12 MG1655 Lab collection Invasion Assays Mice Infections Mice experiments were conducted according to the principles outlined by the National Research Council ( US ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></label>
+<input id="dom_similarity_1", type="checkbox">
+<div class="DOM_similar">
+<li>Fold intracellular multiplication was calculated by dividing the intracellular bacterial load at 4 , 8 , and 24 h by the intracellular bacterial load at 2 h. S. Typhimurium 14028 contain plasmid pYM S. Typhimurium 14028 contain plasmid pYM - LacZYA - LacZ id pYM-LacY id pYM-LacA id pACYC-LacI 14028 contain plasm 14028 contain plasm 14028 contain plasm urium urium urium S. Typhim S. Typhim S. Typhim This study This study This study Wild-type E. coli strain for cloning lac sequence K12 MG1655 Lab collection Invasion Assays Mice Infections RNA for transcriptome sequencing was extracted from Lac or wild-type bacteria during invasion of HeLa cells ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></li></div>
+<li>LacI ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></li>
+<li>In addition , the repressor sequences include a DNA-bind-ing headpiece , and so are consistently longer than those of the binding proteins , even if one includes their signal sequences ; for example , the sequence of E. coli LacI is 363 residues , whereas the longest binding protein of this type is typically 350 residues or fewer , and lacks the characteristic DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19292879" target="_blank">19292879</a>]<br></li>
+<li>An absence of the anti-virulent factor LacI would make the species pathogenic .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25128737" target="_blank">25128737</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LacI evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Analysis of other taxonomic groups outside the γ-proteobacteria identiﬁed previously uncharacterized members of the LacI , DeoR , and AraC families as alternative transcriptional regulators of the L-rhamnose catabolic pathways ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24391637" target="_blank">24391637</a>]<br></li>
+<li>The predicted amino acid sequences of protein encoded by SBG0326 and LacI share 77 % identity and 88 % similarity ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LacI</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Salmonella Typhimurium Genes in rbs Operon That Are Regulated by luxS = Autoinducer-2 at Mid-Log Phase and Early Stationary Phases in Both the Absence and Presence of 0.5 % Glucose Fold change W = M LB broth LB broth þ glucose Fold change wCFS = mCFS Early Early stationary stationary Mid-log Putative identiﬁcation of JCVI database Genes Mid-log 1.1 a 1.1 1.1 a a rbsA 1.1 ABC superfamily ( ) , -- D-ribose high-afﬁnity transport protein ABC superfamily ( ) , D-ribose-transport protein ABC superfamily ( membrane ) , D-ribose high-afﬁnity transport protein D-ribose high-afﬁnity transport system membrane-associated protein Ribokinase Transcriptional repressor for rbs operon ( GalR = LacI family ) -- 1.1 -- -- rbsB 2.0 1.1 a 1.2 a 1.2 a 1.0 -- rbsC 1.1 a 1.3 a -- 1.2 -- rbsD 1.1 a -- -- -- 1.2 1.1 a rbsK rbsR 2.2 2.5 -- -- Differentially regulated genes between wild type ( W mutant cell-free supernatants are listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19909098" target="_blank">19909098</a>]<br></li>
+<li>Using bioinformatics analyses of L-Rha utilization genes , we identiﬁed twelve groups of rhamnose-related transcriptional regulators from different protein families , AraC , DeoR , and LacI , and proposed binding site motifs for these regulators within tentatively reconstructed regulons ( Figure S5 in Supplementary Material ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24391637" target="_blank">24391637</a>]<br></li>
+<li>Plasmids pK3-CpxR and pK3-RpoH , as well as Salmonella , lack the gene encoding the repressor LacI and thus they constitutively express CpxR and RpoH , respectively , from a lac promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26300871" target="_blank">26300871</a>]<br></li>
+<li>LacI serves to regulate expression from a plasmid promoter , Ptrc , that directs antigen synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>( A ) The effect of LacI on the expression of virulence genes inside macrophages was analyzed by RT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Using murine model of typhoid fever , we show that the expression of LacI causes a remarkable reduction in the virulence of Salmonella enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Microarray analysis revealed that LacI interferes with the expression of virulence genes of Salmonella pathogenicity island 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>s005 XLS ) ( 8.59 M B Figure S1 Analysis of expression of LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>( C ) Western blot analysis of LacI expression in different strains of Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>To evaluate the relationship between antigen synthesis and arabinose concentration , we introduced plasmid pYA4090 , which encodes the gfp3 gene under transcriptional-control of Ptrc , into S. Typhimurium strains 9555 ( relA1123 , no LacI ) , 9095 ( relA196 , low LacI ) , 9959 ( relA197 , me-dium LacI ) , and 9241 ( relA198 , high LacI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>( C ) In the RASV strains with regulated delayed lysis and synthesis of heterologous antigens , in the presence of arabinose , the transcription of the genes under the araC PBAD promoter is induced on the chromosome and on the plasmid , for the biosynthesis of the cell wall and the synthesis of the repressor proteins C2 and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>To achieve this goal , we replaced the promoter sequences of genes involved in metabolic functions or virulence with the tightly arabinose-regulated araC PBAD activator-promoter cassette ( 14 , 35 ) and repressed the synthesis of protective antigen by the arabinose-regulated synthesis of LacI to prevent the expression of the lcrV196-carrying sequence on pYA4535 until after lymphoid tissue colonization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20308296" target="_blank">20308296</a>]<br></li>
+<li>LacI negatively represses the expression from the Ptrc promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_14">
+LacI negatively regulates the expression from Ptrc that drives the synthesis of heterologous antigens ( Fig. 1C ) ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></label>
+<input id="rp_similarity_14", type="checkbox">
+<div class="RP_similar">
+<li>LacI negatively regulates the expression from trc promoter that drives the synthesis of heterologous antigens .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913025" target="_blank">23913025</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LacI binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>P Plpplpp PPtrc trc PtPrctrc bla-ss ( A ) bla-ss EcoRI ( 219 ) plcC ompA-ss EcoRI ( 219 ) EcoRI ( 299 ) P lc C plcC SalI ( 600 ) asd SalI ( 600 ) asd HindIII ( 621 ) asd bla CT HindIII ( 674 ) pYA3977 3471 bp HindIII ( 693 ) pYA4149 3545 bp pYA4110 3524 bp 5sT1T2 5sT1T2 5sT1T2 pBR ori pBR ori pBR ori ( B ) Ptrc promoter - 35 -10 5 ' AAATGAGCTGTTGACAATTAATCATCCGGCTCGTATAATGTGTGGAATTGTGAGCGGATAACAATTTCACACAGGAAACAGACC RBS Bla signal peptide sequence ATG AGT ATT CAA CAT TTC CGT GTC GCC CTT ATT CCC TTT TTT GCG GCA TTT TGC CTT CCT GTT TTT GCT CAC CCA GAA M S I Q H F R V A L I P F F A A F C L P V F A H P E ACG CTG GTG AAA GTA AAA GAT GCT GAA GAATTCGCAATTCCCGGGGATCCGTCGACCTGCAGCCAAGCT 3 ' T L V K V K D A E Bla C-terminal end sequence 5 ' GCA ACT ATG GAT GAA CGA AAT AGA CAG ATC GCT GAG ATA GGT GCC TCA CTG ATT AAG CAT TGG TAA 3 ' A T M D E R N R Q I A E I G A S L I K H W * Plpp promoter - 35 - 10 5 ' AAAAAATATTCTCAACATAAAAAACTTTGTGTAATACTTGTAACGCTACATGGAGATTAACTCAATCTAGCTAGAGAGGCTTTAC ACTTTATGCTTCCGGCTCGTATAATGTGTGGAATTGTGAGCGGATAACAATTTCACACAGGAAACAGCTATGACCATGATTACGGA TTCACTGGAACTCTAGATAACGAGGGCAAAA ( LacI binding site ) RBS OmpA signal peptide sequence ATG AAA AAG ACA GCT ATC GCG ATT GCA GTG GCA CTG GCT GGT TTC GCT ACC GTA GCG CAG GCC GCG AAT TC 3 ' M K K T A I A I A V A L A G F A T V A Q A I FIG. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18337376" target="_blank">18337376</a>]<br></li>
+<li>Ability of LacI to bind to the operator sequence is not responsible for its effect on the virulenceof S. enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>( A ) Survival plots of mice ( n = 5 in each case ) intra-peritoneally infected ( 10 bacteria/mouse ) with S. enterica expressing LacI ( Gly ) , a mutant of LacI that can not 4 60 +3 bind to the operator sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LacI</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Salmonella Typhimurium Genes in rbs Operon That Are Regulated by luxS = Autoinducer-2 at Mid-Log Phase and Early Stationary Phases in Both the Absence and Presence of 0.5 % Glucose Fold change W = M LB broth LB broth þ glucose Fold change wCFS = mCFS Early Early stationary stationary Mid-log Putative identiﬁcation of JCVI database Genes Mid-log 1.1 a 1.1 1.1 a a rbsA 1.1 ABC superfamily ( ) , -- D-ribose high-afﬁnity transport protein ABC superfamily ( ) , D-ribose transport protein ABC superfamily ( membrane ) , D-ribose high-afﬁnity transport protein D-ribose high-afﬁnity transport system membrane-associated protein Ribokinase Transcriptional repressor for rbs operon ( GalR = LacI family ) -- 1.1 -- -- rbsB 2.0 1.1 a 1.2 a 1.2 a 1.0 -- rbsC 1.1 a 1.3 a -- 1.2 -- rbsD 1.1 a -- -- -- 1.2 1.1 a rbsK rbsR 2.2 2.5 -- -- Differentially regulated genes between wild type ( W mutant cell-free supernatants are listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19909098" target="_blank">19909098</a>]<br></li>
+<li>lacI which encodes lac repressor ( LacI ) is located adjacent to lacZYA , but is transcribed as a separate message .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>The genes whose expression was affected in the strain harboring pTrc99A but not in the strain harboring pTrc ( - LacI ) were taken into consideration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>To our interest , 4 genes ( ssaK , ssaJ , ssrA and orf245 ) belonging to SPI-2 and phoP were down-regulated in the strain harboring pTrc99A but not in the strain harboring pTrc ( - LacI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>LacI expression in 14028 was also under the control of its native promoter by inserting both lacI promoter and lacI gene sequence to pACYC184 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></li>
+<li>Expression of lacI in the strains harboring pTrc99A and + pBR322 ( LacI ) was confirmed by RT-PCR and Western blot ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>However , it was also noted that although the lacI constructs in 9095 ( relA196 ) and 9959 ( relA197 ) produced different amounts of LacI ( Fig. 1C ) , there was no signiﬁcant difference in gfp gene expression between the two strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+<li>This reduction was not observed in the strain harboring pTrc ( - LacI ) indicating that LacI interferes with the expression of these genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>It has been demonstrated that the loss of lacI in S. enterica contributes to its virulence evolution , because LacI interferes with the expression of SPI-2 genes [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25362512" target="_blank">25362512</a>]<br></li>
+<li>Expression of htrA is controlled by the trc promoter , which is repressed by LacI , also encoded on the plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19246758" target="_blank">19246758</a>]<br></li>
+<li>LacI negatively represses the expression from the Ptrc promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>To further confirm this hypothesis , the kil gene was cloned into the pUA1085 plasmid ( Table 2 ) , downstream the Ptac promoter that is negatively regulated by the LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16713610" target="_blank">16713610</a>]<br></li>
+<li>In the absence of LacI , expression of sicA shot up , rendering it to be the most important and thus , indispensable amongst the barrage of other virulent proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25128737" target="_blank">25128737</a>]<br></li>
+<li>This phenomenon was described for the first time for lactose utilization by Escherichia coli requiring the expression of the lac operon that is negatively regulated by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28027601" target="_blank">28027601</a>]<br></li>
+<li>We have chosen LacI for this study because it is very important for a bacterium harboring the lac operon to have lacI as unnecessary expression of the lac operon lowers the fitness of the bacteria harboring it [ 15,16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>In the resulting strain 9449 , the expression of Lrp is regulated by LacI , whose expression is under the control of the araC PBAD system ( 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>( C ) In the RASV strains with regulated delayed lysis and synthesis of heterologous antigens , in the presence of arabinose , the transcription of the genes under the araC PBAD promoter is induced on the chromosome and on the plasmid , for the biosynthesis of the cell wall and the synthesis of the repressor proteins C2 and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22144485" target="_blank">22144485</a>]<br></li>
+<li>LacI binds to the operator region of the lac operon and prevents the transcription of lacZYA genes unless lactose is present in the environment [ 13 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Expression of the lac operon when lactose is absent in the environment is costly for the bacteria [ 14 ] and LacI prevents such unnecessary expression of the lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19495420" target="_blank">19495420</a>]<br></li>
+<li>Conversely , in the absence of arabinose , no LacI is produce and lrp is highly expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>When grown in the presence of arabinose , LacI is produced , which binds to Ptrc , blocking antigen gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20605977" target="_blank">20605977</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

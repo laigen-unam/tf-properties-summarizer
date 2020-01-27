@@ -1,0 +1,774 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Cbl</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Cbl</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Cbl transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Labeling in the presence of CNCbl of positions 13 -- 17 beyond the Ton box was decreased 30 % relative to residues 1 -- 12 , suggesting impaired access to residues further in the barrel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Only in the BtuB structures can the Ton box be seen in the presence and absence of CNCbl ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Position 30 was somewhat more accessible in the presence of CNCbl but did not respond to E3R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Position 31 was unusual in that its labeling was lower in the presence of CNCbl in the uncoupled mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>In contrast , the presence of CNCbl resulted in high labeling of these positions , comparable with the D6C level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Cys residues at positions 1 -- 6 were labeled equally well in the absence or presence of CNCbl ( Fig. 1 A and data not shown ; labeling relative to D6C in Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>The extent of labeling of either Cys residue by BMCC and the response to CNCbl or E3R were unaffected by the presence of either Pro substitution ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Binding of E3R stabilizes the docked conformation and binding of CNCbl results in undocking , which is characterized by high residue mobility and high labeling .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>There was no detectable difference in labeling of any of the positions or their response to CNCbl or E3R related to TonB function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>CNCbl conferred increased access to labeling at many positions , whereas E3R resulted in decreased access .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>mediate the active transport into the periplasm of cobalamins Most crosslinks were stimulated by CNCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Competition § To whom correspondence should be addressed at : Department of Microbiology , Univerbetween CNCbl and colicin could reflect their binding to the sity of Virginia School of Medicine , P.O. Box 800734 , Charlottesville , VA 22908-0734 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Differential substrate-induced signaling through the TonB-dependent transporter BtuB Nathalie Cadieux * , Phu G. Phan * † , David S. Caﬁso ‡ , and Robert J. Kadner * § Departments of * Microbiology and ‡ Chemistry , University of Virginia , Charlottesville , VA 22908 Edited by M. J. Osborn , University of Connecticut Health Center , Farmington , CT , and approved July 25 , 2003 ( received for review April 25 , 2003 ) The BtuB transporter mediates high-afﬁnity binding and TonB - The mechanism by which TonB promotes transmembrane dependent active transport of vitamin B12 [ cyanocobalamin movement and release of substrates from the transporters is ( CNCbl ) ] across the outer membrane of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Crosslinking to TonB and site-directed spin labeling initial step in TonB-dependent transport is the signal transduc-indicated that the Ton box of BtuB undergoes a substantial con - tion event in which substrate binding triggers a conformational formational transition in response to CNCbl binding , but only slight transition on the periplasmic face , which could direct TonB to movement was seen in crystal structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Binding of E Abbreviations : OM , outer membrane ; Cbl , cobalamin ; CNCbl , cyano-Cbl ; BMCC , 1-bioti-namido-4 - [ 4 - ( maleimidomethyl ) cyclohexane-carboxamido ] butane ; E3R , receptor-bind-colicins to BtuB is competitively inhibited by CNCbl ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>BtuB , which result in loss of Cbl transport but do not affect Cbl Labeling of many positions was increased strongly when CNCbl binding or entry of the TonB-independent phage BF23 and E was present , consistent with the undocking of this region pro- colicins ( 13 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Other TonB - ( Cbls ) such as vitamin B12 [ cyano-Cbl ( CNCbl ) ] and of iron dependent transporters also show increased interaction with complexed to siderophores or heme or released from iron - TonB when their substrates were added , as detected by formbinding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>In the presence of * Correspondence : tingnahu@ym.edu.tw 1Institute of Microbiology and Immunology , School of Life Science , National Yang-Ming University , Taipei 11221 , Taiwan Full list of author information is available at the end of the article Ado-Cbl , the stability of the btuB mRNA is reduced with a half-life of only 2 - 4 minutes [ 7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Mutations affecting response of Cbl to cofactors To evaluate the contributions of residues lining the interdomain cavity to cofactor binding responses , we used site-directed mutagenesis to make four full-length Cbl point mutants , CblT102W , CblT202A , CblE150A and CblW166A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Most of the family members characterized so far require indu-cers to activate their target promoters and inducer binding/response usually involves qualitative and / or quantitative changes of the LTTR-DNA complexes formed .9 -- 12 The Cbl regulator seems to be an exception to this rule , as it recognizes a single binding site in the responsive promoters pssu and ptau , and its function is negatively affected by APS .8 Generally , the structural consequences of ligand binding/response by LTTRs are poorly understood .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Comparison of oligomerization patterns of CysB , Cbl and Cbl mutants All LysR family members are believed to-bind their target promoters as either dimers or tet-ramers .9 CysB is tetrameric in solution25 and measurements of its DNA-binding stoichiometry proved that the homotetramer is the active form .11 The oligomerization state of the active form of Cbl has not been precisely determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Although we could not demonstrate a clear physiological role for Cbl in nitrogen metabolism , it activates transcription of operons whose products catabolize nitrogen - and sulfur-containing compounds ( 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121068" target="_blank">11121068</a>]<br></li>
+<li>Our data comprise the ﬁrst evidence that APS may act as the negative cofactor of the transcriptional-regulator Cbl , and that APS , and not sulphate itself , serves as the signalling molecule for sulphate excess .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>As far as we are aware , this report provides the ﬁrst biochemical and genetic data supporting the function of APS as a negative cofactor of a transcriptional-regulator ( here Cbl ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We thus conclude that the previously reported phenotype was complicated owing to the presence of suppressor mutations which improved transport across the CM of low levels of Cbl sufﬁcient to allow a response in the methionine assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The data presented above prompted us to choose the ssu system as an archetypal ssi-type regulation model , allowing us to analyse the functions of the Cbl activator independently on CysB and to search for potential effectors of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>In the absence of inorganic sulphate ( the preferred sulphur source for cysteine biosynthesis ) , E. coli and several other bacterial species are able to utilize organosulphur compounds by synthesizing , de novo or at elevated levels , a number of sulphate starvation-inducible ( SSI ) proteins .2,3 In E. coli , the ssi genes characterized so far include the ssuEADCB and tauABCD operons encoding uptake systems for organosulphur compounds , aliphatic sulphonates and taurine , respectively , and oxidor-eductase-type enzymes that release sulphite from the respective substrates .4 -- 6 In contrast to cys genes , expression of tau and ssu is induced only in the absence of inorganic sulphate and requires the presence of the transcription factor Cbl .5,6 The Cbl protein is closely related to CysB ( 41 % identity and 60 % similarity in amino acid sequence ) and its gene is controlled by CysB in parallel with the cys regulon .7 In contrast to CysB , Cbl activates transcription from target promoters without an inducing ligand but its function is negatively affected by adenosine 5 ′ - phosphosulphate ( APS ) , the first intermediate in the sulphate assimilation pathway .8 Thus , Cbl-mediated regulation explains the hierarchy of utilization of sulphur sources by E. coli : cysteine > sulphate > sulphonates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The evolutionary drive to select APS ( an early intermediate of sulphate metabolism ) as a negative effector of Cbl is that it allows differentiation of CysB-mediated activation of the sulphate assimilatory pathway ( cys genes ) from Cbl-mediated activation of th sulphate-starvation response ( ssi genes ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>However , both Cbl and CysB have been demonstrated to-bind directly in the tau and ssu promoter regions ( van der Ploeg et al. , 1997 ; 1999 ) and to be required concurrently for direct activation of the tau promoter in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>This was not surprising , as thiosulphate has previously been shown to decrease binding of Cbl protein to the tau and ssu promoter regions ( van der Ploeg et al. , 1997 ; 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>However , when the Cbl protein was provided in the absence of functional CysB ( by expressing the cbl gene from a trc promoter ) , the tauD9-9lacZ fusion was still not expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>This result clearly shows that Cbl protein is solely responsible for direct positive control of the ssu promoter , and a positive effect of CysB is indirect as a result of CysB-dependent activation of the cbl gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>This could indicate that Cbl and CysB recognize the same molecules as inducer and anti-in-ducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Acetylserine , the inducer of transcription of CysB-regulated genes , stimulated binding of CysB but not of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Cbl therefore appears to be a transcription activator for genes whose expression is induced by sulfate starvation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>In sulfate-grown cells however , cbl is still synthesized , and repression of tau and ssu gene expression by sulfate must be caused by a different mechanism that involves the Cbl protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>But it is more likely that the anti-inducer for Cbl is different from that for CysB and that this difference causes repression by sulfate of ssu and tau genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Even though expression of both the tau and ssu genes is repressed by sulfate and regulated by Cbl , the operons are probably regulated in a different manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>As shown in Fig. 4A , the formation of the DNA -- protein complex with wild-type Cbl was negatively affected by the presence of thiosulphate ( which has been also observed earlier ; van der Ploeg et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Two transcripts of identical length ( 141 nt and 138 nt ; Fig. 4B , lane 2 ) to those synthesized in the presence of wild-type Cbl-His6 ( compare Fig. 2 ) were also detected with Cbl S149M protein , and their synthesis was not affected by either NAS or thiosulphate added to the preincubation mixture ( Fig. 4B , lanes 3 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The Cbl variants ( wild-type and mutant proteins ) were purified as C-terminally His6-tagged derivatives and their fluorescence emission spectra were recorded in the presence and absence of APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>DNase I ( Promega ) was used at a ﬁnal concentration of 3.3 ¥ 10 -- 6 U ml -- 1 , and digestion was performed as described earlier ( Hryniewicz and Kredich , 1991 ) in the absence or presence of wild-type Cbl preparation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>In contrast , for the Cbl variants with the substitutions T102W , E150A , W166A and T202A , in vivo expression from pssuE was `` constitutive '' ( insensitive to the presence or absence of sulphate ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>we also noticed that the high-level expression of the ssu -- lacZ fusion , induced by Cbl alone , could not be reached when cysB was expressed in the same cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Synthesis of b-galactosidase from the chromosomal ssuE9-lacZ fusion was also virtually absent in a cbl mutant grown with the derepressing sulfur sources glutathione or lanthionine ( Table III ) , which demonstrated that expression of ssu required the presence of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Expression of ssu -- lacZ fusion in the presence of plasmids expressing wild-type Cbl ( pME128 ) and Cbl S149M ( pME4185 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>As shown in Table 3 , when the cells were grown with derepressing sulphur sources , taurine or lanthionine , the expression of ssu -- lacZ reached essentially similar levels in the presence of wild-type Cbl and Cbl S149M .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>When Cbl was expressed in a CysB-independent manner , the ssu -- lacZ fusion was induced 125-fold in the presence of CysB T22I and only 30-fold in the presence of CysB T196I .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We believe that the slight ( 1.5-fold ) repression of ssu -- lacZ by sulphate observed in the presence of Cbl S149M is mediated by CysB and not by Cbl directly , as sulphate is converted to sulphide , which inhibits CysB-activated expression of the cbl gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Nevertheless , it seems clear that faithful transcription initiation at the ssu tsp can be activated by Cbl S149M even in the presence of APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Expression of the ssu genes required the presence of Cbl , which binds just upstream of the 235 region of ssu .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Expression from the ssuE promoter in vivo in the presence of CblWT and Cbl mutant proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The ability of CblS149M to activate transcription from the ssu promoter in the presence of thiosulphate was reported previously .8 It may be concluded , therefore , that at least four residues lining the cavity in the RD of Cbl ( S149 , E150 , W166 and T202 ) are involved in interactions with both APS and thiosulphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>It can be noticed that CysB , either alone or with its co-inducer , N-acetyl-L-serine ( NAS ) , was not able to induce transcription from the ssu promoter ( lanes 7 and 8 ) , and the presence of CysB together with Cbl resulted in a slight decrease in ssu-speciﬁc transcripts ( Fig. 2A , lane 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>In order to overproduce the Cbl S149M variant and test its activity in vitro , we constructed plasmid pME4819 , in which the cbl mutant allele is expressed from the ptrc promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>As position 149 in Cbl is occupied by a serine , we were interested to test the effect of a S149M substitution on the function of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The addition of sulphate to the growth media resulted in 20 - to 27-fold reduction in b-galactosidase levels in the strain containing wild-type Cbl but only a 1.5-fold reduction in the strain containing Cbl S149M .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We conclude therefore that the substitution S149M results in ` constitutive ' activity of Cbl , observed in vivo as a lack of sulphate-mediated repression of ssi-type promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Accordingly , the characteristics of constitutive Cbl mutant S149M , presented here , are consistent with lower sensitivity of the mutant protein to inhibition by APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>A. Binding of wild-type Cbl and Cbl S149M to the 351 bp ssu promoter fragment in EMSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Of these , APS appears to abolish entirely the positive control function of wild-type Cbl , but the substitution of S149M modiﬁes Cbl towards lower sensitivity to APS , which correlates with ` constitutive ' ( not repressed by sulphate ) activation of the ssu promoter in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Using in vivo and in vitro transcription assays , we demonstrate that pssuE , a Cbl responsive promoter , is down-regulated not only by the cofactor , adenosine phosphosulphate ( APS ) , but also by thiosulphate , and , that the same RD determinants are important for the response to both cofactors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Adenosine-5 cents - phosphosulphate ( APS ) inhibits the positive control function of Cbl The system for in vitro transcription from the ssu promoter allowed us to test the effects of several low-molecular-weight compounds as possible cofactors of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Free Cbl was bound by the charcoal layer , and the ﬁltrate contained protein-bound Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Cbl-His protein retains the functions of native Cbl 6 The Cbl protein is highly insoluble when overexpressed , and our earlier attempts to purify native Cbl to homogeneity were unsuccessful .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The observed periplasmic accumulation of CN-Cbl could reﬂect its binding to BtuF , but this explanation would require the presence of at least 500 molecules of BtuF , which seems unlikely since there are only 200 to 300 molecules of BtuB in the OM and roughly 3 molecules of the binding activity per cell in osmotic shock ﬂuid ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The amount of bound Cbl was plotted against the unbound concentration , and the data points were ﬁt to a hyperbolic binding curve ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The shorter lag period in JM101 than in MC4100 was consistent with the presence of a larger pool of Ado-Cbl in JM101 ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>The structure of the c-Cbl monomer reveals the presence of a distinct cavity between RDI and RDII that is the most probable site of ligand binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The amount of the Cbl-DNA complex increased proportionally to the amount of Cbl preparation added and was not affected by the presence of acetylserine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>The region from 262 to 0 relative to the transcription start is needed for high level expression , which is probably brought about by transcription activation by the Cbl protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>We therefore propose that the presence of Cbl alone is not sufﬁcient to activate the tau promoter , due to the unfavorable position of its binding site relative to the 210 region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>To gain further insight into the interrelationship between CysB and Cbl in activation of tauABCD expression , we undertook in vitro studies of binding of both proteins to the tau promoter region and found that a 317-bp DNA fragment containing 266-bp region preceding the transcription start site of tau bound both CysB and Cbl proteins in a speciﬁc manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Characterization of Cbl S149M mutant by DNA binding and in vitro transcriptional activation of the ssu promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We have used the coordinate set to model the binding of the effector adenosine 5 ′ - phosphosulphate to c-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Noticeably , both the contemporary Cbl and CysB proteins of E. coli still `` respond '' to the presence of thiosulphate , either by loss of affinity for DNA ( Cbl ) or by becoming `` frozen '' in an inactive-conformation that prevents occupation of `` activating binding sites '' at responsive promoters ( CysB , M. H. , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The discovery that APS is a negative effector of Cbl-activated transcription initiation posed the question whether APS inﬂuences the DNA-binding ability of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Effect of thiosulphate on DNA-binding by Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The earlier data suggested that Cbl function is also affected by thiosulphate , which lowers the affinity of the wild-type protein for DNA .6 The effect of thiosulphate on the DNA-binding and in vitro transcription activation by the Cbl variants was therefore studied .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The same mutation , S149M , converts Cbl to the form insensitive to thiosulphate , the negative effector of DNA-binding ability of the wild-type protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Curiously , no significant impact of APS on the DNA binding function of Cbl has been observed , although the protein evidently loses its activating function in the presence of APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Regulation of organosulphur assimilation in E. coli 1351 the interaction of Cbl with APS as a ` co-repressor ' might speciﬁcally affect the positive control function of the protein , leaving its DNA-binding ability unaffected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Since btuR function appeared to be required for biosynthesis of Ado-Cbl , growth on ethanolamine by strains JM101 and MC4100 and their btuR : : TnJO transductants , RK6726 and 6727 , was examined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>These results indicate that Cbl is accumulated in the periplasm in the absence of BtuF and thus that substantial uptake into the cytoplasm requires BtuC and BtuF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Repression of btuB-lacZ in btuR deletion strains Repression in the presence of : Strain pMJF4 pLC4-6 No plasmid + CN-Cbl ND ND 3 9 7 28 - CN-Cbl - CN-Cbl + CN-Cbl - CN-Cbl + CN-Cbl ND ND 21 25 50 68 ND 56 58 54 55 62 ND 2 52 46 54 60 RK6709 ( wild type ) RK6725 ( btuR ) del3 del6 dellO del25 96 2 43 40 60 61 53 34 60 56 64 65 a Data are expressed as in Table 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>This fact suggests in vivo lowering of EAL afﬁnity for CN-Cbl by a reactivating factor in the presence of ATP and Mg2 , as in the case of diol and glycerol dehydratases ( 28 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>The same requirements for the activation of inactive enzyme -- CN-Cbl complex also suggest this mechanism of ( re ) activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>In vitro activation of the EAL -- CN-Cbl complex by puriﬁed EutA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>By comparison with the no-CN-Cbl control , it is evident that approximately 71 % of the inactive EAL -- CN-Cbl complex was activated by EutA under the experimental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>In situ reactivation of the inactivated holoenzyme and in situ activation of the enzyme -- CN-Cbl complex were assayed with toluene-treated ( permeabilized ) cells ( 20 ) by incubation at 37 ° C for appropriate time periods in the presence of 10 mM ethanolamine , 15 M AdoCbl , 3 mM ATP , and 3 mM MgCl2 in 30 mM potassium phosphate buffer ( pH 8.0 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>In vitro reactivation of inactivated holoEAL and in vitro activation of the EAL -- CN-Cbl complex were assayed by incubation with an appropriate amount of EutA , 20 mM ATP , 20 mM MgCl2 , 10 M AdoCbl , and 25 mM potassium phosphate buffer ( pH 8.0 ) , in a total volume of 50 l .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>These results suggested that about 60 % of the enzyme in the cells grown in 2 g of CN-Cbl/ml had been converted to the inactive enzyme -- CN-Cbl complex or the inactivated holoenzyme under the growth conditions and that the inactive enzyme-cobalamin complexes underwent ATP-dependent reactivation or activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>It was also shown here that the puriﬁed recombinant EutA protein alone reactivated the inactivated holoEAL and activated the EAL -- CN-Cbl complex in the presence of AdoCbl , ATP , and Mg2 to approximately 46 and 71 % of the original activity , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Despite the presence of the inactivated holoenzyme or inactive enzyme -- CN-Cbl complex , enzyme activity was not increased at all in the presence of ATP and Mg2 without AdoCbl , indicating that free AdoCbl is also absolutely required for the ( re ) activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>The results shown in Fig. 7B indicate that the inactive complex of EAL with CN-Cbl , an adenine-lacking cobalamin , also underwent rapid activation in vitro by EutA in the presence of free AdoCbl , ATP and Mg2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>In the metE strain RK4379 , which grew well with 0.5 nM CN-Cbl , the presence of the btuF : : Km mutation prevented utilization of CN-Cbl at concentrations of 500 nM or less , and the growth response was impaired even at 5 M or higher .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>This result raises the possibility that an additional pathway for synthesis of Ado-Cbl is operational when cells are grown in the presence of ethanolamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>To determine whether the conversion of CN-Cbl into other cobalamin species was affected , isogenic pairs of strains differing at btuR were grown in the presence of CN - [ 57Co ] Cbl for 6 h .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Meanwhile , enzyme activity with added AdoCbl in permeabilized E. coli cells grown in the presence of 2 g of CN-Cbl/ml was about 40 % of that in cells grown in the presence of 40 ng of CN-Cbl/ml ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>It was amazing that the presence of a 50-fold excess of CN-Cbl in a growing culture resulted in only 60 % reduction of enzyme activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Growth in the presence of 10 ~ tm CN-Cbl repressed the level of binding activity by 15-fold in the btuE § strain and ll-fold in the AbtuE501 ,502 strain , showing that BtuE is not involved in regulation of btuB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>In four tetracycline-sensitive strains ( del3 , -6 , -10 , and -25 ) , btuB expression was not repressed by CN-Cbl when plasmid pMJF4 was present , whereas the larger plasmid pLC4-6 restored repressible regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>The simplest interpretation of this finding is that the effector for btuB repression is Ado-Cbl or a derivative .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>In all strains , Ado-Cbl was effective for repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>It is not known how Ado-Cbl mediates repression of BtuB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>In the btuR + strain RK6709 , f-galactosidase levels were repressed 20 - to 50-fold by CN-Cbl , CH3-Cbl , or Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>This explanation is unlikely , since btuB expression is still repressed by Ado-Cbl in the btuR strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Although exogenous CN-Cbl c CH3-Cbl did not repress btuB expression in btuR mutants , Ado-Cbl was fully effective in repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>The amount of label bound to BtuB or accumulated in the periplasm is estimated from its ability to be released during chase with excess unlabeled CN-Cbl and can represent a substantial proportion of the total .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The lack of Cbl transport into the cytoplasm is judged from the constant steady-state level of this material , the rapid and extensive release of label upon chase , and the defective growth responses to CN-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Most of the label taken up by these strains was released upon chase with nonradioactive CN-Cbl , in contrast to its complete retention in the btu § strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>Transport of CN-Cbl across the outer membrane and its accumulation in the periplasm is mediated by the TonB-dependent transporter BtuB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>In transport and binding experiments , correction was made for binding of CN [ STCo ] Cbl to filters in the absence of cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>Preliminary tests of CN-Cbl binding and transport suggest that some suppressor variants exhibit increased binding and periplasmic accumulation of CN-Cbl relative to the unsuppressed mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>We suggest that some suppressors result in increased expression of BtuB or increased transport of CN-Cbl into the periplasm .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Growth was even more strongly reduced on minimal medium supplemented with methionine and was undetectable on minimal medium lacking methionine or supplemented with 5 M CN-Cbl ( Table 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Binding was also measured by isothermal titration calorim-etry , in which the heat evolved following addition of incremental portions of CN-Cbl was measured and plotted against th FIG. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Transport activity was measured in btuB452 hosts , in which CN-Cbl uptake is markedly reduced ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>In the ﬁrst , BtuF-His was incubated with varied concentrations of CN - [ 57Co ] Cbl , and samples were ﬁltered through a charcoal pad to rapidly remove unbound Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Binding is plotted as the number of picomoles of CN-Cbl bound to BtuF as a function of the concentration of CN-Cbl added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Binding of CN-Cbl to BtuF-His .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Binding of CN - [ Co ] Cbl to puriﬁed BtuF-His , measured in the charcoal ﬁltration assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Uptake of CN - [ 57Co ] Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>However , growth in response to CN-Cbl occurred only after a 48-h lag .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>coli : Crystal Structure a utational A Cofactor-binding Do the C scriptional Regulator e o nalysis o sp nse in E nd M f the main of bl Tran Emilia Stec1 , Malgorzata Witkowska-Zimny2 , Monika M. Hryniewicz2 Piotr Neumann3 , Anthony J. Wilkinson4 , Andrzej M. Brzozowski4 Chandra S. Verma5 , Jolanta Zaim6 , Stanislaw Wysocki1 and Grzegorz D. Bujacz1 1Faculty of Biotechnology and Food Sciences , Technical University of Lodz , Stefanowskiego 4/10 , 90-924 Lodz , Poland 2Institute of Biochemistry and Biophysics , Polish Academy of Sciences , Pawinskiego 5A , 02-106 Warsaw , Poland 3Faculty of Chemistry , Nicolaus Copernicus University of Torun , Gagarina 7 , 87-100 Torun , Poland 4Structural Biology Laboratory , Department of Chemistry , University of York , York YO10 5YW , UK 5Bioinformatics Institute , Department of Biological Sciences , National University of Singapore , 30 Biopolis Way , # 07-01 Matrix , Singapore 138671 , Singapore 6Systems Biology and Bioinformatics Research Group Maltanska 4/37 02-761 Warsaw , Poland Cbl is a member of the large family of LysR-type transcriptional-regulators ( LTTRs ) common in bacteria and found also in Archaea and algal chloroplasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The Escherichia coli ssuEADCB Gene Cluster Is Required for the Utilization of Sulfur from Aliphatic Sulfonates and Is Regulated by the Transcriptional Activator Cbl * ( Received for publication , April 7 , 1999 , and in revised form , July 13 , 1999 ) Jan R. van der Ploeg ‡ , Roksana Iwanicka-Nowicka § , Tomasz Bykowski § , Monika M. Hryniewicz § , and Thomas Leisinger ‡ ¶ From the ‡ Institut für Mikrobiologie , Swiss Federal Institute of Technology , ETH-Zentrum , CH-8092 Zürich , Switzerland and § Institute of Biochemistry and Biophysics , Polish Academy of Sciences , 02-106 Warsaw , Poland * This work was supported in part by grants from the Federal Institute of Technology , Zürich and from the Polish State Committee for Scientific Research , Project Number 6PO4A05216 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Dec. 1997 , p. 7671 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Involvement of CysB and Cbl Regulatory Proteins in Expression of the tauABCD Operon and Other Sulfate Starvation-Inducible Genes in Escherichia coli JAN R. VAN DER PLOEG ,1 ROKSANA IWANICKA-NOWICKA ,2 MICHAEL A. KERTESZ ,1 THOMAS LEISINGER ,1 AND MONIKA M. HRYNIEWICZ2 * Mikrobiologisches Institut , Swiss Federal Institute of Technology , ETH-Zentrum , CH-8092 Zürich , Switzerland ,1 and Institute of Biochemistry and Biophysics , Polish Academy of Sciences , Warsaw , Poland2 Received 10 July 1997/Accepted 3 October 1997 Starvation for sulfate results in increased synthesis of several proteins in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Experimental Procedures Chemicals and Oligonucleotides AdoCbl and its analogs methylcobalamin , cobinamide dicyanide , and cyanocobalamin were purchased from Sigma .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>For information regarding the AdoCbl analogs B6,N6-dimethyl-AdoCbl , N6-methyl-AdoCbl , N1-methyl-AdoCbl , 3-deaza-AdoCbl , PurCbl , 2 - deoxy-AdoCbl , and 13-epi-AdoCbl , see [ 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>The source of this unbound tritium is most likely from light-mediated degradation of AdoCbl , which is highly unstable under ambient light conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Moreover , the fact that structural modulation occurs over a broad range of concentrations of AdoCbl suggests that this RNA is not likely to make use of cooperative binding of multiple effectors , which would result in a more substantial response to small changes in effector concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Although these RNAs maintain diminished but detectable levels of effector binding , neither exhibits genetic control upon the addition of AdoCbl to bacterial cultures harboring the corresponding reporter constructs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Our data suggest that this genetic control process is mediated by the selective binding of AdoCbl to the btuB mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Disruption of Metabolite-RNA Binding Has Consequences for Genetic Control The presence of AdoCbl causes reductions in ribosome binding and translation efficiency of the btuB mRNA [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>In the case of btuB , the mRNA directly binds the AdoCbl effector and becomes resistant to translation initiation , presumably by preventing ribosome binding [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>However , when ATP and Mg2 were supplemented in the reaction mixture in addition to AdoCbl , deamination of ethanolamine proceeded apparently without signiﬁcant inactivation , even 60 min after the reaction was initiated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>The absolute requirements of AdoCbl and ATP but not of a reducing agent for reactivation strongly suggest that the reactivation of inactivated holoEAL by the EAL-reactivating factor takes place by the ATP-dependent cobalamin-exchange mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Finally , the complex dissociates in the presence of ATP , forming apoenzyme that can be reconstituted into active holoenzyme with intact AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>This apparent inconsistency was solved by previous ﬁndings that the glycerol-inactivated enzymes in permeabilized cells ( in situ ) of Klebsiella oxytoca and Klebsiella pneumoniae undergo rapid reactivation in the presence of ATP , Mg2 ( or Mn2 ) , and AdoCbl ( 20 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Such activation did not occur at all in the absence of ATP and Mg2 or even in the presence of ATP and Mg2 without added AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>HoloEAL inactivated by O2 in the absence of substrate also underwent rapid reactivation by the factor in the presence of AdoCbl , ATP , and Mg2 ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>In vitro reactivation of ethanolamine-inactivated holoEAL in the presence of ATP , Mg2 , and AdoCbl was also examined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>When the holoEAL suicidally inactivated during deamination of ethanolamine was incubated with EutA in the presence of AdoCbl , ATP , and Mg2 , rapid reactivation of EAL took place ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>As we hypothesize that the living world was full of proteins and enzymes , the presence of AdoCbl in early metabolism can not be completely excluded , but is not so likely .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12206460" target="_blank">12206460</a>]<br></li>
+<li>Boxed numbers on the left and right , respectively , reflect the approximate KD and the fold repression of - galactosidase activity in the presence of AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>In either case , the irreversible cleavage of the Co-C bond of enzyme-bound 684 AdoCbl takes place , and the modiﬁed coenzyme is kept tightly bound , resulting in the irreversible inactivation of the enzyme .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Fraction cleaved values were normalized relative to the highest and lowest cleavage values measured for each location , including the values obtained upon incubation in the absence of AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Filled and open symbols represent increasing and decreasing cleavage yields , respectively , upon increasing the concentration of AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Cbl protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Finally , the complex dissociates in the presence of ATP , forming apoenzyme that can be reconstituted into active holoenzyme with intact AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Despite the presence of the inactivated holoenzyme or inactive enzyme -- CN-Cbl complex , enzyme-activity was not increased at all in the presence of ATP and Mg2 without AdoCbl , indicating that free AdoCbl is also absolutely required for the ( re ) activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Such activation did not occur at all in the absence of ATP and Mg2 or even in the presence of ATP and Mg2 without added AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>These findings indicate that the btuB mRNA leader forms a binding pocket for AdoCbl and that the RNA makes numerous contacts with the effector to ensure high molecular specificity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>For example , the S. typhimurium cob operon , which encodes proteins in the biosynthetic pathway for the AdoCbl coenzyme , carries B12 box and other regulatory structures in its leader domain [ 28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>In the cCbl dimer , the contacts between the two subunits involve hydrogen-bonding between strand βB in domain I of one molecule , and βG from domain II in the second molecule ; the five-stranded β sheet in RDI and the five-stranded β sheet in RDII coming together to form a ten-stranded sheet .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The receptor-binding domain of partially reversed by suppressor mutations affecting nearby colicin E3 , which binds to BtuB competitively with CNCbl , resulted residues in the Ton box or residue Gln-160 of TonB ( 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Binding of E3R stabilizes the docked conformation and binding of CNCbl results in undocking , which is characterized by high residue mobility and high labeling .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>The crystallographic views were thus inconsistent with results obtained by disulfide trapping and site-directed spin labeling ( 13 , 17 , 23 , 29 ) , which indicated that CNCbl triggers a substantial increase in residue mobility and contact of Ton box residues with TonB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Site-directed spin labeling ( 28 ) revealed the same behavior in that CNCbl and E3R conferred increased and decreased mobility of the residues , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Labeling in the presence of CNCbl of positions 13 -- 17 beyond the Ton box was decreased 30 % relative to residues 1 -- 12 , suggesting impaired access to residues further in the barrel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>Cys residues at positions 1 -- 6 were labeled equally well in the absence or presence of CNCbl ( Fig. 1 A and data not shown ; labeling relative to D6C in Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>The extent of labeling of either Cys residue by BMCC and the response to CNCbl or E3R were unaffected by the presence of either Pro substitution ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958215" target="_blank">12958215</a>]<br></li>
+<li>of atoms Protein Solvent r.m.s. deviation from ideal geom Bond distances ( Å ) Bond angles ( ° ) Average B factor ( Å2 ) Main chain Side-chain 7386 380 etry 0.016 1.80 Experimental Procedures 39.1 40.1 Crystallographic data collection Ramachandran plot Cloning , expression and purification of c-Cbl , as well as crystallographic data collection , have been reported .23 The source plasmid ( ES1 , Supplementary Data ) encoded the cCbl domain containing residues 88 -- 314 of native Cbl plus 20 additional amino acid residues ( including the hexahistidine peptide ) at the N terminus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>In our model of the c-Cbl -- APS complex , the adenine moiety of the ligand is recessed in the protein cavity and stabilized by stacking interactions with W166 , apolar contacts with F164 and Q103 an hydrogen bonds with Q246 , S107 , Q103 and W100 ( Figure 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>In order to compare the oligomerization patterns of Cbl and CysB , we carried out chemical cross-linking of the purified proteins using glutaraldehyde .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>This further confirms the importance of the surface containing D226 and D228 for the primary interaction of two Cbl monomers , a crucial requirement for protein function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>This led us to conclude that a proportion of the Cbl protein purified under aerobic conditions undergoes spontaneous disulphide bridging between C291 residues of two monomers and that the product of such covalent dimerization is stable enough to resist the denaturing conditions of SDS-PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Residues T102 , T202 , E150 and W166 are highly conserved in Cbl and CysB ( and their putative orthologues from other bacteria ) and they are implicated in cofactor binding in the modelling study .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Since highly puriﬁed CysB and a CysB-enriched extract gave identical results in DNA-binding assays with tauA and cysP promoters , we assume that our Cbl preparation also retained at least 50 % of the speciﬁc binding activity of the pure protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Characterization of Cbl S149M mutant by DNA-binding and in vitro transcriptional activation of the ssu promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>It seems therefore that binding of APS to Cbl is not associated with long-range conformational changes in the RD that are propagated to the DNA-binding domain ( DBD ) to abolish DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Curiously , no significant impact of APS on the DNA-binding function of Cbl has been observed , although the protein evidently loses its activating function in the presence of APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Since the RDs of LysR-type regulators are closely related in structure to the ligand-binding domains of the PBPs and LacI family members , the cofactor-binding site of Cbl is expected to lie in the cleft formed by RDI and RDII subdomains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>This could be expected only if the mode of APS binding to Cbl and c-Cbl is similar , since all of the five tryptophan residues in the full-length molecule are retained in the cofactor binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Here , we report the crystal structure of the cofactor-binding domain of Cbl ( c-Cbl ) from E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Here , we report the crystal structure of the C-terminal regulatory domain of Cbl ( c-Cbl , residues 88 -- 307 ) , refined to 2.8 Å resolution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>* Corresponding authors Keywords : E. coli ; Cbl regulator ; LysR-family ; crystal structure ; cofactor-binding Abbreviations used : PBP , periplasmic-binding protein ; LTTR , LysR-type transcriptional regulators ; RD , regulatory domain ; APS , adenosine phosphosulphate ; NAS , N-acetyl-L-serine ; DBD , DNA-binding domain ; OAS , O-acetyl-L-serine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Crystallization and preliminary crystallographic stu-dies of the cofactor-binding domain of the LysR-type transcriptional regulator Cbl from Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Comparison of oligomerization patterns of CysB , Cbl and Cbl mutants All LysR-family members are believed to bind their target promoters as either dimers or tet-ramers .9 CysB is tetrameric in solution25 and measurements of its DNA-binding stoichiometry proved that the homotetramer is the active form .11 The oligomerization state of the active form of Cbl has not been precisely determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The amino termini of c-Cbl protomers , to which the DNA-binding domains are attached , are exposed on the surface of the helix , so that it is conceivable that the helical arrangement could be achieved in the intact molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Speaking in favor of this model , we note that CysB and Cbl have exceptionally high amino acid sequence similarity , including their helix-turn-helix DNA-binding motifs ( 17 ) , and hence such cross talk is not unlikely .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Crystal packing of c-Cbl in the C2221 space group .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The crystallographic data for c-Cbl were processed in space group C2221 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The ability of CblS149M to activate transcription from the ssu promoter in the presence of thiosulphate was reported previously .8 It may be concluded , therefore , that at least four residues lining the cavity in the RD of Cbl ( S149 , E150 , W166 and T202 ) are involved in interactions with both APS and thiosulphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The characteristics of the Cbl S149M mutant allow us to argue that the S149 residue , analogous to T149 in CysB , lies in the protein region ( or ` cavity ' ) responsible for interactions with low-molecular-weight cofactors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Additionally , different residues at positions 149 and 270 of CysB and Cbl may be responsible for the specificity for the effector molecule , N-acetylserine and adenosine phosphosulphate , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>However , it seems unlikely that this helical packing is of physiological significance , since the protein does not produce extended footprints on DNA .5,8 Structure of the monomer The c-Cbl monomer has an ellipsoid shape of approximate dimensions 57 Å × 30 Å × 30 Å and consists of two similar subdomains , RDI and RDII , connected by two crossover regions comprising residues 163 -- 166 and 266 -- 269 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The topology diagram shows that both c-Cbl subdomains have a `` Rossmann-fold '' topology ,19 which is also present in the domains of the periplasmic substrate-binding proteins ( PBPs ) .20 RDI is composed of two separate regions of the polypeptide chain ( residues 88 -- 162 and 270 -- 307 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The Cbl protein is very similar in sequence to CysB , and many of the residues that were thought to interact with the inducer and the anti-inducer are conserved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>The overall fold of c-Cbl is very similar to the regulatory domain ( RD ) of another LysR-family member , CysB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The overall fold of Cbl ( residues 88 -- 307 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>We have also evaluated the importance of several residues implicated in cofactor control and oligo-merization by constructing and analysing a set of site-directed Cbl mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Mutations affecting response of Cbl to cofactors To evaluate the contributions of residues lining the interdomain cavity to cofactor binding responses , we used site-directed mutagenesis to make four full-length Cbl point mutants , CblT102W , CblT202A , CblE150A and CblW166A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Therefore , the role of the single cysteine residue in Cbl may be considered as accessory rather than essential for native protein function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>We can speculate instead that APS induces subtle changes in the overall RD structure that may affect Cbl contact ( s ) with RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>We have constructed and analysed several full-length Cbl variants bearing single residue substitutions in the RD that affect cofactor responses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>This leads us to conclude that the single residue substitutions in Cbl listed above significantly affect the APS-binding affinity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>,8 i 0.6 0.4 Strain 0.2 I t C : 0.1 MC4100 and JM101 also converted CN-Cbl into Ado-Cbl and two unidentified electrophoretic species , one migrating near aquo-Cbl and the other migrating between CN-Cbl and CH3-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>In vitro activation of the EAL -- CN-Cbl complex by puriﬁed EutA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Lane 7 contains CN - [ 57Co ] Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Based on the crystal structure and molecular modelling , we propose a model for the interaction of Cbl with adenosine phosphosulphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Structure of the dimer Gel-filtration studies indicated that c-Cbl is a dimer ,23 an observation that is confirmed by the crystal structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The c-Cbl crystal contains one non-crystallographic dimer ( formed by monomers A and B ) , as well as two independent crystallographic dimers ( 2-fold related ) consisting of chains C and D and their symmetry mates C ′ and D ′ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Each c-Cbl monomer interacts with a neighbouring monomer , to which it is related by 2-fold rotational symmetry , forming an extensive contact area .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Cbl evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>A3902 ) , which is deﬁcient in Cbl and Cbl-binding proteins , and 5 % neutralized charcoal ( Sigma catalog no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>coli : Crystal Structure a utational A Cofactor-binding Do the C scriptional Regulator e o nalysis o sp nse in E nd M f the main of bl Tran Emilia Stec1 , Malgorzata Witkowska-Zimny2 , Monika M. Hryniewicz2 Piotr Neumann3 , Anthony J. Wilkinson4 , Andrzej M. Brzozowski4 Chandra S. Verma5 , Jolanta Zaim6 , Stanislaw Wysocki1 and Grzegorz D. Bujacz1 1Faculty of Biotechnology and Food Sciences , Technical University of Lodz , Stefanowskiego 4/10 , 90-924 Lodz , Poland 2Institute of Biochemistry and Biophysics , Polish Academy of Sciences , Pawinskiego 5A , 02-106 Warsaw , Poland 3Faculty of Chemistry , Nicolaus Copernicus University of Torun , Gagarina 7 , 87-100 Torun , Poland 4Structural Biology Laboratory , Department of Chemistry , University of York , York YO10 5YW , UK 5Bioinformatics Institute , Department of Biological Sciences , National University of Singapore , 30 Biopolis Way , # 07-01 Matrix , Singapore 138671 , Singapore 6Systems Biology and Bioinformatics Research Group Maltanska 4/37 02-761 Warsaw , Poland Cbl is a member of the large family of LysR-type transcriptional regulators ( LTTRs ) common in bacteria and found also in Archaea and algal chloroplasts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Speaking in favor of this model , we note that CysB and Cbl have exceptionally high amino acid sequence similarity , including their helix-turn-helix DNA-binding motifs ( 17 ) , and hence such cross talk is not unlikely .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Since the RDs of LysR-type regulators are closely related in structure to the ligand-binding domains of the PBPs and LacI family members , the cofactor-binding site of Cbl is expected to lie in the cleft formed by RDI and RDII subdomains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Expression of the tau genes requires CysB , but also Cbl , another LysR-type transcriptional activator with 41 % amino acid sequence identity to CysB ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>In the wild-type strain , APS is The substitution S149M results in a constitutive character of Cbl The Cbl and CysB proteins share the highest mutual homology among LysR family members ( 41 % identity and 60 % similarity at amino acid level ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>* Corresponding authors Keywords : E. coli ; Cbl regulator ; LysR family ; crystal structure ; cofactor-binding Abbreviations used : PBP , periplasmic-binding protein ; LTTR , LysR-type transcriptional regulators ; RD , regulatory domain ; APS , adenosine phosphosulphate ; NAS , N-acetyl-L-serine ; DBD , DNA-binding domain ; OAS , O-acetyl-L-serine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The overall fold of c-Cbl is very similar to the regulatory domain ( RD ) of another LysR family member , CysB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Both CysB and Cbl belong to the large family of LysR-type transcriptional regulators ( LTTRs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The predicted Cbl protein has structural features of the LysR family of transcriptional activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8529872" target="_blank">8529872</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Cbl</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>JOURNAL OF BACTERIOLOGY , Dec. 1997 , p. 7671 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Involvement of CysB and Cbl Regulatory Proteins in Expression of the tauABCD Operon and Other Sulfate Starvation-Inducible Genes in Escherichia coli JAN R. VAN DER PLOEG ,1 ROKSANA IWANICKA-NOWICKA ,2 MICHAEL A. KERTESZ ,1 THOMAS LEISINGER ,1 AND MONIKA M. HRYNIEWICZ2 * Mikrobiologisches Institut , Swiss Federal Institute of Technology , ETH-Zentrum , CH-8092 Zürich , Switzerland ,1 and Institute of Biochemistry and Biophysics , Polish Academy of Sciences , Warsaw , Poland2 Received 10 July 1997/Accepted 3 October 1997 Starvation for sulfate results in increased synthesis of several proteins in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>We have also evaluated the importance of several residues implicated in cofactor control and oligo-merization by constructing and analysing a set of site-directed Cbl mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Methylcobalamin ( CH3-Cbl ) is the cofactor for MetH enzyme , which catalyzes the terminal step of methionine-biosynthesis , methyl transfer from 5-methyltetrahydrofolate to homocysteine ( 6 , 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Adenosylcobalamin ( Ado-Cbl ) is cofactor for ethanolamine ammonia-lyase , which catalyzes the first in the catabo-step lism of ethanolamine the or as nitrogen carbon source ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Interestingly , the genes coding for local regulators of the genes for individual amino acids are under the control of Lrp , including AdiY ( a regulator of Arg regulon ) , CysB ( a regulator of the Cys regulon ) , GadW ( a regulator of Glu reg ¬ Lrp Network Y J YhjI AdiY OLm r pR BluR YbaO YedW CadX CadW SdiA PhoP H-NS Cbl CysB TyrR TdcR DeoT TdcA CadX CadW DctR SdiA EnvR TdcA TdcA FabR StpA GadW LeuO GadE GadW GadX DtcR SlyA LeuO BglG StpA QseB Rob LrhA MatA NanR ~ 20 TFs FlhDC FliE LrhA FlhDC ~ 10 TFs FliZ MatA FlhDC QseCB Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>Decreased expression of the btuB gene , which encodes a transport protein for cobalamin compounds , is observed in cell-based assays when sufficient AdoCbl is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Thus , sulfur-metabolism may be important for the enhanced cisDCE mineralization because the induction of many proteins ( Cbl , CysADKP , IscS , Sbp and TauABCD ) involved in the sulfur-metabolism was observed in the proteomic ( Lee et al. 2006 ) and transcriptomic data ( Table S6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>In order to estimate individual functions of Cbl and CysB at the ssu promoter , we analysed expression of the transcriptional fusion ssu -- lacZ in a DcysB background ( strain EC2592 ) , supplying cysB and cbl genes on plasmids , either separately or in combination ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Expression of ssu -- lacZ fusion in the presence of plasmids expressing wild-type Cbl ( pME128 ) and Cbl S149M ( pME4185 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>In order to assess the phy-siological consequences of the S149M mutation , we tested the expression of a chromosomally encoded transcriptional ssu -- lacZ fusion in a Dcbl background ( strain SE45 ) in the presence of plasmids encoding the wild-type Cbl ( pMH128 ) or the mutant Cbl S149M ( pME4185 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Adenosine-5 cents - phosphosulphate ( APS ) inhibits the positive control function of Cbl The system for in vitro transcription from the ssu promoter allowed us to test the effects of several low-molecular-weight compounds as possible cofactors of Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We demonstrate that , of the two LysRtype regulators involved in expression from the ssu promoter , Cbl acts as a direct and sufﬁcient activator of transcription in vivo and in vitro , whereas CysB downregulates the promoter efﬁciency .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>These data strongly suggest that the Cbl protein acts as a transcriptional activator for ssu gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>CysB is an activator of the cys regulon , tau operon , cbl gene and spt gene , and in association with the Cbl ( CysB-like ) protein it downregulates the expression of the ssu operon ( Kredich , 1996 ; van der Ploeg et al. , 2001 ; Parry & Clark , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14663078" target="_blank">14663078</a>]<br></li>
+<li>These ﬁndings make it attractive to speculate that Cbl is a general transcription factor for genes related to sulfonate-sulfur-utilization and possibly for ssi genes in general .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>The evolutionary drive to select APS ( an early intermediate of sulphate metabolism ) as a negative effector of Cbl is that it allows differentiation of CysB-mediated activation of the sulphate assimilatory pathway ( cys genes ) from Cbl-mediated activation of th sulphate-starvation response ( ssi genes ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The function of Cbl is required in Escherichia coli for expression of sulphate starvation-inducible ( ssi ) genes , associated with the biosynthesis of cysteine from organic sulphur sources ( sulphonates ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>In the absence of inorganic sulphate ( the preferred sulphur source for cysteine-biosynthesis ) , E. coli and several other bacterial species are able to utilize organosulphur compounds by synthesizing , de novo or at elevated levels , a number of sulphate starvation-inducible ( SSI ) proteins .2,3 In E. coli , the ssi genes characterized so far include the ssuEADCB and tauABCD operons encoding uptake systems for organosulphur compounds , aliphatic sulphonates and taurine , respectively , and oxidor-eductase-type enzymes that release sulphite from the respective substrates .4 -- 6 In contrast to cys genes , expression of tau and ssu is induced only in the absence of inorganic sulphate and requires the presence of the transcription factor Cbl .5,6 The Cbl protein is closely related to CysB ( 41 % identity and 60 % similarity in amino acid sequence ) and its gene is controlled by CysB in parallel with the cys regulon .7 In contrast to CysB , Cbl activates transcription from target promoters without an inducing ligand but its function is negatively affected by adenosine 5 ′ - phosphosulphate ( APS ) , the first intermediate in the sulphate-assimilation pathway .8 Thus , Cbl-mediated regulation explains the hierarchy of utilization of sulphur sources by E. coli : cysteine > sulphate > sulphonates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Besides being a positive regulator of the cys regulon and controlling the biosynthesis of cysteine , CysB in conjunction with CysB-like transcription factor , Cbl [ 3 ] , is involved in sulfur-metabolism by upregulating the sulfate starvation-inducible taurine operon , tauABCD [ 4 ] and downregulating the ssuEADCB operon necessary for utilization of the sulfur from aliphatic sulfonates [ 5 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12892888" target="_blank">12892888</a>]<br></li>
+<li>Given the known role of CysB as a transcriptional activator of genes in the sulfate starvation regulon , we formulated the hypothesis that Cbl and CysB together directly function as transcriptional activators of tauABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>These ﬁndings indicate that most of the genes involved are coordinately regulated as the cysteine regulon , and high-level expression of these genes requires sulfur limitation and transcriptional regulator ( s ) CysB and/or Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>The native Cbl Acknowledgements References Colyer , T.C. , and Kredich , N.M. ( 1994 ) Residue threonine-149 of the Salmonella typhimurium CysB transcription activator : mutations causing constitutive expression of positively regulated genes of the cysteine regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>It is unlikely that another gene involved in CN-Cbl transport is located in the immediate vicinity of btuCED .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>The btuE gene , which is related in sequence to gluta-thione peroxidase , plays no apparent role in Cbl transport or utilization ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Thus , the absence of pfs strongly reduces cell-growth , but this deﬁciency is not related to CN-Cbl transport or metabolism , and it is not the result of polar effects on expression of the distal genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The growth and transport phenotypes of null mutations in the btuF gene and its two ﬂanking genes , pfs and yadS , showed that only BtuF participates in Cbl transport across the CM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Hence , for characterization of the role of the BtuF protein in Cbl transport , the btuF gene and its ﬂanking genes , pfs and yadS , were cloned from the E. coli chromosome by PCR ampliﬁcation ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The E. coli yadT product , renamed BtuF , is shown here to participate in CN-Cbl uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The transport systems for passage across the OM of ferric iron complexed with siderophores , heme , or host iron-binding proteins , and of cobalamins ( Cbls ) such as vitamin B12 ( CN-Cbl ) , consist of a substrate-speciﬁc TonB-depen-dent OM transporter , the transperiplasmic energy-coupling protein TonB , and its ancillary proteins ExbB and ExbD in the cytoplasmic membrane ( CM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>The organization of the genes for transport of Cbls , such as CN-Cbl , differs from that of other TonB-dependent systems 70 ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Another possibility is that the btuR product is a regulatory protein that represses not only btuB but also genes whose products degrade Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>This type of genetic organization suggested that the three genes were involved in a common metabolic-process and that BtuE might be the periplasmic CN-Cbl binding protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>Evidence that Cbl is involved in regulation of expression of the tauABCD genes was provided by measurement of b-galactosidase activities in strains containing tauA9-9lacZ or tauD9-9lacZ protein fusions ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Cbl binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>( B ) Sequence and secondary-structure model for the 202-nucleotide leader sequence of btuB mRNA in the presence of AdoCbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>tion ean Structure determination and refinement Crystallographic calculations were performed using the CCP4 suite of programs27 and the CNS software suite .28 The c-Cbl structure was solved with AmoRe29 by the molecular replacement method , using the coordinates of the Klebsiella aerogenes CysB monomer as a search model .13 For this purpose , residues of the coordinate set PDB code 1AL3 , were truncated to Ala at positions at which the Cbl and CysB sequences differ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Binding of nucleotides would be expected of an enzyme that attaches the adenosyl moiety to form Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>CN-Cbl-binding assays using radiolabeled substrate or isothermal titration calorimetry showed that puriﬁed BtuF binds CN-Cbl with a binding constant of around 15 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>A 25-nucleotide sequence designated as the B12-box located +138 - +162 nucleotides downstream from the transcription initiation site of btuB in E. coli has been suggested to be the binding site of Ado-Cbl [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21314918" target="_blank">21314918</a>]<br></li>
+<li>Cbl bound to Cbl-BS would help to recruit CysB ( or reposition CysB within the CysB-BS2 region ) to the activating-type binding site , favorable for optimal contacts with the transcriptional apparatus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>The 351 bp DNA fragment containing the ssuE promoter ( from position − 287 to +64 , relative to the transcription start site ) served as a probe to monitor DNA-binding by Cbl variants in electrophoretic mobility shift assays ( EMSAs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>A The Cbl binding site is localized just upstream of the -- 35 region of the ssu promoter Our earlier electrophoretic mobility shift assays ( EMSAs ) , using different ssu promoter fragments , suggested that 98 nucleotides ( nt ) preceding the transcription start point ( tsp ) may be sufﬁcient for Cbl binding ( van der Ploeg et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The comparison of positions and sequences of Cbl binding sites in ssu and tau promoter regions relative to the in vivo transcription start points , tsp ( the data for the tau promoter derived from earlier experiments ; van der Ploeg et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The picture of these complexes formed by both proteins with the ssu promoter was very similar to that obtained earlier for the 2266 to 151 tau promoter fragment where a single binding site for Cbl and at least two binding sites for CysB were identified ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Binding sites for CysB and Cbl in the tau promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>CysB occupied multiple binding sites , whereas Cbl occupied only one site from 112 to 68 bp upstream of the transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Second , binding of Cbl to the tau promoter occurred at 2112 to 268 relative to the transcription start ( 5 ) , which is different from the Cbl-binding site at the ssu promoter just upstream of the 235 region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>A single binding site for the Cbl protein ( Cbl-BS ) in the tau control region was identiﬁed between bp 268 and 2112 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Cbl</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>As the Klebsiella genome contains the cbl gene ( originally described as the ORF2 after the nac gene ; Schwacha and Bender , 1993 ) , it would be of great interest to establish whether the hypothetical regulator MtcR is identical to Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Decreased expression of the btuB gene , which encodes a transport protein for cobalamin compounds , is observed in cell-based assays when sufficient AdoCbl is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12323379" target="_blank">12323379</a>]<br></li>
+<li>Expression of ssuEADCB Requires Cbl -- A chromosomally encoded transcriptional ssuE9-lacZ fusion was constructed as described under `` Experimental Procedures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Cbl transport across the CM requires the transmembrane protein BtuC and the ABC protein BtuD , encoded in the constitutively expressed btuCED operon at 38.6 min ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Characterization of lac fusions indicated that the btuCED operon is not affected by Cbl supplementation ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>Hence , for characterization of the role of the BtuF protein in Cbl transport , the btuF gene and its ﬂanking genes , pfs and yadS , were cloned from the E. coli chromosome by PCR ampliﬁcation ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11790740" target="_blank">11790740</a>]<br></li>
+<li>It is unlikely that another gene involved in CN-Cbl transport is located in the immediate vicinity of btuCED .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>It is tempting to assume , that a common ancestor of Cbl and CysB was constitutively active towards its target gene ( s ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The measurement of expression of reporter lacZ from pssuE in vivo ( Figure 5 ) is enhanced by wild-type Cbl ( CblWT ) in a medium lacking inorganic sulphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Expression from the ssuE promoter in vivo in the presence of CblWT and Cbl mutant proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>It is also noteworthy that DNA topology may be an important factor for expression of the ssu operon , as no spe-ciﬁc transcription could be initiated in the presence of Cbl and RNA polymerase from the ssu promoter contained on linear templates ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Nevertheless , it seems clear that faithful transcription initiation at the ssu tsp can be activated by Cbl S149M even in the presence of APS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>We believe that the slight ( 1.5-fold ) repression of ssu -- lacZ by sulphate observed in the presence of Cbl S149M is mediated by CysB and not by Cbl directly , as sulphate is converted to sulphide , which inhibits CysB-activated expression of the cbl gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>Expression of ssu -- lacZ fusion in the presence of plasmids expressing wild-type Cbl ( pME128 ) and Cbl S149M ( pME4185 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>we also noticed that the high-level expression of the ssu -- lacZ fusion , induced by Cbl alone , could not be reached when cysB was expressed in the same cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>When Cbl was expressed in a CysB-independent manner , the ssu -- lacZ fusion was induced 125-fold in the presence of CysB T22I and only 30-fold in the presence of CysB T196I .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>The requirement for CysB could be simply explained by the fact that transcription of the cbl gene , encoding the speciﬁc activator Cbl , requires the function of CysB as the superior factor ( Iwanicka-Nowicka and Hryniewicz , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11918818" target="_blank">11918818</a>]<br></li>
+<li>However , when the Cbl protein was provided in the absence of functional CysB ( by expressing the cbl gene from a trc promoter ) , the tauD9-9lacZ fusion was still not expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>CysB is an activator of the cys regulon , tau operon , cbl gene and spt gene , and in association with the Cbl ( CysB-like ) protein it downregulates the expression of the ssu operon ( Kredich , 1996 ; van der Ploeg et al. , 2001 ; Parry & Clark , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14663078" target="_blank">14663078</a>]<br></li>
+<li>In the absence of inorganic sulphate ( the preferred sulphur source for cysteine biosynthesis ) , E. coli and several other bacterial species are able to utilize organosulphur compounds by synthesizing , de novo or at elevated levels , a number of sulphate starvation-inducible ( SSI ) proteins .2,3 In E. coli , the ssi genes characterized so far include the ssuEADCB and tauABCD operons encoding uptake systems for organosulphur compounds , aliphatic sulphonates and taurine , respectively , and oxidor-eductase-type enzymes that release sulphite from the respective substrates .4 -- 6 In contrast to cys genes , expression of tau and ssu is induced only in the absence of inorganic sulphate and requires the presence of the transcription factor Cbl .5,6 The Cbl protein is closely related to CysB ( 41 % identity and 60 % similarity in amino acid sequence ) and its gene is controlled by CysB in parallel with the cys regulon .7 In contrast to CysB , Cbl activates transcription from target promoters without an inducing ligand but its function is negatively affected by adenosine 5 ′ - phosphosulphate ( APS ) , the first intermediate in the sulphate assimilation pathway .8 Thus , Cbl-mediated regulation explains the hierarchy of utilization of sulphur sources by E. coli : cysteine > sulphate > sulphonates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>Even though expression of both the tau and ssu genes is repressed by sulfate and regulated by Cbl , the operons are probably regulated in a different manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>Cbl therefore appears to be a transcription activator for genes whose expression is induced by sulfate starvation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>These results indicate that Cbl is a transcription factor for genes required for sulfonate-sulfur utilization and maybe for other genes whose expression is induced by sulfate starvation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Involvement of CysB and Cbl regulatory proteins in expression of the tauABCD operon and other sulfate starvation-inducible genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_25">
+[ 4 ] Van der Ploeg , J.R. , Iwanicka-Nowicka , R. , Kertesz , M.A. , Leising-er , T. and Hryniewicz , M.M. ( 1997 ) Involvement of CysB and Cbl regulatory proteins in expression of the tauABCD operon and other sulfate starvation-inducible genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12892888" target="_blank">12892888</a>]<br></label>
+<input id="tu_similarity_25", type="checkbox">
+<div class="TU_similar">
+<li>van der Ploeg , J.R. , Iwanicka-Nowicka , R. , Kertesz , M.A. , Leisinger , T. , and Hryniewicz , M.M. ( 1997 ) Involvement of CysB and Cbl regulatory proteins in expression of the tauABCD operon and other sulfate starvation-inducible genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12123449" target="_blank">12123449</a>]<br></li></div>
+<li>From these results , we conclude that Cbl is a positive factor required for tauABCD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>Previously it has been shown that both LysR-type transcriptional activators , CysB and Cbl , were necessary for expression of the tauABCD genes ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10506196" target="_blank">10506196</a>]<br></li>
+<li>We have shown that both Cbl and CysB are required for expression of tauABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9401024" target="_blank">9401024</a>]<br></li>
+<li>For expression of the chromosomal eut operon , E. coli JM109 was aerobically grown at 30 ° C in a synthetic medium containing glycerol , ethanolamine , and CN-Cbl , as described by Scarlett and Turner ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Time courses of in situ deamination of ethanolamine by permeabilized E. coli cells that were grown in medium containing ethanolamine and CN-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>Time courses of ethanolamine deamination by homoge-nates of E. coli cells that were grown in the medium containing etha-nolamine and CN-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466038" target="_blank">15466038</a>]<br></li>
+<li>It is not known yet whether the btuR mutant is blocked in the biosynthetic conversion of CN-Cbl to Ado-Cbl or whether the cells exhibit elevated turnover of Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>It is not known how Ado-Cbl mediates repression of BtuB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Another possibility is that the btuR product is a regulatory protein that represses not only btuB but also genes whose products degrade Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Growth in the presence of 10 ~ tm CN-Cbl repressed the level of binding activity by 15-fold in the btuE § strain and ll-fold in the AbtuE501 ,502 strain , showing that BtuE is not involved in regulation of btuB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2671656" target="_blank">2671656</a>]<br></li>
+<li>In four tetracycline-sensitive strains ( del3 , -6 , -10 , and -25 ) , btuB expression was not repressed by CN-Cbl when plasmid pMJF4 was present , whereas the larger plasmid pLC4-6 restored repressible regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>The results suggest that BtuR does not regulate btuB expression directly but that it may be involved in Ado-Cbl metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>The E. coli btuR gene was identified as the site of mutations that prevent repression of btuB by CN-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>This expression was not affected by either CN-Cbl , as previously shown , or CH3-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>In the btuR + strain RK6709 , f-galactosidase levels were repressed 20 - to 50-fold by CN-Cbl , CH3-Cbl , or Ado-Cbl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Thus , the btuR mutation prevents CN-Cbl and CH3-Cbl from repressing btuB expression but does not affect the ability of Ado-Cbl to do so .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Although exogenous CN-Cbl c CH3-Cbl did not repress btuB expression in btuR mutants , Ado-Cbl was fully effective in repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>Whereas btuB expression in a btuR strain was not affected by CN-Cbl , that of metE was repressed as in the parental strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+<li>This explanation is unlikely , since btuB expression is still repressed by Ado-Cbl in the btuR strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2644187" target="_blank">2644187</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

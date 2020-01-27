@@ -1,0 +1,917 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - ArgP</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">ArgP</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">ArgP transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>Interestingly , the first identification of ArgP was by Arthur Kornberg and coworkers ( Hwang and Kornberg 1990 , 1992 ; Thony et al. 1991 ; Hwang et al. 1992 ) ∼ 15 years ago as a protein that binds to oriC to inhibit chromosomal replication initiation in vitro , which led to it being designated as IciA ; however , argP ( iciA ) mutants are viable and exhibit no replication-associated phenotype , so that the role , if any , of ArgP ( IciA ) in replication initiation is uncertain ( Thony et al. 1991 ; Lee et al. 1996 ; Nandineni and Gowrishankar 2004 ; Nandineni et al. 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Under the denomination of IciA ( inhibitor of chromosome initiation A ) , ArgP was originally shown to-bind the E. coli replication origin ( oriC ) , to inhibit DNA replication initiation in vitro , and to stimulate transcription of the dnaA and nrd genes , involved in DNA replication ( Hwang and Kornberg , 1990 ; Hwang et al. , 1992 ; Lee et al. , 1997 ; Han et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Lysine Represses Transcription of the Escherichia coli dapB G Preventing Its Activation by the ArgP Activator † Jean Bouvier ,1,2 Patrick Stragier ,3 Violette Morales ,1,2 Elisabeth Rémy ,1,2 ‡ and Claude Gutierrez1 ,2 * Université Paul Sabatier Toulouse III , Laboratoire de Microbiologie et Génétique Moléculaire , F31000 Toulouse , France1 ; Centre National de la Recherche Scientiﬁque , Laboratoire de Microbiologie et Génétique Moléculaire , F31000 Toulouse , France2 ; and Centre National de la Recherche Scientiﬁque , Institut de Biologie Physico-Chimique , F75000 Paris , France3 Received 11 November 2007/Accepted 6 May 2008 ene by The Escherichia coli dapB gene encodes one of the enzymes of the biosynthetic pathway leading to lysine and its immediate precursor , diaminopimelate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Identiﬁcation of ArgP and Lrp as Transcriptional Regulators of lysP , the Gene Encoding the Speciﬁc Lysine Permease of Escherichia coli † Jimena Ruiz , ‡ Ina Haneburger , and Kirsten Jung * Ludwig-Maximilians-Universita ̈t München , Munich Center for integrated Protein Science ( CiPSM ) at the Department of Biology I , Microbiology , Grosshaderner Strasse 2-4 , 82152 Martinsried , Germany Received 12 July 2010/Accepted 14 March 2011 Expression of lysP , which encodes the lysine-speciﬁc transporter LysP in Escherichia coli , is regulated by the concentration of exogenous available lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Distinct Paths for Basic Amino Acid Export in Escherichia coli : YbjE ( LysO ) Mediates Export of L-Lysine Amit Pathania , a , b Abhijit A. Sardesaia Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad , Indiaa ; Graduate Studies , Manipal University , Manipal , Indiab ABSTRACT In Escherichia coli , argO encodes an exporter for L-arginine ( Arg ) and its toxic analogue canavanine ( CAN ) , and its transcriptional activation and repression , by Arg and L-lysine ( Lys ) , respectively , are mediated by the regulator ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>2007 21 : 1258-1272 Access the most recent version at doi :10.1101 / gad .1520507 http://genesdev.cshlp.org/content/suppl/2007/04/30/21.10.1258.DC1.html Supplemental Material This article cites 62 articles , 31 of which can be accessed free at : http://genesdev.cshlp.org/content/21/10/1258.full.html#ref-list-1 Article cited in : http://genesdev.cshlp.org/content/21/10/1258.full.html#related-urls Email alerting service Receive free email alerts when new articles cite this article - sign up in the box at the top right corner of the article or click here To subscribe to Genes & Development go to : http://genesdev.cshlp.org/subscriptions Copyright © 2007 , Cold Spring Harbor Laboratory Pres Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076 , India In vivo transcription of the Escherichia coli argO gene , which encodes an arginine ( Arg ) exporter , requires the LysR-family regulator protein ArgP ( previously called IciA ) and is induced in the presence of Arg or its naturally occurring antimetabolite analog canavanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Our results indicate that whereas ArgP activates argO transcription in the presence of Arg through the process of RNA polymerase of bacterial transcription Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076 , India In vivo transcription of the Escherichia coli argO gene , which encodes an arginine ( Arg ) exporter , requires the LysR-family regulator protein ArgP ( previously called IciA ) and is induced in the presence of Arg or its naturally occurring antimetabolite analog canavanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>E vidence for an Arginine Exporter Encoded by yggA ( argO ) That Is Regulated by the LysR-Type Transcriptional Regulator ArgP in Escherichia coli Madhusudan R. Nandineni1 ,2 and J. Gowrishankar2 * Centre for Cellular and Molecular Biology , Hyderabad 500007,1 and Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076,2 India Received 9 November 2003/Accepted 19 February 2004 The anonymous open reading frame yggA of Escherichia coli was identiﬁed in this study as a gene that is under the transcriptional control of argP ( previously called iciA ) , which encodes a LysR-type transcriptional-regulator protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Role of ArgP ( IciA ) in Lysine-Mediated Repression in Escherichia coli Carmelita N. Marbaniang and J. Gowrishankar * Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500 001 , India Received 22 July 2011/Accepted 24 August 2011 Initially identiﬁed as an inhibitor of oriC-initiated DNA replication in vitro , the ArgP or IciA protein of Escherichia coli has subsequently been described as a nucleoid-associated protein and also as a transcriptional-regulator of genes involved in DNA replication ( dnaA and nrdA ) and amino acid metabolism ( argO , dapB , and gdhA [ the last in Klebsiella pneumoniae ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Expression of the E. coli argO gene is activated by ArgP , also known as IciA , which is a transcriptional-activator of the LysR type transcriptional-regulator family ( Nandineni and Gowrishankar , 2004 ; Laishram and Gow-rishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>First identiﬁed as a protein that binds speciﬁc sequences in oriC in vitro to inhibit the initiation of replication ( 21 -- 23 , 46 ) , ArgP was shown ( 46 ) to be a member of the family of LysR-type transcriptional-regulators ( LTTRs ) and , subsequently , to be essential both in vivo and in vitro for transcription of the gene encoding the L-arginine ( Arg ) exporter ArgO ( 26 , 32 ) ; in Corynebacterium glutamicum , LysG and LysE are orthologous to E. coli ArgP and ArgO , respectively , and LysG is required for LysE transcription ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>To further investigate ArgP-mediated activation of dapB transcription , we puriﬁed His-tagged ArgP protein ( 17 ) and used it to perform EMSE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_14">
+Bouvier , J. , Stragier , P. , Morales , V. , Rémy , E. , and Gutierrez , C. ( 2008 ) Lysine represses transcription of the Escherichia coli dapB gene by preventing its activation by the ArgP activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></label>
+<input id="act_similarity_14", type="checkbox">
+<div class="ACT_similar">
+<li>Lysine represses transcription of the Escherichia coli dapB gene by preventing its activation by the ArgP activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_16">
+Role of ArgP ( IciA ) in lysine-mediated repression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></label>
+<input id="act_similarity_16", type="checkbox">
+<div class="ACT_similar">
+<li>Role of ArgP ( IciA ) in lysinemediated repression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li></div>
+<li>Molar concentrations of ArgP : 10ÿ6 ( 2 and 7 ) ; 10ÿ7 ( 3 and 8 ) ; 10ÿ8 ( 4 and 9 ) ; 10ÿ9 ( 5 and 10 ) ; 10ÿ10 ( 6 and 11 ) Discussion It can be concluded from the data presented here that the regulation of transport of arginine in E. coli K 12 is under the control of the ArgP protein , the product of the argP gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The ArgP protein regulates the expression of speci ® c genes in E. coli K 12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+Repression and activation of arginine transport genes in Escherichia coli K 12 by the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>Repression and activation of arginine transport genes in Escherichia coli K-12 by the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li></div>
+<li>It is also possible that the putative dual functions of ArgP , in transcriptional regulation and in chromosome organization , are in some way related to its ability to dimerize in two different modes ( as deduced from the crystal structure of the M. tuberculosis ortholog ) ( 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>While this paper was under revision , very similar results were reported for lysine-sensitive activation of the Klebsiella pneumoniae gdhA gene by ArgP , and similar conclusions were drawn ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_24">
+Goss , T.J. ( 2008 ) The ArgP protein stimulates the Klebsiella pneumoniae gdhA promoter in a lysine-sensitive manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></label>
+<input id="act_similarity_24", type="checkbox">
+<div class="ACT_similar">
+<li>The ArgP protein stimulates the Klebsiella pneumoniae gdhA promoter in a lysine-sensitive manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li></div>
+<li>From densitometric analysis of the gel of Figure 4A ( data not shown ) , we estimate that at the protein concentrations employed ( eightfold higher molar RNAP concentration compared with that of ArgP dimer ) , ∼ 70 % of the DNA forms a largely unstable binary complex with RNAP in either the absence of ArgP or its presence without coeffectors , and that the remaining 30 % forms the binary complex with ArgP under the latter conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In the absence of any coeffector , the radioactivity was distributed in three bands , two of which coincided with the pattern observed with RNAP in absence of ArgP ( i.e. , corresponding to RNAP -- DNA binary complex and to its dissociation to free DNA ) , while the third ( intermediate ) band representing the stable ArgP -- DNA binary complex displayed reduced intensity ( compared with that observed in absence of RNAP ) ( Fig. 4A , lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In the presence of a coeffector , all of the DNA is engaged in the ternary complex , which is largely stable , since only ∼ 25 % dissociates during electrophoresis to the ArgP -- DNA binary complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>( B ) The percentages of free and retarded DNA were quantiﬁed and plotted against the concentration of His6-ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_30">
+Bands corresponding to free DNA and to DNA in binary complex with ArgP ( the latter is not observed in panel C ) are marked by ﬁlled and open arrowheads , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></label>
+<input id="act_similarity_30", type="checkbox">
+<div class="ACT_similar">
+<li>Bands corresponding to free DNA and to DNA in a binary complex with each of the ArgP proteins are marked by open and ﬁlled arrowheads , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Bands corresponding to free DNA and to DNA in binary complex with ArgP are marked by ﬁlled and open arrowheads , respectively TABLE 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li></div>
+<li>Since ArgP was previously shown not to exert autoregulation ( Nandineni and Gowrishankar , 2004 ; Caldara et al. , 2006 ) , in contrast to many other LysR-family members , we may conclude that argP expression is regulated neither by Lrp or ArgR , nor by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>To assess the importance of ArgP in dapB expression , we inactivated the argP gene using the lambda Red recombinase procedure ( 9 ) , as detailed in Materials and Methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Here , a total of eight aminoacyl-tRNA synthe-tase genes were identiﬁed to be under the direct control Arg and Lys for ArgP ( Marbaniang & Gowrishankar , 2011 ) , glyoxylate and pyruvate for IclR ( Lorca et al. , 2007 ) , hypoxanthine and guanine for PurR ( Houlberg & Jensen , 1983 ) , and uracil and thymine for RutR ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>We show in this study that strains with null mutations in either argP or yggA exhibit abnormally increased sensitivities to CAN ( Canss ) and that ArgP is a transcriptional-regulator of yggA that mediates the latter 's induction by Arg .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>The data from the yggA-lac expression studies suggest that Arg ( or CAN ) functions as a coeffector for the apo-regulator ArgP in activating yggA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>The observation that yggA expression is elevated in an argR mutant raises the formal possibility that ArgR is a second regulator for yggA ; however , the fact that the argR effect is also ArgP dependent ( that is , it is not observed in an argR argP double mutant [ Fig. 3 ] ) indicates once again that it is the increased intracellular Arg concentration in the argR mutant which is responsible for yggA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>It may be emphasized here that our interpretations are based primarily on indirect lines of genetic evidence and that additional biochemical studies are necessary both to establish the role of ArgP and its coeffectors in yggA transcription and to examine the putative exporter function of YggA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Based on data from in vitro studies , Celis suggested that wild-type ArgP both represses its own transcription and activates that of argK ; he also sought to explain the Canr phenotype associated with the argPd mutation on the assumption that it is a loss-of-function ( that is , domi-nant-negative ) allele whose product is unable to efﬁciently activate the genes involved in Arg uptake , including argK ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Since ArgP is required for transcription of the Arg exporter ArgO , we also tested the promoters of other genes known to be involved in Arg transport ( artP , artJ , argT , and the hisJQMP operon ) as candidates for regulation by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The LysR-regulated lysA-lac and ArgP-regulated lysP-lac fusions were employed for tests of in vivo cross-regulation ( by ArgP and LysR , respectively ) ; the data reported in Table 8 indicate that there is no cross-regu-lation of lysP by LysR and that ArgP 's ability to activate lysA occurs only in a lysR background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In its description as IciA , ArgP has been reported to regulate dnaA and nrdA transcription ( 20 , 27 -- 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Our conclusion runs contrary to that of Han et al. ( 20 ) , who overproduced IciA ( ArgP ) and employed an RNase protection assay to show that nrdA transcription is ArgP regulated in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>On the other hand , for the genes such as argT , dnaA , or nrdA that are not ArgP regulated , there was no difference in expression between the argP derivative and any of the argPd mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>We found that ArgP does bind to the regulatory regions of dnaA and nrdA in vitro with moderate afﬁnity but that it does not regulate their transcription in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Neither dnaA nor nrdA was ArgP regulated in vivo , although their regulatory regions exhibited low-afﬁnity binding to ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Other genes , such as dnaA and nrdA , did exhibit binding to ArgP in vitro ( that was Lys insensitive ) but were not regulated by ArgP in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>dnaA and nrdA are not regulated by ArgP in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Results from gel ﬁltration chromatography experiments indicated , however , that d native ArgP and the ArgP variants are all of the same size within error , that is , there is no difference in their oligomeric status in solution ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>While neither native ArgP nor LysG cross-activated their d respective noncognate targets lysE and argO , several ArgP variants were , like LysG , able to activate lysE transcription in vivo ; in combination , however , ArgPd and LysG were mutually dominant negative for lysE expression under some growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Furthermore , an important distinction between native ArgP and LysG is that the former fails to activate its target in the presence of Lys , suggesting that the P274S and S94L ArgPd variants are more akin to LysG in this regard .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>We have now reconstituted in E. coli the activation of lysE by LysG in the presence of its coeffectors and have shown that neither ArgP nor LysG can regulate expression of the noncognate orthologous target .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Since the typical LTTR is dimeric in solution and assembles on DNA as a dimer of dimers or as higher-order oli-gomers to activate transcription ( 38 , 45 ) , we tested the effects of the combined presence of LysG and ArgP or its variants on lysE regulation in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>These ﬁndings are consistent with other reports that ArgP does not bind DNA nonspeciﬁcally ( 23 , 41 ) , as also with both the inability of nonspeciﬁc DNA fragments to compete with lysP for binding to ArgP ( Fig. 2 ) and the very weak binding of ArgP to argT ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>At argO , the Kds ( dissociation constants ) of binding of ArgP d and its variants ArgP - S94L and - P274S were not signiﬁcantly different from one another ( around 10 nM in all cases ) ; however , signiﬁcant differences were observed in migration rates of the DNA-protein complexes , in decreasing order of ArgPd-P274S , ArgPd-S94L , and native ArgP ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>d At lysE , in contrast , native ArgP and the ArgP variants showed signiﬁcant differences in their binding afﬁnities , whereas native ArgP displayed negligible binding even at 300 nM , the ArgPd-S94L and - P274S variants exhibited Kds of 300 nM and 60 nM , respectively ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Differences in DNA bending induced by native ArgP and d ArgP proteins at argO and lysE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Bending by native ArgP at argO is unaffected by the activating coeffector Arg , which suggests that the coeffector acts by mechanisms other than ( or in addition to ) that related to ArgP-induced DNA d bending .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Target DNA bending upon binding by ArgP and its variants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>In this context , our studies indicate that native ArgP binding induces DNA bending at both argO and lysE and that the d two active ArgP variants tested confer relaxation of bending ( relative to native ArgP ) at these target loci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_62">
+In comparison with native ArgP , the active ArgPd variants exhibited higher afﬁnity of binding to the lysE regulatory region and less DNA bending at both argO and lysE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></label>
+<input id="act_similarity_62", type="checkbox">
+<div class="ACT_similar">
+<li>In vitro , the ArgPd proteins exhibited higher afﬁnity of binding to the lysE regulatory region than did native ArgP , and induced less DNA bending at the argO and lysE loci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li></div>
+<li>We then examined the role of DNA bending in explaining differences in EMSA migration rates between ArgPd and native ArgP , since faster migration with ArgPd proteins was consistent with data from other LTTRs that less bending of target DNA upon protein binding in vitro ( leading to faster migration in EMSA ) is correlated with promoter activation in vivo ( 1 , 15 , 18 , 31 , 33 , 40 , 52 , 69 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Likewise , ArgP 's inability to cross-regulate lysE is at least in part explained by the high Kd of protein binding to lysE , since the two ArgPd variants ( ArgPd-P274S and - S94L ) that were most effective for activation also exhibited improved binding afﬁnities for lysE ( concomitantly with decreased DNA bending ; see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>At lysE , the ArgP variants also show increased afﬁn-ity of binding that is roughly proportionate to the magnitude by which they activate expression in vivo , suggestive of an in-duced-ﬁt mechanism for protein-DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>( vi ) For lysC , there was a 5-fold repression by Lys in the argP strain ( that is , ArgP independent ) ; this presumably represents the regulation imposed by the Lys-responsive ribo-switch that is proposed to exist in the leader region of the lysC mRNA ( 39 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>For many of the newly identiﬁed targets of ArgP listed above , the magnitude of in vivo regulation by ArgP ( and of repression by Lys ) was only around 3-fold , and it was the data on lac fusion expression in d the argP mutants that offered additional conﬁdence that this regulation was indeed real .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The lysP gene encodes a Lys-speciﬁc permease , and our data indicate that it is around 35-fold activated by ArgP and 5-fold repressed by Lys ; a argP mutant phenocopies a lysP mutant for resistance to the Lys analog thialysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The results described above indicated that ArgP binds the lysP regulatory region to mediate its nearly 35-fold transcriptional activation and that the absence of such ArgP binding either in argP mutants or upon Lys supplementation in argP strains results in very low levels of lysP expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Since our ﬁndings indicated that ArgP is needed for activation of lysP transcription , we tested whether cadBA expression would be rendered Lys independent even in the argP mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Speciﬁcally , unloaded or Arg-loaded ArgP induces lysP expression , while the Lys-loaded form prevents expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Therefore , the levels of lysP expression measured in cells that were grown in the presence of both amino acids could be attributable to the simultaneous existence of Arg-ArgP and Lys-ArgP complexes , which are effective or ineffective , respectively , in transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Therefore , a straightforward interpretation of our results , as further discussed below , is that ( i ) ArgP is a transcriptional-activator of yggA , ( ii ) ArgP 's activator function is enhanced by Arg and inhibited by Lys , and ( iii ) yggA encodes an Arg ( and CAN ) exporter in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Recently , Ruiz et al. ( 41 ) had also independently identiﬁed ArgP 's role both as a transcriptional-activator and in mediating the repression of the lysP gene by Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Regulation by ArgP of Lys-biosynthetic genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP also serves to mediate repression by Lys of at least seven other genes in E. coli and related bacteria ( 8 , 26 , 39 , 48 , 62 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>As mentioned above , all genes so far identiﬁed to be ArgP mediated are repressed by Lys , and we suggest that all Lys-liganded repression is mediated by ArgP in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In contrast , ArgP binds to a sequence between positions 85 and 20 of the argO operator/promoter and forms a stable binary complex in both its liganded and its unliganded forms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>However , the binding of unliganded ArgP and of RNAP to the argO regulatory region appear to be mutually exclusive , and it is only ArgP in its ligandbound form that is able to cooperatively bind along with RNAP at argO to establish formation of a stable open complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>We now report that the ArgP dimer by itself is able to-bind the argO promoter-operator region to form a binary complex , but that the formation of a ternary complex with RNA polymerase is greatly stimulated only in presence of a coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In these cases , however , the addition of Lys results in a decreased afﬁnity of ArgP to-bind to the corresponding regulatory regions in vitro , suggesting that it is the failure of RNA polymerase recruitment at the promoters which is responsible for Lys repression ( 7 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Perhaps this discrepancy may be related to differences in the protocols employed in the two laboratories for ArgP puriﬁcation or the subsequent protein-DNA binding studies , although we emphasize that our demonstration of Lys-sensitive binding of ArgP to lysP was made under the identical conditions in which ArgP 's binding to argO was Lys insensitive ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Subsequently , dapB and K. pneumoniae gdhA have also been shown to be ArgP regulated and to be repressed with Lys ; in both these instances , Lys repression is achieved by reduced binding of ArgP to the DNA regulatory regions in the presence of Lys ( 7 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Accordingly , in this study , EMSA experiments with His6-ArgP were done in the absence or presence of 0.1 mM Lys , and the cis regulatory regions of gdhA , lysC , dapB , dapD , asd , lysA , lysP , and argO were employed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Under identical experimental conditions as for argO , the regulatory regions of the other ArgP-regulated genes ( asd , dapB , dapD , gdhA , lysA , lysC , and lysP ) were also bound by ArgP , with apparent Kds ranging from 55 nM to 170 nM ; in all these cases ( unlike the situation with argO ) , the addition of Lys was associated with an increase in the apparent Kd , indicating that ArgP binding in these instances is Lys sensitive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>These include lysP , lysC , lysA , dapD , and asd ( in addition to argO , dapB , and gdhA ) , all of which exhibited ArgP-mediated repression upon Lys supplementation in vivo , as well as ArgP binding to the corresponding cis regulatory regions in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>All were repressed upon Lys supplementation , and in vitro studies demonstrated that ArgP binds to the corresponding regulatory regions in a Lys-sensitive manner ( with the exception of argO , whose binding to ArgP was Lys insensitive ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In vitro , ArgP binds the lysP regulatory region with a Kd of around 55 nM and the binding afﬁnity is diminished upon the addition of Lys ( to a Kd of 140 nM ) , suggesting that Lys represses lysP in vivo by engendering the loss of ArgP binding to the lysP operator region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Arg and Lys compete with each other for binding to dimeric ArgP Gel filtration and glutaraldehyde cross-linking experiments established that ArgP exists as a dimer in solution as had been shown in earlier studies ( Hwang and Kornberg 1990 ; Hwang et al. 1992 ; Azam et al. 1999 ) , and that its oligomer status was unaffected in the presence of Arg or Lys ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>These data are consistent with the notion that under the latter conditions , RNAP molecules from the entire population of ArgP - and Lys-associated inactive ternary complexes had been released to undergo productive transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Lys-loaded ArgP binds to the same sites , albeit with higher afﬁnity , but restrains the polymerase in a molecular complex that is competent for neither productive nor abortive transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Small differences in band patterns for the bottom strand ( Fig. 3B ) were observed between reactions done with ArgP without coeffector ( Fig. 3B , lane 3 ) and those with Arg or Lys ( Fig. 3B , lanes 1,2 ) such as , for example , around positions − 18 , − 50 , and − 135 , but importantly , there were no differences between the patterns obtained on both strands in the presence of Arg and those in the presence of Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Fluorescence spectral changes obtained upon addition of either Arg or Lys to ArgP indicated that the protein binds both ligands , with Kds of ∼ 150 µM and 70 µM , respectively ( Supplementary Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The latter , however , can be chased into the productive state by competitive replacement of the Lys ligand , which is bound to ArgP by Arg .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>( iii ) LysG 's ortholog , ArgP , possesses a single binding pocket for competitive binding of the coeffectors Arg and Lys ( 34 , 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>In the mixtures containing both ArgP and RNAP , the mobility shift patterns were determined by the presence or absence of coeffectors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Likewise , neither the double-stranded 26-mer sequence from − 102 to − 77 nor that from − 115 to − 90 exhibited binding to ArgP in EMSA , whereas that from − 89 to − 64 bound the protein , albeit very weakly , both in the absence and presence of Lys ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The affinity of ArgP binding to the sequence from − 89 to − 45 remained weak , but it was higher for the fragment from − 89 to − 30 and even more so for that from − 89 to +5 ; in the latter two cases , further increases in ArgP-binding affinity were also observed in the presence of the coeffector Lys ( Fig. 2D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Since our results were different from those of Ruiz et al. ( 41 ) , we repeated the EMSA experiments with lysP , using a graded series of ArgP concentrations in the absence or presence of Lys ( Fig. 2A ) ; the data clearly establish that binding of ArgP to the lysP template is Lys sensitive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The apparent dissociation constants ( Kds ) for binding of ArgP to the different templates in the presence or absence of Lys are given in Table 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>EMSAs with ArgP and cis regulatory regions of different genes in the absence or presence of the coeffector Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ybjE-lac expression was similarly unaffected by the absence of ArgP , the Arg / Lys responsive transcriptional-regulator of argO ( 5 ) , and by the presence of two dominant mutations in argP that lead to high constitutive Arg/Lys-insensitive overexpression of argO ( 5 , 39 ) ( see Table S3 in the supplemental material ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Neither did ectopic LysG expression in an argP strain interfere with the ability of ArgP to regulate argO-lac in the absence or presence of the coeffectors as either free amino acids ( Table 2 ) or dipeptides ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>An inverse pulse labeling experiment , which has been reported to be a more sensitive means to detect the presence of moribund RNAP -- promoter complexes synthesizing abortive transcripts and in which the labeled nucleotide is added at different time points to an in vitro transcription mix already containing all four NTPs ( Kubori and Shimamoto 1996 ; Susa et al. 2006 ) , also failed to detect abortive products from the argO template in the presence of ArgP and Lys ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In one approach where the chase was undertaken in solution , to the preincubated mixture of argO template ( from − 293 to +109 ) with ArgP , RNAP , and Lys , was added the labeled substrate -- heparin mix to generate a primary reaction mix that was inactive for transcription ( Fig. 7A , lane 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>However , they reported that ArgP binds the lysP regulatory region with similar afﬁnities in both the absence and presence of Lys and had accordingly suggested that ArgP mediates Lys repression of lysP by the same mechanism of RNA polymerase trapping that it does at argO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In the case of argO , ArgP mediates its transcriptional activation by Arg , as well as its repression by Lys ( 7 , 26 , 32 , 37 ) ; the latter is achieved by a mechanism involving the active trapping at the argO promoter by ArgP of RNA polymerase , which is then prevented from being released to engage in productive transcription ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>These findings hence established that ArgP , as well as Arg and Lys , act specifically and directly in regulating argO transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Absence of short products representing paused or abortive transcripts in argO transcription reactions with ArgP and Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>On the other hand , no abortive products were observed for the argO promoter in the presence of ArgP and Lys , and the GreB factor was not able to restore productive transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>) Whereas the open complex established by RNAP through the mediation of Arg ( or CAN ) - bound ArgP is proficient for productive transcription , that mediated by Lys-bound ArgP is trapped in a paused and inactive state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Conversion of the Lys-associated inactive ternary transcription complex at argO to a productive form upon Arg addition Finally , we tested whether the inactive transcription complex formed in the presence of ArgP and Lys is reversible and can be converted to a productive form upon Arg addition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>We conclude that the transcription complex formed in the presence of ArgP and Lys is in an inactive yet reversible state and that it can be chased into the productive form with Arg ( or CAN ) addition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>A second model , not mutually exclusive , is that the RNAP complex at argO in the presence of ArgP and Lys is blocked in the step of DNA scrunching , which has recently been shown to be an obligatory prerequisite both for abortive initiation as well as for promoter clearance during productive transcription ( Kapanidis et al. 2006 ; Revyakin et al. 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Stable recruitment by ArgP of RNA polymerase to the argO promoter is observed in the presence of Arg or Lys , following which the two coeffectors exert dramatically opposite effects in the ter-nary complex ; whereas productive transcription from the argO promoter is stimulated in the presence of ArgP and Arg , RNA polymerase is trapped at the promoter at a step after open complex formation in the presence of ArgP and Lys ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Open complex formation by RNAP at the argO promoter in the presence of ArgP and Lys The finding that Lys supplementation was associated with the absence of productive transcription despite evidence for RNAP recruitment to and formation of stable ternary complex on the argO template led us to compare the nature of the argO -- ArgP -- RNAP complex obtained in the presence of Arg with that in the presence of Lys , and to test the possibility that RNAP is trapped at argO in the presence of ArgP and Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>A novel inactive ternary transcription complex is assembled on the argO promoter with ArgP and RNAP in presence of Lys Notwithstanding the evidence above for open complex formation at the argO promoter by RNAP in presence of ArgP and Lys , the in vitro transcription experiments revealed that the absence of run-off transcript synthesis is accompanied also by the absence of synthesis of any short paused or abortive products under these conditions , whereas both abortive as well as full-length transcripts were obtained in the presence of ArgP and Arg ( Fig. 5 , cf. lanes 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The data obtained were consistent with those from the in vivo studies in that they demonstrated ( 1 ) a basal level of argO transcription in the absence of ArgP ( Fig. 1C , lane 1 ) , ( 2 ) substantial ArgP-dependent activation occurring in presence of Arg or CAN but not Lys ( Fig. 1C , cf. lanes 3,5 and 1,2,4 ) , and ( 3 ) reversal of such activation upon addition of Lys but not of a nonspecific amino acid such as histidine ( Fig. 1C , cf. lanes 6 and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>S5 ) and in vivo argOlac expression studies ( Fig. 1B ) , however , demonstrated that Lys supplementation in the presence of ArgP leads to a drastic reduction in argO transcription even in the mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Similarly , LysG activates lysE transcription in the presence of Arg , Lys , or histidine ( His ) ( 6 ) , while ArgP activates argO in the presence of Arg but not Lys or His ( 47 ) ; indeed , Lys-bound ArgP actively shuts off argO transcription by a mechanism involving RNAP trapping at the argO promoter ( 34 ) , so that argO is not transcribed even in the simultaneous presence of both Arg and Lys ( 34 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Activation of lysE transcription in the presence of LysG and its coeffectors Arg , Lys , or His ( added as their respective dipeptides with Ala ) was unaffected by native ArgP ( i.e. , in the argP strain ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>In vitro , the ArgP protein exhibits high-afﬁnity binding to the argO regulatory region in the presence of either coeffector , Arg or Lys , as well as in their absence ( 7 , 26 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Consistent with the data from earlier reports ( 7 , 26 , 37 ) , ArgP exhibited high-afﬁnity binding to argO ( Kd 15 nM ) that was not diminished in the presence of Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP has previously been shown to activate argO in the presence of Arg or citrulline but not in the presence of Lys ( 34 , 39 , 47 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Of the genes listed above , argO was unique in several respects , including its responsiveness to Arg , ArgP binding even in the presence of Lys , and behavior with the argPd mutations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Significant recruitment of RNAP to argO promoter by ArgP occurs only in the presence of either Arg or Lys EMSA studies were then undertaken with the radiolabeled argO sequence from − 293 to +109 , ArgP , and RNAP ( Fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In the second approach to test the effect of an Arg chase , a biotinylated argO template ( from − 293 to +109 ) was initially incubated with ArgP and RNAP in the absence or presence of Arg or Lys , immobilized on strepta-vidin-coated magnetic beads , and treated with heparin and the four NTPs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Arg ( or CAN ) chase of ArgP -- RNAP -- argO complex assembled in the presence of Lys and NTPs , either in solution ( A ) or on streptavidin-coated beads ( B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Based on these observations , we tested the binding of ArgP in EMSA to an argO fragment from − 85 to − 20 , and the results indicated that this fragment exhibits similar affinities of binding to ArgP in both the absence and presence of Lys as those of the full-length fragment from − 293 to +109 ( Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>ArgP binds to the − 85 to − 20 region of argO in both the absence and presence of Arg or Lys In an electrophoretic mobility shift assay ( EMSA ) , ArgP was shown to specifically bind the radiolabeled argO fragment comprising the sequence from − 293 to +109 with a Kd of 6.5 nM ( monomer concentration ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>( C , D ) Electrophoretic mobility of radiolabeled fragments corresponding to indicated regions of argO in the absence or presence of ArgP ( 20 nM monomer ) and Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>( A ) Electrophoretic mobility of radiolabeled 427-bp argO fragment with indicated monomer concentrations of ArgP in the absence or presence of coeffectors Arg or Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>( A ) Electro-phoretic mobility of radiolabeled argO fragment in the absence or presence ( as indicated ) of 20 nM ArgP ( monomer ) , 80 nM RNAP , and coeffectors Arg , Lys , or CAN at 0.1 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>When the data obtained in the absence of a coeffector ( Fig. 4A ) were compared with those in the presence of Arg ( Fig. 4B ) or Lys ( Fig. 4C ) , one signiﬁcant ﬁnding was that there was a speeding up of the argO complex with the ArgPd-S94L variant but not that with native ArgP , suggesting that the bend induced only by the former is reversed upon Arg addition ( at least at the concentration used in the experiments ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>The two coeffectors competed for binding to ArgP , and the ternary complex that had been assembled on the argO template in the presence of Lys could be chased into a transcriptionally active state upon Arg addition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Nevertheless , these data broadly support the conclusion that the Lys-associated ternary complex is largely resistant to heparin in the presence of NTPs , hence rendering unlikely the possibility that RNAP trapping in the presence of ArgP and Lys is at any step prior to formation of the open complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>) These results provided strong support for the conclusion that RNAP is not impeded for formation of an open complex at argO in the presence of ArgP and Lys .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>With both Arg and with Lys supplementation , the ter-nary complex of ArgP and RNAP assembled on argO ( represented by the supershifted band in EMSA ) exhibited roughly similar patterns of heparin sensitivity ( dissociating to the binary complex of argO and ArgP ) in the absence of nucleoside triphosphates ( NTPs ) ( Fig. 4B , cf. lanes 3 -- 6 and 7 -- 10 ) , and of heparin-resistance in their presence ( all four NTPs were added in the case of Lys supplementation , but only three [ ATP , UTP , CTP ] in case of Arg supplementation , in order to prevent run-off transcription in the latter instance ) ( Fig. 4C , cf. lanes 2 -- 4 and 7 -- 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>On the other hand , in the presence of RNAP and ArgP with any one of the coeffectors Arg , Lys , or CAN , the pattern of distribution of radioactivity indicated that the mobility of 100 % of the argO molecules had been retarded , with a prominent band that corresponded to the ternary complex of DNA , ArgP , and RNAP leading into a diffuse smear that terminated abruptly at the position corresponding to the ArgP -- DNA binary complex ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Likewise , in the experiments involving heparin addition in the presence of the NTPs ( Fig. 4C ) , the band patterns were suggestive of greater instability during electrophoresis of the ternary complex assembled in the presence of Lys ( see Fig. 4C , lanes 7 -- 9 , in which diffuse bands corresponding to the ArgP -- DNA binary complex are visible and the bands representing the ternary complex are less intense ) compared with that in the presence of Arg ( Fig. 4C , lanes 2 -- 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The contention that ArgP represses its own synthesis in the presence of arginine ( Celis , 1999 ) is not supported by our data ( Table 4 ) , concurring with more recent evidence obtained with argP-lacZ fusions ( Nandineni & Gowrishankar , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>The negative regulation of the synthesis of the ArgP protein is consistent with the previous observation that cells growing in the pre-sence of arginine show a signi ® cant reduction in the uptake of arginine , and that to obtain this effect it is necessary that the bacteria are actually growing in the presence of arginine ( Celis et al. , 1973 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Alternatively , the ArgP protein , when bound to its target , may alter the con ® guration of the upstream DNA sequence in such a way that it can stimulate transcription by RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Addition of increasing amounts of puri ® ed ArgP protein to the transcription assays resulted in several-fold activation of synthesis of the 215 bp transcripts ( Figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>This experiment showed also that the presence of L-arginine at a concentration of 10.0 mM in the assays , with similar amounts of puri ® ed ArgP , rendered the protein unable to stimulate the transcription of the restriction fragment template ( Figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>However , since it is now established that abpS is not the gene for the AO protein there is no further reason to suspect a direct effect of ArgP on PartP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Furthermore , ArgO might also be used to export canavanine , a plant-derived metabolite and toxic analogue of arginine , since mutants deﬁcient for the ArgO exporter or its speciﬁc activator protein ArgP are hypersensitive to canavanine ( Nandineni and Gowrishankar , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>ArgP belongs to the family of LysR-type regulatory proteins , most of which use a small effector-molecule as a coactivator ( 23 ) , whereas lysine appears to inhibit ArgP function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>A reciprocal experiment was conducted in which ArgP was brought back to strain JCP95 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Assuming that ArgP binds to DNA at this site , one can conclude that in this type of regulation this protein acts differently from regulators where the DNA-binding sites overlap the promoter sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Our studies would suggest that the ArgP or IciA protein is also a noncanonical transcriptional-regulator , in that it does exhibit speciﬁc DNA binding to mediate the transcriptional regulation of particular genes in vivo , but in addition , it also binds at other sites in the genome that are not associated with regulatory outcomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>d Data indicate the degree of regulation imposed by the ArgP variant concerned ( or the wild-type ArgP ) relative to that in the argP strain , in medium with Arg supplementation in the case of argO and with Nil supplementation for the rest .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Transcription of argO in vivo is activated both by Arg and its toxic analog L-canavanine , both effects being mediated by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Genes for Arg import are not regulated by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>At the same time , it is noteworthy that two of the genes that are most prominently regulated by ArgP , argO and lysP , are both also regulated by the leucine-responsive general transcriptional-regulator Lrp ( 37 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Finally , it is noteworthy that many of the genes regulated by ArgP are controlled also by other mechanisms , such as by LysR for lysA , osmolarity for gdhA , the riboswitch for lysC , and Lrp for argO and lysP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The differences between argO and the other target genes with regard to the features of their regulation by ArgP are also reﬂected in their differential responses to the argPd mutations ( although it must be noted that these mutations were selected on the basis of their ability to confer greatly increased argO expression ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Our results indicate that negative regulation involving Lys as coeffector is mediated by ArgP and that the target genes include argO , lysP , lysC , asd , dapB , dapD , lysA , and gdhA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Accordingly , the E. coli genes argO , dapB , gdhA , lysP , lysC , and asd were chosen for further analysis of in vivo regulation by the ArgP protein and its constitutive variants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Of the different genes under the control of ArgP in vivo , argO appears to be unique in at least two ways in its manner of regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Thus , it appears that the mechanism of regulation of argO by ArgP is fundamentally different from that of the other genes regulated by this protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>for transcriptional regulation by ArgP is the argO gene ( 26 , 32 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Unique features of argO regulation by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP and regulation of genes of DNA replication and me-tabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Coeffectors of ArgP in yggA regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>ArgP and cadBA regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Visual inspection and densitometric analyses of the various bands indicated that Lrp binds more readily to free DNA molecules than to ArgP complexed operator DNA ( Fig. 5A and Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The latter migrated slightly above the ArgP -- DNA complex formed at lower ArgP concentrations , suggesting that ArgP might bind to argO fragments having a single target bound by Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_170">
+A. ArgP was used at 4.5 nM ( monomer equivalents ) and allowed to-bind to the argO operator DNA prior to the addition of different concentrations of Lrp ( as indicated in nM , monomer equivalents ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></label>
+<input id="act_similarity_170", type="checkbox">
+<div class="ACT_similar">
+<li>B. Lrp was used at 425 nM ( monomer equivalents ) and allowed to-bind prior to the addition of various concentrations of ArgP ( as indicated in nM , monomer equivalents ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li></div>
+<li>In the absence of ArgP , both the affinity of Lrp for the argO control region and its concentration in the cell would be sufficiently high to ensure Lrp-mediated activation of PargO , even in the presence of excess leucine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Lrp and ArgP act as competitive activators on PargO Since both Lrp and ArgP stimulate argO expression and bind to overlapping targets in the argO control region , we were interested in analysing potential interferences in the action of these transcriptional-activators on argO expression , in response to environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>This organization of binding sites strongly suggests potential interferences in the binding of Lrp and ArgP to the argO operator and in their modulation of PargO activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Binding of ArgP and Lrp to the argO control region are mutually inhibitory EMSAs with various combinations of the two regulatory proteins were performed to analyse the effect of prebound ArgP on the binding of Lrp and vice versa ( Fig. 5 and Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Autoradiographs of EMSAs with ArgP and Lrp binding to the argO control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>This might be explained by the lack of competition in the binding of Lrp and ArgP to the argO control region in the mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>These negative interferences result from competitive binding of Lrp and ArgP to partially overlapping targets in the argO control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The molecular basis of this interference resides in the reciprocal inhibition of Lrp and ArgP binding to overlapping targets in the argO control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Considering the in vivo and in vitro data presented in this work , the mechanism by which ArgP regulates argO transcription ( 24 ) , and the known capacity of Lrp to alter the shape of the DNA by inducing bending and wrapping ( 57 ) , a model for lysP regulation in which binding of Lrp to the lysP control region may favor and/or stabilize the ArgP-RNA polymerase-DNA complexes or introduce DNA conformational changes is conceivable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Arg-loaded ArgP binds to the argO promoter/control region an recruits the RNA polymerase , resulting in the induction of argO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Lysine traps RNA polymerase at the argO promoter , where it is recruited by ArgP ( 14 ) , whereas lysine prevents binding of ArgP to the dapB promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Since PargO is known to be stimulated by ArgP , we determined whether or not the argP promoter activity ( PargP ) is affected by Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>In spite of this vast repertoire of regulatory strategies , a competitive activation mechanism as the one described here , with Lrp and ArgP acting as competitive activators on a single promoter , each regulator being more potent in the absence of the other , appears to be rare and has to the best of our knowledge not been reported previously .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Therefore , we may conclude that activation by ArgP is stronger in the absence of Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Furthermore , it is shown that activation by Lrp and ArgP are intertwined , each activator being more potent in the absence of the other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Each activator appears thus to operate more efficiently in the absence of the other , and ArgP ( maximum activation coefficient of 17.8 ) is a more potent activator than is Lrp ( maximum activation coefficient of 6.7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>This is most likely Pot-box 3 , which is located outside of the ArgP footprint and which shows the highest affinity for Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Most importantly , we detected negative interferences between the ArgP - and Lrp-dependent activating circuits .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Combined , the effector modulated activation of argO transcription by ArgP and Lrp must ensure an adapted and ﬁne-tuned synthesis of the transporter in response to environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>This scenario is plausible , because ArgP and Lrp competitively activate argO ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>It was shown that Lrp and ArgP behave as competitive activators able to activate argO expression under different conditions ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Activation by Lrp interferes with the previously dem-onstrated activation of the argO promoter by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Results from this study demonstrate that Lrp interferes negatively with the action of ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Puriﬁcation of Lrp and ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Our results indicate that ArgP activates lysA transcription 2-fold but only in cells that are also proﬁcient for LysR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In the case of dapB , lysine prevents binding of ArgP to its binding site , which is located in the position 118 / 81 interval upstream of the transcriptional start site ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>ArgP binds a site upstream of the dapB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>These results ﬁt with a model in which ArgP contributes to enhanced transcription of dapB when lysine becomes limiting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Altogether , these data indicate that ArgP is able to activate transcription from the dapB promoter , provided that some sequences upstream of 81 are present , and is necessary for lysine to repress dapB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Altogether , these results indicate that dapB transcription is controlled by the activating protein ArgP , whose binding upstream of 81 is antagonized by lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Evidently , a full dependence on ArgP would abolish dapB transcription in the presence of lysine , whereas synthesis of DAP needs to be sustained .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>As shown in Fig. 2 , induction of ArgP synthesis was soon followed by a sharp stimulation of dapB-lacZ transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>ArgP activates dapB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>However , ArgP plays only an auxiliary role in dapB transcription , enhancing its level about fourfold under our experimental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>It appears that in conditions of maximal ArgPmediated stimulation ( high arginine , low lysine ) the lack of Lrp-mediated activation of PargO is largely compensated for and even surpassed by the increased efficiency of ArgP , which is no longer hindered by Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Lrp does not affect the synthesis of ArgP , the arginine-dependent transcriptional-activator of argO A major question concerning the effect of Lrp on argO expression is whether Lrp acts directly or indirectly on PargO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Here , we demonstrate that expression of the E. coli argO gene is affected not only by the internal concentrations of arginine and lysine through the action of ArgP , but also by the general metabolic state of the cell , through regulation by the global transcriptional-regulator Lrp ( leucine-responsive regulatory protein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Competitive activation of the Escherichia coli argO gene coding for an arginine exporter by the transcriptional-regulators Lrp and ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Instead of ArgR , ArgP and ArgK have been proposed to mediate arginine repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>ArgP is a transcriptional-regulator required for synthesis of ArgK , which is required for arginine transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>ArgP as a noncanonical transcriptional-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>[ Keywords : ArgP ; arginine export ; bacterial transcription ; gene regulation ; promoter clearance ] Supplemental material is available at http://www.genesdev.org .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>) ArgP is a LysR-type regulator that activates argK expression in the absence of arginine ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Lanes 2 to 6 , in the absence of olar concentrations of ArgP : 10ÿ6 ( 2 and 7 ) ; 10ÿ7 L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Lane 1 , run-off transcription in the absence of ArgP and L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The in vitro run-off transcription assays provided conclusive evidence that the ArgP protein activates the expression of the argK gene , and that ArgP functions as a repressor of its own synthesis in the pre-sence of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>ArgP complexed with arginine fails to activate argK expression and represses its own synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>This experiment showed ( Figure 4 ) that while ArgP does not affect the expression of the argP gene , in the presence of L-arginine the protein represses its own synthesis ( Figure 4 , lanes 7 to 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>ArgP seems to be a versatile regulator , able to control gene expression of various basic amino acid transporters by responding to low-molecular-weight coeffectors in order to maintain a balance in the intracellular concentration of at least lysine and arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Conversely , the absence of ArgP strongly decreased expression of the larger fusion ( compare JCP75 and JCP95 ) and eliminated repression by lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Arginine and lysine were found to-bind to ArgP ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>It is important to note that the molecular mechanisms of lysine-dependent regulation by ArgP differ between argO and dapB ( 2 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Transcription of these genes was also affected by the presence of arginine in the culture medium , indicating that both lysine and arginine are coeffectors of ArgP ( 2 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>To determine whether lysine or arginine affected binding of ArgP to PlysP , these amino acids were added to the binding assay at a ﬁnal concentration of 0.1 mM ( Fig. 4C and D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>The binding of ArgP is hardly affected by the effector-molecules arginine and lysine , but activation requires the binding of arginine to the ArgP protein ( Laishram and Gowrishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Finally , we also investigated the effects of lysine and arginine on the binding of ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Therefore , binding of ArgP is speciﬁcally relieved by L-lysine and L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>In the presence of L-lysine and L-arginine , the binding of ArgP to dapB is partly relieved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Effects of lysine and arginine on binding of ArgP at dapB and argO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Repression of ybjE transcription by arginine via the ArgR repressor , together with the lysine repression of argO effected by ArgP , is indicative of a mechanism of maintenance of arginine/lysine balance in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Interestingly , lysine is known to virtually abolish transcription activation of argO , a bona ﬁde ArgP target .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>ArgP is able to-bind the argO control region by itself , but arginine is required to stimulate transcription whereas lysine counteracts this effect ( Laishram and Gowrishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>This differential effect of lysine and arginine on DNA afﬁnity of ArgP has already been reported for the argO control region ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>In the presence of L-arginine , ArgP inhibits its own synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>In contrast , it has now been clearly demonstrated that transcription of argO ( possibly identical to abpS ) encoding an arginine exporter is under the tight control of ArgP .56 Transcription of argO is induced by ArgP in the presence of arginine ; lysine abolishes this effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>In contrast to argO , external arginine seems not to be essential for transcription of lysP by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>To evaluate the importance of this sequence for binding of ArgP to the lysP control region , a DNA fragment from position 84 to position 58 containing the T-N11-A conserved motif ( T-N11-A fragment ) and another , from position 35 to position 58 , without this T-N11-A sequence ( 35-10 fragment ) were incubated with ArgP in the presence and absence of lysine ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Moreover , the afﬁnity of ArgP for the T-N11-A fragment was found to be slightly higher in the presence of lysine ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>To determine whether ArgP directly regulates lysP transcription , we tested binding of ArgP to the lysP promoter/control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Binding of ArgP to the lysP control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>ArgP binds more avidly to the lysP control region in the presence of lysine , which might underlie the lysine-mediated prevention of lysP expression similarly to the previously described shutoff of argO expression by lysine-loaded ArgP ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>ArgP binds to the lysP promoter/control region at a T-N11-A motif in the presence and absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Whereas arginine did not affect the binding of ArgP to the lysP promoter/control region , the presence of lysine increased the binding afﬁnity approximately 2-fold ( KD , 63 9 nM ) ( Fig. 4C and F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>In vitro assays indicated that ArgP bound to the lysP promoter/control region irrespective of the presence of lysine and arginine , but lysine increased the afﬁnity of ArgP by a factor of 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Our results indicate that under lysine-limiting growth conditions , ArgP functions as a transcriptional-activator of lysP expression by binding to a sequence located between positions 91 and 47 in the lysP promoter/control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Here , we found that Lrp binds to several sites at the lysP control region and is able to potentiate the transcriptional activation mediated by ArgP when lysine becomes limiting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Together , these results suggest that Lrp potentiates the activator effect of ArgP on lysP transcription in the absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>These results indicated that ArgP is responsible for the transcriptional activation of lysP in the absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>According to the in vivo analyses , ArgP is a transcriptional-activator of lysP in the absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Regulation of lysP expression by lysine , arginine , and ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>As demonstrated here , lysP expression is induced under lysine limitation and requires ArgP and Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Importantly , ArgP bound to the same of basic amino acids on lysP expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Analysis of lysP regulation by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Regulation of lysP by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Among the other 12 amino acids tested , comprising two previously reported potential effector-molecules of Lrp binding , L-alanine and L-methionine ( Mathew et al. , 1996 ; Zhi et al. , 1999 ; Berthiaume et al. , 2004 ) , and the effector-molecules of ArgP ( L-arginine and L-lysine ) , only methionine exerts a minor , but repeatedly observed , negative effect ( Fig. 3D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>ArgP-DNA binding assays were performed by incubating 30 fmol of a DNA fragment with increasing concentrations of ArgP-His6 in 25 l ArgP binding 1 buffer supplemented with 12 g ml sonicated salmon sperm DNA as a nonspeciﬁc competitor , 50 g ml 1 bovine serum albumin , and , where indicated , 0.1 mM lysine or arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">ArgP protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>It may be emphasized here that our interpretations are based primarily on indirect lines of genetic evidence and that additional biochemical studies are necessary both to establish the role of ArgP and its coeffectors in yggA transcription and to examine the putative exporter function of YggA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>The crystal structure of Mycobacterium tuberculosis ArgP has been determined ( 73 ) and may be described , by comparison with the structure of the LTTR CbnR of Ralstonia eutropha ( 46 ) , as comprising an N-terminal DNA-binding domain ( DBD ) followed sequentially by a linker helix and C-terminal regulatory domains I and II ( RD-I and - II , respectively ) -- with hinge regions 1 , 2 , and 3 located between ( i ) DBD and the linker helix , ( ii ) the linker helix and RD-I , and ( iii ) RD-I and RD-II , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Crystal structure of ArgP from Mycobacterium tuberculosis conﬁrms two distinct conformations of full-length LysR transcriptional regulators and reveals its function in DNA-binding and transcriptional regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In vitro EMSAs as well as in vivo transcriptional studies indicated that this motif is crucial for ArgP binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>The six DNA-binding sites for the ArgP and IciA proteins are similar ( Table 1 ) , and all of them include the T-N11-A motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>ArgP binds to the lysP promoter/control region at a T-N11-A motif in the presence and absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>A putative primary ArgP binding site , ATTAGTTTTTCT GAT , where the conserved T-N11-A motif of the LysR-type protein-binding site is underlined , is centered at 63 in the argO promoter ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Only one potential ArgP binding site can be found in the 81 / 98 interval , ATGCCTTTCACTGAT , which is centered at 89 and is conserved in the dapB region of closely related entero-bacteria of the genera Shigella and Salmonella ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Ternary interaction of ArgP and RNAP with argO regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>If functional , this ArgP binding site at dapB would be on the opposite side of the double helix compared to argO , which would signiﬁcantly alter ArgP interaction with RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>The sequence of the 1815 bp SalI DNA fragment revealed an open reading frame that codes for the 297 amino acid residues of the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>In the pre-sent case , it is possible that activation of initiation of transcription by RNA polymerase involves further protein-protein interactions between ArgP and RNA polymerase ( Choy & Adhya , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>To further investigate ArgP-mediated activation of dapB transcription , we puriﬁed His-tagged ArgP protein ( 17 ) and used it to perform EMSE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">ArgP evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>ArgP and LysG are transcriptional regulators of argO and lysE , respectively ( 5 , 16 ) , and the two proteins share 35 % identity and 53 % similarity at the amino acid level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>The proteins LysG and ArgP are orthologous members of the LysR family from , respectively , the Gram-positive bacterium Co-rynebacterium glutamicum ( 6 , 68 ) and the Gram-negative bacte-rium Escherichia coli ( 12 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>In vivo studies with argO-lac fusions have established that argO is under the strict transcriptional control of ArgP ( a member of the LysR family of regulator proteins [ Schell 1993 ] ) , and that its expression is induced by 1 mM Arg as well as by its toxic analog canavanine ( CAN , which is a plant derived naturally occurring antimetabolite ) ( Nandineni and Gowrishankar 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Expression of the E. coli argO gene is activated by ArgP , also known as IciA , which is a transcriptional activator of the LysR type transcriptional regulator family ( Nandineni and Gowrishankar , 2004 ; Laishram and Gow-rishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>YggA is similar to C. glutamicum LysE , which has been shown to export Arg and Lys ( 3 , 42 ) , whereas ArgP is a member of the LysR family of transcriptional activators ( which includes LysG , the activator of LysE in C. glutamicum ) ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>First identiﬁed as a protein that binds speciﬁc sequences in oriC in vitro to inhibit the initiation of replication ( 21 -- 23 , 46 ) , ArgP was shown ( 46 ) to be a member of the family of LysR-type transcriptional regulators ( LTTRs ) and , subsequently , to be essential both in vivo and in vitro for transcription of the gene encoding the L-arginine ( Arg ) exporter ArgO ( 26 , 32 ) ; in Corynebacterium glutamicum , LysG and LysE are orthologous to E. coli ArgP and ArgO , respectively , and LysG is required for LysE transcription ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Both Arg and Lys serve as inducers of lysE transcription , and this regulation is mediated by the protein LsyG , which shares sequence similarity with E. coli ArgP and is another member of the LysR family ( Bellmann et al. 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>ArgP is a member of the LTTR protein family , which binds coeffectors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>As mentioned above , ArgP belongs to the LTTR family , of which LysR is the prototypic member ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>DNA-binding sites for the ArgP protein The ArgP protein belongs to the large family of LysR transcriptional regulators , and the analysis of highly conserved features of these regulators has suggested that many of them may function in a similar way ( Schell , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>ArgP belongs to the family of LysR-type regulatory proteins , most of which use a small effector molecule as a coactivator ( 23 ) , whereas lysine appears to inhibit ArgP function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by ArgP</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>A few other instances have been reported of conserved interactions between Gram-positive and Gram-negative bacteria , which are manifested as successful cross-complementation of genes whose products ( proteins or RNA ) function within macromolecular complexes ; the examples include FoF1 ATPase between Bacillus megaterium and E. coli ( 64 ) , protein complexes involving YidC between Streptococcus mutans and E. coli ( 19 ) or Era/Bex FIG 3 Subunit composition and pIs of native ArgP ( WT ) and its - S94L and - P274S variants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>To evaluate whether ArgP was involved in the transcriptional regulation of lysP , a nonfunctional argP allele ( argP : : Camr ) was transduced into strain MG-LR carrying the chromosomal PlysP : : lacZ fusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>It is also possible that the putative dual functions of ArgP , in transcriptional regulation and in chromosome-organization , are in some way related to its ability to dimerize in two different modes ( as deduced from the crystal structure of the M. tuberculosis ortholog ) ( 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>These regulators activate expression of the corresponding target genes in response to lysine availability ( ArgP for lysP and CadC via interaction with LysP for cadBA ) ( 55 , 58 ) and low pH ( CadC ) ( 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Effects of CadC , LysP , and ArgP on cadBA-lac expression - Gal sp act ( Miller units ) a TABLE 9 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Tests for ArgP regulation of genes related to Arg transport Strain ( genotype ) pH 7.4 pH 5.8 Nil Lys Nil Lys a - Gal sp act ( Miller units ) - type strain with : ild W 98 96 24 96 26 28 99 24 94 26 26 24 24 87 28 27 26 22 28 26 24 25 27 25 23 21 25 27 MC4100 ( wild type ) GJ9623 ( lysP ) GJ9647 ( cadC ) GJ9602 ( argP ) GJ9649 ( lysP cadC ) GJ9648 ( argP cadC ) GJ9624 ( argP lysP ) Plasmid ( genotype ) argP strain with : argR with Arg Nil Arg Lys Arg Lys il N 1,700 1,353 286 1,480 1,256 231 1,252 114 296 pHYD2658 ( artJ-lac ) pHYD2659 ( artP-lac ) pHYD2660 ( argT-lac ) pHYD2661 ( hisJ-lac ) Thus , we believe that ArgP does not play a role in transactions involving DNA-metabolism or replication in E. coli , which conclusion is supported by the facts that neither a argP mutant nor an ArgP-overproducing strain is compromised for DNA-replication or growth rate ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Based on data from in vitro studies , Celis suggested that wild-type ArgP both represses its own transcription and activates that of argK ; he also sought to explain the Canr phenotype associated with the argPd mutation on the assumption that it is a loss-of-function ( that is , domi-nant-negative ) allele whose product is unable to efﬁciently activate the genes involved in Arg uptake , including argK ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>In the same context , ArgP ( IciA ) has also been implicated as a transcriptional activator of the dnaA and nrd genes involved in DNA-replication , but the equivalent phenotypes for argP-null mutants have not been reported ( Lee et al. 1996 , 1997 ; Han et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Under the denomination of IciA ( inhibitor of chromosome initiation A ) , ArgP was originally shown to bind the E. coli replication origin ( oriC ) , to inhibit DNA-replication-initiation in vitro , and to stimulate transcription of the dnaA and nrd genes , involved in DNA-replication ( Hwang and Kornberg , 1990 ; Hwang et al. , 1992 ; Lee et al. , 1997 ; Han et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>) In addition , in vitro studies have suggested that ArgP activates the transcription of the dnaA and nrdA genes that are involved in DNA-metabolism and replication ( 20 , 27 -- 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP and regulation of genes of DNA-replication and me-tabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>At the time that these experiments were done , the genes known to be ArgP regulated in vivo included the following ( gene functions are indicated in parentheses ) : argO ( Arg export ) , dapB ( dihydrodipicolinate reductase in the diaminopimelate-Lys biosynthetic pathway ) , and K. pneumoniae gdhA ( glutamate dehydrogenase for NH4 assimilation and glutamate-biosynthesis ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Control at the transcriptional level has been demonstrated for both inﬂux and efflux genes , by several speciﬁc ( ArgR , ArgP ) and more general ( NtrC , Lrp ) repressors and activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>E. coli BL21 ( DE3 ) pLysS harboring plasmid pET16lrp or pET21argP ( Table 1 ) was grown to exponential phase at 30 ° C , and expression of genes encoding N-terminally His-tagged Lrp ( His6-Lrp ) or C-ter-minally His-tagged ArgP ( ArgP-His6 ) was induced with 0.5 mM isopropyl - - D-thiogalactopyranoside ( IPTG ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Since ArgP is required for transcription of the Arg exporter ArgO , we also tested the promoters of other genes known to be involved in Arg transport ( artP , artJ , argT , and the hisJQMP operon ) as candidates for regulation by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>However , the direct implication of ArgP in the regulation of genes encoding the corresponding transport proteins responsible for the uptake of these amino acids has never been analyzed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>In general , the results obtained in this work underline the importance of ArgP in the transcriptional-control of genes involved in basic-amino-acid-transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>The in vitro run-off transcription assays provided conclusive evidence that the ArgP protein activates the expression of the argK gene , and that ArgP functions as a repressor of its own synthesis in the pre-sence of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The phenotype of the argP mutant , carrying the argPd mutation described before , is likely to be the result of an inability of the ArgP protein to activate ef ® ciently genes of the transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The ArgP protein regulates the expression of speci ® c genes in E. coli K 12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_21">
+Repression and activation of arginine-transport genes in Escherichia coli K 12 by the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></label>
+<input id="rp_similarity_21", type="checkbox">
+<div class="RP_similar">
+<li>Repression and activation of arginine-transport genes in Escherichia coli K-12 by the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li></div>
+<li>Here , it is shown that the ArgP protein activates the formation of the ArgK protein , an ATP-binding protein essential for the operation of the arginine-transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Here , it is shown that the product of the argP gene , the ArgP protein , is a modulator molecule that regulates the expression of the arginine-transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>ArgP seems to be a versatile regulator , able to control gene-expression of various basic-amino-acid-transporters by responding to low-molecular-weight coeffectors in order to maintain a balance in the intracellular concentration of at least lysine and arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>LysG is a transcriptional regulator of LysE expression ( 6 ) , and likewise ArgP regulates expression of ArgO , which is a LysE ortholog ( 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>These results indicate that ArgP is a major regulator of lysP expression but that Lrp modulates lysP transcription under lysine-limiting conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Identiﬁcation of ArgP as a regulator of lysP expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Regulation of lysP expression by lysine , arginine , and ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Role of ArgP ( IciA ) in Lysine-Mediated Repression in Escherichia coli Carmelita N. Marbaniang and J. Gowrishankar * Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500 001 , India Received 22 July 2011/Accepted 24 August 2011 Initially identiﬁed as an inhibitor of oriC-initiated DNA-replication in vitro , the ArgP or IciA protein of Escherichia coli has subsequently been described as a nucleoid-associated protein and also as a transcriptional regulator of genes involved in DNA-replication ( dnaA and nrdA ) and amino-acid-metabolism ( argO , dapB , and gdhA [ the last in Klebsiella pneumoniae ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>E vidence for an Arginine Exporter Encoded by yggA ( argO ) That Is Regulated by the LysR-Type Transcriptional Regulator ArgP in Escherichia coli Madhusudan R. Nandineni1 ,2 and J. Gowrishankar2 * Centre for Cellular and Molecular Biology , Hyderabad 500007,1 and Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076,2 India Received 9 November 2003/Accepted 19 February 2004 The anonymous open reading frame yggA of Escherichia coli was identiﬁed in this study as a gene that is under the transcriptional-control of argP ( previously called iciA ) , which encodes a LysR-type transcriptional regulator protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Our results indicate that whereas ArgP activates argO transcription in the presence of Arg through the process of RNA polymerase of bacterial transcription Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076 , India In vivo transcription of the Escherichia coli argO gene , which encodes an arginine ( Arg ) exporter , requires the LysR-family regulator protein ArgP ( previously called IciA ) and is induced in the presence of Arg or its naturally occurring antimetabolite analog canavanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Distinct Paths for Basic Amino Acid Export in Escherichia coli : YbjE ( LysO ) Mediates Export of L-Lysine Amit Pathania , a , b Abhijit A. Sardesaia Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad , Indiaa ; Graduate Studies , Manipal University , Manipal , Indiab ABSTRACT In Escherichia coli , argO encodes an exporter for L-arginine ( Arg ) and its toxic analogue canavanine ( CAN ) , and its transcriptional activation and repression , by Arg and L-lysine ( Lys ) , respectively , are mediated by the regulator ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Previously , ArgP was identiﬁed as a lysine-dependent regulator of argO , which encodes an arginine exporter ( 24 , 30 ) , and dapB , which encodes an enzyme of the lysine-biosynthesis pathway ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>ArgP of E. coli is also responsible for the lysine-dependent regulation of dapB , which encodes one of the enzymes of the diaminopimelate and lysine-biosynthesis pathway ( 2 ) , and argO , which encodes the arginine exporter ArgO ( 24 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>ArgP is a transcriptional regulator required for synthesis of ArgK , which is required for arginine-transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Here , we demonstrate that expression of the E. coli argO gene is affected not only by the internal concentrations of arginine and lysine through the action of ArgP , but also by the general metabolic state of the cell , through regulation by the global transcriptional regulator Lrp ( leucine-responsive regulatory protein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>) ArgP is a LysR-type regulator that activates argK expression in the absence of arginine ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Does ArgP , a LysR-type regulator control PartP ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The LysR-type transcriptional regulator ( LTTR ) ArgP was identiﬁed as a major regulator of lysP transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Here , we identiﬁed the LysR-type transcriptional regulator ArgP as the regulator responsible for the control of lysP transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Expression of the E. coli argO gene is activated by ArgP , also known as IciA , which is a transcriptional activator of the LysR type transcriptional regulator family ( Nandineni and Gowrishankar , 2004 ; Laishram and Gow-rishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Nandieni , R. and Gowrishankar , J. , Evidence for an Arginine Exporter Encoded by yggA ( argO ) That Is Regulated by the LysR-Type Transcriptional Regulator ArgP in Escherichia coli , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17025177" target="_blank">17025177</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_44">
+Evidence for an arginine exporter encoded by yggA ( argO ) that is regulated by the LysR-type transcriptional regulator ArgP of Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></label>
+<input id="rp_similarity_44", type="checkbox">
+<div class="RP_similar">
+<li>Evidence for an arginine exporter encoded by yggA ( argO ) that is regulated by the LysR-type transcriptional regulator ArgP in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15489430" target="_blank">15489430</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li></div>
+<li>Construction of mutant encoding ArgP ( P274S ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>These ﬁndings implicate a role for ArgP in Lys metabolism and homeostasis in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_48">
+Role of ArgP ( IciA ) in lysine-mediated repression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></label>
+<input id="rp_similarity_48", type="checkbox">
+<div class="RP_similar">
+<li>Role of ArgP ( IciA ) in lysinemediated repression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li></div>
+<li>Identiﬁcation of ArgP and Lrp as Transcriptional Regulators of lysP , the Gene Encoding the Speciﬁc Lysine Permease of Escherichia coli † Jimena Ruiz , ‡ Ina Haneburger , and Kirsten Jung * Ludwig-Maximilians-Universita ̈t München , Munich Center for integrated Protein Science ( CiPSM ) at the Department of Biology I , Microbiology , Grosshaderner Strasse 2-4 , 82152 Martinsried , Germany Received 12 July 2010/Accepted 14 March 2011 Expression of lysP , which encodes the lysine-speciﬁc transporter LysP in Escherichia coli , is regulated by the concentration of exogenous available lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Recently , ArgP was also shown to act as a lysine-sensitive transcriptional activator of the E. coli dapB gene of the diaminopimelate-pathway ( Bouvier et al. , 2008 ) , and of the Klebsiella pneumoniae gdhA gene , encoding glutamate dehydrogenase ( Goss , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Identiﬁcation of ArgP and Lrp as transcriptional regulators of lysP , the gene encoding the speciﬁc lysine permease of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22685278" target="_blank">22685278</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23222720" target="_blank">23222720</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">ArgP binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>TABLE 1 E. coli strains and plasmids Strain or plasmida Genotype or descriptionb Strains MC4100 GJ4823 GJ9026 GJ9028 GJ9029 G9048 GJ9060 ( argF-lac ) U169 rpsL150 relA1 spoT1 araD139 ﬂbB5301 deoC1 ptsF25 MC4100 argO205 : : Tn10dTet MC4100 ybjE : : Kan GJ4823 ybjE : : Kan MC4100 argR : : Kan BL21 ( DE3 ) argR : : Kan MC4100 lysA dppB oppB tppB : : Kan Plasmids pHYD915 pHYD2606 pHYD2833 pCL1920 , encoding wild-type ArgP ( 5 ) pCL1920 , encoding ArgP bearing the P274S amino acid substitution ( 39 ) pACYC184 containing a segment of chromosomal DNA extending from coordinates 912287 to 914782 , bearing ybjE , present in the BamHI site of tetA ; the coordinate 914782 is proximal to the tetA promoter Identical to pHYD2833 Identical to pHYD2833 pACYC184 containing a segment of chromosomal DNA extending from coordinates 3063431 to 3067219 , bearing argO , present in the BamHI site of tetA ; the coordinate 3063431 is proximal to the tetA promoter Derivative of the plasmid pTrc99A in which an NcoI site was converted to an NdeI site by site-speciﬁc mutagenesis following the elimination by end ﬁlling of a preexisting NdeI site in pTrc99A pHYD3025 containing argO that abuts a DNA sequence encoding the hemagglutinin tag in the NdeI and SalI sites at its 3 = end pHYD3025 containing ybjE in the NdeI and HindIII sites pET21b containing argR that abuts a DNA sequence encoding the hexahistidine tag in the NdeI and XhoI sites at its 3 = end pMU575 containing the cis regulatory region of ybjE extending from 456 to 55 in the SalI and XbaI sites pHYD2885 bearing the T-to-G substitution at 58 in ybjE pHYD2885 bearing a deletion in the cis regulatory region of ybjE from 333 to 302 pHYD2889 bearing a deletion in the cis regulatory region of ybjE from 85 to 68 pHYD2889 bearing a deletion in the cis regulatory region of ybjE from 64 to 47 pHYD2889 bearing a deletion in the cis regulatory region of ybjE from 43 to 26 pHYD2889 bearing nucleotide substitutions at 42 ( T to G ) , 41 ( T to G ) , 40 ( G to T ) , and 37 ( A to C ) in the cis regulatory region of ybjE a All strains listed are E. coli K-12 strains except GJ9048 , which is E. coli B. MC4100 and BL21 ( DE3 ) were from our laboratory collection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>The sequence of the 1815 bp SalI DNA fragment revealed an open reading frame that codes for the 297 amino acid residues of the ArgP protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The sites on DNA to which ArgP ( IciA ) has been shown to bind are all AT rich , but no consensus binding sequence has as yet been discerned ( Hwang and Kornberg 1990 , 1992 ; Lee et al. 1996 ; Wei and Bernander 1996 ; Han et al. 1998 ; Azam and Ishihama 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The ArgP protein represses its own synthesis Sequences consistent with the consensus for E. coli promoters ( ÿ35 and ÿ10 ) have not been found upstream of the start codon for the iciA ( argP ) gene ( Tho È ny et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>In the case of repression of argP by ArgP and L-arginine , the regulatory protein might bind to a T-N11-A consensus sequence located at position ÿ40 from the start codon of argP ( Hwang et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>This organization of binding sites strongly suggests potential interferences in the binding of Lrp and ArgP to the argO operator and in their modulation of PargO activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Puriﬁed His6-tagged ArgP protein binds with an apparent Kd of 35 nM to the dapB promoter in a gel retardation assay , provided that sequences up to 103 are present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>There is a strict correlation between the presence of ArgP and a high level of lysine-repressed dapB transcription , provided that the dapB regulatory region contains the necessary cis-acting upstream sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Incubation with His6-ArgP gave a single retarded band with DNA fragments extending up to 118 or 103 but none with the shorter fragments extending up to 81 , 65 , or 35 ( Fig. 3A ) , demonstrating the existence of a binding site for ArgP located , at least in part , between positions 103 and 81 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Likewise , neither the double-stranded 26-mer sequence from − 102 to − 77 nor that from − 115 to − 90 exhibited binding to ArgP in EMSA , whereas that from − 89 to − 64 bound the protein , albeit very weakly , both in the absence and presence of Lys ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>More recently , ArgP was shown to bind to an approximately 60-bp-long sequence partially overlapping the argO promoter ( Fig. 1 ; Laishram and Gowrishankar , Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>ArgP binds to the − 85 to − 20 region of argO in both the absence and presence of Arg or Lys In an electrophoretic mobility shift assay ( EMSA ) , ArgP was shown to specifically bind the radiolabeled argO fragment comprising the sequence from − 293 to +109 with a Kd of 6.5 nM ( monomer concentration ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>The ArgP dimer has a common binding site ( s ) for its ligands Arg and Lys ( and probably also CAN ) , and is able to bind the sequence between approximately − 85 and − 20 of argO to form a stable binary complex in both its liganded and unliganded states .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In contrast , ArgP binds to a sequence between positions 85 and 20 of the argO operator/promoter and forms a stable binary complex in both its liganded and its unliganded forms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Only one potential ArgP binding site can be found in the 81 / 98 interval , ATGCCTTTCACTGAT , which is centered at 89 and is conserved in the dapB region of closely related entero-bacteria of the genera Shigella and Salmonella ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>When nested deletion constructs of the lysP regulatory region were tested , a fragment extending upstream up to 114 bp ( relative to the start site of transcription ) was nearly indistinguishable from the larger fragment ( extending up to 219 bp ) in terms of both in vivo lac fusion regulation ( Table 6 ) and in vitro Lys-sensitive ArgP binding ( Fig. 2 , compare panels A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Combined , the data from the in vitro binding studies indicate that Lrp contacts sequences overlapping the ArgP binding site and sequences extending further upstream ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The in vitro data also indicate that the lysP upstream sequence between 76 bp and 114 bp is required for ArgP binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP binds to the lysP promoter/control region at a T-N11-A motif in the presence and absence of lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>To evaluate the importance of this sequence for binding of ArgP to the lysP control region , a DNA fragment from position 84 to position 58 containing the T-N11-A conserved motif ( T-N11-A fragment ) and another , from position 35 to position 58 , without this T-N11-A sequence ( 35-10 fragment ) were incubated with ArgP in the presence and absence of lysine ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>So far , our results demonstrate that ArgP directly binds to the lysP promoter/control region and that the T-N11-A sequence located close to the RNA polymerase binding site is important for binding and crucial for lysP transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Our results indicate that under lysine-limiting growth conditions , ArgP functions as a transcriptional activator of lysP expression by binding to a sequence located between positions 91 and 47 in the lysP promoter/control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>A putative primary ArgP binding site , ATTAGTTTTTCT GAT , where the conserved T-N11-A motif of the LysR-type protein binding site is underlined , is centered at 63 in the argO promoter ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>The two most promoter proximal Lrp boxes are conﬁned within the ArgP binding site , whereas Pot-box 3 , which shows the most similarities to the consensus , is located slightly further upstream .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>ArgP binds a site upstream of the dapB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by ArgP</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Expression of ArgPP274S but not ArgP in MC4100 promoted cross-feeding of the lysA dppB tppB oppB quadruple mutant GJ9060 and the ability of ArgPP274S to cross-feed GJ9060 was absent in a strain lacking ArgO ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>It has been proposed that the production of the AO protein ( at the time supposed to be encoded by the abpS gene and not by artI ) is controlled by ArgP ( see Introduction ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>E. coli BL21 ( DE3 ) pLysS harboring plasmid pET16lrp or pET21argP ( Table 1 ) was grown to exponential phase at 30 ° C , and expression of genes encoding N-terminally His-tagged Lrp ( His6-Lrp ) or C-ter-minally His-tagged ArgP ( ArgP-His6 ) was induced with 0.5 mM isopropyl - - D-thiogalactopyranoside ( IPTG ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Expression and puriﬁcation of His6-ArgP were done as described previously ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Based on data from in vitro studies , Celis suggested that wild-type ArgP both represses its own transcription and activates that of argK ; he also sought to explain the Canr phenotype associated with the argPd mutation on the assumption that it is a loss-of-function ( that is , domi-nant-negative ) allele whose product is unable to efﬁciently activate the genes involved in Arg uptake , including argK ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Since ArgP is required for transcription of the Arg exporter ArgO , we also tested the promoters of other genes known to be involved in Arg transport ( artP , artJ , argT , and the hisJQMP operon ) as candidates for regulation by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_7">
+Bouvier , J. , Stragier , P. , Morales , V. , Rémy , E. , and Gutierrez , C. ( 2008 ) Lysine represses transcription of the Escherichia coli dapB gene by preventing its activation by the ArgP activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></label>
+<input id="tu_similarity_7", type="checkbox">
+<div class="TU_similar">
+<li>Lysine represses transcription of the Escherichia coli dapB gene by preventing its activation by the ArgP activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li></div>
+<li>ArgP controls dapB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>ArgP activates dapB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Altogether , these data indicate that ArgP is able to activate transcription from the dapB promoter , provided that some sequences upstream of 81 are present , and is necessary for lysine to repress dapB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Altogether , these results indicate that dapB transcription is controlled by the activating protein ArgP , whose binding upstream of 81 is antagonized by lysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>To conﬁrm the role of ArgP in the regulation of lysP transcription , the argP gene was cloned into plasmid pBAD24 under the control of the arabinose-inducible promoter ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>To assess the importance of ArgP in dapB expression , we inactivated the argP gene using the lambda Red recombinase procedure ( 9 ) , as detailed in Materials and Methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18502871" target="_blank">18502871</a>]<br></li>
+<li>Similarly , LysG activates lysE transcription in the presence of Arg , Lys , or histidine ( His ) ( 6 ) , while ArgP activates argO in the presence of Arg but not Lys or His ( 47 ) ; indeed , Lys-bound ArgP actively shuts off argO transcription by a mechanism involving RNAP trapping at the argO promoter ( 34 ) , so that argO is not transcribed even in the simultaneous presence of both Arg and Lys ( 34 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Activation of lysE transcription in the presence of LysG and its coeffectors Arg , Lys , or His ( added as their respective dipeptides with Ala ) was unaffected by native ArgP ( i.e. , in the argP strain ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>We have now reconstituted in E. coli the activation of lysE by LysG in the presence of its coeffectors and have shown that neither ArgP nor LysG can regulate expression of the noncognate orthologous target .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>Neither did ectopic LysG expression in an argP strain interfere with the ability of ArgP to regulate argO-lac in the absence or presence of the coeffectors as either free amino acids ( Table 2 ) or dipeptides ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>The lysP gene encodes a Lys-speciﬁc permease , and our data indicate that it is around 35-fold activated by ArgP and 5-fold repressed by Lys ; a argP mutant phenocopies a lysP mutant for resistance to the Lys analog thialysine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>( iii ) The transcription of yggA in vivo is ArgP dependent and is induced by exogenous Arg or Arg-Ala ( and also by an argR mutation ) , whereas the addition of Lys or Lys-Ala phenocopies the effect of an argP null mutation ; furthermore , yggA expression is rendered constitutive in an argPd strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>However , the argP strain displayed 4-fol higher expression in the unsupplemented medium than the argP strain and 10-fold repression by Lys , suggestive of an additional component of control that was ArgP dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Transcription of these genes was also affected by the presence of arginine in the culture medium , indicating that both lysine and arginine are coeffectors of ArgP ( 2 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>In contrast , it has now been clearly demonstrated that transcription of argO ( possibly identical to abpS ) encoding an arginine exporter is under the tight control of ArgP .56 Transcription of argO is induced by ArgP in the presence of arginine ; lysine abolishes this effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>In contrast to argO , external arginine seems not to be essential for transcription of lysP by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>It was shown that Lrp and ArgP behave as competitive activators able to activate argO expression under different conditions ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>These results indicate that ArgP is a major regulator of lysP expression but that Lrp modulates lysP transcription under lysine-limiting conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Our results indicate that under lysine-limiting growth conditions , ArgP functions as a transcriptional activator of lysP expression by binding to a sequence located between positions 91 and 47 in the lysP promoter/control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Speciﬁcally , unloaded or Arg-loaded ArgP induces lysP expression , while the Lys-loaded form prevents expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Importantly , ArgP bound to the same of basic amino acids on lysP expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>As demonstrated here , lysP expression is induced under lysine limitation and requires ArgP and Lrp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Regulation of lysP expression by lysine , arginine , and ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>Regulation of lysP by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>The ArgP protein represses its own synthesis Sequences consistent with the consensus for E. coli promoters ( ÿ35 and ÿ10 ) have not been found upstream of the start codon for the iciA ( argP ) gene ( Tho È ny et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The contention that ArgP represses its own synthesis in the presence of arginine ( Celis , 1999 ) is not supported by our data ( Table 4 ) , concurring with more recent evidence obtained with argP-lacZ fusions ( Nandineni & Gowrishankar , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>Here , it is shown that the product of the argP gene , the ArgP protein , is a modulator molecule that regulates the expression of the arginine transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>This experiment showed ( Figure 4 ) that while ArgP does not affect the expression of the argP gene , in the presence of L-arginine the protein represses its own synthesis ( Figure 4 , lanes 7 to 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The in vitro run-off transcription assays provided conclusive evidence that the ArgP protein activates the expression of the argK gene , and that ArgP functions as a repressor of its own synthesis in the pre-sence of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>) ArgP is a LysR-type regulator that activates argK expression in the absence of arginine ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>ArgP complexed with arginine fails to activate argK expression and represses its own synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>EMSA experiments undertaken with the regulatory region of one of the genes , argT , revealed a very low afﬁnity of binding by ArgP that was Lys independent ( Fig. 3 and Table 4 ) ; the expression of the argT-lac fusion was also not affected in any of the argPd mutants ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Subsequently , dapB and K. pneumoniae gdhA have also been shown to be ArgP regulated and to be repressed with Lys ; in both these instances , Lys repression is achieved by reduced binding of ArgP to the DNA regulatory regions in the presence of Lys ( 7 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>In its description as IciA , ArgP has been reported to regulate dnaA and nrdA transcription ( 20 , 27 -- 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Coregulation of gdhA in vivo by both ArgP and NaCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Genes for Arg import are not regulated by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>On the other hand , for the genes such as argT , dnaA , or nrdA that are not ArgP regulated , there was no difference in expression between the argP derivative and any of the argPd mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Other genes , such as dnaA and nrdA , did exhibit binding to ArgP in vitro ( that was Lys insensitive ) but were not regulated by ArgP in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>dnaA and nrdA are not regulated by ArgP in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Differences in DNA bending induced by native ArgP and d ArgP proteins at argO and lysE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22904281" target="_blank">22904281</a>]<br></li>
+<li>At the same time , it is noteworthy that two of the genes that are most prominently regulated by ArgP , argO and lysP , are both also regulated by the leucine-responsive general transcriptional regulator Lrp ( 37 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Finally , it is noteworthy that many of the genes regulated by ArgP are controlled also by other mechanisms , such as by LysR for lysA , osmolarity for gdhA , the riboswitch for lysC , and Lrp for argO and lysP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>for transcriptional regulation by ArgP is the argO gene ( 26 , 32 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Our results indicate that negative regulation involving Lys as coeffector is mediated by ArgP and that the target genes include argO , lysP , lysC , asd , dapB , dapD , lysA , and gdhA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Accordingly , the E. coli genes argO , dapB , gdhA , lysP , lysC , and asd were chosen for further analysis of in vivo regulation by the ArgP protein and its constitutive variants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>ArgP and regulation of genes of DNA replication and me-tabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Thus , it appears that the mechanism of regulation of argO by ArgP is fundamentally different from that of the other genes regulated by this protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+<li>Since ArgP was previously shown not to exert autoregulation ( Nandineni and Gowrishankar , 2004 ; Caldara et al. , 2006 ) , in contrast to many other LysR-family members , we may conclude that argP expression is regulated neither by Lrp or ArgR , nor by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Expression of the E. coli argO gene is activated by ArgP , also known as IciA , which is a transcriptional activator of the LysR type transcriptional regulator family ( Nandineni and Gowrishankar , 2004 ; Laishram and Gow-rishankar , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Our results indicate that whereas ArgP activates argO transcription in the presence of Arg through the process of RNA polymerase of bacterial transcription Laboratory of Bacterial Genetics , Centre for DNA Fingerprinting and Diagnostics , Hyderabad 500076 , India In vivo transcription of the Escherichia coli argO gene , which encodes an arginine ( Arg ) exporter , requires the LysR-family regulator protein ArgP ( previously called IciA ) and is induced in the presence of Arg or its naturally occurring antimetabolite analog canavanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>In vivo studies with argO-lac fusions have established that argO is under the strict transcriptional control of ArgP ( a member of the LysR family of regulator proteins [ Schell 1993 ] ) , and that its expression is induced by 1 mM Arg as well as by its toxic analog canavanine ( CAN , which is a plant derived naturally occurring antimetabolite ) ( Nandineni and Gowrishankar 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17504942" target="_blank">17504942</a>]<br></li>
+<li>Transcription of argO in vivo is activated both by Arg and its toxic analog L-canavanine , both effects being mediated by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

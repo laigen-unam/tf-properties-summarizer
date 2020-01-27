@@ -1,0 +1,781 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - StpA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">StpA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">StpA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Keywords : in vitro reconstitution ; ribosome assembly ; RNA folding ; telithromycin ; trimethylamine oxide ( TMAO ) INTRODUCTION The large subunit of the eubacterial ribosome has a molecular weight of 1 +6 million Da and is composed of two RNAs ( 23S and 5S ) and approximately 30 different proteins + The assembly of this ribonucleoprotein particle in vivo depends on the ordered interaction of proteins with the rRNA as transcription occurs ( Nierhaus , 1991 ) + Assembly of the large subunit in vitro from its natural rRNA and protein components is not only possible but remarkably efficient ( about 40 % of the 23S rRNA is incorporated into a functional particle ; Fahnestock et al + , 1974 ; Dohme & Nierhaus , 1976 ; Londei et al + , 1986 ) + Although the general features of this assembly pathway in vitro must mimic the in vivo pathway , the time scales differ considerably + The protocol for Escherichia coli large subunit reconstitution involves a two-step incubation , first at low temperature ( 44 8C ) and low magnesium concentration ( 4 mM ) , followed by higher temperature ( 50 8C ) and magnesium concentration ( 20 mM ) over a time period of more than an hour ( Dohme & Nierhaus , 1976 ) + That such a simple protocol can promote efficient reconstitution implies that Reprint requests to : Rachel Green , Department of Molecular Biology and Genetics , Johns Hopkins University School of Medicine , 725 North Wolfe Street , Baltimore , Maryland 21205 , USA ; e-mail : ragreen@jhmi+edu+ strong determinants for ordered assembly are found in the various ribosomal components + Despite the robust reconstitution observed with natural ribosomal components , several years ago we observed that the substitution of in vitro-transcribed 23S rRNA for the natural transcript ( lacking the naturally occurring posttranscriptional modifications ) decreased the efficiency of the reconstitution by up to four orders of magnitude + Further experiments suggested that the limitations of in vitro transcripts in the E. coli system could be localized to an 80-nt region of domain V of 23S rRNA containing six different posttranscriptional modifications ( Green & Noller , 1996 ) + Though these modified nucleotides are not among those that appear to be most conserved across phylogeny ( Sirum-Connolly et al + , 1995 ) , these data have been interpreted as consistent with a critical role for posttranscriptional modification in ribosome assembly and/or function + The function of modified nucleotides in ribosomal RNA is not fully understood , though a growing body of evidence suggests that they play a structural rather than catalytic role + Nucleoside pseudouridylations in RNA can increase the rigidity of an RNA structure by enhancing base stacking ( Auffinger & Westhof , 1998 ) + The observations that the archeal hyperthermophile Sulfolobus solfataricus has an exceptionally high number of modified nucleosides , and that modification levels can vary in response to growth temperature ( Buck 40 & Ames , 1984 ; Dalluge et al + , 1997 ; Noon et al + , 1998 ) , are consistent with the idea that modifications stabilize structure in extreme conditions + A recent solution structure of the A loop of E. coli 23S rRNA in the absence and the presence of a ribose methylation modification at U2552 demonstrates that the presence of the modification within the loop restricts and stabilizes a particular conformation ( Blanchard & Puglisi , 2001 ) + More recently , large subunit ribosomal particles have been efficiently assembled using in vitro-transcribed 23S rRNA in two different thermophilic organisms , Bacillus stearothermophilus and Thermus aquaticus ( Green & Noller , 1999 ; Khaitovich et al + , 1999 ) , indicating that posttranscriptional modifications are not fundamental to the basic functions of the ribosome + From this , we can speculate that the poor reconstitution efficiency observed with in vitro transcripts of E. coli 23S rRNA is fundamentally a folding problem + On the one hand , RNA has the well-documented tendency to form stable folding intermediates that compete with productive assembly pathways ( Herschlag , 1995 ; Pan et al + , 1997 ; Pan & Sosnick , 1997 ) + RNA chaperones or mild denaturants can increase the sampling by the RNA species of alternate conformations , thus minimizing the effects of stable folding intermediates ( Coetzee et al + , 1994 ; Pan & Sosnick , 1997 ; Rook et al + , 1998 ; Clodi et al + , 1999 ) + Alternatively , the unmodified 23S rRNA in vitro transcript may have lost some structural stability that was critical in determining its assembly pathway + Agents that stabilize RNA structure ( either by specific or general interactions ) might be expected to minimize these effects + A priori , either ( or a combination ) of these two very different problems might be responsible for the profound assembly defects observed in the E. coli system + Here we ask whether any of a number of classes of reagent have a positive effect on the in vitro assembly of functional large subunits from unmodified , in vitro-derived 23S rRNA + RESULTS Two different classes of compounds increase the reconstitution efficiency of in vitro-transcribed E. coli 23S rRNA into functional 50S particles The reconstitution of functional E. coli 50S ribosome particles from in vitro-transcribed 23S rRNA ( E.C. T7 23S ) is not efficient + Using standard procedures , the reconstitution reaction with in vitro-transcribed 23S rRNA is four orders of magnitude diminished in peptidyl transferase ( PT ) activity ( as measured in the fragment reaction ) relative to the same reconstitution reaction with natural ( in vivo-derived ) 23S rRNA ( Fig + 1A , lanes 1 -- 5 and lanes 21 -- 25 ; Green & Noller , 1996 ) + Here we have screened for compounds that increase the overall efficiency of the in vitro reconstitution reaction + Briefly , a standard reconstitution reaction containing natural or in vitro-transcribed 23S rRNA , 5S rRNA , and TP50 ( total proteins from the 50S subunit ) was incubated with a collection of reagents ( including antibiotics , RNA chaperones , chemical chaperones , and denaturants ) at varying concentrations ( see Table 1 ) + Where possible , the added reagent was removed from the reconstitution reaction by dialysis overnight prior to assessing the reconstitution efficiency + Overall activity of the reconstituted 50S ribosomal particles was assessed using two different peptidyl transferase assays + The fragment reaction utilizes minimal tRNA substrates ( CAACCA-N-Ac-Methionine and puromycin ) to follow the formation of a single peptide bond on isolated 50S subunits , independent of the 30S subunit or added mRNA template ( Monro & Marcker , 1967 ) + The products of the reactions were resolved by paper electrophoresis and quantitated as previously described ( Kim & Green , 1999 ) + A second assay uses intact aminoacylated tRNA ( N-Ac-Phe-tRNAPhe ) as a peptidyl tRNA substrate and radioactively labeled [ 32P ] - CPm ( cytidyl-puromycin ) as a minimal aminoacyl substrate + These substrates are incubated with 30S subunits programmed with poly-uridine mRNA and the reconstituted 50S subunit + The formation of the dipeptidyl product was monitored by polyacrylamide gel electrophoresis ( Kim & Green , 1999 ) + The addition of peptidyl hydrolase to the intact tRNA assay did not alter the reaction rate , suggesting that the reaction is measuring a single turnover event catalyzed by the reconstituted ribosome population ( data not shown ; Kim et al + , 2001 ) + By contrast , in the fragment reaction , the presence of peptidylhydrolase did diminish the reaction rate , suggesting that there is significant substrate ( tRNA fragment ) dissociation from the reconstituted 50S subunit during the time course of the reaction + These results are consistent with known binding affinities of intact tRNA ( nM ; Lill et al + , 1986 ) and minimal tRNA substrates ( mM ; R + Green , unpubl + observations ) + Overall , the fragment reaction is expected to be the most sensitive to irregularities in the reconstituted particles due to the low binding affinity of the minimal substrates + In the intact tRNA assay , binding interactions with the natural 30S subunit by the anticodon end of the P-site substrate can compensate for some of the binding deficiencies of a reconstituted 50S particle + Two different classes of compound tested substantially increased the peptidyl transferase activity of the reconstituted ribosomes made from in vitro-transcribed 23S rRNA + First , the ketolide antibiotic telithromycin ( HMR3647 ) stimulated the reconstitution reaction by approximately threefold as determined by the fragment peptidyl transferase assay ( Fig + 1A , lanes 11 -- 15 vs + lanes 1 -- 5 and Fig + 1C ) + When 5S rRNA is excluded from the reconstitution reaction , the ketolide antibiotic is not able to stimulate the reconstitution ( data not shown ) as had been previously observed in the T. aquat icus system ( Khaitovich & Mankin , 1999 ) + Telithromycin did not affect the activity of reconstitution reactions containing natural ( in vivo-isolated ) 23S rRNA ( data not shown ) + Other antibiotics targeting the peptidyl transferase active site ( chloramphenicol or sparsomycin ) or locations critical for translocation ( viomycin ) had no apparent effect on the efficiency of the reconstitution reaction ( Table 1 ) + A second class of compounds known as osmolytes also significantly increased the activity of the reconstitution reaction from in vitro transcripts + In this class , two particular compounds , trimethylamine-oxide ( TMAO ) and betaine ( both containing a trimethylamine moiety ) , were most effective in stimulating the reconstitution reaction ( Fig + 1A , lanes 6 -- 10 ; Table 1 ) + As measured in the fragment reaction , these compounds stimulated the reconstitution by 5 - to 10-fold + Other related compounds such as sarcosine and taurine had no stimulatory effects + TMAO and betaine had no detectable effect on the already efficient reconstitution reaction with natural 23S rRNA transcripts + The antibiotic telithromycin and the osmolyte TMAO , both increase reconstitution efficiency ( see Fig + 1 and Table 1 ) though their modes of action are likely different + We asked if the effects of these compounds were additive in the reconstitution reaction + Using the frag ment reaction , we found that the combined activity of telithromycin and TMAO on the reconstitution efficiency was substantially higher ( approximately 200-fold stimulated relative to the reconstitution reaction without either compound ) than anticipated based on their individual properties ( 3-fold and 10-fold ) + None of the other tested compounds had any significant effect on the reconstitution reaction containing both TMAO and telithromycin + Modest increases ( approximately threefold ) in the activity of the reconstituted particles were observed with the RNA chaperone StpA + However , because its presence did not further stimulate the reaction containing TMAO and telithromycin , we did not further pursue this effect + Several other classes of compounds were tested for stimulation of reconstitution including the poly-ol osmolytes ( glycerol , sorbitol , etc + ) , fluorinated alcohols , and denaturants such as urea and guanidinium chloride ( Table 1 ) + None of these compounds had any positive effect on reconstitution , even when combined with the stimulating reagents TMAO and telithromycin + FIGURE 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11991636" target="_blank">11991636</a>]<br></li>
+<li>Effect of mutation of A2451 in the catalytic center of the ribosome + A : Wild-type ( E.C. T7 23S ) and mutant A2451 to G , C , or U 23S rRNA reconstitution reactions were tested in the fragment assay ( A ) and the intact tRNA assay ( B ) + All reconstitutions were performed in the presence of TMAO and telithromycin + C : Krel values for the mutant 23S rRNAs relative to the wild-type sequence ( E.C. T7 23S ) obtained from the two different PT assays + Using the optimized reconstitution system , the peptidyl transferase activity of the mutant ribosomes was assessed in the fragment reaction and in the intact tRNA peptidyl transferase assay + Whereas mutations at C2499 and C2452 had relatively minor effects on catalysis in either assay , mutation of A2058 to a G resulted in the complete loss of activity ( at least 100-fold ) in the fragment reaction and modest ( 2-fold ) effects in the intact tRNA assay ( Fig + 4 ) + Similarly , mutation of the active site residue A2451 resulted in substantial ( greater than 100-fold ) effects on PT activity as assessed by the fragment reaction and only modest ( 2-fold ) effects assessed by the intact tRNA assay ( Kim & Green , 1999 ; Fig + 5 ) + The implications of similar results obtained in the B. stearothermophilus and T. aquaticus systems have been discussed in detail elsewhere ( Kim et al + , 2001 ; Polacek et al + , 2001 ; Thompson et al + , 2001 ) + The different results yielded by these PT assays provide a starting point for the dissection of the specific deficiencies of these mutant ribosomes + Interestingly , telithro-mycin effectively stimulated the reconstitution of A2058G mutant ribosomes , though the identity of this nucleo-tide is thought to be a critical binding determinant for this ketolide antibiotic ( Khaitovich & Mankin , 1999 ) + We anticipate that the system described here will allow for the detailed analysis of mutant ribosome populations that will be critical in reconciling models based on current high resolution X-ray crystallographic views of the ribosome ( Ban et al + , 2000 ; Yusupov et al + , 2001 ) + MATERIALS AND METHODS Site-directed mutagenesis and in vitro transcription Oligonucleotide-directed mutations were constructed in the plasmid pCW1 ( Weitzmann et al + , 1990 ) using the QuikChange protocol ( Stratagene ) and were confirmed by sequencing + In vitro-transcribed 23S rRNA was generated with T7 RNA polymerase from linearized plasmid pCW ( digested with Afl II ) and its derivatives as previously described ( Green & Noller , 1999 ) + Natural 23S rRNA was prepared as previously described ( Dohme & Nierhaus , 1976 ) + In vitro reconstitution of E. coli 50S subunits The in vitro reconstitution of 50S subunits was performed essentially as described ( Dohme & Nierhaus , 1976 ) using either natural 23S rRNA or in vitro-transcribed 23S rRNA from Afl II-digested plasmid pCW1 with the following modifications : 1 +25 A of 23S rRNA ( natural or in vitro-derived ) 260 and 0 +05 A of 5S rRNA were incubated with 1 e + u + of TP50 260 in 20 mM Tris-HCl , 7 +4 , 4 mM MgAc , 400 mM NH4Cl , 0 +2 mM EDTA , and 5 mM b-mercaptoethanol for 20 min at 44 8C + Then the magnesium concentration was raised to 20 mM and the reactions were further incubated at 50 8C for 90 min + Various compounds were added to the reconstitution reac tions at the concentrations defined in the text ( see Table 1 ) + In Figure 2 , TMAO and telithromycin were added at different stages during the incubation protocol + After the high-temper-ature incubations , the reconstitution reactions were dialyzed overnight against 20 mM Tris-HCl , 7 +4 , 20 mM MgAc , 400 mM NH4Cl , 0 +2 mM EDTA , and 5 mM b-mercaptoethanol + In the reactions where TMAO was added at different stages of the reconstitution protocol , reactions were dialyzed for 30 min + Peptidyl transferase reactions The fragment reaction was performed essentially as previously described ( Green & Noller , 1996 ) + The intact tRNA assay was performed essentially as described ( Thompson et al + , 2001 ) where the reactions were incubated at 37 8C + ACKNOWLEDGMENTS Marlene Belfort is thanked for StpA and HNS and Alexander Mankin is thanked for telithromycin + Jon Lorsch and Luisa Cochella are thanked for helpful comments on the manu-script + Funding for this research was provided by the National Institutes of Health Grants GM59425-01 and HHMI to R+G + and a Schroedinger Stipendium from the Austrian Science Foundation to K+S + Received December 5 , 2001 ; returned for revision January 9 , 2002 ; revised manuscript received January 18 , 2002 REFERENCES Auffinger P , Westhof E + 1998 + Effects of pseudouridylation on tRNA hydration and dynamics : A theoretical approach + In : Grosjean H , Benne R + eds + Modification and editing of RNA + Washington , DC : ASM Press + pp 201 -- 207 + Ban N , Nissen P , Hansen J , Moore PB , Steitz TA + 2000 + The complete atomic structure of the large ribosomal subunit at 2 +4 Å resolution [ see comments ] + Science 289:905 -- 920 + Blanchard SC , Puglisi JD + 2001 + Solution structure of the A loop of 23S ribosomal RNA + Proc Natl Acad Sci USA 98:3720 -- 3725 + Brion P , Westhof E + 1997 + Hierarchy and dynamics of RNA folding + Annu Rev Biophys Biomol Struct 26:113 -- 137 + Buck M , Ames BN + 1984 + A modified nucleotide in tRNA as a possible regulator of aerobiosis : Synthesis of cis-2-methyl-thioribosylzeatin in the tRNA of Salmonella + Cell 36:523 -- 531 + Cleland JL , Builder SE , Swartz JR , Winkler M , Chang JY , Wang DI + 1992 + Polyethylene glycol enhanced protein refolding + Biotechnology 10:1013 -- 1019 + Clodi E , Semrad K , Schroeder R + 1999 + Assaying RNA chaperone activity in vivo using a novel RNA folding trap + EMBO J 18:3776 -- 3782 + Coetzee T , Herschlag D , Belfort M + 1994 + Escherichia coli proteins , including ribosomal protein S12 , facilitate in vitro splicing of phage T4 introns by acting as RNA chaperones + Genes & Dev 8:1575 -- 1588 + Dalluge JJ , Hamamoto T , Horikoshi K , Morita RY , Stetter KO , McCloskey JA + 1997 + Posttranscriptional modification of tRNA in psychrophilic bacteria + J Bacteriol 179:1918 -- 1923 + Dohme F , Nierhaus KH + 1976 + Total reconstitution and assembly of 50 S subunits from Escherichia coli ribosomes in vitro + J Mol Biol 107:585 -- 599 + Fahnestock S , Erdmann V , Nomura M + 1974 + Reconstitution of 50 S ribosomal subunits from Bacillus stearothermophilus + Methods Enzymol 30:554 -- 562 + Gekko K , Timasheff SN + 1981 + Mechanism of protein stabilization by glycerol : Preferential hydration in glycerol-water mixtures + Biochemistry 20:4667 -- 4676 + Green R , Noller HF + 1996 + In vitro complementation analysis localizes 23S rRNA posttranscriptional modifications that are required for Escherichia coli 50S ribosomal subunit assembly and function + RNA 2:1011 -- 1021 + Green R , Noller HF + 1999 + Reconstitution of functional 50S ribosomes from in vitro transcripts of Bacillus stearothermophilus 23S rRNA + Biochemistry 38:1772 -- 1779 + Harris EH , Burkhart BD , Gillham NW , Boynton JE + 1989 + Antibiotic resistance mutations in the chloroplast 16S and 23S rRNA genes of Chlamydomonas reinhardtii : Correlation of genetic and physical maps of the chloroplast genome + Genetics 123:281 -- 292 + Herschlag D + 1995 + RNA chaperones and the RNA folding problem + J Biol Chem 270:20871 -- 20874 + Khaitovich P , Mankin AS + 1999 + Effect of antibiotics on large ribosomal subunit assembly reveals possible function of 5 S rRNA + J Mol Biol 29:1025 -- 1034 + Khaitovich P , Tenson T , Kloss P , Mankin AS + 1999 + Reconstitution of functionally active Thermus aquaticus large ribosomal subunits with in vitro-transcribed rRNA + Biochemistry 38:1780 -- 1788 + Kim DF , Green R + 1999 + Base-pairing between 23S rRNA and tRNA in the ribosomal A site + Mol Cell 4:859 -- 864 + Kim DF , Semrad K , Green R + 2001 + Analysis of the active site of the ribosome by site-directed mutagenesis + Cold Spring Harbor Quant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11991636" target="_blank">11991636</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_3">
+Esch-erichia coli protein StpA stimulates self-splicing by promoting RNA assembly in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></label>
+<input id="act_similarity_3", type="checkbox">
+<div class="ACT_similar">
+<li>Escherichia coli protein StpA stimulates self-splicing by promoting RNA assembly in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_5">
+Zhang , A. , Derbyshire , V. , Galloway Salvo , J.L. , and Belfort , M. ( 1995 ) E. coli protein StpA stimulates self-splicing by promoting RNA assembly in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></label>
+<input id="act_similarity_5", type="checkbox">
+<div class="ACT_similar">
+<li>Zhang , A. , Derbyshare , V. , Galloway Salvo , J.L. , and Belfort , M. ( 1995 ) Escherichia coli protein StpA stimulates selfsplicing by promoting RNA assembly in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li></div>
+<li>As depicted in Figure 9 , the StpA , FIS and CspA proteins seem to influence the autoregulatory system of hINs ( La Teana et al. , 1991 ; Dersch et al. , 1993 ; Ueguchi and Mizuno , 1993 ; Falconi et al. , 1996 ; this paper ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_8">
+Probing the structure , function , and interactions of the Escherichia coli H-NS and StpA proteins by using dominant negative derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9922259" target="_blank">9922259</a>]<br></label>
+<input id="act_similarity_8", type="checkbox">
+<div class="ACT_similar">
+<li>[ 39 ] Williams R.M. , Rimsky S. , Buc H. , Probing the structure , function and interactions of the Escherichia coli H-NS and StpA proteins using dominant negative derivatives , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+<li>Williams , R.M. , Rimsky , S. , and Buc , H. ( 1996 ) Probing the structure , function , and interactions of the Escherichia coli H-NS and StpA proteins by using dominant negative deriv-atives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16238633" target="_blank">16238633</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Williams , R.M. , Rimsky , S. , and Buc , H. ( 1996 ) Probing the structure , function and interactions of the Escherichia coli H-NS and StpA proteins by using dominant negative deri-vatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9632265" target="_blank">9632265</a>]<br></li>
+<li>Williams , R.M. , Rimsky , S. , and Buc , H. ( 1996 ) Probing the structure , function , and interactions of the Escherichia coli H-NS and StpA proteins by using dominant negative derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17116239" target="_blank">17116239</a>]<br></li>
+<li>Williams , R.M. , Rimsky , S. , and Buc , H. ( 1996 ) Probing the structure , function and interactions of the Escherichia coli H-NS and StpA proteins using dominant negative derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li></div>
+<li>H-NS-like proteins form three obvious clusters in a parsimony tree , which correspond to H-NS of enterobacteria , to H-NS of H. inﬂuenzae , StpA of E. coli and S. typhimurium and VicH of V. cholerae , and to H-NS-like proteins isolated from Rhodobacter and Bordetella genera .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Our results suggest that the H-NS and StpA proteins stimulate MalT translation and hence play a positive role in the control of the maltose regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>[ 32 ] Johansson J. , Dagberg B. , Richet E. , Uhlin B.E. , H-NS and StpA proteins stimulate expression of the maltose regulon in Escheri-chia coli , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_17">
+[ 45 ] Johansson , J. , Dagberg , B. , Richet , E. and Uhlin , B.E. ( 1998 ) H-NS and StpA proteins stimulate expression of maltose regulon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16143461" target="_blank">16143461</a>]<br></label>
+<input id="act_similarity_17", type="checkbox">
+<div class="ACT_similar">
+<li>Johansson , J. , Dagberg , B. , Richet , E. , and Uhlin , B.E. ( 1998 ) H-NS and StpA proteins stimulate expression of the maltose regulon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li></div>
+<li>In contrast , expression of yecT and ynjI was moderately increased in the hns stpA yjjP-yjjQ-bglJ and strongly increased in the bglJC background ( Figure 4 ) , indicating that these loci are to some extent directly or indirectly regulated by HNS and/or StpA , while BglJ -- RcsB activates them signiﬁcantly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>BglJ -- RcsB activated genes and their co-regulation by HNS / StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>As both of the characterized BglJ -- RcsB activated loci , bgl and leuO , are repressed by HNS and StpA , BglJ -- RcsB is a presumptive HNS and StpA antagonist .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Activation of the HNS and StpA repressed leuO gene by BglJ -- RcsB is inhibited by LeuO ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In addition to being controlled by H-NS , StpA , LeuO , and BglJ-RcsB , the bgl promoter is CRP dependent and is repressed by FIS ( 4 , 48 , 52 ) DISCUSSION BglJ , a LuxR-type transcriptional-regulator , and LeuO , a LysR-type transcriptional-regulator , relieve repression of the bgl operon by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition to being controlled by H-NS , StpA , LeuO , and BglJ-RcsB , the bgl promoter is CRP dependent and is repressed by FIS ( 4 , 48 , 52 ) ACKNOWLEDGMENTS This work was supported by a grant from the Deutsche Forschungsgemeinschaft ( Schn371/10 -1 ) and by the Cologne Graduate School of Genetics and Functional Genomics .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Synergistic regulation of bgl by BglJ -- RcsB and CRP -- cAMP BglJ -- RcsB and CRP synergistically activate the bgl P2 promoter and relief repression by HNS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>At the bgl operon , which is controlled by HNS , StpA , CRP , and LeuO , BglJ -- RcsB and CRP presumably act synergistically to overcome repression by HNS ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>His-YdgT was then puriﬁed and the fractions obtained after elution of the proteins with imidazole were then tested for the presence of either Hha or StpA , by using speciﬁc antibodies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>By using this strategy , it could be evidenced that either His-YdgT or His-Hha bind StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>The fractions obtained were tested for the presence of StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Physiological evidences of the presence of Hha/StpA and YdgT/StpA complexes have been also obtained in this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>However , it is possible that the real function of StpA is not quite manifested under standard laboratory conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>In exponential phase E. coli cells , the order of intracellular concentration of these DNA-binding proteins is , in descending order , Fis , HU , StpA , H-NS and IHF ( Talukder et al. 1999 ) , among which HU , StpA , H-NS and IHF have been considered to participate in the condensation of genome DNA to form the compact nucleoid ( for reviews see Pettijohn 1982 , 1988 , 1996 ; Drlica & Rouviere-Yaniv 1987 ; Rouviere-Yaniv & Yaniv 1979 ; Murphy & Zimmerman 1997a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>All 12 DNA-binding proteins , CbpA , CbpB ( or Rob ) , DnaA , Dps , Fis , Hfq , H-NS , HU , IciA , IHF , Lrp and StpA , were over-expressed using pCU60 , pMK19 , pSY567 , pDPS1 , pRJ1077 , pHFQ607 , pHOP11 , pLhupAhupB , pICS1 , pSA5hiphimA , pMWD1 and pT7stpA , respectively , and puri ® ed to apparent homogeneity as previously described ( Talukder & Ishihama 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>Bands identiWed by tandem mass spectrometry : a , partially resolved bands of ( above ) and ( below ) subunits of RNA polymerase ; b and c , - and - subunits of ATP synthase ; d , subunit of RNA polymerase ; e , Dps ; f , H-NS , StpA ; g , egg white lysozyme ; h , IHF - , IHF - , Fis ; i , HU-1 , HU-2 ; j , L4 ; k , S3 , S7 , S9 ; l , L13 , Fis , IHF - .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16384714" target="_blank">16384714</a>]<br></li>
+<li>For routine assays , the antibodies were diluted 200-fold for CbpA , Fis , H-NS , IHF , RpoD , SeqA and L7/L12 , and 500 fold for CbpB , Dps , Hfg , HU , IciA , StpA , RpoA , RpoS , Rsd and RMF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>Cultures of cells synthezising StpA and HvrA were induced by 0.5 mMIPT6 for 1 h and 3 mM IPTG for 2 h respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Strain Genotype Plasmida specific activityb a. Plasmids pDIA547 , pYCStpA , pSUH3 .19 and pDIA523 produce H-NS , StpA , BpH 3 and HvrA respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Plasmids pLGH-NS , pDStpA , pSUH3 .19 and pDIA523 produce H-NS , StpA , BpH3 and HvrA respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Its activity is enhanced or diminished by other proteins including StpA , Hha and YdgT ( Cnu ) .28 ( a ) StpA is a homologue of H-NS , the two proteins sharing nearly 70 % sequence similarity .29,30 A recent in vitro study has shown that StpA can also form DNA filaments similar to those formed by H-NS and thus silence gene expression .31 Recent super-resolution microscopy showed different patterns of loca-lisation for H-NS and StpA .25 This is in curious contrast to ChIP-chip studies , which demonstrated that the genome-wide binding profile of StpA reflects that of H-NS .32 H-NS and StpA repress each other transcriptionally .29 The absence of H-NS not only abolishes StpA binding to two-thirds of its sites ,32 but also makes StpA subject to rapid degradation by the Lon protease .33 Thus , the expression level of StpA -- which contributes to its activity -- is controlled by a balance between its synthesis and degradation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>Though this appears to suggest a form of molecular backup between two homologous proteins , the backup is unequal : whereas the DstpA mutant hardly affects gene expression , a Dhns mutant leads to upregulation of at least 500 genes as agreed upon by several studies .12,13,15,34 Whereas the absence of stpA does not visibly affect in vivo DNA binding of H-NS on a genomic scale , that of hns abolishes binding of StpA to about two-thirds of its wildtype binding regions .32 Though both H-NS and StpA repress each other 's transcription , leading to the up-regulation of one in the absence of the other , the degree of up-regulation conferred on StpA by the absence of H-NS may not be suficient to compensate for the lack of H-NS .30 This in part might be due to the higher susceptibility of StpA to degradation by Lon in the absence of H-NS .33 A complete backup of H-NS activity by StpA might not be desirable as there are conditions , such as a late stationary phase , in which an attenuated H-NS is favoured .36 The close relative of E. coli , Salmonella enterica Typhimurium , encodes three H-NS-like proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>For example , H-NS and StpA may be involved in repair of double strand DNA breaks ,79 with the former shown to-bind to Holliday junctions in vitro .19 The possible occurrence of such events especially as part of homologous recombination occurring during rapid exponential-growth , might also contribute to the growth defect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>It is also possible that the RNA chaperone StpA binds to its mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>There are , however , speciﬁc differences in the properties of the two proteins ; StpA can enhance the splicing of a mutant td intron in vivo or the wild-type intron in vitro more efﬁciently than H-NS , probably due to its greater effectiveness in promoting RNA annealing and strand exchange ( 33 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Polarity relief conferred by rho or nusG was unaffected in a derivative completely deﬁcient for both H-NS and StpA , although the suppression effects of YdgT or the oligomerizationdefective H-NS variants were abolished in this background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>]<br></li>
+<li>We therefore propose that it is the interruption of the linear polymeric scaffold of H-NS and StpA , caused by the recruitment of protomers of 64 or L26P into the scaffold , that is speciﬁcally required in cis for suppression of transcriptional polarity relief in the rho and nusG mutants , as depicted sche-matically in Fig. 8B and D , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Feb. 1997 , p. 909 -- / 97 / $ 04.0010 Copyright q 1997 , American Society for Microbiology e Escherichia coli stpA Gene Is Transiently Expressed during Growth in Rich Medium and Is Induced in Minimal Medium and by Stress Conditions Th ANDREW FREE * AND CHARLES J. DORMAN Department of Microbiology , Trinity College , Dublin 2 , Republic of Ireland Received 16 August 1996/Accepted 21 November 1996 The transcriptional regulation of the stpA gene , encoding the Escherichia coli H-NS-like protein StpA , has been studied as a function of a variety of environmental conditions , and its response to trans-acting factors has been characterized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Free , A. , Williams , R.M. , and Dorman , C.J. ( 1998 ) The StpA protein functions as a molecular adapter to mediate repression of the bgl operon by truncated H-NS in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10760165" target="_blank">10760165</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_48">
+The StpA protein func tions as a molecular adapter to mediate repression of the bgl operon by truncated H-NS in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></label>
+<input id="act_similarity_48", type="checkbox">
+<div class="ACT_similar">
+<li>The StpA protein functions as a molecular adapter to mediate repression of the bgl operon by truncated H-NS in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12177351" target="_blank">12177351</a>]<br></li></div>
+<li>Cells generate new copies even in the absence of horizontal gene transfer , presumably by duplication and genetic drift ( for example , the HU α - and β-subunits , and H-NS and StpA ) and one assumes that those novel arrangements that lead to optimum fitness are selected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>B. Complementation of the downregulated OmpF level in an stpA hns mutant by a plasmid encoding functional StpA in the presence and absence of micF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>H-NS not only represses micF but also negatively regulates stpA , and activates ompF .55 Thus , the function of StpA appears to be masked in a hns background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>In hns mutants , StpA negatively autoregulates transcription of stpA ( 37 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Sfh binds to a subset of H-NS binding sites in wildtype cells , but expands its reach in Dhns .63 Sfh is different from StpA however , in the sense that it is a plasmid encoded protein , which serves the role of a stealth agent , as opposed to StpA which is well-ensconced in the chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>Differential Dependence of StpA on H-NS in Autoregulation of stpA and in Regulation of bgl Tinka Wolf , Wiebke Janzen , Corinna Blum , and Karin Schnetz * Institut für Genetik , Universität zu Köln , Zülpicher Str .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>The modulatory properties of the different heteromeric complexes formed ( i.e. Hha -- H-NS , YdgT -- H-NS , Hha -- StpA , etc. ) and their formation in response to speciﬁc modulatory responses ( extreme osmolarity , changing temperature conditions or other stresses ) should be examined , as should the sets of genes regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17116239" target="_blank">17116239</a>]<br></li>
+<li>Received on February 9 , 1995 ; revised on June 10 , 1995 Note added in proof Recently , data on the expression and function of StpA and H-NS have also been reported by Zhang et al. [ Zhang , A. , Rimsky , S. , Reaban , M.E. , Buc , H. and Belfort , M. ( 1996 ) EMBO J. , 15 , 1340-1349 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>One of these , the outer membrane porin protein OmpF , was found to be regulated not only by H-NS as described previously ( Graeme-Cook et al. , 1989 ; Suzuki et al. , 1996 ) , but also by the StpA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>In previous work , this porin was found to be reduced in expression in the absence of H-NS ( Graeme-Cook et al. , 1989 ; Suzuki et al. , 1996 ) ; our current study suggests that StpA might collaborate with H-NS in modulating ompF gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>This is consistent with previous analyses showing that StpA is generally subservient to H-NS in controlling gene expression , probably primarily because of its low expression in the presence of its homologue ( Sonde Ân and Uhlin , 1996 ; Zhang et al. , 1996 ; Free and Dorman , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>Secondly , stpA expression is itself low in rich medium when H-NS is present ( SondeÂn and Uhlin , 1996 ; Zhang et al. , 1996 ; Free and Dorman , 1997 ) , so the StpA protein is not present at high levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>This confirms that H-NS dominates over StpA in global gene regulation under these growth conditions , but that StpA can make a significant contribution when H-NS is absent , as found previously ( Zhang et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>First , micF expression is low under standard growth conditions in the presence of H-NS ( Figs 5 , 6 and 8 ; Suzuki et al. , 1996 ) , so the substrate for StpA action is not abundant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>The fact that H-NS is a global transcriptional-repressor , and that its loss leads to extremely high expression of many of its targets , might lead to an amplified selection against its loss or inactivation ; this could select for backup by StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_65">
+However , the strongest effect seems to be the repression of stpA by H-NS ; this causes the level of stpA expression in a wild-type cell to be very low and has led to the suggestion that StpA might act as a `` molecular backup '' of H-NS which is expressed only when the latter protein is absent ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></label>
+<input id="act_similarity_65", type="checkbox">
+<div class="ACT_similar">
+<li>The strongest effect seems to be the repression of stpA by H-NS ; this causes the level of stpA expression in a wild-type cell to be very low and has led to the suggestion that StpA might act as a ` molecular back-up ' of H-NS that is only expressed when the latter protein is absent ( Zhang et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li></div>
+<li>) The presence of the two dimerization interfaces allows H-NS to assemble ( either alone or with its paralogous partner StpA [ 53 , 55 , 60 , 65 , 67 ] ) into a helical polymeric scaffold around which DNA is bound ( 3 , 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>]<br></li>
+<li>H-NS and StpA bind to similar target sites ; therefore the above-described semi-quantitative and relative measure of afinity of different DNA sites to H-NS can be readily applied to StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>StpA binds to AT-rich , planar , bent DNA and constrains supercoils , as does its homologue H-NS , but with a higher afﬁnity ( 24 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>However , the in vitro results support a direct effect for H-NS , LRP and also indicate that StpA may be involved in regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>Moreover , in vitro transcription analysis with both RNA polymerase holoenzymes , Es70 and Es38 , demonstrated a direct inhibition of 6S RNA transcription by H-NS , StpA and LRP , while FIS seems to act as a dual regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>The study also supports the assumption that H-NS , LRP and StpA directly repress 6S RNA transcription , while effects observed with the fis mutant are consistent with a more complex dual regulation mediated by this regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>The results strongly support the direct negative regulation of the global regulators H-NS , LRP and StpA in the control of 6S RNA transcription and suggest that FIS probably has a dual functional role in ssrS reg ulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>Among the known bacterial proteins involved in phase-depend-ent transcriptional regulation ( Azam et al. , 1999 ; Dame , 2005 ) , we have selected H-NS , StpA , LRP and FIS as potential candidates for our studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>In the presence of increasin amounts of the different bacterial regulators FIS , H-NS , LRP and StpA , the transcription products were affected in a differential way .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>It is known that the binding of FIS , H-NS , LRP and StpA occurs preferentially to curved or flexible DNA ( Hil-lebrand et al. , 2005 ; Pul et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>As expected , no inﬂuence of leucine on the binding of H-NS , its homologue StpA or FIS can be detected ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16238633" target="_blank">16238633</a>]<br></li>
+<li>H-NS : 0 , 2.0 , 3.0 , 4.0 , 5.0 and 6.0 mM ; StpA : 0.5 , 1.0 , 2.0 , 4.0 and 6.0 mM ; LRP : 0.25 , 0.5 , 0.75 , 1.0 , 1.25 and 1.5 mM ; FIS : 0 , 0.1 , 0.5 , 1.5 and 2.5 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>The binding of H-NS , StpA , LRP and FIS to the IGLB DNA fragment was analysed by DNase I footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>Indeed , in the DrcsB mutant expression of BglJ from plasmid pKETS1 did not cause activation of the leuO promoter lacZ fusion and only background expression levels of 3 units were detected Transcription of leuO is repressed by H-NS and StpA Previous studies have shown that transcription of leuO is repressed by the nucleoid-associated protein H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The above data suggest that LeuO is an autoregulator that may have a moderate positive autoregulatory effect , but that strongly represses leuO transcription in the absence of H-NS and StpA and that counteracts activation of leuO by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Therefore , we could not test whether BglJ-RcsB further enhances bgl promoter activity in the absence of H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Transcription of leuO is activated by RcsB-BglJ independently of the Rcs phosphorelay and repressed by H-NS/StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In this strain the leuO promoter lacZ fusion is repressed by H-NS and StpA , while BglJ is absent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Repression of bgl becomes StpA dependent in the presence of H-NS mutants defective in ( speciﬁc ) DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>StpA also effectively complements H-NS-I119T , a mutant defective in speciﬁc DNA binding , in repression of the bgl operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In contrast , repression of bgl by StpA occurs only in the presence of the N-terminal H-NS protein domain or an H-NS-I119T mutant , i.e. , in the presence of mutant H-NS proteins defective in speciﬁc DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Thus , StpA complements H-NS proteins defective in DNA binding to repress bgl , while in autoregulation of stpA it acts autonomously , indicating a difference in the mechanisms of repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>To further address the interdependence of StpA and truncated or mutated H-NS proteins in the repression of stpA and bgl , dominant-negative mutants of H-NS defective in dimerization/oligomerization or speciﬁc DNA binding were used ( 2 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_90">
+Differential dependence of StpA on H-NS in auto-regulation of stpA and in regulation of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></label>
+<input id="act_similarity_90", type="checkbox">
+<div class="ACT_similar">
+<li>Differential dependence of StpA on H-NS in autoregulation of stpA and in regulation of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245262" target="_blank">18245262</a>]<br></li></div>
+<li>Furthermore , we have shown that StpA together with H-NS-I119T represses bgl more effectively than does wild-type H-NS , although H-NS-I119T is dominant negative in repression of proU ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>H-NS-I119T is also dominant negative in repression of stpA , and StpA only moderately complements H-NS-I119T in repression of stpA ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Highly effective repression by H-NS-I119T in stpA strains demonstrated that StpA effectively complements H-NS-I119T in repression of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Thus , StpA effectively complements H-NS-I119T in repression of bgl but not in repression of stpA ( Fig. 7D and E , compare bgl and stpA results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Taken together , these data indicate that in repression of bgl , StpA may very speciﬁcally nucleate ( or target ) the defective H-NS-I119T protein to the DNA , while in repression of proU or stpA the StpA protein is less speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>This difference in regulation of bgl versus stpA and proU by H-NS-I119T and StpA may further imply that growth conditions which induce stpA may allow the maintenance of strong repression of bgl , even if H-NS is less active under such conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>However , cellular levels of StpA are low due to repression of stpA by H-NS and negative autoregulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>The cellular level of StpA is signiﬁcantly lower than that of its abundant homologue , H-NS , most likely due to repression of stpA by H-NS ( 37 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Taken together , these data show that H-NS is necessary and sufﬁcient for maximal repression of stpA , while StpA moderately represses stpA in the absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>The data also show that downstream sequences contribute to repression by H-NS and StpA , as repression was 30-fold when lacZ was fused downstream of stpA ( orf ) , while it was only 6 - to 8-fold in the mutants carrying stpA promoter-lacZ fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>These data indicate a difference in the mechanisms of repression of stpA and bgl by StpA The speciﬁcity of regulation of stpA by H-NS is high ( 30-fold ) in the presence of a downstream regulatory element ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In contrast , repression of the bgl operon , another H-NS-repressed system , is not achieved by StpA alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Our results conﬁrm that transcription of leuO is repressed by H-NS , and further show that StpA contrib-utes to this repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Further , the H-NS paralogue StpA causes repression of leuO in addition to H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>FIG 3 Speciﬁc H-NS repression of NrdA is not inﬂuenced by StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873909" target="_blank">23873909</a>]<br></li>
+<li>The induced StpA evidently exerts its negative effect on transcription from the proU promoter independently of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>The three transcription factors , H-NS , LRP and StpA , cause increasingly strong repression for both promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>The results ruled out the possibility of an indirect effect via Mlc repression of malT transcription as the reason for the effects of H-NS and StpA found .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>However , taken together , the data suggest that the BglJ-RcsB heterodimer binds within the up stream regulatory region and antagonizes repression of bgl by H-NS , and also by StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>This fusion protein , together with StpA , causes partial repression of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Overproduction of the StpA protein affects expression from at least four hns regulated operons ( the papB , proU , bgl and hns operons ) , in both the presence and absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>Taken together , the results demonstrate that StpA can silence four known H-NS-regulated operons , and that it can function as a silencer in both the presence and absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>In the presence of H-NS , the homologous protein StpA of E. coli is expressed at a low level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Thus , the presence of the downstream sequences alone results in a rather low , possibly signiﬁcant level of repression by H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In comparison , expression of the chromosomally encoded leuO mRNA was elevated approximately 31-fold in the Dhns stpA mutant , conﬁrming derepression of leuO in absence of H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In the absence of H-NS , the expression of `` epistatically controlled genes '' is repressed by StpA , whereas that of `` unilaterally controlled genes '' is not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>In the presence of H-NS-L26P , expression was rather high in the hns : : kan mutant as well as in the double mutant , indicating that H-NS-L26P is inactive in repression and that StpA can not complement this mutant ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In addition , StpA autoregulates stpA , with threefold repression , in an hns null mutant , i.e. , independent of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In the stpA hns double mutant , transcription of micF is enhanced as a result of the absence of H-NS , and the micF RNA is more stable in the absence of StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>In the present study , two-dimensional electrophoresis was used to help identify proteins whose expression varied when the genes coding for H-NS and StpA were inactivated individually or collectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>In this study , we investigated the involvement of the H-NS and StpA proteins in the regulation of the malKlamBmalM and malEFG operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>In addition , H-NS-like proteins , such as StpA , can contribute to gene regulation and silencing ( 16 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Control of H-NS expression and activity In addition to regulation by H-NS , StpA and Fis , the hns promoter is stimulated by cold-shock through the CspA protein37 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>Model summarizing StpA - and H-NS-dependent posttranscriptional regulation of OmpF expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>As shown in Figure 6A , the induction of StpA overproduction caused a significant decrease in the expression of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>At present , it is not known if expression of the mlc gene is affected by H-NS and/or StpA , but evidently Mlc is subject to autoregulation and represses its own expression ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>Furthermore , because H-NS and StpA coordinately regulate some genes while independently regulating others , small perturbations in H-NS levels can cause global changes in gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>For instance , the osmotic induction of StpA may contribute to the induction of some osmotically regulated , H-NS-repressed genes by altering the ability of the H-NS complexes at the promoters of those genes to repress transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Therefore , it is possible that StpA plays a role in modulating the expression of OmpF in response to environmental signals under conditions in which H-NS repression has been removed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>Under standard laboratory growth conditions transcription is repressed by H-NS and/or StpA ( repressed ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>It is intriguing that unlike its homolog H-NS , StpA is strongly regulated by environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>The lack of cas transcripts in the stpA - strain proofs that silencing in the cell is mediated by H-NS and not by StpA although StpA binds quite strongly to the Pcas upstream region in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>The H-NS and StpA proteins negatively autoregulate the transcription of their own genes and each represses the gene that encodes the other protein in trans 6,10 -- 15 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>The other is the nucleoid-associated protein H-NS or StpA , which binds to the promoter region of the ydiV gene and may negatively E regulate its transcription ( Uyar et al. , 2009 ; Kahramanoglou et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22461489" target="_blank">22461489</a>]<br></li>
+<li>The StpA protein , which is subjected to Lon-mediated turnover , was less stable in the absence of Hha or YdgT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>In similar experiments , here we demonstrate that the absence of Hha/YdgT either in the presence or in the absence of H-NS affects StpA stability , presumabily by the interaction between Hha/StpA and YdgT/StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>M182Dhns was used as a control , showing the increase in StpA protein in the absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>Impaired stability of the StpA protein in the absence of Hha and YdgT It has been shown that the StpA protein is quickly degraded in vivo in the absence of its paralogue H-NS by the action of the Lon protease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>The StpA protein was more unstable in the absence of either H-NS and Hha or H-NS and YdgT than in the absence of only H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>The activity of H-NS is enhanced or diminished by other proteins including its homologue StpA , and Hha and YdgT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>The intracellular levels of the major DNA-binding proteins , Fis , H-NS , HU and StpA , in the growing cells decreased in the stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>The absence of the H-NS and StpA proteins resulted in a reduction in the levels of MalT to about 20 % the normal level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>The lower stability of StpA in the absence of H-NS suggested that the levels of homodimers of StpA in the cells are very low ( Johansson and Uhlin , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>This result argued for a mechanism in which the H-NS and StpA proteins are not absolutely required components in the activation process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>Indeed , the binding proﬁle of H-NS and StpA to the leuO locus is very similar suggesting that both proteins bind and repress simulta ¬ A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>High levels of such truncated H-NS proteins repress bgl independently of StpA ( 17 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>H-NS protein levels decreased in response to DsrA overproduction , with a concomitant increase in StpA protein levels ( Fig. 5B , compare M182ypA with M182ypDsrA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>The reduction in H-NS translation was accompanied by an increase in StpA levels ( Fig. 5B ) , which can be attributed to decreased transcriptional repression of StpA by H-NS ( ref .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>This suggests that StpA , in the absence of H-NS , binds only to those target sites to which it has very high binding afinities .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>StpA represses the promote twofold in the absence of H-NS ( Fig. 1C , compare bars d and f to bars c and e ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Repression by StpA in the absence of H-NS was twofold ( Fig. 1D , compare bars d and f to bars c and e ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In rich media , Lrp and StpA are in low concentrations .29,93 This results in an abundance of micF RNA and the concomitant decrease in OmpF porins ( Figure 5 ( a ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>In the wild type , StpA was stable , and the relative amount of StpA increased slightly after inhibition of translation , as shown before ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>How such a scenario relates to the situation in minimal medium , when StpA levels are probably more consistently elevated , is not clear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>The StpA protein ( which is also oligomeric ) is expressed at low levels in wild-type bacteria growing in rich media , but the levels increase during growth in minimal media and in bacteria that are undergoing stress11 ,12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>In minimal media , Lrp and StpA levels are high .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>In an transcription was derepressed , leading to increased levels of StpA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">StpA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>YdgT and Hha bear structural resemblance to , and also interact with , the N-terminal oligomerization domains of H-NS and StpA ; in this manner , YdgT and Hha are believed to modulate the DNA-binding and nucleoid-organizing properties of H-NS and StpA even though they do not bind DNA by themselves ( 23 , 30 , 33 , 38 , 42 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>]<br></li>
+<li>As in H-NS , StpA , BpH3 and HvrA , theoretical analysis suggests that the N-terminal domains of SPB , XrvA and VicH are mainly a-helical and able to adopt a coiled-coil conformation , frequently identiﬁed as the dimerization element in several transcription factors ( Lupas , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Heteromeric complexes formed by truncated H-NS proteins ( 93 amino acid resi-dues corresponding to the N-terminal end ) and fulllength StpA may resemble structurally and functionally to complexes formed by Hha ( 72 amino acid residues , structural similarity to the N-terminal domain of H-NS ) and H-NS or StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Apparently , repression of the bgl operon is retained in such mutants because the truncated H-NS protein forms a complex with a homologous protein , StpA , which may serve as an adapter , providing a DNA-binding domain to the N-terminal oligomerization domain of H-NS ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12077137" target="_blank">12077137</a>]<br></li>
+<li>For example , H-NS proteins with truncation of the C-terminal DNA-binding domain are sufﬁcient to render repression of bgl StpA dependently , indicating that StpA acts as an adapter to target H-NS mutants defective in DNA-binding to bgl ( 17 , 18 , 29 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In contrast , repression of bgl by StpA occurs only in the presence of the N-terminal H-NS protein domain or an H-NS-I119T mutant , i.e. , in the presence of mutant H-NS proteins defective in speciﬁc DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>It becomes StpA dependent in the presence of a fusion protein encompassing the N-terminal 37 amino acids of H-NS , which comprise the core of the dimerization domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In addition , autorepression by StpA is enhanced in an hns : : kan mutant carrying a 70-amino-acid fusion protein , H-NSKN ( Fig. 4 ) , encompassing the 37 N-terminal amino acids of H-NS , which include the ﬁrst two alpha helices and half of the third alpha helix that form the core of the dimerization domain ( 3 , 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>These H-NS fragments encompass amino acids 1 to 91 and 1 to 93 and include the complete dimerization and oligomerization domain ( 14 ) and a region of H-NS ( aa 39 to 60 ) which is necessary for stabilization of StpA ( 3 , 15 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>For repression of bgl , it was shown before that StpA complements truncated H-NS proteins comprising the N-terminal dimerization/oligomerization domain , including amino acids 1 to 91 ( or 93 ) ( 17 , 18 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>The N-terminal domain seems to play a crucial role in the oligomerization process of H-NS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>These data show that stabilization of StpA and its functional cooperation with a fragment of the N-terminal H-NS dimerization domain can be separated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>For example , the Leu residue in position 26 in H-NS and in StpA corresponds to Leu at positions 20 and 14 in BpH3 and HvrA respectively ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Using theoretical analysis ( e.g. secondary structure prediction and DNA-binding domain modelling ) of the amino acid sequence of H-NS , StpA ( an H-NS-like protein in E. coli ) , BpH3 and HvrA and by in vivo and in vitro experiments ( e.g. complementation of various H-NS-related phenotypes and competitive gel shift assay ) , we present evidence that these proteins belong to the same class of DNA-binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>In the present paper , using an approach involving theor-etical analysis of functional and/or structural protein domains as well as in vivo and in vitro experiments , we provide evidence that , despite a low amino acid conservation , proteins such as H-NS and StpA of E. coli , BpH3 of B. pertussis and HvrA of R. capsulatus belong to the same family of structurally and functionally related DNA-binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Structural and functional organization of the N-terminal domain in H-NS and H-NS-like proteins To identify structural and/or functional domains in H-NS , StpA , BpH3 and HvrA , sequences were aligned by MULT-ALIGN and hydrophobic cluster analysis ( HCA ) methods , and secondary structures were predicted ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>The amino acid composition of the C-domain of StpA ( residues 91 -- 134 ) is 70 % identical to that of H-NS ( residues 91 -- 137 ) , while the C-domains of BpH3 ( residues 82 -- 123 ) and HvrA ( residues 61 -- 102 ) are both 40 % identical to that of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>However , despite a low amino acid conservation in their N-terminal domain , we observed that H-NS , StpA , BpH3 and HvrA decreased , at least in part , the accumulation of ProX in an hns mutant ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Only a few amino acids are conserved in both regions in H-NS , StpA , BpH3 and HvrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>In bold is plotted the STRIDE assignment for H-NS C-terminal domain from NMR structure and for StpA , BpH3 and HvrA C-domains from MODELLER .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Tridimensional structures of the C-terminal domain of BpH3 , HvrA and StpA were calculated by homology with the NMR structure of the C-terminal domain ( 47 amino acids ) of H-NS ( Shindo et al. , 1995 ) using MODELLER ( Sali and Blundell , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>reside in the gut of nematodes .24 These organisms have an OmpF-like porin protein and the secondary structure of the ompF-like mRNA 50 untranslated region ( the region that may interact with a putative Xenorhabdus micF RNA ) is highly homologous to that of E. coli and its close relatives .94,95 How does StpA bind micF RNA and induce destabilization ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>A similar domain structure has been proposed for StpA , with its RNA-annealing activity being located within the C terminus71 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_24">
+[ 29 ] Cusick M.E. , Belfort M. , Domain structure and RNA annealing activity of the Escherichia coli regulatory protein StpA , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></label>
+<input id="dom_similarity_24", type="checkbox">
+<div class="DOM_similar">
+<li>Cusick , M.E. , and Belfort , M. ( 1998 ) Domain structure and RNA annealing activity of the Escherichia coli regulatory protein StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">StpA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>We decided next to speciﬁcally detect heterooligomers between members of the Hha/YmoA and H-NS/StpA families .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>YdgT and Hha belong to the H-NS and StpA family of proteins that repress a large number of genes in Gram-negative bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>]<br></li>
+<li>However , the ability of H-NS to form heteromeric complexes with paralogous proteins , like StpA , and with members of the more distinct Hha protein family , might represent a mechanism for functional modulation ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>The StpA protein has 58 % amino acid identity with H-NS , and the gene was found as a multicopy suppressor of the Td2 phenotype of a splicing-de-fective phage T4 td intron mutant ( 42 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>As expected , StpA , which is a para-logue of H-NS with 58 % amino acid identity ( Zhang and Belfort , 1992 ) , shows a very similar DNA-binding characteristic as H-NS , producing the same large region of DNase I protection ( Fig. 4A , lanes 1 -- 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>The high sequence identity ( 58 % ) between StpA ( 15.3 kDa ) and H-NS ( 15.4 kDa ) suggested that the two proteins could have similar functions ( Zhang & Belfort 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>The 15.3-kDa StpA protein of Escherichia coli is 58 % identical to H-NS , a pleiotropic repressor and nucleoid structuring protein ( 14 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Another protein , StpA , encoded by stpA , shows high sequence identity ( 58 % ) to H-NS , and it was proposed that StpA plays a role as a molecular backup of H-NS ( 30 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>Moreover , a protein ( StpA ) showing 57 % identity with H-NS has been characterized in E. coli ( Zhang et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>This protein shows approximately 50 % identity with H-NS and with StpA , its paralogous protein in E. coli [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+<li>The amino acid composition of the C-domain of StpA ( residues 91 -- 134 ) is 70 % identical to that of H-NS ( residues 91 -- 137 ) , while the C-domains of BpH3 ( residues 82 -- 123 ) and HvrA ( residues 61 -- 102 ) are both 40 % identical to that of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>In the present paper , using an approach involving theor-etical analysis of functional and/or structural protein domains as well as in vivo and in vitro experiments , we provide evidence that , despite a low amino acid conservation , proteins such as H-NS and StpA of E. coli , BpH3 of B. pertussis and HvrA of R. capsulatus belong to the same family of structurally and functionally related DNA binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by StpA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>For example , cAMP-CRP , GlcIIa , BarA , polyphosphate , homoserine lactone , acetate , and the NADH/NAD ratio have been shown to affect rpoS transcription , whereas DnaK , DksA , Hfq , HU , StpA , LeuO , and several small regulatory RNAs control rpoS translation ( Hengge-Aro-nis 2002 ; Repoila et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17403784" target="_blank">17403784</a>]<br></li>
+<li>( C ) Expression of f-galactosidase activity by a proU-lacZ chromosomal fusion in a wild-type ( BEU693 ) and a Ahns mutant ( BEU694 ) strain upon overexpression of StpA from plasmid pBSN42 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>( A ) Expression of , - galactosidase activity by hns : : lacZ ( pBSN2 ) and vector control ( pMWI56 ) upon overexpression of StpA from plasmid pBSN63 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>( B ) Expression of f-galactosidase activity by pap-lacZ ( pHMG118 ) , alaS-lacZ ( pHMG117 ) and vector control ( pFZYI ) upon overexpression of StpA from plasmid pBSN63 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>Interestingly , the genes coding for local regulators of the genes for individual amino acids are under the control of Lrp , including AdiY ( a regulator of Arg regulon ) , CysB ( a regulator of the Cys regulon ) , GadW ( a regulator of Glu reg ¬ Lrp Network Y J YhjI AdiY OLm r pR BluR YbaO YedW CadX CadW SdiA PhoP H-NS Cbl CysB TyrR TdcR DeoT TdcA CadX CadW DctR SdiA EnvR TdcA TdcA FabR StpA GadW LeuO GadE GadW GadX DtcR SlyA LeuO BglG StpA QseB Rob LrhA MatA NanR ~ 20 TFs FlhDC FliE LrhA FlhDC ~ 10 TFs FliZ MatA FlhDC QseCB Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>Action of StpA on micF RNA based on work of Deighan et al. .5 Conclusions and future prospects Control of micF is brought about by complex global regulatory networks in response-to-stress signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>For StpA quantiﬁcation , chloramphenicol was added to stop translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In fact , StpA functions as an RNA CHAPERONE in bacterial and bacteriophage gene regulation15 ,21,22 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>In addition , other factors , such as the RNA chaperone protein StpA also play a role in this regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>In addition , StpA acts as an RNA chaperone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>To achieve high-level conditional expression of StpA and HvrA in E. coli , NdeI -- XhoI DNA fragments including the stpA and hvrA coding regions were cloned into the expression vector pET-22b .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Synthesis of H-NS , StpA , BpH3 and HvrA in E. coli clearly showed that all these proteins were able to complement , at least in part , various phenotypes of an hns mutant such as loss of motility ( Fig. 2 and Table 1 ) , b-glucoside utilization , serine susceptibility , mucoidy and reduction in growth yield ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Panels A [ H-NS ] and B [ StpA ] : a , W3110 , A-type lineage ; b , BSN27 , hns disruptant ; c , BSN28 , stpA disruptant ; d , ÿ ÿ BSN29 , hns stpA double mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10947847" target="_blank">10947847</a>]<br></li>
+<li>Expression of H-NS-E53G / T55P gave intermediate results , indicating that this protein has re-sidual activity in repression of bgl and of stpA and that StpA could complement this mutant ( Fig. 7C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>We have concentrated on a selection of proteins ( FIS , H-NS , LRP and StpA ) whose regulatory properties are either typically linked to changes in the environment and the growth behavior of the cells or to stress adaptation and nutritional quality .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>Among the known bacterial proteins involved in phase-depend-ent transcriptional regulation ( Azam et al. , 1999 ; Dame , 2005 ) , we have selected H-NS , StpA , LRP and FIS as potential candidates for our studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>Because H-NS often acts in combination with other nucleoid-associated proteins ( NAPs ) we have also analy-sed the binding of related regulatory proteins , such as StpA , LRP and FIS ( Luijsterburg et al. , 2006 ; Dorman , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>This ﬁnding may suggest a possible thermal regulation role for StpA , and it remains to be elucidated if and how such a role may affect gene-expression under different physiological conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>The results strongly support the direct negative regulation of the global regulators H-NS , LRP and StpA in the control of 6S RNA transcription and suggest that FIS probably has a dual functional role in ssrS reg ulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>However , the in vitro results support a direct effect for H-NS , LRP and also indicate that StpA may be involved in regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>The regulation of RNA stab-ility signi ® es a new role for StpA in molecular processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>Role of StpA in regulation of bgl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>3.3 A molecular backup between two global transcriptional repressors The use of homologous proteins ( H-NS and StpA ) acting together to silence expensive genes might confer robustness in the event of a mutation adversely affecting the function of either .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>In this study , we use transcriptome sequencing to show that there is a bi-layered gene silencing system -- involving the homologous H-NS and StpA -- operating on horizontally-acquired genes among others .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>Moreover , these genes also recruit StpA as a molecular backup for H-NS , thus building a global epistatic gene silencing network .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>Involvement of StpA in post-transcriptional-control of micF RNA chaperones are proteins that aid in folding of RNAs and in resolving misfolded structures .84 ± 87 StpA , an RNA chaperone protein which shares 58 % amino acid identity with H-NS , has been shown to promote self splicing .88,89 StpA is also a nucleoid-associated protein that can alter gene-expression , possibly by affecting DNA supercoiling .90 StpA has now been implicated in the control of micF RNA stability .55 In this instance , StpA appears to regulate micF RNA post-transcriptionally by targeting it for degradation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>]<br></li>
+<li>Recent data suggest that StpA is involved in the control of H-NS-regulated genes such as malT and ompF [ 32 , 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+<li>In particular , H-NS was shown , unlike StpA , to control several genes involved in bacterial motility and low pH resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+<li>A null mutation in stpA , the gene encoding the H-NS-like protein StpA , which is believed to represent a molecular backup of H-NS ( 58 ) , had no effect on proU P1 expression either by itself or in combination with other mutations such as rho and hns ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673423" target="_blank">11673423</a>]<br></li>
+<li>At the amino acid level , StpA is 58 % identical to the E. coli nucleoid protein H-NS , which is a major component of the bacterial nucleoid and has been identiﬁed as a pleiotropic regulator of gene-expression , recombination , and genome stability ( see reference 30 for a review ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Alternatively , H-NS and StpA may act at the translational level or act indirectly through negative control of a gene encoding a repressor of the expression of the malT gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>In several other cases of thermoregulated gene-expression , the H-NS protein ( and presumably also the StpA protein ) has been found to play a negative role at the transcriptional level ( reviewed in , e.g. , references 2 and 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>Here , we show that the H-NS-like protein StpA is also involved in this regulatory circuit .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>We also analyzed the growth of pCnuK9E/MG1655gstpA , an E. coli strain with a deletion in the StpA gene that encodes an H-NS homolog [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23028867" target="_blank">23028867</a>]<br></li>
+<li>In addition to the hns gene , the chromosome of E. coli and other enteric bacteria also includes the stpA gene that encodes the StpA protein , an H-NS paralogue .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Other regulators ( AppY , Fis , H-NS , StpA , and IHF ) The AppY protein Ž acid poly phosphatase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9230919" target="_blank">9230919</a>]<br></li>
+<li>The H-NS and StpA proteins negatively autoregulate the transcription of their own genes and each represses the gene that encodes the other protein in trans 6,10 -- 15 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>Our results suggest that the H-NS and StpA proteins stimulate MalT translation and hence play a positive role in the control of the maltose regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>Here we report ﬁndings showing that H-NS and the largely homologous protein StpA play a positive role in the expression of genes in the maltose regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>DISCUSSION The present data show that the H-NS and StpA proteins play a positive role in the expression of some genes of the maltose regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>As shown in Figure 6A , the induction of StpA overproduction caused a significant decrease in the expression of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>Furthermore , because H-NS and StpA coordinately regulate some genes while independently regulating others , small perturbations in H-NS levels can cause global changes in gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>StpA modulates the expression of many genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>These proteins include ( in decreasing order of abundance during exponential growth ) : factor for inversion stimulation ( Fis ) , heat-unstable nucleoid protein ( HU ) , integration host factor ( IHF ) , histone-like , nucleoid-structuring protein ( H-NS ) , suppressor of td mutant phenotype A ( StpA ) and DNA-binding protein from starved cells ( Dps ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17553830" target="_blank">17553830</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Feb. 1997 , p. 909 -- / 97 / $ 04.0010 Copyright q 1997 , American Society for Microbiology e Escherichia coli stpA Gene Is Transiently Expressed during Growth in Rich Medium and Is Induced in Minimal Medium and by Stress Conditions Th ANDREW FREE * AND CHARLES J. DORMAN Department of Microbiology , Trinity College , Dublin 2 , Republic of Ireland Received 16 August 1996/Accepted 21 November 1996 The transcriptional regulation of the stpA gene , encoding the Escherichia coli H-NS-like protein StpA , has been studied as a function of a variety of environmental conditions , and its response to trans-acting factors has been characterized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Therefore , it is possible that StpA plays a role in modulating the expression of OmpF in response to environmental signals under conditions in which H-NS repression has been removed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+<li>In this study , we have identified a specific role for StpA in the expression of the outer membrane porin protein OmpF in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_48">
+A role for the Escherichia coli H-NS-like protein StpA in OmpF porin expression through modulation of micF RNA stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11601842" target="_blank">11601842</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></label>
+<input id="rp_similarity_48", type="checkbox">
+<div class="RP_similar">
+<li>Deighan , P. , Free , A. , and Dorman , C. ( 2000 ) A role for the Escherichia coli H-NS-like protein StpA in OmpF porin expression through modulation of micF RNA stability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20345943" target="_blank">20345943</a>]<br></li>
+<li>[ 33 ] Deighan P. , Free A. , Dorman C.J. , A role for the Escherichia coli H-NS-like protein StpA in OmpF porin expression through modulation of micF RNA stability , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li></div>
+<li>The EMBO Journal vol .15 no. 18 pp.4970-4980 , 1996 Coordinated and differential expression of histone-like proteins in Escherichia coli : regulation and function of the H-NS analog StpA Berit Sonden and Bernt Eric Uhlin1 Department of Microbiology , Ume'a University , S-901 87 Umea , Sweden ` Corresponding author The histone-like protein H-NS has been shown to influence the regulation-of-gene-expression at the transcriptional level in several Escherichia coli operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>Coordinated and differential expression of histone-like protein in Escherichia coli : regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_53">
+SondeÂn , B. , and Uhlin , B.E. ( 1996 ) Coordinated and differential expression of histone-like proteins in Escher-ichia coli : regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11029695" target="_blank">11029695</a>]<br></label>
+<input id="rp_similarity_53", type="checkbox">
+<div class="RP_similar">
+<li>Sondén , B. , and Uhlin , B.E. ( 1996 ) Coordinated and differential expression of histone-like proteins in Escherichia coli : regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9987132" target="_blank">9987132</a>]<br></li>
+<li>Sondén , B. , and Uhlin , B.E. ( 1996 ) Coordinated and differential expression of histone-like proteins in Escherichia coli : regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Coordinated and differential expression of histone-like proteins in Escherichia coli : Regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16204188" target="_blank">16204188</a>]<br></li>
+<li>Coordinated and differential expression of histone-like proteins in Escherichia coli : regulation and function of the H-NS analog StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873909" target="_blank">23873909</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11053378" target="_blank">11053378</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21602341" target="_blank">21602341</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li></div>
+<li>Johansson , J. , Eriksson , S. , Sondén , B. , Wai , S.N. , and Uhlin , B.E. ( 2001 ) Heteromeric interactions among nucle-oid-associated bacterial proteins : localization of StpA sta ¬ bilizing regions in H-NS of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+<li>Rev. 66 ( 2002 ) 373 -- 395 [ 13 ] J. Johanson , B. Dagberg , E. Richet , B.E. Uhlin , H -- NS and StpA proteins stimulate expression of the maltose regulon in Escherichia coli , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15313253" target="_blank">15313253</a>]<br></li>
+<li>[ 32 ] Johansson J. , Dagberg B. , Richet E. , Uhlin B.E. , H-NS and StpA proteins stimulate expression of the maltose regulon in Escheri-chia coli , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278074" target="_blank">11278074</a>]<br></li>
+<li>[ 45 ] Johansson , J. , Dagberg , B. , Richet , E. and Uhlin , B.E. ( 1998 ) H-NS and StpA proteins stimulate expression of maltose regulon in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16143461" target="_blank">16143461</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">StpA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>RcsB-BglJ activates one of two H-NS-StpA repressed leuO promoters in vivo To map in vivo transcription start sites in the intergenic region between leuO and the leu operon , we performed 5 ′ RACE analyses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Notably the regulatory regions of both the hns gene itself and that of its paralog StpA contain multiple sites with similarities to the H-NS binding site , although in neither case are there sites which correspond to the canonical sequence ( Supplementary Data 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17881364" target="_blank">17881364</a>]<br></li>
+<li>Figure 5 Determination of binding sites for H-NS , StpA , LRP and FIS by DNase I footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>To summarise , epistatically silenced genes tend to lie at sites where ( a ) H-NS binds in particularly long tracts and ; ( b ) StpA binding is independent of H-NS availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>In addition , for H-NS and StpA , which are known to have a tendency to bind non-specifically to curved DNA , we used a random DNA fragment ( 222 bp AvaII fragment from pUC18 ) as control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177266" target="_blank">18177266</a>]<br></li>
+<li>StpA binds both RNA and DNA , and also shows preference for curved DNA sequences ( Zhang et al. , 1996 ; Sonnenﬁeld et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15458420" target="_blank">15458420</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by StpA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>JOURNAL OF BACTERIOLOGY , Feb. 1997 , p. 909 -- / 97 / $ 04.0010 Copyright q 1997 , American Society for Microbiology e Escherichia coli stpA Gene Is Transiently Expressed during Growth in Rich Medium and Is Induced in Minimal Medium and by Stress Conditions Th ANDREW FREE * AND CHARLES J. DORMAN Department of Microbiology , Trinity College , Dublin 2 , Republic of Ireland Received 16 August 1996/Accepted 21 November 1996 The transcriptional regulation of the stpA gene , encoding the Escherichia coli H-NS-like protein StpA , has been studied as a function of a variety of environmental conditions , and its response to trans-acting factors has been characterized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>Though this appears to suggest a form of molecular backup between two homologous proteins , the backup is unequal : whereas the DstpA mutant hardly affects gene expression , a Dhns mutant leads to upregulation of at least 500 genes as agreed upon by several studies .12,13,15,34 Whereas the absence of stpA does not visibly affect in vivo DNA binding of H-NS on a genomic scale , that of hns abolishes binding of StpA to about two-thirds of its wildtype binding regions .32 Though both H-NS and StpA repress each other 's transcription , leading to the up-regulation of one in the absence of the other , the degree of up-regulation conferred on StpA by the absence of H-NS may not be suficient to compensate for the lack of H-NS .30 This in part might be due to the higher susceptibility of StpA to degradation by Lon in the absence of H-NS .33 A complete backup of H-NS activity by StpA might not be desirable as there are conditions , such as a late stationary phase , in which an attenuated H-NS is favoured .36 The close relative of E. coli , Salmonella enterica Typhimurium , encodes three H-NS-like proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>As a ﬁrst step toward identifying a more independent role for StpA , we have therefore investigated the expression of the stpA gene under a variety of conditions in hns wild-type cells to determine if there are speciﬁc conditions under which StpA may be induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9006049" target="_blank">9006049</a>]<br></li>
+<li>For the molR locus the expression level in the bglJ deletion strain and the hns stpA yjjP-yjjQ-bglJ mutant was similar ( Figure 4 ) suggesting that molR is not repressed by HNS and StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In hns mutants , StpA negatively autoregulates transcription of stpA ( 37 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Since this stpA-lacZ fusion encodes StpA , its expression was not tested in hns stpA double mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In contrast , repression of the bgl operon , another H-NS-repressed system , is not achieved by StpA alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>In contrast , StpA does not repress the bgl operon in an hns null mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Overproduction of the StpA protein affects expression from at least four hns regulated operons ( the papB , proU , bgl and hns operons ) , in both the presence and absence of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>In the absence of H-NS , the expression of `` epistatically controlled genes '' is repressed by StpA , whereas that of `` unilaterally controlled genes '' is not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23661089" target="_blank">23661089</a>]<br></li>
+<li>In the absence of both H-NS and StpA , the expression of the divergently oriented malKlamBmalM and malEFG op-erons was almost completely abolished .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>At present , it is not known if expression of the mlc gene is affected by H-NS and/or StpA , but evidently Mlc is subject to autoregulation and represses its own expression ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9829919" target="_blank">9829919</a>]<br></li>
+<li>The H-NS and StpA proteins negatively autoregulate the transcription of their own genes and each represses the gene that encodes the other protein in trans 6,10 -- 15 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>These results show that expression of leuO is directed by two H-NS and StpA repressed promoters ( PleuO and P2leuO ) and they suggest that RcsB-BglJ activates transcription from promoter P2leuO at position 84 304 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Promoter mapping revealed that two H-NS and StpA repressed promoters direct expression of the leuO gene and that one of these promoters is activated by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Transcription of leuO is activated by RcsB-BglJ independently of the Rcs phosphorelay and repressed by H-NS/StpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Our results conﬁrm that transcription of leuO is repressed by H-NS , and further show that StpA contrib-utes to this repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Under standard laboratory growth conditions transcription is repressed by H-NS and/or StpA ( repressed ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The stpA gene is known to be repressed by H-NS and by StpA , as shown by stpA promoter-lacZ fusions and Northern analyses ( 16 , 37 , 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>Expression of the leuO gene is likewise repressed by HNS and StpA ( 20,23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The leuO gene encoding the only known activator of the yjjQ-bglJ operon , is likewise repressed by HNS and StpA under standard laboratory conditions ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>To analyze whether downstream sequences alone confer regulation by H-NS and/or StpA , the stpA coding region [ stpA ( orf ) ] ( including positions 1 to 466 relative to the transcription start ) was inserted between the constitutive lacUV5 promoter and the lacZ gene ( Fig. 1E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+<li>This difference in regulation of bgl versus stpA and proU by H-NS-I119T and StpA may further imply that growth conditions which induce stpA may allow the maintenance of strong repression of bgl , even if H-NS is less active under such conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980475" target="_blank">16980475</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

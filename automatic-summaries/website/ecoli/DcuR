@@ -1,0 +1,765 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - DcuR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">DcuR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">DcuR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The RR-bound 32P was stably retained for the A1 group RRs such as pArcA , pCpxR , pCusR , pKdpE , and pNarL but was rapidly released for the A2 group RRs , including pBaeR , pCheB , pCheY , pCreB , pDcuR , pNarP , pNtrC , pTorR , pUhpA , pYehT , and pYfhA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>It appears that the pathways for the general C4-dicarboxyl-ates are regulated by exogenous induction using the DcuSDcuR system , whereas the speciﬁc pathways for the uncommon C4-dicarboxylates D-malate and L-tartrate are regulated by endogenous induction using cytoplasmic LysR-type regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Hierarchical Control of Anaerobic Gene Expression in Escherichia coli K-12 : the Nitrate-Responsive NarX-NarL Regulatory System Represses Synthesis of the Fumarate-Responsive DcuS-DcuR Regulatory System Ee-Been Goh ,1 Peggy J. Bledsoe ,2 Li-Ling Chen ,2 Prasad Gyaneshwar ,3 † Valley Stewart ,2 * and Michele M. Igo1 ,2 Microbiology Graduate Group , University of California , Davis , California 956161 ; Section of Microbiology , University of California , Davis , California 956162 ; and Department of Plant & Microbial Biology , University of California , Berkeley , California 947203 Received 15 February 2005/Accepted 8 April 2005 Hierarchical control ensures that facultative bacteria preferentially use the available respiratory electron acceptor with the most positive standard redox potential .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>B : lanes 1 and 2 , cell homogenates ( 30 and 35 g of protein ) before and after induction with IPTG ; lane 3 , soluble cell fraction ( 40 g of protein ) of induced BL21DE3pMW151 ; lane 4 , His6-2 DcuR eluate of the Ni - NTA-agarose column ( 5 g ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>6 Overexpression and Isolation of His6-DcuS and of DcuR -- For isolation of DcuS , E. coli BL21DE3pMW151 was grown in 0.8 liter of LB medium ( 30 ) at 30 ° C under aerobic conditions to OD 0.5 and then 578 induced with 1 mM isopropyl - - D-thiogalactopyranoside ( IPTG ) 1 for 3 h ( OD578 1.3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>For the isolation of DcuR , E. coli BL21DE3pMW180 was grown in 0.8 liter of LB medium , induced , and the cells were broken by the French press as described for E. coli BL21DE3pMW151 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>A decrease in the OmpF outer membrane protein is known to cause resistance to carbapenems in addition to large lipophilic compounds .19 -- 21 If RcsB and DcuR repress ompF expression , they might confer resistance to carbapenems and lipo-philic compounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12951338" target="_blank">12951338</a>]<br></li>
+<li>For the same three constructions , the signal was enhanced with BasR or BasR53 overproduction , but not with DcuR overproduction , showing the speciﬁcity of this activation ( Fig. 5B and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21463370" target="_blank">21463370</a>]<br></li>
+<li>Interestingly , DcuR appeared to oligomerize upon native PAGE ( Fig. 3C ) , suggesting that DcuR has the capacity to form higher order oligomers under certain conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>It is likely that the true increase in afﬁnity achieved upon DcuR phosphorylation is higher than this since DcuR may not be fully phosphorylated by acetylphosphate and acetylphosphate treatment resulted in a loss of DcuR due to precipitation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Microbiology ( 2004 ) , 150 , 877 -- 883 DOI 10.1099 / mic.0.26900-0 Phosphorylation and DNA binding of the regulator DcuR of the fumarate-responsive two-component system DcuSR of Escherichia coli Ingo G. Janausch , Inma Garcia-Moreno , Daniela Lehnen , Yvonne Zeuner and Gottfried Unden Institut für Mikrobiologie und Weinforschung , Johannes Gutenberg-Universita ̈t Mainz , Becherweg 15 , 55 099 Mainz , Germany Correspondence Gottfried Unden unden@uni-mainz.de The function of the response-regulator DcuR of the DcuSR fumarate two-component sensory system of Escherichia coli was analysed in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Janausch , I.G. , Garcia-Moreno , I. , Lehnen , D. , Zeuner , Y. , and Unden , G. ( 2004 ) Phosphorylation and DNA binding of the regulator DcuR of the fumarate-responsive two-component system DcuSR of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16194231" target="_blank">16194231</a>]<br></li>
+<li>DcuR speciﬁcally bound to the promoters of the three known DcuSR-regulated genes ( dctA , dcuB , and frdA ) , with apparent KDs of 6 to 32 M for untreated DcuR and < 1 to 2 M for the acetylphosphate-treated form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>A detailed analysis of DcuR-P at target promoters showed that binding is specific and found only at target promoters , which are regulated by DcuR in vivo .2 None Fumarate Succinate Butyrate Acetate 2 I. Garcia-Moreno and G. Unden , unpublished data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>In order to raise the afﬁnity of DcuR for its DNA-binding site to physiologically relevant levels , we treated the protein with acetylphosphate , which acts as a substrate for the autophosphorylation of many response-regulators ( 22 , 23 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>This difference may reﬂect the lower binding afﬁnity of untreated DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>This binding afﬁnity is consistent with the estimated concentration of DcuR in vivo , suggesting that the phosphorylation of DcuR is a prerequisite for the induction of dcuB transcription by DcuSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>In vivo , the DcuSR-dependent induction of gene expression is likely to require the phosphorylation and consequent dimerization of DcuR in order to raise the binding afﬁnity of DcuR to physiologically relevant levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The binding of non-phosphorylated DcuR , on the other hand , is without physiological signiﬁcance in vivo , although it appears to be sequence-speciﬁc , and it is limited to a few DcuRregulated promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DISCUSSION Signiﬁcance of the high-afﬁnity DcuR-P/DNA complex for transcriptional regulation Binding of phosphorylated DcuR to target promoters generates two DcuR-P/DNA complexes that differ in app .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>The phosphorylated DcuR protein was incubated with labelled DNA ( 5 nM ) in binding buffer ( 50 mM Tris/HCl , pH 7 ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>KD values for binding of DcuR-P and DcuR to promoter DNA Table 1 compares app .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>KD ) values for binding of DcuR-P and DcuR to DcuR-regulated promoters The app .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>KD values for the binding of DcuR to target promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>However , it is unclear whether such oligomers are relevant to the interaction of DcuR with its DNA-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>For this reason , the phosphorylation of DcuR and the binding of DcuR to target DNA were studied .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DNA-binding afﬁnity of DcuR is enhanced by treatment with acetylphosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>No retardation of negative-control DNA fragments ( from the ﬁmZ and b0501 genes ) was observed with DcuR concentrations up to 64 M , indicating that the observed binding of DcuR to the dcuB operator-promoter region is speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The DNA fragments that formed high-afﬁnity retardation complexes ( frdA , dcuB , dctA ) are speciﬁcally regulated by DcuR and responsive to the presence of fumarate in vivo ( Table 1 ) ( Zientz et al. , 1998 ; Golby et al. , Requirement of DcuR phosphorylation for high-afﬁnity binding When non-phosphorylated DcuR was incubated with dcuB ( Fig. 2 ) or the frdA promoter DNA , a retardation complex was formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Upon phosphorylation , DcuR bound specifically to dcuB promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>This suggests that the dcuB promoter DNA was bound specifically by phosphorylated DcuR and that a complex consisting of DcuS , DcuR-P , and DNA was formed , which was too large to migrate into the gel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Gel retardation of frdA promoter DNA by increasing concentrations of phosphorylated DcuR ( DcuR-P ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Radioactively labelled dcuB promoter DNA was incubated with increasing concentrations of nonphosphorylated DcuR , and subjected to non-denaturing DNA PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>The C-terminal domain of DcuR binds to the dcuB , dctA , and frdA operator-promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The results are in general agreement with those of Janausch et al. ( 14 ) , who showed that the phosphor-ylated form of DcuR speciﬁcally binds to a 646-bp fragment of the dcuB promoter at a protein concentration of 0.7 M and that the unphosphorylated protein fails to-bind at concentrations below 1.5 M .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>When DcuR was phosphorylated with acetylphosphate ( Fig. 7B ) , low amounts ( 0.7 M ) of DcuR-phos-phate ( DcuR-P ) caused disappearance of the band of free DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>After incubation with acetyl phosphate , puriﬁed DcuR-D56N did not bind to the dcuB promoter at concentrations of less than 2 mM DcuR ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Prior to its use in gel retardation assays , His6-DcuR was phosphorylated by incubation with acetyl phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DcuR was puriﬁed as a His6-fusion protein , and phosphorylated by incubation with acetyl phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DcuR was phosphorylated by incubation with ATP and DcuS-proteoliposomes ( Fig. 7A ) or for control by incubation with acetyl phosphate ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>When DcuR was phosphorylated by DcuS-proteoliposomes ( Fig. 7A ) , the DNA band corresponding to free DNA disappeared at concentrations of DcuR-P very similar to those of the experiment of Fig. 7B , when DcuR was phosphorylated by acetyl phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Isolated DcuR protein was phosphorylated by the sensory histidine kinase , DcuS , and ATP , or by acetyl phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DcuS was phosphorylated with [ -32 P ] ATP prior to the addition of DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>DNA Binding of DcuR Phosphorylated by DcuS -- The DNA binding of phosphorylated DcuR was tested in a gel retardation assay ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Overall , DcuR phosphorylated via reconstituted DcuS , and ATP seems to be capable of specific binding to dcuB promoter DNA similar to DcuR phosphorylated by acetyl phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>The level of phosphorylated RRs was less than 1 % for CreB , HydG , YedW , NarL , CheB , OmpR , DcuR , CpxR , YehT , and NarP ( in decreasing order ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>The radioactivity found in DcuR further decreased rapidly with increasing time , indicating that DcuR-P was not stable ( Fig. 6 , B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>A 3.4-fold decrease of citC-lacZ induction was observed when DcuR was inactivated ( IMW554 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>For estimation of the phosphorylation state , various response-regulators ( DcuR , ArcA , NarL ) were subjected to isoelectric focussing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Effect of the D56N mutation in DcuR on its ability to-bind DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Strains containing DcuR-D56N instead of DcuR were no longer able to induce dcuB -- lacZ in the presence of fumarate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>1 mM [ c-33P ] ATP , fumarate and 8 mg DcuR-D56N or DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Phosphorylated DcuR bound speciﬁcally to the promoter region , and the deletion of dcuS or dcuR reduced the expression of citC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The data indicate the presence of a regulatory cascade consisting of DcuS/DcuR modulating citAB expression ( and CitA/CitB levels ) and CitA/CitB controlling the expression of the citC-DEFXGT gene cluster in response to citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The impact of DcuR on citC expression might be due to a transcriptional activation of citAB by DcuR , as discussed below .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Therefore , expression of DcuR is activated by the transcription from the P2dcuR promoter in the presence of CRP-cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>In addition , DcuS/DcuR binds to the citAB promoter region and appears to regulate citAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>In addition , NarXL/nitrate and CRP-cAMP / glucose control the expression and level of DcuS and DcuR ( Goh et al. , 2005 ; Oyamada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Thus , the dcuS mutation resulted in an ; fourfold decrease in dctA expression in the presence of succinate ( from 1.6 to 0.43 mmol/min/mg ) ( Table 2 ) , indicating that dctA expression is under the direct or indirect control of DcuS-DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The better growth of the dcuS mutant in succinate relative to that in fumarate or malate is probably due to the presence of an uncharacterized and putative succinate-speciﬁc transporter ( designated SucT ) that enables good aerobic-growth of dctA mutants on succinate ( 6 ) and is probably not strongly regulated by the DcuS-DcuR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The signiﬁcance of inactivation of dcuS for growth on D-malate and succinate can be explained by the stimulation of dctA expression by DcuS-DcuR ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Thus , in addition to direct repression , the hierarchical control of fumarate respiration may also involve a second level of regulation whereby decreased DcuS-DcuR synthesis renders fumarate induction less effective .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>Both pathways interact , however , at the regulatory level through DcuS -- DcuR , which positively regulates dcuB ( similar to fumB and frdABCD ) and ttdR expression , while TtdR regulates the expression of ttdAB ttdT and ttdR , and in addition expression of dcuB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Thus , from the genes tested , only dcuB and frdA were clearly regulated by DcuR and DcuS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>Inactivation of dcuS inhibited anaerobic-growth on D-malate ( Fig. 2B ) , which can be explained by the requirement for DcuS-DcuR for fumB and dcuB induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Stimulation of dcuB expression by citrate was completely lost upon deletion of dcuS or dcuR , similar to that by fumarate , demonstrating the essential role of DcuS and DcuR for citrate induction of dcuB - lacZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416661" target="_blank">17416661</a>]<br></li>
+<li>This indicates that fumarate induction of dcuB expression is dependent on the concentration of the dcuSR products , DcuS and DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Therefore , the induction of dcuB depends on functional DcuS / DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>In the presence of citrate , on the other hand , the citrate fermentation genes ( citCDEFXGT and mdh ) , encoding citrate lyase , the citrate/succinate antiporter , and malate dehydrogenase are induced by CitA/CitB and citrate , and the additionally required fumarate respiration genes ( frdABCD and fumB ) are induced by DcuS/DcuR and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Differential regulation of TtdR and DcuS -- DcuR-regulated genes is of particular interest , since DcuS -- DcuR responds to L-tartrate as well , and since fumarate respiration is an essential part of L-tartrate fermentation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The genes encoding fumarase B and fumarate reductase FrdABCD , which are required in L-tartrate fermentation , but are part of fumarate respiration as well , are regulated by DcuS -- DcuR ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The induction by D-malate and the tartrate isomers depends on the LysR-type regulator DmlR ; DcuS-DcuR is required for induction of DctA and to some extent for regulation of DmlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>DmlR , on the other hand , regulates its own synthesis , but it is essentially independent of DcuS-DcuR and TtdR under most conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Expression of ttdR-lacZ was stimulated slightly by L-tartrate , D-malate and fumarate ( 2.2 - to 3.1-fold ) , similar to previous results ( 26 ) , and the effects are known to depend on TtdR and DcuS-DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Under anaerobic conditions , fumarate respiration is induced by DcuS/DcuR and fumarate or L-malate and aspartate ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>L-Tartrate , D-malate , and fumarate were tested as the key effectors for the sensors TtdR , DmlR , and DcuS-DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Induction by fumarate and meso-tartrate was affected by DcuS -- DcuR , whereas induction by L-tartrate required TtdR and DcuS -- DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>It is likely that DcuS acts as a C4-dicarboxylate-sensing histidine kinase that reports C4-di-carboxylate concentration to DcuR , which in turn directly activates the transcription of genes in the DcuSR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Genes regulated by DcuR : not all C4-dicarboxylate-regulat-ed genes respond to DcuSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>Thus , ttdR appears to be subject to positive autoregulation by TtdR , like many LysR-type transcription regulators ( Schell , 1993 ) , and to positive regulation by the general C4-dicarboxylate regulatory system DcuS -- DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Regulation studies with a dctA-lacZ ( f428-lacZ ) transcriptional fusion showed that dctA is subject to cyclic AMP receptor protein ( CRP ) - dependent catabolite repression and ArcA-mediated anaerobic repression and is weakly induced by the DcuS-DcuR system in response to C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>4 Transcript mapping and regulatory studies with a dctA-lacZ transcriptional fusion showed that the dctA gene is monocis-tronic , has a single transcriptional start site , and is activated by cyclic AMP receptor protein ( CRP ) in the absence of glucose , repressed by ArcA during anaerobiosis , and weakly activated by the recently identiﬁed DcuS-DcuR system ( 13 , 57 ) in the presence of C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>C4-dicarboxylates affecting regulation by DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>Expression of other genes which are transcriptionally stimulated by C4-dicarboxylates was not ( nuoA to - N , sdhCDAB , and dcuC ) or was only partially ( dctA ) dependent on DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>Based on these results , we suggest that in addition to the qualitative change of DcuS by C4-dicarboxylates such as fumarate , the quantitative increase of DcuR by CRP-cAMP is required for high activation of signal transduction by DcuS-R , and also suggest that transcriptional regulation of dcuR by CRP-cAMP affects expression of the genes under control of the DcuS-R two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>The DcuSR two-component system of Escherichia coli consists of the sensory kinase DcuS and the regulator DcuR , and controls the expression of genes in response to extracellular C4-dicarboxylates like fumarate and succinate ( Jones & Gunsalus , 1987 ; Zientz et al. , 1998 ; Golby et al. , 1999 ; Davies et al. , 1999 ; Janausch et al. , 2002a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_88">
+Golby , P. , Davies , S. , Kelly , D.J. , Guest , J.R. & Andrews , S.C. Identiﬁcation and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene expression in response to C4-dicarboxylates in Escher-ichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18820688" target="_blank">18820688</a>]<br></label>
+<input id="act_similarity_88", type="checkbox">
+<div class="ACT_similar">
+<li>Golby , P. , Davies , S. , Kelly , D.J. , Guest , J.R. , and Andrews , S.C. ( 1999 ) Identiﬁcation and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li></div>
+<li>TtdR affects expression of dcuB in response to L-tartrate The dcuB gene is a member of the DcuS -- DcuR regulon , and its expression is stimulated under anaerobic conditions by C4-dicarboxylates such as fumarate , malate and the tartrate isomers in a DcuS-dependent manner ( Golby et al. , 1999 ; Kneuper et al. 2005 ; Zientz et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The expression of the frdABCD , fumB , and dcuB genes is induced under anaerobic conditions by DcuS/DcuR in the presence of C4-dicarboxylates and citrate ( 23 , 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>DcuS -- DcuR controls the expression of genes for the ` general ' C4-dicarboxylate metabolism , such as dcuB , fumB and frdABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The transcription of the corresponding structural genes is activated by the DcuS-DcuR two-component system in response to fumarate or its dicarboxylate precursors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>CitA/CitB is related to the DcuS/DcuR two-component system which induces the expression of genes for fumarate respiration in response to C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The studies described above show that the DcuS-DcuR system regulates gene expression in response to the addition of C4-dicarboxy-lates to the culture medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>These ﬁndings indicate that , as for dcuB , expression of frdA is strongly induced by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Zientz et al. found that the DcuS-DcuR system activates frdA and dcuB expression in response to C - dicarboxylates ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Consequently , it was concluded that dctA is not regulated by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Our results clearly show that dctA is regulated by DcuS-DcuR in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The above studies establish that three E. coli genes or operons ( dcuB , frdABCD , and dctA ) , having functions in the transport or metabolism of C4-dicarboxylates , are activated by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>DISCUSSION The studies described here reveal that E. coli contains a CitA-CitB-like two-component sensor-regulator system , designated DcuS-DcuR , that activates the transcription of the dcuB , frdABCD , and dctA genes in response to the presence of external C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>For normal regulatory function , the DcuS/DcuR system requires the presence of DcuB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>On the other hand , the DcuS/DcuR system appears to be independent of regulation by citrate and CitA/CitB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>This suggests that the DcuS-DcuR system responds to external substrates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>This conﬁrms that the DcuS-DcuR system responds to citrate as well as to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>It turned out that the TtdR and YeaT regulators respond to a narrow and speciﬁc spectrum of effectors , in contrast to DcuS-DcuR , which responds to all C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Conversely , in the presence of C4-dicarboxylates , DctA would be active ( transporting ) and the inhibition of DcuS would be relieved , thus allowing signal transduction from DcuR to DcuS and the consequent induction of dctA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>Expression of the fumarate reductase ( frdABCD ) operon and the aerobic C4-dicarboxylate transporter ( dctA ) gene were induced 22 - and 4-fold , respectively , by the DcuS-DcuR system in the presence of C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Although the DcuS-DcuR system is known to respond to external C4-dicarboxylates ( aspartate , fumarate , malate , maleate , succinate , and tartrate ) ( 12 , 13 , 57 ) , it had not been shown to respond to citrate until tested here ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>Regulation by DcuR and DcuS responded to the presence of the C4-dicarboxylates fumarate , succinate , malate , aspartate , tartrate , and maleate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>Due to the structural and functional similarity and the interdependence of the regulated metabolic systems , CitA/CitB and DcuS/DcuR might be candidates for physiologically relevant interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>First , DcuS responds to the presence of C - dicarbox-4 ylates ( Golby et al. , 1999 ; Kleefeld et al. , 2009 ; Kneuper et al. , 2005 ; Zientz et al. , 1998 ) , which regulate phosphorylation of DcuS and DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>When isolated DcuR protein was added , the radioactivity was rapidly and to a great extent ( 98 % dephosphorylation of DcuS after 2 min ) transferred from DcuS to DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Phosphorylation of DcuS in the presence of DcuR and [ c - P ] ATP reached a constant level after approximately 33 50 min incubation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>After the initial rapid phosphotransfer from DcuS to DcuR , the phosphorylated form of DcuR dephosphorylated , resulting in the almost complete dephosphorylation of DcuR after a 5-min incubation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The linear signal transfer is conﬁrmed by the interaction studies by BACTH that show interaction between DcuS and DcuR but the lack of interaction between CitA and DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Interaction of DcuR with DcuS DcuR has to interact with DcuS during phosphoryl transfer , and there are indications that DcuR/DcuS complexes are formed in this reaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Phosphoryl transfer from DcuS to DcuR in proteoliposomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Reconstituted DcuS is able to transfer a phosphoryl group to the response-regulator DcuR , which after phosphorylation gains the ability to-bind to DNA ( Janausch et al. , 2002b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DcuS is known to be active in autophosphorylation and phosphoryl transfer to DcuR ( Janausch et al. , 2002b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>When T25 and T18 were fused to DcuR ( pMW427 ) and DcuS ( pMW429 ) , respectively , a high degree of interaction was detected , reﬂecting the interaction between the sensor kinase and the cognate response-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Fumarate stimulation was independent of the fumarate response-regulator DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10368146" target="_blank">10368146</a>]<br></li>
+<li>The DcuS sensor responds to fumarate and other C4-dicar-boxylates to control the phosphorylation of the DcuR response-regulator ( 2 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>The phosphoryl group of DcuS was rapidly transferred to the response-regulator DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Phosphoryl Transfer from DcuS to DcuR -- The phosphoryl transfer from DcuS-P to the response-regulator DcuR was studied in the in vitro system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>DcuR-D56N Received 10 November 2003 Revised 19 December 2003 increased the phosphorylation of DcuS and competitively inhibited phosphoryl transfer to wild-type DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>In addition , in competition with wild-type DcuR , DcuR-D56N signiﬁcantly inhibits phosphoryl transfer to DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>( b ) DcuR 120 100 80 60 40 20 DcuR-D56N If DcuR-D56N instead of DcuR was present initially , then the level of DcuS phosphorylation was signiﬁcantly higher , as expected , due to lack of dephosphorylation by DcuRD56N .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Both of the phosphorylated DcuS constructs were able to rapidly pass their phosphoryl groups to DcuR , and after phosphorylation , DcuR dephosphorylated rapidly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The residual phosphorylation of DcuS , therefore , was higher than in the previous experiment ( Fig. 5a ) , when only DcuR was included .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>The level of DcuR phosphorylation increased with increasing concentrations of phosphorylated DcuS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Thus , inactivation of the phosphorylation site in DcuR-D56N inhibits only phosphorylation of DcuR and DNA binding , but not interaction with DcuS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Taking the extent of DcuS phosphorylation in the presence of DcuR-D56N as 100 % , it was found that DcuS phosphorylation with DcuR present was low ( 13 % ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>In the presence of DcuR-D56N , on the other hand , phosphorylation of DcuS was signiﬁcantly increased , by 35 % , compared to phosphorylation without DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>To test the effect of DcuR and DcuRD56N on the phosporylation of DcuS in proteoliposomes , DcuR and DcuR-D56N were included during phosphorylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Effect of DcuR and DcuR-D56N on the phosphorylation state of DcuS when DcuR or DcuR-D56N is added during phosphorylation of DcuS separately ( a ) , or at the same time ( b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Effect of DcuR and DcuR-D56N on the phosphorylation state of DcuS The effects of DcuR and DcuR-D56N on the phosphorylation and dephosphorylation of DcuS-P were tested , using DcuS reconstituted in proteoliposomes ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>When DcuR-D56N and DcuR were present during the phosphorylation of DcuS , they gave rise to different effects on the phosphorylation state of DcuS ( Fig. 5a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Identiﬁcation and Characterization of a Two-Component Sensor-Kinase and Response-Regulator System ( DcuS-DcuR ) Controlling Gene Expression in Response to C4-Dicarboxylates in Escherichia coli PAUL GOLBY ,1 SUZANNE DAVIES ,2 DAVID J. KELLY ,2 JOHN R. GUEST ,2 AND SIMON C. ANDREWS1 * The School of Animal and Microbial Sciences , University of Reading , Whiteknights , Reading RG6 6AJ ,1 and The Krebs Institute for Biomolecular Research , Department of Molecular Biology and Biotechnology , University of Shefﬁeld , Western Bank , Shefﬁeld S10 2TN ,2 United Kingdom Received 30 September 1998/Accepted 8 December 1998 The dcuB gene of Escherichia coli encodes an anaerobic C4-dicarboxylate transporter that is induced anaerobically by FNR , activated by the cyclic AMP receptor protein , and repressed in the presence of nitrate by NarL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>KD , apparent KD ; CRP , cyclic AMP receptor protein ; DcuR-P , phosphoryl DcuR ; TBE , Tris/borate/EDTA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">DcuR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The isolated kinase and PAS-kinase domains of DcuS possess autokinase activity and are able to act as substrates for the rapid transphosphorylation of DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Autophosphorylation of the DcuS-kinase domain and phosphotransfer to DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>For protein interaction studies by the bacterial two-hybrid system ( BACTH ) ( 18 , 19 ) , the T25 and T18 domains were separately fused to the N termini of the target proteins ( DcuS , CitA , and DcuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>To further analyze these observations , various forms of interaction between DcuS/DcuR and CitA/CitB were tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The linear signal transfer is conﬁrmed by the interaction studies by BACTH that show interaction between DcuS and DcuR but the lack of interaction between CitA and DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Studies on phosphoryl transfer indicated a speciﬁc interaction between DcuR and DcuS during the reaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Non-phosphorylated DcuR , or DcuR-D56N mutated in the phosphoryl-accepting Asp56 residue , showed low-afﬁnity binding to target promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>This region includes the aspartate residue ( Asp-56 in DcuR ) that is the site for phosphorylation in other receiver proteins ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The Nterminal region ( residues 1 to 127 ) of the DcuR protein ( and the other CitB-like proteins ) is very similar to the histidine-kinase receiver module of other two-component regulator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>However , the C-terminal region ( residues 128 to 239 for DcuR ) appears to be unique to the CitB-like proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>By analogy with other response regulators , it is likely that the C-terminal domain or output domain of DcuR is a DNA-binding domain enabling speciﬁc interaction with the promoter-operator regions of the genes in the DcuSR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>DcuR does not speciﬁcally interact with the dcuS , maeA , and maeB operator-promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The C-terminal domain of DcuR binds to the dcuB , dctA , and frdA operator-promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>DNase I footprint analysis of the dcuB , dctA , and frdA promoter-operator regions with phosphorylated and unphosphorylated DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>DcuR and the C-terminal DNA-binding domain ( cDcuR ; residues 124 to 234 ) of DcuR were overproduced and puriﬁed as C-terminally His-tagged fusion proteins ( the overproduced proteins included two additional amino acids , Leu-Glu , just before the His6 tag ) by using pET-21a-derived plasmids ( pPG25 and pPG39 ) containing corresponding PCR-ampliﬁed NdeI-XhoI fragments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>To determine whether the C-terminal domain of DcuR confers DNA-binding ability ( as anticipated ) , a DcuR fragment ( cDcuR ) containing just the C-terminal domain ( residues 124 to 234 ) was produced ( see Materials and Methods ) and tested by gel retardation analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>This ﬁnding conﬁrms that the C-terminal domain provides the DNA-binding capability exhibited by DcuR and is thus consistent with previous work on the isolated C-terminal domain of CitB ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>An analysis of the C-terminal domain of DcuR using the MOTIF program ( http://www.genome.ad.jp/SIT/SIT.html ) revealed a probable DNA-binding helix-turn-helix motif ( res-idues 177 to 218 ) resembling that of the GntR and DeoR families of bacterial gene regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The DcuR protein contains an N-terminal receiver-domain and a C-ter-minal output domain containing a potential DNA-binding he-lix-turn-helix motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The DcuR protein contains a helix-turn-helix DNA-binding motif in the C-terminal half and an N-terminal receiver-domain with a conserved aspartate residue ( Asp56 ) as a potential phosphorylation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">DcuR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>An analysis of the C-terminal domain of DcuR using the MOTIF program ( http://www.genome.ad.jp/SIT/SIT.html ) revealed a probable DNA-binding helix-turn-helix motif ( res-idues 177 to 218 ) resembling that of the GntR and DeoR families of bacterial gene regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>( C ) Native PAGE ( 10 % ) of DcuR ( and DcuS ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Furthermore , the DcuS-DcuR proteins are not closely related to the DctB-DctD or DctS-DctR proteins but instead are members of the CitA-CitB sub-family of two-component sensor-regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The DcuS and DcuR proteins are members of a subgroup ( the CitAB family ) of two-component sensor-regulators that includes the citrate-responsive CitAB and CitST systems from Klebsiella pneumoniae and Bacillus subtilis , respectively ( 3 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The 239-residue DcuR protein closely resembles ( 29 to 49 % identity ) the CitB-like proteins of the two-component regula-tor-receiver family ( CitB of E. coli and K. pneumoniae , YdbG , YufM , and CitR/Y ﬂQ of B. subtilis ; `` CitR '' of S. coelicolor ; and Ygd1 of Bacillus megaterium ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The Nterminal region ( residues 1 to 127 ) of the DcuR protein ( and the other CitB-like proteins ) is very similar to the histidine-kinase receiver module of other two-component regulator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by DcuR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>KD , apparent KD ; CRP , cyclic AMP receptor protein ; DcuR-P , phosphoryl DcuR ; TBE , Tris/borate/EDTA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>Operons which have been experimentally verified as being regulated by CRP Gene function Reference e ROMA Operon nam Other CRP sites regulators b Score KE/wt Position Sites a WT HL HL/wt KE 1.96 0.85 # bglG 1.73 -- 61.5 AACTGCGAGCATGGTCATATTT 11.2 Fis Positive regulation of bgl ( 49 ) operon Uptake of C4-dicarboxylic ( 50 ) acids D-ribose high-affinity ( 51 ) transport system Positive regulator for rhabad ( 52 ) operon Succinate dehydrogenase , ( 53 ) cytochrome b556 Tryptophanase leader peptide ( 54 ) PTS-system enzyme II , ( 55 ) trehalose specific Probable formate-transporter ( 43 ) Mgl repressor , galactose ( 56 ) operon inducer Sn-glycerol-3-phosphate ( 57 ) permease PTS-system , maltose and ( 58 ) glucose-specific II ABC Regulator of melibiose operon ( 59 ) Galactose-binding transport ( 56 ) protein PTS-system , glucose-specific ( 35 ) IIBC component PTS-system protein hpr ( 60 ) Orf , hypothetical protein ( 61 ) Aspartate ammonia-lyase ( 62 ) ( aspartase ) 2.44 1.09 # dctA 1.85 -- 81.5 TTGTGCGAGCCAGCTCAAACTT 14.1 DcuR , ArcA 3.80 0.89 # rbsDACBK R 4.10 -- 61.5 CGTTTCGAGGTTGATCACATTT 9.4 RbsR 1.46 0.86 # rhaSR 1.66 -- 113.5 TGATGTGATGCTCACCGCATTT 12.4 RhaR 2.71 1.11 # sdhCDAB 2.38 -- 83.5 TATCGTGACCTGGATCACTGTT 16.4 ArcA , FNR 1.98 0.95 # 3.09 1.35 # tnaLAB treBC 2.08 -- 4.73 -- 61.5 60.5 GATTGTGATTCGATTCACATTT 19.6 AATTGTGATCTTCGCTGCGTTT 8.8 1.39 # 1.09 # 3.90 1.59 # 2.49 1.22 # galS 41.5 41.5 AGATATGATCTATATCAATTTC 10.1 FNR TGCTGTGACTCGATTCACGAAG 10.4 GalR , GalS 2.21 # 4.51 0.89 # glpTQ ATGTGTGCGGCAATTCACATTT 17.2 GlpR 41.5 2.94 # 6.24 1.71 # malXY TTATGTGACAGATAAAACGTTT 11.2 49.5 1.17 # 1.78 # 2.29 1.20 # 6.78 1.49 # melR AACCGTGCTCCCACTCGCAGTC 5.5 MelR ATCTGTGAGTGATTTCACAGTA 16.6 41.5 41.5 mglBAC 1.13 # 2.11 1.14 # ptsG AAACGTGATAGCCGTCAAACAA 14.3 Mlc 40.5 1.56 # 1.10 # 2.65 # 2.95 1.01 # 1.88 0.97 # 6.29 2.50 # yhfA aspA TTTTATGATTTGGTTCAATTCT 9.5 TAATGTGACGTCCTTTGCATAC 11.7 42.5 44.5 90.5 AGCGGTGATCTATTTCACAAAT 15.5 FNR TAAAGTGATCCAGATTACGGTA 14.2 40.5 94.5 deoCABD TTATTTGAACCAGATCGCATTA 17.1 CytR , DeoR 2.37 -- 3.22 2.37 -- 2-Deoxyribose-5-phosphate ( 21 ) aldolase AATTGTGATGTGTATCGAAGTG 11.9 41.5 90.5 4.38 1.72 # AAATGTGAATTGCCGCACACAT 17.2 FNR , ArcA , ( 57 ) glpACB 3.31 -- Sn-glycerol-3-phosphate dehydrogenase FlhD , GlpR AATGACGCATGAAATCACGTTT 3.3 40.5 92.5 2.17 # 4.26 2.59 # manXYZ PTS enzyme IIAB , mannase-specific GAATGTGACAAGGATATTTTAC 2.4 Mlc , NagC ( 63,36 ) ATTACGGATCTTCATCACATAA 7.6 AAATGTATGACAGATCACTATT 12.6 CytR 40.5 89.5 1.39 # 3.25 1.17 # nupC Permease of transport system ( 64 ) for 3 nucleosides TAGTGTGTGTCAGATCTCGTTT 12.6 40.5 92.5 4.45 1.01 # nupG Transport of nucleosides , permease protein AAATGTTATCCACATCACAATT 20.4 CytR , DeoR 3.25 -- ( 65 ) TTATTTGCCACAGGTAACAAAA 10.6 ATTTCATCTCTATGTCACATTT 7.4 CytR 42.5 93.5 41.5 40.5 1.15 # rpoH Sigma ( 32 ) factor ( 22 ) 2.18 1.75 -- ACTTGTGGATAAAATCACGGTC 2.2 AACTGTGAAACGAAACATATTT 12.9 CytR 2.40 # 3.96 1.19 # tsx Receptor of phage T6 and ( 66 ) colicin K 74.5 AAACGTGAACGCAATCGATTAC 5.8 a The centre of an experimentally verified CRP-binding site relative to corresponding transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>Doubling component regulated regulated of altered time Identiﬁed function system ( HK/RR ) Relevant functions genes genes genes ( min ) in this experiment Strain name Mutation Class DcuS/DcuR Response to C4-dicarboxylate ( Golby et al. , 1999 ) Chemotaxis ( Stock and Surette , 1996 ) 10 29 39 27 BW 27878 DE ( dcuSR ) 1330 28079a Flagellar synthesis CheA/CheB , CheYa 13 28 41 25 BW DE ( ﬂhEAB cheZYBR tap tar cheWA motBA ﬂhCD IS1 ) 1218a DE ( atoSC ) 569 11 32 43 27 Flagellar synthesis BW28878 AtoS/AtoC Acetoacetate-metabolism ( Chen et al. , 1991 ; Rhie and Dennis , 1995 ) YpdA/YpdB Energy metabolism , BW27875 ﬂagellar synthesis BW27865 DE ( ypdAB ) 1334 24 18 42 31 NarQ / DnarQ1314 25 45 29 Nitrate regulation ( Stewart and Rabin , 1995 ) 20 / YfhA / RcsB DyfhA1326 DrcsB1320 17 11 46 46 28 38 BW BW 29430 27870 29 35 Capsular synthesis ( Stout and Gottesman , 1990 ) Regulation of the citrate fermentation ( Kaspar and Bott , 2002 ) Sigma-S degradation ( Klauck et al. , 2001 ) Flagellar synthesis , maltose-transport Flagellar synthesis , maltose-transport CitA/CitB DE ( citAB ) 1289 23 61 BW 27876 31 38 / RssB BW27555 23 64 25 41 DrssB1273 rpoS regulon Drastic alteration Respiratory control ( Iuchi and Lin , 1995 ) / ArcA 72 38 49 110 DarcA43 TCA-cycle , ﬂagellar synthesis Respiration , rpoS regulon , maltose-transport Amino acid metabolism ( cys , leu ) , transporter , ﬂagellar synthesis , enterochelin TCA-cycle , chemotaxis , osmotic adaptation , protein peptide secretion , purine-ribonucleotide-biosynthesis , rpoS regulon , enterochelin , maltose-transport BW 27422 Hydrogen peroxide sensitivity ( Pernestig et al. , 2001 ) / UvrY 86 37 45 123 DuvrY1296 BW 27874 EnvZ/OmpR 71 54 125 35 DE ( ompR-envZ ) 520 Osmotic regulation BW 26424 ( Pratt and Silhavy , 1995 ) Respiratory control ( Iuchi and 147 Lin , 1995 ) ArcB / 112 259 44 BW26422 DarcB41 a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>This region includes the aspartate residue ( Asp-56 in DcuR ) that is the site for phosphorylation in other receiver proteins ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Upon phosphorylation , DcuR bound specifically to dcuB promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Hierarchical Control of Anaerobic Gene Expression in Escherichia coli K-12 : the Nitrate-Responsive NarX-NarL Regulatory System Represses Synthesis of the Fumarate-Responsive DcuS-DcuR Regulatory System Ee-Been Goh ,1 Peggy J. Bledsoe ,2 Li-Ling Chen ,2 Prasad Gyaneshwar ,3 † Valley Stewart ,2 * and Michele M. Igo1 ,2 Microbiology Graduate Group , University of California , Davis , California 956161 ; Section of Microbiology , University of California , Davis , California 956162 ; and Department of Plant & Microbial Biology , University of California , Berkeley , California 947203 Received 15 February 2005/Accepted 8 April 2005 Hierarchical control ensures that facultative bacteria preferentially use the available respiratory electron acceptor with the most positive standard redox potential .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>While this paper was under review , Zientz et al. , published a paper that also identiﬁes the role of DcuSDcuR in the transcriptional regulation-of-gene-expression in E. coli ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>( B ) The citrate-induced transporter ( CitT ; citrate/succinate antiporter ) and enzymes ( CL , citrate lyase ; Mdh , malate dehydrogenase ) are shown in pink ( induction by CitA/CitB ) and green ( induction by DcuS/DcuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>In E. coli three regulatory systems are known for control of general C4-dicarboxylate me-tabolism ( DcuS-DcuR ) , L-tartrate fermentation ( TtdR ) , and aerobic D-malate catabolism ( 13 , 22 , 26 , 36 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Therefore , DcuS/DcuR serves as an overriding regulatory system for establishing a hierarchical control in the anaerobic C4-dicarboxylate and citrate-metabolism that helps to coordinate the regulation of both metabolic systems , since fumarate respiration is part of citrate fermentation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Cooperation of DcuS/DcuR and CitA/CitB in the regulation of fumarate respiration and citrate fermentation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The speciﬁc dependence of the citrate fermentation genes on CitA/CitB , and that of the fumarate respiration genes on DcuS/DcuR as well as the dual speciﬁcity of DcuS for fumarate and citrate , allows the expression of the systems according to need .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Differential regulation of TtdR and DcuS -- DcuR-regulated genes is of particular interest , since DcuS -- DcuR responds to L-tartrate as well , and since fumarate respiration is an essential part of L-tartrate fermentation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The genes encoding fumarase B and fumarate reductase FrdABCD , which are required in L-tartrate fermentation , but are part of fumarate respiration as well , are regulated by DcuS -- DcuR ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Identiﬁcation and Characterization of a Two-Component Sensor-Kinase and Response-Regulator System ( DcuS-DcuR ) Controlling Gene Expression in Response to C4-Dicarboxylates in Escherichia coli PAUL GOLBY ,1 SUZANNE DAVIES ,2 DAVID J. KELLY ,2 JOHN R. GUEST ,2 AND SIMON C. ANDREWS1 * The School of Animal and Microbial Sciences , University of Reading , Whiteknights , Reading RG6 6AJ ,1 and The Krebs Institute for Biomolecular Research , Department of Molecular Biology and Biotechnology , University of Shefﬁeld , Western Bank , Shefﬁeld S10 2TN ,2 United Kingdom Received 30 September 1998/Accepted 8 December 1998 The dcuB gene of Escherichia coli encodes an anaerobic C4-dicarboxylate-transporter that is induced anaerobically by FNR , activated by the cyclic AMP receptor protein , and repressed in the presence of nitrate by NarL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>It is likely that DcuS acts as a C4-dicarboxylate-sensing histidine kinase that reports C4-di-carboxylate concentration to DcuR , which in turn directly activates the transcription of genes in the DcuSR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>In the presence of the `` general C4-dicarboxylates of the central pathways , like fumarate , Lmalate , or aspartate , only the genes for central pathways of fumarate respiration ( dcuB , fumB , and frdABCD ) and C4-di-carboxylate degradation ( dctA ) are induced via DcuS-DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>DcuS -- DcuR controls the expression of genes for the ` general ' C4-dicarboxylate-metabolism , such as dcuB , fumB and frdABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>DcuS-DcuR also weakly induces expression of dctA ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>It is known that phospho-DcuR induces expression of genes such as the dcuB-fumB operon , the frdABCD operon , and the dctA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>The possibility that the DcuS-DcuR system regulates the expression of other genes involved in C4-dicarboxylate-transport or metabolism was investigated by transferring the dcuS mutation of JRG3983 to strains containing the appropriate single-copy lacZ gene fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>To examine a potential regulatory effect of DmlR on the other pathways for C4-dicarboxylate degradation , the expression of DcuS-DcuR - and TtdR-regulated genes was measured in dmlR-positive and - negative backgrounds ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_23">
+Hierarchical control of anaerobic gene-expression in Escherichia coli K-12 : the nitrate-responsive NarXNarL regulatory system represses synthesis of the fumarate-re-sponsive DcuS-DcuR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></label>
+<input id="rp_similarity_23", type="checkbox">
+<div class="RP_similar">
+<li>Hierarchical control of anaerobic gene-expression in Escherichia coli K-12 : the nitrate-responsive NarX-NarL regulatory system represses synthesis of the fumarate-responsive DcuS-DcuR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17720788" target="_blank">17720788</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Hierarchical control of anaerobic gene-expression in Escherichia coli K-12 : the nitrate responsive NarX-NarL regulatory system represses synthesis of the fumarate-responsive DcuS-DcuR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li></div>
+<li>The data indicate the presence of a regulatory cascade consisting of DcuS/DcuR modulating citAB expression ( and CitA/CitB levels ) and CitA/CitB controlling the expression of the citC-DEFXGT gene cluster in response to citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Mutants lacking the fumarate response regulator DcuR ( dcuR gene ) or the related CitB response regulator ( citB gene ) ( 27 ) showed the same fumarate stimulation of dcuC expression as the wild type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10368146" target="_blank">10368146</a>]<br></li>
+<li>Again , E. coli wild type for dcuS and citaA and a series of mutants lacking either one of the kinases ( DcuS or CitA ) or one of the response regulators ( DcuR or CitB ) were tested for the expression of a chromosomal citC-lacZ reporter gene fusion during anaerobic growth ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Based on these results , we suggest that in addition to the qualitative change of DcuS by C4-dicarboxylates such as fumarate , the quantitative increase of DcuR by CRP-cAMP is required for high activation-of-signal-transduction by DcuS-R , and also suggest that transcriptional regulation of dcuR by CRP-cAMP affects expression of the genes under control of the DcuS-R two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>Remarkably , the two-component signal system DcuS-DcuR induces transcription of the dcuB-fumB operon , the frdABCD op-eron , and dctA ( C4 compounds transporter ) in response to external C4 compounds ( SUC , FUM , MAL , and aspartate ) [ 61,62 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22513097" target="_blank">22513097</a>]<br></li>
+<li>The DcuS/DcuR two-component system controls the expression of the genes essential for fumarate respiration ( 11 , 14 , 15 , 56 ) , including the genes dcuB , fumB , and frdABCD that encode the fumarate/succinate antiporter ( DcuB ) , fumarase ( FumB ) , and fumarate reductase ( FrdABCD ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The genes encoding the latter pathway ( dcuB , fumB and frdABCD ) are transcriptionally activated by the DcuS -- DcuR two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The yjdHG genes ( redesignated dcuSR ) appear to constitute an operon encoding a two-component sensor-regulator system ( DcuS-DcuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The above studies establish that three E. coli genes or operons ( dcuB , frdABCD , and dctA ) , having functions in the transport or metabolism of C4-dicarboxylates , are activated by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Indeed , the studies described here reveal that E. coli contains a new two-component regulatory system , designated DcuS-DcuR , that regulates the expression of dcuB and other genes in response to external C4-dicarboxy-lates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>CitA/CitB is related to the DcuS/DcuR two-component system which induces the expression of genes for fumarate respiration in response to C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>A Interaction and Phosphotransfer of the C4-Dicarboxylate - Responsive DcuS-DcuR Two-Component Regulatory System from Escherichia coli DN Aly E. Abo-Amer ,1 Jonathan Munn ,1 Kerry Jackson ,1 Murat Aktas ,1 † Paul Golby ,1 ‡ David J. Kelly ,2 and Simon C. Andrews1 * The School of Animal and Microbial Sciences , University of Reading , Whiteknights , Reading RG6AJ ,1 and Department of Molecular Biology and Biotechnology , University of Shefﬁeld , Shefﬁeld S10 2TN ,2 United Kingdom Received 18 September 2003/Accepted 17 November 2003 The DcuS-DcuR system of Escherichia coli is a two-component sensor-regulator that controls gene-expression in response to external C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The DcuSR two-component system of Escherichia coli consists of the sensory kinase DcuS and the regulator DcuR , and controls the expression of genes in response to extracellular C4-dicarboxylates like fumarate and succinate ( Jones & Gunsalus , 1987 ; Zientz et al. , 1998 ; Golby et al. , 1999 ; Davies et al. , 1999 ; Janausch et al. , 2002a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_39">
+J Bacteriol 180:6586 -- 6596 Golby P , Davies S , Kelly DJ , Guest JR , Andrews SC ( 1999 ) Identification and characterization of a two-component sensor kinase and response regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10525738" target="_blank">10525738</a>]<br></label>
+<input id="rp_similarity_39", type="checkbox">
+<div class="RP_similar">
+<li>Anal Biochem 182:319 -- 326 Golby P , Davies S , Kelly DJ , Guest JR , Andrews SC ( 1999 ) Identification and characterization of a two-component sensor-ki-nase and response-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11889485" target="_blank">11889485</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_41">
+Golby , P. , Davies , S. , Kelly , D.J. , Guest , J.R. & Andrews , S.C. Identiﬁcation and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escher-ichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18820688" target="_blank">18820688</a>]<br></label>
+<input id="rp_similarity_41", type="checkbox">
+<div class="RP_similar">
+<li>Golby , P. , Davies , S. , Kelly , D.J. , Guest , J.R. , and Andrews , S.C. ( 1999 ) Identiﬁcation and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>Identiﬁcation and characterization of a two-component sensor-kinase and response regulator system ( DcuS-DcuR ) controlling gene-expression in response to C - dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Identiﬁcation and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618449" target="_blank">12618449</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>Identiﬁcation and characterization of a two-component sensor-kinase and response regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17172328" target="_blank">17172328</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Identiﬁcation and characterization of a two-component sensor kinase and response regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10368146" target="_blank">10368146</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416661" target="_blank">17416661</a>]<br></li>
+<li>Identi-ﬁcation and characterization of a two-component sensor-kinase and re-sponse-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>Identification and characterization of a two-component sensor-kinase and response regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Identification and characterization of a two-component sensor-kinase and response-regulator system ( DcuS-DcuR ) controlling gene-expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li></div>
+<li>TtdR affects expression of dcuB in response to L-tartrate The dcuB gene is a member of the DcuS -- DcuR regulon , and its expression is stimulated under anaerobic conditions by C4-dicarboxylates such as fumarate , malate and the tartrate isomers in a DcuS-dependent manner ( Golby et al. , 1999 ; Kneuper et al. 2005 ; Zientz et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The DcuS sensor responds to fumarate and other C4-dicar-boxylates to control the phosphorylation of the DcuR response regulator ( 2 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>The expression of dmlR in response to DmlR and other regulators ( DcuS-DcuR and TtdR ) of C4-dicarboxylate metab-olism was tested by using a dmlR-lacZ gene fusion and the corresponding regulator mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">DcuR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Sequence alignments suggest that Asp56 of DcuR represents the conserved phosphorylation site for DcuR-P formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>DcuR speciﬁcally bound to the promoters of the three known DcuSR-regulated genes ( dctA , dcuB , and frdA ) , with apparent KDs of 6 to 32 M for untreated DcuR and < 1 to 2 M for the acetylphosphate-treated form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>A gel retardation analysis showed that DcuR speciﬁcally binds to the 366-bp EcoRI frdA operator-promoter fragment containing the entire yieA-frdA intergenic region ( not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The radioactively labeled dcuB promoter fragment ( 646 bp , 76 nM DNA ) was incubated with DcuR phosphorylated for 1 min at 20 ° C by DcuS proteoliposomes plus ATP ( 10 mM ) ( A ) or with 5 mM acetylphosphate for 60 min at 37 ° C ( B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>Upon phosphorylation , DcuR bound specifically to dcuB promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>RESULTS DcuR speciﬁcally binds to a site located 318 to 432 bp upstream of the previously deﬁned dcuB-fumB promoter ( P1dcuB ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>DcuR was found to speciﬁcally bind to a region of DNA located 318 to 432 bp upstream of the known dcuB promoter ( P1dcuB ) with an apparent afﬁnity of around 6 M ( Fig. 1A and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The DcuR-binding sites of the dcuB , dctA , and frdA genes were located 27 , 94 , and 86 bp , respectively , upstream of the corresponding 1 sites , and a new promoter was identiﬁed for dcuB that responds to DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>This binding site is about half the size of that determined for the dcuB promoter ( 55 bp ) , suggesting that the dcuB promoter may bind approximately twice as much DcuR as the dctA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Conserved putative DcuR binding motifs ( light blue rounded boxes ) , consisting of a tandem repeat of ( T/A ) ( A/T ) ( T/C ) ( A/T ) AA ( 1 ) , are located upstream of citC and citA , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Inspection of the dmlA promoter revealed a consensus site for DcuR ( 1 ) at positions 96 to 46 relative to the translational start site , which could be an indication that DcuS-DcuR directly represses dmlA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>An inspection of the three DcuR-binding sites showed a similar directly repeated hexameric sequence , ( T/A ) ( A/T ) ( T / C ) ( A/T ) AA ( preferred bases are shown in bold ; see Fig. 5 ) , which could act as a binding motif for DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>The promoter region of citAB contains at least two DcuR consensus binding sites ( Fig. 5 ) , and the DcuR binding in the gel retardation studies ( Fig. 1 ) suggests that the sites are functional .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>It is unclear whether the ArcA-binding sequences in the DcuR-protected regions are a consequence of similarities between the consensus binding sequences for ArcA and DcuR or whether there could be competition between ArcA and DcuR at these sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Note that DcuR and CitB binding sites overlap .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Identiﬁcation of DcuR-binding sites at other promoters will be required to derive the DcuR consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by DcuR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Zientz et al. showed that neither the nuo operon , the dcuC gene , nor the sdhC gene are DcuSDcuR or C - dicarboxylate regulated , and we show that the 4 fumA gene is also not affected by these factors ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>For the isolation of DcuR , E. coli BL21DE3pMW180 was grown in 0.8 liter of LB medium , induced , and the cells were broken by the French press as described for E. coli BL21DE3pMW151 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12167640" target="_blank">12167640</a>]<br></li>
+<li>On the other hand , the dcuSR operon is not autoregulated ( Fig. 1 ) ( 1 , 10 ) , and no DcuR or CitB binding sites are present in the dcuS promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Identiﬁcation and Characterization of a Two-Component Sensor-Kinase and Response-Regulator System ( DcuS-DcuR ) Controlling Gene Expression in Response to C4-Dicarboxylates in Escherichia coli PAUL GOLBY ,1 SUZANNE DAVIES ,2 DAVID J. KELLY ,2 JOHN R. GUEST ,2 AND SIMON C. ANDREWS1 * The School of Animal and Microbial Sciences , University of Reading , Whiteknights , Reading RG6 6AJ ,1 and The Krebs Institute for Biomolecular Research , Department of Molecular Biology and Biotechnology , University of Shefﬁeld , Western Bank , Shefﬁeld S10 2TN ,2 United Kingdom Received 30 September 1998/Accepted 8 December 1998 The dcuB gene of Escherichia coli encodes an anaerobic C4-dicarboxylate transporter that is induced anaerobically by FNR , activated by the cyclic AMP receptor protein , and repressed in the presence of nitrate by NarL .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Strains containing DcuR-D56N instead of DcuR were no longer able to induce dcuB -- lacZ in the presence of fumarate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073297" target="_blank">15073297</a>]<br></li>
+<li>This suggests that phospho-NarL may repress frdA operon expression indirectly by repressing synthesis of the DcuS-DcuR activator of frdA operon transcription initiation in addition to directly repressing transcription from the frdA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>Therefore , expression of DcuR is activated by the transcription from the P2dcuR promoter in the presence of CRP-cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>Expression of other genes which are transcriptionally stimulated by C4-dicarboxylates was not ( nuoA to - N , sdhCDAB , and dcuC ) or was only partially ( dctA ) dependent on DcuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>DmlR , on the other hand , regulates its own synthesis , but it is essentially independent of DcuS-DcuR and TtdR under most conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>The expression of fumB ( encoding anaerobic fumarase B ) , which is located downstream of dcuB and is possibly expressed from the dcuB promoter ( 1 , 24 ) , could also be subject to DcuR regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>The phospho-DcuR protein is known to activate the transcription of three operons : the dcuB-fumB operon encoding the DcuB carrier and fumarase B , the frdABCD operon encoding fumarate reductase ( Fig. 1C ) , and the dctA gene encoding the aerobic C4-dicarboxylate transporter ( 2 , 17 , 18 , 67 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>It is known that phospho-DcuR induces expression of genes such as the dcuB-fumB operon , the frdABCD operon , and the dctA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>DcuS and DcuR are encoded by the dcuSR genes ( previously yjdHG ) at 93.7 min on the calculated E. coli map .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9765574" target="_blank">9765574</a>]<br></li>
+<li>The expression of dmlR in response to DmlR and other regulators ( DcuS-DcuR and TtdR ) of C4-dicarboxylate metab-olism was tested by using a dmlR-lacZ gene fusion and the corresponding regulator mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>However , the fumA gene is not DcuS-DcuR regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>DcuS-DcuR also weakly induces expression of dctA ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>Thus , DcuS-DcuR controls the expression of the ttdR gene ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>In addition , expression of ttdR is transcriptionally regulated by the DcuS -- DcuR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Regulation studies with a dctA-lacZ ( f428-lacZ ) transcriptional fusion showed that dctA is subject to cyclic AMP receptor protein ( CRP ) - dependent catabolite repression and ArcA-mediated anaerobic repression and is weakly induced by the DcuS-DcuR system in response to C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>TtdR affects expression of dcuB in response to L-tartrate The dcuB gene is a member of the DcuS -- DcuR regulon , and its expression is stimulated under anaerobic conditions by C4-dicarboxylates such as fumarate , malate and the tartrate isomers in a DcuS-dependent manner ( Golby et al. , 1999 ; Kneuper et al. 2005 ; Zientz et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Expression of the fumarate reductase ( frdABCD ) operon and the aerobic C4-dicarboxylate transporter ( dctA ) gene were induced 22 - and 4-fold , respectively , by the DcuS-DcuR system in the presence of C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>These ﬁndings indicate that , as for dcuB , expression of frdA is strongly induced by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Zientz et al. found that the DcuS-DcuR system activates frdA and dcuB expression in response to C - dicarboxylates ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Thus , it appears that neither C4-dicarboxylates nor the DcuS-DcuR system regulates the fumA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Consequently , it was concluded that dctA is not regulated by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Appropriately , the DcuS-DcuR system allows the anaerobically expressed members of the DcuSR regulon ( dcuB-fumB and frdABCD ) to be coordinately up regulated by C4-dicarboxy-lates , thus ensuring that the transport ( DcuB ) , production ( fumarase B ) , and utilization ( fumarate reductase ) of fumarate are jointly induced during anaerobic fumarate respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The yjdHG genes ( redesignated dcuSR ) appear to constitute an operon encoding a two-component sensor-regulator system ( DcuS-DcuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>DISCUSSION The results presented here indicate that the DcuSR two-component sensor-regulator system directly induces the transcription of the dcuB-fumB , dctA , and frdABCD genes of E. coli through speciﬁc interactions of DcuR with the corresponding operator regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14996819" target="_blank">14996819</a>]<br></li>
+<li>Based on these results , we suggest that in addition to the qualitative change of DcuS by C4-dicarboxylates such as fumarate , the quantitative increase of DcuR by CRP-cAMP is required for high activation of signal transduction by DcuS-R , and also suggest that transcriptional regulation of dcuR by CRP-cAMP affects expression of the genes under control of the DcuS-R two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li>
+<li>Identi-ﬁcation and characterization of a two-component sensor-kinase and re-sponse-regulator system ( DcuS-DcuR ) controlling gene expression in response to C4-dicarboxylates in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10482502" target="_blank">10482502</a>]<br></li>
+<li>The transcription of the corresponding structural genes is activated by the DcuS-DcuR two-component system in response to fumarate or its dicarboxylate precursors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>CitA/CitB is related to the DcuS/DcuR two-component system which induces the expression of genes for fumarate respiration in response to C4-dicarboxylates and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>Remarkably , the two-component signal system DcuS-DcuR induces transcription of the dcuB-fumB operon , the frdABCD op-eron , and dctA ( C4 compounds transporter ) in response to external C4 compounds ( SUC , FUM , MAL , and aspartate ) [ 61,62 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22513097" target="_blank">22513097</a>]<br></li>
+<li>The expression of the frdABCD , fumB , and dcuB genes is induced under anaerobic conditions by DcuS/DcuR in the presence of C4-dicarboxylates and citrate ( 23 , 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>DcuS -- DcuR controls the expression of genes for the ` general ' C4-dicarboxylate metabolism , such as dcuB , fumB and frdABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>The DcuS/DcuR two-component system controls the expression of the genes essential for fumarate respiration ( 11 , 14 , 15 , 56 ) , including the genes dcuB , fumB , and frdABCD that encode the fumarate/succinate antiporter ( DcuB ) , fumarase ( FumB ) , and fumarate reductase ( FrdABCD ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>The DcuS-DcuR two-component system induces the dcuB , fumB , and frdABCD genes of central anaerobic C4-dicarboxylate ( or fumarate respiration-linked ) catabolism ( 13 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233924" target="_blank">20233924</a>]<br></li>
+<li>The genes encoding the latter pathway ( dcuB , fumB and frdABCD ) are transcriptionally activated by the DcuS -- DcuR two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19661178" target="_blank">19661178</a>]<br></li>
+<li>Role of the DcuS-DcuR system in the regulation of the dctA , frdABCD , and fumA genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>The above studies establish that three E. coli genes or operons ( dcuB , frdABCD , and dctA ) , having functions in the transport or metabolism of C4-dicarboxylates , are activated by the DcuS-DcuR system in response to C4-dicarboxylates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>However , it is not clear whether the signal sensed by the DcuS-DcuR system is intra-or extracellularly located .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>In cultures with no added nitrate , fumarate weakly induced ( frdA-lacZ ) expression through the DcuS-DcuR system ( 2.2-fold in dcuR versus 0.8-fold in dcuR ) , as expected for glucose-grown cultures ( 67 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_43">
+Hierarchical control of anaerobic gene expression in Escherichia coli K-12 : the nitrate responsive NarX-NarL regulatory system represses synthesis of the fumarate-responsive DcuS-DcuR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></label>
+<input id="tu_similarity_43", type="checkbox">
+<div class="TU_similar">
+<li>Hierarchical control of anaerobic gene expression in Escherichia coli K-12 : the nitrate-responsive NarXNarL regulatory system represses synthesis of the fumarate-re-sponsive DcuS-DcuR regulatory system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17618229" target="_blank">17618229</a>]<br></li></div>
+<li>More recently , the DcuS-DcuR regulatory system has been identiﬁed as mediating dicarboxylate-responsive activation of frdA operon transcription ( 17 , 67 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>Finally , our results indicate that the DcuS-DcuR system does not control aspA or dcuSR operon transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>Together , these results suggested that nitrate represses expression of the dcuSR operon encoding the fumarate-responsive DcuS-DcuR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15995204" target="_blank">15995204</a>]<br></li>
+<li>The better growth of the dcuS mutant in succinate relative to that in fumarate or malate is probably due to the presence of an uncharacterized and putative succinate-speciﬁc transporter ( designated SucT ) that enables good aerobic growth of dctA mutants on succinate ( 6 ) and is probably not strongly regulated by the DcuS-DcuR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>Under anaerobic conditions , fumarate respiration is induced by DcuS/DcuR and fumarate or L-malate and aspartate ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+<li>In the presence of citrate , on the other hand , the citrate fermentation genes ( citCDEFXGT and mdh ) , encoding citrate lyase , the citrate/succinate antiporter , and malate dehydrogenase are induced by CitA/CitB and citrate , and the additionally required fumarate respiration genes ( frdABCD and fumB ) are induced by DcuS/DcuR and citrate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22101843" target="_blank">22101843</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

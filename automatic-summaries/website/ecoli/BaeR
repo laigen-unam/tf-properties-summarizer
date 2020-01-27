@@ -1,0 +1,612 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - BaeR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">BaeR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">BaeR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The RR-bound 32P was stably retained for the A1 group RRs such as pArcA , pCpxR , pCusR , pKdpE , and pNarL but was rapidly released for the A2 group RRs , including pBaeR , pCheB , pCheY , pCreB , pDcuR , pNarP , pNtrC , pTorR , pUhpA , pYehT , and pYfhA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>The phosphorylation level was from 1 % to 10 % for TorR , PhoB , CusR , BasR , RstA , UvrY , ArcA , BaeR , NtrC , KdpE , UhpA , and PhoP ( in decreasing order ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>The trans-phos-phorylation was experimentally demonstrated in vitro , for the first time , for 9 pairs , CusS-CusR , RstB-RstA , YedV-YedW , BaeS-BaeR , YehU-YehT , YfhK-YfhA , HydH-HydG , BasSBasR , and CreC-CreB ( see Fig. 3 ) , supporting the predicted HK-RR pairs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>A total of 30 sensor HKs , including as yet uncharacterized puta - tive HKs ( BaeS , BasS , CreC , CusS , HydH , RstB , YedV , and YfhK ) , and a total of 34 RRs , including putative RRs ( BaeR , BasR , CreB , CusR , HydG , RstA , YedW , YfhA , YgeK , and YhjB ) , have been suggested to exist in Esche - richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>Trans-phosphorylation of presumed cog - nate RRs by HKs was detected , for the first time , for eight pairs , BaeS-BaeR , BasS-BasR , CreC-CreB , CusS-CusR , HydH-HydG , RstB-RstA , YedV-YedW , and YfhK-YfhA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522865" target="_blank">15522865</a>]<br></li>
+<li>e Putative Response Regulator BaeR Stimulates Multidrug Th Resistance of Escherichia coli via a Novel Multidrug Exporter System , MdtABC Satoshi Nagakubo ,1,2 Kunihiko Nishino ,1,2,3 Takahiro Hirata ,1,2,3 and Akihito Yamaguchi1 ,2,3 * Department of Cell Membrane Biology , Institute of Scientiﬁc and Industrial Research , Osaka University , Ibaraki ,1 and CREST , Japan Science and Technology Corporation , Osaka 567-0047 ,3 and Faculty of Pharmaceutical Science , Osaka University , Suita , Osaka 565-0871 ,2 Japan Received 19 February 2002/Accepted 29 April 2002 Overproduction of the response-regulator BaeR confers resistance to novobiocin and bile salts in a acrAB mutant by stimulating drug exporter gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Incubation of cells with novobiocin followed by a chromatographic assay for intracellular drug showed that overproduced BaeR decreased drastically the drug accumulation , presumably via increased active efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>In our experiments , in which only the activator BaeR and not its putative target , MdtABCD , was overexpressed , there was no detectable change in resistance to these latter compounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>In contrast , disruption of yegO completely abolished the increase in both novobiocin and deoxycholate MICs caused by BaeR ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Also , although the increase in novobiocin resistance induced by BaeR in our experiments was similar to the increase caused by MdtABCD overexpression observed by Nishino and Yama-guchi ( 26 ) , resistance to deoxycholate in cells overexpressing only BaeR went up only eightfold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Details are shown in Supplementary Table S2 , but briefly this consisted of 184 genes that could be divided into the following categories : repressed by Fur , 63 ; activated by Fur , 15 ; repressed by CpxR , 21 ; activated by CpxR , 37 ; repressed by SoxS , 1 ; activated by SoxS , 23 ; repressed by OxyR , 2 ; activated by OxyR , 16 ; activated by CusR , 6 ; activated by BaeR , 9 ; repressed by Zur , 4 ; repressed by ArsR , 3 ; activated by ZraR , 3 ; activated by ZntR , 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_12">
+Statistical modelling of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators ; ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></label>
+<input id="act_similarity_12", type="checkbox">
+<div class="ACT_similar">
+<li>The analysis of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators : ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li></div>
+<li>While the profiles of the ` monotonic ' regulators BaeR , CpxR , Zur and CusR are compatible with the predicted profile from the dynamic time-course dataset , neither Fur nor SoxS exhibits the transient behaviour predicted from the dynamic data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Inferred activity profiles of regulators BaeR , CpxR , CusR , Fur , SoxS and Zur during adaptation from Zn deprivation to Zn excess : TFinfer software predictions on the temporally resolved data collected upon addition of 200 mM Zn to Zn-depleted continuous cultures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Inferred activity profiles of regulators BaeR , CpxR , CusR , Fur , SoxS and Zur at steady states with different Zn concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Alternatively , even low levels of activity of nonphosphorylated BaeR might be sufﬁcient when the protein is present in large excess .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>The transformants obtained were used to test the changes in - galacto-sidase activity in response to the induction of BaeR synthesis with 0.2 % arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Plasmid pNNyeg2 , which contained this DNA fragment , was assayed as described above and produced a similar increase in - galactosidase activity in response to the induction of BaeR synthesis ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>When cells carrying pBADBaeR and pNNyeg1 were incubated with 0.2 % L-arabi-nose for 4 h to induce production of BaeR , the speciﬁc - ga-lactosidase activity in the culture increased approximately 45 times compared to that of the cells grown without arabinose ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>- Galactosidase activity , expressed from the lacZ gene in pNN387 , increased four to ﬁve times in response to the induction of BaeR with 0.2 % arabinose in the cells doubly transformed with pBADBaeR and either pNNyicO-H or pN-NyicO-R ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>BaeR and BaeS were shown to exhibit the in vitro phosphotransfer reaction in the presence of ATP ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>It seemed likely that in cells carrying pTrcBaeR , overexpressed BaeR was causing the transcriptional activation of genes involved in multidrug resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Thus , the presence of baeS does not seem to be required for the activity of overexpressed BaeR in these cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Interestingly , we found that the presence of the sensor kinase BaeS was not required for the full activity of the overexpressed BaeR in intact cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>On the other hand , in the case of mdtA gene , the upregulation by indole reduced but remained in the baeSR-deletion strains and completely abolished in the baeSR-cpxAR double-deletion strains ( Fig. 2B ) , suggesting that the unknown indole signalling pathway via factor X from CpxA may also upregulate mdtABC independent to BaeR therefore indole can stimulate mdtABC in the baeSR knockout strain , whereas indole can not stimulate mdtABC in the baeSR-cpxAR double knockout strain because factor X does not work in the absence of CpxA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>Hence , the Pcas activity seems to act as an `` ON/OFF switch '' of the CRISPR-mediated immunity .22 In addition , the BaeSR two-component system has been shown to be involved in the regulation of the CRISPR-Cas system .23,24 The transport of an aberrantly folded protein through the membrane leads to the phosphorylation of the response-regulator BaeR , which binds at the Pcas promoter region and activates the Cascade operon .24 Although the exact mechanism of the BaeSR-dependent regulation is not known , the results could point to a specific envelope stress-dependent induction of the CRISPR-Cas system .25 To understand the biological meaning of a highly conserved and functional but tightly repressed CRISPR system in E. coli , we initiated studies to identify the condition ( s ) , which induces the CRISPR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Involvement of BaeSR two-component system in Zn ( II ) - dependent activation of the spy promoter phorylated BaeR directly binds to the target promoter to activate its transcription ( Hirakawa et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>BaeR thus directly binds to and stimulates the transcriptional activity of the mdtA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>As shown in Fig. 2 , BaeR overexpression increased the amounts of mdtA , mdtB , mdtC , and mdtD mRNA by factors of about 7.4 , 6.6 , 4.5 , and 2.8 , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>To test whether this sequence is required for gene induction by BaeR , we investigated the effect of deletion of the BaeR-binding motif on gene induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Puriﬁed BaeR and CpxR proteins without acetylphosphate treatment also bind to the promoter regions of these genes , while the concentrations of the non-treated puriﬁed proteins required for the electrophoretic mobility shifts were higher than those of phosphorylated ones , indicating that the signiﬁcant part of the puriﬁed proteins might be intrinsically phosphorylated ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>Polyhistidine-tagged BaeR and CpxR proteins were puriﬁed on Ni-chelated resin , followed by phosphorylation with acetylphosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>BaeR and CpxR were overproduced as His6-BaeR and His6-CpxR by IPTG induction , and then puriﬁed on Ni afﬁnity resin ( Amersham Pharmacia Biotech ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>The results suggest that BaeR primarily binds to the proximal region to play a major role in the upregulation of exporter gene expression , and CpxR binds to multiple distal regions to modulate the effect of BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>As shown in Fig. 3 , the effect of BaeR overexpression on acrD and mdtA gene expression ( about 20 - and 146-fold increase ) was greater than that of CpxR ( about 7.3 - and 2.5-fold increase ) in wild-type cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>The effect of baeSR and cpxAR deletion on the CpxR and BaeR overexpression-induced upregulation of acrD and mdtA gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>CpxR appears , in this case , to be an enhancer of the primary regulator BaeR via binding to multiple sites in the acrD and mdtA promoter regions [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16487683" target="_blank">16487683</a>]<br></li>
+<li>The electrophoretic mobilities of the DNA fragments of the acrD and mdtA promoter regions shifted on the addition of phosphorylated BaeR and CpxR , whereas that of emrK ( negative control ) was not affected ( Fig. 5 ) , indicating the BaeR and CpxR proteins directly bind to the promoter regions of the acrD and mdtA genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>The activated BaeR and CpxR directly bind to different sites in the acrD and mdtA promoter regions , resulting the upregulation of the expression of acrD and mdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>BaeR and CpxR activated by indole upregulate target genes by direct binding to the promoter regions , while BaeR is essential and CpxR modulates the BaeR action.There may be an additional signalling pathway from CpxA via unknown factor X to upregulate the mdtA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>BaeR alone upregulates the expression of target genes without CpxR , whereas CpxR enhances the effect of BaeR by direct binding to the multiple regions upstream of the BaeR-binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>To determine the effect of overexpression of BaeR and CpxR , 0.5 mM IPTG was added to induce these response-regulator genes when cultures reached an OD600 of 0.4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>Based on the observation that CpxAR-mediated induction required BaeSR system , whereas BaeSR-mediated induction did not require CpxAR , they implied that BaeR is the primary regulator and CpxR enhances its function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>These observations indicate that BaeR is a primary regulator , and CpxR enhances the effect of BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>In the absence of the main activator ( BaeR for acrD and mtdA , OmpR for ompC ) , CpxR-P can not act as a transcriptional-activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16487683" target="_blank">16487683</a>]<br></li>
+<li>Contributions of AcrD and MdtABC to multidrug resistance mediated by overexpression of BaeR , CpxR , and OmpR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618449" target="_blank">12618449</a>]<br></li>
+<li>Transcriptional level CpxR-P not only modulates the action of different regulators , such as BaeR , Lrp and OmpR , by binding to the same regulatory sequences ( see above ) , but it also represses the gene transcription of other signaling systems , such as σE and Aer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16487683" target="_blank">16487683</a>]<br></li>
+<li>Indole signalling is transmitted via BaeSR and CpxAR , two-component signal transduction pathways , to cause the induction of acrD and mdtABC gene expression We previously reported that the acrD gene is upregulated by response-regulators BaeR and CpxR ( Hirakawa et al. , 2003a ) , and that the mdtEF gene is upregulated by EvgA ( Nishino and Yamaguchi , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>phorylate and then transfer their phosphate to their cognate response-regulators , BaeR and CpxR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17172327" target="_blank">17172327</a>]<br></li>
+<li>One explanation for this observation could be that cross-talk occurs between these two-component regulators , in which the BaeS and/or CpxA sensor kinases are able to phosphorylate both BaeR and CpxR in response to activating cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>BaeR and EvgA also upregulate the mdtABC and emrKY genes respectively ( Nishino and Yamaguchi , 2001b ; Nagakubo et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>In our previous study , we found that EvgA and BaeR upregulate the expression of drug exporter genes such as emrKY , yhiUV , and mdtABC ( 13 , 17 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618449" target="_blank">12618449</a>]<br></li>
+<li>BaeR did not increase the expression of 17 genes in the phoBR strain or the expression of 21 genes in the creBC strain that were induced by BaeR in W3110 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Our data suggested that BaeR activated transcription of the mdtABCD genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>BaeR activates promoters of the yicO and ygcL genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>BaeR overproduction activated 59 genes related to two-component signal transduction , chemotactic responses , ﬂagellar biosynthesis , maltose transport , and multidrug transport , and BaeR overproduction also repressed the expression of the ibpA and ibpB genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR increased the expression of malE , which encodes a maltose-binding protein , and malFGK , which encode the translocation complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>The expression of 11 gene clusters was increased by BaeR overproduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Gene clusters whose expression was increased by BaeR overproduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Lanes 1 , 5 and 9 , no regulator ; BaeR protein : lanes 2 , 6 and 10 , 0.5 mM ; lanes 3 , 7 and 11 , 1.1 mM ; lanes 4 , 8 and 12 , 2.3 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>This pathway seems to be independent to BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>This system is also stimulated by overproduction of the response-regulator BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Here we show that the BaeS sensor kinase and BaeR response-regulator also control expression of spy in response to envelope stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>Furthermore , pBADBaeR did not increase the MICs of various other agents , including nalidixic acid , norﬂoxacin , and SDS , against WZM120 , even in the presence of arabinose ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Introduction of the plasmid isolated from this strain ( the plasmid is called pTrcBaeR on the basis of results described below ) into fresh AG100A cells resulted in the same phenotype of novobiocin resistance : MICs increased 4 - and 16-fold over those against the recipient strain in the absence and presence of IPTG , respectively ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>The knockout strains were transformed with pTrcBaeR or an empty vector for control , and the MICs of novobiocin and deoxycholate were determined in the presence of 100 M IPTG ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>However , when pTrcBaeR was used to transform AG100 cells , which express the AcrAB pump , no effect on novobiocin resistance was observed ( Table 2 ) , presumably because AG100 already was highly resistant to this drug , whose MIC against it was 160 g/ml .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>pTrcBaeR was also found to increase the resistance of both AG100A and AG100 cells to deoxycholate about eightfold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">BaeR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The observed interaction between the mdtA promoter and BaeR in vitro ( Fig. 5 ) most likely involved unphosphorylated protein , as response regulators usually possess autophosphatase activity that limits the lifetime of the phosphorylated states ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>BaeR increased the expression of three other clusters , one of which contains the amn and yeeN genes , one of which contains the gsp and yghU genes , and one of which contains the yieI and yieJ genes ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">BaeR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Moreover , expression of ygcL was shown to be regulated by BaeR , a member of the two-component regulatory system BaeSR , controlling multidrug transporters ( Baranova and Nikaido , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>BaeR exhibits sequence similarity to the response regulators and is likely to constitute a two-component regulatory system with a sensor kinase , BaeS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by BaeR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Resistance of KAM3 transporter gene-deletion strains harbouring a plasmid carrying baeR or evgA MIC ( mg/L ) a Genotype Regulator Strain expression AMP OXA CLO NAF CAR CMZ FAM CAZ FMOX ATM CRMN acrD mdtABC yhiUV emrKY KAM3 KAM3 ∆ acrD none none none none none none none BaeR BaeR BaeR BaeR EvgA EvgA EvgA EvgA + + + + 1.56 1.56 1.56 1.56 1.56 1.56 0.78 1.56 1.56 1.56 1.56 3.13 3.13 3.13 1.56 1.56 0.78 1.56 0.78 1.56 1.56 1.56 50 6.25 12.5 0.78 25 3.13 25 3.13 3.13 1.56 3.13 1.56 3.13 3.13 3.13 50 25 25 1.56 25 3.13 25 3.13 3.13 3.13 3.13 3.13 3.13 3.13 3.13 50 12.5 50 3.13 50 3.13 50 3.13 6.25 1.56 6.25 1.56 6.25 6.25 6.25 50 12.5 50 1.56 12.5 12.5 12.5 12.5 0.78 0.78 0.78 0.78 0.78 0.78 0.39 1.56 1.56 1.56 0.78 1.56 1.56 1.56 0.78 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.78 0.39 0.39 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.20 0.78 0.39 0.39 0.20 0.39 0.39 0.39 0.39 0.05 0.05 0.05 0.05 0.05 0.05 0.025 0.05 0.05 0.05 0.05 0.10 0.10 0.10 0.05 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.78 0.39 0.78 0.10 0.20 0.20 0.20 0.20 0.20 0.10 0.20 0.10 0.20 0.20 0.20 1.56 0.39 0.78 0.10 0.20 0.20 0.20 0.20 -- + + + + -- + + KAM3 ∆ mdtABC KAM3 ∆ acrDmdtABC KAM3 ∆ yhiUV KAM3 ∆ emrKY KAM3 ∆ emrKYyhiUV KAM3/pKbaeR KAM3 ∆ acrD/pKbaeR KAM3 ∆ mdtABC/pKbaeR KAM3 ∆ acrDmdtABC/pKbaeR KAM3/pKevgA KAM3 ∆ yhiUV/pKevgA KAM3 ∆ emrKY/pKevgA KAM3 ∆ emrKYyhiUV/pKevgA -- -- + + + + -- + + + + -- + + -- -- + + + + + -- + + + -- + + + -- -- + + + + + -- + + + -- + + + -- -- + + AMP , ampicillin ; OXA , oxacillin ; CLO , cloxacillin ; NAF , nafcillin ; CAR , carbenicillin ; CMZ , cefmetazole ; FAM , cefamandole ; CAZ , ceftazidime ; FMOX , flomoxef ; ATM , aztreonam ; CRMN , carumonam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12951338" target="_blank">12951338</a>]<br></li>
+<li>Doubling regulated regulated of altered time Identiﬁed function Class system ( HK/RR ) Relevant functions genes genes genes ( min ) in this experiment Strain name Mutation ntrol o o C N 1 4 5 27 BW25113 WT or little signiﬁcant alteration CreC/CreB 1 1 2 Catabolite repression ( Wanner , 1996 ) Drug resistance ( Kato et al. , 2000 ) BW26983 DE ( creABCD ) 154 29 2 3 5 EvgS/EvgA BW27869 DE ( evgAS ) 1291 29 2 6 8 YgiY/YgiX NarX/NarL BW27551 BW27864 DE ( ygiXY ) 1302 DE ( narXL ) 1316 27 29 5 4 9 Nitrate regulation ( Stewart and Rabin , 1995 ) Hexose phosphate uptake ( Kadner , 1995 ) Phosphate regulation ( Wanner , 1995 ) Copper response ( Munson et al. , 2000 ) Nitrate regulation ( Stewart and Rabin ,1995 ) UhpB/UhpA 6 3 9 BW27871 DE ( uhpAB ) 1322 28 PhoR/PhoB 1 8 9 BW24476 DE ( phoBR ) 580 28 CusS/CusR 2 7 BW28077 DE ( cusRS ) 1204 27 9 / NarP 9 BW27873 DnarP1312 33 12 3 YedV/YedW YfhK / YehU/YehT KdpD/KdpE DE ( yedWV ) 1298 DyfhK1328 DE ( yehUT ) 1324 DE ( kdpABCDE ) 1224 26 28 27 27 13 15 20 20 6 7 7 8 BW BW BW BW 27550 27872 27877 27564 13 10 7 10 Potassium transport ( Walderhaug et al. , 1992 ) Nitrogen regulation ( Porter et al. , 1995 ) NtrB/NtrC BW27880 DE ( ntrBC ) 1318 31 20 8 12 Signiﬁcant alteration BaeS/BaeR HydH/HydG ( Nagasawa et al. , 1993 ) Response to zinc and lead ( Leonhartsberger et al. , 2001 ) Hydrogen peroxide sensitivity ( Pernestig et al. , 2001 ) 14 11 BW27553 BW27867 DE ( baeSR ) 579 DE ( hydHG ) 1336 8 22 24 29 31 13 2 BarA / BW29434 DbarA1358 24 26 30 7 / FimZ BW28078 BW27558 Enterochelin DﬁmZ1214 22 27 29 31 28 27 4 PhoQ/PhoP Response to magnesium ( Kato et al. , 1999 ) ( Nagasawa et al. , 1993 ) Response to cell envelope stress ( De Wulf et al. , 1999 ) DE ( phoPQ ) 1244 20 16 12 16 BasS/BasR CpxA/CpxR BW27848 BW27559 DE ( basRS ) 1287 DE ( cpxRA ) 623 32 32 29 29 Enterochelin 12 20 22 17 RstB/RstA YojN ( Hpt ) BW27552 BW27866 DE ( rstAB ) 1278 DyojN1332 34 37 26 29 Enterochelin Capsular synthesis ( Takeda et al. , 2001 ) 14 Control of TMAO respiratory system ( Simon et al. , 1994 ) 38 24 TorS/TorR BW26423 26 DE ( torSTRCAD ) 518 a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12366850" target="_blank">12366850</a>]<br></li>
+<li>Strain NKE122 ( BaeR binding motif for acrD , pUCbaeR ) Strain NKE124 ( BaeR binding motif for mdtA , pUCbaeR ) Gene Strain NKE11 ( wild type , pUCbaeR ) FIG. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>E. coli genes whose relative expression levels were increased or decreased by baeR ampliﬁcation Effect of BaeR on gene-expression ( fold change ) Genea b no.b Known or predicted functionc Microarray Real-time PCR ncreased expression creD I 24 24 22 22 20 19 15 14 35,000 15,000 37 21 79 76 17 73 b4400 b1743 b2074 b2075 b2079 b4034 b1982 b3552 b2957 b1983 b4035 Tolerance to colicin E2 Periplasmic protein related to spheroblast formation spy mdtA ( yegM ) mdtB ( yegN ) baeR malE amn yiaD ansB yeeN malK Membrane protein inolved in drug-resistance Multidrug-transport protein ( RND family ) Response regulator in two-component regulatory system with BaeS Maltose transport protein , chemotaxis ( ABC superfamily ) AMP nucleosidase Putative outer membrane protein Periplasmic L-asparaginase II Conserved protein Maltose transport protein ( ABC superfamily ) ( N terminal ) : phenotypic repressor of mal operon ( C terminal ) Putative ( D ) - glucarate/galactarate transport protein ( MFS family ) Glutathionylspermidine amidase ( N terminal ) ; glutathionylspermidine synthetase ( C terminal ) Periplasmic protein of mal regulon Maltoporin , high-afﬁnity receptor for maltose and maltose oligosaccharides NAD kinase Putative membrane protein Multidrug-transport protein ( RND family ) Methyl-accepting chemotaxis protein 1 , serine sensor receptor Sensory histidine kinase in two-component regulatory system wtih BaeR Outer membrane channel ; tolerance to colicin E1 Conserved hypothetical protein Response regulator in two-component regulatory system with PhoR ( or CreC ) Putative transferase Putative S-transferase Methyl-accepting chemotaxis protein II , aspartate sensor receptor Flagellar biosynthesis ( D ) - Galactarate dehydrogenase Methyl-accepting chemotaxis protein IV , peptide sensor receptor Alpha-dehydro-beta-deoxy-D-glucarate aldolase Glutamate methyltransferase , chemotactic response regulator Putative oxidoreductase with FAD/NAD ( P ) - binding domaind Conserved protein Phosphonate transport protein ( ABC superfamily , ) Maltose transport protein ( ABC superfamily , membrane ) Suppressor of lon ; inhibitor of cell-division and FtsZ ring formation upon DNA damage or inhibition 3-Deoxy-D-arabinoheptulosonate-7-phosphate synthase ( DAHP synthetase ) , tyrosine repressible Flagellar biosynthesis ; hook-ﬁlament junction protein Maltose transport protein ( ABC superfamily , membrane ) Flagellar biosynthesis ; ﬁlament capping protein ; enables ﬁlament assembly MIP channel , glycerol diffusion Flagellar biosynthesis ; putative export chaperone for FliD Conserved protein in phn operon Putative cysteine hydrolase Chemotactic sensory histidine kinase ( soluble ) in two-component regulatory system with CheB and CheY e14 prophage ; isocitrate dehydrogenase , speciﬁc for NADP Sensory histidine kinase in two-component regulatory system with PhoB Qin prophage Flagellar biosynthesis ; repressor of class 3a and 3b operons ( RﬂA activity ) Enables ﬂagellar motor rotation , linking torque machinery to cell wall e14 prophage ; putative exisionase Proton conductor component of motor , torque generator Tagatoso-6-phosphate aldolase I , subunit together with AgaY Purine-binding chemotaxis protein ; regulation Chemotactic response , CheY protein phophatase Putative dehydrogenase Nucleoside channel ; receptor of phage T6 and colicin K Aminoglycoside/multidrug efﬂux pump ( RND family ) Putative multidrug-transport protein ( MFS family ) b3127 b2988 garP ( yhaU ) gsp 13 13 86 29 12 12 10 9.3 9.1 8.9 8.0 7.9 7.8 7.8 7.3 7.2 7.1 6.6 6.5 6.0 6.0 5.8 5.7 5.6 5.6 5.5 5.4 35 26 malM lamB b4037 b4036 b2615 b3716 b2076 b4355 b2078 b3035 b3717 b0399 b2267 b2989 b1886 b1923 b3128 b1885 b3126 b1884 b3690 b2473 b4105 b4033 b0958 18 50 190 14 120 12 48 18 15 14 6.3 6.4 18 7.4 32 9.1 130 9.1 140 28 5.2 yfjB yieI mdtC ( yegO ) tsr baeS tolC yieJ phoB elaA yghU cheM ( tar ) ﬂiC garD ( yhaG ) tap garL ( yhaF ) cheR yidS ypfH phnD malF sulA 5.4 5.4 5.3 5.3 5.2 5.0 5.0 5.0 5.0 9.5 5.9 19 8.1 10 13 60 7.3 8.1 aroF b2601 b1083 b4032 b1924 b3927 b1926 b4098 b0897 b1888 ﬂgL malG ﬂiD glpF ﬂiT phnJ ycaC cheA 31 15 4.9 4.9 4.7 4.7 4.5 4.5 4.4 4.4 4.3 4.1 4.1 4.1 4.1 4.0 icdA phoR b1136 b0400 b1566 b1925 b1889 b1141 b1890 b3132 b1887 b1881 b0801 b0411 b2470 b2077 7.7 6.2 6.4 19 6.6 23 6.9 39 8.2 5.8 35 110 ﬂxA ﬂiS motB b1141 motA agaZ cheW cheZ ybiC tsx acrD mdtD ( yegB ) ecreased expressio ibpB ibpA n D Small heat shock protein Small heat shock protein b3686 b3687 0.17 0.16 0.25 0.21 a Based on information from the EcoGene database ( http://bmb.med.maiami.edu/ecogene/ecoweb/ ) ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>We therefore think it likely that BaeS and BaeR control expression of additional , distinct envelope stress adaptive factors that have not yet been identiﬁed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>Expression control of mdtABCD genes by BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Thus , it appears that BaeR must control expression of genes in addition to spy that are important in withstanding overexpression of misfolded PapG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>BaeR increased the expression of malE , which encodes a maltose-binding protein , and malFGK , which encode the translocation complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Enhanced expression of gene clusters due to BaeR overproduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Several genes up-regulated by BaeR overproduction , including genes for maltose-transport , chemotactic responses , and ﬂagellar biosynthesis , required an intact PhoBR or CreBC two-component regulatory system for up-regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR overproduction activated 59 genes related to two-component signal-transduction , chemotactic responses , ﬂagellar biosynthesis , maltose-transport , and multidrug-transport , and BaeR overproduction also repressed the expression of the ibpA and ibpB genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>We discovered that overproduction of BaeR affects the expression of gene clusters related to two-component signal-transduction , maltose-transport , chemotatic responses , ﬂagellar biosynthesis , and multi-drug-transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Deletion of both mdtC and mdtD completely abolished the elevation of drug-resistance by BaeR , demonstrating that mdtC plays a crucial role in this resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Hence , the Pcas activity seems to act as an `` ON/OFF switch '' of the CRISPR-mediated immunity .22 In addition , the BaeSR two-component system has been shown to be involved in the regulation of the CRISPR-Cas system .23,24 The transport of an aberrantly folded protein through the membrane leads to the phosphorylation of the response regulator BaeR , which binds at the Pcas promoter region and activates the Cascade operon .24 Although the exact mechanism of the BaeSR-dependent regulation is not known , the results could point to a specific envelope stress-dependent induction of the CRISPR-Cas system .25 To understand the biological meaning of a highly conserved and functional but tightly repressed CRISPR system in E. coli , we initiated studies to identify the condition ( s ) , which induces the CRISPR system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>It seemed likely that in cells carrying pTrcBaeR , overexpressed BaeR was causing the transcriptional activation of genes involved in multidrug-resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>e Putative Response Regulator BaeR Stimulates Multidrug Th Resistance of Escherichia coli via a Novel Multidrug Exporter System , MdtABC Satoshi Nagakubo ,1,2 Kunihiko Nishino ,1,2,3 Takahiro Hirata ,1,2,3 and Akihito Yamaguchi1 ,2,3 * Department of Cell Membrane Biology , Institute of Scientiﬁc and Industrial Research , Osaka University , Ibaraki ,1 and CREST , Japan Science and Technology Corporation , Osaka 567-0047 ,3 and Faculty of Pharmaceutical Science , Osaka University , Suita , Osaka 565-0871 ,2 Japan Received 19 February 2002/Accepted 29 April 2002 Overproduction of the response regulator BaeR confers resistance to novobiocin and bile salts in a acrAB mutant by stimulating drug exporter gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Overproduction of BaeR , in the background of a deﬁciency of the E. coli major multidrug exporter AcrB , confers resistance against - lactams , novobiocin , sodium dodecyl sulfate , and bile salts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>DISCUSSION In this study , we showed that overexpression of the response regulator BaeR stimulates the drug-resistance phenotype by upregulating the expression of a novel RND-type drug exporter , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_19">
+The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12949086" target="_blank">12949086</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12670992" target="_blank">12670992</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618449" target="_blank">12618449</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12951338" target="_blank">12951338</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973023" target="_blank">14973023</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659689" target="_blank">15659689</a>]<br></label>
+<input id="rp_similarity_19", type="checkbox">
+<div class="RP_similar">
+<li>[ 16 ] Nagakubo , S. , Nishino , K. , Hirata , T. and Yamaguchi , A. ( 2002 ) The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multidrug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12892888" target="_blank">12892888</a>]<br></li>
+<li>Nagakubo , S. , Nishino , K. , Hirata , T. , and Yamaguchi , A. ( 2002 ) The putative response regulator BaeR stimulates multidrug-resistance of Escherichia coli via a novel multi-drug exporter system , MdtABC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li></div>
+<li>Recent studies showed that the BaeR response regulator from the BaeSR two-component signal-transduction-system that responds to envelope stress controls expression of the multidrug-transporter ABC , and confers resistance to Nov [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12892888" target="_blank">12892888</a>]<br></li>
+<li>In this study , we report positive regulation of the recently identiﬁed multidrug-resistance locus yegMNOB ( 26 ) by a response regulator , BaeR , of the putative BaeSR two-com-ponent signal-transduction-system ( 24 ) , a phenomenon that leads to increased resistance to novobiocin and deoxycholate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>Overproduction of BaeR also increased expression of the CreB regulon ( 4 ) , including expression of creD , malE , yidS , and yieI ( Table 2 ) and the creB response regulator gene ( 2.6-fold increase as determined by microarray analysis ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Here we show that the BaeS sensor kinase and BaeR response regulator also control expression of spy in response to envelope stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>We have identiﬁed a functionally uncharacterized two-component system , consisting of the BaeS sensor kinase and the BaeR response regulator , that controls spy expression in response to a variety of envelope stresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>The response regulator BaeR modulates the expression of mdtABC * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR controls the expression of acrD and mdtABC multidrug efﬂux system genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">BaeR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Searches of the regions upstream ( 400 bp ) of all 59 genes whose expression was increased by BaeR overexpression did not reveal sequences matching the consensus sequence other than spy , mdtA , acrD , and ycaC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Analysis of upstream regions of the BaeSR regulon with the motif-ﬁnding program revealed an 18-bp consensus sequence , 5 - TTTTTC TCCATDATTGGC-3 ( where D is G , A , or T ) , and it revealed that this consensus sequence is required for gene induction by BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Baranova and Nikaido reported that BaeR binds to the upstream region of mdtA ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>acrD promoter region A B None -- 196 CpxR binding site 3 CpxR binding site 2 -- 134 ctctgcg gagggtgaggaaagtcagttaatgtaatgcc t cctactgaccaaagaatacttgca BaeR ( 1.3 M ) BaeR ( 2.7 M ) overlap III II I CpxR ( 0.7 M ) -- 189 ~ -- 157 ~ -- 125 ~ -- 105 ~ -- 159 -- 127 -- 97 -- 75 +1 ATG III II I CpxR ( 1.3 M ) acrD CpxR CpxR CpxR BaeR mdtA promoter region None -- 178 CpxR binding site 2 -- 118 tc tatcgctaacgcgtagataaaatagtttcct gtgttattactggatgcgtgctcgcaaat BaeR -- 117 CpxR binding site 1 BaeR binding site -- 58 gtgcccgtcattcagacgattccagacagt gtttcataattcctccattttt ctccctta ( 1.3 M ) BaeR overlap ( 2.7 M ) I II CpxR ( 0.7 M ) -- 176 ~ -- 146 -- 116 ~ -- 97 ~ -- 87 -- 65 +1 ATG II I CpxR ( 1.3 M ) mdtA CpxR CpxR BaeR Protein-binding sites Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>As to the acrD promoter region , BaeR bound to the 31 bp region between -75 and -105 from the acrD start codon , while CpxR bound to three separate sites , the 29 bp region between -97 and -125 ( site I ) , the 31 bp between -127 and -157 ( site II ) , and the 31 bp between -159 and -189 ( site III ) ( Fig. 6A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>As to the mdtA promoter region , BaeR bound to the 33 bp between -65 and -97 , while CpxR bound to two separate sites , the 30 bp between -87 and -116 ( site I ) , and the 31 bp between -146 and -176 ( site II ) ( Fig. 6A and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>BaeR and CpxR directly bound to different sequences of the acrD and mdtA promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>BaeR and CpxR directly bind to the promoter regions of the acrD and mdtA genes As described under Experimental procedures , 276 bp , 321 bp and 250 bp DNA fragments of the acrD ( -1 to -276 ) , mdtA ( -1 to -321 ) and emrK ( -1 to -250 ) promoter regions were prepared by PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>As in the case of spy promoter , both CpxR and BaeR bind to the promoters for two drug exporter genes , acrD and mdtA , but the BaeR-binding site on these promoters partially overlaps with the respective CpxR-binding site ( Hirakawa et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>The ﬁrst binding site of CpxR again overlaps that of BaeR in the mdtA promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by BaeR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Transcription of CRISPR-1 and casA -- E is repressed by H-NS [ 31 ] and de-repressed by LeuO [ 32 ] or BaeR [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21699496" target="_blank">21699496</a>]<br></li>
+<li>Transcriptional level CpxR-P not only modulates the action of different regulators , such as BaeR , Lrp and OmpR , by binding to the same regulatory sequences ( see above ) , but it also represses the gene transcription of other signaling systems , such as σE and Aer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16487683" target="_blank">16487683</a>]<br></li>
+<li>The order of these values is consistent with the transcription of mdtABCD from the same promoter of the mdt-bae operon under the control of BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>It is thought that both mdtABCD and baeSR are regulated by BaeR , because they form an operon and are transcribed from the same promoter ( Fig. 1 ) ( 6 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Novobiocin accumulation is reduced in acrAB cells overexpressing BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>We found that mdtD was not involved in novobiocin and deoxycholate resistance , since the resistance of the cells overexpressing BaeR was not compromised by the deletion of this gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>We found that BaeR increased the expression of the outer membrane channel tolC gene ( 7.9-fold as determined by microarray analysis and 12-fold as determined by qRT-PCR ) , which is required for the function of the MdtABC and AcrD multidrug export systems ( Table 2 ) ( 41 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR is the response regulator of a putative two-component system , which also includes the sensor kinase BaeS , encoded by a gene located upstream of baeR ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>BaeR overproduction increased the expression of baeS , which encodes a cognate sensor of the BaeR response regulator ( 37 ) and is located downstream of mdtABCD ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR also increased the expression of the creB response regulator gene of the creBC two-component system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Overproduction of BaeR also increased expression of the CreB regulon ( 4 ) , including expression of creD , malE , yidS , and yieI ( Table 2 ) and the creB response regulator gene ( 2.6-fold increase as determined by microarray analysis ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Induction of the xenobiotic exporter genes acrD and mdtA is indeed mediated by CpxR and BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16487683" target="_blank">16487683</a>]<br></li>
+<li>As shown in Fig. 3 , the effect of BaeR overexpression on acrD and mdtA gene expression ( about 20 - and 146-fold increase ) was greater than that of CpxR ( about 7.3 - and 2.5-fold increase ) in wild-type cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15686558" target="_blank">15686558</a>]<br></li>
+<li>In addition , elimination of BaeR compromises the ability of E. coli to withstand some of these same envelope stresses ( Fig. 7 ) and this can not be explained by reduced expression of spy , the only known Bae-regulated gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>BaeS and BaeR do not affect expression of other known Cpx-regulated genes , however , baeR cpxR double mutants show increased sensitivity to envelope stresses relative to either single mutant alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>BaeS and BaeR do not affect expression of other Cpx-regulated genes , but baeR cpxR double mutants show increased sensitivity to envelope stresses beyond those of individual baeR or cpxR mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>In order to determine whether the expression of the mdtABC genes is controlled by BaeR , we performed Northern blot analysis with a DNA fragment containing the mdtC region as a probe .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Expression control of mdtABCD genes by BaeR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Thus , it appears that BaeR must control expression of genes in addition to spy that are important in withstanding overexpression of misfolded PapG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12354228" target="_blank">12354228</a>]<br></li>
+<li>Finally , the expression of two other genes , yicO and ygcL , was shown to be regulated by BaeR , but it is not known if they play any roles in resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107134" target="_blank">12107134</a>]<br></li>
+<li>On the other hand , the expression of the yhiUV , emrA , emrE , macA , and ydhE genes was not affected by BaeR overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107133" target="_blank">12107133</a>]<br></li>
+<li>Overproduction of BaeR induced the expression of 40 genes in the phoBR strain and the expression of 38 genes in the creBC strain by more than twofold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR did not increase the expression of 17 genes in the phoBR strain or the expression of 21 genes in the creBC strain that were induced by BaeR in W3110 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Overexpression of BaeR did not increase the expression levels of these genes without the BaeR-binding motifs ( Table 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR controls the expression of acrD and mdtABC multidrug efﬂux system genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Searches of the regions upstream ( 400 bp ) of all 59 genes whose expression was increased by BaeR overexpression did not reveal sequences matching the consensus sequence other than spy , mdtA , acrD , and ycaC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR increased the expression of malE , which encodes a maltose-binding protein , and malFGK , which encode the translocation complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>BaeR increased the expression of three other clusters , one of which contains the amn and yeeN genes , one of which contains the gsp and yghU genes , and one of which contains the yieI and yieJ genes ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+<li>Gene clusters whose expression was increased by BaeR overproduction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716448" target="_blank">15716448</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

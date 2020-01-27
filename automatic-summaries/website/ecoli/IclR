@@ -1,0 +1,912 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - IclR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">IclR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">IclR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>fold increase when the IclR regula ¬ TABLE 2 Thermodynamic parameters derived from the calorimetric titration of C-IclR and C-AllR with effector-molecules Protein solutions at 50 M in 10 mM KH2PO4/K2HPO4 , pH 7.4 , and 500 mM NaCl were titrated with 0.5 -- 1.5 mM solutions of effectors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>'' Protein Ligand KD n KA H T S G M M 1 kcal/mol kcal/mol kcal/mol 0.9 0.2 ( 1.2 0.2 ) 106 10.1 1.96 8.1 156.2 7.9 ( 6.4 0.3 ) 103 1.37 8.58 7.21 9.4 2.2 ( 1.1 0.3 ) 105 8.2 7.21 1.06 14.2 1.2 ( 7.6 0.1 ) 104 5.8 0.8 5.0 321.7 20 ( 3.1 0.4 ) 103 ND ND ND Glyoxylate Pyruvate Glyoxylate Glyoxylate Pyruvate C-IclR C-IclR 0.5 0.5 C-AllR IclR IclR , not determ 0.5 0.5 NDa a ND ined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Expression of mhp catabolic genes depends on the transcriptional-activator MhpR belonging to the IclR family of transcriptional-regulators ( Fig. 1A ) comprising more 2 The abbreviations used are : 3HPP , 3-hydroxyphenylpropionate ; CRP , cAMP receptor protein ; DHPP , 3 - ( 2,3-dihydroxyphenyl ) propionic acid ; PA , phe-nylacetic acid ; 3HPA , 3-hydroxyphenylacetic acid ; PP , phenylpropionic acid ; CI , cinnamic acid ; 3HCI , 3-hydroxycinnamic acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>PoxB and IclR were found to contribute comparatively less to the growth rate and cell biomass accumulation although their effect was also positive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19574213" target="_blank">19574213</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19563847" target="_blank">19563847</a>]<br></li>
+<li>Here , a total of eight aminoacyl-tRNA synthe-tase genes were identiﬁed to be under the direct control Arg and Lys for ArgP ( Marbaniang & Gowrishankar , 2011 ) , glyoxylate and pyruvate for IclR ( Lorca et al. , 2007 ) , hypoxanthine and guanine for PurR ( Houlberg & Jensen , 1983 ) , and uracil and thymine for RutR ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>The survival and growth of bacteria under such changing environments largely depend on the adjustments in the expression proﬁles of several global regulatory proteins , such as RpoD , RpoS , SoxRS , Cra , FadR and IclR ( Aronis 2002a , b ; Cortay et al. 1991 ; Jordan et al. 1999 ; Liochev and Fridovich 1992 ; Lu et al. 2003 ; Moat 2002 ; Tang et al. 2002 ; Varghese et al. 2003 ; Perrenoud and Sauer 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18175070" target="_blank">18175070</a>]<br></li>
+<li>Printed in the U.S.A. Glyoxylate and Pyruvate Are Antagonistic Effectors of the Escherichia coli IclR Transcriptional Regulator * Received for publication , November 22 , 2006 , and in revised form , March 28 , 2007 Published , JBC Papers in Press , April 10 , 2007 , DOI 10.1074 / jbc.M610838200 Graciela L. Lorca ‡ 1 , Alexandra Ezersky ‡ § , Vladimir V. Lunin ¶ , John R. Walker ¶ , Svetlana Altamentova ¶ , Elena Evdokimova ¶ , Masoud Vedadi , Alexey Bochkarev ‡ , and Alexei Savchenko ‡ ¶ 2 From the ‡ Banting and Best Department of Medical Research , Toronto , Ontario M5G 1L6 , Canada , § Department of Medical Biophysics , University of Toronto , Toronto , Ontario M5G 1L6 , Canada , ¶ Ontario Center for Structural Proteomics , Toronto , Ontario M5G 1L6 , Canada , and Canada Structural Genomics Consortium , Toronto , Ontario M5G 1L6 , Canada The Escherichia coli isocitrate lyase regulator ( IclR ) regulates the expression of the glyoxylate bypass operon ( aceBAK ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1996 , p. 4704 -- / 96 / $ 04.0010 Copyright q 1996 , American Society for Microbiology Regulated Expression of a Repressor Protein : FadR Activates iclR LIZHEN GUI , ALDEN SUNNARBORG , AND DAVID C. LAPORTE * Department of Biochemistry , University of Minnesota , Minneapolis , Minnesota 55455 Received 23 February 1996/Accepted 21 May 1996 The control of the glyoxylate bypass operon ( aceBAK ) of Escherichia coli is mediated by two regulatory proteins , IclR and FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Acknowledgements We thank Nobuyuki Fujita and Olga N. Ozoline for discussion , Shizuko Endo for technical advice , and Katsunori Yata for preparation of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>the IclR oligomeric state , we investigated the specific role of amino acids Leu-143 , Met-146 , Leu-154 , and Leu-220 in the interdomain interactions and effector binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>According to the structural analysis and mutagenesis studies presented in this work , the hydrophobic patch formed by Leu-143 , Met-146 , Leu-154 , and Leu-220 plays a critical role in IclR interactions with pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Ikcause the concentration of Dh : A was much lower tharr 10 PM in these reaction mixtures , t , he total concentration of JclR could be considered as equal to the concentration of free IclR , so the protein concentration required for half-maximal binding was ver ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>Pyruvate is an allosteric activator of Ldh and the Pfl-activating enzyme , and also activates Pta , AceK ( Icdh phosphatase/kinase ) and IclR ; on the other hand , it inhibits the Pdh complex , AceK and Pfl-deactivase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>In fact , we found that the intracellular concentration of IclR is below the detection level under steady-state growth at the exponential phase in a rich medium , as measured by immunoblotting against speciﬁc antibodies , but increases during the transition period from exponential-growth to stationary phase ( E. Koshio and A. Ishihama , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>As aceB and iclR promoters are not recognized by the RNAP containing sS , the stationary-speciﬁc s factor ( K. Yamamoto and A. Ishihama , unpublished data ) , the increase in IclR level during the growth transition period might result from relief from autogenous repression by IclR because of the increase in an as yet unidentiﬁed inducer or positive factor for iclR transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>However , the repression by IclR became negligible for the templates ( D2 to D6 ) with deletion down from -130 , suggesting that the upstream border for effective repression by IclR is located between -130 and -150 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The failure of TyrR and RNAP to-bind together on the tyrP fragment lacking the upstream RNAP binding site made it less likely that repression of the tyrP promoter involved an interaction between the TyrR protein and the a subunit of RNAP , as has been seen for the repression of gal and lac promoters by GalR , aceB promoter by IclR and treRP3 promoter by PhoP , where inhibition of transcription initiation occurs following the binding of RNAP to the promoters ( Choy et al. , 1995 ; Yamamoto et al. , 2002 ; Yamamoto and Ishihama , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15049824" target="_blank">15049824</a>]<br></li>
+<li>Effect of different ligands on the binding of IclR to the aceB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Cortay et al. ( 1991 ) speculated that one candidate ligand is phosphoenol pyruvate , which decreases the binding afﬁnity of IclR to the aceB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In vitro transcription of the 5 cents - truncated aceB promoters ( D1 to D7 ) was carried out in the presence or absence of IclR under standard assay conditions as in Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In the absence of IclR , the level of aceB transcription stayed unaltered for templates with deletion down to -70 ( templates D1 to D5 ) and decreased thereafter ( templates D6 and D7 ) ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In the presence of IclR addition , transcription of the D1 and the control aceB templates decreased to 40 -- 50 % of the level in the absence of IclR , conﬁrming the transcription repression by the box I-bound IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The heparin sensitivity of aceB open complex in the absence and presence of IclR was determined by measuring the level of DNA cleavage by treatment with KMnO4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The level in the presence of IclR addition is shown relative to that in its absence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The presence of IclR reduced the level of the aceB transcript to 30 % of the level measured in the absence of this protein ( Fig. 3 , lanes 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The level of aceB transcript in the presence or absence of IclR repressor was measured for each of the 5 cents - truncated templates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Attempts were then made to reveal the molecular mechanism of repression by the IclR bound at the IclR box I. Relying on the sensitivity difference to heparin between free RNAP and that in open complexes , we measured the level of stable aceB open complexes in the presence and absence of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The mixture was incubated for an additional 5 min at 37 ∞ C in the absence ( closed circles ) or presence ( open circles ) of IclR , and then heparin was added to inactivate both free RNAP and RNAP in closed complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In the presence of IclR , however , the half-life of the aceB open complex decreased to 6 min , suggesting that IclR destabilizes the aceB promoter open complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>IclR was added to the preformed aceB open complex and , after 5 min incubation , heparin was added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The IclR-induced shifting of the aCTD contact site along the aceB promoter might lead to destabilization of the open complex in the presence of IclR ( see Fig. 9 , repression mode II ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>When IclR was added after the formation of RNAP -- aceB promoter open complex , however , the repression was still observed , albeit at a reduced level ( Fig. 3B , lanes 1 and 3 , and Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Repression mode 2 : dissociation by IclR of the open complex formed at the aceB promoter One unique feature for the repression of aceB transcription by IclR is that a signiﬁcant level of repression takes place when IclR is added even after open complex formation ( see Fig. 3 ) [ note that iclR transcription analysed as an internal control is not repressed when IclR is added after open complex formation ( data not shown ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>One unexpected unique feature of aceB transcription repression was that a signiﬁcant level of repression by IclR takes place even after the formation of aceB open complex ( see Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The repression observed for aceB transcription by the IclR box I-bound IclR is , however , more drastic than the GalR , f29 p4 and PhoP cases , because the repressor IclR interacts with the aCTD and induces dissociation of the open complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>For this repression , IclR binds a secondary binding site ( IclR box I ) , located far upstream from the aceB promoter , interacts with the a subunit of the promoter-bound RNAP and destabilizes and dissociates the open complex , ultimately leading to repression of aceB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>IclR binds to this IclR box I even after formation of the aceB promoter open complex and , moreover , induces disassembly of the open complex , leading to repression of aceB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>This ﬁnding is consistent with the prediction that IclR induces dissociation of the aceB open complex , ultimately resulting in the repression of aceB transcription even after open complex formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>As IclR on the promoter-distal IclR box I repressed aceB transcription after the formation of open complexes , we predicted that this inhibition involves a protein -- protein interaction between the IclR and the RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>When the IclR protein and the templates were incubated before the addition of RNAP , aceB transcription was completely repressed ( Fig. 3B , lanes 1 and 2 , and Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Inhibition of RNAP action through protein -- protein interaction with repressors : regulation of aceB transcription by IclR The puriﬁed IclR fully repressed aceB transcription in vitro when added before the addition of RNAP to the aceB promoter ( see Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In contrast , IclR appears to-bind to the promoter-distal IclR box I site , even after the RNAP binds to the aceB promoter ( Fig. 4A and B , lanes 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Taken together , we concluded that the binding of IclR to the iclR promoter interferes with the binding of RNAP , leading to repression of iclR transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The binding of IclR to the promoter-proximal IclR box II prevented RNAP from binding to the aceB promoter ( Fig. 4A and B , lanes 3 and 4 ) as is the case for the repression of iclR promoter by IclR ( see Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>For this repression , the protein -- protein interaction between IclR and aCTD appears to be involved ( see Fig. 9 , repression mode II ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The nucleotide at 239 appears to have dual functions : contributing to both IclR repression and promoter activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>The repression level of iclR transcription correlated with the dose of IclR addition ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The involvement of two different repression modes for IclR may allow ﬁne regulation of aceB transcription at different levels , in response to the intracellular concentration of IclR and/or the level of as yet unidentiﬁed ligand ( s ) for the activity control of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Taken together , we propose that the IclR box I-bound IclR interacts with the aCTD within the open complex and , as a result , the location of the aCTD contact site is shifted from -46 / -45 ( in the absence of IclR ) to -88 / -61 ( in the presence of IclR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Supporting evidence is that , in the absence of IclR , the aCTD interacts with the UP element located between -60 and promoter -35 but , in the presence of IclR , the location of aCTD is shifted to a further upstream region close to the IclR box I ( see Fig. 7 and also Fig. 8 for a summary ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In addition , no effect on the formation of the IclR - DNA complex was observed in the presence of acetyl phosphate , a metabolic intermediate between acetate and acetyl-CoA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>In EMSA and in vitro transcription runoff experiments the presence of glyoxylate disrupted IclR complex formation with operator DNA , an effect that would be expected from a physiologically relevant effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In an attempt to identify the IclR -- a subunit interaction , we tried to locate the aCTD on DNA in the presence and absence of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In the presence of IclR , however , the cleavage was identiﬁed between -88 and -61 , concomitantly with the disappearance of cleavages at -46 to -45 ( Fig. 7 , lane 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_57">
+Glyoxylate disrupted the formation of the IclR/operator complex in vitro by favoring the inactive dimeric state of the protein , whereas pyruvate increased the binding of IclR to the aceBAK promoter by stabilizing the active tetrameric form of the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></label>
+<input id="act_similarity_57", type="checkbox">
+<div class="ACT_similar">
+<li>Glyoxylate disrupted the formation of the IclR/operator complex by favoring the dimeric state of the protein , whereas pyruvate increased the binding of the IclR to the target promoter by stabilizing the active tetrameric form of the protein ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li></div>
+<li>Moreover , the formation of the complex between IclR and the operator/promoter region has been found to be impaired by phosphoenol pyruvate but insensitive to acetate , acetyl-CoA , pyruvate , and oxaloacetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>These include acetate , acetyl-CoA , pyruvate , phosphoenol pyruvate and oxaloacetate , whose capacity to affect the binding of IclR to the operator/promoter region was tested by gel retardation assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>It was then incubated with an increasing amount of pure IclR repressor and electrophoresed in non-denaturing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>for IclR binding to operator was estimated by incubating the relevant fragment with an increasing concentration of repressor and analyzing retarded gel mobility in standard conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>By comparing its mobility with Purification of the IcIR repressor To investigate precisely the interaction of the repressor IclR with its specific operator region , it was essential to obtain this protein in a purified form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>In order to analyze further the modr of interaction of IclR with its operator an attempt was made to determine the stoichiometry of protein TclR in native conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>Glyoxylate and pyruvate are antagonistic effectors of the Escherichia coli IclR transcriptional-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Glyoxylate was identified as the strongest thermostabilizing compound for C-IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Glyoxylate was identified as the strongest thermo-stabilizing compound for IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Glyoxylate and pyruvate , identified by this method , bound the C-IclR domain with KD values of 0.9 0.2 and 156.2 7.9 M , as defined by isothermal titration calorimetry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>interactions with glyoxylate and pyruvate were determined Modulation of IclR Binding by Glyoxylate in Vivo -- To assess using isothermal titration calorimetry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>AllR is involved in transcriptional regulation of the allantoin catabolism ( 19 ) and shares 42 % sequence identity with IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>According to the data on IclR presented in this study , a mechanism of dual regulation by two effectors can be proposed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>To identify the boundaries of the ligand binding domain of IclR , a multiple sequence alignment of IclR and its homologues was performed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>It seemed therefore interesting to invest ' igate in more detail the number and nature of nucleotides actually rryuirrd for the binding of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>RESULTS Screening of a Small Molecule Library for Binding the IclR -- Significant sequence similarity between IclR and previously characterized AllR regulators , particularly among amino acids involved in glyoxylate binding ( 20 ) , indicated that the IclR effector may have chemical features similar to glyoxylate rather than phosphoenolpyruvate , which was proposed as the IclR effector by Cortay et al. ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Our results clearly show that the effect observed by El-Mansi et al. ( 79 ) could be explained by the binding of pyruvate to IclR , which would quickly repress the expression of aceK ( encoding for isocitrate dehydrogenase kinase/phosphatase ) and would be reflected as a decrease in isocitrate dehydrogenase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>A , EMSA results using 2.5 nM biotin-label aceB promoter , 50 nM of IclR , and increasing concentrations of glyoxylate ( 0 -- 500 M ) as shown on the top of the picture .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>B , EMSA results using 25 nM IclR and increasing concentrations of pyruvate ( 0 -- 500 M ) as shown on the top of the picture .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Binding of IclR to sequences upstream of iclR was tested by gel shift analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>We tested various metabolites involved in glyoxylate metabolism , including acetate , acetyl CoA , acetylphosphate , citrate , glyoxylic acid , pyruvate and phosphoenol pyruvate , but none of these compounds inﬂuenced the repression of aceB and iclR transcription by IclR at least under the conditions used ( K. Yamamoto and A. Ishihama , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>It may be possible that the regulators are tuned to launch their transcription programs as graded responses to the presence of glyoxylate and that the intracellular concentrations of glyoxylate integrate different metabolic inputs , i.e. acetate metabolism for IclR and allantoin utilization for AllR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Similar to the C-AllR-glyoxylate complex structure , no significant conformational changes were observed in C-IclR complexes with pyruvate or glyoxylate when compared with C-IclR apo structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In the AllR-glyoxylate complex structure Met-138 ( corresponding to the Leu143 in IclR ) is involved in interactions with the glyoxylate bound to the adjacent AllR molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Full understanding of the differences between IclR and AllR interactions with glyoxylate will have to wait for the structural information on the full-length IclR and AllR in complex with this ligand .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Although a substantial difference in the concentrations of glyoxylate needed to decrease IclR binding to DNA was observed between the two techniques tested , they both confirmed the dissociation of the IclR-operator complex in a concentration-dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Nevertheless , in the case of IclR , the glyoxylate-bound conformation causes the shift from tetramer to dimer state , whereas in case of AllR the binding of glyoxylate appeared not to affect its dimer to tetramer ratio ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Ligand binding pocket superimposition of AllR and IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The binding of IclR to DNA was investigated further by carrying out DNase I footprinting experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>The binding of glyoxylate causes conformational changes in both IclR and AllR proteins , resulting in their dissociation from corresponding DNA binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Additional compounds inducing significant stabilization of C-IclR included allantoate , pyruvate , and phosphoenolpyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>obtained for binding of glyoxylate and pyruvate to the full - Single iclR and crp as well as double ( iclR crp ) deletion length IclR were higher ( 14.2 1.2 and 321.7 20 M , respec - strains were prepared in the E. coli BW25113 strain background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Taking into account the almost identical position of glyoxylate and pyruvate in the C-IclR structures , the interactions involving the methyl group of pyruvate , which is absent in glyoxylate , become critical in understanding the different effects of these compounds on IclR activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In the case of IclR , the prototype of the AllR-group transcriptional-regulators , the activity is controlled by two effectors , glyoxylate and pyruvate ( Lorca et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>In agreement with the differential light-scattering results , the circular dichroism analysis showed an increase in 12 ° C in the melting temperature of C-IclR in the presence of glyoxylate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In EMSA experiments more than half of the bound operator DNA was released by IclR in the presence of 5 M glyoxylate ( Fig. 4A ) , whereas 50 M pyruvate was required to achieve 100 % DNA shift ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In light of glyoxylate ( 0.9 0.2 M ) was significantly lower ( 150 times ) this new data , the IclR activity was monitored in the presence than that for pyruvate ( 156.2 7.9 M ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The mutant proteins were purified and submitted to gel filtration analysis and EMSA with the IclR box II fragment in the presence and absence of glyoxylate or pyruvate ( Table 4 , Figs. 11 and 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Gel filtration analysis of IclR oligomerization in presence of glyoxylate or pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>This suggests that the glyoxylate effect on IclR activity is due to the destabilization of tetram-ers , which is required for efficient binding to the operator DNA , whereas the co-repressor effect observed for pyruvate might be due to the stabilization of the IclR tet-ramer on the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>effect might be due to the competition for the same binding site In conclusion , our EMSA results show glyoxylate as the in IclR , with glyoxylate having a significantly higher binding strongest candidate for the IclR effector-molecule , which desta-affinity than pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Moreover , mutagenesis studies demonstrated that Leu-154 substitution by alanine would abolish the pyruvate binding by IclR while leaving the binding of glyoxylate unaffected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>By EMSA and biophysical tests we were able to establish that IclR binds glyoxylate and pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Under these conditions the concentration of glyoxylate increases due to an increase in the flux through the shunt and is now able to compete with pyruvate for binding of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>ulation of this bypass at transcrip-The glyoxylate and pyruvate binding on mutant IclR proteins was tested by EMSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Only two compounds , glyoxylate and pyruvate , altered the binding of IclR in vitro at a physiologically relevant concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Effect of glyoxylate and pyruvate on the binding of IclR to its operator site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Thus , the big difference in affinity between glyoxylate and pyruvate binding to IclR might be linked to their intracellular concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Effect of Small Molecule Modulation of IclR Binding in Vitro -- The effect of glyoxylate , allantoate , - glyceraldehyde-3-phos-DL phate , pyruvate , and phosphoenolpyruvate on IclR activity was FIGURE 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Effect of Glyoxylate and Pyruvate on the Oligomerization of IclR -- To establish the effect of glyoxylate or pyruvate on the oligomeric state of IclR protein , this protein was preincubated with 1 mM glyoxylate or 10 mM pyruvate and analyzed by gel filtration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Overall , size exclusion experiments demonstrated that glyoxylate and pyruvate have a dramatic effect on the oligomeric state of the IclR regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Although the M146A mutant response to these ligands was similar to the wild type IclR protein , the L220A mutant showed no response to glyoxylate but was stabilized by pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The two ligands recognized by the IclR transcriptional-regulator act as corepressor ( pyruvate ) or activator ( glyoxylate ) on the transcription of the aceBAK operon , likely in response to intracellular concentrations of these compounds in the bacterial cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Although this molecule is likely related to a metabolite within the glyoxylate bypass pathway , the precise nature of this IclR effector remains nevertheless in doubt .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In the case of the wild type strain containing both IclR and Crp regulators , the presence of glyoxylate in the media did not result in a detectable increase of aceBAK , expression probably due to effector-independent tight repression by the functional Crp regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The titration of the effect of glyoxylate on IclR activity in vivo , the expression C-IclR with each compound followed an exothermal heat level of aceBAK operon was measured during growth on mini-change profile , giving rise to a sigmoidal binding curve with mal media in the presence and absence of this compound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The presence of glyoxylate in the media had no significant effect on the level of aceB expression in iclR and iclR crp strains lacking the functional IclR FIGURE 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The derepression effect in the presence of glyoxylate observed in the crp strain appears to be specific to the presence of functional IclR , indicating that glyoxylate can affect the activity of the IclR regulator in a manner expected from the native effector-molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The shift in C-IclR Tm in the presence of glyoxylate ( 11.1 ° C ) was close to the effect of this compound ( 9.9 ° C ) on C-AllR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The molecules that had a stabilizing effect were further assessed for the effector role for IclR using biophysical and functional assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The intermediate role played by glyoxylate in the pathway regulated by IclR also strengthens its case as a candidate for the native IclR effector-molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The role of glyoxylate as IclR effector is supported by its role as an intermediate in the glyoxylate bypass , which is regulated by IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The AllR C-terminal domain structure was recently determined in the presence and absence of its chemical effector glyoxylate ( 20 ) , providing the first detailed view of the molecular interactions of an IclR family representative with a small molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The presence of two similar regulators , AllR and IclR , responsive to the same effector in E. coli , might be conditional upon different physiological roles played by these regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The binding of IclR to the DNA fragment corresponding to the promoter region of the aceBAK operon and containing IclR box II ( 5 ) was analyzed in the presence and the absence of 100 M or 1 mM concentrations of each compound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The relat , ive molecular mass of IclR , was now estimated by sediment ' ation through a glycerol gradient .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>The stoichiometry of the reaction , 0.5 , is consistent with the ysis indicated that this operon is also under control of the global binding of one ligand-molecule per IclR dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The ligand for IclR , however , remains unidentiﬁed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The founding member of the family , IclR , is in a dynamic equilibrium between the dimeric and tet-rameric states in solution and binds its operator as a tetramer ( 53 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Gel shift and DNase I analyses demonstrated that IclR binds to its own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Otherwise , one IclR tetramer binds to the IclR box I , generating this protection pattern against DNase I digestion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Indeed , only a fraction of DSA remained free in the presence of 100 nM-IclR ( lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>at the constant concentration of 100 nM IclR could bind specifically t.o 3 nM-larger DSA fragment but only to 0.2 n.vr-oligomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>Several IclR regulators involved in aromatic catabolic pathways bind DNA in the absence of their effector mol-ecules ( 35 , 37 , 51 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Super - account that IclR might bind DNA as a tetramer ( 5 ) , this lower imposition of the active site of C-IclR with that of C-AllR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>This mechanistic hypothesis is supported by the fact that both ligands bind to the same site in IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Lanes 1 through 6 , results from reaction mixtures containing 0 , 0.1 , 0.3 , 1 , 2.5 , and 0 mg of puriﬁed IclR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Lanes : 1 , DNA alone ; 2 , DNA and protein fraction without overproduced IclR ; 3 , DNA and E. coli IclR ; 4 , DNA and S. typhimurium IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>By contrast , pyruTo further characterize IclR interactions with potential vate affected IclR interactions by stabilizing the IclR-DNA effector-molecules , the thermodynamic properties of IclR complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Analysis of IclR L143A and M146A oligomerization in pres - stabilizing effect on IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>IHF increases acsBAK transcription by mediating the disengagement of the repressor IclR ( Resnik et al. , 1996 ) and facilitating UP element-dependent activation ( Negre et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14651625" target="_blank">14651625</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_140">
+Resnik , E. , Pan , B. , Ramani , N. , Freundlich , M. , and LaPorte , D.C. ( 1996 ) Integration host factor ampliﬁes the induction of the aceBAK operon of Escherichia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></label>
+<input id="act_similarity_140", type="checkbox">
+<div class="ACT_similar">
+<li>Resnik , E. , Pan , B. , Ramani , N. , Freundlich , M. , LaPorte , D.C. , and Chung , T. ( 1996 ) Integration host factor ampliﬁes the induction of the aceBAK operon of Escherichia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14651625" target="_blank">14651625</a>]<br></li></div>
+<li>Integration host factor ampliﬁes the induction of the aceBAK operon by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Integration host factor ampli - ® es the induction of the aceBAK operon of Escheri-chia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>]<br></li>
+<li>Integration host factor ampliﬁes the induction of the aceBAK operon of Escherichia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10074087" target="_blank">10074087</a>]<br></li>
+<li>In the ﬁrst example , the global regulator integration host factor binds to the aceBAK operon and appears to inhibit repression by IclR , but no mechanism for this antirepression has yet been characterized ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10074087" target="_blank">10074087</a>]<br></li>
+<li>Expression of aceBAK is activated by integration host factor ( 23 ) and is repressed by IclR ( 9 , 18 , 23 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Cortay , J.C. , Negre , D. , Galinier , A. , Duclos , B. , Perriere , G. , and Cozzone , A.J. ( 1991 ) Regulation of the acetate operon in Escherichia coli : puriﬁcation and functional characterization of the IclR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Negre , D. , Cortay , J.C. , Galinier , A. , Sauve , P. , and Cozzone , A.J. ( 1992 ) Speciﬁc interactions between the IclR repres ¬ sor of the acetate operon of Escherichia coli and its operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>However , reducing the afﬁnity of IclR for the operator associated with the aceBAK promoter might be beneﬁcial , since it would enhance induction of this operon during growth on acetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Adaptation to acetate requires the induction of aceBAK , a process which results from the reduction in the repressor activity of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Under this scenario , acetate partially inactivates the IclR repressor , resulting in the potential derepression of the aceBAK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24375081" target="_blank">24375081</a>]<br></li>
+<li>However , when the levels of cAMP increase and CRP is inactive ( i.e. growth on acetate ) the regulation due to IclR becomes predominant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>During growth in TB , which contains no fatty acids , FadR probably operates through IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>FadR may act speciﬁcally to prevent an increase in IclR during growth on fatty acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>This regulation occurs , in part , through the actions of the transcriptional-regulators CRP , FNR , IclR , and FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>Regulation of the fatty acid pathways is complex and involves transcriptional-regulators ( including FadR , FarR , IclR , and CRP ) and post transcriptional mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>Therefore , transcriptional control of acetate metabolism by FadR and IclR is predicted to be complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2843809" target="_blank">2843809</a>]<br></li>
+<li>in the presence of acetate and is regulated by cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) and FNR as well as by IclR and its activator , FadR ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12620868" target="_blank">12620868</a>]<br></li>
+<li>We also have found that the timing and/or magnitude of this induction depends , in part , on the carbon regulator cyclic AMP ( cAMP ) receptor protein ( CRP ) , the oxygen regulator FNR , the glyoxylate shunt repressor IclR and its activator FadR , and several enzymes involved in acetate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>Transcription depends upon CRP , the anaerobically triggered transcription activator FNR , the glyoxylate shunt repressor IclR and its activator FadR , and several enzymes involved in acetate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12923087" target="_blank">12923087</a>]<br></li>
+<li>It also depends , probably indirectly , upon the glyoxylate shunt repressor IclR , its activator FadR , and many enzymes involved in acetate metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>It is expected that expression of other genes regulated by FadR , including the glyoxylate shunt repressor IclR , are also altered in a growth-phase dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>The expression of the aceBAK operon , which codes for the key enzymes of the glyoxylate cycle , isocitrate lyase and malate synthase , and for isocitrate dehydrogenase kinase/phosphatase , is activated by FruR and IHF and is repressed by IclR , which in turn is activated by FadR ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12620868" target="_blank">12620868</a>]<br></li>
+<li>GS , glyoxylate shunt ; TCA , tricarboxylic acid cycle ; PoxB , pyruvate oxidase ; ICL , aceA gene product isocitrate lyase ; IclR , repressor of the glyoxylate shunt operon aceBAK ; FadR , regulator of fatty acid metabolism that also activates iclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>The up-regulation of the glyoxylate pathway genes is not only related to extracellular acetate but also to its negative regulator IclR ( Gui et al. 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18175070" target="_blank">18175070</a>]<br></li>
+<li>Moreover , IclR ( the repressor of the GS ) is also activated by pyruvate [ 33 ] , resulting in aceBA down-regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>Expression was also sensitive to the carbon source in strains which retained the ability to regulate iclR : : lacZ with either IclR or FadR , although the range was less pronounced ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Although FadR and IclR mediate the responses of a variety of genes to the carbon source , they also appear to play the paradoxical roles of ensuring that the transcription of iclR does not change under these same conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Rigorous proof of this explanation would require direct measurements of the level of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>The concentration of IclR would decrease owing to dilution upon cell growth or by inactivation of the protein resulting in increased aceAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>Relief of the FadR-dependent repression would , therefore , require degradation , inactivation or dilution ( by cell growth ) of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>It appears that IclR responds strongly to growth conditions in its regulation of aceBAK but is far less affected when controlling its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>However , it appears that FadR regulation and IclR regulation combine to maintain a constant level of expression of iclR under the conditions which we have examined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>IclR probably acts as a general feedback inhibitor of iclR , maintaining constant expression under a variety of conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Since IclR also represses its own expression , adaptation to acetate could produce a striking increase in the level of this repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>This decrease in IclR would yield the observed increase in aceBAK expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_177">
+In addition to regulating aceBAK , IclR also represses its own expression ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></label>
+<input id="act_similarity_177", type="checkbox">
+<div class="ACT_similar">
+<li>In addition to repressing aceBAK , IclR also represses its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li></div>
+<li>In this paper , we demonstrate that IclR also regulates its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>IclR also autoregulates its own expression ( 76 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></li>
+<li>This increased expression very likely results from decreased expression of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>These results were expected since IclR represses its own expression ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>IclR accumulates and represses aceAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>The gene expressions of fadR and iclR were also higher , where FadR activates iclR , and IclR is known to repress aceBAK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19055729" target="_blank">19055729</a>]<br></li>
+<li>The aceBAK operon is under negative regulation by IclR , FadR ( indirectly by regulation of the iclR expression ( 62 ) , Crp ( 52 ) , and ArcA ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>By regulating the expression of iclR , FadR indirectly regulates not only the aceBAK operon but also acs encoding acetyl coenzyme A synthetase which is also regulated by IclR [ 100 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>Regulated expression of a repressor protein : FadR activates IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>Therefore , loss of the protein ( FadR ) that activates expression of the real repressor ( IclR ) mimicked direct repression of the ace operon by FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>This result suggests that FadR regulates aceBAK indirectly by altering the expression of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>sion : loss of FadR should result in decreased expression of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>According to early genetic studies ( 1 , 2 ) IclR represses the expression of aceBAK operon as well as its own gene by binding to specific operator sequences in the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>IHF , which binds just upstream of the aceBAK promoter , enhances the response of IclR to the carbon source .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Although aceBAK and iclR are both regulated by IclR , aceBAK expression responds to the carbon source , while expression of iclR does not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Unlike its behavior in regulating aceBAK , IclR repression of its own expression is only modestly sensitive to the carbon source ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>It thus appears that , in the absence of IHFb , IclR retains the ability to repress the aceBAK promoter even under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>IHF contributes to the induction of aceBAK by opposing repression by IclR during growth on acetate ( inducing conditions ) but not on glucose ( repressing conditions ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Surprisingly , the degrees of repression of iclR by IclR appear to be similar under inducing and repressing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Under inducing conditions , IHF activates aceB : : lacZ expression by opposing IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>IHF prevents repression by IclR under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>Glucose-independent highlevel expression in the absence of Crp and Fur may occur if IclR repression is dependent on an interaction with either Crp or Fur or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></li>
+<li>Inactivation of IHFb had little effect on aceB : : lacZ expression in this background , indicating that activation of aceBAK by IHF results largely from its effect on repression by IclR ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>Only a small decrease in aceB : : lacZ expression was observed , and there was very little effect on the extent of repression by IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">IclR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>All five compounds identified for C-IclR contained a common chemical motif in the form of adjacent carbonyl or hydroxyl groups ( Table 1 ) with the strongest thermal stabilizing agent , glyoxylate , being the simplest representation of this chemical scaffold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Near the COOH terminus of the MhpR protein , residues 201-G QNYRGWDQEEKIASIAVPLRS-222 partially match the PROSITE pattern ( PS01051 ) ( 4 ) found in members of the IclR subfamily of regulators , such as IclR , PobR , and PcaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9098055" target="_blank">9098055</a>]<br></li>
+<li>When the RNAP was incubated with the iclR promoter probe before the addition of IclR , four cleavage sites were identiﬁed at T residues , -10 , -9 , -6 and +1 ( Fig. 2D , lanes 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>It is noteworthy that the four IclR contact sites are all located on the same surface of DNA ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Considering thr ra , ther s , vmmetrical pattern of the operator bases involved in the interaction with IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>Binding to the second site , IclR box I , which is located between 125 and 99 bases of the aceB promoter , disassembles the open complex through a pro-tein-protein interaction between IclR and the RNA polymerase - subunit ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_7">
+In the lane 3 reaction , IclR was added after open complex formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></label>
+<input id="dom_similarity_7", type="checkbox">
+<div class="DOM_similar">
+<li>In the lane 4 reaction , the RNAP was added after IclR -- DNA complex formation , whereas in the lane 6 reaction , IclR was added after the RNAP -- aceB open complex formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li></div>
+<li>Glyoxylate and pyruvate , identified by this method , bound the C-IclR domain with KD values of 0.9 0.2 and 156.2 7.9 M , as defined by isothermal titration calorimetry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>whic.h indicates that IclR did interact specifically with the olipomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>The mutational analysis indicates that a region upstream of aceBAK has two opposing functions : binding RNA polymerase and the IclR repressor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>This labelled fragment which contains the aceBAK promoter region was purified by Sephadex-G50 chromato-graphy and incubated with IclR repressor in preparation for gel retardation analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>The final model comprises 5499 protein atoms ( 4 C-IclR domains ) and 335 water mole-cules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>However , it must be emphasized that the proportions of the two forms of IclR protein observed in these experiments do not necessarily reflect the actual in vivo situation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>the IclR oligomeric state , we investigated the specific role of amino acids Leu-143 , Met-146 , Leu-154 , and Leu-220 in the interdomain interactions and effector-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>According to the structural analysis and mutagenesis studies presented in this work , the hydrophobic patch formed by Leu-143 , Met-146 , Leu-154 , and Leu-220 plays a critical role in IclR interactions with pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The expression of a fragment of iclR corresponding to amino acids 98 -- 274 yielded a soluble domain of IclR ( C-IclR ) that was used for further experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>M M The expression of the IclR Ser-97 to Arg-287 fragment produced a soluble polypeptide ( see `` Experimental Procedures '' for details ) corresponding to the effector-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In agreement with previous sequence analysis , all but two amino acids , Ile-134 and Leu-143 , in the effector-binding area are conserved between IclR and AllR ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Sequence analysis of IclR regulators revealed a low conservation of the amino acid residues involved in effector-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>The link between the DNA and ligand binding domains in E. coli IclR was predicted to lie between amino acids Ser 98 and Leu 101 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The resulting alignment suggests that the sequences from IclR include the amino acids that are highly conserved i helix-turn-helix domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2185227" target="_blank">2185227</a>]<br></li>
+<li>The presence of an isoleucine residue at position 134 in the IclR structure results in the shortening of the distances between Leu-154 and glyoxylate atoms by 2 Å in the IclRglyoxylate complex structure compared with the same region in C-AllR-glyoxylate structure ( contact distance C 1 to C2 , 3.68 versus 4.44 Å ; C 2 to C1 , 4.17 versus 6.16 Å ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The additional intermolecular interactions between the pyruvate methyl group and hydrophobic patch observed in the C-IclR-pyruvate complex structure would , thus , stabilize the tetramerization state of IclR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The C-IclR structure comprises a centrally located six-stranded anti-parallel - sheet surrounded on one side by two long - helices ( 5 and 9 ) and on the other by three shorter - helices ( 6 -- 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Crystal structure of Thermotoga maritima 0065 , a member of the IclR transcriptional factor family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Overall structure of C-IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>B , C-IclR interdomain interface between two monomers in the ( PDB code 2O99 ) structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>By contrast , pyruTo further characterize IclR interactions with potential vate affected IclR interactions by stabilizing the IclR-DNA effector molecules , the thermodynamic properties of IclR complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The C-IclR domain displays a similar architecture to the two other IclR-family members whose structures have been determined , TM0065 ( 16 ) and AllR ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In C-IclR the interdomain interactions between C-IclR monomers are similar to those observed in the C-AllR and TM0065 structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>A , schematic diagram of a monomer of the IclR ligand binding domain in complex with glyoxylate ( PDB code 2O99 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In related proteins , the structure of the BenM effector-binding domain revealed two different binding sites for benzoate and cis , cismuconate ( 11 ) , whereas the IclR crystal structure has confirmed the binding of pyruvate and glyoxylate to a single effector-recognition site ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Structures of the C-IclR domain alone and in complex with each effector were determined at 2.3 Å , confirming the binding of both molecules in the effector-recognition site previously characterized for the other representative of the family , the E. coli AllR regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Structure of the IclR Effector Binding Domain -- To provide a structural framework for IclR interactions with the newly identified small molecules , the crystal structures of the IclR effector-binding domain alone ( apo structure ) and in complex with glyoxylate and pyruvate were determined at 2.3 , 1.8 , and 2.3 Å , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>According to the AllR-glyoxylate complex structure , the location of the effector-binding pocket in IclR regulators corresponded to the co-factor-accommodating cavity in PAS / GAF-domains ; however , the binding mechanisms were not conserved between these structurally similar domains ( 17 , 18 , 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In the case of the C-terminal domains of AllR and IclR regulators from E. coli , glyoxylate was identified as the strongest thermo-stabilizing inducer ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>IclR contains a putative helix-turn-helix motif of this type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1447784" target="_blank">1447784</a>]<br></li>
+<li>A possible helix-turn-helix motif characteristic of DNA-binding proteins was found within the IclR sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>( 3 ) A possible helix-turn-helix motif which is characteristic of prokaryotic transcriptional regulatory proteins can be found in the IclR aa sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>This apparent discrepancy could be partially explained by the IclR interactions with the C-terminal domain of the RNA polymerase subunit , as described earlier ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>It is possible , therefore , that Crp and Fur regulate iclR expression and/or that IclR interacts with Crp and/or Fur as well as with the C-terminal domain of the RNA polymerase alpha-subunit ( 76 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></li>
+<li>This common arrangement of the C-terminal domains of three different IclR-family members in three different unit cells supports the physiological relevance of these interactions for tet-ramerization of IclR regulators ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Founding member of a large family of common fold transcriptional regulators , IclR comprises a DNA-binding domain that interacts with the operator sequence and a C-terminal domain ( C-IclR ) that binds a hitherto unknown small molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>IclR regulators typically have an N-terminal helix - ( LB ) medium ( 16 ) at 37 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">IclR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Finally , five gene products of unknown function ( ycgE , ydeO , yhiW , yhiX and yjhI ) were predicted to encode regulatory proteins belonging to the AraC , IclR and MerR families ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>continued Subcellular localization f Function lrp a 30.69 c 2.72 2.69 8.72 2.60 23.70 2 2.22 2 2.00 2 2.00 23.33 2 2.22 2 2.08 2 4.00 2 2.00 2 2.70 2 2.77 2 3.13 2 2.08 2 2.00 2 2.50 3.75 2 2.04 2 2.99 2 2.00 2 2.17 2 2.50 22.86 9.76 14.00 Cytoplasmic Cytoplasmic Cytoplasmic f Cytoplasmic f Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic Cytoplasmic f Leucine-responsive regulatory protein Regulator of the two-component system PhoP/PhoQ 5E-2 1E-2 7E-3 3E-3 1E-3 2E-2 3E-2 1E-2 1E-2 5E-2 4E-3 2E-3 5E-2 4E-4 2E-2 2E-2 1E-2 8E-3 6E-3 5E-2 5E-2 5E-2 2E-2 2E-2 5E-2 4E-2 2E-2 5E-2 4E-2 P19494 P23836 P77170 P77574 P24210 P02384 P02387 P02386 P02390 P02418 P02409 P02392 P02411 P02413 P02416 P02424 P02425 P02429 P02435 P02436 P13445 P02361 P02363 P02369 P02370 P02373 P02375 P30017 P75989 phoP b pinQ b pinR b rcsA ab rplA b rplB rplC rplF rplI b rplK rplL rplN rplO rplQ rplW rplX rpmC rpmF rpmG rpoS a rpsH rpsI rpsM rpsN rpsQ rpsS b stpA a ycgE DNA invertase DNA invertase Regulatory protein 50S ribosomal subunit protein L1 50S ribosomal subunit protein L2 50S ribosomal subunit protein L3 50S ribosomal subunit protein L6 50S ribosomal subunit protein L9 50S ribosomal subunit protein L11 50S ribosomal subunit protein L7/L12 50S ribosomal subunit protein L14 50S ribosomal subunit protein L15 50S ribosomal subunit protein L17 50S ribosomal subunit protein L23 50S ribosomal subunit protein L24 50S ribosomal subunit protein L29 50S ribosomal subunit protein L32 50S ribosomal subunit protein L33 RNA polymerase sigma factor 38 30S ribosomal subunit protein S8 30S ribosomal subunit protein S9 30S ribosomal subunit protein S13 30S ribosomal subunit protein S14 30S ribosomal subunit protein S17 30S ribosomal subunit protein S19 DNA-binding protein Similar to P33358 , YehV putative transcriptional regulator ( E. coli ) PS00552 : Bacterial regulatory protein MerR family signature Similar to P05052 , AppY regulatory protein ( E. coli ) PS00041 : Bacterial regulatory proteins AraC family signature Similar to O44006 , regulatory protein CzcR ( Ralstonia eutropha ) Similar to U32711 , sigma54 modulation protein , putative ( H. influenzae ) Similar to P05052 , AppY regulatory protein ( E. coli ) PS00041 : Bacterial regulatory proteins AraC family signature Similar to P10805 , regulatory protein EnvY ( E. coli ) PS00041 : Bacterial regulatory proteins AraC family signature Similar to P76268 , KdgR transcriptional regulator ( E. coli ) PS01051 : Bacterial regulatory proteins , IclR family signature ydeO b P76135 2E-2 3.87 Cytoplasmic 35.36 c 3.72 32.41 c yedW b yfiA yhiW b P76340 P11285 P37638 5E-2 4E-2 2E-2 Cytoplasmic probable Cytoplasmic f Cytoplasmic f yhiX b Cytoplasmic f P37639 4E-4 13.92 24.07 c yjhI b Cytoplasmic f P39360 4E-2 Other functions 2.50 d 4.10 D appA b cspB 3E-2 5E-2 Acid phosphatase , pH 2.5 Similar to cold shock protein P07102 P36995 Periplasmic Cytoplasmic probable ain signature PS00352 : Cold shock DNA-binding dom Similar to cold shock protein PS00352 : Cold shock DNA-binding dom P36996 4.73 1E-2 cspC Cytoplasmic probable ain signatur Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298273" target="_blank">11298273</a>]<br></li>
+<li>such as LysR ( 53 ) , LuxR ( 54 ) , TetR ( 55 ) , and GntR ( 56 ) , account - Using the founding member of the IclR family as a test case , we explored the possibility of screening a small molecule library using a high throughput protein stability assay as a general strategy to identify putative ligands for such families ' representatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Near the COOH terminus of the MhpR protein , residues 201-G QNYRGWDQEEKIASIAVPLRS-222 partially match the PROSITE pattern ( PS01051 ) ( 4 ) found in members of the IclR subfamily of regulators , such as IclR , PobR , and PcaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9098055" target="_blank">9098055</a>]<br></li>
+<li>In the promoter assay utilizing lacZ fusions , CsgD exhibited activation of a set of genes and repression of another set of genes , suggesting the unique nature of CsgD as a transcription factor with a dual role , similar to IclR family transcription factors ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>]<br></li>
+<li>AllR is involved in transcriptional regulation of the allantoin catabolism ( 19 ) and shares 42 % sequence identity with IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>A search in protein data banks revealed that IclR has a score of similarity of 43.7 % with GylR , a transcriptional regulator of the glycerol operon of Streptomyces coelicolor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>( 4 ) The IclR polypeptide of E. coli exhibits similarity of 43.7 % with GylR , a transcriptional for the glycerol operon in S. coelicolor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>related compound 3HPA , used as the negative control , showed a This agrees with the narrow effector specificity displayed by very weak fluorescence decrease and a higher dissociation con - other members of the IclR family , with the unique exception of stant ( 0.1 M ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>59-proximal shaded region corresponds to the helix-turn-helix motif , whereas the 39-proximal one corresponds to the IclR family consensus of undetermined function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9525947" target="_blank">9525947</a>]<br></li>
+<li>The pcaUp promoter , which controls the expression of the pcaU regulatory gene belonging to the IclR family , is also subject to catabolic repression , but the molecular mechanism remains unknown ( Dal et al. , 2002 ; Siehler et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20966094" target="_blank">20966094</a>]<br></li>
+<li>The E. coli K-12 genome contains eight members of the IclR family , while a total of about 450 member genes have been identified in bacteria and archaea ( Walker et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>In this regard , it is noteworthy that IclR , another member of the same regulator family , is also contolled by two antagonistic effectors ( Lorca et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Previous studies performed using crude cellular extracts DISCUSSION showed that MhpR is a regulatory protein that binds to the Pa The MhpR activator belongs to the IclR family of tran - promoter at position 58 from the transcription initiation site ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Glyoxylate interactions with IclR strongly resemble those of glyoxylate with another E. coli member of this protein family , the allantoin utilization regulatory protein ( AllR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Amino acid sequence comparison analyses revealed that the MhpR protein from E. coli belongs to the IclR family of regulatory proteins ( 14 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12748194" target="_blank">12748194</a>]<br></li>
+<li>The founding member of the family , IclR , is in a dynamic equilibrium between the dimeric and tet-rameric states in solution and binds its operator as a tetramer ( 53 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Founding member of a large family of common fold transcriptional regulators , IclR comprises a DNA binding domain that interacts with the operator sequence and a C-terminal domain ( C-IclR ) that binds a hitherto unknown small molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>RESULTS AND DISCUSSION AllR is a member of the large IclR family of DNA-binding transcriptional regulators and shares 42 % sequence identity with IclR ( isocitrate lyase gene regulator ) , the founding member of this family ( N. Fujita and A. Ishihama , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Thus , the effector specificity of hundreds IclR regulators , including the founding member of the family , remains uncertain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Crystal structure of Thermotoga maritima 0065 , a member of the IclR transcriptional factor family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>IclR is the founding member of a large family ( Pfam 01614 , COG1414 ) of sequence-related microbial transcriptional regulators with more than 500 members identified in bacterial and archaeal genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Members of the IclR family of bacterial transcriptional regulators function as activators and/or repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>]<br></li>
+<li>The primary structure of MhpR revealed signiﬁcant similarities to that of members of the IclR subfamily of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9098055" target="_blank">9098055</a>]<br></li>
+<li>Such peculiar synergistic transcription activation has not yet been observed in other aromatic cat-abolic pathways , and the MhpR activator becomes the first member of the IclR family of transcriptional regulators that is indispensable for recruiting CRP to the target promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12748194" target="_blank">12748194</a>]<br></li>
+<li>Expression of mhp catabolic genes depends on the transcriptional activator MhpR belonging to the IclR family of transcriptional regulators ( Fig. 1A ) comprising more 2 The abbreviations used are : 3HPP , 3-hydroxyphenylpropionate ; CRP , cAMP receptor protein ; DHPP , 3 - ( 2,3-dihydroxyphenyl ) propionic acid ; PA , phe-nylacetic acid ; 3HPA , 3-hydroxyphenylacetic acid ; PP , phenylpropionic acid ; CI , cinnamic acid ; 3HCI , 3-hydroxycinnamic acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Expression of the mhp catabolic genes depends on the transcriptional activator MhpR , which belongs to the IclR family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20966094" target="_blank">20966094</a>]<br></li>
+<li>MhpR is an activator that belongs to the IclR family of transcriptional regulators and controls positively the expression of the mhp operon in response to 3HPP ( Ferrández et al. , 1997 ; Torres et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20966094" target="_blank">20966094</a>]<br></li>
+<li>Although sharing relatively low sequence identity between them and with previously characterized TM0065 , all four structures were very similar , confirming a common structural framework for most of the IclR family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>The C-IclR domain displays a similar architecture to the two other IclR family members whose structures have been determined , TM0065 ( 16 ) and AllR ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>This common arrangement of the C-terminal domains of three different IclR family members in three different unit cells supports the physiological relevance of these interactions for tet-ramerization of IclR regulators ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>1000 Molecular weight ( KDa ) 100 10 10 12 14 16 Retention volume ( ml ) DISCUSSION The IclR family of transcriptional regulators shares common structural features with their C-terminal domains representing small molecule binding modules adapted to recognize a wide variety of cellular metabolites as effector molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>IclR family members typically have an N-terminal helix-turn-helix DNA binding motif followed by the C-terminal domain adapted to recognize a wide variety of small cellular metabolites as effectors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Other IclR members such as Pir from Erwinia FIGURE 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>Other activators of aromatic catabolic pathways that belong to the IclR family , such as PobR and PcaU from Acinetobacter sp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12748194" target="_blank">12748194</a>]<br></li>
+<li>Binding of an activator to the target DNA regardless of the presence or absence of the inducer has been also observed with other regulatory proteins of the IclR family ( 38 ) as well as with members of other families of regulatory proteins involved in catabolism of aromatic compounds ( 39 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12748194" target="_blank">12748194</a>]<br></li>
+<li>Likewise , with the ORF o271 sequence as a query sequence , the BLASTP search revealed similarity to regulatory proteins such as the glycerol activator ( Streptomyces ) , the acetate repressor ( E. coli ) , and the Kdg repressor involved in pectinolysis in Erwinia chrysanthemi , all belonging to the known IclR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10601204" target="_blank">10601204</a>]<br></li>
+<li>Both motifs were also found in regulator proteins such as glycerol activator ( streptomyces ) , acetate repressor ( S. typhimurium ) , or Kdg repressor involved in pectinolysis in Erwinia chrysanthemi , all belonging to the known `` IclR '' family ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9525947" target="_blank">9525947</a>]<br></li>
+<li>The YiaJ repressor was also found to have a high similarity to KdgR and Pir of Erwinia chrysanthemi ( 27 , 29 ) , both involved in pectin degradation and classiﬁed into the IclR family of regulator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>]<br></li>
+<li>The cisacting element recognized by E. coli IclR repressor was shown to be AATTAAAATGGAAATTGTTTTTGATTTTGCATTTT ( 27 ) , and highly homologous sequences have been reported in E. chrysanthemi for other operator regions recognized by proteins of this family , such as KdgR or Pir ( 27 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>]<br></li>
+<li>The AllR repressor belongs to the IclR family of regulators and highly homologous sequences have been reported for other operator regions recognized by proteins of this family , such as KdgR9 or Pir .10 Accordingly , the inverted repeats present in gclP and in the intergenic region between allS and allA , that have been proven to be the AllR-binding site , display many conserved positions with the IclR operator region , reported to be AATTAAAATGGAAATTGTTTTTGATTTTGCATTTTT10 ( underlined positions correspond to those conserved in the three operators ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460564" target="_blank">12460564</a>]<br></li>
+<li>This repressor was found to be highly homologous to the IclR family of regulators ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>]<br></li>
+<li>This site displays similarity with the IclR family recognized consensus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460564" target="_blank">12460564</a>]<br></li>
+<li>Some of the largest such families ( Perez-Rueda et al. 2004 ) are the LysR ( Henikoff et al. 1988 ) , TetR ( Ramos et al. 2005 ) , IclR ( Nasser et al. 1994 ) , GntR ( Haydon and Guest 1991 ) , and AraC ( Gallegos et al. 1997 ) superfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Other common regulator families are ArsR ( 175 ) , AsnC ( 140 ) , Crp ( 233 ) , DeoR ( 17 ) , GntR ( 29 , 104 , 213 ) , IclR ( 214 ) , LacI ( 253 ) , LuxR/UphA ( 112 ) , LysR ( 111 ) , MarR ( 56 ) , MerR ( 107 ) , NtrC ( 189 ) , TetR ( 198 ) , YedF/YeeD/YhhP ( 14 ) , and YhdG/YjbN/YohI ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>Members Group function Ec1 So2 Bs3 Group function LuxR/UhpA or OmpR family transcriptional response regulator of two-component regulatory system LysR family transcriptional regulator GntR or DeoR family transcriptional regulator sensory histidine kinase in two-component regulatory system sigma54 activator protein , enhancer binding protein AraC/XylS family transcriptional regulator ROK family transcriptional regulator/sugar kinase IclR family transcriptional regulator methyl-accepting chemotaxis protein MerR family transcriptional regulator DNA-binding regulatory protein AraC/XylS family transcriptional regulator MarR family transcriptional reguator AsnC family transcriptional regulator 46 20 18 18 13 13 11 10 9 18 14 13 13 11 16 13 8 1 oxidoreductase , Fe-S-binding 31 10 11 13 6 oxidoreductase , NAD ( P ) - binding oxidoreductase4 , NAD ( P ) - binding aldehyde dehydrogenase , NAD ( P ) - binding oxidoreductase , FAD/NAD ( P ) - binding sugar kinase respiratory reductase , alpha subunit aldo-keto reductase , NAD ( P ) - binding phosphatase nucleoside diphosphate ( Nudix ) hydrolase 43 30 22 5 14 14 7 8 8 7 5 8 8 2 7 5 1No .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15757509" target="_blank">15757509</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by IclR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Table 5 ( continued ) Gene Entrez Description Gene ID C Gene Entrez Description Gene ID amtB 1035428 Ammonium transporter [ ] ( P ) 4.1 yaiZ 947355 Predicted inner membrane protein , DUF2754 family [ b0380 ] 4.2 puuP 946287 Amino acid/amine-transport protein [ b1296 ] ( P ) 4.2 fliI 961941 Flagellum-specific ATP synthase [ Z3031 ] 4.2 956672 Putative regulator [ Z3285 ] 4.2 yahI 944984 Carbamate kinase-like protein [ b0323 ] 4.3 yagI 945016 IclR ; bacteria transcriptional regulator [ b0272 ] ( P ) 4.3 ECs1327 912768 Urease accessory protein UreG [ ECs1327 ] 4.3 yadN 956850 Fimbrial protein [ Z0152 ] ( P ) 4.4 ECs5084 914252 Phosphonate metabolism [ ECs5084 ] 4.5 ECs4429 915709 Outer membrane usher protein precursor [ ECs4429 ] ( P ) 4.8 yciD 960508 Outer membrane protein [ Z2034 ] ( P ) outer membrane protein W 5.0 ECs0004 913393 rspA 946126 Threonine synthase [ ECs0004 ] 5.1 5.2 D-altronate/D-mannonate dehydratase ; starvation sensing [ b1581 ] Molybdate metabolism regulator , third fragment [ b2117 ] DNA injection protein [ ECs3232 ] ( P ) 946635 ECs3232 915669 5.2 5.2 phnN 948608 ATP-binding component of phosphonate transport [ b4094 ] ECs4458 915602 MelB ; Na + / melibiose symporter and related permease [ ECs4458 ] ( P ) thrC 956660 Threonine synthase [ Z0004 ] Z5001 960978 MelB ; Na + / melibiose symporter and related permease [ Z5001 ] ( P ) Z1120 958437 P4-family integrase [ Z1120 ] ( P ) phnG 960022 Phosphonate metabolism [ Z5704 ] eutE 1039466 Ethanolamine utilization protein eutE [ ] 5.3 5.6 5.7 5.7 5.7 5.8 5.8 prpR 944987 Propionate ( prp ) catabolism operon regulatory protein [ b0330 ] 6.6 ECs4961 914606 Transcription regulator [ ECs4961 ] ( P ) 6.9 ynfL 946136 Transcriptional regulator LYSR-type [ b1595 ] ( P ) 7.4 terA 958742 Phage inhibition , colicin resistance and tellurite [ Z1172 ] ( P ) 7.7 Z1534 959169 Chaperone [ Z1534 ] ( P ) 8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24952731" target="_blank">24952731</a>]<br></li>
+<li>Catabolite response Deoxirribose assimilation D 87 135 Crp w 27 Pérez - Rueda and Collado-Vides ( 2000 ) 220 -- R 235 10 DeoR DicA 35 w Pérez - Rueda and Collado-Vides ( 2000 ) -- n/d 0 -- -- n/d HLH R 4 DicC DnaA 0 Transcription and replication regulation Positive regulator of cytochrome c552 77 0 -- Pérez - Rueda and Collado-Vides ( 2000 ) 41 -- n/d DniR 0 Kajie et al. ( 1991 ) 209 8 215 -- A Ebp FhlC 77 m Pérez - Rueda and Collado-Vides ( 2000 ) Pérez - Rueda and Collado-Vides ( 2000 ) n/d 0 -- 7 -- Pérez - Rueda and Collado-Vides ( 2000 ) Schnetz ( 2002 ) n/d R FhlD FrvR 0 -- Phosphoenolpyruvate sugar phosphotransferase system operon regulation Iron assimilation 8 0 -- -- 128a Fur R w Achenbach and Yang ( 1997 ) 107 460 35 Carbon sources assimilation Nguyen and Saier ( 1995 ) ; Weickert and Adhya ( 1992 ) 388 GalR/LacI 55 R c -- 13 GcvR GntR Rigali et al. ( 2002 ) Glycine cleavage operon repression 0 R 735 775 Ghrist and Stauffer ( 1998 ) 96 R w Yamada and Saier ( 1988 ) Activator of the glucitol operon in E. coli High-frequency persistence of the lethal effects of inhibition of either DNA or peptidoglycan-synthesis regulation ( HipAB ) -- 8 GutM 0 A -- Black et al. ( 1991 ) -- 1 HipA 1 0 n/d -- n/d HipB HtgA Black et al. ( 1991 ) Missiakas et al. ( 1993 ) 87 0 -- -- -- n/d 7 Heat shock regulation 0 -- HycA HypF 6 -- n/d ZnF A 0 -- 0 Bouhouche et al. ( 2000 ) Gui et al. ( 1996 ) 27 -- Glyoxylate bypass operon Integration host factor 31 106 161 w R -- IclR Ihf -- 15 8 Pérez - Rueda and Collado-Vides ( 2000 ) Campoy et al. ( 2002 ) -- D 43 -- DNA-repair 54 LexA R w 102 279 Miller and Bassler ( 2001 ) Schell ( 1993 541 LuxR/UhpA m A Quorum sensing 1548 LysR 1271 Amino acid biosynthesis regulation D w 3.3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>Genes showing transient repression upon cold shock in the wild-type strain Gene product and/or function 15 ° C / 37 ° C ratio at 1 h Gene name and role 15 ° C / 37 ° C ratio at 5 h Genes involved in membrane synthesis/function Iron ( III ) dicitrate-transport protein FecA precursor Iron ( III ) dicitrate-binding periplasmic protein precursor FecC protein Membrane-bound iron ( III ) dicitrate-transport protein Ferric enterobactin-transport protein FepC FimD protein Alpha-ketoglutarate permease Prolipoprotein diacylglyceryl transferase Outer membrane lipoproteins carrier protein precursor MsbA protein Lipoprotein D precursor Oligopeptide-transport system permease protein Oligopeptide permease membrane protein PlsX protein Spermidine/putrescine-transport protein A Spermidine/putrescine-transport system permease protein PotB Spermidine/putrescine-transport system permease protein PotC Proline/betaine-transport protein Glycine betaine/I-proline-transport ATP-binding protein ProV Glycine betaine/proline-transport system protein prow Glycine betaine-binding periplasmic protein precursor P12 cytoplasmic membrane protein TolA protein TrkH protein Lipopolysaccharide-biosynthesis protein fecA fecB fecC fecE fepC ﬁmD kgtP lgt lolA msbA nlpD oppB oppC plsX potA potB potC proP proV proW proX secG tolA trkH wzxE 0.02 0.04 0.02 0.01 0.14 0.29 0.3 0.25 0.27 0.26 0.7 0.31 0.27 0.16 0.22 0.12 0.19 0.17 0.01 0.04 0.08 0.3 0.29 0.33 0.19 0.005 0.01 0 0.005 0.03 0.04 0.02 0.005 0.005 0.015 0.02 0 0.01 0.03 0.01 0.01 0.025 0.01 0.005 0 0.01 0.005 0.025 0 0 0.22 0.3 0.9 0.9 0.7 1.9 0.45 0.54 0.6 0.6 0.26 1.1 1.5 1 0.45 0.31 0.31 0.48 0.06 0.07 0.11 0.57 1.2 1.3 0.88 0.001 0.08 0.2 0.07 0.06 0.13 0.01 0.12 0.04 0.02 0.02 0.1 0.2 0.005 0.08 0.045 0.015 0.01 0.005 0.015 0.01 0.05 0.2 0.2 0.03 Genes involved in cell metabolism Malate synthase A ( Msa ) aceB adhC argB argC argD argG argH aroA aroB cmk ddg fdhE folP glcF gltB hisF iclR phoH psd rffH thil thyA truA 0.04 0.26 0.18 0.12 0.14 0.15 0.25 0.2 0.3 0.24 0.1 0.27 0.29 0.07 0.12 0.3 0.08 0.5 0.32 0.2 0.27 0.28 0.31 0 0.1 0.005 0.045 0.01 0.4 0.1 0.15 0.05 0.07 0.24 0.01 0.01 0.6 0.02 0.27 0.005 0.2 0.005 0.005 0.01 0.05 0.5 0.02 0.08 Formaldehyde dehydrogenase ( glutathione ) Acetylglutamate kinase N-acetyl-gamma-glutamyl-phosphate reductase Acetylomithine aminotransferase Argininosuccinate synthase Argininosuccinate lyase 3-Phosphoshikimate 1-carboxyvinyltransferase 3-Dehydroquinate synthase Cytidylate kinase ( cytidine monophosphate kinase ) Ddg protein FdhE protein Dihydropteroate synthase Glycolate oxidase iron-sulfur subunit Glutamate synthase ( NADPH ) large chain precursor Cyclase HisF Repressor protein IclR PhoH protein Phosphatidylserine decarboxylase precursor Glucose-1-phosphate thymidylyltransferase Thiamin biosynthesis protein Thymidylate synthase Pseudouridylate synthase I 0.035 0.01 0.04 0.02 0.04 0.08 0.01 0.015 0.02 0.01 0 0.03 0.005 0.02 0.02 0.01 0.07 0 0.01 0.09 0 0.01 0.45 0.75 3 0.3 1.3 0.4 0.45 1.2 0.4 1.4 0.7 0.5 1.7 0.5 0.8 0.56 0.08 0.43 0.55 1.7 0.45 0.7 Genes encoding proteins with diverse functions 0.07 0.09 0.13 0.13 0.005 0 0.06 0.12 0.07 0.09 0 0.06 0.12 0.13 0.07 0.03 0.01 0.02 0.06 0.3 0.03 0.45 0.5 1.4 1.1 0.47 1.26 0.9 1.2 0.9 0.8 0.54 0.7 0.7 0.7 0.75 0.5 1.3 0.74 0.3 1.1 1.2 0.02 0.025 0.003 0.015 0.005 0.005 0.01 0.015 0.01 0.01 0.02 0.01 0.005 0.01 0.04 0.02 0.02 0.02 0 0.015 0.01 0.29 0.3 0.24 0.2 0.29 0.32 0.25 0.29 0.2 0.24 0.22 0.25 0.31 0.09 0.24 0.28 0.28 0.18 0.17 0.27 0.22 DedA protein DedE protein dedA dedE dinG dnaG fkpA ﬂdB ftsH ftsJ/rrmJ ftsK gidA hﬂC hﬂK holA hscA ksgA lepA mrcA mrdB pepB priA recB Probable ATP-dependent helicase DinG DNA primase FkpA protein Flavodoxin Cell division protein FtsH , protease Cell division protein , 23S rRNA methyltransferase Cell division protein FtsK GidA protein HﬂC protein HﬂK protein DNA-directed DNA polymerase III delta chain Heat shock cognate protein 66 Dimethyladenosine transferase GTP-binding protein LepA Penicillin-binding protein 1a ( pbp-1a ) Rod shape-determining protein MrdB Peptidase B Primosomal replication factor Y Exodeoxyribonuclease V 135-kDa polypeptide Continued on following pag On the other hand , a few genes were transiently induced in the quadruple-deletion strain compared with the wild-type strain , and these prominently constitute the genes encoding proteins involved in transport of iron , such as exbD , fecA to fecD , fepC , and fhuA and fhuF ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></li>
+<li>8 6 4 2 0 0 2 4 6 8 Time ( h ) ( a ) 1 10 2 0 12 5 4.5 4 3.5 3 1 0 8 6 2.5 2 1.5 1 0.5 4 Table 2 Growth parameters for E. coli BW25113 and its cra mutant cultivated at the dilution rate of 0.2 h where feed glucose con -- 1 centration was 4 g/l 2 Growth parameters BW25113 cra Mutant 0 0 12 4 6 8 Time ( h ) ( b ) 10 2 0 0.02 0.03 0.02 0.30 ± 3.61 ± 0.84 ± 0.01 0.11 0.01 0.44 ± 2.54 ± 0.02 ± Biomass yield ( g/g ) Glucose uptake rate [ mmol / ( g h ) ] Acetate production rate [ mmol / ( g h ) ] Fig. 1 Batch cultivation of a E. coli BW25113 and b its cra mutant : open square glucose concentration , ﬁlled square biomass concentration , open triangle acetate concentration O2 uptake rate [ mmol / ( g h ) ] 10.24 ± 0.52 8.88 ± 0.63 CO2 evolution rate [ mmol / ( g h ) ] 8.51 ± 0.35 8.57 ± 0.8 Biomass yield ( g/g ) Glucose uptake rate [ mmol / ( g h ) ] Acetate production rate [ mmol / ( g h ) ] Fig. 1 Batch cultivation of a E. coli BW25113 and b its cra mutant : open square glucose concentration , ﬁlled square biomass concentration , open triangle acetate concentration ( c ) Fatty acids , purine and pyrimidine-metabolism related genes fabA 2.00 3-Hydroxydecanoyl - [ acyl-carrier-protein ] dehydratase ( EC 4.2.1.60 ) iclR 1.96 Acetate operon repressor ( repressor protein IclR ) Table 3 Gene expressions of cra mutant as compared with the wild type strain Table 3 continued Description Gene Logarithmic ratio , Log2 ( cra/parent strain ) Description Gene Logarithmic ratio , Log2 ( cra/parent strain ) proV 1.41 Glycine betaine/L-proline-transport ATP-binding protein ProV ( a ) Carbon and energy related genes ptsH 1.57 aceA aceK -1.43 -0.30 Isocitrate lyase ( EC 4.1.3.1 ) Isocitrate dehydrogenase kinase / phosphatase ( EC 2.7.1.116 ) ( EC 3.1.3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18648770" target="_blank">18648770</a>]<br></li>
+<li>Gene expression data indicate a slight decrease in the expression of rpoD and some of the rpoD-dependent genes , such as pgi and serA , at the later phases of pykF : puruvate kinase F , aspA : aspartate ammonia-lyase , serA : D-3-phosphoglycerate dehydrogenase , rpoS : sigma S factor , tktB : transketolase B , talA : transaldolase A , acnA : aconitase A , sucA : 2-oxoglutarate decarboxylase , fumC : fumarase C , acs : acetyl-CoA synthetase , sodC : superoxide dismutase C , soxR : SoxR transcriptional dual regulator , soxS : SoxS transcriptional dual regulator , zwf : glucose-6P dehydrogenase , sodA : superoxide dismutase A , fadR : FadR transcriptional dual regulator , iclR : IclR transcriptional repressor , aceA : isocitrate lyase , aceB : malate synthase , cra : CRA transcriptional dual regulator , pck : phosphoenolpyruvate kinase , ppsA : phosphoenolpyruvate synthase , icd : isocitrate dehydrogenase , arcA : ArcA transcriptional dual regulator , gltA : citrate synthase , acnB : aconitase B , fumA : fumarase A growth ( Fig. 2a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18175070" target="_blank">18175070</a>]<br></li>
+<li>Printed in the U.S.A. Glyoxylate and Pyruvate Are Antagonistic Effectors of the Escherichia coli IclR Transcriptional Regulator * Received for publication , November 22 , 2006 , and in revised form , March 28 , 2007 Published , JBC Papers in Press , April 10 , 2007 , DOI 10.1074 / jbc.M610838200 Graciela L. Lorca ‡ 1 , Alexandra Ezersky ‡ § , Vladimir V. Lunin ¶ , John R. Walker ¶ , Svetlana Altamentova ¶ , Elena Evdokimova ¶ , Masoud Vedadi , Alexey Bochkarev ‡ , and Alexei Savchenko ‡ ¶ 2 From the ‡ Banting and Best Department of Medical Research , Toronto , Ontario M5G 1L6 , Canada , § Department of Medical Biophysics , University of Toronto , Toronto , Ontario M5G 1L6 , Canada , ¶ Ontario Center for Structural Proteomics , Toronto , Ontario M5G 1L6 , Canada , and Canada Structural Genomics Consortium , Toronto , Ontario M5G 1L6 , Canada The Escherichia coli isocitrate lyase-regulator ( IclR ) regulates the expression of the glyoxylate-bypass operon ( aceBAK ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1996 , p. 4704 -- / 96 / $ 04.0010 Copyright q 1996 , American Society for Microbiology Regulated Expression of a Repressor Protein : FadR Activates iclR LIZHEN GUI , ALDEN SUNNARBORG , AND DAVID C. LAPORTE * Department of Biochemistry , University of Minnesota , Minneapolis , Minnesota 55455 Received 23 February 1996/Accepted 21 May 1996 The control of the glyoxylate-bypass operon ( aceBAK ) of Escherichia coli is mediated by two regulatory proteins , IclR and FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>The survival and growth of bacteria under such changing environments largely depend on the adjustments in the expression proﬁles of several global regulatory proteins , such as RpoD , RpoS , SoxRS , Cra , FadR and IclR ( Aronis 2002a , b ; Cortay et al. 1991 ; Jordan et al. 1999 ; Liochev and Fridovich 1992 ; Lu et al. 2003 ; Moat 2002 ; Tang et al. 2002 ; Varghese et al. 2003 ; Perrenoud and Sauer 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18175070" target="_blank">18175070</a>]<br></li>
+<li>Regulation of the fatty acid pathways is complex and involves transcriptional regulators ( including FadR , FarR , IclR , and CRP ) and post transcriptional mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>During growth in TB , which contains no fatty acids , FadR probably operates through IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>Pyruvate is an allosteric activator of Ldh and the Pfl-activating enzyme , and also activates Pta , AceK ( Icdh phosphatase/kinase ) and IclR ; on the other hand , it inhibits the Pdh complex , AceK and Pfl-deactivase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>The deduced amino acid sequence of MhpR revealed signiﬁcant similarities with that of IclR , the repressor protein of the glyoxylate-bypass operon from E. coli ( 70 ) , that of PobR , the activator of the pobA gene encoding the p-hydroxybenzoate hydroxylase from A. calcoaceticus ( 24 ) , and those of PcaU and PcaR , the activators of the pca operons for the catabolism of protocatechuate in A. calcoaceticus and P. putida ( 30 ) , respectively ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9098055" target="_blank">9098055</a>]<br></li>
+<li>We tested various metabolites involved in glyoxylate-metabolism , including acetate , acetyl CoA , acetylphosphate , citrate , glyoxylic acid , pyruvate and phosphoenol pyruvate , but none of these compounds inﬂuenced the repression of aceB and iclR transcription by IclR at least under the conditions used ( K. Yamamoto and A. Ishihama , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In E. coli , the downstream KDG metabolism is controlled by the KdgR repressor from the IclR family , which is also regulating the pectin utilization in plant-pathogenic species of the Entero-bacteriales ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The YiaJ repressor was also found to have a high similarity to KdgR and Pir of Erwinia chrysanthemi ( 27 , 29 ) , both involved in pectin-degradation and classiﬁed into the IclR family of regulator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>]<br></li>
+<li>IclR probably acts as a general feedback inhibitor of iclR , maintaining constant expression under a variety of conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Unlike its behavior in regulating aceBAK , IclR repression of its own expression is only modestly sensitive to the carbon source ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>By regulating the expression of iclR , FadR indirectly regulates not only the aceBAK operon but also acs encoding acetyl coenzyme A synthetase which is also regulated by IclR [ 100 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>In this paper , we demonstrate that IclR also regulates its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_20">
+In addition to regulating aceBAK , IclR also represses its own expression ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></label>
+<input id="rp_similarity_20", type="checkbox">
+<div class="RP_similar">
+<li>In addition to repressing aceBAK , IclR also represses its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li></div>
+<li>IclR also represses the expression of iclR in an autogenous manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>IclR accumulates and represses aceAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>Under inducing conditions , IHF activates aceB : : lacZ expression by opposing IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>Regulated expression of a repressor protein : FadR activates IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>Therefore , loss of the protein ( FadR ) that activates expression of the real repressor ( IclR ) mimicked direct repression of the ace operon by FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>The two ligands recognized by the IclR transcriptional regulator act as corepressor ( pyruvate ) or activator ( glyoxylate ) on the transcription of the aceBAK operon , likely in response to intracellular concentrations of these compounds in the bacterial cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_28">
+In this report , we describe two types of repression by the repressor IclR , which was identiﬁed as a repressor for transcription of the aceBAK operon that encodes the enzymes involved in the glyoxylate-bypass ( Sunnarborg et al. , 1990 ; Negre et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></label>
+<input id="rp_similarity_28", type="checkbox">
+<div class="RP_similar">
+<li>IclR was identiﬁed as a repressor of the aceBAK operon , which encodes the enzymes involved in the glyoxylate-bypass ( Sunnarborg et al. , 1990 ; Negre et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li></div>
+<li>GS , glyoxylate shunt ; TCA , tricarboxylic-acid-cycle ; PoxB , pyruvate oxidase ; ICL , aceA gene product isocitrate lyase ; IclR , repressor of the glyoxylate shunt operon aceBAK ; FadR , regulator of fatty-acid-metabolism that also activates iclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>The expression of the aceBAK operon , which codes for the key enzymes of the glyoxylate-cycle , isocitrate lyase and malate synthase , and for isocitrate dehydrogenase kinase/phosphatase , is activated by FruR and IHF and is repressed by IclR , which in turn is activated by FadR ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12620868" target="_blank">12620868</a>]<br></li>
+<li>Escherichia coli acetate operon by IclR Summary IclR is a repressor for the Escherichia coli aceBAK operon , which encodes isocitrate lyase ( aceB ) , malate synthase ( aceA ) and isocitrate dehydrogenase kinase/phosphorylase ( aceK ) in the glyoxylate-bypass .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>We also have found that the timing and/or magnitude of this induction depends , in part , on the carbon regulator cyclic AMP ( cAMP ) receptor protein ( CRP ) , the oxygen regulator FNR , the glyoxylate shunt repressor IclR and its activator FadR , and several enzymes involved in acetate-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>Transcription depends upon CRP , the anaerobically triggered transcription activator FNR , the glyoxylate shunt repressor IclR and its activator FadR , and several enzymes involved in acetate-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12923087" target="_blank">12923087</a>]<br></li>
+<li>It also depends , probably indirectly , upon the glyoxylate shunt repressor IclR , its activator FadR , and many enzymes involved in acetate-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>On the other hand , IclR represses the expression of the genes that code for the enzymes of the glyoxylate shunt , and the regulation of this operon is extremely complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>It is expected that expression of other genes regulated by FadR , including the glyoxylate shunt repressor IclR , are also altered in a growth-phase dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>Also , the glyoxylate shunt has been associated with acetate-metabolism , a protein , IclR , repressing the expression of ICL and ACS ( Shin et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14595781" target="_blank">14595781</a>]<br></li>
+<li>The up-regulation of the glyoxylate pathway genes is not only related to extracellular acetate but also to its negative regulator IclR ( Gui et al. 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18175070" target="_blank">18175070</a>]<br></li>
+<li>The IclR repressor also controls its own expression level ( Gui et al. , 1996a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">IclR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>For construction of pIclR , an overproduction plasmid of IclR , a DNA fragment containing the IclR coding region was ampliﬁed by PCR with E. coli W3110 genome DNA as a template and a pair of primers , iclRF and iclRR , and after digestion with EcoRI and NdeI , cloned into pGET ( Katayama et al. , 2000 ) at the corresponding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>In agreement with the palindromic nature of the IclR box , the functional protomer of IclR was proposed to be a dimer ( Negre et al. , 1992 ) or a tetramer ( Donald et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Transcription of the aceB promoter fragment with or without the IclR box I. A. Starting from the iclR ( 479 bp ) template ( see Fig. 2 ) , various kinds of 5 cents - truncated templates ( D1 to D7 ) were prepared .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The similarity between the two polypeptides extends for the entire length of the aa sequences with the exception of the 20 aa at the N terminus of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>The iclR gene was inserted into pKK233-2 , after PCR amplification ( see Materials and methods ) , by using two synthetic DNA linkers which created an NcoI site overhang at the 5 ' - end of iclR that of reference proteins of known molecular mass , the size of IclR in its monomeric form was found to be - 30 kd , which is in agreement with the value deduced from the nucleotide sequence of the iciR gene ( Negre et al. , 1991 ; Sunnarborg et al. , 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>The sequence protected by IclR is boxed Lizhen Gui and Alden Sunnarborg contributed equally to this proj-ect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>The mode of action of this repressor , IclR , which acts at metrically bindsto a 16-base paiDrNA sequence located the level of the operator region of the E. coli ace operon has 170 base pairs upstreamfrom the transcriptional start been investigated in detail ( Sunnarborg et al. , 1990 ; NBgre et point of theace operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8195118" target="_blank">8195118</a>]<br></li>
+<li>The inverted-repeat recognized by AllR is indicated by the convergent arrows and the conserved positions with the IclR operator consensus are shown in bold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460564" target="_blank">12460564</a>]<br></li>
+<li>The cisacting element recognized by E. coli IclR repressor was shown to be AATTAAAATGGAAATTGTTTTTGATTTTGCATTTT ( 27 ) , and highly homologous sequences have been reported in E. chrysanthemi for other operator regions recognized by proteins of this family , such as KdgR or Pir ( 27 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913096" target="_blank">10913096</a>]<br></li>
+<li>The AllR repressor belongs to the IclR family of regulators and highly homologous sequences have been reported for other operator regions recognized by proteins of this family , such as KdgR9 or Pir .10 Accordingly , the inverted-repeats present in gclP and in the intergenic region between allS and allA , that have been proven to be the AllR-binding site , display many conserved positions with the IclR operator region , reported to be AATTAAAATGGAAATTGTTTTTGATTTTGCATTTTT10 ( underlined positions correspond to those conserved in the three operators ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460564" target="_blank">12460564</a>]<br></li>
+<li>In contrast , IclR appears to bind to the promoter-distal IclR box I site , even after the RNAP binds to the aceB promoter ( Fig. 4A and B , lanes 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>When IclR occupied a speciﬁc binding site located between -29 and +9 within the iclR promoter , the RNAP was unable to bind to the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>For transcription repression from the iclR and aceB promoters , IclR binds to the IclR box located near the respective promoter regions and interferes with RNAP binding to these promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>For this repression , IclR binds a secondary binding site ( IclR box I ) , located far upstream from the aceB promoter , interacts with the a subunit of the promoter-bound RNAP and destabilizes and dissociates the open complex , ultimately leading to repression of aceB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The operon-speciﬁc IclR repressor binds to three sites in the aceB promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></li>
+<li>IclR binds to a site which overlaps the 235 region of the aceBAK promoter ( 2 , 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>The protein which this gene encodes , IclR , binds to a site which overlaps the 235 region of the aceBAK promoter ( 2 , 24 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>According to early genetic studies ( 1 , 2 ) IclR represses the expression of aceBAK operon as well as its own gene by binding to specific operator sequences in the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>In this paper , we determine the sequence requirements for IclR binding and examine the operator-promoter region of aceBAK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>However , as discussed below , a number of differences are emerging when one compares the sequence of the ribosome-binding site , the location of the promoter for transcription of icZR , and the structural motif in the deduced aa sequence which is involved in the binding of the IclR repressor to the operator region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1995431" target="_blank">1995431</a>]<br></li>
+<li>The analysis of the interaction between IclR and the operator/promoter region of the ace operon has shown that the repressor binds specifically to a 35 bp sequence which overlaps almost completely the -35 binding site of RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2001680" target="_blank">2001680</a>]<br></li>
+<li>The primary operator sequence ( IclR box II ) has been mapped between 52 and 19 bases of the aceB promoter , and binding of IclR to this site prevents the RNA poly-merase-promoter interaction ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Remarkably , the 7-bp inverted-repeat sequence 886-GTGCACCTGGTGCAC-900 is equivalent to palindromic repeats that have been shown to be the binding site ( operator ) for the IclR and PobR regulatory proteins ( 22 , 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9098055" target="_blank">9098055</a>]<br></li>
+<li>The location of promoter-proximal IclR box II agrees with the reported IclR binding site ( Cortay et al. , 1991 ; Negre et al. , 1992 ) ( for location , see Figs 1 and 8 ) , whereas the promoterdistal IclR box I was hitherto unidentiﬁed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>This site displays similarity with the IclR family recognized consensus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460564" target="_blank">12460564</a>]<br></li>
+<li>An unlabeled fragment of iclR which included the predicted IclR binding site ( 2152 to 13 ) prevented the binding of IclR to the probe ( Fig. 2 , lanes 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>This region corresponds to the proposed IclR binding site presented in Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Examination of the region upstream of iclR revealed a site ( 243 to 224 relative to the translational start site ) which bears a strong resemblance to the binding site for IclR from aceBAK ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Possible site for IclR binding upstream of iclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>The sequence of a region upstream of iclR ( 29 ) is compared with the binding site for IclR of aceBAK , which has been identiﬁed by footprint analysis ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>The two intermediate protection regions ( b and c ) completely overlap with the consensus palindromic sequence of the IclR box ( for the sequence , see Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The upstream site ( a ) overlaps with the downstream half of the consensus IclR box sequence ( for location , see Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>The dyad symmetry in the IclR binding sequence suggests that IclR may also bind to DNA in a symmetrical fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>The IclR binding sites of aceBAK and iclR contain sequences which exhibit extensive homology with the consensus ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_35">
+The IclR binding site of aceBAK matches the core consensus at 12 of 14 positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></label>
+<input id="sit_similarity_35", type="checkbox">
+<div class="SIT_similar">
+<li>The IclR binding site of iclR matches the core consensus at 13 of 14 positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li></div>
+<li>The consensus IclR binding sequence contains a core that is highly conserved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>The consensus DNA sequence for IclR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Determination of the consensus sequence for IclR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Repression of aceB : lacZ expression by IclR was reduced after the nucleotides that match the core consensus recognition sequence ( indicated by the arrows in Fig. 3 ) were mutated , demonstrating that these nucleotides mediate IclR repression in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Arrows indicate the IclR recognition sequence , with the broken line indicating mismatches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Note that no evidence exists for a direct effect by either IclR or FadR : although in vitro DNA binding experiments have not been performed , sequence analysis reveals no sequence with similarity to the consensus for either transcription factor ( Wolfe , unpublished ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15755952" target="_blank">15755952</a>]<br></li>
+<li>These IclR binding sequences agree well with the consensus palindromic sequence , 5 cents - TGGAAATNATTTCCA-3 cents , for IclR recognition , which was identiﬁed after in vitro oligonucleotide selection experiment ( Pan et al. , 1996 ) ( hereafter , the IclR binding site is referred to as ` IclR box ' ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>We used an in vitro oligonucleotide selection technique to determine the consensus recognition sequence for IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Since we can ﬁnd no sequences within the acs-nrfA intergenic region that closely resemble consensus binding sites for either IclR ( 28 ) or FadR ( 8 ) , we believe it most likely that IclR operates upon acs transcription indirectly through its ability to control the synthesis of the glyoxylate shunt enzymes ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10894724" target="_blank">10894724</a>]<br></li>
+<li>Binding of IclR to sequences upstream of iclR was tested by gel shift analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>an electrophoretic mobility shift to select sequences which are capable of binding to IclR from a pool of degenerate oligonucleotides ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>IclR binding sequences were selected from a pool of degenerate oligonucleotides essentially as described by Pollock and Treisman ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by IclR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>These two adjacent operons are transcribed in opposite directions and are under the control of the IclR repressor.The binding site of IclR ( IclR box ) is located near the promoters of both operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>It was proposed that acetate produced by PoxB ( whose coding gene poxB was upregulated ) acts as an autoinducer of aceBAK by inactivating the isocitrate lyase regulator ( IclR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24375081" target="_blank">24375081</a>]<br></li>
+<li>Expression of aceBAK is activated by integration host factor ( 23 ) and is repressed by IclR ( 9 , 18 , 23 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li>
+<li>Resnik , E. , Pan , B. , Ramani , N. , Freundlich , M. , and LaPorte , D.C. ( 1996 ) Integration host factor ampliﬁes the induction of the aceBAK operon of Escherichia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Integration host factor ampli - ® es the induction of the aceBAK operon of Escheri-chia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_6">
+Integration host factor ampliﬁes the induction of the aceBAK operon by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></label>
+<input id="tu_similarity_6", type="checkbox">
+<div class="TU_similar">
+<li>Integration host factor amplifies the induction of the aceBAK operon of Escherichia coli by relieving IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9308170" target="_blank">9308170</a>]<br></li></div>
+<li>Under this scenario , acetate partially inactivates the IclR repressor , resulting in the potential derepression of the aceBAK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24375081" target="_blank">24375081</a>]<br></li>
+<li>The expression of the aceBAK operon , which codes for the key enzymes of the glyoxylate cycle , isocitrate lyase and malate synthase , and for isocitrate dehydrogenase kinase/phosphatase , is activated by FruR and IHF and is repressed by IclR , which in turn is activated by FadR ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12620868" target="_blank">12620868</a>]<br></li>
+<li>Escherichia coli acetate operon by IclR Summary IclR is a repressor for the Escherichia coli aceBAK operon , which encodes isocitrate lyase ( aceB ) , malate synthase ( aceA ) and isocitrate dehydrogenase kinase/phosphorylase ( aceK ) in the glyoxylate bypass .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Surprisingly , the degrees of repression of iclR by IclR appear to be similar under inducing and repressing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>IHF contributes to the induction of aceBAK by opposing repression by IclR during growth on acetate ( inducing conditions ) but not on glucose ( repressing conditions ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Under inducing conditions , IHF activates aceB : : lacZ expression by opposing IclR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>IHF prevents repression by IclR under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>It appears that IclR responds strongly to growth conditions in its regulation of aceBAK but is far less affected when controlling its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>It thus appears that , in the absence of IHFb , IclR retains the ability to repress the aceBAK promoter even under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>However , more recent work demonstrated that this control probably occurs indirectly through FadR-dependent activation of the gene encoding the repressor of the aceBAK operon , iclR ( IclR ) [ 96 ± 99 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>The gene expressions of fadR and iclR were also higher , where FadR activates iclR , and IclR is known to repress aceBAK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19055729" target="_blank">19055729</a>]<br></li>
+<li>The aceBAK operon is under negative regulation by IclR , FadR ( indirectly by regulation of the iclR expression ( 62 ) , Crp ( 52 ) , and ArcA ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>By regulating the expression of iclR , FadR indirectly regulates not only the aceBAK operon but also acs encoding acetyl coenzyme A synthetase which is also regulated by IclR [ 100 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>According to early genetic studies ( 1 , 2 ) IclR represses the expression of aceBAK operon as well as its own gene by binding to specific operator sequences in the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Although aceBAK and iclR are both regulated by IclR , aceBAK expression responds to the carbon source , while expression of iclR does not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>Unlike its behavior in regulating aceBAK , IclR repression of its own expression is only modestly sensitive to the carbon source ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>These results were expected since IclR represses its own expression ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>IclR accumulates and represses aceAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>IHFb might also affect aceBAK expression by mechanisms which are independent of IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>In this paper , we demonstrate that IclR also regulates its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8550439" target="_blank">8550439</a>]<br></li>
+<li>IclR also autoregulates its own expression ( 76 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659676" target="_blank">15659676</a>]<br></li>
+<li>IclR also represses the expression of iclR in an autogenous manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_30">
+In addition to regulating aceBAK , IclR also represses its own expression ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></label>
+<input id="tu_similarity_30", type="checkbox">
+<div class="TU_similar">
+<li>In addition to repressing aceBAK , IclR also represses its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8682810" target="_blank">8682810</a>]<br></li></div>
+<li>On the other hand , IclR represses the expression of the genes that code for the enzymes of the glyoxylate shunt , and the regulation of this operon is extremely complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Effects of IHF and IclR on expression of aceB : : lacZ operon fusions FIG. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626344" target="_blank">8626344</a>]<br></li>
+<li>Although FadR and IclR mediate the responses of a variety of genes to the carbon source , they also appear to play the paradoxical roles of ensuring that the transcription of iclR does not change under these same conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8755903" target="_blank">8755903</a>]<br></li>
+<li>Repression of iclR transcription by IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>Repression of aceB transcription by IclR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>When the IclR protein and the templates were incubated before the addition of RNAP , aceB transcription was completely repressed ( Fig. 3B , lanes 1 and 2 , and Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+<li>It is noteworthy that the four IclR contact sites are all located on the same surface of DNA ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492863" target="_blank">12492863</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,874 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - SoxS</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">SoxS</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">SoxS transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Therefore , it most likely resulted from feed-forward activation by SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>Paraquat induces SoxS expression to a very high degree but does not induce ramA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces acrAB via SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces SoxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Keywords : AcrAB efﬂux pump , antimicrobial resistance , RamA , Salmonella Choleraesuis , SoxS Kunihiko Nishino , Osaka University , Japan Reviewed by : Julie Zilles , University of Illinois Urbana Champaign , USA Glenn Kaatz , John D. Dingell VA Medical Center , USA * Correspondence : Tetsuo Asai , National Veterinary Assay Laboratory , Ministry of Agriculture , Forestry and Fisheries , 1-15-1 Tokura , Kokubunji , Tokyo 185-8511 , Japan .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>The MarA and SoxS proteins can activate acrAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>The global regulatory proteins MarA , SoxS and Rob are primarily responsible for activation of acrAB and tolC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>The MarA homologs SoxS and Rob can also bind to the marO marbox and activate marRAB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>Other regulators of acrAB such as MarA , SoxS , Rob , SdiA , and AcrR did not contrib-ute to acrAB induction by indole in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></li>
+<li>Other regulators , including MarA , SoxS , SdiA , and AcrR , are not involved in AcrAB induction by indole and bile [ 92 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>Like marRAB , acrAB and tolC are positively regulated by MarA , SoxS , and Rob ( 2 , 7 , 25 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>AcrAB is induced by multiple regulators , such as MarA , Rob , SoxS , 26 SdiA , RamA and RamR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21081542" target="_blank">21081542</a>]<br></li>
+<li>AcrAB expression is adjusted by a local repressor , AcrR , and by the global regulators SoxS , MarA , RamA , and Rob [ 19 , 21 , 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27116992" target="_blank">27116992</a>]<br></li>
+<li>At a global level , acrAB expression is regulated by stressful conditions and by global transcriptional-regulators , such as MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28650690" target="_blank">28650690</a>]<br></li>
+<li>AcrAB regulation is mediated by five regulators : MarA , SoxS , Rob , AcrR and RamA ( Bailey et al. , 2008 ; Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ; Schneiders et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_16">
+In Escherichia coli , AcrAB is regulated by three activators , MarA , SoxS and Rob , and one repressor , AcrR ( Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></label>
+<input id="act_similarity_16", type="checkbox">
+<div class="ACT_similar">
+<li>In addition to RamA , AcrAB is regulated by three activators , MarA , SoxS and Rob , and one repressor , AcrR ( Ma et al. , 1996 ; Randall & Woodward , 2002 ; Rosenberg et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li></div>
+<li>In this work , we demonstrate that both SoxS and MarA , whose response overlap and together co-regulate over 40 genes ( Aono et al. , 1998 ; Martin et al. , 1999 , 2000 ; Martin & Rosner , 2002 ) , were required for the positive regulation of ompW after menadione treatment ( Figs 2 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Our results are in agreement with other studies performed in E. coli where rob was shown to be negatively regulated by both MarA and SoxS by a direct interaction with its promoter region ( Schneiders and Levy 2006 ; Michán et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+MarA levels are increased in response to weak acid conditions and salicylate treatment ( Pomposiello et al. 2001 ) ; SoxS in response to superoxide and Rob after treatment with bile salts and dipyridyl ( Storz and Imlay 1999 ; Semchyshyn et al. 2005 ; Kwon et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>MarA is increased in response to weak acid conditions and salicylate treatment ( Pomposiello et al. , 2001 ) ; SoxS in response to nitric oxide , superoxide and ammonium quaternary compounds ( Li & Demple , 1994 ; Vasil ' eva et al. , 2001 ) ; and Rob after treatment with bile salts and dipyridyl ( Storz & Imlay , 1999 ; Semchyshyn et al. , 2005 ; Kwon et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>The expression of rob is negatively regulated by MarA and SoxS in response to sodium salicylate and paraquat , respectively ( Pomposiello et al. 2001 ; Michán et al. 2002 ; Schneiders and Levy 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>The SoxS regulon is also involved in the positive regulation of other outer membrane pore-forming proteins that respond to environmental stress , such as TolC and OmpX ( Aono et al. , 1998 ; Barbosa & Levy , 2000 ; Dupont et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>This is in contrast to other promoters implicated in the response to ROS , such as fpr , nfsA and yggX , in which the SoxS binding site is located downstream near to the 235 box ( 215 to 230 nt upstream of the 235 sequence ) ( Martin et al. , 1999 ; 2000 ; Pomposiello & Demple , 2000 ; Paterson et al. , 2002 ; Pomposiello et al. , 2003 ; Giró et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>2 Supporting this hypothesis , Martin et al. ( 2008 ) demonstrated that SoxS is activated at high concentrations of 2 2 O2 , while CIP is suggested to generate low levels of O2 ( Goswami et al. , 2006 ) , and therefore sodA upregulation by SoxS and/or BaeR could be dose dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>In K. pneumoniae , oqxAB is downregulated by a repressor ( oqxR ) in the presence of a positive level of control via RamA , SoxS , and RarA ( Veleba et al. , 2012 ; JiménezCastellanos et al. , 2016 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li>
+<li>Its expression is modulated precisely by its local repressor , AcrR , as well as by global transcriptional-regulators of the AraC family , RamA , MarA , SoxS , and Rob ( Nikaido et al. , 2008 ; Kehrenberg et al. , 2009 ; Pérez et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li>
+<li>In particular , the expression of acrAB is regulated by the global regulators , RamA , SoxS , MarA , and Rob ( Rosenberg et al. , 2003 ; Abouzeed et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>In agreement with qRT -- PCR analysis , MarA and SoxS levels were increased while those of Rob were almost undetectable upon NaOCl treatment compared with untreated cells ( Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>c EMSA using increasing concentrations of SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Values are mean ± SD NaOCl ( 0.86 ± 0.01-fold change , Fig. 3d ) , supporting our hypothesis of a repression of rob by both MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Over-expression of efflux pumps can result from mutations within local repressor genes or from activation of a regulon regulated by global transcriptional-regulators such as MarA , SoxS or Rob Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>This suggests that genes induced by RamA may be under control of SoxS as well , providing an overlapping mode of genetic regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_35">
+Gil F , Hernández-Lucas I , Polanco R , Pacheco N , Collao B , Villareal JM , Nardocci G , Calva E , Saavedra CP : SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></label>
+<input id="act_similarity_35", type="checkbox">
+<div class="ACT_similar">
+<li>Appl Environ Microbiol 62:4003 -- 4008 Gil F , Hernández - Lucas I , Polanco R , Pacheco N , Collao B , Villarreal JM , Nardocci G , Calva E , Saavedra CP ( 2009 ) SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_37">
+Each probe ( ~ 2 ng ml ) was mixed with increasing 21 concentrations of purified SoxS in the presence of binding buffer ( 20 mM HEPES , 100 mM KCl , 2 mM MgCl2 , 0.1 mM EDTA , 20 % , v/v , glycerol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></label>
+<input id="act_similarity_37", type="checkbox">
+<div class="ACT_similar">
+<li>Both , the promoter region and the negative control ( * 2 ng ml-1 ) were mixed with increasing concentrations of puriﬁed MarA or SoxS in the presence of binding buffer ( 20 mM HEPES , 100 mM KCl , 2 mM MgCl2 , 0.1 mM EDTA , 20 % , v/v , glycerol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Both the promoter region and the negative control ( ~ 2 ng ml ) were mixed with 21 increasing amounts of purified MarA or SoxS in the presence of binding buffer [ 20 mM HEPES , 100 mM KCl , 2 mM MgCl2 , 0.1 mM EDTA , 20 % ( v/v ) glycerol ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>In agreement with this explanation , our results directly show that the ompW gene also responds to SoxS , probably functioning as an efflux channel for toxic compounds generated during oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>As shown in Fig. 1A , and in contrast to Rob , neither SoxS nor MarA overexpression upregulated mgtA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_42">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="act_similarity_42", type="checkbox">
+<div class="ACT_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>Furthermore , we demonstrate that MarA and SoxS mediate repression of rob by binding to its promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>The results above suggest that MarA and SoxS could mediate together a repression of rob in response to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Taken together , our results indicate that both MarA and SoxS are required to positively regulate ompW and that they cooperatively bind to the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In conclusion , our study shows that ompW is upregulated in response to Received 4 January 2013 Revised 1 February 2013 menadione in a cooperative manner by MarA and SoxS through a direct interaction with the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In conclusion , we demonstrated that in response to menadione , MarA and SoxS cooperatively regulate ompW through a direct interaction with the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>These results indicate that RamA and RamR could not detect paraquat , and that SoxS induction is required for acrAB induction in response to paraquat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>β-Galactosidase activity rati β-Galactosidase activity ratio *** *** *** *** *** 2.0 ** 1.5 1.0 0.5 WT MUTA MUTB MUTAB 14028s ( b ) 3.0 2.5 *** *** ** ** 2.0 The transcription factor SoxS positively regulates sodA in response to paraquat ( Pomposiello et al. , 2001 ) ; however , our analysis shows that SoxS does not contribute to sodA regulation in response to CIP ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>]<br></li>
+<li>In contrast , in response to menadione ArcA could be inactive , allowing MarA and SoxS to exert their regulation , although this has not been evaluated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Taken together , qRT-PCR and Western blot analyses suggest that MarA and SoxS are required to positively regulate ompW in response to menadione , while Rob is not involved in this response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Consistent with this , both transcription factors are upregulated in response to the toxic compound ( Fig S2 ) , and SoxS is required to regulate ompW in response to paraquat ( Gil et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>ompW is positively regulated by MarA and SoxS We previously demonstrated that SoxS positively regulates ompW in response to paraquat ( Gil et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In addition , previous work indicates that rob is repressed by MarA due to steric hindrance and in E. coli SoxS modulates its expression in response to paraquat ( McMurry & Levy , 2010 ; Michán et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>SoxS expression is activated by an oxidized form of SoxR produced following exposure to superoxides , nitric oxide and redox-cycling compounds such as paraquat ( 13 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>These results suggest that the overexpression of cpxR can downregulate the expression levels of OmpF , OmpC , OmpW , OmpD , AcrB , TolC , MarA , and SoxS and upregulate those of STM3031 and STM1530 in susceptible S. enterica serovar Typhimurium strains , and it also upregulated the expression levels of the eﬄux pumps AcrD and MdtA under the pressure of GEN. AMK GEN NEO CRO CEF CEQ ENR CIP JS 0.5 0.25 0.4 0.02 0.32 0.08 0.032 JS △ cpxR 0.125 0.0625 0.1 0.01 0.08 0.04 0.032 2 0.016 0.016 1 JS △ cpxR/pcpxR 0.5 0.25 0.4 0.04 0.32 0.16 0.032 4 0.016 0.016 JS △ cpxR/pcpxR * 0.125 0.0625 1 0.1 0.01 0.08 0.16 0.032 JS △ acrB 0.25 0.25 2 0.2 0.01 0.0025 0.02 0.001 0.001 0.001 JS △ acrB △ cpxR 0.0625 0.0625 0.5 6.4 N 0.01 0.00125 0.02 0.001 JS △ acrB △ cpxR/pcpxR 0.5 0.25 2 25.6 N 0.02 0.005 0.08 0.001 0.001 0.001 JS △ acrB △ cpxR/pcpxRN 0.0625 0.0625 0.5 6.4 N 0.01 0.00125 0.04 0.001 AMK , Amikacin ; GEN , Gentamycin ; APR , Apramycin ; NEO , Neomycin ; CRO , Ceftriaxone ; CEF , Ceftiofur ; CEQ , Cefquinome ; ENR , Enroﬂoxacin ; CIP , Ciproﬂoxacin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199934" target="_blank">27199934</a>]<br></li>
+<li>Among the genes that were upregulated in 104-cip , a number were SoxS regulated , including acnA , fpr , ribA , sodA , lpxC , and soxS itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19917752" target="_blank">19917752</a>]<br></li>
+<li>We tested for SoxS regulation of this gene in S. enterica serovar Typhimurium by analyzing the transcriptional activity of micF by Northern blotting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Identiﬁcation of SoxS-Regulated Genes in Salmonella enterica Serovar Typhimurium PABLO J. POMPOSIELLO AND BRUCE DEMPLE * Department of Cancer Cell Biology , Harvard School of Public Health , Boston , Massachusetts 02115 Received 5 August 1999/Accepted 8 October 1999 Salmonella enterica serovar Typhimurium responds to superoxide-generating agents through soxR-mediated activation of the soxS gene , whose product , SoxS , is necessary for resistance to oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>This result demonstrates that , as in E. coli , an elevated level of SoxS protein is sufﬁcient for activation of important antioxidant genes in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Journal of Antimicrobial Chemotherapy ( 2009 ) 63 , 95 -- 102 doi :10.1093 / jac/dkn448 Advance Access publication 4 November 2008 Effect of transcriptional-activators RamA and SoxS on expression of multidrug efﬂux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium Jie Zheng1 ,2 , Shenghui Cui1 † and Jianghong Meng1 ,2 * 1 2 Department of Nutrition and Food Science , University of Maryland , College Park , MD 20742 , USA ; Joint Institute for Food Safety and Applied Nutrition , University of Maryland , College Park , MD 20742 , USA Received 31 May 2008 ; returned 21 July 2008 ; revised 30 September 2008 ; accepted 2 October 2008 Objectives : Multidrug resistance ( MDR ) including ﬂuoroquinolone resistance in Salmonella Typhimurium can result from overexpression of efﬂux pumps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>This selection yielded six independent chromosomal lacZ transcriptional fusions that were activated by either artiﬁcial expression of SoxS or exposure of wild-type cells to micromolar concentrations of paraquat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Overexpressing either of MarA or SoxS is similar is to a growth condition where expression of MarA or SoxS is increased , such as observed in the presence of NaOCl ( Fig. 1a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_65">
+Expression of MarA , SoxS , and Rob is increased upon exposure to a wide variety of signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="act_similarity_65", type="checkbox">
+<div class="ACT_similar">
+<li>Expression of MarA , SoxS and Rob is increased upon exposure to a wide variety of signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>Paraquat induces Salmonella SoxS expression to We investigated the interaction between paraquat and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>These results indicate that paraquat induces soxS to overproduce SoxS , causing the increased acrAB expression in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces acrAB via the SoxS regulator and not via the RamA regulator The induction of acrAB in response to paraquat suggested that this induction mechanism might be mediated by the RamA regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>AcrAB induction in response to paraquat was reduced in the DsoxS strain ( Fig. 4b ) , indicating that paraquat induces acrAB via the SoxS regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>MarA can also activate many of the stress response genes that are activated by SoxS ( 21 , 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15047514" target="_blank">15047514</a>]<br></li>
+<li>Proteins encoded by the soxRS locus include the transcriptional-activator SoxS , and a protein , SoxR , whose oxidized form can activate soxS expression [ 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li>
+<li>MarR negatively regulates the expression of marRAB by binding to the marO operator region .17 On the other hand , proteins encoded by the soxRS locus include the transcriptional-activator , SoxS , and another protein , SoxR , the oxidized form of which can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16201927" target="_blank">16201927</a>]<br></li>
+<li>Salicylate up-regulates MarA in macrophages , but since AcrAB efﬂux pumps are already up-regulated , probably through SoxS or RamA , salicylate does not activate the efﬂux pumps signiﬁcantly enough to affect the tolerance to ciproﬂoxacin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20237076" target="_blank">20237076</a>]<br></li>
+<li>The SoxS and Rob proteins bind to the same pairs of 17-bp sequences , but they require different bases for optimal binding ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107132" target="_blank">12107132</a>]<br></li>
+<li>The soxRS operon is activated in response to oxidative-stress , with SoxS being the activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15047514" target="_blank">15047514</a>]<br></li>
+<li>In turn , the soxRS operon is activated in response to oxidative-stress , with the SoxS protein subsequently acting as transcriptional-activator .11 The overexpression of soxRS also contributes to increased antibiotic resistance in Gram-negative bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>This regulon includes at least a dozen genes involved in the protective re - sponse to oxidative-stress , and all of the genes are transcrip - tionally induced or repressed by the SoxS protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>MarA caused a change in the electrophoretic mobility at concentrations ranging from 100 to 200 nM , while SoxS required 400 nM of the puriﬁed protein to cause the same effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>SoxS is the effector of the soxRS global superoxide response regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>This is probably due to an increase of MarA for the case of the DsoxS/pBAD-soxS strain and SoxS for DmarA/pBAD-marA ( Fig. 3a , b ) , which further increases the repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>The regulation of the SoxRS regulon is mediated by the conversion of the SoxR protein to an active form , which induces the transcription of soxS , with the later binding of the SoxS protein to the promoters of many genes that take part in the response to oxidative damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Interestingly , even at the lower concentrations of SoxS ( 0.0125 mM ) the high-molecular-mass complex was observed , while incubating with SoxS alone required 0.4 mM to produce a shift using the same DNA probe ( Fig. 3b , fragment C ) , suggesting that the affinity of SoxS for the promoter region of ompW increases in the presence of MarA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>As observed for SoxS , lower levels of MarA were required to form the high-molecular-mass complex ( 100 nM ) than when the protein was incubated alone with the ompW promoter ( 200 nM ) , suggesting the same increased affinity for the promoter region as observed in the case of SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In contrast , the inactivation of RamA , MarR , MarA , SoxR , and SoxS did not affect the susceptibilities of the strain [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21858134" target="_blank">21858134</a>]<br></li>
+<li>Binding of purified SoxS to the ompW promoter strongly suggests that the PQ - and SoxS-mediated activation of ompW is the result of a direct interaction between the promoter and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>In addition , a library of random lacZ insertions was generated and screened for clones displaying differential b-galactosidase activity in the presence or absence of SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>In order to identify novel SoxS-regulated genes , we screened a library of random lacZ insertions for differential expression in the presence or absence of SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_89">
+J Biol Chem 262:10362 -- 10368 Martin RG , Rosner JL ( 1997 ) Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15235764" target="_blank">15235764</a>]<br></label>
+<input id="act_similarity_89", type="checkbox">
+<div class="ACT_similar">
+<li>Martin R.G. , Rosner J.L. ( 1997 ) Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li></div>
+<li>We probed the activation of the sodA gene in S. enterica serovar Typhimurium either by treatment of cells with PQ or by the regulated expression of SoxS in the absence of oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>In order to conﬁrm regulation by SoxS in a physiologically relevant setting , the MudJ ( Kanr ) insertion from each of these 32 mutants was transduced into a wild-type S. enterica serovar Typhimurium strain and the b-galactosidase activity of each transductant was measured from LB cultures in the presence or absence of 0.25 mM PQ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>This conﬁrms our previous results that repression of rob in the complemented strains in the presence of arabinose must have been due to overexpression of MarA or SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Expression of SoxS in DsoxRS strains of S. enterica serovar Typhimurium in the absence of oxidative-stress was sufﬁcient for transcriptional activation of micF , which reached the same maximum level as that observed in wild-type cells exposed to PQ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Expression of SoxS alone can activate genes in the absence of SoxR or inducing agents such as paraquat ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>As noted earlier , glucose-6-phosphate dehydrogenase and fumarase C are regulated by SoxS in E. coli but do not seem to be members of the soxRS regulon in S. enterica serovar Typhimurium ( Martins et al. , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Evidence obtained in our laboratory indicates that in Salmonella enterica serovar Typhimurium the expression of OmpW is activated by SoxS upon exposure to paraquat and it is required for resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>rob is negatively regulated by MarA and SoxS The transcript levels of rob in the DmarA and DsoxS strains were repressed after treatment with NaOCl as in the wild type ( 0.32 ± 0.02 and 0.20 ± 0.02-fold change , respectively , Fig. 3a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>However , individually mutating MS-A and MS-C or mutating both together resulted in no regulation after exposure to the toxic compound ( Fig. 3b , fragments B , D , E , F , G and H ) , indicating that both sites are required for the positive regulation by MarA and SoxS in strain 14028s , results which are in agreement with those from EMSAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Both MarA and SoxS are required for ompW positive regulation To determine whether MarA and SoxS individually regulated ompW in response to menadione or if they were both required , we generated a double DmarA soxS strain and measured ompW transcript levels in the presence or absence of menadione .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Other regulators , SoxS and MarA , are also known to regulate acrAB expression , but the contributions of SoxS and MarA to antimicrobial susceptibilities are lower than that of RamA ( Abouzeed et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>Further studies addressing whether this is a common feature of regulation of gene expression by MarA and SoxS , novel targets subject to similar regulation , and the mechanism by which these proteins interact are under examination in our laboratory .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>This suggests that under the assayed conditions , ArcA is not active , since , as observed in the presence of NaOCl , when ArcA , MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>It is plausible to speculate that under those conditions ArcA could bind to the 235 element and impede binding of the sigma factor , explaining why , although both MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>DNA-protein interaction was conﬁrmed by EMSAs demonstrating that MarA and SoxS bind to the promoter region of rob ( Fig. 4b , c ) , indicating that the repression exerted by MarA and SoxS is due to a direct interaction with the DNA ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Taken together , our results indicate that the expression of rob is repressed by the transcription factors MarA and SoxS in response to NaOCl due to a direct interaction with the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Fig. 4 Puriﬁed MarA and SoxS bind to the rob promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>15 10 5 ** *** 0 Control Menadione Control Menadione Control Menadione marA marA/pBR322 marA / pBR322-marA MarA and SoxS bind to the ompW promoter region To evaluate if the regulation of ompW by MarA and SoxS was due to a direct interaction , we performed EMSAs to determine if the purified proteins were able to-bind to its promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Bands were visualized by ethidium bromide staining Table 3 Minimal inhibitory concentrations ( MIC ) of NaOCl for S. Typhimurium wild-type and mutants strains 8 14028s Drob 1.6 0.4 Drob/pBAD-roba DmarA DmarA/pBAD-marAa 0.4 16 DsoxS 0.4 16 0.2 DsoxS/pBAD-soxSa DmarA DsoxS DmarA Drob DsoxS Drob 0.4 0.4 0.2 DmarA DsoxS Drob Numbers are the mean of 3 independent determinations a Genetically complemented strains , cells induced with 10 m arabinose M To further investigate the role of MarA , SoxS , and Rob in response to NaOCl , we evaluated their expression in response to treatment with the toxic compound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Therefore , to examine whether the three paralog proteins share the ability to upregulate mgtA , we determined mgtA expression when SoxS , MarA , or Rob was overexpressed in the soxS , marA , or rob mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>To verify the functionality of the three expressed proteins , we measured their abilities to promote acrAB expression , which is known to be stimulated by Rob , MarA , or SoxS ( 37 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Together , this regulation could be responsible for the increased resistance to NaOCl observed in the cells overexpressing MarA or SoxS ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In contrast to what has been described for SoxS or MarA , the intracellular levels of Rob do not appear to be subject to extensive variations under most of the conditions tested , although a moderate increase has been observed in stationary phase or in phosphate - or glucose-re-stricted medium ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Recently , the presence of Rma , an additional transcriptional-activator for which no homolog exists in E. coli , has been identiﬁed in Salmonella enterica subspecies enterica ser-ovar Paratyphi B. Rma belongs to the AraC-XylS tran-22 scriptional activator family , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>These data suggest that exposure to antimicrobials that are AcrAB substrates enhance the activation of the AcrAB efﬂux pump via RamA , but not via SoxS , MarA , or Rob in S. Choleraesuis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>Because RamA displays close homology to MarA , SoxS , and Rob , the suggestion was made that RamA mediates MDR in Klebsiella via activation of the mar locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15155237" target="_blank">15155237</a>]<br></li>
+<li>In this study , before the strains were induced with GEN , CpxR overexpression led to signiﬁcant reductions in levels of AcrB , TolC , MarA , and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199934" target="_blank">27199934</a>]<br></li>
+<li>S. enterica strains with the tolC gene experimentally deleted show an increased susceptibility to antimicrobial agents .14 Similarly , strains of S. enterica showed higher susceptibility to ciproﬂoxacin when ramA was inactivated .15 Although several studies have been conducted in recent years to elucidate the structure , function and signiﬁcance of AcrB , 16 -- 18 MarA , SoxS and RamA , their regulation in S. enterica is not fully understood .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>Taken together , these results suggest that an increase in the levels of MarA and SoxS increase the resistance to NaOCl while Rob overexpression results in an increased sensitivity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>On the other hand , in the absence of ArcB no phosphorylation occurs and SoxS or other positive regulator ( s ) might have free accessibility to the ompW promoter and therefore increase its expression ( Figure 6B ) , although this possibility has not been evaluated in this study .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>In the wild-type and Drob strains , ompW was upregulated in response to menadione , while deletion of MarA or SoxS abolished the regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In the present work , we evaluated the expression and cross-reg-ulation of the transcription factors MarA , Rob , and SoxS in response to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In this work , we evaluated the role of the transcription factors MarA , SoxS and Rob of S. enterica serovar Typhimurium in regulating ompW expression in response to menadione .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response to superoxide and Rob following treatment with bile salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional-activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>Mutations in marR , soxR and ramR lead to an increase in the expression of the transcriptional-activators MarA , SoxS and RamA , respectively , which in turn interact with the acrAB promoter , thereby increasing the amount of AcrAB produced and effectively enhancing efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24139882" target="_blank">24139882</a>]<br></li>
+<li>Therefore , in this study , we investigated the roles of MarR , MarA , SoxR , SoxS , and RamA in the MDR and quinolone resistance of serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></li>
+<li>One possibility for this result is that in the absence of ArcA , ArcB might phosphorylate ( i.e ArcB-OmpR , [ 43 ] ) one or more response-regulators , either unspecifically or due to cross-talk , which could bind to the promoter region and therefore prevent binding of positive regulators like SoxS , which has been demonstrated to regulate ompW and is up-regulated in response to HOCl [ 20,44 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>We further discovered that the mechanism of acrAB induction in response to paraquat is dependent on SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>SdiA is a quorum-sensing regulator , but SdiA of Salmonella is not functional during infection with Salmonella alone , without other bacteria that produce the SdiA inducer .33 SoxS is activated through SoxR by superoxide ions , H2O2 and paraquat .34 Since Salmonella is faced with oxidative-stress in the macrophages , it is not surprising that intracellular bacteria levels of soxS mRNA are 3.7-fold higher compared with those in extracellular bacteria .31,32 Bile salts were shown to induce the expression of AcrAB by activation of RamA ; 35 however , it is possible that RamA contributes to the induction of AcrAB in macrophages by the detection of other signals in the host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20237076" target="_blank">20237076</a>]<br></li>
+<li>In the marRAB system , MarR-mediated repression is relieved in response to environmental agents to activate synthesis of MarA ( 1 , 25 ) , a close homolog of SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>In addition , the presence of a soxbox in a promoter , properly aligned and spaced , is enough to convert the gene , not normally a member of the regulon , to one that responds to SoxS in vivo and in vitro ( Fawcett & Wolf , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Therefore , the level of SoxS induction in response to paraquat is sufficient to negate the effect of RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>The insertional fusions were named Sins , for SoxS induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Requirement for MarA and SoxS for ompW positive regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>INFECTION AND IMMUNITY , Dec. 1997 , p. 5371 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology The Transcriptional Regulator SoxS Is Required for Resistance of Salmonella typhimurium to Paraquat but Not for Virulence in Mice FERRIC C. FANG , * ANDRÉS VAZQUEZ-TORRES , AND YISHENG XU Departments of Medicine , Pathology , and Microbiology , University of Colorado Health Sciences Center , Denver , Colorado 80262 Received 3 July 1997/Returned for modiﬁcation 19 August 1997/Accepted 17 September 1997 In Escherichia coli , the SoxRS regulon is required for resistance to redox-cycling agents which elevate cytosolic superoxide levels , as well as for resistance to nitric oxide-dependent macrophage killing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>In Salmonella typhimurium , SoxS is also required for enhanced expression of Mn-superoxide dismutase and resistance to paraquat , but not for resistance to nitric oxide donor compounds in vitro , resistance to macrophage killing , or virulence in mice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>The transcriptional-regulator SoxS is required for resistance of Salmonella typhimurium to paraquat but not for virulence in mice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">SoxS protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>While the GCAY element would be required for SoxS binding , the CWA element would be necessary for DNA -- protein interaction stability ( Li & Demple , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>It has not escaped our attention that the pKK232-250 construct , which contains a region between +130 and 2120 and does not encompass the whole soxbox predicted in silico , showed the highest CAT reporter activity , and that the corresponding DNA fragment shifted with purified SoxS ( Figs 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>MarA , SoxS , and Rob are members of the AraC-family ( Martin and Rosner 2002 ) and in E. coli MarA , SoxS , and the N-terminal domain of Rob share approximately 50 % of amino acid identity , mostly at the amino-terminal region which contains the DNA-binding domains in these proteins ( Jair et al. 1995 , 1996 ; Tobes and Ramos 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In E. coli MarA , SoxS and the N-terminal domain of Rob , which include the DNA-binding domain , share approximately 50 % amino acid sequence identity ( Jair et al. , 1995 , 1996 ; Tobes & Ramos , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>The bottom of the figure shows , as a result of alignment , a consensus sequence that contains two motifs , a GCAY motif ( SoxS binding ) and a CWA motif ( DNA -- SoxS interaction stability ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>The synthesis of SoxS is controlled by the redox-sensing molecule SoxR , a homodimeric protein composed of two 17-kDa subunits , each of which contains a [ 2Fe-2S ] cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">SoxS evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>These proteins have 37 to 52 % amino acid identity with SoxS and , interestingly , appear to share some functional overlap as well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>The E. coli and S. typhimurium predicted SoxS proteins are highly related , with 95 % identity at the amino acid level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>A subset of this family includes SoxS , MarA , Rob , TetD , and RamA from Klebsiella pneumoniae ; PqrA from Proteus vulgaris ; and AarP from Providencia stuartii ( 2 , 10 , 24 , 26 , 27 , 33 , 43 , 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>MarA , SoxS , and Rob are members of the AraC family ( Martin and Rosner 2002 ) and in E. coli MarA , SoxS , and the N-terminal domain of Rob share approximately 50 % of amino acid identity , mostly at the amino-terminal region which contains the DNA binding domains in these proteins ( Jair et al. 1995 , 1996 ; Tobes and Ramos 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In E. coli MarA , SoxS and the N-terminal domain of Rob , which include the DNA-binding domain , share approximately 50 % amino acid sequence identity ( Jair et al. , 1995 , 1996 ; Tobes & Ramos , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>At a local level acrAB expression is modulated by the local repressor AcrR , and at a global level it is modulated by MarA , SoxS , and Rob , which belong to the AraC/XylS family of transcriptional regulators ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>Its expression is modulated precisely by its local repressor , AcrR , as well as by global transcriptional regulators of the AraC family , RamA , MarA , SoxS , and Rob ( Nikaido et al. , 2008 ; Kehrenberg et al. , 2009 ; Pérez et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li>
+<li>Recently , the presence of Rma , an additional transcriptional activator for which no homolog exists in E. coli , has been identiﬁed in Salmonella enterica subspecies enterica ser-ovar Paratyphi B. Rma belongs to the AraC-XylS tran-22 scriptional activator family , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_9">
+SoxS protein , which is a member of the AraC / XylS family of transcriptional regulators , activates at least 15 genes including sodA ( Mn-containing superoxid dismutase ) , zwf ( glucose-6-phosphate dehydrogenase ) , micF ( antisense RNA to the porin OmpF mRNA ) , nfo ( DNA repair endonuclease IV ) , fpr ( NADPH : ferrodoxin oxidoreductase ) , acrAB ( efflux pump ) , acnA ( aconitase ) , fumC ( heat-resistant fumarase ) and nfsA ( nitroreductase A ) ( Pomposiello & Demple 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12886427" target="_blank">12886427</a>]<br></label>
+<input id="evo_similarity_9", type="checkbox">
+<div class="EVO_similar">
+<li>The SoxS protein is a member of the AraC / XylS family of transcriptional regulators , and enhanced expression of SoxS activates at least 15 genes ( 20 , 24 ) , including sodA ( Mn-containing superoxide dismutase ) , zwf ( glucose-6-phosphate dehydrogenase ) , micF ( antisense RNA to the porin OmpF mRNA ) , nfo ( DNA repair endonuclease IV ) , fpr ( NADPH : ferredoxin oxidoreductase ) , acrAB ( efﬂux pump ) , acn ( aconitase ) , fumC ( heat-resistant fumarase ) , and nfsA ( nitroreductase A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li></div>
+<li>SoxS is a trans-criptional activator of the AraC/XylS family and activates several genes in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>The Rob protein is a member of a subfamily of AraC/XylS transcriptional regulators which also includes MarA , SoxS , and TetD , a more recently described protein ( 14 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>g001 Changes in the transcript abundance of genes regulated among MarA , SoxS , and RamA marA , soxS , and ramA are transcriptional activators from the family of AraC/XylS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21811569" target="_blank">21811569</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Both MarA and SoxS are members of the AraC family of transcriptional activators ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15047514" target="_blank">15047514</a>]<br></li>
+<li>SoxS belongs to the AraC family of transcriptional regulators , like MarA and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>SoxS belongs to the AraC family of transcriptional regulators , of which MarA and Rob are also members ( Martin & Rosner , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>SoxS is a member of the AraC/XylS family of transcriptional regulators and is positively regulated by SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>The SoxR protein is homologous to the MerR family of transcriptional activators ( 1 ) , while the SoxS protein has signiﬁcant homology to the C-terminal DNA-binding region of the AraC family of transcriptional regulatory proteins ( 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_20">
+The results indicate that the Rma protein is a new member of the MarA-SoxS family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796342" target="_blank">11796342</a>]<br></label>
+<input id="evo_similarity_20", type="checkbox">
+<div class="EVO_similar">
+<li>The results of sequence comparison indicate that the Rma protein is a new member of the MarA-SoxS family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796342" target="_blank">11796342</a>]<br></li></div>
+<li>The amino acid sequence of this ORF possesses a moderate 38 % sequence identity to those of MarA ( GenBank accession number L06966 ) and SoxS ( GenBank accession number M60111 ) of E. coli ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796342" target="_blank">11796342</a>]<br></li>
+<li>To predict a possible function of RamA , a database search was performed , which revealed levels of amino acid homology of 37 to 52 % with SoxS and MarA and 90 % with RamA of K. pneumoniae , as well as 100 % identity to Rma of S. enterica serovar Paratyphi A ( Fig. 2 ) ( 1 , 4 , 5 , 30 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Identical amino acids are indicated by boldface type ; RamA exhibits 37 to 52 % homology with SoxS and MarA and 90 % homology with RamA of K. pneumoniae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by SoxS</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Several microbial resistance genes have been studied most extensively for serovar Typhimurium , which include the stress regulons OxyR ( H2O2 response regulator , e.g. Kat , catalase ) and SoxS Gifu 3P91 Gifu3P330 ∗ ∗ A B 50 ∗ ∗ a b 40 % Survival ∗ ∗ 30 100µm 100µm 20 c d 10 100µm 100µm 0 iNOS + / + iNOS -- / -- Fig. 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16448800" target="_blank">16448800</a>]<br></li>
+<li>The transcriptional regulator SoxS is required for resistance of Salmonella typhimurium to paraquat but not for virulence in mice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>In Salmonella typhimurium , SoxS is also required for enhanced expression of Mn-superoxide dismutase and resistance to paraquat , but not for resistance to nitric oxide donor compounds in vitro , resistance to macrophage killing , or virulence in mice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>[ 213 ] Fang , F.C. , Vazquez-Torres , A. and Xu , Y. ( 1997 ) The transcriptional regulator SoxS is required for resistance of Salmonella typhimurium to paraquat but not for virulence in [ 214 ] Pomposiello , P.J. and Demple , B. ( 2000 ) Identiﬁcation of SoxSregulated genes in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>SoxS , an activator of superoxide stress genes in Escherichia coli : puriﬁcation and interaction with DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_6">
+Li Z , Demple B. SoxS , an activator of superoxide stress genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>]<br></label>
+<input id="rp_similarity_6", type="checkbox">
+<div class="RP_similar">
+<li>SoxS , an activator of superoxide stress genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li></div>
+<li>Future research including site-directed mutagenesis should help identify in greater detail the specific nucleotides involved in SoxS biological activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>SoxS also activates antibiotic resistance mechanisms in other species .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Microbiology ( 2009 ) , 155 , 2490 -- 2497 DOI 10.1099 / mic.0.027433-0 SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene F. Gil ,1 I. Hernández - Lucas ,2 R. Polanco ,3 N. Pacheco ,1 B. Collao ,1 J. M. Villarreal ,1 G. Nardocci ,1 E. Calva2 and C. P. Saavedra1 Correspondence C. P. Saavedra 1 Laboratorio de Microbiologıa Molecular , Departamento de Ciencias Biológicas , Universidad Andrés Bello , Santiago , Chile csaavedra@unab.cl 2 Departamento de Microbiologıa Molecular , Instituto de Biotecnologıa , Universidad Nacional Autónoma de México , Cuernavaca , Mexico 3 Laboratorio de Bioquımica , Departamento de Ciencias Biológicas , Universidad Andrés Bello , Santiago , Chile OmpW of Salmonella enterica serovar Typhimurium has been described as a minor porin involved in osmoregulation , and is also affected by environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Gil F , Hernández-Lucas I , Polanco R , Pacheco N , Collao B , Villareal JM , Nardocci G , Calva E , Saavedra CP : SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_12">
+SoxS regulates the expression of the S. Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29018419" target="_blank">29018419</a>]<br></label>
+<input id="rp_similarity_12", type="checkbox">
+<div class="RP_similar">
+<li>SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>It has been demonstrated that MarA , SoxS , and Rob are able to promote low-level resistance to multiple drugs , heavy metals , and superoxide and also to induce organic solvent tolerance in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_15">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="rp_similarity_15", type="checkbox">
+<div class="RP_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>The acrAB operon expression is also modulated by global regulators such as RamA , MarA , and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28926285" target="_blank">28926285</a>]<br></li>
+<li>At a global level , acrAB expression is regulated by stressful conditions and by global transcriptional regulators , such as MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28650690" target="_blank">28650690</a>]<br></li>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>Other regulators , including MarA , SoxS , SdiA , and AcrR , are not involved in AcrAB induction by indole and bile [ 92 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li>
+<li>R CCGTTCGGTATGCGTTTCAC of AcrAB , and the global regulators MarA ( marRAB ) , SoxS ( soxRS ) and RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24139882" target="_blank">24139882</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_22">
+Effect of transcriptional activators SoxS , RobA , and RamA on expression of multidrug efﬂux pump AcrAB-TolC in Enterobacter cloacae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24169575" target="_blank">24169575</a>]<br></label>
+<input id="rp_similarity_22", type="checkbox">
+<div class="RP_similar">
+<li>Effect of transcriptional activators SoxS , RobA , and RamA on expression of multidrug eﬄux pump AcrAB-TolC in Enterobacter cloacae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>]<br></li></div>
+<li>WHO South-East Asia J Public Heal 1:182 -- 188 Zheng J , Cui S , Meng J ( 2009 ) Effect of transcriptional activators RamA and SoxS on expression of multidrug efflux pumps AcrAB and AcrEF in fluoroquinolone-resistant salmonella typh-imurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26329667" target="_blank">26329667</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_25">
+11 Zheng J , Cui S , Meng J. Effect of transcriptional activators RamA and SoxS on expression of multidrug efﬂux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></label>
+<input id="rp_similarity_25", type="checkbox">
+<div class="RP_similar">
+<li>36 Zheng J , Cui S , Meng J. Effect of transcriptional activators RamA and SoxS on expression of multidrug efﬂux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26679248" target="_blank">26679248</a>]<br></li>
+<li>41 Zheng J , Cui S , Meng J. Effect of transcriptional activators RamA and SoxS on expression of multidrug efﬂux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706735" target="_blank">24706735</a>]<br></li>
+<li>Zheng J , Cui S , Meng J. Effect of transcriptional activators RamA and SoxS on expression of multidrug efﬂux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19778917" target="_blank">19778917</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28926285" target="_blank">28926285</a>]<br></li>
+<li>Effect of transcriptional activators RamA and SoxS on expression of multidrug efflux pumps AcrAB and AcrEF in fluoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26208690" target="_blank">26208690</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26207969" target="_blank">26207969</a>]<br></li>
+<li>Effect of transcriptional activators RamA and SoxS on expression of multidrug eﬄux pumps AcrAB and AcrEF in ﬂuoroquinolone-resistant Salmonella Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28261566" target="_blank">28261566</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25128419" target="_blank">25128419</a>]<br></li></div>
+<li>Among the genes that were upregulated in 104-cip , a number were SoxS regulated , including acnA , fpr , ribA , sodA , lpxC , and soxS itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19917752" target="_blank">19917752</a>]<br></li>
+<li>The SoxS protein in turn interacts with s70-RNA polymerase to promote transcription of multiple genes , including zwf ( glucose-6-phosphate dehydrogenase ) , sodA ( manga-nese-cofactored superoxide dismutase [ SOD ] ) , micF ( antisense RNA for ompF mRNA ) , acrAB ( inner membrane efﬂux pump ) , nfo ( endonuclease IV ) , rimK ( modiﬁes ribosomal protein S6 ) , fumC ( oxidation-resistant fumarase ) , acnA ( aconitase ) , ribA ( GTP cyclohydrolase II ) , and fpr ( ferredoxinNADPH oxidoreductase ) ( 9 , 28 , 29 , 38 , 41 , 42 , 56 , 58 , 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_33">
+SoxS protein , which is a member of the AraC / XylS family of transcriptional regulators , activates at least 15 genes including sodA ( Mn-containing superoxid dismutase ) , zwf ( glucose-6-phosphate dehydrogenase ) , micF ( antisense RNA to the porin OmpF mRNA ) , nfo ( DNA-repair endonuclease IV ) , fpr ( NADPH : ferrodoxin oxidoreductase ) , acrAB ( efflux pump ) , acnA ( aconitase ) , fumC ( heat-resistant fumarase ) and nfsA ( nitroreductase A ) ( Pomposiello & Demple 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12886427" target="_blank">12886427</a>]<br></label>
+<input id="rp_similarity_33", type="checkbox">
+<div class="RP_similar">
+<li>The SoxS protein is a member of the AraC / XylS family of transcriptional regulators , and enhanced expression of SoxS activates at least 15 genes ( 20 , 24 ) , including sodA ( Mn-containing superoxide dismutase ) , zwf ( glucose-6-phosphate dehydrogenase ) , micF ( antisense RNA to the porin OmpF mRNA ) , nfo ( DNA-repair endonuclease IV ) , fpr ( NADPH : ferredoxin oxidoreductase ) , acrAB ( efﬂux pump ) , acn ( aconitase ) , fumC ( heat-resistant fumarase ) , and nfsA ( nitroreductase A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li></div>
+<li>Over-expression of efflux pumps can result from mutations within local repressor genes or from activation of a regulon regulated by global transcriptional regulators such as MarA , SoxS or Rob Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16842216" target="_blank">16842216</a>]<br></li>
+<li>Expression of SodA and SoxS proteins in antibiotic-resis-tant S. enterica .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>Two other global transcriptional regulators , OxyR and SoxS , have been shown to be nonessential for virulence of S. enterica serovar Typhimurium in vivo , even though both are essential for resistance to RNI or ROI in vitro ( 19 , 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Studies in Escherichia coli have 8 -- 13 shown that transcriptional activators , such as MarA , SoxS and Rob , play a role in antimicrobial resistance by activating transcription of efﬂux pumps , including acrAB and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>DOI : 10.1089 = mdr .2008.0846 ediated Fluoroquinolone Resistance in Salm m r Multidrug Role of Global Regulator R a fo Efﬂux -- M onella Silke Feuerriegel * and Peter Heisig The genetic basis for multidrug-resistance ( mdr ) due to overexpression of mdr efﬂux pumps in Escherichia coli usually includes alterations in genes encoding global regulators , like MarA , SoxS , and Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>6 Enhanced expression of global regulators , like MarA , SoxS , and Rob , which activate efﬂux pump expression , is 17 known to play a major role in resistance to multiple antibiotics in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19018673" target="_blank">19018673</a>]<br></li>
+<li>For instance , the expression of Mn-SOD ( SodA ) is known to be under control of SoxS , and oxidative stress induces Mn-SOD activity in wild-type bacteria but much less activity in soxS null mutants ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Preliminary results show that expression of SoxS in S. enterica serovar Typhimurium is suf-ﬁcient to enhance resistance to nalidixic acid and chloramphenicol ( Pomposiello and Demple , unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>This pump has been reported to play a key role not only in conferring resistance to quinolones , but also in multidrug-resistance ( MDR ) ,12 -- 14 a term used for resistance to four or more antimicrobials in the case of non-typhoidal Samonella .15 In Salmonella , AcrAB expression has been reported to be under the control of several regulators : the local repressor , AcrR ,16 and three transcriptional activators , MarA , belonging to the marRAB operon ,17 SoxS , belonging to the soxRS region18 and RamA , repressed by the ramR gene .19,20 On the other hand , the ability to form a bioﬁlm in response to unfavourable growth conditions is among the virulence properties described for S. enterica , since this phenotype contributes to conferring MDR and can help bacteria to survive in hostile or suboptimal environments .21,22 Curli ﬁmbriae , also designated as thin aggregative ﬁmbriae ( Csg or Agf ) , and cellulose production have been well characterized as contributing to bioﬁlm formation and the rdar morphotype ( for red , dry and rough colony morphology ) .23 -- 27 Recently , evidence showing an association between the acquisition of quinolone resistance and a decreased expression of virulence factors has been published .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706735" target="_blank">24706735</a>]<br></li>
+<li>In addition to marA and soxS , we also 25,36 examined the expression of robA , whose product is closely related to MarA and SoxS in E. coli , and ramA , which is newly identiﬁed in Salmonella as a possible MDR regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response-to-superoxide and Rob following treatment with bile salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>SoxS is a transcriptional activator that positively regulates the expression of over 20 chromosomal genes ( Pomposiello et al. , 2001 ; Imlay , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Intrinsic regulatory networks such as those mediated by the transcriptional regulators MarA , SoxS and RamA are also implicated in the development of antibiotic resistance particularly since these systems control the influx / efflux of antibiotics [ 11 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22958399" target="_blank">22958399</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>This regulon includes at least a dozen genes involved in the protective re - sponse to oxidative stress , and all of the genes are transcrip - tionally induced or repressed by the SoxS protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>SoxS is involved in the LsrR-mediated regulation of the sodA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193816" target="_blank">21193816</a>]<br></li>
+<li>These three SoxS-regulated genes identiﬁed by the random-insertion approach have either proven or arguable roles in cellular defense against oxidative stress , conﬁrming the pivotal role of SoxS as a transcriptional regulator of antioxidant defenses in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Fis , an accessorial factor for transcriptional activation of the mar ( multiple antibiotic resistance ) promoter of Escherichia coli in the presence of the activator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19759044" target="_blank">19759044</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15073288" target="_blank">15073288</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>Integration of the suicide vector results in the deletion of the last 30 nucleotides of soxS gene , which were previously shown in E. coli to be essential for production of a functional SoxS protein ( 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>In a strain overexpressing LsrR , we found that the expression of genes involved in resistance to oxidative stress was decreased ( Fig. 2 ) , and that this regulatory effect required SoxS , an activator of sodA ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193816" target="_blank">21193816</a>]<br></li>
+<li>We constructed an IPTG-regulated expression system that uncouples soxS expression from oxidative stress in order to study the direct contribution of SoxS protein to the activation of antioxidant defenses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>In this work , we evaluated the expression of genes encoding the transcription factors MarA , SoxS , and Rob of Salmonella enterica serovar Typhimurium ( S. Typhimurium ) in response to HOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>We used this system both to measure the effect of the expression of SoxS on genes known to be under soxRS control in E. coli and to identify novel targets of soxS regulation in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>The SoxS regulon is also involved in the positive regulation of other outer membrane pore-forming proteins that respond to environmental stress , such as TolC and OmpX ( Aono et al. , 1998 ; Barbosa & Levy , 2000 ; Dupont et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>In turn , the soxRS operon is activated in response-to-oxidative-stress , with the SoxS protein subsequently acting as transcriptional activator .11 The overexpression of soxRS also contributes to increased antibiotic resistance in Gram-negative bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>Another protein , STM1671 ( encoded adjacent to ZirU ) , is a Rob-like transcription factor ( as predicted by Phyre with 100 % confidence ) related to the activator SoxS involved in defense against oxidative damage in Enterobacteria ( 61 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22810234" target="_blank">22810234</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">SoxS binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul>				<label class="SIT_collapse_similarity" for="sit_similarity_1">
+Sequence specificity for DNA binding by Escherichia coli SoxS and Rob proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></label>
+<input id="sit_similarity_1", type="checkbox">
+<div class="SIT_similar">
+<li>Sequence speciﬁcity for DNA binding by Escherichia coli SoxS and Rob proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12107132" target="_blank">12107132</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li></div>
+<li>Bioinformatic analysis of promoter regions containing SoxS binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Previous work in our laboratory determined that ompW is regulated by SoxS in response to paraquat , and a marsox box has been defined at its promoter region with the sequence 59-TTTGCATAGCGTGAATATGTCAAAATTGAT-39 ( Gil et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>Its location is consistent with a class I promoter , in which SoxS binds upstream of the 235 site in the forward orientation ( Martin et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>This is in contrast to other promoters implicated in the response to ROS , such as fpr , nfsA and yggX , in which the SoxS binding site is located downstream near to the 235 box ( 215 to 230 nt upstream of the 235 sequence ) ( Martin et al. , 1999 ; 2000 ; Pomposiello & Demple , 2000 ; Paterson et al. , 2002 ; Pomposiello et al. , 2003 ; Giró et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Electrophoretic mobility shift assays ( EMSAs ) and footprinting experiments showed that SoxS binds at a region that starts close to '' 54 and ends at about '' 197 upstream of the transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Purified , recombinant His6 -- SoxS showed a protection pattern in a dose-dependent manner , which began close to 254 and ended at position 2197 upstream of the transcriptional start site and contained , between 2130 and 2159 , the predicted soxbox ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>This finding is consistent with the transcriptional fusion and EMSA results , and further proves the sequence recognized by SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>Therefore , SoxS is proposed to bind to the upstream region of acrA and directly induce acrAB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Here we demonstrate that Rob ( but not its paralog protein SoxS or MarA ) is able to induce mgtA transcription in a PhoP-independent fashion by binding to a conserved Mar/Sox/Rob motif localized downstream of the PhoP-box and overlapping the PhoP-dependent transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>To understand our results , it is worth mentioning that RamA-binding sites have already been reported in Salmonella concerning the acrAB and tolC promoters .32 The 20 bp sequences recognized by this regulator resemble those initially reported to be present in all members of the marA/soxS/rob regulon in E. coli .33 It has been described that most of the residues of the two helix-turn-helix motifs ( important for DNA sequence recognition ) of MarA from E. coli are conserved in RamA from S. enterica sero-var Paratyphi B. 34 Moreover , it has previously been reported that the marRAB promoter contains its own marbox sequence .33 In agreement with this , RamA from Salmonella Paratyphi B has been shown to bind the MarA operator of E. coli .34 Thus , the binding sites characterized for MarA and SoxS in E. coli , equally termed marbox or soxbox , are similar to the already-mentioned rambox in Salmonella .31,32 Therefore , increased levels of RamA ( .60 - fold ) and/or SoxS ( .4 - fold ) could bind to the rambox/marbox located in the marRAB promoter and activate marA transcription , hence explaining the increased levels of marA expression observed for strains 59-mut2 [ RamA overproducer ( .60 - fold ) ] , 59-64 [ SoxS overproducer ( .4 - fold ) ] and 60-mut2 [ RamA overproducer ( .60 - fold ) and SoxS overproducer ( .4 - fold ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26679248" target="_blank">26679248</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Rob , SoxS , and MarA display overlapping functionality , and all three recognize a degenerate 20-bp binding site in the regulatory region of the target genes that is known as the Mar/Sox/Rob box ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>The bottom of the figure shows , as a result of alignment , a consensus sequence that contains two motifs , a GCAY motif ( SoxS binding ) and a CWA motif ( DNA -- SoxS interaction stability ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>In silico analyses suggested a putative binding site for the SoxS transcriptional factor at the ompW regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>This region consists of a Fis binding site ( 42 ) and a putative SoxS binding site ( 43 ) in E. coli , which are absent in the marRAB promoter of Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Alignment of a putative SoxS binding site from the ompW promoter of S. Typhimurium 14028s with three SoxS consensus sequences reported for other bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by SoxS</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Plasmids containing marA ( pET-TOPO101MarA ) or soxS ( pET-TOPO101SoxS ) were checked by PCR and DNA sequencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Paraquat induces acrAB via SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>We showed that paraquat induces acrAB via SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces SoxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces SoxS expression to a very high degree but does not induce ramA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Cloning , overexpression , and puriﬁcation of the transcriptional regulators MarA and SoxS The marA and soxS genes were ampliﬁed using primers marA and marA , for marA ; and soxS , for soxS ( Table 2 ) and inserted into plasmid pET100/D-TOPO ( Invitrogen ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Requirement for MarA and SoxS for ompW positive regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>The micF gene is transcriptionally regulated by SoxS in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Other regulators of acrAB such as MarA , SoxS , Rob , SdiA , and AcrR did not contrib-ute to acrAB induction by indole in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18577510" target="_blank">18577510</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_10">
+In E. coli , it was reported that multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></label>
+<input id="tu_similarity_10", type="checkbox">
+<div class="TU_similar">
+<li>In E. coli , multiple regulators , including MarA , Rob , SoxS , and SdiA work together in controlling acrAB expression in response to acrAB inducers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19230852" target="_blank">19230852</a>]<br></li></div>
+<li>For example , acrAB transcription in Salmonella is controlled by AcrR , a TetR-like repressor encoded nearby , and by the AraC/XylS-like regulators RamA , MarA , SoxS and Rob , involved in stress - and virulence-response ( Bailey et al. , 2010 ; Nikaido et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28631419" target="_blank">28631419</a>]<br></li>
+<li>The expression of rob is negatively regulated by MarA and SoxS in response to sodium salicylate and paraquat , respectively ( Pomposiello et al. 2001 ; Michán et al. 2002 ; Schneiders and Levy 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>ompW is positively regulated by MarA and SoxS We previously demonstrated that SoxS positively regulates ompW in response to paraquat ( Gil et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>In addition , previous work indicates that rob is repressed by MarA due to steric hindrance and in E. coli SoxS modulates its expression in response to paraquat ( McMurry & Levy , 2010 ; Michán et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>As shown in Fig. 1A , and in contrast to Rob , neither SoxS nor MarA overexpression upregulated mgtA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>In contrast , our results indicate that MarA and SoxS are required to positively modulate ompW expression ( Figs 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>It has been demonstrated that MarA , SoxS , and Rob are able to promote low-level resistance to multiple drugs , heavy metals , and superoxide and also to induce organic solvent tolerance in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Taken together , qRT-PCR and Western blot analyses suggest that MarA and SoxS are required to positively regulate ompW in response to menadione , while Rob is not involved in this response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>AcrAB is induced by multiple regulators , such as MarA , Rob , SoxS , 26 SdiA , RamA and RamR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21081542" target="_blank">21081542</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_21">
+At a more global level , acrAB expression is modulated by stress conditions and by global regulators like MarA , SoxS , or Rob ( 1 , 2 , 3 , 14 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></label>
+<input id="tu_similarity_21", type="checkbox">
+<div class="TU_similar">
+<li>At a more global level , acrAB expression is modulated by stress conditions and by global regulators like MarA , SoxS or Rob [ 13,14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li></div>
+<li>The acrAB operon expression is also modulated by global regulators such as RamA , MarA , and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28926285" target="_blank">28926285</a>]<br></li>
+<li>At a global level , acrAB expression is regulated by stressful conditions and by global transcriptional regulators , such as MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28650690" target="_blank">28650690</a>]<br></li>
+<li>Like marRAB , acrAB and tolC are positively regulated by MarA , SoxS , and Rob ( 2 , 7 , 25 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>The MarA and SoxS proteins can activate acrAB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>Microbiology ( 2009 ) , 155 , 2490 -- 2497 DOI 10.1099 / mic.0.027433-0 SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene F. Gil ,1 I. Hernández - Lucas ,2 R. Polanco ,3 N. Pacheco ,1 B. Collao ,1 J. M. Villarreal ,1 G. Nardocci ,1 E. Calva2 and C. P. Saavedra1 Correspondence C. P. Saavedra 1 Laboratorio de Microbiologıa Molecular , Departamento de Ciencias Biológicas , Universidad Andrés Bello , Santiago , Chile csaavedra@unab.cl 2 Departamento de Microbiologıa Molecular , Instituto de Biotecnologıa , Universidad Nacional Autónoma de México , Cuernavaca , Mexico 3 Laboratorio de Bioquımica , Departamento de Ciencias Biológicas , Universidad Andrés Bello , Santiago , Chile OmpW of Salmonella enterica serovar Typhimurium has been described as a minor porin involved in osmoregulation , and is also affected by environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_28">
+The transcriptional activator SoxS and a protein SoxR , whose oxidized form can activate soxS expression , are encoded by the soxRS locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28926285" target="_blank">28926285</a>]<br></label>
+<input id="tu_similarity_28", type="checkbox">
+<div class="TU_similar">
+<li>Proteins encoded by the soxRS locus include the transcriptional activator SoxS and a protein , SoxR , whose oxidized form can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18443112" target="_blank">18443112</a>]<br></li>
+<li>Proteins encoded by the soxRS locus include the transcriptional activator SoxS , and a protein , SoxR , whose oxidized form can activate soxS expression [ 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15336432" target="_blank">15336432</a>]<br></li></div>
+<li>Among the genes that were upregulated in 104-cip , a number were SoxS regulated , including acnA , fpr , ribA , sodA , lpxC , and soxS itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19917752" target="_blank">19917752</a>]<br></li>
+<li>This result demonstrates that SoxS is sufﬁcient for full , PQ-induced expression of micF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>They concluded that acrR is a secondary modulator of acrRAB expression and suggested that up-regulation under general stress conditions is controlled by an unidentiﬁed regulator , possibly a homologue of the known global regulator MarA , SoxS , or Rob .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11036033" target="_blank">11036033</a>]<br></li>
+<li>These ﬁndings indicate that expression of SodA is primarily under control of SoxS but is at least partially regulated by RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Together , these results demonstrate that overexpression of Rob , but not of SoxS or MarA , is able to speciﬁcally induce mgtA expression in a PhoP-independent fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>This selection yielded six independent chromosomal lacZ transcriptional fusions that were activated by either artiﬁcial expression of SoxS or exposure of wild-type cells to micromolar concentrations of paraquat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>SoxS expression is activated by an oxidized form of SoxR produced following exposure to superoxides , nitric oxide and redox-cycling compounds such as paraquat ( 13 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>SoxS is induced by derepression of SoxR ( Gaudu et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>These results suggest that the overexpression of cpxR can downregulate the expression levels of OmpF , OmpC , OmpW , OmpD , AcrB , TolC , MarA , and SoxS and upregulate those of STM3031 and STM1530 in susceptible S. enterica serovar Typhimurium strains , and it also upregulated the expression levels of the eﬄux pumps AcrD and MdtA under the pressure of GEN. AMK GEN NEO CRO CEF CEQ ENR CIP JS 0.5 0.25 0.4 0.02 0.32 0.08 0.032 JS △ cpxR 0.125 0.0625 0.1 0.01 0.08 0.04 0.032 2 0.016 0.016 1 JS △ cpxR/pcpxR 0.5 0.25 0.4 0.04 0.32 0.16 0.032 4 0.016 0.016 JS △ cpxR/pcpxR * 0.125 0.0625 1 0.1 0.01 0.08 0.16 0.032 JS △ acrB 0.25 0.25 2 0.2 0.01 0.0025 0.02 0.001 0.001 0.001 JS △ acrB △ cpxR 0.0625 0.0625 0.5 6.4 N 0.01 0.00125 0.02 0.001 JS △ acrB △ cpxR/pcpxR 0.5 0.25 2 25.6 N 0.02 0.005 0.08 0.001 0.001 0.001 JS △ acrB △ cpxR/pcpxRN 0.0625 0.0625 0.5 6.4 N 0.01 0.00125 0.04 0.001 AMK , Amikacin ; GEN , Gentamycin ; APR , Apramycin ; NEO , Neomycin ; CRO , Ceftriaxone ; CEF , Ceftiofur ; CEQ , Cefquinome ; ENR , Enroﬂoxacin ; CIP , Ciproﬂoxacin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27199934" target="_blank">27199934</a>]<br></li>
+<li>Values are mean ± SD NaOCl ( 0.86 ± 0.01-fold change , Fig. 3d ) , supporting our hypothesis of a repression of rob by both MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Paraquat induces Salmonella SoxS expression to We investigated the interaction between paraquat and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>These results indicate that paraquat induces soxS to overproduce SoxS , causing the increased acrAB expression in Salmonella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>AcrAB induction in response to paraquat was reduced in the DsoxS strain ( Fig. 4b ) , indicating that paraquat induces acrAB via the SoxS regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>On the other hand , the superoxide generator paraquat induces acrAB via the SoxS regulator and not via RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>Paraquat induces acrAB via the SoxS regulator and not via the RamA regulator The induction of acrAB in response to paraquat suggested that this induction mechanism might be mediated by the RamA regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_46">
+SoxS regulates the expression of the S. Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29018419" target="_blank">29018419</a>]<br></label>
+<input id="tu_similarity_46", type="checkbox">
+<div class="TU_similar">
+<li>SoxS regulates the expression of the Salmonella enterica serovar Typhimurium ompW gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23918818" target="_blank">23918818</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+<li>( b ) Western blotting of SoxS expression in the wild-type strain carrying the epitope-tagged soxS gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>indicate that LsrR may alter the expression of the sodA gene via SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193816" target="_blank">21193816</a>]<br></li>
+<li>The regulation of the SoxRS regulon is mediated by the conversion of the SoxR protein to an active form , which induces the transcription of soxS , with the later binding of the SoxS protein to the promoters of many genes that take part in the response to oxidative damage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>SoxS is involved in the LsrR-mediated regulation of the sodA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21193816" target="_blank">21193816</a>]<br></li>
+<li>MarR negatively regulates the expression of marRAB by binding to the marO operator region .17 On the other hand , proteins encoded by the soxRS locus include the transcriptional activator , SoxS , and another protein , SoxR , the oxidized form of which can activate soxS expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16201927" target="_blank">16201927</a>]<br></li>
+<li>This regulon includes at least a dozen genes involved in the protective re - sponse to oxidative stress , and all of the genes are transcrip - tionally induced or repressed by the SoxS protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Regulation of the nfsA gene in Escherichia coli by SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19460824" target="_blank">19460824</a>]<br></li>
+<li>The failure of mntH : : lacZ fusions to be induced by paraquat is consistent with the absence of a SoxS promoter element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844693" target="_blank">10844693</a>]<br></li>
+<li>Expression of SoxS alone can activate genes in the absence of SoxR or inducing agents such as paraquat ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>]<br></li>
+<li>SdiA is a quorum-sensing regulator , but SdiA of Salmonella is not functional during infection with Salmonella alone , without other bacteria that produce the SdiA inducer .33 SoxS is activated through SoxR by superoxide ions , H2O2 and paraquat .34 Since Salmonella is faced with oxidative stress in the macrophages , it is not surprising that intracellular bacteria levels of soxS mRNA are 3.7-fold higher compared with those in extracellular bacteria .31,32 Bile salts were shown to induce the expression of AcrAB by activation of RamA ; 35 however , it is possible that RamA contributes to the induction of AcrAB in macrophages by the detection of other signals in the host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20237076" target="_blank">20237076</a>]<br></li>
+<li>SoxR then induces the expression of SoxS , which is responsible for the activation of a diverse set of genes involved in antioxidant defense .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21570144" target="_blank">21570144</a>]<br></li>
+<li>There is no clear pattern of the hierarchy of regulation of acrAB , although the transcriptional regulators MarA and SoxS can affect expression of these genes ( 36 , 41 , 49 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19411325" target="_blank">19411325</a>]<br></li>
+<li>For instance , the expression of Mn-SOD ( SodA ) is known to be under control of SoxS , and oxidative stress induces Mn-SOD activity in wild-type bacteria but much less activity in soxS null mutants ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14742546" target="_blank">14742546</a>]<br></li>
+<li>Furthermore , we demonstrate that MarA and SoxS mediate repression of rob by binding to its promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Fig. 4 Puriﬁed MarA and SoxS bind to the rob promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Arch Microbiol ( 2012 ) 194:933 -- 942 DOI 10.1007 / s00203-012-0828-8 ORIGINAL PAPER Differential expression of the transcription factors MarA , Rob , and SoxS of Salmonella Typhimurium in response to sodium hypochlorite : down-regulation of rob by MarA and SoxS B. Collao • E. H. Morales • F. Gil • R. Polanco • I. L. Calderón • C. P. Saavedra Received : 15 March 2012 / Revised : 1 June 2012 / Accepted : 8 June 2012 / Published online : 1 July 2012 Springer-Verlag 2012 Abstract To survive , Salmonella enterica serovar Typhimurium ( S. Typhimurium ) must sense signals found in phagocytic cells and modulate gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>Here we demonstrate that Rob ( but not its paralog protein SoxS or MarA ) is able to induce mgtA transcription in a PhoP-independent fashion by binding to a conserved Mar/Sox/Rob motif localized downstream of the PhoP-box and overlapping the PhoP-dependent transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>In this work , we show that the mgtA regulatory region also harbors a Mar/Sox/Rob box downstream the PhoP recognition motif and that its expression is selectively induced by Rob and not modulated by MarA or SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>marRAB transcription can also be activated by the MarA homologs SoxS and Rob ( 2 , 10 , 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>In E. coli , the transcription of acrAB and micF is controlled by the homologous proteins MarA , SoxS and Rob ( 9 , 10 ) , but may be affected by other proteins such as AcrR ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>RamA is homologous to MarA and SoxS .13 Bacteria overexpressing ramA may exhibit the MDR phenotype by 9 inducing expression of acrAB and tolC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23453941" target="_blank">23453941</a>]<br></li>
+<li>At a local level acrAB expression is modulated by the local repressor AcrR , and at a global level it is modulated by MarA , SoxS , and Rob , which belong to the AraC/XylS family of transcriptional regulators ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19104017" target="_blank">19104017</a>]<br></li>
+<li>In particular , the expression of acrAB is regulated by the global regulators , RamA , SoxS , MarA , and Rob ( Rosenberg et al. , 2003 ; Abouzeed et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>Consistent with the apparent expression of SoxS and SodA proteins , St46 expressed exceptionally high levels of both soxS mRNA and sodA mRNA ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11120941" target="_blank">11120941</a>]<br></li>
+<li>SoxS is a member of the AraC/XylS family of transcriptional regulators and is positively regulated by SoxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18984645" target="_blank">18984645</a>]<br></li>
+<li>The rob gene codes for Rob , a transcriptional regulator member of the AraC/XylS family of proteins that also includes MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>Both MarA and SoxS are members of the AraC family of transcriptional activators ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15047514" target="_blank">15047514</a>]<br></li>
+<li>g001 Changes in the transcript abundance of genes regulated among MarA , SoxS , and RamA marA , soxS , and ramA are transcriptional activators from the family of AraC/XylS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21811569" target="_blank">21811569</a>]<br></li>
+<li>This suggests that under the assayed conditions , ArcA is not active , since , as observed in the presence of NaOCl , when ArcA , MarA and SoxS are present , ompW is negatively regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>rob is negatively regulated by MarA and SoxS The transcript levels of rob in the DmarA and DsoxS strains were repressed after treatment with NaOCl as in the wild type ( 0.32 ± 0.02 and 0.20 ± 0.02-fold change , respectively , Fig. 3a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>It is interesting to note that at least 10 of the differentially expressed genes in this study were regulated by MarA and SoxS in E. coli as well [ 22,38,39 ] ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21811569" target="_blank">21811569</a>]<br></li>
+<li>Therefore , SoxS is proposed to bind to the upstream region of acrA and directly induce acrAB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21148208" target="_blank">21148208</a>]<br></li>
+<li>To verify the functionality of the three expressed proteins , we measured their abilities to promote acrAB expression , which is known to be stimulated by Rob , MarA , or SoxS ( 37 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18487336" target="_blank">18487336</a>]<br></li>
+<li>In both E. coli and S. enterica the global regu-2 -- 4 lators MarA and SoxS regulate the acrAB operon by binding to mar/sox boxes found downstream of the local repressor acrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16492722" target="_blank">16492722</a>]<br></li>
+<li>In E. coli , the acrRAB locus is a member of the mar and sox regulons , and both MarA and SoxS can activate acrAB expression ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15047514" target="_blank">15047514</a>]<br></li>
+<li>Detection of Mutations in the Genes Encoding Quinolone Protein Targets and Regulatory Loci Amplification of the QRDRs of gyrA , gyrB , parC , and parE , as well as the soxRS , marRAB , acrR and ramR regulatory loci ( as it is already known , the transcriptional regulators SoxS , MarA and RamR exert a positive effect on AcrAB/TolC expression , whereas AcrR is the local repressor ) was performed using the corresponding primers listed in Table 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19946377" target="_blank">19946377</a>]<br></li>
+<li>AcrR is the local repressor encoded upstream of the acrAB genes and mutations within its coding sequence have been associated with increased expression of the pump .14 In addition , three homologous transcriptional activators , RamA , SoxS and MarA , have been associated with increased acrB and tolC expression levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26679248" target="_blank">26679248</a>]<br></li>
+<li>MarA , SoxS and Rob bind to a 20-bp asymmetric degenerate sequence ( marbox ) ( 2 ) , and regulate the expression of a large set of genes known as the mar/sox/rob regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19120970" target="_blank">19120970</a>]<br></li>
+<li>Homologues of MarA , such as SoxS , Rob , and RamA , have been shown to bind to the mar box and also to upregulate expression of the mar locus ( 3,8,11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15155237" target="_blank">15155237</a>]<br></li>
+<li>Here , we examined the expression levels of acrB and its multiple regulator genes ( RamA , SoxS , MarA , and Rob ) in 17 ﬁeld isolates of S. Choleraesuis by using quantitative PCR methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23503095" target="_blank">23503095</a>]<br></li>
+<li>MarA is induced following salicylate treatment ,5 SoxS in response to superoxide and Rob following treatment with bile-salts and dipyridyl .6 -- 8 Up-regulation of these transcription factors has been shown to increase the expression of several genes , including acrAB and tolC .5,9,10 Although MarA , SoxS and Rob are present in Salmonella , studies have shown that the transcriptional activator RamA , which is not present in E. coli , plays the dominant role in the regulation of AcrAB -- TolC in Salmonella and other Enterobacter-iaceae .11 -- 17 To date , few inducers of RamA have been reported ; however , Nikaido et al. 18,19 demonstrated increased expression of ramA in response to the bacterial metabolite indole , and that acrAB induction by indole is dependent on RamA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23493314" target="_blank">23493314</a>]<br></li>
+<li>Differential expression of the transcription factors MarA , Rob , and SoxS of Salmonella Typhimurium in response to sodium hypochlorite : down-regulation of rob by MarA and SoxS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li>
+<li>On the other hand , in the absence of ArcB no phosphorylation occurs and SoxS or other positive regulator ( s ) might have free accessibility to the ompW promoter and therefore increase its expression ( Figure 6B ) , although this possibility has not been evaluated in this study .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22545862" target="_blank">22545862</a>]<br></li>
+<li>When marA and soxS levels were analyzed in the different genetic backgrounds , we observed the same response to NaOCl found in the wild-type strain , therefore indicating that their expression is independent of MarA , SoxS , or Rob , which suggests a role for other factors such as SoxR for SoxS ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>We used this system both to measure the effect of the expression of SoxS on genes known to be under soxRS control in E. coli and to identify novel targets of soxS regulation in S. enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10613858" target="_blank">10613858</a>]<br></li>
+<li>Taken together , our results indicate that the expression of rob is repressed by the transcription factors MarA and SoxS in response to NaOCl due to a direct interaction with the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+<li>In the present work , we evaluated the expression and cross-reg-ulation of the transcription factors MarA , Rob , and SoxS in response to NaOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_95">
+In this work , we evaluated the expression of genes encoding the transcription factors MarA , SoxS , and Rob of Salmonella enterica serovar Typhimurium ( S. Typhimurium ) in response to HOCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752112" target="_blank">22752112</a>]<br></label>
+<input id="tu_similarity_95", type="checkbox">
+<div class="TU_similar">
+<li>In this work , we evaluated the role of the transcription factors MarA , SoxS and Rob of S. enterica serovar Typhimurium in regulating ompW expression in response to menadione .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23393149" target="_blank">23393149</a>]<br></li></div>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

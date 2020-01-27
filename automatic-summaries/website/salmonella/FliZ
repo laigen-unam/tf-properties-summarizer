@@ -1,0 +1,995 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - FliZ</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">FliZ</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">FliZ transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>pFliZ is pDSM29 , pFliY is pDSM30 , and pFliZY is pDSM32 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>HilD is post-translationally activated by FliZ ( Chubiz et al. , 2010 ) , and therefore represents a potential growth-phase specific mechanism by which FliZ could upregulate flhDC transcription coordinately with SPI-1 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>On the other hand , HilD activity is positively regulated by FliZ and Fur , through still unknown mechanisms ( Ellermeier and Slauch , 2008 ; Chubiz et al. , 2010 ) , as well as negatively regulated by HilE , through protein-protein interactions ( Baxter et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26300871" target="_blank">26300871</a>]<br></li>
+<li>This is achieved by the ﬂagellar-encoded regulator FliZ , which simultaneously represses type 1 ﬁmbriae and activates Spi-1 via HilD ( Iyoda et al. , 2001 ; Chubiz et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>These regulators include CsrA , FadD , FliZ , OmpR , PhoP , PhoR , Lon , RNAse E , and HU ( Altier et al. , 2000a , b ; Bajaj et al. , 1996 ; Lucas et al. , 2000 ; Lucas and Lee , 2001 ; Schechter et al. , 2003 ; Wilson et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16949866" target="_blank">16949866</a>]<br></li>
+<li>Positive regulators include BarA/SirA , FliZ , EnvZ/OmpR , FadD , CsrB , HilD and some nucleoid binding proteins ( Fis , HU ) , while Pag , HilE , Ams and the nucleoid binding proteins Hha and H-NS are negatively regulating hilA transcription ( Altier et al. 2000a , b Fahlen et al. 2000 ; Lucas et al. 2000 ; Wilson et al. 2001 ; Schechter et al. 2003 ; Baxter et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li>
+<li>In addition , FliA positively regulates its own expression , as well as that of the genes encoding FlgM , FliZ , FliD , and FliT ( Gillen and Hughes , 1993 ; Kutsukake and Ide , 1995 ; Ikebe et al. , 1999a , b ; Kutsukake et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FlhD4C2 activates all class 2 genes i.e. , HBB , FliA , FlgM , FliZ , FliT , and FliD ( Liu and Matsumura , 1994 ; Liu et al. , 1995 ; Ikebe et al. , 1999a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliA and FliZ are expressed from a single operon , and are activated independently by FlhD4C2 and FliA ( Kutsukake et al. , 1999 ; Brown et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>The positive feedback loops formed when FliZ increases class I protein levels or decreases ydiV transcription were candidate hysteretic mechanisms for fliC regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ increases ﬂhDC synthesis through an unknown mechanism [ 78 ] and represses ydiV transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>These include FliZ dependent positive and FliT dependent negative feedback loops .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>It was implied that FliZ somehow controls HilD translation , although no direct evidence was given .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Here FlhD4C2 still activates FliZ and FliA still positively auto regulates itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliZ also activates HilD ( 38 , 41 , 53 , 57 , 82 ) and represses FimZ posttranscriptionally ( this study ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FliZ regulates HilD posttranslationally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ independently regulates RpoS and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ activates hilA through hilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>This regulation is clearly mediated through HilD , but FliZ controls neither hilD transcription nor translation initiation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Moreover , FliZ can affect regulation when HilD protein is expressed ectopically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Another regulator , FliZ , may activate SPI-1 expression by controlling HilD activity ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24682814" target="_blank">24682814</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_22">
+Microbiol Mol Biol Rev 64:694 -- 708 Chubiz JE , Golubeva YA , Lin D , Miller LD , Slauch JM ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></label>
+<input id="act_similarity_22", type="checkbox">
+<div class="ACT_similar">
+<li>Chubiz JEC , Golubeva YA , Lin D , Miller LD , Slauch JM : FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23295139" target="_blank">23295139</a>]<br></li>
+<li>Chubiz JE , Golubeva YA , Lin D , Miller LD , Slauch JM : FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22632036" target="_blank">22632036</a>]<br></li>
+<li>Chubiz , J. E. , Golubeva , Y. A. , Lin , D. , Miller , L. D. & Slauch , J. M. FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>[ 72 ] J.E.C. Chubiz , Y.A. Golubeva , D. Lin , L.D. Miller , J.M. Slauch , FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>[ 87 ] J.E.C. Chubiz , Y.A. Golubeva , D. Lin , L.D. Miller , J.M. Slauch , FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Chubiz , J. E. , Y. A. Golubeva , D. Lin , L. D. Miller , and J. M. Slauch , 2010 FliZ regulates expression of the SPI1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D. and Slauch , J.M. ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D. , and Slauch , J.M. ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D. and Slauch , J.M. ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24682814" target="_blank">24682814</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D. , and Slauch , J.M. ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>Chubiz , J.E.C. , Golubeva , Y.A. , Lin , D. , Miller , L.D. , and Slauch , J.M. ( 2010 ) FliZ regulates expression of the Sal-monella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D. , and Slauch , J. M. ( 2010 ) FliZ regulates expression of the salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27404739" target="_blank">27404739</a>]<br></li>
+<li>Chubiz , J.E. , Golubeva , Y.A. , Lin , D. , Miller , L.D , and Slauch , J.M. ( 2010 ) FliZ regulates expression of the sal-monella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27341691" target="_blank">27341691</a>]<br></li></div>
+<li>Moreover , mutants lacking FliZ expression were significantly attenuated in their ability to colonize mouse intestines , but could still cause systemic infection [ 14 , 41 , 51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21984608" target="_blank">21984608</a>]<br></li>
+<li>It is possible that FliZ , EnvZ , and FadD affect hilA expression via HilE , but both published Figure 2 Rationale for interpretation of panels A , B , and C of the bar graphs in Figures 3 -- 6 and Figure S1 , Figure S2 , Figure S3 , Figure S4 , Figure S5 , Figure S6 , Figure S7 , Figure S8 , Figure S9 , Figure S11 , Figure S12 , Figure S13 , Figure S14 , Figure S15 , Figure S16 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Saini , S. , Koirala , S. , Floess , E. , Mears , P.J. , Chemla , Y.R. , Golding , I. , et al. ( 2010a ) FliZ induces a kinetic switch in ﬂagellar gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></li>
+<li>Most likely , its effect on SPI1 gene expression is through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Note 4 2 that FliZ is indirectly regulated by late protein secretion , as its expression is controlled by 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>This indicates that YdiV activates its own expression by inhibiting FliZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>FliZ boosted fliC expression only when ydiV was concurrently induced ( figure 5B , columns 2 and 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ regulates hilA independently of HilE and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>However , we showed that HilE , EnvZ , and FadD regulate SPI1 independently of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Here , we show that FadD , FliZ , PhoB , and EnvZ/OmpR also require the URS to regulate hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Finally , epistasis tests showed that PhoB , FadD , FliZ , SirA , and EnvZ act independently to regulate hilA expression and invasion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Previously , we provided evidence that FadD , FliZ , PhoB , SirA , and EnvZ regulate hilA expression by independent pathways ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>FliZ enhances Pclass2 and Pclass3 activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>HilE and FliZ act both independently and simultaneously to regulate HilD ( 16 , 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>Through genetic and biochemical analyses , FliZ was found to post-translationally control HilD , and as a result , to positively regulate HilA expression [ 14 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21984608" target="_blank">21984608</a>]<br></li>
+<li>Furtherclass2 more , our data suggest that FliZ regulates FlhD4C2 levels posttranslationally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>It has recently been shown that in E. coli , FliZ negatively regulates RpoS activity posttranslationally , independent of other ﬂagellar proteins ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Our data suggest that FliZ does not directly increase protein translation rates but rather enhances the stability of FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Our results suggest that FliZ regulates the concentration of FlhD4C2 posttranslationally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Furthermore , our data suggest that FliZ regulates the FlhD4C2 complex posttranslationally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>As both FliZ and FliT are activated by the same signal , namely , late protein secretion , an open question is how these two antagonizing regulators operate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>However , when the ﬁrst few HBBs are completed and FlgM is secreted at a sufﬁcient rate such that 28 is active , FliZ expression then increases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>In particular , we imagine that FliZ is dominant at low secretion rates and that FliT is dominant at high secretion rates , for example , in cases when the cell possesses too few or too many active HBBs , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>As FliZ has a positive effect on Pclass2 activity , one possibility is that it can interact with 70 to activate Pclass2 promoters independent of FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ activates Pclass2 promoters independent of 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>These results demonstrate that FliZ activation of Pclass2 requires FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_62">
+These results suggest that , while TdcA regulates ﬂiZ transcription , its effect on hilA expression is independent of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></label>
+<input id="act_similarity_62", type="checkbox">
+<div class="ACT_similar">
+<li>However , our results suggest that while TdcA regulates ﬂiZ transcription , its effect on hilA expression is independent of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li></div>
+<li>It was demonstrated that FliZ posttranslationally controls HilD to positively regulate expression of hilA [ 67 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22632036" target="_blank">22632036</a>]<br></li>
+<li>Given that HilD is required for FliZ regulation of hilA , it seemed possible that FliZ could regulate hilD transcription or translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>One model that would explain FliZ posttranslational regulation of HilD is that FliZ could negatively regulate HilE expression or function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ overproduction increases hilA transcription in a HilD-dependent manner , suggesting that FliZ activates hilA by posttranscriptionally controlling HilD ( 247 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>RESULTS FliZ activates hilA through HilD , independent of FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ activation of hilA is dependent on HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>While class 2 products build up the HBB , FliZ activates FlhDC complex and RﬂM acts as a repressor of ﬂhDC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_71">
+Disruption of the ﬂiT or ﬂiZ gene increases or decreases , respectively , class 2 transcription without affecting class 1 transcription , suggesting that FliT and FliZ are negative and positive regulators , respectively , speciﬁc for the class 2 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></label>
+<input id="act_similarity_71", type="checkbox">
+<div class="ACT_similar">
+<li>Disruption of the ﬂiT or ﬂiZ gene increases or decreases , respectively , class 2 transcription without affecting class 1 transcription , suggesting that FliT and FliZ are negative and positive regulators , respectively , speciﬁc for class 2 operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16952964" target="_blank">16952964</a>]<br></li></div>
+<li>At this stage , the FliZ ﬂagellar activator has been reported to simultaneously repress the ﬁmbrial genes but activate SPI-1 through HilD ( 15 , 287 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>If FliZ affects hilA expression solely through HilD , then there should be no ﬂiZ phenotype in a hilD background when the system is activated by other means .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Regulation by FliZ was evident in this experiment , although it was not as robust as in the stationary-phase cells above in Fig. 6A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Thus , in a bistable strain , FliZ increases the probability that an individual cell will maximize fliC expression , in a growth-phase dependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Under certain experimental conditions ( e. g. , in rich medium ) , the YdiV-FliZ repressing circuit is not required for ﬂiC bistable expression [ 74 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>Mathematically , in our model , this is equivalent to replacing the FliA-dependent FliZ production term by zero .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Between the two feedback loops , FliZ 's impact on gene expression is the strongest in response to nutritional conditions Physiologically , this prediction from our model has important implications for the infection process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>FlgM complex formation/break Activation of FliAZ by FlhDC Michaelis constant for FliAZ activation by FlhDC K4 3 8 K4m K8 10 6 0.1 Activation of FliAZ by FliA K8m Michaelis constant for FliAZ activation by FliA Secretion rate constant from HBB Ksec K6 8 Activation of class 3 by FliA K6m 40 Michaelis constant for class 3 activation by FliA Activation of FliDT by FlhDC 1 K9 Michaelis constant for FliDT activation by FlhDC Activation of FliDT by FliA Michaelis constant for FliDT activation by FliA 1 K9m K10 1 1 K10m K12 0.1 Activation of FliT by FlhDC K12m 10 50 Michaelis constant for FliT activation by FlhDC Michaelis constant for FliT activation by FliA K13m KD.T / KDT 1,080 Ratio of rate constant of FliD.FliT complex formation/break Maximal rate of expression of YdiV Repression coefﬁcient of YdiV by FliZ 0.35 30 K C Starvation status of the cell Degradation constant Degradation constant X Between 0 and 1 Parameters without references in the description column were approximated to best represent the experimental data 0.1 1 Kd Kd2 10 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>This leads to decreased production of FliZ , which activates SPI1 ( 33 , 44 ) , also through HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>FliZ positively regulates HilD function at the level of HilD protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_83">
+FliZ regulates HilD in the absence of Lon protease , previously shown to degrade HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></label>
+<input id="act_similarity_83", type="checkbox">
+<div class="ACT_similar">
+<li>FliZ regulates HilD in the absence of Lon protease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li></div>
+<li>To distinguish whether FliZ regulates hilA via HilD or independently of HilD , we put rtsA under the control of a tetracycline-induc-ible promoter ( tetRA-rtsA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ regulates HilD independently of Lon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Individual roles of YdiV and FliZ shape fliC bistability , while reciprocal repression is dispensible liZ F a c tivity is temporally regulated The impact of FliZ upon fliC expression was most evident at 5 hours in both the WT ( figure 2A , B , C ) and engineered backgrounds ( figure 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Thus , both the kinetic pattern of ydiV repression by FliZ ( figure 3A ) and FlhC regulation by FliZ ( figure 3B ) support our fliC transcription timecourse , in which FliZ increases fliC expression at later timepoints during growth ( figure 2A-E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ represses ydiV , and increases both class I protein levels ( figure 3B ) and fliC expression in the absence of ydiV ( figure 4A , B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ was required for WT levels of fliC expression , however , bistable populations continued to form in a ΔfliZ strain , indicating that reciprocal repression by YdiV and FliZ is not crucial for fliC bistability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Therefore , FliZ-dependent activation of class 2 operon expression is achieved by repression of the ydiV gene by FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Therefore , neither coordinated downregulation of ydiV by FliZ as flagellar gene expression increases nor the positive feedback loop formed by FliZ 's impact upon class I proteins is required for cells to activate fliC expression or persist in fliC-ON mode across time .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Rather , positive feedback is indirect , such that FliA activates FliZ expression and FliZ indirectly activates FliA expression by repressing the expression of YdiV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>The possibility that Lon targets FliZ to repress hilA expression can be excluded because lon disruption does not affect the production of ﬂagellum-related proteins whose expression is activated by FliZ ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741864" target="_blank">11741864</a>]<br></li>
+<li>Effect on hilA expression decrease decrease decrease decrease decrease decrease decrease Mutation1 Comments ompR envZ [ 66 ] [ 66 ] EnvZ/OmpR is a two-component system EnvZ/OmpR is a two-component system pho-24 sirA , barA pstS fadD ﬂiZ [ 19 ] [ 64 , 65 , 68 ] , unpublished2 [ 66 ] [ 66 ] [ 66 ] , unpublished3 hyperactive PhoQ sensor kinase BarA/SirA is a two-component system acts via PhoB regulator does not act via FadR regulator transposon insertions in ﬂiA are polar on ﬂiZ ; FliZ suppresses the effects of transposon insertions in ﬂiA and ﬂhCD the Csr system regulates RNA stability Fis is a small nucleoid binding protein HU , a small nucleoid binding protein , is comprised of HupA and HupB Hha is a small nucleoid binding protein amsE encodes RNase E H-NS is a small nucleoid binding protein no known homologies PhoPQ-activated gene csrB ﬁs decrease decrease decrease decrease increase increase increase increase [ 64 , 68 ] unpublished4 ,5 unpublished4 ,5 unpublished2 [ 56 ] unpublished4 ,5 [ 56 ] [ 56 ] hupA/hupB hha amsE : : Tn5-1 hns hilE pag-1 Condition high osmolarity low oxygen late log phase near-neutral pH low osmolarity low oxygen early log phase bile [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 osmolarity regulates hilA in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA induction induction induction induction repression repression repression repression late log phase induces invasion activity ; RpoS is not required not mediated by PmrAB osmolarity regulates hilA expression in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA early log phase represses invasion activity ; RpoS is not required reported to regulate invasion , prgH , invF and hilC ; effects on hilA expression not reported but very likely 1 Unless otherwise noted , the mutations are null mutations in the open reading frame listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>To test whether FadD , FliZ , PhoB , EnvZ , or SirA is responsible for the environmental regulation of hilA expression , we examined the effects of oxygen and osmolarity on hilA080 : : Tn5lacZY expression in mutants containing disruptions in fadD , ﬂiA , pstS , envZ , and sirA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Thus , the regulatory pathways mediating environmental regulation of hilA expression appear to be distinct from those affected by FadD , FliZ , PhoB , EnvZ , and SirA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Previous results as well as data from this study demonstrate that the URS is also required for modulation of hilA expression by oxygen , osmolarity , PhoP/PhoQ , FadD , FliZ , PhoB , SirA , and EnvZ ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Furthermore , hilC is not required for the regulation of hilA expression by oxygen , osmolarity , FadD , FliZ , PhoB , or SirA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_100">
+Because the URS is required for regulation of hilA expression by oxygen , osmolarity , PhoP/PhoQ , and SirA/BarA ( 63 ) , we tested whether this cis element is also required for regulation of hilA expression by FadD , FliZ , PhoB , and EnvZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></label>
+<input id="act_similarity_100", type="checkbox">
+<div class="ACT_similar">
+<li>Thus , the same regulatory node that is required for regulation of hilA expression by SirA , PhoP/PhoQ , oxygen , and osmolarity is also required by FadD , FliZ , PhoB , and EnvZ to modulate hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li></div>
+<li>SirA , OmpR , FadD , and FliZ may also modulate hilD posttranscriptionally to regulate hilA expression DISCUSSION Previously , Schechter et al. demonstrated that hilA expression is repressed in the absence of hilD ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Thus , it appears that FadD , FliZ , PhoB , and SirA act independently of hilC to reduce hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>More recently , it was found that PhoP / PhoQ , FadD , FliZ , PhoB , SirA , and EnvZ require the URS for modulation of hilA expression , but these factors are not responsible for regulating hilA in response to oxygen and osmolarity ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673432" target="_blank">11673432</a>]<br></li>
+<li>Inducible expression of either HilC or RtsA protein , but not of Fur , FliZ , or HilD , was sufﬁcient to activate hilA following growth at 42 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>]<br></li>
+<li>Complementation studies with ﬂhC and ﬂiA mutants indicate that FliZ , which is encoded in an operon with ﬂiA , activates expression of hilA , linking regulation of hilA with motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Many other regulators encoded outside of SPI-1 affect SPI-1 genes and/or HilA expression through HilD , including HilE ( repression of hilA by binding to and preventing HilD function ) [ 31 ] , FliZ ( activation of hilA via posttranslational regulation of HilD ) [ 32 ] , DNA adenine methylase ( activation of hilA via posttranslational regulation of HilD ) [ 33 ] , EnvZ-OmpR ( activation of hilA via HilD ) [ 34 ] , CpxA/R ( repression of hilA by decreasing the stability of HilD ) [ 35 ] , BarA/SirA ( activation of hilA via activation of csrB/csrC to block CsrA repression of hilD ) [ 24 ] and Fur ( activation of hilA via an unknown regulation of HilD ) [ 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Thin lines represent potential mechanisms for regulation of hilA by each pathway : a , FliZ induces the expression or activity of an activator of hilA expression ; b or c , a gene product in the Pho regulon ( b ) or PhoB ;P ( c ) activates expression or activity of a repressor of hilA expression ; d , accumulation of an endogenous precursor of fatty acid metabolism activates expression or activity of a repressor of hilA expression ; e or f , alternatively , a fatty acid deg-radation product ( e ) or acyl-CoA ( f ) activates the expression or activity of an activator of hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>FliZ activates expression of hilA , one of the links between regulation of SPI1 and motility ( 33 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>The dsbA-mediated regulation of SPI1 expression is indirect , caused by decreased expression of the ﬂagellar protein FliZ , which had previously been implicated in SPI1 regulation ( 12 , 25 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_111">
+In contrast , neither RtsA nor HilC was required for FliZ induction of hilA expression , although the absolute level of expression was reduced in both mutants , consistent with our model of SPI1 regulation ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></label>
+<input id="act_similarity_111", type="checkbox">
+<div class="ACT_similar">
+<li>In contrast , neither RtsA nor HilC was required for FliZ induction of hilA expression , although the absolute level of expression was reduced in both mutant backgrounds , consistent with our model of SPI1 regulation ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li></div>
+<li>We speculate that FliZ is one element of this regulation , providing cells with a mechanism for increasing gene expression in response to assembly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ is responsible for increased levels of FlhC protein independent of ﬂhDC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>The presence of this domain suggests that FliZ is a DNA-binding protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>These data show that FliZ does affect RpoS-mediated activation in Salmonella but that FliZ-medi-ated regulation of SPI1 is independent of RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Indeed , there is coordinate regulation of induction of ﬂagella and SPI1 in vitro that is dependent on FliZ ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Fourth , loss of DsbA causes a slight decrease in SPI1 expression that is independent of RcsBCD or FliZ , but again this effect is minor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>FliZ is expressed from class 2 and 3 promoters in the ﬂagellar regulon ( 24 ) and thus should be negatively regulated by YdiV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>In this case also , FliZ and FliA are not treated as in an operon and the FliA-dependent activation term is deleted only from the FliZ equation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>The dashed line between class 2 product FliZ and HilD represents posttranscriptional activation , as described in the text .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>The ﬂiZ gene is transcribed in the ﬂiAZ operon , and FliZ activates the Spi1 transcriptional-activator HilD , which in turn activates Spi1 transcription under high salt ( 200 mM NaCl ) microaerobic-growth conditions ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706743" target="_blank">24706743</a>]<br></li>
+<li>Subsequent experiments demonstrated that the ﬂagellumrelated gene product FliZ controls HilD posttranscriptionally , and this in turn activates HilC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>Moreover , FliZ activates HilD that leads to the stimulation of SPI-1 gene expression ( Chubiz et al. , 2010 ; Hung et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27404739" target="_blank">27404739</a>]<br></li>
+<li>The transcription of flagellar class 2 genes is positively regulated by FliZ , via the repression of YdiV , an anti-FlhD4C2 factor ( Kutsukake et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27404739" target="_blank">27404739</a>]<br></li>
+<li>Posttranscriptional activation of flhDC occurs at the level of the flagellar regulator FliZ via regulation of HilD activity and repression of the antiFlhD4C2 factor YdiV ( Chubiz et al. , 2010 ; Wada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>A subset of SPI1 regulators enters the circuit via FliZ , including FlhD4C2 , required for the activation of FliZ , and RcsCDB , which represses ﬂhDC expression ( Lin et al. 2008 ; Chubiz et al. 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>FliZ is needed for eficient induction of the Spi-1 system via post-translational activation of the Spi-1 regulatory protein HilD , which in turn activates ﬂhDC gene transcription ( Iyoda et al. , 2001 ; Chubiz et al. , 2010 ; Mouslim and Hughes , 2014 ; Singer et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Primary examples of factors that inﬂuence HilD activity are HilE , a major negative regulator of SPI1 T3SS expression , and the ﬂagellar gene product FliZ , which acts indirectly upon HilD to increase activity ( 10 , 16 , 18 -- 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>Thus , while both HilE and FliZ act through HilD , the effects of FliZ are the same in wild-type and hilE backgrounds , indicating that these two factors regulate HilD independently of each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>HilE and FliZ regulate the activity of HilD simultaneously and independently ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>Presumably , these changes are due to the secretion-dependent regulation of FlhD4C2 activity by FliT and FliZ ( Yamamoto and Kutsukake , 2006 ; Saini et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></li>
+<li>FliA autoregulation and activation of FliZ , and FliZ-dependent positive regulation of FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>However , control of class I proteins by FliZ is reported to be predominantly post-translational ( Saini et al. , 2008 ) , and availability of cellular factors impacting translation , activation , and stability of FlhD4C2 may also fluctuate with growth-phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>This boost in virulence was suggested to be caused by increased flagellar expression , including the FliZ regulator controlling the SPI1 regulator HilD at post-transcriptional level ( Kage et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23676436" target="_blank">23676436</a>]<br></li>
+<li>Consistent with the notion that FliZ activates T3SS-1 expression through HilD , transcription of hilD was induced in a tviA defective strain ( Fig. 1A , cluster 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>Taking all of our data into account , we hypothesize that FliZ controls-the-activity of HilD by direct interaction , but we can not currently rule out indirect effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ negatively regulates transcription of the ydiV gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>We tested whether the absence of FliZ caused increased levels of RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>Moreover , the presence of a hilD mutation blocked FliZ induction of hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Thus , although the half-life of HilD is slightly affected by changes in FliZ levels , this does not explain the mechanism of regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>The stability of HilD protein is affected slightly by the presence or absence of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>In this work , we further characterize the mechanism of FliZ regulation of HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>On the basis of this experiment , they implied that FliZ regulates HilD at the level of translation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Indeed , in Xenorhabdus nematophila , FliZ activates transcription of class II ﬂagellar genes by binding directly to the ﬂhDC promoter ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>This suggests that the enhanced FliZ level in the ﬂgM mutant does not lead to upregulation of FliA production , which conforms to our observation in Fig. 2A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>In vivo data suggest that during infection , FliZ acts to overcome the negative regulation of HilE to switch on SPI1 T3SS expression in the intestine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>Our data suggest that FliZ plays a major role in the regulation of SPI1 in response to periplasmic disulﬁde bond status .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Like the FliZ control , the ﬂa-gellar and invasion systems are both regulated in the same manner by these effectors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11162188" target="_blank">11162188</a>]<br></li>
+<li>While FliZ controls FlhD4C2 amounts in the cell , FliT controls-the-activity of the FlhD4C2 transcription factor complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>FliZ activates the class 2 ﬂagellar genes only in the presence of the ﬂa-gellar activator proteins , FlhD/FlhC [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11162188" target="_blank">11162188</a>]<br></li>
+<li>Note that , in the presence of FliZ , the enzyme activity was much lower in the ydiV mutant than in the wildtype strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Moreover , overproduction of FliZ no longer activated hilA in the hilD background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>However , hilA expression in this background was even more signiﬁcantly affected by FliZ than in the wild type ; activity was decreased about 20-fold in the absence of FliZ and increased 3-fold when FliZ was overexpressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>However , in the absence of FliZ , hilA expression was reduced only 2-fold in the dsbA mutant or dsbA srgA double mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>In the absence of aTc , TetR negatively regulates the PLtetO-1 promoter and , as a consequence , FliZ or FliA is weakly expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>However , in the presence of aTc , TetR no longer represses the PLtetO-1 promoter and FliZ or FliA is strongly expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Furthermore , we show that the previously described ability of 28 to activate Pclass2/middle gene expression is , in fact , due to FliZ , as both are expressed from the same overlapping Pclass2 and Pclass3 promoters at the ﬂiAZY locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>However , RtsB has been reported not to directly act on the SPI-1 genes , and this effect mirrors that observed in the absence of FliZ ( 15 , 231 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>HilD also controls the flagella regulon ( FliZ ) ( 3 ) , implying that the motility decrease in STP22 ~ and STP22 + treated with CEOs can be attributed to the repression of hiID .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24780330" target="_blank">24780330</a>]<br></li>
+<li>Although the data in Fig. 4 suggest that RcsCDB and FliZ independently affect SPI1 expression in the dsbA mutant , this interpretation is complicated by the fact that RcsB and cofactor RcsA can negatively regulate the ﬂagellar regulon ( including FliZ ) by binding directly to the ﬂhDC promoter region ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Taken together , our results suggest that the increased hilA expression seen in the absence of Lon is not due to increased stability of HilD but to increased stability of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>The FliZ regulator is known to enhance activity of the HilD protein ( 41 ) through an unknown posttranslational step ; therefore , the inﬂuence of overexpression of FliZ on hilA-lacZ in response to temperature was tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>]<br></li>
+<li>However , in the absence of FlhD4C2 autoregulation , the decrease is due solely to FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>( A ) FliZ is unable to regulate PﬁmA promoter activity in the absence of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Thus , FliZ appears to be stabilized in the absence of Lon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>The absence of FliZ leads to a fall in the intracellular levels of FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Based on the results from X. nematophila regarding FliZ being a DNA-binding protein , the most likely mechanism in S. enterica serovar Typhimurium is that FliZ increases the expression of some protein that stabilizes FlhD4C2 or , alternatively , inhibits the expression of a protease such as ClpXP that degrades it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Thus , the impact of FliZ upon the fliC census is enhanced at 5 hours compared to 2.5 hours under conditions of metered expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>In conjunction with FliZ , RcsCDB could be the intermediate in the SPI1 response to a variety of environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>In order to test this , gel mobility shift assay of the 32P-labeled DNA fragment containing PnlpC was performed in the presence of the puriﬁed His6-FliZ protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>As shown in Fig. 2A , the intracellular level of FliZ increased in the ﬂgM mutant , probably owing to the increased level of P2 transcript .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>However , activation of the hilA gene by FliZ occurs even in the absence of FlhD/FlhC [ 13 , our unpublished results ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11162188" target="_blank">11162188</a>]<br></li>
+<li>In the absence of FliZ , the rate of decrease in class 2 gene expression ( with increasing starvation ) is much more rapid as compared to wild type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>We characterized the effect of loss of a given SPI1 regulator on hilA expression in otherwise wild-type , ﬂiZ null , and hilD null backgrounds , as well as in a strain in which FliZ is expressed under the control of the tetRA promoter , and thus independently of FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>The absence of FliZ is `` sensed '' by the cell in terms of reduced HBB expression , and the cell tried to compensate for this loss of HBB expression by retaining more of FlhD4C2 in the cell in its free form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>This result and the fact that the increase in hilA expression seen in the lon mutant i dependent on FliZ suggest that the primary consequence of losing Lon is increased stability of FliZ , which in turn activates HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>To examine whether FliZ is involved in the posttranscriptional control of HilD , we decided to compare the levels of HilD protein in ﬂiZ and ﬂiZ cells where hilD is expressed under the regulation of the PA1lacO-1 promoter system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>Coordinated regulation of the ﬂagellar regulon and SPI-1 in a FliZ-dependent manner was also demonstrated to be regulated by the ClpXP protease , affecting the turnover of the FlhD4C2 complex , FlhD4C2 in turn controls FliZ expression , which regulates the cellular levels of HilD ( 50 , 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>Therefore , the increased transcription of hilC and hilD in the clpPX cells could be explained by ampliﬁcation of the regulatory loop in which FliZ triggered an increase in the amount of HilD via posttranscriptional control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>On the other hand , in a rich nutritional environment where the amount of the YdiV protein is low , the FlhD4C2 complex is free from inhibition by YdiV , resulting in high expression of the FliZ protein , which in turn represses ydiV expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>This is apparently inconsistent with the above-mentioned observation that the intracellular level of FliZ was increased by the ﬂgM mutation , because the FliZ protein expressed should increase the P1 transcript of the ﬂiAZ operon and thus enhance FliA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>FliZ , which is encoded by the ﬂiAZY operon of the ﬂagellar regulon , activates the expression of hilD at the posttranscriptional level , leading to the stimulation of SPI1 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>FliZ Acts as a Repressor of the ydiV Gene , Which Encodes an Anti-FlhD4C2 Factor of the Flagellar Regulon in Salmonella enterica Serovar Typhimurium Takeo Wada , Yasushi Tanabe , and Kazuhiro Kutsukake * Graduate School of Natural Science and Technology and Department of Biology , Faculty of Science , Okayama University , Tsushima-Naka 3-1-1 , Kita-ku , Okayama 700-8530 , Japan Received 2 June 2011/Accepted 19 July 2011 YdiV acts as an anti-FlhD4C2 factor , which negatively regulates the class 2 ﬂagellar operons in poor medium in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Furthermore , our results suggest that the previously observed effect of 28 on Pclass2 activity was actually via FliZ , for as FliZ is under the control of both Pclass2 and P 28 class3 promoters , overexpressing increases FliZ expression , which thus leads to increased Pclass2 activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Increased FliZ expression then leads to increased stability of FlhD4C2 and , as a consequence , further activation of the Pclass2 promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ and YdiV participate in a genetic circuit of mutually repressing repressors ( figure 1 ) , wherein FliZ repression of ydiV is predicted to increase flagellar class II gene expression because YdiV inhibits binding of the FlhD4C2 complex to DNA and targets the complex for ClpXP-mediated proteolysis ( Takaya et al. , 2012 , Wada et al. , 2011a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>The FlhD2C2 complex activates transcription of the ﬂiAZY operon , and the s28 ( FliA ) and FliZ protein products act to increase ﬂagellar gene expression : s28 will transcribe early , middle , and late genes , and FliZ enhances the function of the FlhD2C2 complex on class 2 promoter transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>Repression and activation by YdiV and FliZ ( respectively ) can shape the census of fliC expression independently , and bistability collapses into a predominantly intermediate population in the absence of both regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Immobilized growth prevented the induction of SPI1 , SPI4 and SPI5 gene expression , likely mediated by the FliZ transcriptional-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>Interestingly , FlhDC induces the expression of FliZ that somehow increases activity of HilD and thus the expression of the SPI-1 genes36 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>However , the phenotypes we observed were not consistent with the expected effect of increased FliZ levels , being increased expression of hilD and virulence expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23676436" target="_blank">23676436</a>]<br></li>
+<li>Thus , reduced levels of FliZ are expected to lead to reduced levels of the transcriptional-regulators HilA ( controlled by HilD ) and InvF ( controlled by HilA ) , both of which are known to activate the expression of effector genes located inside and outside ( indicated by a dotted box ) SPI-1 ( 77 -- 79 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29150501" target="_blank">29150501</a>]<br></li>
+<li>At the population level , this suggests temporal fluctuations in average concentrations of cellular factors required for FliZ to activate fliC expression , most likely regulators of class I. Transcription of class I genes is tightly controlled by growth-phase specific expression of multiple positive and negative regulators ( Mouslim & Hughes , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>If this were the sole mechanism by which FliZ increased FlhC , the amount of FlhC should be identical between ΔydiV and ΔydiV ΔfliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Analysis of this model demonstrated that , in principle , the two feedback loops controlled by FliZ and YdiV are sufﬁcient for bistability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>Taking these results together , it is suggested that SPI1 expression is regulated by ClpXP through a mechanism by which FliZ controls the cellular levels of the transcriptional-regulators HilC and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>The results show that disruption of ﬂiZ signiﬁcantly decreased the cellular level of HilD even when the corresponding gene was expressed by the PA1lacO-1 promoter system , suggesting that HilD is controlled posttranscriptionally by FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>Subsequent experiments showed that the enhancement of cellular levels of HilC and HilD by clpPX disruption seemed to be caused by an increase in the ﬂagellar protein FliZ , encoded by the class 2 ﬂiAZY operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>Therefore , with increase in starvation level , the signiﬁcance of FliZ in maintaining population level HBB distribution increases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Intriguingly , though fliZ was induced throughout the population ( figure S5 ) in our metered strain , the ability of FliZ to counter YdiV-dependent ( figure 5B , panels 11,12,17,18 ) and -- independent ( figure 5B , panels 10,16 ) fliC repression varies from cell to cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>However , in contrast to observations at 2.5 hours , metered induction of FliZ now partitioned cells into fliC-HIGH in the presence and absence of YdiV ( figure 5B , compare fliC-HIGH subpopulations in panels 4 -- 6 , where FliZ is not induced , to fliC-HIGH subpopulations in panels 10 -- 12 and 16 -- 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>A shifted band was observed in the presence of His6-FliZ , and its amount increased in a concentration-dependent manner ( Fig. 4 , lanes 2 to 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>A β-galactosidase reporter fusion was used to measure ydiV transcription in the presence and absence of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Cells low in activated FlhD4C2 would require more FliZ to activate fliC expression , and cells with higher concentrations of activated FlhD4C2 would require more YdiV to switch off fliC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>The instability of FliZ has made it difﬁcult to provide biochemical data to prove or disprove direct interaction , and conﬁrmation of our hypothesis requires further investigation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Previous work showed FimY acts upstream of FimZ to activate the ﬁm operon , while FliZ functions to repress FimZ posttranscriptionally ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>Prior to completion of the HBB , FlhD4C2 can only partially activate Pclass2 promoters due to low protein levels arising from weak FliZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>In other words , this mechanism would enable cells to increase gene expression when there are too few ﬂagella , due to the action of FliZ at low secretion rates , and decrease gene expression when there are too many , due to the action of FliT at high secretion rates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>One potential mechanism from this hypothesis is that FliZ binds to FliT and prevents it from inhibiting FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ activation is dependent upon FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>We next examined HilD protein levels in response to FliZ - or HilE-mediated regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Whether FliZ 's role in flagellar regulation contributes to infection is unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>One possibility is that FliZ regulates ﬂhDC transcription , resulting in an indirect effect on Pclass2 activity due to changes in FlhD4C2 expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>To date , in Salmonella , FliZ is known to independently regulate three very different transcriptional-regulators , HilD , RpoS , and FlhD4C2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>One possibility is that FliZ posttranscriptionally regulates FimZ in a manner similar to FlhD4C2 and HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>FliZ , whose function is also not well understood , appears to induce hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>This increase seems to be dependent on FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>In addition , we found that the positive feedback loop involving FliA is required , although its role appears to be solely to enhance FliZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>Thus , these two indirect effects are assumed to be mediated by FliZ ; RtsB represses FliZ , which has been shown to activate SPI-1 expression but repress type I ﬁmbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">FliZ protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>RpoE Affects Transcriptional Expression of ﬂiA and ﬂjB : z66 But Not ﬂhD at 30 and 120 min Under Hyperosmotic Stress Table 3 Flagellar genes with gene expression changes in mutant DrpoE Hierarchy Description of gene product Name log2 ( DrpoE/WT ) Class-1 ﬂhDC Flagellar-transcriptional-activator Transcriptional activator FlhD ﬂhC ﬂhD -0.21 0.64 Class-2 ﬂgAMN Flagellar basal body P-ring biosynthesis protein Negative regulator of ﬂagellin synthesis Flagella synthesis protein FlgN ﬂgA ﬂgM ﬂgN ﬂgB ﬂgC ﬂgD ﬂgE ﬂgF ﬂgG ﬂgH ﬂgI ﬂgJ N -1.37 -1.25 ﬂgBCDEFGHIJKL Flagellar basal body rod protein Flagellar basal body rod protein -0.68 N -0.81 Flagellar basal body rod modiﬁcation protein Flagellar hook protein -0.84 N N Putative ﬂagellar basal-body rod protein FlgF Flagellar basal-body rod protein FlgG Flagellar-L-ring-protein precursor Flagellar-P-ring-protein precursor Flagellar biosynthesis protein N N N Flagellar hook-associated protein Flagellar hook-associated protein Flagellar biosynthesis protein ﬂgK ﬂgL ﬂhB ﬂhA ﬂhE ﬂiA ﬂiZ ﬂiY ﬂiD ﬂiS ﬂiT ﬂiE -1.65 -1.46 N N ﬂhBAE Flagellar biosynthesis protein Flagellar-protein-FlhE precursor Flagellar biosynthesis sigma factor FliA N ﬂiAZY -2.03 -0.49 FliZ protein Cystine-binding periplasmic protein precursor Flagellar hook-associated protein -1.08 -1.31 -0.48 ﬂiDST Flagellar-protein-FliS Flagellar-protein-FliT N N ﬂiE Flagellar basal body protein ﬂiFGHIJK Flagellar M-ring protein Flagellar motor protein Flagellar assembly protein ﬂiF ﬂiG ﬂiH ﬂiI ﬂiJ ﬂiK ﬂiL ﬂiM ﬂiN ﬂiO ﬂiP -0.28 N N Flagellum-speciﬁc ATP synthase Flagellar protein Flagellar hook-length control protein N N N ﬂiLMNOPQR N N Flagellar biosynthesis protein Flagellar motor switch protein Flagellar motor switch protein 0.29 N N Flagellar protein FliO Flagellar biosynthesis protein Flagellar biosynthesis protein N ﬂiQ ﬂiR Flagellar biosynthesis protein 0.41 Class-3 ﬂjBA ﬂjB ﬂjA -2.86 N -1.46 Phase-2 ﬂagellin protein Phase-1 ﬂagellin repressor ﬂgM ﬂgN ﬂgK ﬂgL ﬂgMN Negative regulator of ﬂagellin synthesis -1.15 -1.65 -1.46 Flagella synthesis protein FlgN Flagellar hook-associated protein Flagellar hook-associated protein ﬂgKL The expression of ﬂagella-related genes is affected by environmental factors , such as osmotic [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20717675" target="_blank">20717675</a>]<br></li>
+<li>The instability of FliZ has made it difﬁcult to provide biochemical data to prove or disprove direct interaction , and conﬁrmation of our hypothesis requires further investigation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>It seems unlikely that FliZ itself acts as a transcriptional regulator , since it contains no apparent DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>From this , we note that the two feedback loops in the network ( FliZ - and FliT-dependent ) likely serve two distinct purposes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>The function of FliZ is unknown , and its predicted product shows no signiﬁcant homology to any known protein or structural motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>The presence of this domain suggests that FliZ is a DNA-binding protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Kutsukake et al. ( 68 ) pointed out that FliZ protein is predicted to contain a coiled-coil domain , which is believed to be involved in protein-protein interactions ( 83 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>The C-terminal portion of FliZ contains a SAM-like phage integrase domain ( 37 ) , which is also included in Cre , Flp , and XerD recombinases ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>However , interestingly , a search of the `` conserved domains '' database shows that the C-terminal half of FliZ has a sterile alpha motif ( SAM ) - like fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Despite its apparent posttranslational effects in Salmonella and E. coli , the FliZ protein contains a region that resembles the core DNA-binding domain of phage integrases ( 49 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Furthermore , such promiscuity in FliZ DNA-binding between the organisms is not altogether unreasonable , as the greatest difference between the two FliZ orthologs is at the C terminus , the region predicted to bind DNA based on the homology to the SAM-like phage integrase domain ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ is known to contain a SAM ( sterile alpha motif ) - like phage integrase domain ( 37 ) , suggesting the possibility that FliZ has a DNA-binding ability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">FliZ evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Although X. nematophila FliZ shows 56 % identity with Salmonella FliZ , they differ signiﬁcantly from each other in their C-terminal sequences ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>The FliZ protein shows signiﬁcant homology only with other FliZ proteins from members of the family Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by FliZ</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>- ) Flagellar motor rotation protein MotB Flagellar motor rotation protein MotA Flagellar transcriptional activator FlhC Flagellar transcriptional activator FlhD Cystine ABC transporter , periplasmic cystine-binding protein FliY Flagellar biosynthesis protein FliZ RNA polymerase sigma factor for flagellar operon Lysine-N-methylase ( EC 2.1.1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>Log R a 2 Functional kinds Product function Genes Downregulated Regulators and putative regulators Transcriptional activator CaiF caiF e 1.46 1.38 1.03 2.73 1.21 1.37 1.18 1.86 1.48 1.33 1.71 1.77 1.76 1.30 1.40 1.50 1.06 1.13 Putative receptor/regulator protein Cell division regulatory protein Putative transcriptional regulator Possible AraC family regulatory protein Flagellar biosynthesis sigma factor FliA FliZ protein Flagellar motor protein Chemotaxis protein CheA Purine binding chemotaxis protein Methyl-accepting chemotaxis protein II Chemotaxis protein methyltransferase Chemotaxis-speciﬁc methylesterase Chemotaxis protein CheZ Flagellar-hook-associated protein Flagellar-hook-associated protein Methyl-accepting chemotaxis protein II Negative regulator of ﬂagellin synthesis sdiA mig-14 invF ﬂiA ﬂiZ motA cheA cheW tar cheR cheB cheZ ﬂgL ﬂgK cheM ﬂgM Flagella and chemotaxis proteins Flagella synthesis protein FlgN Flagellar protein FliS ﬂgN ﬂiS 1.10 1.20 1.10 1.02 1.09 1.25 1.09 1.20 2.25 1.41 1.20 1.39 1.07 2.03 2.20 1.10 1.15 1.59 1.41 1.08 1.12 1.75 1.69 1.74 1.06 2.13 2.02 1.96 1.33 1.47 1.05 1.51 1.25 1.10 1.28 1.31 1.34 Flagellar-hook-associated protein Flagellar biosynthesis protein Oxygen-regulated invasion protein Pathogenicity 1 island effector protein Pathogenicity 1 island effector protein Pathogenicity 1 island effector protein Invasion-associated secreted protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23911675" target="_blank">23911675</a>]<br></li>
+<li>RpoE Affects Transcriptional Expression of ﬂiA and ﬂjB : z66 But Not ﬂhD at 30 and 120 min Under Hyperosmotic Stress Table 3 Flagellar genes with gene-expression changes in mutant DrpoE Hierarchy Description of gene product Name log2 ( DrpoE/WT ) Class-1 ﬂhDC Flagellar transcriptional activator Transcriptional activator FlhD ﬂhC ﬂhD -0.21 0.64 Class-2 ﬂgAMN Flagellar basal body P-ring biosynthesis protein Negative regulator of ﬂagellin synthesis Flagella synthesis protein FlgN ﬂgA ﬂgM ﬂgN ﬂgB ﬂgC ﬂgD ﬂgE ﬂgF ﬂgG ﬂgH ﬂgI ﬂgJ N -1.37 -1.25 ﬂgBCDEFGHIJKL Flagellar basal body rod protein Flagellar basal body rod protein -0.68 N -0.81 Flagellar basal body rod modiﬁcation protein Flagellar hook protein -0.84 N N Putative ﬂagellar basal-body rod protein FlgF Flagellar basal-body rod protein FlgG Flagellar L-ring protein precursor Flagellar P-ring protein precursor Flagellar biosynthesis protein N N N Flagellar hook-associated protein Flagellar hook-associated protein Flagellar biosynthesis protein ﬂgK ﬂgL ﬂhB ﬂhA ﬂhE ﬂiA ﬂiZ ﬂiY ﬂiD ﬂiS ﬂiT ﬂiE -1.65 -1.46 N N ﬂhBAE Flagellar biosynthesis protein Flagellar protein FlhE precursor Flagellar biosynthesis sigma factor FliA N ﬂiAZY -2.03 -0.49 FliZ protein Cystine-binding periplasmic protein precursor Flagellar hook-associated protein -1.08 -1.31 -0.48 ﬂiDST Flagellar protein FliS Flagellar protein FliT N N ﬂiE Flagellar basal body protein ﬂiFGHIJK Flagellar M-ring protein Flagellar motor protein Flagellar assembly protein ﬂiF ﬂiG ﬂiH ﬂiI ﬂiJ ﬂiK ﬂiL ﬂiM ﬂiN ﬂiO ﬂiP -0.28 N N Flagellum-speciﬁc ATP synthase Flagellar protein Flagellar hook-length control protein N N N ﬂiLMNOPQR N N Flagellar biosynthesis protein Flagellar motor switch protein Flagellar motor switch protein 0.29 N N Flagellar protein FliO Flagellar biosynthesis protein Flagellar biosynthesis protein N ﬂiQ ﬂiR Flagellar biosynthesis protein 0.41 Class-3 ﬂjBA ﬂjB ﬂjA -2.86 N -1.46 Phase-2 ﬂagellin protein Phase-1 ﬂagellin repressor ﬂgM ﬂgN ﬂgK ﬂgL ﬂgMN Negative regulator of ﬂagellin synthesis -1.15 -1.65 -1.46 Flagella synthesis protein FlgN Flagellar hook-associated protein Flagellar hook-associated protein ﬂgKL The expression of ﬂagella-related genes is affected by environmental factors , such as osmotic [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20717675" target="_blank">20717675</a>]<br></li>
+<li>A A R A A A A A HU MarT SpvR FimWYZ FlhDC FliZ A A A A A R A R A A R CsgD RtsB A A * R * R Lrp Lon DnaK Fur Mlc RNase E R R R A A A A R FadD Pag A R SlyA A a A , activation ; R , repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>( A ) - Galactosidase activity in strains containing a hilA-lacZ transcriptional fusion and various mutations or pFliZ as indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>This regulation is clearly mediated through HilD , but FliZ controls neither hilD transcription nor translation-initiation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Results Rationale and approach We have previously shown that HilE , FliZ , and Fur control hilA expression via HilD ( Ellermeier and Slauch 2008 ; Lin et al. 2008 ; Chubiz et al. 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>FlhD4C2 activates all class 2 genes i.e. , HBB , FliA , FlgM , FliZ , FliT , and FliD ( Liu and Matsumura , 1994 ; Liu et al. , 1995 ; Ikebe et al. , 1999a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Positive regulators include BarA/SirA , FliZ , EnvZ/OmpR , FadD , CsrB , HilD and some nucleoid binding proteins ( Fis , HU ) , while Pag , HilE , Ams and the nucleoid binding proteins Hha and H-NS are negatively regulating hilA transcription ( Altier et al. 2000a , b Fahlen et al. 2000 ; Lucas et al. 2000 ; Wilson et al. 2001 ; Schechter et al. 2003 ; Baxter et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li>
+<li>In contrast , several transcription factors positively or negatively regulate SPI-1 genes by controlling hilD transcription independently of H-NS ( e.g. , Fur ) ( 37 , 38 ) , or by controlling HilD translation ( e.g. , SirA and CsrA ) ( 39 ) or activity ( e.g. , HilE and FliZ ) ( 40 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>These genes include those that encode several two-component regulatory systems ( PhoP/Q , PhoBR , OmpR/EnvZ and SirA/BarA ) , post-transcriptional systems ( CsrAB , RNase E , PNPase and Lon ) , nucleoid proteins ( HU , FIS , H-NS and Hha ) , signaling molecules ( ppGpp and NpnN ) , and other regulatory proteins ( FliZ , FadD and CpxA ) ( 6,7,19,21,22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17329372" target="_blank">17329372</a>]<br></li>
+<li>In turn , FliZ positively regulates SPI-1 genes ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>FlhD4C2 activates genes responsible for HBB , FliA ( ﬂagella-speciﬁc sigma factor ) , FlgM ( anti-sigma factor ) , FliZ ( regulatory protein ) , FliD ( cap protein ) , and FliT ( cap chaperone , and anti- FlhD4C2 factor ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Gene , operon or Location Cellular function locus Phenotype affected Molecular mechanism Known regulators ﬂjBA , ﬂiC ﬁm gtr Chromosome Chromosome Motility , adhesion and virulence Adhesion to the intestinal epithelium Lipopolysaccharide O-antigen glycosylation Modiﬁcation of O-antigen chain length Adhesion to the intestinal epithelium Adhesion to the intestinal epithelium Epithelial cell invasion Bioﬁlm formation Motility , adhesion and virulence Flagella Fimbriae LPS Site-speciﬁc recombination Unknown DNA-methylation pattern Hin FimB , FimE OxyR Chromosome and prophage P22 Chromosome Virulence plasmid Chromosome Chromosome Chromosome Chromosome Chromosome Chromosome opvAB pef std SPI-1 csgD ﬂiC lpf iol LPS Fimbriae DNA-methylation pattern DNA-methylation pattern DNA-methylation pattern Unknown Unknown Unknown Unknown Unknown OxyR Lrp , PefI Fimbriae TTSS Extracellular matrix Flagella Fimbriae myo-inositol utilization Dam , HdfR , RosE , SeqA StdE , StdF , FliZ c-di-GMP FliA , ClpX , FliZ , YdiV IolR , ReiD Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>They encode an N-terminally hexahistidine-tagged FliZ protein ( His6-FliZ ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>We asked if FliZ and RcsCDB also function through HilD to control SPI1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Through genetic and biochemical analyses , we show that FliZ posttranslationally controls HilD to positively regulate hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>This indicates that P2 mRNA must contribute to FliZ expression , leading to enhancement of motility development .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>iV-dependent hysteresis in fliC heterogeneity d f Y el o d o M Metered expression ( figure 5B ) revealed that sensitivity to YdiV and FliZ varies from cell to cell within populations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Another regulator , FliZ , may activate SPI-1 expression by controlling HilD activity ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24682814" target="_blank">24682814</a>]<br></li>
+<li>Thus , these two indirect effects are assumed to be mediated by FliZ ; RtsB represses FliZ , which has been shown to activate SPI-1 expression but repress type I ﬁmbriae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>We demonstrate that FliZ is an FlhD4C2-dependent activator of Pclass2/middle gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>RESULTS FliZ is an activator of Pclass2/middle gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ Is a posttranslational activator of FlhD4C2-dependent flagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19218381" target="_blank">19218381</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20190046" target="_blank">20190046</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_26">
+Saini , S. , Brown , J.D. , Aldridge , P.D. , and Rao , C.V. ( 2008 ) FliZ is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></label>
+<input id="rp_similarity_26", type="checkbox">
+<div class="RP_similar">
+<li>Saini , S. , J. D. Brown , P. D. Aldridge , and C. V. Rao , 2008 FliZ Is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Saini , S. , Brown , J.D. , Aldridge , P.D. , and Rao , C.V. ( 2008 ) FliZ Is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21143315" target="_blank">21143315</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_29">
+doi :10.1128 / JB.00047-00010 Saini S , Brown JD , Aldridge PD , Rao CV ( 2008 ) FliZ is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></label>
+<input id="rp_similarity_29", type="checkbox">
+<div class="RP_similar">
+<li>Saini S , Brown JD , Aldridge PD , Rao CV ( 2008 ) FliZ Is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22143773" target="_blank">22143773</a>]<br></li>
+<li>[ 86 ] S. Saini , J.D. Brown , P.D. Aldridge , C.V. Rao , FliZ Is a posttranslational activator of FlhD4C2-dependent ﬂagellar gene-expression , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li></div>
+<li>Therefore , FliZ also plays a ydiV-independent role in flagellar gene regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ regulates type 1 ﬁmbrial gene-expression though FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>( G ) RtsB regulates type 1 ﬁmbrial gene-expression through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Likewise , FliZ 's effect on gene-expression in LT2 was also less pronounced ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>doi :10.1128 / JB.01996-01907 Saini S , Koirala S , Floess E , Mears PJ , Chemla YR , Golding I , Aldridge C , Aldridge PD , Rao CV ( 2010a ) FliZ induces a kinetic switch in ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Saini S , et al. ( 2010 ) FliZ induces a kinetic switch in ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22143773" target="_blank">22143773</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_38">
+Saini , S. , S. Koirala , E. Floess , P. J. Mears , Y. R. Chemla et al. , 2010b FliZ induces a kinetic switch in ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></label>
+<input id="rp_similarity_38", type="checkbox">
+<div class="RP_similar">
+<li>Saini , S. , Koirala , S. , Floess , E. , Mears , P.J. , Chemla , Y.R. , Golding , I. , et al. ( 2010a ) FliZ induces a kinetic switch in ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21166907" target="_blank">21166907</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_40">
+FliZ induces a kinetic switch in flagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></label>
+<input id="rp_similarity_40", type="checkbox">
+<div class="RP_similar">
+<li>FliZ induces a kinetic switch in ﬂagellar gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li></div>
+<li>Chubiz , J. E. , Y. A. Golubeva , D. Lin , L. D. Miller , and J. M. Slauch , 2010 FliZ regulates expression of the SPI1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_43">
+Microbiol Mol Biol Rev 64:694 -- 708 Chubiz JE , Golubeva YA , Lin D , Miller LD , Slauch JM ( 2010 ) FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></label>
+<input id="rp_similarity_43", type="checkbox">
+<div class="RP_similar">
+<li>Chubiz , J. E. , Golubeva , Y. A. , Lin , D. , Miller , L. D. & Slauch , J. M. FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>Chubiz JEC , Golubeva YA , Lin D , Miller LD , Slauch JM : FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23295139" target="_blank">23295139</a>]<br></li>
+<li>Chubiz JE , Golubeva YA , Lin D , Miller LD , Slauch JM : FliZ regulates expression of the Salmonella pathogenicity island 1 invasion locus by controlling HilD protein activity in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22632036" target="_blank">22632036</a>]<br></li></div>
+<li>FliZ is also known to act as a positive regulator for the hilA gene , which encodes a positive regulator for Salmonella pathogenicity island 1 ( SPI1 ) essential for invasion-of-host cells ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>Another protein , FliZ , was identified to be a major positive regulator of this system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21984608" target="_blank">21984608</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_49">
+[ PubMed : 21278297 ] Wada T , Tanabe Y , Kutsukake K. FliZ acts as a repressor of the ydiV gene , which encodes an antiFlhD4C2 factor of the flagellar regulon in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></label>
+<input id="rp_similarity_49", type="checkbox">
+<div class="RP_similar">
+<li>Wada T , Tanabe Y , Kutsukake K ( 2011 ) FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28593349" target="_blank">28593349</a>]<br></li>
+<li>[ 85 ] T. Wada , Y. Tanabe , K. Kutsukake , FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar typhimurium , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>J Bacteriol 184:645 -- 653 Wada T , Tanabe Y , Kutsukake K ( 2011 ) FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4FlhC2 factor of the ﬂagellar regulon in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25201947" target="_blank">25201947</a>]<br></li>
+<li>FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>FliZ acts as a repressor of the ydiv gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Wada , T. , Y. Tanabe , and K. Kutsukake , 2011 FliZ acts as a repressor of the ydiV Gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar Typhimu-rium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Wada , T. , Tanabe , Y. and Kutsukake , K. ( 2011 ) FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the ﬂagellar regulon in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25422036" target="_blank">25422036</a>]<br></li></div>
+<li>FliZ Acts as a Repressor of the ydiV Gene , Which Encodes an Anti-FlhD4C2 Factor of the Flagellar Regulon in Salmonella enterica Serovar Typhimurium Takeo Wada , Yasushi Tanabe , and Kazuhiro Kutsukake * Graduate School of Natural Science and Technology and Department of Biology , Faculty of Science , Okayama University , Tsushima-Naka 3-1-1 , Kita-ku , Okayama 700-8530 , Japan Received 2 June 2011/Accepted 19 July 2011 YdiV acts as an anti-FlhD4C2 factor , which negatively regulates the class 2 ﬂagellar operons in poor medium in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Wada , T. , Tanabe , Y. , and Kutsukake , K. ( 2011 ) FliZ acts as a repressor of the ydiV gene , which encodes an anti-FlhD4C2 factor of the flagellar regulon in Salmonella enterica serovar Wang , Q. , and Harshey , R.M. ( 2009 ) Rcs signalling-activated transcription of rcsA induces strong anti-sense transcription of upstream fliPQR flagellar genes from a weak intergenic promoter : regulatory roles for the anti-sense transcript in Wang , Q. , Zhao , Y. , McClelland , M. , and Harshey , R.M. ( 2007 ) The RcsCDB signaling system and swarming motility in Salmonella enterica serovar Typhimurium : dual regulation of flagellar and SPI-2 virulence genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>Recently , FliZ was shown to be a transcriptional repressor of the nonﬂagellar gene ydiV ( 46 ) , which encodes another anti-FlhD4C2 factor responsible for repression of ﬂagellar expression in poor medium ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>FliZ acts as a repressor of a non-ﬂagellar protein YdiV , which participates in nutritional status ( of the cell ) dependent regulation of FlhD C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>At the same time , FlhD C also activates the 4 2 4 2 genes encoding ﬁve regulators -- FliA ( σ factor ) , FlgM ( anti- σ factor ) , FliD ( cap protein ) , FliT ( anti- FlhD4C2 factor ) , and FliZ ( regulator ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>The flhDC encode the master regulator FlhDC , which activates transcription from class two promoters , facilitating expression of middle genes encoding the alternative sigma factor FliA , the anti-sigma factor FlgM , the regulator FliZ , as well as genes required for hook-basal body formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>It has recently been shown that in E. coli , FliZ negatively regulates RpoS activity posttranslationally , independent of other ﬂagellar proteins ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>YdiV participates in a double-negative feedback loop involving the ﬂagellar regulator FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>This boost in virulence was suggested to be caused by increased flagellar expression , including the FliZ regulator controlling the SPI1 regulator HilD at post-transcriptional level ( Kage et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23676436" target="_blank">23676436</a>]<br></li>
+<li>There is certainly a strong tie between the two ; FliZ is a signiﬁcant regulator of HilD activity and has been shown to play a role in Salmonella virulence only during oral infection , the observed virulence phenotype being largely dependent on SPI1 ( Chubiz et al. 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Previous studies have shown a regulatory link between the ﬂagellar regulon and SPI-1 via FliZ , which was shown to posttranscriptionally activate HilD , the master regulator that controls SPI-1 expression ( 28 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>FliZ , a ﬂagellar regulator , is at the crossroads between motility , haemolysin expression and virulence in the insect pathogenic bacterium Xenorhabdus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>To distinguish whether FliZ regulates hilA via HilD or independently of HilD , we put rtsA under the control of a tetracycline-induc-ible promoter ( tetRA-rtsA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Expression of FliA and FliZ proteins from P2 mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>The panel of regulatory proteins ( Table 2 ) included SPI1-encoded transcription factors ( HilA , HilC and HilD ) and transcription factors previously reported to control SPI1 gene-expression ( HilE , BarA/SirA , Fur and FliZ ) [ 17 -- 24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27564394" target="_blank">27564394</a>]<br></li>
+<li>The expression of hilA is regulated in response to variety of environmental signals , including pH ( 6 ) , growth phase ( 56 ) , osmolarity ( 36 ) , and oxygen ( 52 ) and by a number of proteins , including BarA/SirA ( 51 ) , CpxA ( 71 ) , CsrB ( RNA ) ( 2 ) , EnvZ/OmpR ( 63 ) , FadD ( 63 ) , Fis ( 94 ) , FliZ ( 63 ) , HilC ( 83 ) , HilD ( 83 ) , Hu ( 84 ) , Mlc ( 58 ) , and RtsA ( 28 ) , which positively regulate expression , and CsrA ( 2 ) , Hha ( 29 ) , HilE ( 7 ) , H-NS ( 84 ) , Lon ( 87 ) , PhoB ( 63 ) , and PhoP/PhoQ ( 9 ) , which negatively regulate expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>On the other hand , FliZ was shown to be a positive regulator of class 2 operons ( 23 ) and to participate in a positive-feedback loop that induces a kinetic switch in class 2 operon expression ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Note that in DﬂgM , DﬂiZ , and DﬂiD mutants , class 3 ( red ) gene Fig. 5 FliZ from the class 2 transcript controls class 2 gene-expression dynamics .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>However , environmental signals modulating ﬂiAZY expression may coordinately regulate motility via FliA and expression of invasion genes via FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Importantly , ectopic expression of FliZ activates hilA expression in strains with ﬂhDC deleted ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Furthermore , controlled expression of ﬂiZ results in high-level expression of hilA , suggesting that FliZ somehow induces hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>We also show that FliZ likely links ﬂagellar gene-expression with SPI1 gene-expression in a secretiondependent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Genetically , FliZ activates expression of hilA ( 33 , 44 ) and enhances class II ﬂagellar gene-expression ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Particularly , FliZ is involved in not only regulating ﬂagellar gene-expression , but also controlling expression of SPI1 , and Type I ﬁmbriae gene-expression [ 85 -- 88 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23040276" target="_blank">23040276</a>]<br></li>
+<li>Comparing gene-expression dynamics in these different strains , we found that FliZ is a positive regulator of ﬂagellar and SPI1 gene-expression and a negative regulator of type 1 ﬁmbrial gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Complementation studies with ﬂhC and ﬂiA mutants indicate that FliZ , which is encoded in an operon with ﬂiA , activates expression of hilA , linking regulation of hilA with motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>FliA-dependent activation of FlgM ensures an effectiv `` off '' switch for class 3 gene-expression as cells transition from high - to low-secretion regime e Fraction of free-FlhD4C2 complex as a function of class 3 expression ( or secretion ) in WT , ﬂiZ mutant , ﬂiD mutant , and a ﬂiT mutant The modes of regulation of FlhD4C2 by FliZ and FliT are different .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>At the population level , this suggests temporal fluctuations in average concentrations of cellular factors required for FliZ to activate fliC expression , most likely regulators of class I. Transcription of class I genes is tightly controlled by growth-phase specific expression of multiple positive and negative regulators ( Mouslim & Hughes , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ represses expression of YdiV transcriptionally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Interestingly , overproduction of FliZ also decreased expression of both genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Thin lines represent potential mechanisms for regulation of hilA by each pathway : a , FliZ induces the expression or activity of an activator of hilA expression ; b or c , a gene product in the Pho regulon ( b ) or PhoB ;P ( c ) activates expression or activity of a repressor of hilA expression ; d , accumulation of an endogenous precursor of fatty-acid-metabolism activates expression or activity of a repressor of hilA expression ; e or f , alternatively , a fatty acid deg-radation product ( e ) or acyl-CoA ( f ) activates the expression or activity of an activator of hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Lowered expression of FliZ results in inhibition of expression of Salmonella pathogenicity island 1 ( SPI1 ) , while lowered expression of FliA results in inhibition of YhjH ( PDE ) expression , leading to enhanced bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21278297" target="_blank">21278297</a>]<br></li>
+<li>Another explanation for the decreased ﬂuid secretion response to an ﬂhD mutant is that other ﬂagellar proteins such as FliA or FliZ , which are not made in an ﬂhD mutant , control expression of virulence determinants , as has been proposed by others ( 6 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11500437" target="_blank">11500437</a>]<br></li>
+<li>Therefore , to understand the role that FliZ regulation plays in motility , we tested the ability of ﬂiZ mutants to swim through liquids and swarm on surfaces .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>In addition to being a ﬂagellar regulator , FliZ is known to also enhance the expression of SPI1 genes ( 27 , 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>In addition , FliZ is also known to activate expression of the genes located on the Salmonella Pathogenicity Island-1 ( SPI1 ) ( Chubiz et al. 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>We have expanded the regulons of key S. Typhi-murium virulence-associated regulatory proteins under infection-relevant growth conditions and we present for the first time a detailed global view of the genes controlled by HilE , FliZ , RpoE and PhoB/R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27564394" target="_blank">27564394</a>]<br></li>
+<li>Jubelin , G. , Lanois , A. , Severac , D. , Rialle , S. , Longin , C. , Gaudriault , S. and Givaudan , A. ( 2013 ) FliZ is a global regulatory protein affecting the expression of flagellar and virulence genes in individual Xenorhabdus nematophila bacterial cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+<li>To investigate the possibility that in S. Paratyphi A FliC affects SPI-1 gene-expression via FliZ , we constructed a ﬂiC ﬂiZ S. Paratyphi A double-mutant strain and determined the transcriptional levels of representative genes from the ﬂagella , including ﬂhD ( class I ) , ﬂiA and ﬂgM ( class II ) , and cheA ( class III ) , and from SPI-1 , hilD , hilA , and invF ( regulators ) , invA ( T3SS-1 structural gene ) , and sopB ( secreted effector ) , in the absence of both FliC and FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>The FlhD2C2 complex activates transcription of the ﬂiAZY operon , and the s28 ( FliA ) and FliZ protein products act to increase ﬂagellar gene-expression : s28 will transcribe early , middle , and late genes , and FliZ enhances the function of the FlhD2C2 complex on class 2 promoter transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>Interestingly , the Lrp-binding consensus II motifs are linked with several genes , ﬂhC ( affects FliZ expression ) , hns , and ompR ( data not shown ) , whose products are known to be involved in the expression of hilA ( 62 , 63 , 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>Hence , the ﬂagellar regulators FliT and FliZ are not only involved in controlling the dynamics of gene regulation , but actively control the ﬂagella number per cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>In addition to being a positive regulator of FlhD4C2 activity ( 50 ) , FliZ posttranslationally activates the regulatory protein HilD , which , in turn , positively regulates the expression of hilA , the gene for a key regulator of the SPI-1 system ( 45 , 51 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29150501" target="_blank">29150501</a>]<br></li>
+<li>Since the ﬂiZ gene is under the positive control of FlhD4C2 ( 12 , 23 ) , FliZ is one of the most plausible candidates of the regulator involved in FlhD4C2 control of the ydiV gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>FliZ , which is encoded by the ﬂiAZY operon of the ﬂagellar regulon , activates the expression of hilD at the posttranscriptional level , leading to the stimulation of SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>To better understand the putative role of FliZ as a positive regulator of ﬂagellar gene-expression , we measured gene-expression from a subset of ﬂagellar promoters in the wild type ( strain 14028 ) , an isogenic ﬂiZ mutant , and the ﬂiZ mutant constitutively expressing ﬂiZ from the PLtetO-1 promoter on a plasmid ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Consequently , FliZ could be the link between the immobilization-speciﬁc downregulation of the ﬂagellar regulon , including the ﬂiZ gene , and the two other major phenotypes of the immobilized cells : increased expression of RpoS-dependent genes ( Fig. 5B ) and downregulation of SPI1 , SPI4 and SPI5 genes ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>Models illustrating the FliZ-dependent activation of the ﬂagellar class 2 operons via control of the expression of the ydiV gene ( A ) and the interplay between YdiV and FliZ in motility control in response to nutritional conditions ( B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Feedback regulation in the ﬂagellar system targets multiple levels throughout biosynthesis of the ﬂagellum : ( i ) on the level of ﬂhDC gene-expression via FlhD4C2-dependent activation of the LuxR-type repressor RﬂM , ( ii ) on the level of FlhDC protein complex via posttranscriptional repression ( FliT and YdiV ) and activation ( FliZ ) of FlhDC-dependent class 2 gene-expression , and ( iii ) on the level of ﬂagellar class 3 gene-expression by secretion of the anti- 28 factor FlgM after HBB completion and positive regulation of ﬂgM translation by FlgN ( 45 -- 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+<li>Of note , FliZ positively regulates the expression of the SPI-1 invasion genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>FlhD4C2 , via the ﬂagella regulon members FliA and FliZ positively regulates expression of the type-III-secretion-system through hilA encoding the master activator of the TTSS genes ( Fig. 7 ; Chubiz et al. , 2010 ; Fabrega and Vila , 2013 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li>
+<li>Primary examples of factors that inﬂuence HilD activity are HilE , a major negative regulator of SPI1 T3SS expression , and the ﬂagellar gene product FliZ , which acts indirectly upon HilD to increase activity ( 10 , 16 , 18 -- 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29378886" target="_blank">29378886</a>]<br></li>
+<li>These include the transcription factors FliZ , HilC , and RtsA , which have each been demonstrated to positively regulate invasion gene-expression by promoting expression of the SPI-1 regulator hilD ( 9 , 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27185788" target="_blank">27185788</a>]<br></li>
+<li>In addition , we identiﬁed a novel regulatory link between ﬂagellar and type 1 ﬁmbrial gene-expression dynamics , where we found that the ﬂagellar regulator , FliZ , represses type 1 ﬁmbrial gene-expression through the posttranscriptional regulation of FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_113">
+FliZ regulates the magnitude of SPI1 gene-expression and the timing of type 1 ﬁmbrial gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></label>
+<input id="rp_similarity_113", type="checkbox">
+<div class="RP_similar">
+<li>RtsB directly regulates the dynamics of ﬂagellar gene-expression and indirectly regulates the dynamics of SPI1 and type 1 ﬁmbrial gene-expression through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_115">
+( A to C ) Deleting FliZ represses ﬂagellar and SPI1 gene-expression and accelerates the induction of type 1 ﬁmbrial genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></label>
+<input id="rp_similarity_115", type="checkbox">
+<div class="RP_similar">
+<li>( D to F ) Overexpressing FliZ increases the magnitude of ﬂagellar and SPI1 gene-expression and delays the induction of type 1 ﬁmbrial genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li></div>
+<li>Further , a mutation in the ﬂiZ gene in E. coli has recently been shown to cause premature expression of RpoS-dependent genes ( Pesavento et al. , 2008 ) and in Salmonella overproduction of FliZ decreases expression of the RpoS-dependent genes , katE and sodCII ( Chubiz et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>No RpoS-dependent genes were differentially expressed between the DﬂiZ mutant and the wild type , making it unlikely that FliZ is involved in upregulation of RpoS-dependent gene-expression in Salmonella during immobilized growth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>To determine where FliZ ﬁts into our model of SPI1 regulation , we also reexamined the effects of deleting hilD , hilC , and rtsA on expression of a hilA-lacZ fusion while overexpressing FliZ ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Thus , based on our results we propose that , Tohru Minamino , Osaka University , Japan Carmen R. Beuzón , University of Málaga , Spain the proteins FlgM , FliZ , and FliT , thought to have accessory roles in regulation of ﬂagella , likely play a critical role controlling gene-expression during cell-division , and frequency * Correspondence : distribution of ﬂagella .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Simulations of our models predict that the regulators FliZ and FliT not only control expression levels of ﬂagellar genes at cellular level , but also play signiﬁcant roles in maintaining optimal distribution of ﬂagella in a population .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Hence , our modeling results suggest that late expression of FliZ dictates timely activation of SPI1 and SPI4 in the Salmonella infection cycle , and that FliZ acts as a molecular link between these systems involved in infection .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>We conclude by discussing the role of FliZ regulation with respect to ﬂagellar biosynthesis based on our characterization of gene-expression and FliZ 's role in swimming and swarming motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>We demonstrate sustained bistable fliC expression in virulent Salmonella 14028 and document dynamic control of the distribution , or single-cell census , of flagellar gene-expression by the mutually repressing repressors YdiV and FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>An indirect positive feedback loop involving FliZ tunes ﬂagellar genes expression ( Wada et al. , 2011b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Another Class 2 gene product , FliZ , is a positive regulator of ﬂagellar Class 2 and Class 3 gene transcription , which increases FlhDC activity by two distinct mechanisms ( Kutsukake et al. , 1999 ) ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>FliZ is also necessary for virulence , as a positive regulator of the Salmonella Pathogenicity Island-1 locus ( Iyoda et al. , 2001 , Lucas et al. , 2000 , Chubiz et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>This expression proﬁle of virulence genes during planktonic growth is consistent with previous data ( Kage et al. , 2008 ; Lin et al. , 2008 ; Chubiz et al. , 2010 ) showing that FliZ controls the virulence expression through control of HilD at a post-translational level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>The flagellar regulator FliZ influences expression of the T3SS-1 by activating hilD , a gene encoding a positive regulator of hilA expression in S. Typhimurium ( Kage et al. , 2008 , Ellermeier et al. , 2005 , Lucas et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>FliZ regulates invasion gene-expression by controlling the availability of hilD , encoding an activator of hilA ( Kage et al. , 2008 , Lin et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>FliZ negatively regulates the expression of YdiV by repressing expression from the PydiV promoter ( Wada et al. , 2011b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliZ represses expression from the PydiV promoter and hence , aids class 2 gene-expression via FlhD4C2 ( Wada et al. , 2011b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>Class II and III promoters also drive expression of multiple positive and negative regulators of the cascade ( Wozniak et al. , 2010 ) , including Results the sigma factor ( FliA ) required for class III expression ( Chevance & Hughes , 2008 ) , the anti-sigma factor ( FlgM ) that sequesters FliA until HBB assembly is complete ( Karlinsey et al. , 2000 , Hughes et al. , 1993 ) , and FliZ , an activator of class II promoters ( Kutsukake et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Class 2 promoters control expression of all proteins constituting the structural elements of the hook-basal body ( HBB ) , ﬁlament cap protein ( FliD ) , and regulators ( FliA , FlgM , FliZ , and FliT ) ( Jones and Macnab , 1990 ; Ohnishi et al. , 1990 ; Gillen and Hughes , 1993 ; Kutsukake and Ide , 1995 ; Yokoseki et al. , 1995 ; Ikebe et al. , 1999a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>In addition , FliA positively regulates its own expression , as well as that of the genes encoding FlgM , FliZ , FliD , and FliT ( Gillen and Hughes , 1993 ; Kutsukake and Ide , 1995 ; Ikebe et al. , 1999a , b ; Kutsukake et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliZ and FliT Regulate Flagella in Secretion Dependent Manner Protein secretion plays an important role in ﬂagellar assembly , and is thought to be used as a proxy for ﬂagellar abundance in the cell ( Brown et al. , 2008 ; Saini et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>The FliZ transcriptional regulator affects virulence expression FliZ is a part of the ﬂagellar regulon , which is encoded within the ﬂiA operon , and has been found to be a link between virulence gene-expression and motility in Sal-monella ( Lucas et al. , 2000 ; Iyoda et al. , 2001 ; Lin et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22356617" target="_blank">22356617</a>]<br></li>
+<li>FliZ is expressed as part of the ﬂagellar regulon and presumably acts to coordinate ﬂagellar expression with other systems in the cell , including SPI1 and the RpoS regulon ( Saini et al. 2008 ; Pesavento et al. 2008 ; Chubiz et al. 2010 ; Saini et al. 2010c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">FliZ binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>As for a possible mechanism , sequence analysis indicates that FliZ shares no similarity to any other known regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>This sequence overlaps the putative 35 element of the nlpC promoter and thus may be a plausible target site of FliZ binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by FliZ</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>FliZ directly represses ydiV transcription , and YdiV indirectly represses ﬂiZ transcription through FlhD4C2 ( Fig. 1 ) ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>These data show that FliZ does not act by controlling hilD transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Most likely , its effect on SPI1 gene expression is through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Repression of type 1 ﬁmbrial gene expression by FliZ is through FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>We next tested whether FliZ represses type 1 ﬁmbrial gene expression through FimZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Similarly , RtsB is likely also affecting type 1 ﬁmbrial gene expression through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>( G ) RtsB regulates type 1 ﬁmbrial gene expression through FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>Likewise , FliZ 's effect on gene expression in LT2 was also less pronounced ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_9">
+FliZ induces a kinetic switch in flagellar gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></label>
+<input id="tu_similarity_9", type="checkbox">
+<div class="TU_similar">
+<li>FliZ induces a kinetic switch in ﬂagellar gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li></div>
+<li>FliZ , whose function is also not well understood , appears to induce hilA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>In addition , FliA positively regulates its own expression , as well as that of the genes encoding FlgM , FliZ , FliD , and FliT ( Gillen and Hughes , 1993 ; Kutsukake and Ide , 1995 ; Ikebe et al. , 1999a , b ; Kutsukake et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliA and FliZ are expressed from a single operon , and are activated independently by FlhD4C2 and FliA ( Kutsukake et al. , 1999 ; Brown et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>]<br></li>
+<li>FliZ was put under control of its native promoter by cloning the ﬂiAZ operon with its promoter using primers SS123F ( GGG CTC GAG AGT TTT CGC GCC CAA ATA CC ) and SS123R ( AAT AAG CTT TTA ATA TAT ATC AGA ACT GG ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Note 4 2 that FliZ is indirectly regulated by late protein secretion , as its expression is controlled by 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>The inability to activate SPI-1 expression by growth at 42 ° C is overcome by overexpression of RtsA or HilC but not by overexpression of FliZ or HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26386070" target="_blank">26386070</a>]<br></li>
+<li>BarA/SirA ( 1 ) , HilD ( 14 , 30 ) , HilC/SirC/SprA ( 11 , 12 , 28 , 30 ) , CsrAB ( 1 ) , PhoB , FadD , and FliZ ( 25 ) have been shown to activate hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16391141" target="_blank">16391141</a>]<br></li>
+<li>The other mutations have no effect on hilD expression , suggesting that FadD , FliZ , and EnvZ do not regulate hilA by modulating hilD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>We have also shown that FadD , FliZ , and EnvZ do not regulate hilA expression by modulating hilD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>Our results suggest that FliZ , FadD , PhoB , EnvZ , and SirA each affect hilA expression independently and act through distinct pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Previously , we provided evidence that FadD , FliZ , PhoB , SirA , and EnvZ regulate hilA expression by independent pathways ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>FliZ and RcsBC affect hilA expression through HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>FliZ regulates hilA independently of HilE and RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>Figure 7 HilE and FliZ affect hilA expression independently of each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Complementation studies with ﬂhC and ﬂiA mutants indicate that FliZ , which is encoded in an operon with ﬂiA , activates expression of hilA , linking regulation of hilA with motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10714991" target="_blank">10714991</a>]<br></li>
+<li>Furthermore , hilC is not required for the regulation of hilA expression by oxygen , osmolarity , FadD , FliZ , PhoB , or SirA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_27">
+Because the URS is required for regulation of hilA expression by oxygen , osmolarity , PhoP/PhoQ , and SirA/BarA ( 63 ) , we tested whether this cis element is also required for regulation of hilA expression by FadD , FliZ , PhoB , and EnvZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></label>
+<input id="tu_similarity_27", type="checkbox">
+<div class="TU_similar">
+<li>Thus , the same regulatory node that is required for regulation of hilA expression by SirA , PhoP/PhoQ , oxygen , and osmolarity is also required by FadD , FliZ , PhoB , and EnvZ to modulate hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li></div>
+<li>Thus , it appears that FadD , FliZ , PhoB , and SirA act independently of hilC to reduce hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>More recently , it was found that PhoP / PhoQ , FadD , FliZ , PhoB , SirA , and EnvZ require the URS for modulation of hilA expression , but these factors are not responsible for regulating hilA in response to oxygen and osmolarity ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11673432" target="_blank">11673432</a>]<br></li>
+<li>It was demonstrated that FliZ posttranslationally controls HilD to positively regulate expression of hilA [ 67 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22632036" target="_blank">22632036</a>]<br></li>
+<li>The possibility that Lon targets FliZ to repress hilA expression can be excluded because lon disruption does not affect the production of ﬂagellum-related proteins whose expression is activated by FliZ ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741864" target="_blank">11741864</a>]<br></li>
+<li>Furthermore , controlled expression of ﬂiZ results in high-level expression of hilA , suggesting that FliZ somehow induces hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>SirA , OmpR , FadD , and FliZ may also modulate hilD posttranscriptionally to regulate hilA expression DISCUSSION Previously , Schechter et al. demonstrated that hilA expression is repressed in the absence of hilD ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>30:81 -- 90 , 2001 ) have shown that a disruption in ﬂiZ represses hilA , conﬁrming that FliZ positively regulates hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11292791" target="_blank">11292791</a>]<br></li>
+<li>These results are consistent with our model that FliZ is functioning through HilD to control hilA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_37">
+These results suggest that , while TdcA regulates ﬂiZ transcription , its effect on hilA expression is independent of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></label>
+<input id="tu_similarity_37", type="checkbox">
+<div class="TU_similar">
+<li>However , our results suggest that while TdcA regulates ﬂiZ transcription , its effect on hilA expression is independent of FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li></div>
+<li>The expressed FliZ protein activates autog-enously the transcription from the P1 promoter by repressing the anti-FlhD4C2 gene ydiV , while the expressed FliA protein ( 28 ) associates with RNA polymerase core enzyme and then transcribes the ﬂiAZ operon from the P2 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>FliZ negatively regulates transcription of the ydiV gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>FliZ represses ydiV transcription from the nlpC promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>If FliZ affects hilA expression solely through HilD , then there should be no ﬂiZ phenotype in a hilD background when the system is activated by other means .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>It should be noted that the chromosomal ydiV-lacZ fusion gene was not completely turned off by FliZ expression from pQE80L-ﬂiZ ( Table 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Therefore , it is reasonable to predict that this FliZ control may not be affected by the ydiV mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>lum-related gene product FliZ positively regulates hilD expression at the posttranscriptional level ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18723621" target="_blank">18723621</a>]<br></li>
+<li>This indicates that YdiV activates its own expression by inhibiting FliZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>FliZ represses expression of YdiV transcriptionally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>Under certain experimental conditions ( e. g. , in rich medium ) , the YdiV-FliZ repressing circuit is not required for ﬂiC bistable expression [ 74 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></li>
+<li>FliZ was required for WT levels of fliC expression , however , bistable populations continued to form in a ΔfliZ strain , indicating that reciprocal repression by YdiV and FliZ is not crucial for fliC bistability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ boosted fliC expression only when ydiV was concurrently induced ( figure 5B , columns 2 and 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Thus , both the kinetic pattern of ydiV repression by FliZ ( figure 3A ) and FlhC regulation by FliZ ( figure 3B ) support our fliC transcription timecourse , in which FliZ increases fliC expression at later timepoints during growth ( figure 2A-E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ represses ydiV , and increases both class I protein levels ( figure 3B ) and fliC expression in the absence of ydiV ( figure 4A , B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Under these conditions , the anti-sigma factor FlgM should not be exported and should block class III transcription ( 36 , 51 ) and decrease FliZ expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>YdiV and FliZ are necessary for bimodal ﬂagellar gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>In particular , we found that deleting FliZ decreases the relative magnitudes of ﬂagellar and SPI1 gene expression but does not affect their dynamics ( Fig. 4A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>We also found that overexpressing FliZ increases both the magnitudes and durations of ﬂagellar and SPI1 gene expression ( Fig. 4D and E ) , whereas it represses and delays type 1 ﬁmbrial gene expression ( Fig. 4F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20833811" target="_blank">20833811</a>]<br></li>
+<li>The ﬂiZ gene is transcribed in the ﬂiAZ operon , and FliZ activates the Spi1 transcriptional activator HilD , which in turn activates Spi1 transcription under high salt ( 200 mM NaCl ) microaerobic growth conditions ( 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706743" target="_blank">24706743</a>]<br></li>
+<li>28 ( FliA ) and FliZ are encoded by the ﬂiA and ﬂiZ genes , respectively , which together constitute an operon transcribed in this order .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>The class 2 promoter is also under positive and negative control from FliZ and FliT , respectively , both of which are encoded by the genes within the ﬂagellar regulon ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>As FliZ is also a positive regulator of Pclass2 activity , this means that two positive factors are encoded in the same operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>The second mechanism by which FliZ activates Class 2 and 3 gene transcription in Salmonella is via positive feedforward regulation of invasion gene expression encoded on Spi-1 ( Lucas et al. , 2000 ; Iyoda et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>FliZ regulates invasion gene expression by controlling the availability of hilD , encoding an activator of hilA ( Kage et al. , 2008 , Lin et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>Intriguingly , many cells are able to maximize fliC expression in the absence of FliZ , revealing biochemical heterogeneity in these well-mixed , homogeneously grown cultures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>B ) FliZ 's impact upon fliC transcription remains time-dependent , and heterogeneity in fliC expression is maintained in the metered system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>FliZ control of these genes was observed in rich medium , in which YdiV expression must be low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>On the other hand , FliZ was shown to be a positive regulator of class 2 operons ( 23 ) and to participate in a positive-feedback loop that induces a kinetic switch in class 2 operon expression ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Recently , FliZ was shown to be a transcriptional repressor of the nonﬂagellar gene ydiV ( 46 ) , which encodes another anti-FlhD4C2 factor responsible for repression of ﬂagellar expression in poor medium ( 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908664" target="_blank">21908664</a>]<br></li>
+<li>Taken together , these results indicate that the DsbA effect on hilA expression is dependent on both the RcsCDB system and FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Consistent with the notion that FliZ activates T3SS-1 expression through HilD , transcription of hilD was induced in a tviA defective strain ( Fig. 1A , cluster 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>The data above suggest that , although loss of the ﬂagellar apparatus can affect FliZ expression , it does not explain th decrease in transcription observed in the rcsBC background when dsbA is also mutated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>This suggests that the late FliZ ( expressed from class 3 ) does not have any role in control of ﬂagella gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>FliZ is expressed in the same operon as FliA , and controls class 2 gene expression via a protein YdiV ( Wada et al. 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>FliZ , encoded in the ﬂiAZY operon , is a positive activator of P / class2 middle gene expression ( 37 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>FliZ is encoded in the ﬂiA operon and is reported to be an enhancer of class II ﬂagellar gene expression ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17951383" target="_blank">17951383</a>]<br></li>
+<li>Thus , reduced levels of FliZ are expected to lead to reduced levels of the transcriptional regulators HilA ( controlled by HilD ) and InvF ( controlled by HilA ) , both of which are known to activate the expression of effector genes located inside and outside ( indicated by a dotted box ) SPI-1 ( 77 -- 79 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29150501" target="_blank">29150501</a>]<br></li>
+<li>However , there was no strict correlation between the level of HilD protein and the level of hilA expression ; HilD protein levels in the ﬂiZ and pFliZ backgrounds differed by only 2-fold , whereas hilA transcription differed by 10-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>In addition , FliZ is also known to activate expression of the genes located on the Salmonella Pathogenicity Island-1 ( SPI1 ) ( Chubiz et al. 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>We predicted that deleting both ydiV and fliZ would invert the WT census of fliC expression as cells approach stationary phase , since YdiV is critical to maintain the fliC-OFF subpopulation , and FliZ is required to maximize fliC expression under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Thus , the impact of FliZ upon the fliC census is enhanced at 5 hours compared to 2.5 hours under conditions of metered expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Interestingly , the Lrp-binding consensus II motifs are linked with several genes , ﬂhC ( affects FliZ expression ) , hns , and ompR ( data not shown ) , whose products are known to be involved in the expression of hilA ( 62 , 63 , 84 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19074398" target="_blank">19074398</a>]<br></li>
+<li>At the population level , this suggests temporal fluctuations in average concentrations of cellular factors required for FliZ to activate fliC expression , most likely regulators of class I. Transcription of class I genes is tightly controlled by growth-phase specific expression of multiple positive and negative regulators ( Mouslim & Hughes , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>If the regulator of interest controls hilA by affecting expression of FliZ , loss of this regulator would no longer affect hilA expression in the absence of FliZ or when FliZ was ectopically expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Interestingly , overexpression of FliZ in the ydiV strain did not attain a level of expression of PﬂiA-lacZ equivalent to its expression level in the ydiV mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>The absence of FliZ is `` sensed '' by the cell in terms of reduced HBB expression , and the cell tried to compensate for this loss of HBB expression by retaining more of FlhD4C2 in the cell in its free form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li>
+<li>The ﬂiZ mutation did not have a signiﬁcant effect on the sirA expression , indicating that FliZ control of the hilA expression is not mediated by transcriptional activation of the sirA gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11162188" target="_blank">11162188</a>]<br></li>
+<li>Results in Figure S1 show that the hilD -- lac transcriptional and translational fusions were also not affected by the loss of FliZ , conﬁrming that FliZ controls hilA expression via the post-translational control of HilD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Therefore , FliZ-dependent activation of class 2 operon expression is achieved by repression of the ydiV gene by FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>These results indicate that FliZ is a repressor of the nlpC-ydiV operon and activates the class 2 operons by repressing ydiV expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>This suggested the possibility that FliZ control of class 2 operon expression is exerted via the regulatory pathway of ydiV expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>These include the transcription factors FliZ , HilC , and RtsA , which have each been demonstrated to positively regulate invasion gene expression by promoting expression of the SPI-1 regulator hilD ( 9 , 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27185788" target="_blank">27185788</a>]<br></li>
+<li>Rather , positive feedback is indirect , such that FliA activates FliZ expression and FliZ indirectly activates FliA expression by repressing the expression of YdiV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>We demonstrate sustained bistable fliC expression in virulent Salmonella 14028 and document dynamic control of the distribution , or single-cell census , of flagellar gene expression by the mutually repressing repressors YdiV and FliZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Both nutrients and FliZ 4 2 repress the expression of YdiV ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li>
+<li>Metered expression of YdiV and FliZ reveals variable sensitivity to these regulators and defines conditions where expression of FliZ enhances fliC expression and where FliZ does not alter the fliC census .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Therefore , we conclude that the regulations of ﬂagellar gene expression by FliZ and SPI1 are independent of each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18469103" target="_blank">18469103</a>]<br></li>
+<li>Bistability of ΔfliZ populations and ydiV-independent FliZ control of flagellar gene expression provide evidence that the YdiV-FliZ mutually repressing repressor circuit is not required for bistability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>]<br></li>
+<li>Levels of hilC and hilD transcription in the absence of ClpXP and/or FliZ in cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+<li>FlhD4C2 , via the ﬂagella regulon members FliA and FliZ positively regulates expression of the type III secretion system through hilA encoding the master activator of the TTSS genes ( Fig. 7 ; Chubiz et al. , 2010 ; Fabrega and Vila , 2013 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li>
+<li>Recent studies revealed the coordinate regulation of flagellar and SPI-1 genes by FliZ , encoded by a gene in the fliA operon [ 66,67 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22632036" target="_blank">22632036</a>]<br></li>
+<li>Puriﬁed FliZ protein was shown in vitro to bind to the promoter region of the nlpC gene , which is located just upstream of the ydiV gene , and to repress its transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Models illustrating the FliZ-dependent activation of the ﬂagellar class 2 operons via control of the expression of the ydiV gene ( A ) and the interplay between YdiV and FliZ in motility control in response to nutritional conditions ( B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>Instead , we showed that FliZ binds to the promoter region of the nlpC-ydiV operon and represses its transcription ( Fig. 3 and 4 ) , which results in the decreased expression of the ydiV gene , encoding an anti-FlhD4C2 factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21804009" target="_blank">21804009</a>]<br></li>
+<li>FliZ is encoded by a gene in the ﬂiA operon , and orthologs are found only in the ﬂagellar regulons of members of the family Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>FliZ , which is encoded by the ﬂiAZY operon of the ﬂagellar regulon , activates the expression of hilD at the posttranscriptional level , leading to the stimulation of SPI1 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245288" target="_blank">18245288</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

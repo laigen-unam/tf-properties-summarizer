@@ -1,0 +1,633 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - CueR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">CueR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">CueR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>After 5 min , cells were harvested and the whole cell lysates were subjected to quantitative immuno-blot analysis of CusR ( A , short exposure ) and CueR ( B , short exposure ) proteins as described in Experimental procedures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Before hybridization , DNA chip was incubated at 65 ∞ C for 1 h in 20 ml of prehybridization buffer ( 6 ¥ SSC , 0.2 % SDS , Puriﬁcation of CusR and CueR To construct pCueR and pCusR for overproduction of CueR and CusR , respectively , DNA fragments containing the CueR - or CusR-coding regions were ampliﬁed by PCR with E. coli W3110 genome DNA as a template and a pair of primers , in which the NdeI and NotI sites were included ( see sequences in Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>, 70 ( 7 ) , 1688 -- 1695 , 2006 Characterization of Copper-Inducible Promoters Regulated by CpxA/CpxR in Escherichia coli Kaneyoshi Y 1 ; y 2 ; 3 AMAMOTO and Akira ISHIHAMA 1Department of Advanced Bioscience , Kinki University , Nakamachi , Nara 631-8505 , Japan 2Division of Molecular Biology , Nippon Institute for Biological Science , Ome , Tokyo 198-0024 , Japan 3Faculty of Engineering and Research Center for Micro-Nanotechnology , Hosei University , Koganei , Tokyo 184-8584 , Japan Received January 16 , 2006 ; Accepted March 30 , 2006 ; Online Publication , July 23 , 2006 [ doi :10.1271 / bbb .60024 ] Recently we found that the copper-responsive regulatory system ( copper-stimulon ) consists of at least four regulons , CueR - , CusSR - , CpxAR - , and YedVW regulons , in E. coli .1 ) Of a total of 28 copper-inducible genes , 11 were found to belong to the CpxAR regulon .1 ) CpxA/CpxR is a typical two-component signal transduction system that responds to envelope stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16861804" target="_blank">16861804</a>]<br></li>
+<li>Cys114 and Cys124 ( equivalent to Cys112 and Cys120 in CueR ) serve as ligands to Zn1 , whereas Cys115 and His119 coordinate Zn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>To calibrate the Cu response profile of CueR , we designed additional transcription assays under a series of metal-buffering conDownloaded from www.scie n 1Department of Biochemistry , Molecular Biology , and Cell Biology , 2Department of Chemistry , Northwestern University , 2205 Tech Drive , Evanston , IL 60208 , USA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_7">
+Changela , A. , Chen , K. , Xue , Y. , Holschen , J. , Outten , C.E. , O'Halloran , T.V. , and Mondragon , A. ( 2003 ) Molecular basis of metal-ion selectivity and zeptomolar sensitivity by CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></label>
+<input id="act_similarity_7", type="checkbox">
+<div class="ACT_similar">
+<li>Changela , A. , Chen , K. , Xue , Y. , Holschen , J. , Outten , C.E. , O'Halloran , T.V. , and Mondragón , A. ( 2003 ) Molecular basis of metal-ion selectivity and zeptomolar sensitivity of CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22783906" target="_blank">22783906</a>]<br></li></div>
+<li>CueR concentrations in lanes 2 ± 6 , 9 ± 13 I and 16 ± 20 decrease from 10.9 to 0.68 pmol per reaction in twofold dilutions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Lanes TGCA , DNA sequence generated using the PcopA/1 end-labelling primer ; lanes 2 and 4 , no added CueR ; lanes 1 , 3 and 5 , added CueR , with increasing DNase I concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Carefully designed experimental conditions for in vitro study of the effect of the metals on CueR will need to be performed to confirm the valence state of gold required for activation of CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Cysteine Residues 112 and 120 Are Required for Activation by Copper , Silver , and Gold -- The CueR protein contains several cysteine and histidine residues which are candidates for recognition and specific binding of activating metals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>MlrACTD contains a RxxD motifs , i.e. a signature involved in c-di-GMP binding in several types of c-di-GMP effector-proteins ( Schirmer and Jenal , 2009 ) , but none of the cysteines , which in metal-responding MerR-like proteins , e.g. MerR , ZntR and CueR , are involved in ligand binding to the CTD ( Helmann et al. , 1990 ; Brown et al. , 2003 ; Changela et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22783906" target="_blank">22783906</a>]<br></li>
+<li>In contrast to the CueR metal-binding site , the coordination environment of the metal-binding loop in ZntR is optimal for binding of divalent metals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>In the putative promoter ( 200 bp upstream of the pitA start codon ) , no DNA-binding sites for the following transcription factors are evident : MerR , CueR , ZntR ( all MerR family ) , Zur , NikR , CusR , ZraR , CpxR and ModE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19054109" target="_blank">19054109</a>]<br></li>
+<li>Indeed , little direct binding of Hg2 or Zn2 to CueR is observed when competitors such as dithiothreitol ( DTT ) are present ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>CueO , which is also under the control of the CueR regulator , has cuprous oxidase activity and can oxidize Cu to Cu , thus rendering it less toxic ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>This thermodynamic result indicates that Cu binds to CueR much more tightly than to glutathione , the most abundant thiol in the cell , and is consistent with the observation that GSH alone is not a reasonable competitor for Cu in the CueR activation of P ( fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Transcriptional activation by CueR is suppressed only when millimolar concentrations of cyanide ( CN -- ) , which has a higher affinity for Cu than has glutathione ( 14 , 16 ) , are added to the assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Transcription can be recovered upon the addition of Cu back to the cyanide-containing assays , thus indicating that copper binding to CueR is tight but reversible under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>As shown in 32 Fig. 2 , the addition of CueR caused retardation of this fragment , and the addition of Cu increased the concen-II tration of protein required for equivalent retardation , indicating that the affinity of CueR-Cu for DNA was lower than that of CueR alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Ag may not I simply be a mimic for Cu , as the affinity of CueR-Ag I for DNA is similar to that of CueR and greater than that of CueR-Cu under conditions in which the majority of Cu is present as Cu .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR binds to the copA promoter and Cu decreases the binding affinity in vitro The CueR protein was overexpressed as a fusion protein in the pET32-LIC expression system , purified and released from the fusion protein as described in Experimental procedures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>The structures of Cu - , Ag - , and Au - bound forms of CueR were determined to 2.2 , 2.1 , and 2.5 Å resolution , respectively , whereas the structure of an N-terminally truncated fragment of ZntR bound to Zn2 was solved to 1.9 Å resolution ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Initial studies of CueR show a lack of metal-dependent transcriptional activation : The switch is `` on '' without addition of any metal ions , even in the presence of high concentrations of avid Cu - binding ligands such as glutathione ( GSH ) ( 14 , 15 ) ( fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The activation of PcopA by CueR and gold salts was unexpected from a biological point of view .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>The physical chemistry of gold ions suggests that they are mimicking Cu ( I ) and Ag ( I ) in the metal binding site of CueR , leading to activation of PcopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>The metal elements ( Na , Mn , Ni , Cu , Zn , Fe , and Mo ) are directly recognized by the DNA-binding TFs ( NhaR , MntR , NikR , CueR , ZntR/Zur , Fur , and ModE , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>II I The binding of CueR to DNA was measured in the absence and the presence of Cu and Ag salts in order to estimate the comparative dissociation constants in the presence and absence of metal according to the method of Parkhill et al. ( 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>The metal-binding domain in Ag-CueR and Au - CueR is identical to that found in Cu - CueR , except for longer metalsulfur bond distances ( Ag-S : 2.35 Å ; Au-S : 2.32 and 2.39 Å ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>On the other hand , transcription of copA and cueO was found to be activated by another copperresponsive factor CueR , which bound to a conserved inverted repeat sequence , CueR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Results will show that besides the known CusR and CueR regulons , two additional cellular systems , CpxR and YedW regulons , are involved for defence against increased levels of external copper .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Taken together we conclude that the copper-responsive genes are organized into a hierarchy of the regulation network , forming at least four regulons , i.e. CueR , CusR , CpxR and YedW regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The copper stimulon in Escherichia coli consists of four regulons , the CueR - , CusS/CusR - , CpxA/CpxR - , and YedV/YedW regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16861804" target="_blank">16861804</a>]<br></li>
+<li>We then conclude that the induction of CueR regulon is , at least in part , resulting from the increase in CueR level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Gene Function Intracellular levels of CusR and CueR transcription factors Possible inﬂuence of the increase in external copper on the intracellular level of two copper-responsive transcription factors , CusR and CueR , was examined by quantitative immunoblot assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The absence of this region of the promoter , however , resulted in less than maximum induction at high copper concentrations , suggesting that other upstream regulatory elements may work in synergy with CueR to increase the level of transcription under high copper stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>In the stationary phase of cell growth , the level of CueR increased even in the absence of external copper , and thus further increase of CueR was not signiﬁcant after short-term exposure to copper .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>After prolong exposure to copper , however , detectable increase was observed for the CueR level , reaching to the maximum Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Transcriptional Activation of an Escherichia coli Copper Efflux Regulon by the Chromosomal MerR Homologue , CueR * Received for publication , July 6 , 2000 Published , JBC Papers in Press , July 27 , 2000 , DOI 10.1074 / jbc.M006508200 F. Wayne Outten ‡ , Caryn E. Outten § , Jeremy Hale ‡ , and Thomas V. O'Halloran ‡ § ¶ From the ‡ Department of Biochemistry , Molecular Biology , and Cell Biology and the § Department of Chemistry , Northwestern University , Evanston , Illinois 60208 Because copper ions are both essential cofactors and cytotoxic agents , the net accumulation of this element in a cell must be carefully balanced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>After the original submission of this manuscript , CueR was separately reported under the same gene name in an accelerated publication [ Outten , F.W. , Outten , C.E. , Hale , J. , AND O'Halloran , T.V. ( 2000 ) Transcriptional activation of an Escherichia coli copper efflux regulon by the chromosomal MerR homologue , CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Transcriptional activation of an Escherichia coli copper efﬂux regulon by the chromosomal MerR homologue , CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12142427" target="_blank">12142427</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_43">
+Outten , F.W. , Outten , C.E. , Hale , J.A. , and O'Halloran , T.V. ( 2000 ) Transcriptional activation of an Escherichia coli copper efﬂux regulation by the chromosomal MerR homologue , CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></label>
+<input id="act_similarity_43", type="checkbox">
+<div class="ACT_similar">
+<li>[ 20 ] Outten , F.W. , Outten , C.E. , Hale , J. and O'Halloran , T.V. ( 2000 ) Transcriptional activation of an Escherichia coli copper e ¥ ux regulon by the chromosomal MerR homologue , CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li></div>
+<li>CueR binding occurs in vitro in both the presence and the absence of RNA polymerase with or without copper ions present but , in the presence of CueR , RNA polymerase and copper ions , permanganatesensitive transcription complexes were formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>29 and 210 ) in the presence of RNA polymerase and CueR together , indicating a low level of transcription initiation , and this is increased considerably in the presence of copper or silver salts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Similar to other MerR metalloregulatory family members , CueR exhibits a metal-selective behavior in vivo , activating the transcription of copA in response to elevated extracellular concentrations of the salts of coinage metals , such as copper , silver , and gold , but not of zinc and mercury ( 7 -- 9 , 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>CueR activates expression of the copA promoter ( PcopA ) upon addition of copper or silver , but not nickel , lead , cadmium , mercury , or zinc salts ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>We show that CueR can also be activated by gold salts and that Cys112 and Cys120 are involved in recognition of gold , silver , and copper salts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Here we show that CueR activates the PcopA promoter in the presence of gold salts and that cysteine residues , equivalent to those in MerR , are required for activation by copper , silver , and gold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Based on the sequence similarities among CueR , ZntR , and MerR ( Fig. 6B ) , it is likely that CueR detects cytoplasmic copper stress and activates transcription in response to increasing copper concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>Therefore , CueR activates transcription of PcopA in response to gold ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>In the case of copper-response systems , for instance , not only copper but also silver and gold are known to-bind to the C-terminus of CueR ( the sensor / regulator protein of the copper-response one-component system ) and stimulate transcription in vivo and in vitro of the CueR-dependent copA gene ( Stoyanov et al. , 2001 ; Stoyanov and Brown , 2003 ; Changela et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>While CopA , the principal copper ef ¯ ux ATPase , is regulated by the MerR homologue CueR , there exists also a two-component system ( CusS/R ) that activates transcription of its adjacent genes coding for a proton/cation antiporter complex ( Munson et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11243806" target="_blank">11243806</a>]<br></li>
+<li>As in the case of MerR , the copper-bound CueR may induce a conformational change of the copA promoter in the CueRcopA promoter-RNA polymerase ternary complex so as to reduce the actual distance between -10 and -35 signals ( Outten et al. , 2000 ; Stoyanov et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Intracellular copper levels are controlled by a pair of transcriptional-regulators , CueR ( Outten et al. , 2000 ; Petersen and Moller , 2000 ) and CusR ( Munson et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+<li>In contrast to the CueR regulator which responds to cytoplasmic copper , the CusRS system responds to periplasmic copper levels ( Outten et al. 2001 ; Munson et al. 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>This important pump is induced by copper via the action of CueR , a MerR-like transcription activator , which senses cytoplasmic copper in the zeptomolar range ( Rae et al. 1999 ; Stoyanov et al. 2001 ; Outten et al. 2000 ; Petersen and Moller 2000 ; Changela et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>CueR , a MerR-family transcription factor , stimulates copper-induced transcription of both copA encoding Cu ( I ) - translocating P-type ATPase pump ( exporter ) , that is the central component for maintenance of the copper homeostasis , and cueO encoding a periplasmic multicopper oxidase for detoxiﬁcation ( Outten et al. , 2000 ; Petersen and Moller , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Regulation of the copper-responsive genes by CueR Another copper-responsive transcription factor CueR activates transcription of copA and cueO in the presence of copper ion ( Outten et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>When grown in the presence of copper , DcomC cells had higher periplasmic and cytoplasmic copper levels , compared to the wild-type , as assessed by the activation of the periplasmic CusRS sensor and the cytoplasmic CueR sensor , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>Under the aerobic experimental conditions herewith employed , CueR senses lower concentrations of copper than the CusSR system , and the induction levels of CueR-dependent copA and cueO after exposure to copper are higher than those of cusC and cusR , which are controlled by CusSR ( see Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>As cytoplasmic copper levels rise , the copA promoter , which is under the control of the E. coli CueR regulator , is induced and expression of the downstream lux genes results in luminescence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>As expected , this in turn also lead to increased cytoplasmic copper , as evident by the increased expression of copA , which is under the control of the cytoplasmic copper-sensing CueR regulator ( Fig. 6b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>To check that the response of CueR to gold was specific , a second member of this class of metal regulators , MerR and its promoter PmerTPAD , was tested in both E. coli TG1 and in E. coli CSH26 recA ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Thus , it is not surprising that replacing alanine 78 with cysteine to mimic the equivalent essential cysteine in MerR ( Fig. 1 ) has no effect on CueR response to Hg ( II ) , as the spacing between Cys112 and Cys120 in CueR is different to that between Cys117 and Cys126 in MerR , and more subtle positioning and charge effects will undoubtedly be invovled in metal recognition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Half-maximal CueR induction occurs at a free Cu concentration of 2 10 21 1 10 21 M , corresponding to a zeptomolar CueR sensitivity for Cu ( Fig. 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>ZntR responds to Cd as well as to Zn ( Brocklehurst II II et al. , 1999 ) , and CueR shows 37 % identity to ZntR across the length of the protein sequence ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>The alterations ZntR ( H76A ) and ZntR ( H77A ) appeared to diminish ZntR-mediated Zn ( II ) induction to some extent but each shows a similar proﬁle to that for ZntR w.t. , this is surprising given the conservation seen between ZntR [ 10 ] , MerR [ 8 ] and CueR [ 25,26 ] in this region ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12445820" target="_blank">12445820</a>]<br></li>
+<li>Multiple alignment of MerR [ 8 ] , ZntR [ 10 ] , CadR [ 27 ] , CueR [ 25,26 ] , and PbrR [ 28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12445820" target="_blank">12445820</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">CueR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Extended x-ray absorption fine structure studies on copperCueR complexes confirm this coordination environment and demonstrate that the copper is unequivocally in the 1 oxidation state ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Thus , it is not surprising that replacing alanine 78 with cysteine to mimic the equivalent essential cysteine in MerR ( Fig. 1 ) has no effect on CueR response to Hg ( II ) , as the spacing between Cys112 and Cys120 in CueR is different to that between Cys117 and Cys126 in MerR , and more subtle positioning and charge effects will undoubtedly be invovled in metal recognition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Here we show that CueR activates the PcopA promoter in the presence of gold salts and that cysteine residues , equivalent to those in MerR , are required for activation by copper , silver , and gold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>The retention of a response to copper , silver , and gold salts , albeit altered in magnitude , by these double mutations and by the seven amino acid C-terminal deletion from Gly128 indicates that the full CCHH motif at positions 129 -- 132 is not responsible for metal recognition by CueR , as we had originally hypothesized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Cysteine Residues 112 and 120 Are Required for Activation by Copper , Silver , and Gold -- The CueR protein contains several cysteine and histidine residues which are candidates for recognition and specific binding of activating metals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Lanes 1 , 7 , 8 , 14 and 15 contain no CueR ; lanes 1 ± 7 contain no added metal ; lanes 8 ± 14 contain 12.5 mM Cu ; lanes 15 ± 20 contain 2.5 mM I Ag .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR is a MerR-like regulator , in that it shows good similarity to the DNA-binding domain of MerR ( 70 % residues conserved with the Bacillus MerR protein ; Wang et al. , 1989 ) and related regulators , and its promoter has a characteristic 19 bp extended spacer region containing a dyad symmetrical sequence to which the protein binds ( Fig. 3D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR is predicted to have an N-terminal helix ± turn ± helix sequence and shows similarity to MerR-family regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Transcriptional activity of C141 ZntR derivatives at PzntA The C-terminal residue of ZntR ( position 141 ) is a cysteine and shows no sequence conservation with other MerR-family members except CueR ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12445820" target="_blank">12445820</a>]<br></li>
+<li>Two of the three cysteines in MerR ( Cys-117 and Cys-126 ) that are involved in mercury binding ( Helmann et al. , 1990 ) are conserved between MerR , ZntR and CueR , and the discriminatory residues must therefore lie elsewhere in the proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR does , however , lack a Cys residue that is conserved at approximately position 80 in the ZntR and MerR sequence ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>Furthermore , the spacing between two other highly conserved Cys residues is shorter in CueR than in either ZntR or MerR ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>The other essential cysteine for metal recognition in MerR ( Cys-82 ) is found in ZntR , but not in CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR consists of binding region and a C-terminal metal-binding region , that are also conserved in both ZntR and MerR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>To understand metal sensitivity and selectivity in the MerR-family of metalloregulatory proteins at the atomic level , we solved the x-ray crystal structures of metal-bound forms of two representative members that discriminate between metal ions with a 1 and a 2 charge : E. coli CueR and E. coli ZntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The structure of the CueR DNA-binding and dimerization domains is characteristic of the MerR-family of proteins and shares the same topology as the structures of two other MerR-family transcriptional activators , BmrR ( 18 ) and MtaN ( 19 , 20 ) , which respond to the presence of organic substrates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>In each CueR structure , the metal ion is buried in a solvent-inaccessible site in a loop at the dimer-interface ( Fig. 2B ) and has only two coordinating ligands : the S-atoms of concemag.org on May 6 , 201 served Cys112 and Cys120 ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>An unusual buried metal-receptor site in CueR restricts the metal to a linear , two-coordinate geometry and uses helix-dipole and hydrogenbonding interactions to enhance metal-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>In contrast to the CueR metal-binding site , the coordination environment of the metal-binding loop in ZntR is optimal for binding of divalent metals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>These differences in the putative metal-binding domain may create a receptor site that allows CueR to distinguish between copper , zinc , and mercury .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10915804" target="_blank">10915804</a>]<br></li>
+<li>The metal-binding domain in Ag-CueR and Au - CueR is identical to that found in Cu - CueR , except for longer metalsulfur bond distances ( Ag-S : 2.35 Å ; Au-S : 2.32 and 2.39 Å ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The detail of metal-binding will require structural information on the CueR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>The overall structure of the CueR dimer is identical in all three metal-bound states .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The overall structure of the truncated ZntR dimer is similar to that of CueR and consists of one helix-turn-helix motif of the DNA-binding domain , the dimerization helix , and an intact metal-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Cys79 ( equivalent to Ser77 in CueR ) from the other monomer acts as a bridging ligand to the two Zn2 ions , thus linking the metal-binding domain of one monomer and the dimerization domain of the other mono-mer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>A residue at the N-terminus of the dimerization helix extends across the dimer-interface to contact either the metal-binding loop ( Ser77 in CueR ) or directly to the metal ion ( Cys79 in ZntR ) and plays a unique role in discriminating between 1 and 2 ions ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">CueR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>In comparison , BluR shows only low overall identity to other MerR-like proteins of E. coli ( 12 % to SoxR , 17 % to CueR and 14 % to ZntR ) ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22783906" target="_blank">22783906</a>]<br></li>
+<li>CueR is a MerR-like regulator , in that it shows good similarity to the DNA-binding domain of MerR ( 70 % residues conserved with the Bacillus MerR protein ; Wang et al. , 1989 ) and related regulators , and its promoter has a characteristic 19 bp extended spacer region containing a dyad symmetrical sequence to which the protein binds ( Fig. 3D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>ZntR responds to Cd as well as to Zn ( Brocklehurst II II et al. , 1999 ) , and CueR shows 37 % identity to ZntR across the length of the protein sequence ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR is the sixth member of the MerR family that responds to metal ions , the others being MerR itself ( Foster and Brown , 1985 ; Lund et al. , 1986 ) , PbrR ( B. Borremans , D. van der Lelie , J. L. Hobman and N. L. Brown , unpublished data ) , PMTR ( Noll et al. , 1998 ) , ZntR ( Brocklehurst et al. , 1999 ) and CoaR ( Rutherford et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>The structure of the CueR DNA-binding and dimerization domains is characteristic of the MerR family of proteins and shares the same topology as the structures of two other MerR-family transcriptional activators , BmrR ( 18 ) and MtaN ( 19 , 20 ) , which respond to the presence of organic substrates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>CueR is predicted to have an N-terminal helix ± turn ± helix sequence and shows similarity to MerR family regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>The existing structures of MerR family regulators are for proteins responding to effectors other than metals ( 28 , 29 ) , and cysteines 112 and 120 lie outside the regions of similarity between CueR and these regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Similar to other MerR metalloregulatory family members , CueR exhibits a metal-selective behavior in vivo , activating the transcription of copA in response to elevated extracellular concentrations of the salts of coinage metals , such as copper , silver , and gold , but not of zinc and mercury ( 7 -- 9 , 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>Molecular Basis of Metal-Ion Selectivity and Zeptomolar S y ueR ensitivity b C Anita Changela ,1 * Kui Chen ,2 * Yi Xue ,2 Jackie Holschen ,2 Caryn E. Outten ,2 Thomas V. O'Halloran ,1,2 † Alfonso Mondragón1 † The earliest of a series of copper efﬂux genes in Escherichia coli are controlled by CueR , a member of the MerR family of transcriptional activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The transcription of copA is regulated solely by CueR ( GeneBankTM AF318185 ) , a copper - and silver-responsive ( 7 , 8 , 10 ) member of the MerR family of transcriptional activators ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>Copper-induced expression of CopA and CueO , an oxidase postulated to catalyze the air oxidation of Cu to the less toxic Cu2 form in the periplasm ( 5 , 6 ) , is controlled by CueR ( 3 , 7 -- 9 ) , a member of the MerR family of metalloregulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12958362" target="_blank">12958362</a>]<br></li>
+<li>The role of cueR in H2O2 stress can be attributed to the fact that CueR is a MerR family regulator that controls the expression of the copper efﬂux protein CopA ( 21 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24038693" target="_blank">24038693</a>]<br></li>
+<li>J Bacteriol 186:7815 -- 7817 Stoyanov JV , Hobman JL , Brown NL ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_14">
+[ 25 ] J.V. Stoyanov , J.L. Hobman , N.L. Brown , CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12445820" target="_blank">12445820</a>]<br></label>
+<input id="evo_similarity_14", type="checkbox">
+<div class="EVO_similar">
+<li>Stoyanov , J.V. , Hobman , J.L. , and Brown , N.L. ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>[ 21 ] Stoyanov , J.V. , Hobman , J.L. and Brown , N.L. ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by CueR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>A total of 197 CueR boxes were identiﬁed on the E. coli genome , including the CueR box associated with the moa operon for molybdenum cofactor-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Regulon gene CusR cusB * copper/silver transporter cusC * copper/silver transporter cusF * periplamic copper-binding protein yedV putative sensor kinase yedW putative response regulator CueR copA * copper exporter cueO * periplasmic multicopper oxidase moaB molybdenum cofactor-synthesis protein B moaC molybdenum cofactor-synthesis protein C moaD molybdopterin [ MPT ] converting factor subunit 1 moaE molybdopterin [ MPT ] converting factor subunit 2 CpxR cpxP periplasmic protein ; extracytplasmic stress response ebr small multidrug exporter ; ethidium bromide resistance spy periplasmic protein related to spheroplast formation yccA membrane-associated putative carrier/transporter yecI ferritin-like protein ybaJ unidentiﬁed ycfS unidentiﬁed ydeH unidentiﬁed yebE unidentiﬁed yqjA unidentiﬁed JW1832 unidentiﬁed Unclassiﬁed genes aldH aldehyde dehydrogenase aphA ** acid phosphatase mutL methyl-directed mismatch-repair enzyme tesA acyl-CoA thioesterase I htpX heat shock-induced membrane protease soxS transcription factor for super-oxide response regulon yciW putative oxidoreductase yeeF putative amino acid/amine-transporter yncJ unidentiﬁed This list shows the genes , which are more than threefold upregulated by copper , including hitherto identiﬁed copper-response genes ( * ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The expression of copA under the control of CueR shows a ` hypersensitive ' response to external silver ions , but a linear response to external cupric ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>Therefore , CueR activates transcription of PcopA in response to gold ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>CueR , a MerR-family transcription factor , stimulates copper-induced transcription of both copA encoding Cu ( I ) - translocating P-type ATPase pump ( exporter ) , that is the central component for maintenance of the copper-homeostasis , and cueO encoding a periplasmic multicopper oxidase for detoxiﬁcation ( Outten et al. , 2000 ; Petersen and Moller , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The first system is cytoplasmatic and is mainly controlled by the Cu ( I ) metal sensor , CueR .8,9 CueR regulates the expression of two genes : copA , which encodes the Cu ( I ) - translocating P-type ATPase , and cueO , which encodes a Cu ( I ) - oxidizing multicopper oxidase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25940871" target="_blank">25940871</a>]<br></li>
+<li>For instance , the response-to-copper includes at least four different transcription factors , CueR , CusSR , CpxAR and YedVW , while at least four different transcription factors , Zur , ZraSR , ZntR and NhaR have been identiﬁed for zinc response ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>To maintain copper-homeostasis within E. coli cells , three kinds of TF [ two TCS response regulators ( CusSR , CpxAR ) and one MerR-type TF ( CueR ) ] are involved in the control of the uptake , intracellular delivery and export of copper ( Munson et al. , 2000 ; Rensing et al. , 2000 ; Rensing & Grass , 2003 ; Yamamoto & Ishihama , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25568260" target="_blank">25568260</a>]<br></li>
+<li>Two regulatory systems , the CueR and CusR systems , have been identiﬁed to be involved in transcription regulation of the genes for copper-homeostasis ( Rensing et al. , 2000 ; Rensing and Grass , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Regulation of the copper-responsive genes by CusS-CusR two-component system Two transcription factors , CusR and CueR , have been identiﬁed to be involved in copper-response transcription regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>These genes code for the CueR DNA-binding transcriptional regulator that is involved in copper resistance ( 43 ) , the proteases YbbJ and QmcA ( 44 ) , and the predicted ABC transporter proteins FetA ( YbbL ) and FetB ( YbbM ) , which have not been characterized previously .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24038693" target="_blank">24038693</a>]<br></li>
+<li>Under aerobic conditions , the sensitivity to external copper increases in E. coli mutants lacking CopA and/or CueO , indicating that the CueR-regulated system ( or the CueR regulon ) plays a key role of aerobic copper tolerance ( Grass and Rensing , 2001 ; Outten et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>J Bacteriol 186:7815 -- 7817 Stoyanov JV , Hobman JL , Brown NL ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_14">
+CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24038693" target="_blank">24038693</a>]<br></label>
+<input id="rp_similarity_14", type="checkbox">
+<div class="RP_similar">
+<li>[ 25 ] J.V. Stoyanov , J.L. Hobman , N.L. Brown , CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12445820" target="_blank">12445820</a>]<br></li>
+<li>Stoyanov , J.V. , Hobman , J.L. , and Brown , N.L. ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>[ 21 ] Stoyanov , J.V. , Hobman , J.L. and Brown , N.L. ( 2001 ) CueR ( YbbI ) of Escherichia coli is a MerR family regulator controlling expression of the copper exporter CopA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li></div>
+<li>As cytoplasmic copper levels rise , the copA promoter , which is under the control of the E. coli CueR regulator , is induced and expression of the downstream lux genes results in luminescence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>As expected , this in turn also lead to increased cytoplasmic copper , as evident by the increased expression of copA , which is under the control of the cytoplasmic copper-sensing CueR regulator ( Fig. 6b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">CueR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Before hybridization , DNA chip was incubated at 65 ∞ C for 1 h in 20 ml of prehybridization buffer ( 6 ¥ SSC , 0.2 % SDS , Puriﬁcation of CusR and CueR To construct pCueR and pCusR for overproduction of CueR and CusR , respectively , DNA fragments containing the CueR - or CusR-coding regions were ampliﬁed by PCR with E. coli W3110 genome DNA as a template and a pair of primers , in which the NdeI and NotI sites were included ( see sequences in Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>By allowing two nucleotides mismatch , a total of 129 CueR box-like sequences were identiﬁed , of which 74 are associated with the known genes but 55 are with the unidentiﬁed genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>This CueR box sequence agrees with the dyad symmetrical sequence proposed by Stoyanov et al. ( 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The CueR box is located upstream of the initiation codon of moaA but downstream of its transcription sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>On the other hand , transcription of copA and cueO was found to be activated by another copperresponsive factor CueR , which bound to a conserved inverted-repeat sequence , CueR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Here we identiﬁed the second CueR binding sequence on the cueO promoter and thus allowed the prediction of CueR binding consensus sequence , which includes the inverted-repeat , CCTTCCNNNNNNGGA AGG , designated hereafter as the CueR box ( Fig. 2C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The CueR binding regions , which were determined in Fig. 1C , are indicated by dotted lines , which include the inverted-repeat CueR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The transcription start point , the region protected from DNase I by CueR , and the probable 235 and 210 sequences for s RNA polymerase recognition are 70 indicated in Fig. 3D .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>There is no obvious similarity between the presumptive CueR - and MerR-binding 7 bp sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>A DNase I footprint of CueR bound to an end-labelled 292 bp DNA fragment containing the copA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR , a MerR-family transcription factor , binds to the copA promoter region , including the extended spacer between -10 and -35 signals of 19-bp in length .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The start of the copA transcript was located by primer extension mapping , and DNase I protection assays showed that the CueR protein binds in vitro to a dyad symmetrical sequence within a 19 bp spacer sequence in the copA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+<li>CueR is a MerR-like regulator , in that it shows good similarity to the DNA-binding domain of MerR ( 70 % residues conserved with the Bacillus MerR protein ; Wang et al. , 1989 ) and related regulators , and its promoter has a characteristic 19 bp extended spacer region containing a dyad symmetrical sequence to which the protein binds ( Fig. 3D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11136469" target="_blank">11136469</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by CueR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>The CueR box organized in the moa operon is located upstream of the ﬁrst gene , maoA , the CueR box centre being at 16-bp upstream of its translation initiation site ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The CueR box is located upstream of the initiation codon of moaA but downstream of its transcription sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The Escherichia coli Copper-responsive copA Promoter Is Activated by The copA gene of Escherichia coli encodes a copper transporter and its promoter is normally regulated by Cu ( I ) ions and CueR , a MerR-like transcriptional activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>The transcription of copA is regulated solely by CueR ( GeneBankTM AF318185 ) , a copper - and silver-responsive ( 7 , 8 , 10 ) member of the MerR family of transcriptional activators ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446701" target="_blank">12446701</a>]<br></li>
+<li>As cytoplasmic copper levels rise , the copA promoter , which is under the control of the E. coli CueR regulator , is induced and expression of the downstream lux genes results in luminescence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>As expected , this in turn also lead to increased cytoplasmic copper , as evident by the increased expression of copA , which is under the control of the cytoplasmic copper-sensing CueR regulator ( Fig. 6b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22089859" target="_blank">22089859</a>]<br></li>
+<li>Under the aerobic experimental conditions herewith employed , CueR senses lower concentrations of copper than the CusSR system , and the induction levels of CueR-dependent copA and cueO after exposure to copper are higher than those of cusC and cusR , which are controlled by CusSR ( see Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>The first system is cytoplasmatic and is mainly controlled by the Cu ( I ) metal sensor , CueR .8,9 CueR regulates the expression of two genes : copA , which encodes the Cu ( I ) - translocating P-type ATPase , and cueO , which encodes a Cu ( I ) - oxidizing multicopper oxidase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25940871" target="_blank">25940871</a>]<br></li>
+<li>Regulation of the copper-responsive genes by CueR Another copper-responsive transcription factor CueR activates transcription of copA and cueO in the presence of copper ion ( Outten et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Among the known genes with the CueR box , copper-response transcription activation was observed for the moaABCDE operon , besides the copA and cueO genes ( see Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+<li>Transcription regulation of the copA and cueO genes by CueR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15773991" target="_blank">15773991</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

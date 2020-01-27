@@ -1,0 +1,723 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Fnr</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Fnr</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Fnr transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Lane 1 , 14028s + MnCl2 ; lane 2 , 14028s + pfur-ha ; lane 3 , 14028s + MnCl2 + pfur-ha ; lane 4 , Δfur + MnCl2 ; lane 5 , Δfur + pfur-ha ; lane 6 , Δfur + MnCl2 + pfur-ha Figure 4 Effects of Fur , Fnr and iron chelation on transcription of ftnB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>] rlgA map rpsB yajC nrdR 2.8 2.6 4.0 3.2 2.5 3.1 7.1 8.2 No No No No No No No No No No No No No Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Fnr [ 21 ] Yes [ 12 ] Yes [ 12 ] cyoE cyoD cyoB cyoA fepA Yes [ 12 ] Yes [ 12 ] Yes [ 12,15,16,126-129 ] Yes [ 12,16,127-129 ] Yes [ 12,15,130 ] No 3.2 No 10.7 Yes [ 128,129 ] fes entC 39.8 6.8 4.1 5.6 2.7 2.8 -4.2 7.4 Yes [ 128,129 ] Yes [ 130 ] No No No No No No Fnr [ 21 ] sucC gpmA cmk Yes [ 12 ] No No No Yes [ 12,15 ] No Yes [ 15 ] No STM1013 STM1133 ydiE nth STM1586 Fnr [ 21 ] Rcs [ 131 ] 2.9 No No 76.1 -4.0 -37.3 11.4 3.1 5.8 -8.8 Fnr [ 21 ] Fnr [ 21 ] ldhA ynaF No No Yes [ 132 ] Yes [ 29 ] No No No Yes [ 12,15 ] Yes [ 29 ] No No Yes [ 12,15 ] No No tonB hns STM1795 Fnr [ 21 ] Fnr [ 21 ] STM2186 cirA eutC eutB yffB Yes [ 133 ] No No No No No No 4.0 -4.1 -3.2 2.6 4.6 9.1 53.8 Fnr [ 21 ] Fnr [ 21 ] No Yes [ 15,59 ] iroB iroN sitA No Yes [ 15,46,61,134-138 ] No Yes [ 12 ] Yes [ 101 ] Yes [ 14,79,88 ] MntR [ 61 ] No No 3.5 3.8 yggU yqjH secY bfr bfd Yes [ 100 ] No No No 4.0 3.2 5.9 11.8 Yes [ 12,14,15 ] Yes ArcA and Fnr [ 141 ] feoB [ 12,14,63,134,139,140 ] No No No No Yes [ 14,55,82,88,143-148 ] No STM3600 STM3690 rpoZ udp sodA No No Fnr [ 21 ] Fnr [ 21 ] -6.8 -4.2 3.9 -5.4 9.1 No No Yes [ 85,146,148 ] IscS [ 142 ] Fnr , ArcA , IHF , SoxRS [ 53,81 ] yjcD N 2.8 Table 4 Comparison of Differentially Expressed Genes in Δ?Δ?fur That Contain a Putative Fur Binding Site with Confirmed Data of Fur Regulation from other Studies and the Possible Involvement of other Transcription Regulators ( Continued ) No -5.8 -3.6 No dcuA aspA No Yes [ 13,15 ] NarL [ 149,150 ] ArcA [ 151 ] NsrR [ 99 ] ytfE 10.0 Yes [ 13 ] fhuF 8.5 Yes [ 12,13,15 ] No Yes [ 11,152,153 ] a Genes from the present study that are regulated by Fur and possess a putative Fur-binding motif bFold change of expression in Δfur relative to the wt 14028s c Evidence of direct Fur binding the regulatory region of the gene d Regulation by other transcription factors besides Fur Figure 6 Role of Fur in the transcriptional , translational and post-translational regulation of sodA and sodB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>For such FeoB production , Fur repression should be relieved and Fnr activation should occur on feoB transcription ( Fig. 1A and 2A ) , as previously reported ( 3 , 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>The iron-sensing Fur regulator represses feo transcription , and the oxygen-sensing Fnr regulator activates feo transcription ( 2 , 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>In Salmonella grown under anaerobic conditions , Fnr positively regulates expression of alternative terminal acceptors [ 126 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>The Fur protein was shown to repress feoB transcription under iron-replete conditions ( 3 , 11 ) , while the activator Fnr protein promotes feoB transcription under anaerobic conditions ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>The iron-sensing Fur regulator represses feoB transcription under iron-replete conditions ( 3 , 11 ) while the oxygen-sensing Fnr regulator promotes feoB transcription under anaerobic conditions ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>Consistent with these ﬁndings , the lack of Fur under anaerobic conditions enhanced FeoB production under high-iron conditions , whereas the lack of Fnr impaired FeoB production under low-iron conditions ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>The Fnr regulator is stable under anaerobic conditions but becomes unstable to be degraded by the ClpXP protease under aerobic conditions ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>Previously , Fnr was suggested to activate SPI1 genes in anaerobic conditions ( Fink et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>NR-Z expression is not induced during anaerobic-growth but is actually repressed by Fnr , the nitrogen-sensing regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644504" target="_blank">12644504</a>]<br></li>
+<li>Our results also provide evidence that nipAB expression is regulated by Fnr , as induction is completely abolished in an fnr mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>Therefore , Salmonella feo expression is highly induced under low-oxygen conditions with low iron ( 8 ) , where Fur activity is reduced ( 10 ) and Fnr activity is enhanced ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>Propanediol utilisation under anaerobic conditions is therefore dependent on both ArcAB and Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Furthermore , ytfE mutants have an increased sensitivity to iron starvation and ytfE expression is increased in fnr and fur mutants , although no obvious Fnr - or Fur-binding sites were found ( Justino , Almeida , Goncalves , Teixeira , & Saraiva , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>Under standby conditions , the P1 promoter is activated by IHF with Fnr or Crp proteins acting alternatively at their nearby binding site ; this binding occludes the pdu promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7559322" target="_blank">7559322</a>]<br></li>
+<li>For instance , under anaerobic conditions , Fnr represses the cytochrome c oxidase ( cyoABCDE ) and the cytochrome bd complex ( cydAB ) , while activating genes important for utilizing alternative electron acceptors such as fumarate [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Under anaerobic conditions , the Fnr Fe-S cluster exists in the [ 4Fe-4S ] state , whereby Fnr undergoes dimerization ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>For this , we used the nirB promoter , known to be activated by Fnr under anaerobic conditions as found in the intestinal environment or intracellularly ( 12 , 27 , 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816454" target="_blank">10816454</a>]<br></li>
+<li>While the cob/pdu operons are controlled by ArcAB , the ttr operon , which encodes enzymes essential for tetrathionate respiration , is positively regulated by Fnr [ 120,121 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>We also identified 120 genes that were regulated by the anaerobic regulator , Fnr , as well as by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>The expression of ftnB was shown to be activated by Fnr [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>However , whether the repression of hilA by Fnr was induced by low O2 was not clarified in those studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Interestingly , most of the 120 genes were regulated by ArcA and Fnr in the same fashion ( i.e. , repressed or activated ) except for yneB ( putative fructose-1 ,6 - bisphosphate aldolase - STM4078 ) , which was activated by ArcA , but repressed by Fnr ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>For instance , each gene was regulated in the same manner in Δfur or Δfnr ; a gene activated by Fur was also activated by Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In some cases , this regulation can not be explained only by simple additive effects of each regulator , suggesting complex functional interactions between ArcA and Fnr [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Together , ArcAB and Fnr repress genes involved in aerobic metabolism , but ArcAB may also induce positive regulation of the cytochrome d oxidase operon ( 8 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Poole RK , Anjum MF , Membrillo-Hernandez J , Kim SO , Hughes MN , Stewart V : Nitric oxide , nitrite , and Fnr regulation of hmp ( flavohemoglobin ) gene expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_30">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="act_similarity_30", type="checkbox">
+<div class="ACT_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>The strong dependence of ftnB expression on O2 indicates that Fnr is crucial in its regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>However , Fur activation of ftnB was independent of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>These results indicated that Fur controlled regulation of ftnB is independent of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>For example , Cra binds to a nonconsensus site in the cydAB promoter region only when high ( 278 nM ) concentrations of Cra and Fnr are both present ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19136587" target="_blank">19136587</a>]<br></li>
+<li>Regulation of SodA production is complex but includes repression by Fnr , ArcA , and Fur , such that expression is repressed under anaerobic conditions ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>The requirement for anaerobic conditions is mediated by the OxrA protein , homologous to Fnr of E. coli ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>A variant of Fnr lacking the Fe-S cluster is unstable even under anaerobic conditions , while another variant containing the oxygen-invulnerable Fe-S cluster is stable even under aerobic conditions , suggesting that the ClpXP protease degrades the apo-form of Fnr ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>Thus , the oxygen-dependent regulation of lpxO expression described for the wild-type strain is lost when fnr is deleted , indicating that Fnr is a negative regulator of lpxO expression under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Effect on hilA expression decrease decrease decrease decrease decrease decrease decrease Mutation1 Comments ompR envZ [ 66 ] [ 66 ] EnvZ/OmpR is a two-component system EnvZ/OmpR is a two-component system pho-24 sirA , barA pstS fadD ﬂiZ [ 19 ] [ 64 , 65 , 68 ] , unpublished2 [ 66 ] [ 66 ] [ 66 ] , unpublished3 hyperactive PhoQ sensor kinase BarA/SirA is a two-component system acts via PhoB regulator does not act via FadR regulator transposon insertions in ﬂiA are polar on ﬂiZ ; FliZ suppresses the effects of transposon insertions in ﬂiA and ﬂhCD the Csr system regulates RNA stability Fis is a small nucleoid binding protein HU , a small nucleoid binding protein , is comprised of HupA and HupB Hha is a small nucleoid binding protein amsE encodes RNase E H-NS is a small nucleoid binding protein no known homologies PhoPQ-activated gene csrB ﬁs decrease decrease decrease decrease increase increase increase increase [ 64 , 68 ] unpublished4 ,5 unpublished4 ,5 unpublished2 [ 56 ] unpublished4 ,5 [ 56 ] [ 56 ] hupA/hupB hha amsE : : Tn5-1 hns hilE pag-1 Condition high osmolarity low oxygen late log phase near-neutral pH low osmolarity low oxygen early log phase bile [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 [ 19 ] , unpublished3 [ 19 ] , unpublished6 [ 57 ] , unpublished7 unpublished3 osmolarity regulates hilA in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA induction induction induction induction repression repression repression repression late log phase induces invasion activity ; RpoS is not required not mediated by PmrAB osmolarity regulates hilA expression in the absence of OmpR/EnvZ oxygen regulates hilA in the absence of OxrA/Fnr or ArcA early log phase represses invasion activity ; RpoS is not required reported to regulate invasion , prgH , invF and hilC ; effects on hilA expression not reported but very likely 1 Unless otherwise noted , the mutations are null mutations in the open reading frame listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11755416" target="_blank">11755416</a>]<br></li>
+<li>Likewise , feoB expression is under dual transcriptional control by the iron-sensing Fur and oxygen-sensing Fnr regulators whereby FeoB-mediated Fe ( II ) uptake is maintained at appropriate levels in response to different levels of iron and oxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>Expression levels of the feoB gene change in response to iron and oxygen , which results from the action of the iron-sensing transcriptional-regulator Fur ( 9 ) and the oxygen-sensing transcriptional-regulator Fnr ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>However , given that the Fur and Fnr regulators can efﬁciently control feoB mRNA levels in response to different levels of oxygen and iron , the reason why Salmonella also controls FeoB levels using the FeoC protein remains unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>as cyclic AMP may be involved in the regulation of anaerobic gene expression by binding to Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>]<br></li>
+<li>In response to anaerobiosis , the abundance of OmpD in the outer membrane also appears to be controlled posttranscriptionally by a function dependent on Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>Anaerobic induction of ArcAB appears to be dependent on Fnr , which also regulates many of the ArcAB-regulated genes involved in cellular adaptation to anaerobic-growth ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Collectively , full expression of ftnB is dependent on Fur in aerobic and anaerobic conditions , whereas Fnr is a strong activator in the absence of O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>However , our data rule-out this possibility in ftnB regulation by showing the involvement of Fur in the regulation of ftnB under aerobic conditions , where Fnr is inactive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Fnr has been previously reported to be a negative regulator of hilA in S. Typhimurium , as loss of Fnr caused a 1.5 - to 2-fold increase of hilA expression under in vitro SPI-1-inducing conditions ( low O2 and high salt ) [ 46,55 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>The increase in abundance of OmpD , but not in the rate of ompD transcription , in response to anaerobiosis is dependent on Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>Fnr is a cytoplasmic oxygen sensor and can bind promoter sequences and interact with the RpoA subunit of RNA polymerase to increase the efﬁciency of transcription of a variety of genes , and thus is proposed to be a global regulator for anaerobic metabolism ( Unden et al. 1995 ; Wei and Miller 1999 ; Weber et al. 2005 ; Perrenoud and Sauer 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li>
+<li>The above results led us to hypothesize that lpxO expression is regulated by oxygen availability through the activity of transcription regulators ArcA and/or Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>The data indicated that ArcA and Fnr shared in the regulation of 120 genes ; while the numbers of genes solely regulated by either ArcA or Fnr were 272 and 191 , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Oxygen availability regulates the expression of wzzSE and wzzfepE in S. Enteritidis The above results lead us to hypothesize that the expression of genes encoding the OAg chain-length regulators WzzSE and WzzfepE are regulated by ArcA or Fnr in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Fnr senses the oxygen level inside the cell ( 22 , 24 ) , and it is required for the induction of many genes whose products function in anaerobic respiratory pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>However , we have determined that Fnr alone contributes to the activation of ftnB and that Fur is required for full induction of the gene , with Fnr exhi-biting a more pronounced role .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Taken together , these results suggest that two events that occur upon feoB transcription , the relief of Fur repression and the occurrence of Fnr activation , lead to high-level production of the FeoB transporter when levels of both iron and oxygen are low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>This demonstrates that during intracellular growth of S. Typhimurium , the state of oxygen tension and iron valence are adequate for the activation of both Fnr and Fur , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In addition , the rate of synthesis in the parent strain was greatest under anaerobic conditions due to the active roles of both Fnr and Fur ( Figure 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The ArcAB system can also act as a positive regulator by the induction of cydAB ( cytochrome d oxidase ) involved in respiration under oxygen-limiting conditions , and of the cob and pdu operons important for cobalamin-dependent utilisation of 1,2-propanediol In both these cases , ArcAB regulates expression of these target genes in association with Fnr [ 117 -- 120 ] , although in the case of pdu/cob the collaborative action of ArcAB and Fnr is indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Due to the complementary roles of ArcA and Fnr in the regulation of cellular metabolism and adaptation to changes in redox , we hypothesized that the ArcA regulon of S. Typhimur-ium will also differ from that of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Our study showed that Fnr , another well-known global regulator that senses and responds to O2 limitation , is not involved in the low O2-induced LoiA-mediated activation of SPI-1 genes as the expression of loiA was not affected by the deletion of fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Interestingly , despite the fact that Fnr is a negative regulator of hilA expression independent of HilD , the hilD ' - ` lac translational fusion showed a slight decrease in activity in the absence of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>When bound to this sequence , Fnr interacts with the RpoA subunit of RNA polymerase increasing the eficiency of transcription [ 125 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>In contrast to Lrp , we could not confirm any effect of Fnr on the expression of KlfC-2HA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Anaerobic repression of sit was unaffected by loss of the oxygen-sensing global regulator ArcA or Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>Identification of ArcA by Western blot ; Effects of H2O2 on viability of the ArcA mutant ; List of genes differentially regulated by ArcA ; and List of genes shared with the Fnr regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>However , repression of SPI1 independently of HilD is a predominant mechanism of Fnr action on the basis of our data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>The increased expression of hmpA-lacZ by the addition of dip could have been due to inactivation of Fnr , Fur , and/or NsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Our study of the anaerobic expression of hmpA suggests that it is regulated by Fur , independent of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Furthermore , Fnr was reported not to influence low O2-mediated Salmonella invasion , as a fnr mutant did not differ in the ability to invade Madin-Darby canine kidney epithelial cells compared with wild-type S. Typhimurium , while both the fnr mutant and wild-type exhibited a significant increase in invasiveness when grown in low O2 vs. aerobic conditions [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Clearly , whether and how Fnr is involved in low O2-responsive SPI-1 regulation in S. Typhimurium need to be further clarified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Both ArcAB and Fnr , due to their regulatory activities , regulate production of and defense against reactive oxygen and nitrogen intermediates [ 116,129,130 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Our decision to further study ftnB and hmpA was due to our previous findings , where we found that ftnB and hmpA were activated and repressed by Fnr , respectively [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>This operon is globally regulated by OxrA ( Fnr ) and induced anaerobically by a two-component system in response to tetrathionate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>ORIGINAL RESEARCH published : 08 June 2018 doi : 10.3389 / fmicb .2018.01220 Fnr and ArcA Regulate Lipid A Hydroxylation in Salmonella Enteritidis by Controlling lpxO Expression in Response to Oxygen Availability Paulina A. Fernández † , Felipe Velásquez † , Héctor Garcias-Papayani , Fernando A. Amaya , Jaime Ortega , Sebastián Gómez , Carlos A. Santiviago and Sergio A. Álvarez * Laboratorio de Microbiología , Departamento de Bioquímica y Biología Molecular , Facultad de Ciencias Químicas y Farmacéuticas , Universidad de Chile , Santiago , Chile Edited by : George Grant , Lipid A is the bioactive component of lipopolysaccharide , and presents a dynamic structure that undergoes modiﬁcations in response to environmental signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In Salmonella , for example , NO-Fe-Fur derepresses transcription of hmp ( 94 ) , whereas in E. coli hmp is derepressed by NO-Fe-Fnr and induced in response to intracellular nitrosylated homocysteine levels and MetR binding to the glyA-hmp intergenic region ( 60 , 95 , 96 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>In contrast , a decrease in oxygen supply monitored by Fnr and ArcAB , or oxidative-stress controlled by OxyR and SoxRS is not regarded as a stress associated with host colonisation since inactivation of either of these systems does not result in reductions in colonisation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Gunsalus , R.P. , and Park , S.J. ( 1994 ) Aerobic -- anaerobic gene regulation in Escherichia coli : control by the ArcAB and Fnr regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12492857" target="_blank">12492857</a>]<br></li>
+<li>Activation of LoiA expression in response to low O2 conditions is mediated by the ArcB/ArcA two-component regulatory system Fnr ( fumarate nitrate reduction regulator ) and the ArcB/ArcA ( aerobic respiratory control ) two-component regulation system are well-known global regulators , which can sense and respond to changes in O2 availability and regulate gene expression in low O2 and anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Expression of Dcu activity in E. coli requires anaerobiosis and is inhibited by nitrate ; these effects are mediated by the Fnr and NarL proteins , respectively ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>Published transcriptomic datasets reveal that SPI1 and ﬂa-gellar genes are coregulated in response to a number of regulatory signals , including CsrA , YfgL , Fnr , Fis , and RfaH , as well as several environmental conditions ( Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>In addition to ArcAB and Fnr , OxyR and SoxRS are the other major global control systems that regulate genes in response to oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Therefore , these observations reveal a functional interplay between ArcA and Fnr to control the OAg modal distribution in S. Enteritidis in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>OxyRS and SoxRS regulate the bacterial response to hydrogen peroxide and superoxide , respectively ( Christman et al. , 1985 ; Greenberg et al. , 1990 ) , while Fnr ( fumarate and nitrate reduction ) controls the transition from aerobic to anaerobic-growth ( Sawers , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21144897" target="_blank">21144897</a>]<br></li>
+<li>Transcription factors Fnr and ArcA are the major regulators involved in adaptation to oxygen availability ( Compan and Touati , 1994 ; Kiley and Beinert , 1998 ; Sawers , 1999 ; Fink et al. , 2007 ; Ravcheev et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Fnr protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Fnr is a transcriptional regulator that is active as a homodimer and contains an oxygen labile iron sulfur cluster ( 4Fe-4S ) [ 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Expression of hmpA is repressed by Fnr and another DNA-binding protein that contains an iron sulfur cluster , NsrR [ 21,95-97 ,99 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>A bioinformatic analysis using the PRODORIC tool ( Munch et al. , 2005 ) allowed us to identify one putative Fnr binding site ( FBS ) and three putative ABS in the lpxO promoter region ( Figure 4 ) , suggesting a direct effect for both regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In support of this hypothesis , our bioinformatics analyses revealed the presence of a putative binding sites for Fnr at position 262 , and three putative binding sites for ArcA at positions 13 , 85 and 107 with respect to the potential transcription initiation site of wzzfepE ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Fnr evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The purpose of the work described in this paper was to identify each of the oxd genes in the hope that the identities of some of these genes might help us to understand why pepT is a member of the Fnr family of anaerobically induced genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>In addition to PhoPQ , the global regulator Fnr , as well as the effect of adding dimethyl sulﬁde ( DMS ) to the growth medium , belongs in Class III ( Figure S8 , Figure S9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Fnr</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>The iron-sensing Fur regulator represses feoB transcription under iron-replete conditions ( 3 , 11 ) while the oxygen-sensing Fnr regulator promotes feoB transcription under anaerobic conditions ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>We also identified 120 genes that were regulated by the anaerobic regulator , Fnr , as well as by ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>For instance , under anaerobic conditions , Fnr represses the cytochrome-c-oxidase ( cyoABCDE ) and the cytochrome bd complex ( cydAB ) , while activating genes important for utilizing alternative electron acceptors such as fumarate [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>These included genes encoding the isocitrate-lyase AceA , the lipid-A-biosynthesis palmitoleoyl-acyltransferase Ddg , the modular iron-sulfur cluster scaffolding protein NifU , the global regulator Fnr , and the alternative sigma factor RpoE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22941081" target="_blank">22941081</a>]<br></li>
+<li>Activated TtrR cooperates with the global regulator OxrA ( Fnr ) to positively regulate expression of the ttrBCA operon DISCUSSION The alternative electron acceptor tetrathionate allows Sal-monella to grow anaerobically on ethanolamine or propanediol by using endogenously synthesized B12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>In addition to PhoPQ , the global regulator Fnr , as well as the effect of adding dimethyl sulﬁde ( DMS ) to the growth medium , belongs in Class III ( Figure S8 , Figure S9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>In E. coli , ansB is positively coregulated by Fnr and by CRP ( cyclic AMP receptor protein ) , a carbon source utilization regulator ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18559530" target="_blank">18559530</a>]<br></li>
+<li>We also demonstrated that Fnr plays a more hierarchical role than ArcA in pathogenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Several genes regulated by oxygen availability in Escherichia coli , such as cydAB [ 30 ] , cyoABCDE , ﬁxABCX [ 28 ] and dpiBA [ 31 ] , also possess similarly-positioned Fnr and ArcA biding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_10">
+Perrenoud A , Sauer U : Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Cya , Fnr , and Mlc on glucose-catabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24044554" target="_blank">24044554</a>]<br></label>
+<input id="rp_similarity_10", type="checkbox">
+<div class="RP_similar">
+<li>04553.x Perrenoud A , Sauer U ( 2005 ) Impact of global transcriptional regulation by ArcA , ArcB , Cra , Crp , Fnr , and Mlc on glucose-metabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18563621" target="_blank">18563621</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_12">
+Homology between CAP and Fnr , a regulator of anaerobic-respiration in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=6434517" target="_blank">6434517</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2549003" target="_blank">2549003</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3020003" target="_blank">3020003</a>]<br></label>
+<input id="rp_similarity_12", type="checkbox">
+<div class="RP_similar">
+<li>Homology between CAP and a of anaerobic-respiration Fnr , regulator in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3531176" target="_blank">3531176</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_14">
+Regulatory roles of Fnr , Fur , and Arc in expression of manganese-containing superoxide dismutase in Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></label>
+<input id="rp_similarity_14", type="checkbox">
+<div class="RP_similar">
+<li>Hassan HM , Sun HC : Regulatory roles of Fnr , Fur , and Arc in expression of manganese-containing superoxide dismutase in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Regulatory roles of Fnr , Fur , and Arc in expression of manganese-containing superoxide dismutase in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21075923" target="_blank">21075923</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9393844" target="_blank">9393844</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li></div>
+<li>The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Cotter PA , Gunsalus RP : Contribution of the Fnr and ArcA gene-products in coordinate regulation of cytochrome-o and cytochrome-d oxidase ( cyoABCDE and cydAB ) genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_19">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="rp_similarity_19", type="checkbox">
+<div class="RP_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>Requirement of Fnr and NarL functions for nitrate reductase expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17616593" target="_blank">17616593</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19389776" target="_blank">19389776</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3531176" target="_blank">3531176</a>]<br></li>
+<li>Poole RK , Anjum MF , Membrillo-Hernandez J , Kim SO , Hughes MN , Stewart V : Nitric oxide , nitrite , and Fnr regulation of hmp ( flavohemoglobin ) gene-expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Nitric oxide , nitrite , and Fnr regulation of hmp ( flavohemoglobin ) gene-expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17526833" target="_blank">17526833</a>]<br></li>
+<li>Clearly , whether and how Fnr is involved in low O2-responsive SPI-1 regulation in S. Typhimurium need to be further clarified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>as cyclic AMP may be involved in the regulation of anaerobic gene-expression by binding to Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>]<br></li>
+<li>Since OxrA is analogous to Fnr in E. coli , it appears to be a transcriptional activator of anaerobic gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>]<br></li>
+<li>Fnr plays a role in the regulation of lipid A modiﬁcation in S. Enteritidis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>A similar pattern of anaerobic regulation of these enzymes has also been seen in our previous global analysis of Fnr [ 20 ] ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Lastly , our investigations indicate that Fur indirectly regulates genes that are under control of Fnr or additional regulators with an iron sulfur cluster ( i.e. , ftnB and hmpA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Subsequent studies ( Van et al. 2008 ) and our results have shown that Fnr is a negative regulator of SPI1 gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Clearly , these results suggest Fnr is functional in Δfur and that Fur is regulating genes of anaerobic metabolism ( eut , frd , and dms operons ) through an unknown mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In a recent study [ 20 ] , we demonstrated that the oxygen sensing , global regulator , Fnr participates in coordinating anaerobic metabolism , flagellar biosynthesis , motility , chemotaxis , and virulence in S. Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Published transcriptomic datasets reveal that SPI1 and ﬂa-gellar genes are coregulated in response to a number of regulatory signals , including CsrA , YfgL , Fnr , Fis , and RfaH , as well as several environmental conditions ( Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>Transcription factors Fnr and ArcA are the major regulators involved in adaptation to oxygen availability ( Compan and Touati , 1994 ; Kiley and Beinert , 1998 ; Sawers , 1999 ; Fink et al. , 2007 ; Ravcheev et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Fnr and ArcA are global transcriptional regulators that control several genes in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>ArcA is one component of the E. coli and Salmonella global control systems that respond to molecular oxygen , including the OxyR , SoxRS , Fnr , and ArcAB systems ( 2 , 28 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>In addition to ArcAB and Fnr , OxyR and SoxRS are the other major global control systems that regulate genes in response-to-oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Expression of several genes controlled by Fnr and NsrR appeared to be also dependent on Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The Fnr regulon , in a complex interplay with the ArcAB regulon , controls expression of many anaerobically expressed genes ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>Anaerobic induction of ArcAB appears to be dependent on Fnr , which also regulates many of the ArcAB-regulated genes involved in cellular adaptation to anaerobic growth ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>Together , ArcAB and Fnr repress genes involved in aerobic metabolism , but ArcAB may also induce positive regulation of the cytochrome d oxidase operon ( 8 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+<li>The di-meric Fnr protein then binds to gene promoters and controls transcription of genes , including the feo operon ( 2 , 8 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>Furthermore , the expression of the flagellar biosynthesis , motility , and chemotaxis genes under anae-robiosis was more highly activated by Fnr than by ArcA ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_44">
+Park S-J , Chao G , Gunsalus RP : Aerobic regulation of the sucABCD genes of Escherichia coli , which encode alpha-ketoglutarate dehydrogenase and succinyl coenzyme A synthetase : roles of ArcA , Fnr , and the upstream sdhCDAB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></label>
+<input id="rp_similarity_44", type="checkbox">
+<div class="RP_similar">
+<li>Aerobic regulation of the sucABCD genes of Escherichia coli , which encode - ketoglutarate dehydrogenase and succinyl coenzyme A synthetase : roles of ArcA , Fnr , and the upstream sdhCDAB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17220229" target="_blank">17220229</a>]<br></li></div>
+<li>To determine whether additional regulators were involved in the attenuation of the bacterial growth rate within ﬁbroblasts , we tested mutants affected in the following regulatory proteins : ( i ) RpoE , an alternative sigma factor ( 38 ) ; ( ii ) SpiR ( SsrA ) and SpiA , a regulator and a type III structural protein , respectively , both encoded in SPI-2 ( 34 , 51 ) ; ( iii ) OmpR , a transcriptional regulator controlling outer membrane protein content ( 43 ) ; ( iv ) Dam , a DNA-adenine meth-ylase required for systemic disease ( 23 , 33 ) ; ( v ) the global regulators Crp , RelA , and Lrp ( 18 ) ; ( vi ) OxyR and SoxRS , related to oxidative stress ( 13 , 67 ) ; ( vii ) MviA , a regulator required for eliciting systemic disease in mice ( 66 ) ; and ( viii ) Fnr , which controls switching to anaerobic metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11553591" target="_blank">11553591</a>]<br></li>
+<li>Expression levels of the feoB gene change in response to iron and oxygen , which results from the action of the iron-sensing transcriptional regulator Fur ( 9 ) and the oxygen-sensing transcriptional regulator Fnr ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>Fnr senses the oxygen level inside the cell ( 22 , 24 ) , and it is required for the induction of many genes whose products function in anaerobic respiratory pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>We also found that the anaerobic expression of ftnB ( encoding a ferri-tin-like protein ) and hmpA ( encoding the NO · detoxifying flavohemoglobin ) was dependent on both Fur and Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In addition , we also demonstrate that global regulators Fnr and ArcA control the oxygen-dependent lipid A hydroxylation by directly regulating the expression of lpxO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In addition , transcriptomic analyses have shown that Fnr and ArcA also regulate the expression of several genes linked to S. Typhimurium virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Fnr , a global regulator of an-aerobic metabolism , acts as a cytoplasmic oxygen sensor and regulates expression of target genes in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>In addition to regulating the expression of several genes involved in energy metabolism , Fnr also regulates the expression of virulence genes in S. Typhimurium ( Fink et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>The ArcAB system can also act as a positive regulator by the induction of cydAB ( cytochrome d oxidase ) involved in respiration under oxygen-limiting conditions , and of the cob and pdu operons important for cobalamin-dependent utilisation of 1,2-propanediol In both these cases , ArcAB regulates expression of these target genes in association with Fnr [ 117 -- 120 ] , although in the case of pdu/cob the collaborative action of ArcAB and Fnr is indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>However , besides its role in anaerobic-respiration control , Fnr also regulates expression of , amongst other things , the ami-notripeptidase pepT [ 127 ] and one of the major porins in outer membrane , ompD [ 128 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>This indicates that Fnr and/or ArcA also control the expression of genes encoding other enzymes involved in lipid A covalent modiﬁcations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Our study showed that Fnr , another well-known global regulator that senses and responds to O2 limitation , is not involved in the low O2-induced LoiA-mediated activation of SPI-1 genes as the expression of loiA was not affected by the deletion of fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Adaptation to oxygen deprivation involves the global regulators Fnr and ArcA , which control the expression of a large number of genes whose products are mainly involved in adaptation to anaerobiosis [ 13e18 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>In this work , we show that the chain-length distribution of OAg in S. Enteritidis is under oxygendependent regulation mediated by Fnr and ArcA , which control the expression of the genes encoding WzzSE and WzzfepE chainlength determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Oxygen availability regulates the expression of wzzSE and wzzfepE in S. Enteritidis The above results lead us to hypothesize that the expression of genes encoding the OAg chain-length regulators WzzSE and WzzfepE are regulated by ArcA or Fnr in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>This elevated transcription requires Fnr , a positive regulator of many genes encoding anaerobic respiratory functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>In Salmonella grown under anaerobic conditions , Fnr positively regulates expression of alternative terminal acceptors [ 126 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Fnr binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The consensus Fnr binding site sequence is TTGAT NNNNATCAA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>The sequence recognised by Fnr is palindromic ( TTGATN4ATCAA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Oshima et al. ( 2002 ) demonstrated that the promoters of most Dam controlled genes contained GATC sequences that overlap with recognition sites for fumarate nitrate reduction ( Fnr ) and catabolite activator protein ( CAP ) regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25033662" target="_blank">25033662</a>]<br></li>
+<li>There is a possible Fnr-dependent sigma-70 promoter for this operon , with a 210 site ( CATAAT ) at nucleotides 515 to 520 and a possible Fnr site ( CTCTTctgcGTCAA ) at nucle-otides 479 to 492 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>Fnr binds at promoter sequences usually at position 41 relative to the start of transcription , although it can also bind at position 61 , 71 , 81 and 91 depending on the particular promoter structure [ 124 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Additionally , this region also includes 12 putative Lrp binding sites , all containing the consensus sequence GN ( 2 -- 3 ) TTT recognized by Lrp [ 35 ] ( S1A Fig ) , suggesting direct binding of Fnr and Lrp to this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Promoter location including the -10 and -35 boxes was predicted by BPROM , and the Fnr and Fur binding sites were predicted by the Virtual Footprint tool .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>In support of this hypothesis , our bioinformatics analyses revealed the presence of a putative binding sites for Fnr at position 262 , and three putative binding sites for ArcA at positions 13 , 85 and 107 with respect to the potential transcription initiation site of wzzfepE ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>In addition , the inverted-repeat upstream of the putative Fnr - binding site suggests the involvement of another regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>In the upstream region of the E. coli moa operon , there is a putative 210 site ( CATAAC ) and a possible Fnr binding site ( TGGATggtaAAAAA ) at position 241.5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>There is a putative 210 site ( AATACT ) and a possible Fnr binding site ( TTGATaccgCTCAA ) at position 242.5 , in the regulatory region of the E. coli dms operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>Furthermore , sequence analysis of the klfB ( the first gene in the operon ) promoter region identified two putative Fnr binding sites ( TTGATTAAGATCTG and CTGATGCAGAGCAG ) , similar to the known Fnr box consensus determined in E. coli ( TTGATNNNNATCAA ) [ 34 ] , where N is any nucleotide and identical positions in the klfB promoter are highlighted in bold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28817673" target="_blank">28817673</a>]<br></li>
+<li>Our results indicate a relatively small ( fourfold ) effect of loss of fnr , and there is no clear-cut Fnr binding site in the region immediately upstream from the E. coli hybABCDEFG coding sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>Nucleotide sequence of the fnr gene and primary sequence of the Fnr protein of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=6434517" target="_blank">6434517</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Fnr</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>The Fur protein was shown to repress feoB transcription under iron-replete conditions ( 3 , 11 ) , while the activator Fnr protein promotes feoB transcription under anaerobic conditions ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>The iron-sensing Fur regulator represses feoB transcription under iron-replete conditions ( 3 , 11 ) while the oxygen-sensing Fnr regulator promotes feoB transcription under anaerobic conditions ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>It has also been suggested that Fnr might directly regulate transcription of hybABCDEFG ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>While the cob/pdu operons are controlled by ArcAB , the ttr operon , which encodes enzymes essential for tetrathionate respiration , is positively regulated by Fnr [ 120,121 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Another gene regulated by Fnr or Fur was the NO · detoxifying flavohemoglobin protein encoded by the hmpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Th napABC operon has been reported to be regulated by both Fnr and the NarLP system ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10498722" target="_blank">10498722</a>]<br></li>
+<li>5 The Salmonella endogenous promoter for pepT is regulated by CRP and Fnr ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18559530" target="_blank">18559530</a>]<br></li>
+<li>This operon is globally regulated by OxrA ( Fnr ) and induced anaerobically by a two-component system in response to tetrathionate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>Therefore , it is possible and reliable to compare genes / operons regulated by these two important transcriptional factors ( i. e. , ArcA and Fnr ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Thus , thiosulfate reduction resembles several anaerobic respiratory systems such as trimeth-ylamine oxide reduction ( 3 ) which are induced by their respective electron acceptors , repressed by nitrate and ox-ygen ( preferred anaerobic electron acceptors ) , and part of the Fnr regulon ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407812" target="_blank">8407812</a>]<br></li>
+<li>For this , we used the nirB promoter , known to be activated by Fnr under anaerobic conditions as found in the intestinal environment or intracellularly ( 12 , 27 , 57 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816454" target="_blank">10816454</a>]<br></li>
+<li>For instance , under anaerobic conditions , Fnr represses the cytochrome-c oxidase ( cyoABCDE ) and the cytochrome bd complex ( cydAB ) , while activating genes important for utilizing alternative electron acceptors such as fumarate [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>In Salmonella grown under anaerobic conditions , Fnr positively regulates expression of alternative terminal acceptors [ 126 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>Figure Figure 5 Fur and Fnr control transcription of hmpA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Poole RK , Anjum MF , Membrillo-Hernandez J , Kim SO , Hughes MN , Stewart V : Nitric oxide , nitrite , and Fnr regulation of hmp ( flavohemoglobin ) gene expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Nitric oxide , nitrite , and Fnr regulation of hmp ( flavohemoglobin ) gene expression in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17526833" target="_blank">17526833</a>]<br></li>
+<li>Together , ArcAB and Fnr repress genes involved in aerobic metabolism , but ArcAB may also induce positive regulation of the cytochrome d oxidase operon ( 8 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_18">
+The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaero-philic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7730262" target="_blank">7730262</a>]<br></label>
+<input id="tu_similarity_18", type="checkbox">
+<div class="TU_similar">
+<li>The requirement of ArcA and Fnr for peak expression of the cyd operon in Escherichia coli under microaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8226666" target="_blank">8226666</a>]<br></li></div>
+				<label class="TU_collapse_similarity" for="tu_similarity_20">
+[ 30 ] P.A. Cotter , S.B. Melville , J.A. Albrecht , R.P. Gunsalus , Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></label>
+<input id="tu_similarity_20", type="checkbox">
+<div class="TU_similar">
+<li>Aerobic regulation of cytochrome d oxidase ( cydAB ) operon expression in Escherichia coli : roles of Fnr and ArcA in repression and activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761123" target="_blank">12761123</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11238977" target="_blank">11238977</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11796570" target="_blank">11796570</a>]<br></li></div>
+<li>The strong dependence of ftnB expression on O2 indicates that Fnr is crucial in its regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The increase in abundance of OmpD , but not in the rate of ompD transcription , in response to anaerobiosis is dependent on Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=13129964" target="_blank">13129964</a>]<br></li>
+<li>Collectively , full expression of ftnB is dependent on Fur in aerobic and anaerobic conditions , whereas Fnr is a strong activator in the absence of O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The expression data indicated that Fur and Fnr cooperate in the regulation of these 12 genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>The ArcAB system can also act as a positive regulator by the induction of cydAB ( cytochrome d oxidase ) involved in respiration under oxygen-limiting conditions , and of the cob and pdu operons important for cobalamin-dependent utilisation of 1,2-propanediol In both these cases , ArcAB regulates expression of these target genes in association with Fnr [ 117 -- 120 ] , although in the case of pdu/cob the collaborative action of ArcAB and Fnr is indirect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>However , besides its role in anaerobic respiration control , Fnr also regulates expression of , amongst other things , the ami-notripeptidase pepT [ 127 ] and one of the major porins in outer membrane , ompD [ 128 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16023758" target="_blank">16023758</a>]<br></li>
+<li>However , whether the repression of hilA by Fnr was induced by low O2 was not clarified in those studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28575106" target="_blank">28575106</a>]<br></li>
+<li>Expression of several genes controlled by Fnr and NsrR appeared to be also dependent on Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>This clone was pursued further because the operon is coregulated in E. coli by both ArcA and Fnr ( 27 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18559530" target="_blank">18559530</a>]<br></li>
+<li>Transcription of tetrathionate ( ttr operon ) was activated at equal levels by both Fnr and ArcA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>Together , these ﬁndings suggested that the role played by Fnr and ArcA in lipid A hydroxylation most probably occurs by controlling lpxO expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Interestingly , most of the 120 genes were regulated by ArcA and Fnr in the same fashion ( i.e. , repressed or activated ) except for yneB ( putative fructose-1 ,6 - bisphosphate aldolase - STM4078 ) , which was activated by ArcA , but repressed by Fnr ( Additional file 1 : Table S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21418628" target="_blank">21418628</a>]<br></li>
+<li>We also found that the anaerobic expression of ftnB ( encoding a ferri-tin-like protein ) and hmpA ( encoding the NO · detoxifying flavohemoglobin ) was dependent on both Fur and Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>This process was dependent on the regulation exerted by Fnr and ArcA on the expression of genes wzzSE and wzzfepE , which encode the OAg chain length regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>In this work , we show that the chain-length distribution of OAg in S. Enteritidis is under oxygendependent regulation mediated by Fnr and ArcA , which control the expression of the genes encoding WzzSE and WzzfepE chainlength determinants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>This condition leads to an adaptive response by changing the expression of numerous genes , and transcription factors Fnr and ArcA are major regulators of this process .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Biochemical and genetic analyses indicate that this process is regulated by Fnr and ArcA controlling the expression of lpxO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Biochemical and genetics analyses indicate that this process is regulated by transcriptional factors Fnr and ArcA by means of controlling the transcription of genes encoding WzzSE and WzzfepE in response to oxygen availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27343553" target="_blank">27343553</a>]<br></li>
+<li>Activated TtrR cooperates with the global regulator OxrA ( Fnr ) to positively regulate expression of the ttrBCA operon DISCUSSION The alternative electron acceptor tetrathionate allows Sal-monella to grow anaerobically on ethanolamine or propanediol by using endogenously synthesized B12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11274105" target="_blank">11274105</a>]<br></li>
+<li>The expression of ftnB was shown to be activated by Fnr [ 21 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>as cyclic AMP may be involved in the regulation of anaerobic gene expression by binding to Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>]<br></li>
+<li>Since OxrA is analogous to Fnr in E. coli , it appears to be a transcriptional activator of anaerobic gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3276666" target="_blank">3276666</a>]<br></li>
+<li>[ PubMed : 15311938 ] Lin HY , Bledsoe PJ , Stewart V. Activation of yeaR-yoaG operon transcription by the nitrate-responsive regulator NarL is independent of oxygen - responsive regulator Fnr in Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>Similarly , nitrosylation of the 4Fe-4S prosthetic group of Fnr allows expression of the E. coli hmp gene ( 60 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>Fnr also represses SPI1 at the level of hilA independently of the PhoPQ system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22021388" target="_blank">22021388</a>]<br></li>
+<li>In E. coli , NorR is a positive regulator of the flavorubredoxin encoded by the flrd gene , whereas Fnr downregulates its expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26443513" target="_blank">26443513</a>]<br></li>
+<li>The reason for this is unclear , but may be due to the activation of the Hfq-binding small RNA ( fnrS ) by Fnr , which subsequently represses the expression of sodA [ 90,91 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Expression of hmpA is repressed by Fnr and another DNA binding protein that contains an iron sulfur cluster , NsrR [ 21,95-97 ,99 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>This gene ( hmpA ) is repressed by Fnr and contained a putative Fnr binding site , but did not contain a predicted Fur binding site [ 21,95,96 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Therefore , Salmonella feo expression is highly induced under low-oxygen conditions with low iron ( 8 ) , where Fur activity is reduced ( 10 ) and Fnr activity is enhanced ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25313398" target="_blank">25313398</a>]<br></li>
+<li>Our results also provide evidence that nipAB expression is regulated by Fnr , as induction is completely abolished in an fnr mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12761099" target="_blank">12761099</a>]<br></li>
+<li>NR-Z expression is not induced during anaerobic growth but is actually repressed by Fnr , the nitrogen-sensing regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644504" target="_blank">12644504</a>]<br></li>
+<li>In E. coli , expression of ygbA is repressed by the oxygen sensitive regulator Fnr ( Constantinidou et al. , 2006 ) , which is consistent with a role of YgbA under aerobic or nitrosative stress conditions ( Cruz-Ramos et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22831173" target="_blank">22831173</a>]<br></li>
+<li>This indicated that Fur is required for ftnB expression , independent of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Regulation of SodA production is complex but includes repression by Fnr , ArcA , and Fur , such that expression is repressed under anaerobic conditions ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659669" target="_blank">15659669</a>]<br></li>
+<li>Thus , the oxygen-dependent regulation of lpxO expression described for the wild-type strain is lost when fnr is deleted , indicating that Fnr is a negative regulator of lpxO expression under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>Our study of the anaerobic expression of hmpA suggests that it is regulated by Fur , independent of Fnr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Likewise , feoB expression is under dual transcriptional control by the iron-sensing Fur and oxygen-sensing Fnr regulators whereby FeoB-mediated Fe ( II ) uptake is maintained at appropriate levels in response to different levels of iron and oxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23708131" target="_blank">23708131</a>]<br></li>
+<li>Clearly , these results suggest Fnr is functional in Δfur and that Fur is regulating genes of anaerobic metabolism ( eut , frd , and dms operons ) through an unknown mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+<li>Furthermore , ytfE mutants have an increased sensitivity to iron starvation and ytfE expression is increased in fnr and fur mutants , although no obvious Fnr - or Fur-binding sites were found ( Justino , Almeida , Goncalves , Teixeira , & Saraiva , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651595" target="_blank">23651595</a>]<br></li>
+<li>These results indicate that Fnr and ArcA regulate lpxO expression through direct binding to its promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29937757" target="_blank">29937757</a>]<br></li>
+<li>The same investigators [ 108 ] , postulated that Fnr was unable to induce ftnB and that other regulators were required .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22017966" target="_blank">22017966</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

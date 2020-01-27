@@ -1,0 +1,684 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - MntR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">MntR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">MntR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>It is intriguing to compare the structures of the apo - and holo-forms of BsMntR , to understand the metal-binding as well as the activation mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The most common iron-transport pathways uti-lised by bacteria would appear to be those that enable uptake of ferric complexes ( e.g. ferri-sid-erophores , haem and haem -- protein complexes , Feo -- Transport of ferrous iron into bacteria Simon C. Andrews * 1 , 1 School of Biological Sciences ( AMS Building ) , University of Reading , Whiteknights , Reading , RG6 6AJ , UK ; Department of Molecular Biology and Biotechnology , University of Shefield , Firth Court , 2 Western Bank , Shefield , S10 2TN , UK ; * Author for correspondence ( E-mail : s.c.andrews@reading.ac.uk; Tel. : +44-118-378-8463 ; Fax : +44-118-931-0180 ) Received 18 December 2005 ; accepted 16 January 2006 Key words : G-protein , SH3 , DtxR , MntR , Gate motif , transport , manganese , FeoA , FeoB , FeoC , Meo Bacteria commonly utilise a unique type of transporter , called Feo , to speciﬁcally acquire the ferrous ( Fe ) form of iron from their environment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16718600" target="_blank">16718600</a>]<br></li>
+<li>Wild-type and mntR cells were grown in minimal medium to mid-exponen-tial phase and exposed to 10 M MnCl2 for 1 h. Expression corresponding to the region of the rybA gene showed strong derepression in the mntR strain ( 100-fold ) , indicating rybA is indeed negatively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Interestingly , the binuclear metal site in BsMntR involves the residues Asp8 , Glu11 , His77 , Glu99 , Glu102 , and His103 , which correspond to Asp40 , Glu43 , His109 , Glu131 , Glu134 , and His 135 in E. coli MntR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>In some Gram-positive bacteria , the MntR analog seems to regulate a large set of genes and mediate a more global response ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>In Streptococcus mutans , the MntR homolog SloR similarly has been reported to be a bifunctional regulator , repressing transcription when bound within 50 nt of the start codon and activating transcription when bound further upstream ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Lane 1 , soluble fraction of cell lysate after induction ; lane 2 , MntR puriﬁed by MonoQ anion-exchange chromatography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Taken together , the observations that mntP is upregulated by manga-nese through MntR while its deletion causes dramatic sensitivity to manganese and increased intracellular manganese levels indicate that MntP functions as an efﬂux pump .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The Escherichia coli K-12 MntR Miniregulon Includes dps , Which Encodes the Major Stationary-Phase DNA-Binding Protein § Kaneyoshi Yamamoto ,1 Akira Ishihama ,1 Stephen J. W. Busby ,2 and David C. Grainger3 * Department of Frontier Bioscience and Research Center for Micro-Nano Technology , Hosei University , Koganei , Tokyo 184-8584 , Japan1 ; School of Biosciences , University of Birmingham , Birmingham , B15 2TT , United Kingdom2 ; and School of Life Sciences , University of Warwick , Coventry , CV4 7AL , United Kingdom3 Received 13 October 2010/Accepted 4 January 2011 Escherichia coli MntR protein is the Mn2 - responsive transcriptional-repressor of the MntH manganese transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Recent transcriptomic evidence revealed the presence of a third member of the MntR regulon , MntS [ 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Strain BW25113 ( 6 ) was grown aerobically in LB medium supplemented with either 0.2 mM MnCl2 ( to stimulate DNA binding by MntR ) or 0.1 mM EDTA ( as a negative control ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>First , the MntR-binding motif at the mntR locus lies upstream of a plausible 35 site , such that MntR could either repress or activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Upon binding to manganese , MntR binds promoter DNA to repress or activate transcription of its target genes ( 15 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>This ﬁnding could suggest that MntS directly modiﬁes MntR activity , either as a transcription corepressor or by activating DNA binding of MntR by facilitating its association with manganese .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We identified the a possible DNA-binding residues in E. coli MntR , including Arg34 , Glu54 , Arg56 , Gln57 , Val58 , Gln68 , Ser67 , Thr70 , Lys73 , and Arg77 , which correspond to the DNA-binding residues in DtxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The metal elements ( Na , Mn , Ni , Cu , Zn , Fe , and Mo ) are directly recognized by the DNA-binding TFs ( NhaR , MntR , NikR , CueR , ZntR/Zur , Fur , and ModE , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>This shows that the E. coli MntR is more compact for DNA-binding , and it may even become further stabilized upon metal ion activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The distances between the HTH motifs in the E. coli MntR , and the apo and holo forms of BsMntR are 27 , 35 , and 31 Å , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>21 5 Further , DNA footprinting analysis suggested that DNA - binding sequences are localized within the mntH operator and consists of 22 nucleotides , resembling the Fur-box consensus sequence .5 The B. subtilis MntR ( BsMntR ) protein is a 142-residue protein that binds its specific DNA sequence as a homodimer in the presence of activating metal ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The crystal structures of DtxR and IdeR , close homologues of E. coli MntR , revealed that these proteins recognize double stranded DNA by their HTH motifs .22,33 The B. subtilis and E. coli MntR also bind to double stranded DNA in the presence of metal ions ,5,7,16,17 but structural information is not available to understand how this protein interacts with DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Ikeda J , Janakiraman A , Kehres DG , Maguire ME , Slauch JM ( 2005 ) Transcriptional regulation of sitABCD of Salmonella enterica serovar Typhimurium by MntR and Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_22">
+2005 Transcriptional regulation of sitABCD of Salmo-nella enterica serovar Typhimurium by MntR and Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17120142" target="_blank">17120142</a>]<br></label>
+<input id="act_similarity_22", type="checkbox">
+<div class="ACT_similar">
+<li>Transcriptional regulation of sitABCD of Salmonella enterica serovar Typhimurium by MntR and Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li></div>
+<li>Under low-Mn 1 conditions , MntR activates transcription of an ABC transporter , whereas under high-Mn21 conditions , MntR acts as a transcriptional-repressor of mntH , an NRAMP homologue ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Besides the NRAMP homologous proton-coupled Mn21 transporter MntH , B. subtilis contains the ABC-type Mn21 transporter MntABCD , which is speciﬁc for Mn21 and which is activated by MntR under low-Mn21 conditions ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Therefore , the fusion protein is expressed from the native mntP promoter and the native 5 ' UTR leaving both MntR - and riboswitch-mediated regulation are intact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>While this work was in progress , another study reported ChIP-chip data that identiﬁed the genomic binding sites of MntR in E. coli , which complements our ﬁndings of the MntR regulation of mntS and mntP ( 49 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Interestingly , in addition to sites in the promoters of mntH , mntS , and mntP , Yamamoto et al. ( 49 ) identiﬁed an MntR site upstream of dps , which encodes a ferritin-like iron storage protein , and showed that MntR represses dps expression , primarily in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>If so , this would suggest a model whereby MntR represses two Mn2 uptake systems and simultaneously activates both itself and the YbiR Mn2 efﬂux transporter in the presence of sufﬁcient Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Thus , MntH is the Mn2 transporter , MntR is the Mn2 sensor ( 11 , 15 , 16 ) , and the YebN protein is a putative Mn2 efﬂux pump induced by excess Mn2 ( G. Storz , personal communication ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>We have used chromatin immunoprecipitation to determine the distribution of Mn2 - MntR across the entire E. coli chromosome in vivo , and we report that MntR binds to only four targets , adjacent to the mntH , mntR , yebN , and dps genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Three of the four MntR targets ( mntH , mntR , and yebN ) are genes directly involved in Mn2 homeostasis , and the mode of MntR action at these loci is documented elsewhere ( Storz , personal communication ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Investigators have shown that transcription factors require complex protein structures to specify their cognate metal [ 65 ] -- and even so , MntR can bind iron and Fur can bind manganese [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>This indicates that the insert binds to MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>MntH function does not require the presence of MntR or MntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Thus , distinct from mntH , mntS is uniquely controlled by MntR , suggesting the mntS gene is needed speciﬁcally when manganese levels are low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The levels of mntS are controlled by MntR , but our evidence also supports further regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>In other Gram-positive bacteria , such as Bacillus subtilis , MntR appears to directly regulate only manganese transporters ( mntH and mntABCD ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The global transcriptional response of Bacillus subtilis to manganese involves the MntR , Fur , TnrA and B regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Binding of puriﬁed MntR to the mntH operator was manganese dependent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>The MntR protein was puriﬁed and shown to-bind the mntH operator in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Alternatively , MntS could affect mntH repression by altering cellular manganese pools and global availability , which would perturb MntR and/or Fur activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Mutants that lack MntS are defective at manganese-mediated repression of mntH transcription , as if the action of MntS can help MntR to acquire manganese .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Thus , in Mn2-rich environments , MntR represses the mntH promoter , thereby shutting down the synthesis of MntH and preventing accumulation of toxic levels of Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>MntR is a transcriptional factor that binds two Mn atoms in manganese-replete cells , and in the MntR : Mn2 form it represses mntH transcription , thereby slowing synthesis of the importer [ 5,16,17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>g002 Overproduced MntS disrupts intracellular manganese and iron pools when cells are grown in manganese-rich medium The mntS gene can be repressed by MntR : Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>mntS is downregulated by manganese and MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>B. Transcriptional effects of manganese-loaded MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Once manganese rises to an optimal level , MntR : Mn2 forms and inhibits further MntH synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Simultaneously MntR : Mn2 induces synthesis of manganese efflux pumps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Manganese-loaded MntR : Mn2 induces mntP when manganese levels rise .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>While the wild-type mntH : : lacZ reporter was strongly repressed by addition of Mn2 at concentrations of 0.3 M or greater , the dose-response curve for Mn2 was shifted to the right when the MntR protein was mutated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Finally , to conﬁrm that repression of dps expression by Mn2 was mediated by MntR , we repeated our analysis in KP7600 ( 13 ) cells and the mntR derivative JD1751 147 FIG. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>As expected , repression of dps expression by Mn2 was abolished in the absence of MntR ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Unexpectedly , we found that dps expression is directly repressed by Mn2 - MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Mn2 - MntR represses transcription from the dps promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>The simplest interpretation 2 is that Fe also stimulates repressive binding of MntR to the MntR-binding motif , albeit with a poorer overall afﬁnity than Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Fe2 repression was not altered by elimination of the MntR protein and was only minimally shifted to the right by elimination of the MntR-binding motif or both the MntR protein and MntR-binding motif ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>In contrast , Mn2 repression is completely abolished by mutation of the MntR-binding motif but only partially abolished by mutation of the MntR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Using fur , mntR , and fur mntR mutant strains as well as mutations in the Fur - and MntR-binding motif elements , we found that Fe2 can also mediate repression through the Mn2 repressor MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Further , mutation of the MntR protein and Fur-binding motif also abolishes Mn2 repression ( Fig. 4F ) ; hence the Fur protein does not appear to mediate repression by binding to the MntR-binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Yet , ﬁnally , mutation of both the MntR and Fur proteins also abolishes Mn2 repression ( Fig. 4F ) , which implies that Fur is the only other trans-acting factor involved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The results ( Fig. 4D ) indicate that the MntR regulatory circuit is clearly the principal mediator of Mn2 repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>This re-sidual repression is completely inhibited by disruption of the MntR regulatory circuit ( Fig. 4F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The transcription start site mapped just downstream of MntR consensus sites , consistent with MntR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The inverted-repeat motif and MntR mediate Mn2 repression of mntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The data show that MntR is required to mediate repression by MnCl2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>The decrease in mntS levels is not due to increased repression by MntR , since the 2,2 - dipyridyl repression of mntS is still observed in the mntR strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>However , mntH induction by 2,2 - dipyridyl treatment was increased in the mntR strain , due to an effective lack of both Fur and MntR activities .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The Mn21-responsive transcriptional-regulator of mntH was identiﬁed as the gene product of o155 ( renamed MntR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>We report the identiﬁcation of the gene product of o155 , which we renamed MntR , a new Mn21 regulator in E. coli , and the repression of mntH transcription by Mn21-MntR and Fe21-Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>When this work began , the only Escherichia coli K-12 gene known to respond to manganese via MntR repression was mntH , which encodes a manganese importer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>In enterobacteria , the only genes known to be regulated by MntR when this work began were mntH and sitABCD , encoding manganese transporters , of which laboratory strains of Escherichia coli only possess mntH ( 22 , 26 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>This suggests that iron can repress mntS through Fe-MntR , similar to mntH repression by Mn-Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Regulation of the transporter gene mntH by Mn21 is only accomplished by MntR and not by Fur , although the E. coli Fur protein also functions in vitro with Mn21 as a corepressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_76">
+Dual repression by Fe2 - Fur and Mn2-MntR of the mntH gene , encoding an NRAMP-like Mn2 transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></label>
+<input id="act_similarity_76", type="checkbox">
+<div class="ACT_similar">
+<li>Dual repression by Fe - Fur and 2 + 2 + 2 + Mn - MntR of the mntH gene , encoding an NRAMP-like Mn transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12949180" target="_blank">12949180</a>]<br></li>
+<li>Patzer SI , Hantke K. Dual repression by Fe - Fur and MN - MntR 21 21 of the mntH gene , encoding an NRAMP-like Mn transporter in 21 Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Patzer SI , Hankte K. 2001 Dual repression by Fe - Fur and 2 + Mn - MntR of the mntH gene , encoding an NRAMP-like 2 + Mn transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16718600" target="_blank">16718600</a>]<br></li>
+<li>Patzer , S.I. , and Hantke , K. ( 2001 ) Dual repression by Fe ( 2 + ) - Fur and Mn ( 2 + ) - MntR of the mntH gene , encoding an NRAMP-like Mn ( 2 + ) transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li></div>
+<li>Understanding OxyR , Fur , and MntR regulation of mntH should enable further regulatory questions to be addressed , particularly questions regarding the sensitivity of mntH expression to growth medium and growth state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Interestingly , the mntH , yebN , and dps promoters are all thought be regulated by Fur and/or OxyR in addition to MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>In contrast , in S. enterica serovar 2 Typhimurium , we see signiﬁcant Fe repression when either component of the Fur regulatory circuit has been disrupted ( Fig. 4A ) , but only when the MntR circuit is intact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>First , Fe2 repression via the MntR circuit alone produces somewhat different dose-re-2 sponse curves than Fe repression through the Fur circuit alone ( Fig. 4A and C ) ; the E. coli studies examined only a single cation concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Except for slight differences in dose response among the three Fur circuit mutants in Fig. 4A , our data are consistent 2 with the hypothesis that residual Fe repression of mntH in Fur protein and/or Fur-binding motif mutants is straightforward regulation by MntR , acting through the MntR-binding motif using Fe2 as a cofactor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Fur is not likely to regulate mntS directly , since there was no iron regulation independent of MntR ( Fig. 3 , lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Fur and MntR account for all cation repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Thus , Fur and MntR regulation is sufﬁcient to account for all observed cation regulatory effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Likewise , H O still activated 2 2 mntH : : lacZ when either the Fur or MntR systems had been inactivated by a cis - or trans-acting mutation ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>In agreement with the data of Patzer and Hantke ( 34 ) , there is no evidence for metal regulation other than by Mn2 and Fe2 acting through MntR and Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>These authors interpreted their data to indicate that Fur and MntR are strictly speciﬁc for Fe2 and Mn2 , respectively , in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>We demonstrated MntR-dependent upregulation of mntP upon exposure to manganese ( Fig. 8 ) , indicating that in addition to repressing gene expression , MntR can positively regulate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We also provide evidence that mntP ( formerly yebN ) , which encodes a putative efﬂux pump , is positively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We next turned our attention to yebN , the gene from the microarray that appeared to be positively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Thus , it is unlikely that MntR acts as a transcriptional-repressor at this locus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Manganese homeostasis in Bacillus subtilis is regulated by MntR , a bifunctional regulator related to the diphtheria toxin repressor family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Manganese uptake is regulated by the MntR repressor ( Patzer and Hantke , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">MntR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Signiﬁcantly , MntR , like Fur , lacks the C-terminal SH3/FeoA-like domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16718600" target="_blank">16718600</a>]<br></li>
+<li>However , the DNA-binding domains move substantially with respect to the dimer-interface in the apo-BsMntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The overall conformation of BsMntR differs from those of other members of the DtxR/IdeR family , in that it lacks a C-terminal SRC homology 3 ( SH3 ) domain .13,14,19 -- 22 Another significant difference between DtxR and BsMntR is found in the metal-binding active site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>However , in contrast with DtxR / IdeR , oligomerization studies showed no change in the quaternary structure of BsMntR between the apo and holo forms , revealing BsMntR to be stable homodimer in solution .7 Like other members of the DtxR/IdeR family , BsMntR requires the binding of two metal ions per protein monomer and utilizes a helix-turn-helix ( HTH ) DNA-binding motif .7,14 Characterizations of MntR ( BsMntR and E. coli MntR ) in vivo and in vitro have shown that it is highly selective for Mn as an 21 Additional Supporting Information may be found in the online version of this article .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>DtxR and BsMntR both bind two metal ions per protein monomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The most obvious difference between the metal-binding sites is that DtxR has two distinct binding sites ( M M ~ 9 Å ) , while BsMntR has a single binuclear site ( M M 3.3 , 4.4 Å ) , with the metal ions bridged by two protein side chains and liganded water molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>21 5 -- 7,16 The crystallographic structures of BsMntR have been solved in the presence of several metal ions , including Mn , Cd , Ca , and Zn , and in the absence of metal 21 21 21 21 ions ( the apo form ) .15,17,18 These structural analyses suggested that the protein is composed of two domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The structures of BsMntR have been solved in the presence of several metal ions ( Mn , Cd , Ca , and 21 21 21 Zn ) and in the absence of metal ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The distances between the HTH motifs in the E. coli MntR , and the apo and holo forms of BsMntR are 27 , 35 , and 31 Å , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The crystal structures of DtxR and IdeR , close homologues of E. coli MntR , revealed that these proteins recognize double stranded DNA by their HTH motifs .22,33 The B. subtilis and E. coli MntR also bind to double stranded DNA in the presence of metal ions ,5,7,16,17 but structural information is not available to understand how this protein interacts with DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Superposition of multiple apo-BsMntR structures indicates that there is a greater range of positions allowed between the N - and C-terminal domains in the metal-free state , and that the DNA-bind-ing domains of the dimer are farther apart ( 5 Å ) than in the activated complex .18 Here , we describe the crystal structure of the E. coli MntR , an 18 kDa protein consisting of 155 amino acid residues ( potential pI , 6.35 ) from Escherichia coli K-12 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>21 15,17,18 These analyses confirmed that dimerization occurs in BsMntR , irrespective of the presence of metal ions , which is consistent with the solution studies .7,11 In addition , they further suggested that the DNA-binding domains are mobile , as compared with the dimerization domain , and that the distance between the domains is longer in the apo-form .18 This E. coli MntR structure is the apo-form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>A previous analysis suggested that most protein-DNA interactions involve nucleic acid phosphate groups rather than bases .34,35 The present report describes the crystal structure of E. coli MntR in the absence of metal ions ( apo-form ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>MntH function does not require the presence of MntR or MntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>DNA-binding and oligomerization studies of the manganese ( II ) metalloregulatory protein MntR from Bacillus subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Experiments equivalent to those with the Fur protein and Fur-binding motif mutants were performed with an MntR protein mutant and an inverted-repeat motif ( MntR-binding motif ) mutant , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Repression by Mn2 was completely eliminated when the MntR-binding motif or both the MntR protein and the MntR-binding motif were mutated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Further , mutation of the MntR protein and Fur-binding motif also abolishes Mn2 repression ( Fig. 4F ) ; hence the Fur protein does not appear to mediate repression by binding to the MntR-binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>In contrast to other known family members , the C-terminal helix is missing in E. coli MntR , and a longer helix may be formed at the N-termi-nal region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Origins of metal ion selectivity in the DtxR/MntR family of metalloregulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>This shows that the E. coli MntR is more compact for DNA-binding , and it may even become further stabilized upon metal ion activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>It is noteworthy to mention that the metal - and DNA-binding residues are not located at the missing Nterminal , nonhomologous region of E. coli MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>All of the metal-binding site residues are conserved in E. coli MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>To identify the possible DNA-binding residues in E. coli MntR , we superimposed the DtxR-DNA complex on the E. coli MntR dimer , which revealed a similar overall topology with an RMSD of 2.70 Å for 215 C atoms [ Fig. 1 ( E ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>We identified the a possible DNA-binding residues in E. coli MntR , including Arg34 , Glu54 , Arg56 , Gln57 , Val58 , Gln68 , Ser67 , Thr70 , Lys73 , and Arg77 , which correspond to the DNA-binding residues in DtxR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>As seen in Figure 1 ( C , D ) , all of the metalbinding site residues are highly conserved in E. coli MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Except for His109 and Glu134 , all of the residues ' side chains showed similar conformations in E. coli MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">MntR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The overall conformation of BsMntR differs from those of other members of the DtxR/IdeR family , in that it lacks a C-terminal SRC homology 3 ( SH3 ) domain .13,14,19 -- 22 Another significant difference between DtxR and BsMntR is found in the metal-binding active site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>In contrast to other known family members , the C-terminal helix is missing in E. coli MntR , and a longer helix may be formed at the N-termi-nal region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The amino acid sequence of O155 reveals 16 % identity to MntR from B. subtilis and shows that it belongs to the DtxR family of bacterial metalloregulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>DISCUSSION This study identiﬁes a new metalloregulatory protein in E. coli , MntR , that senses Mn21 and belongs to the DtxR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by MntR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Alternatively , there is a large group of MntR / DtxR-like regulators in Archaea ( Methanosarcina , Pyrococci , Archaeaglobus , Methanobacterium ) that regulate iron-homeostasis , whereas another small group of MntR/DtxR-like repressors in Methanosarcina spp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Characterization of the role of the divalent metal ion-dependent transcriptional repressor MntR in the virulence of Staphylococcus aureus .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>( B ) Western blot analysis of MntP-SPA expression levels from MntP-SPA ( GSO464 ) or mntR MntP-SPA ( GSO465 ) cultures grown as described for panel A. DISCUSSION In this study , we characterized the MntR regulon in E. coli and identiﬁed two new proteins required for manganese ho-meostasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>These results expand our knowledge of manganese-homeostasis and the MntR regulon in Gram-negative bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>MntR modulates expression of the PerR regulon and superoxide resistance in Staphylococcus aureus through control of manganese uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19400769" target="_blank">19400769</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Escherichia coli MntR Miniregulon Includes Genes E a Small Protein and an Efﬂux Pump Required for Manganese Homeostasis † The ncoding Lauren S. Waters , Melissa Sandoval , and Gisela Storz * Cell Biology and Metabolism Program , Eunice Kennedy Shriver National Institute of Child Health and Human Development , Bethesda , Maryland Received 26 July 2011/Accepted 28 August 2011 Manganese is a critical micronutrient for cells , serving as an enzyme cofactor and protecting against oxidative stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The Escherichia coli K-12 MntR Miniregulon Includes dps , Which Encodes the Major Stationary-Phase DNA-Binding Protein § Kaneyoshi Yamamoto ,1 Akira Ishihama ,1 Stephen J. W. Busby ,2 and David C. Grainger3 * Department of Frontier Bioscience and Research Center for Micro-Nano Technology , Hosei University , Koganei , Tokyo 184-8584 , Japan1 ; School of Biosciences , University of Birmingham , Birmingham , B15 2TT , United Kingdom2 ; and School of Life Sciences , University of Warwick , Coventry , CV4 7AL , United Kingdom3 Received 13 October 2010/Accepted 4 January 2011 Escherichia coli MntR protein is the Mn2 - responsive transcriptional repressor of the MntH manganese transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>We also provide evidence that mntP ( formerly yebN ) , which encodes a putative efﬂux pump , is positively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We also discovered that the mntP gene ( formerly yebN ) , encoding a putative efﬂux pump , is upregulated by manganese through MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>In our search to characterize orphan small RNA ( sRNA ) genes without a known function , we became interested in the rybA gene , which shows strong synteny with the gene encoding the manganese-dependent transcription factor MntR across enterobacteria ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>ture of the manganese ulatory protein f anthrax , possesses a close homolog of MntR , and mutants of the B. anthracis lacking proteins involved in manganese uptake have weakened virulence .11,12 In addition , MntR is a member of a protein family represented by the ironresponsive diptheria toxin repressor ( DtxR ) from Coryne-bacterium diphtheriae and the iron-responsive regulator ( IdeR ) from Mycobacterium tuberculosis .4,13,14 The E. coli MntR regulatory protein has been identified and has been shown to repress the mntH-lacZ operon by fivefold only in the presence of Fe and 21 Mn .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>The global transcriptional response of Bacillus subtilis to manganese involves the MntR , Fur , TnrA and B regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Under low-Mn 1 conditions , MntR activates transcription of an ABC transporter , whereas under high-Mn21 conditions , MntR acts as a transcriptional repressor of mntH , an NRAMP homologue ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>The Mn21-responsive transcriptional regulator of mntH was identiﬁed as the gene product of o155 ( renamed MntR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>We report the identiﬁcation of the gene product of o155 , which we renamed MntR , a new Mn21 regulator in E. coli , and the repression of mntH transcription by Mn21-MntR and Fe21-Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Dual Repression by Fe21-Fur and Mn21-MntR of the mntH Gene , Encoding an NRAMP-Like Mn21 Transporter in Escherichia coli SILKE I. PATZER * AND KLAUS HANTKE Mikrobiologie/Membranphysiologie , Universität Tübingen , Tübingen , Germany Received 19 March 2001/Accepted 30 May 2001 The uptake of Mn21 , a cofactor for several enzymes in Escherichia coli , is mediated by MntH , a protondependent metal transporter , which also recognizes Fe21 with lower afﬁnity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_17">
+Dual repression by Fe2 - Fur and Mn2-MntR of the mntH gene , encoding an NRAMP-like Mn2 transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></label>
+<input id="rp_similarity_17", type="checkbox">
+<div class="RP_similar">
+<li>Dual repression by Fe - Fur and 2 + 2 + 2 + Mn - MntR of the mntH gene , encoding an NRAMP-like Mn transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12949180" target="_blank">12949180</a>]<br></li>
+<li>Patzer SI , Hankte K. 2001 Dual repression by Fe - Fur and 2 + Mn - MntR of the mntH gene , encoding an NRAMP-like 2 + Mn transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16718600" target="_blank">16718600</a>]<br></li>
+<li>Patzer SI , Hantke K. Dual repression by Fe - Fur and MN - MntR 21 21 of the mntH gene , encoding an NRAMP-like Mn transporter in 21 Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li></div>
+<li>Yet , ﬁnally , mutation of both the MntR and Fur proteins also abolishes Mn2 repression ( Fig. 4F ) , which implies that Fur is the only other trans-acting factor involved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>We expected that the binding targets for MntR would be adjacent to genes encoding proteins involved in the response to Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">MntR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>E. coli strains and plasmids Relevant genotype and/or propertiesa Strain or plasmid Source or reference Strains hsdS ( r 2 m 2 B B ) gal dcm ompT l ( DE3 ) ; T7 RNA polymerase gene under control of the lacUV5 promoter MC4100 aroB H1443 fhuF : : lplacMu53 lacY gaIU pyrD trp : : Tn5 rpsL mal valr F9 106 zbh-272 : : Tn10 araD139 D ( proAB lacIZYA ) rpsL150 araB : : Mu ( cts ) zzz : : Mud1 ( Ampr lac cts ) araD139 D ( lacIZYA-argF ) U169 rpsL150 relA1 ﬂhD5301 deoC1 fruA25 rbsR22 MC4100 mntH : : Mud1 aroB MC4100 mntH : : Mud1 MC4100 mntH : : Mud1 fur-28 zbf-15 : : Tn10 aroB MC4100 mntH : : Mud1 fur1 zbf-15 : : Tn10 aroB MC4100 mntH : : Mud1 fur-28 zbf-15 : : Tn10 MC4100 mntH : : Mud1 fur1 zbf-15 : : Tn10 SIP879 but mntR ; see Table 2 BL21 ( DE3 ) 31 H1443 H1717 30 30 and 12 20 6 LCB272 MAL103 MC4100 5 SIP744 , -879 SIP882 This study This study This study This study This study This study This study SIP890 SIP891 SIP894 SIP895 SIP924 , -931 , -932 , -933 , -943 , -944 , -949 Plasmids p15A ori , 4.2 kb , Camr Tetr , medium copy number ColE1 ori , 3.4 kb , Camr , phage T7 f 10 promoter , expression vector , high copy number pSC101 ori , 3.6 kb , Camr , low copy number pHSG575 fur ( nt 2073 -- 2847 , 62 ) in SmaI site pACYC184 f5279 o86 o155 o3729 ( nt 10296 , 73 , to nt 1924 , 74 ) in BamHI site pHSG575 mntR ( nt 360 -- 1067 , 74 ) in SmaI site pACYC184 mntR ( nt 360 -- 1067 , 74 ) in EcoRV site pT7-7 mntR ( nt 580 -- 1067 , 74 ) in NdeI/EcoRI site pBC-SK1 mntH operator ( 170 nt of the Mud1 end , nt 3610 -- 4764 , 217 ) in EcoRV site pBC-SK1 with corrupt MntR box ( nt 4433 -- 4455 , 217 , with a deletion of nt 4452 ) in EcoRV site pBC-SK1 with MntR box ( nt 4433 -- 4454 , 217 ) in EcoRV site ColE1 ori , 2.5 kb , Ampr , phage T7 f 10 promoter , expression vector , optimal Shine-Dalgarno sequence pACYC184 pBC-SK1 7 Stratagene pHSG575 pSP61/18 pSP115/25 33 This study This study pSP116/1 pSP116/10 pSP116/25 pSP117/11 This study This study This study This study pSP118/14 This study pSP118/18 pT7-7 This study 32 a For plasmids , the positions and section numbers of the insert in the E. coli K-12 strain MG1655 genome sequence according to Blattner et al. ( 3 ) are given in parentheses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Extensive queries using BLAST ( 3 ) , including searches for degenerate matches to the inverted-repeat motif , suggest ﬁrst that close homologs to MntR are restricted to the E. coli and S. enterica lineages with only one ortholog per species and second that MntR regulates only a few genes in any given organism unless its binding site is very degenerate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>We hypothesized that S. enterica serovar Typhimurium `` MntR '' was likely the transacting factor that bound at the inverted-repeat motif in the mntH promoter that we had previously noted ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>Since the 22-bp inverted-repeat has recently been documented as the binding site for the novel MntR regulator ( 34 ) and since we had previously noted a similar motif ( 19 of 22 bp identical ) in the control region of the S. enterica serovar Typhimurium sitABCD operon ( 24 ) , the prevalence of MntR and MntR-regulated genes throughout Bacteria was of interest .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>In the presence of Mn2 , mntH is repressed primarily by the Salmonella equivalent of E. coli b0817 , a distant homolog of the Bacillus subtilis manganese transport repressor , MntR , acting through an inverted-repeat motif located between the likely 10 polymerase binding site and the ribosome binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>E. coli b0817 was recently shown to bind the identical inverted-repeat motif in the E. coli mntH promoter and hence has been renamed MntR ( S. I. Patzer and K. Hantke , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The inverted-repeat motif and MntR mediate Mn2 repression of mntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>]<br></li>
+<li>The boxed region indicates the nucleotides protected from DNase I by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Since we identiﬁed the ModE-mo-lybdate binding sequences for six additional targets , we reexamined the ModE box sequence using the W-AlignACE program ( 34 ) , which was successfully employed for identiﬁcation of the MntR box sequence ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913318" target="_blank">23913318</a>]<br></li>
+<li>( A ) Alignment of the MntR box from E. coli with the putative MntR recognition site from the mntH and mntABCD control regions of B. subtilis ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Mapping of the Fur box and of the potential MntR binding site on the mntH operator region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>( B ) Comparison of the MntR box from E. coli with the binding site for TroR from T. pallidum ( 25 ) and ScaR from S. gordonii ( 13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>The sequence within the promoter recognition region of mntH shows similarity to the sequences bound by the MntR regulator of B. subtilis ( 27 ) ( Fig. 6A ) and low similarity to the Mn21-responsive metalloregulators , TroR from T. pallidum and ScaR ( 13 ) ( Fig. 6B ) , to the DtxR consensus sequence ( 17 ) , and to the Fur-box consensus sequence ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>21 5 Further , DNA footprinting analysis suggested that DNA - binding sequences are localized within the mntH operator and consists of 22 nucleotides , resembling the Fur-box consensus sequence .5 The B. subtilis MntR ( BsMntR ) protein is a 142-residue protein that binds its specific DNA sequence as a homodimer in the presence of activating metal ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>( B ) Alignment of the mntS gene , showing the consensus MntR binding motif ( purple ) , predicted 10 and 35 promoter regions , mapped transcription start site ( 1 ) at position 852270 in the MG1655 genome , consensus Shine-Dalgarno ( SD ) sequence , MntS open reading frame ( ORF ; yellow ) , and the ﬁrst 3 end of the mntS transcript at position 852065 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>( B ) Alignment of the mntP promoter and 5 - untranslated region , showing the end of the upstream YobD open reading frame ( ORF ; yellow ) , consensus MntR ( purple ) , and Fur ( orange ) binding motifs , predicted 10 and 35 regions , approximate transcription start site ( 1 ) mapped to within 5 nt ( MG1655 coordinates 1903482 to 1903487 ) , Shine-Dalgarno ( SD ) sequence , and the beginning of the MntP open reading frame ( yellow ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The transcription start site mapped just downstream of MntR consensus sites , consistent with MntR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The mntP 1 is located 150 nt and 190 nt downstream of the two conserved MntR consensus sites , 80 nt downstream of the conserved Fur motif , immediately upstream of the riboswitch homology region , and 225 nt upstream of the MntP start codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>MntR binding sites identiﬁed by ChIP-chip analysisa Peak center ( bp ) Gene MntR binding motifb Location of motif ( bp ) 848204 852127 1903240 ATTAAGTATAGCACCGGCTATGTGTT TACAGATATAGCACAGGCTATATTAT ACTAAACATAGCTTTGGCTAAATTCA ATCAGACATAGCTTAGGCTATATTAC ATGAAACATAGCAAAGGCTATGTTTT 848189.5 852286.5 1903300.5 1903338.5 2510752.5 dps mntR/rybA yebN 2510830 mntH/nupC a The table lists genome coordinates of MntR binding peaks , the genes adjacent to the MntR binding peaks , and the sequence and location of the likely MntR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>To identify the precise MntR binding sequences , we used W-AlignACE ( 5 ) to search for short , overrepresented DNA sequences in 400-bp segments centered on each peak .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Intriguingly , the MntR binding sites at the yebN promoter are centered 400 bp upstream of the yebN start codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>b Matches to the MntR consensus sequence are shown in bold , and mismatches are underlined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>( B ) DNA sequence content of MntR binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>The panel shows a DNA sequence motif overrepresented in DNA fragments immunoprecipitated with anti-MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by MntR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Since transcription regulators in bacteria are often encoded divergently from the genes they regulate , we wondered whether rybA was a member of the MntR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The operator region of E. coli mntR contains no recognizable MntR box , giving no hint for autoregulation , which has not been examined further .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>It is noteworthy to mention that the metal - and DNA-binding residues are not located at the missing Nterminal , nonhomologous region of E. coli MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li>
+<li>Wild-type and mntR cells were grown in minimal medium to mid-exponen-tial phase and exposed to 10 M MnCl2 for 1 h. Expression corresponding to the region of the rybA gene showed strong derepression in the mntR strain ( 100-fold ) , indicating rybA is indeed negatively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>( C ) Northern blot analysis of the mntS transcript from wild-type ( MG1655 ) and mntS ( GSO459 ) cells grown to mid-exponential phase in M9-glucose medium ( 8-fold ) , encoding the MntH manganese transporter and known to be MntR regulated ( 26 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>When this work began , the only Escherichia coli K-12 gene known to respond to manganese via MntR repression was mntH , which encodes a manganese importer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>In enterobacteria , the only genes known to be regulated by MntR when this work began were mntH and sitABCD , encoding manganese transporters , of which laboratory strains of Escherichia coli only possess mntH ( 22 , 26 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>This suggests that iron can repress mntS through Fe-MntR , similar to mntH repression by Mn-Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_9">
+Dual repression by Fe2 - Fur and Mn2-MntR of the mntH gene , encoding an NRAMP-like Mn2 transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12029030" target="_blank">12029030</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></label>
+<input id="tu_similarity_9", type="checkbox">
+<div class="TU_similar">
+<li>Dual repression by Fe - Fur and 2 + 2 + 2 + Mn - MntR of the mntH gene , encoding an NRAMP-like Mn transporter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12949180" target="_blank">12949180</a>]<br></li>
+<li>Patzer SI , Hantke K. Dual repression by Fe - Fur and MN - MntR 21 21 of the mntH gene , encoding an NRAMP-like Mn transporter in 21 Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19701940" target="_blank">19701940</a>]<br></li></div>
+<li>We report the identiﬁcation of the gene product of o155 , which we renamed MntR , a new Mn21 regulator in E. coli , and the repression of mntH transcription by Mn21-MntR and Fe21-Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>Regulation of the transporter gene mntH by Mn21 is only accomplished by MntR and not by Fur , although the E. coli Fur protein also functions in vitro with Mn21 as a corepressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li>
+<li>MntR modulates expression of the PerR regulon and superoxide resistance in Staphylococcus aureus through control of manganese uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19400769" target="_blank">19400769</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Upon binding to manganese , MntR binds promoter DNA to repress or activate transcription of its target genes ( 15 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Mn2 - MntR represses transcription from the dps promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>Unexpectedly , we found that dps expression is directly repressed by Mn2 - MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>As expected , repression of dps expression by Mn2 was abolished in the absence of MntR ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>]<br></li>
+<li>We also provide evidence that mntP ( formerly yebN ) , which encodes a putative efﬂux pump , is positively regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We also discovered that the mntP gene ( formerly yebN ) , encoding a putative efﬂux pump , is upregulated by manganese through MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Our microarray analysis showed that expression levels of the previously unchar acterized genes mntS and mntP are regulated by MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>To conﬁrm repression by manganese via MntR , we examined mntS and mntH expression using Northern analysis ( data not shown ) and primer extension assays ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We show that mntS ( formerly the small RNA gene rybA ) is repressed by manganese through MntR and encodes an unannotated 42-amino-acid protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Expression of mntS ( formerly rybA ) is repressed by manganese via MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>mntS is downregulated by manganese and MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>Transcription of mntS is repressed by MntR : Mn2 , suggesting that MntS plays a role in manganese homeostasis only when manganese is scarce .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>g002 Overproduced MntS disrupts intracellular manganese and iron pools when cells are grown in manganese-rich medium The mntS gene can be repressed by MntR : Mn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>The mntP gene is , alongside mntH and mntS , the third member of the MntR regulon [ 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>Manganese-loaded MntR : Mn2 induces mntP when manganese levels rise .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25774656" target="_blank">25774656</a>]<br></li>
+<li>We demonstrated MntR-dependent upregulation of mntP upon exposure to manganese ( Fig. 8 ) , indicating that in addition to repressing gene expression , MntR can positively regulate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>The mntP gene is upregulated by manganese and MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+<li>We additionally found that expression of the mntP gene is upregulated by manganese through MntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21908668" target="_blank">21908668</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

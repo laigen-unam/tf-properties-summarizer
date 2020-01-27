@@ -1,0 +1,803 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - RutR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">RutR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">RutR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>In contrast to RutR , PhoB is a well-conserved protein and the phosphate-sensing mechanism is vital for survival ; thus PhoB is likely well-evolved and its bindings in the coding regions may have biological functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23071782" target="_blank">23071782</a>]<br></li>
+<li>This site , located upstream of the rutA promoter , was previously proposed to be involved in RutR mediated repression of the rutABCDEFG operon that is transcribed from a r54 promoter and regulated by NtrC , the general regulator of nitrogen metabolism [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Thus , RutR appears to regulate the glnE gene that is involved in the activity control of GlnE glutamine synthase through reversible adenylylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Thus Lys51 , Asn53 and Tyr56 are conserved and in the model , Asn53 of RutR also appears to interact with a phosphate only , as does Asn38 of QacR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>If RutR represses this glycerate pathway , ureidoglycolate may be catabolized through the second pathway , leading to produce oxamate and carbamoylphosphate , the substrate of pyrimidine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the middle of this research , Loh et al. ( 2006 ) reported that the undescribed genes , ycdMLKJIHG , are involved in the degradation of pyrimidines for reutilization as nitrogen sources [ the operon was then renamed to rutABCDEFG ( pyrimidine utilization ) ] and transcription of this rut operon could be repressed by YcdC ( also renamed to RutR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Uracil - and thymine-induced dissociation of RutR from RutR boxes In E. coli , carbamoyl phosphate is a common precursor of pyrimidines and arginine , and thus the expression of carAB might be under a complex and feedback regulation by various metabolites on the pathways for pyrimidine and arginine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Previously , we found that the gcl operon is negatively regulated by RutR , the global regulator of genes for the whole pathway of pyrimidine synthesis and degradation , including the carAB genes for the synthesis of carbamoyl phosphate , a common substrate of pyrimidine and arginine synthesis ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Regulation of pyrimidine synthesis by RutR In this study , we also found that RutR regulates the carAB genes encoding carbamoylphosphatase for synthesis of carbamoyl phosphate , the key substrate for the synthesis of pyrimidine ( and arginine ) , from glutamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>RutR , the global regulator of the genes for synthesis and degradation of pyrimidines ( 19 ) , binds to the same region as NemR does ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Even though RutR binds to the NemR box ( Fig. 3 ) , RutR may not play an important role in regulation of nemRA expression in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>If RutR is involved in the regulation of carA P1 promoter , it could be the as yet unidentiﬁed sensor for pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Here we identiﬁed that , in addition to these four factors , RutR is also involved in P1 regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>It is noteworthy that the master regulator , RutR , for pyri-midine metabolism also plays a role in regulation of the genes for degradation of purines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Thus , RutR is involved in the regulation of degradation and synthesis of pyrimidines , degradation of purines , glutamine supply and pH homeostasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>We then concluded that RutR is also involved in the regulation of purine degradation downstream from allantoin for its reutilzation , through the supply of carbamoylphosphate , the substrate of pyri-midine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Northern blot analysis of the RutR target genes indicated that RutR represses the Gad system genes involved in glutamate-dependent acid resistance and allantoin degradation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The mode of action of RutR in the control of carP1 activity is also very different from its role in autoregulation and in negative control of the ss-dependent gadAXW and gadBC operons involved in glutamate transport and glutamate-dependent acid resistance , where RutR binds downstream of the transcription start and possibly acts as a roadblock , and in the activation of the catabolic 54 rutABCDEFG operon from a s - dependent promoter ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Here , a total of eight aminoacyl-tRNA synthe-tase genes were identiﬁed to be under the direct control Arg and Lys for ArgP ( Marbaniang & Gowrishankar , 2011 ) , glyoxylate and pyruvate for IclR ( Lorca et al. , 2007 ) , hypoxanthine and guanine for PurR ( Houlberg & Jensen , 1983 ) , and uracil and thymine for RutR ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>Transformants were grown in Luria -- Bertani broth and RutR expression was induced by adding 1 mM IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>However , further molecular details of the RutR -- operator interaction are lacking and the role of the potential effector-molecules for RutR necessitates further investigations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The structure of liganded RutR shows that uracil binds to the LBD in a pocket formed by helices a4 , a5 , a7 and a8 , and closed at the top by helix a6 and by helix a8a of the adjacent subunit ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In the autogenous repression of rutR transcription , RutR binds downstream of the RNA polymerase binding site , and thus RutR plays as a roadblocker to inhibit the migration of RNA polymerase along the template .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the absence of RutR , the level of all these transcripts markedly increased , indicating that RutR bound on the coding frames of both gadA and gadB somehow represses transcription of the gadAXW and gadBC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Transcription regulation by a downstream-bound transcription factor In the case of gadAX , gadBC and ygiF-glnE operons , RutR bound within the coding frames of the ﬁrst genes regulate transcription of the entire operons ( see Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Surprisingly , although RutR is bound to some targets in intergenic regions ( Figure 1B ) most targets are located within genes ( Figure 1C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Interestingly , RutR , the uracil responsive transcription factor , binds to the promoter region of carAB ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21572102" target="_blank">21572102</a>]<br></li>
+<li>The member genes are either activated or repressed by the RutR transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The Escherichia coli RutR transcription factor binds at LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+<li>Shimada , T. , Ishihama , A. , Busby , S.J.W. and Grainger , D.C. ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>However , unlike most family members that repress transcription in the apo-form , RutR both represses and activates transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The roles of transcription factors , AllR , AllS and RutR , and the effectors controlling their activities are described in the text .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Taken both in vitro and in vivo observations together , we concluded that RutR activates transcription from carA P1 and pyri-midines are the effectors controlling RutR activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Uracil and thymine are the key effectors for controlling the RutR activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Protection sites from DNase I digestion were analysed in the presence of RutR or RNA polymerase s70 holoenzyme alone and in the simultaneous presence of both proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>To test this possibility , we performed the gel shift assay of RutR -- carA P1 complex formation in the presence of pyri-midine bases , nucleosides or nucleotides .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>For search of the effector for RutR , the gel shift reaction was performed under the same conditions in the presence of various pyrimidine metabolites at the ﬁnal concentration of m 100 M. DNase I footprinting The probe was generated by PCR ampliﬁcation of the RutR binding sequence , isolated by genomic SELEX and identiﬁed by gel shift assay , using 32P-end-labelled primers , E. coli genome DNA ( 100 ng ) as the template and Ex-Taq DNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>With respect to the number of DNA-binding sites , Dan is different from the well-characterized global regulators so far examined by the genomic SELEX , including CRP , Cra , RstA , PdhR , RutR , TyrR , NemR , AllR and CitB ( 7 -- 10,12,13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></li>
+<li>For example , in the case of the cAMP receptor protein , up to 25 % of hundreds of binding sites are likely to be redundant [ 21,22 ] , whereas , for RutR , the majority of its 20 characterized binding targets play no role in controlling promoter activity [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20533909" target="_blank">20533909</a>]<br></li>
+<li>In contrast , apo-RutR both stimulates and inhibits gene expression at different promoters [ 9 ] , but the molecular mechanisms of RutR-mediated positive and negative control are not known .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Effects of single alanine substitutions in RutR on positive regulation of carP1 expression To determine the impact of the W77A , L78A and W167A substitutions on RutR-mediated stimulation of carP1 activity , we used a ig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>RutR was previously shown to exert negative regulation on both wings of the divergently transcribed rutR-rutABCDEFG gene cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Unlike most other TetR-like regulators , RutR exerts both positive and negative effects on promoter activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The results indicate that RutR exerts negative autoregulation in a uracil-sensitive manner , and that this effect of uracil has vanished in the rutR-W167A mutant ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Effects of single alanine substitutions in RutR on negative autoregulation Previously , uracil supplementation was shown to result in an enhanced rutR promoter activity [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In the absence of uracil supplementation , RutR exerts negative autoregulation and represses the divergently transcribed rutABC-DEFG operon by binding to a single RutR box in the intergenic region [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In the reactions shown in lanes 8 to 13 , the increasing amounts of NemR ( lane 8 , 0.5 pmol ; lane 9 , 1.0 pmol ; lane 10 , 2.0 pmol ) were added in the presence of a ﬁxed amount of RutR ( 2.0 pmol ) or the increasing amounts of RutR ( lane 11 , 1.0 pmol ; lane 12 , 2.0 pmol ; lane 13 , 3.0 pmol ) were added in the presence of a ﬁxed amount of NemR ( 2.0 pmol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>When increasing amounts of NemR were added in the presence of a high concentration of RutR that fully converted the ﬂuorescence-labeled probe DNA forming RutR complexes , the probe was completely transferred from RutR complexes into NemR complexes ( Fig. 3 , lanes 8 to 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Fluorescence-labeled ydhL-nemR spacer DNA probe ( 0.5 pmol ; Fig. 2 ) was incubated at 37 ° C for 30 min in the absence ( lane 1 ) or presence of increasing concentrations of NemR ( lane 2 , 0.5 pmol ; lane 3 , 1.0 pmol ; lane 4 , 2.0 pmol ) or RutR ( lane 5 , 1.0 pmol : lane 6 , 2.0 pmol ; lane 7 , 3.0 pmol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>As shown in Fig. 3 , RutR indeed bound to the nemR promoter in a dose-dependent manner ( Fig. 3 , lanes 5 to 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>By the addition of uracil , however , the synthesis of RutR is enhanced because of inactivation of RutR ( Fig. 9 , lanes 6 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The carA , rutA and glnE promoter fragments were mixed with RutR protein and incubated at 37 ° C for 15 min in the presence of 100 mM each of the indicated base , nucleoside or nucleotide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The DNA-binding domains of TetR family members are relatively ﬂexible in their apo-form ( higher B-factors for resi-dues in this domain are usually observed , also for RutR , Fig. 6c ) allowing them to adopt the conformation required for DNA binding [ 15 ] , while the binding of the effector results in the stiffening of the protein in the open , ineffective DNA-binding form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The level of mRNA increase is apparently higher than that of RutR protein increase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>[ 12 ] Nguyen Le Minh , P. , Bervoets , I. , Maes , D. and Charlier , D. ( 2010 ) The protein -- DNA contacts in RutR carAB operator complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The gel pattern clearly shows that both uracil and thymine abolished the formation of RutR box DNA -- RutR protein complexes , but little inhibition was observed with cytosine , adenine and guanine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>This RutR binding site is located upstream of glxR ( tartronate semialdehyde reductase or 2-hydroxy-3-oxopropionate reductase ) for degradation of purines , implying that glxR is under the control of RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>This is different for RutR in the control of carP1 activity , where RutR is clearly required for full derepression of carP1 activity in the absence of extra uracil in the medium ( 2 ) and , furthermore , the RutR binding site is located rather far upstream of the carP1 promoter and comprised within the region that gets wrapped around hexameric PepA ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>RutR , a TetR family member , binds far upstream of carP1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>This article contributes to the unravelling of the RutR -- carP1 operator interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In the RutR carP1 operator DNA model , Thr52 would clash with the base G-6 of the top strand , but the residue could also be squeezed between the stacked base pairs at 6 and 7 and interact with T-7 of the top strand , for which we observed a strong negative effect on RutR binding in the missing contact probing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Incubation of the carP1 operator fragment with a ﬁxed amount of RutR and increasing concentrations of ligand resulted in a gradual decrease in complex formation in the EMSAs ( Figure 5b and c ) with 50 % binding inhibition at 15 mM distamycin A or 290 mM methylgreen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>To further analyze the importance of minor and major groove speciﬁc contacts in the binding of RutR to the carP1 operator , we performed EMSAs in the presence of groove-speciﬁc ligands .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>( b and c ) Interference effect on RutR binding to the 162-bp carP1 operator fragment by increasing concentrations of the major and minor groove speciﬁc ligands methylgreen and distamycin A , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Presumably , RutR would fail to-bind in the presence of its pyrimidine-related ligand .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16540542" target="_blank">16540542</a>]<br></li>
+<li>It will be interesting to determine whether this is also the case for RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>After 3 h induction , cells were harvested and subjected to RutR puriﬁcation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_68">
+RutR concentrations used are indicated in nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></label>
+<input id="act_similarity_68", type="checkbox">
+<div class="ACT_similar">
+<li>RutR concentrations are indicated in nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li></div>
+<li>Clearly , this conclusion is not applicable to RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Proposed model of the RutR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Bold arrows indicate the activation targets of RutR , while the lines with end mark indicate the repression targets .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In vitro analysis of RutR binding DNA fragments covering each of the 20 RutR targets were ampliﬁed , end-labelled and incubated with puriﬁed RutR protein in in vitro EMSA assays to measure the binding of RutR to each target ( Figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Binding of RutR to its DNA targets in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Structure determination of unliganded RutR-W167A To overcome the high afﬁnity of RutR for uracil and in order to obtain a structure of apo-RutR , we crystallized the mutant W167A protein , which as shown above is severely hampered in the binding of uracil , and determined its structure at 2.4 Å resolution ( Table 1 ) in the absence of the effector uracil .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>650 ChIP and DNA microarray analysis ChIP assays were used to measure the chromosome-wide DNA-binding proﬁle of RutR in the presence and absence of uracil , using experimental protocols described in detail by Efromovich et al. ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Assuming the number of RpoA as 5000 molecules per genome equivalent of DNA ( Ishihama , 1990 ; Jishage et al. , 1996 ) , the number of RutR protein molecules was estimated to range approximately 150 molecules in the absence of uracil and 300 molecules in the presence of uracil .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Here , we establish a highresolution contact map of RutR carP1 complexes for backbone and base-specific contacts , analyze DNA bending , determine the DNA sequence specifi-city of RutR binding by saturation mutagenesis , demonstrate that uracil but not thymine is the physiologically relevant ligand that inhibits the DNA binding capacity of RutR and build a model of the RutR operator DNA complex based on the crystal structures of RutR and of the DNA-bound family member QacR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>As all TetR-family members , RutR undergoes an allosteric transition upon binding of its effector-molecule uracil that results in abrogation of its DNA binding activity [ 9,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Finally , we demonstrate that uracil but not thymine is the physiologically relevant effector-molecule that disrupts RutR DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Therefore , it appears that uracil is the real physiologically important effector-molecule for RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Uracil and thymine have previously been proposed to modulate the DNA binding afﬁnity of RutR [ 9 ] , but the latter was not conﬁrmed in an independent study [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Ideally , a DNA-bound structure would allow us to identify the precise changes induced by the binding of uracil to RutR that lead to dissociation of RutR-DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>We compared the binding proﬁle of RutR in cells growing exponentially in media either with or without uracil , which inhibits DNA binding by RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Most peaks for RutR binding are discrete , easily distinguishable from the background signal and sensitive to uracil ( examples are shown in Figure 1B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>The affinity of RutR decreases in the presence of pyrimidines , uracil or thymine ( Shimada et al. , 2007 ) , while that of AllR increases in the presence of allantoin ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Uracil but not thymine abolishes RutR binding at physiologically relevant concentrations Shimada et al. ( 2 ) reported previously that both uracil and thymine abolish the binding of RutR to its target sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Taken together , we concluded that RutR is the sensor of pyrimidines , uracil and thymine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Pyrimidine sensing global regulator 753 Pyrimidine-sensing function of RutR Here we identiﬁed that RutR is the sensor of uracil ( and thymine ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the presence of uracil , RutR repression of the rut operon is relieved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20400551" target="_blank">20400551</a>]<br></li>
+<li>In the presence of free uracil and thymine , the RutR regulator functions as a repressor for the carAB genes for inhibition of de novo synthesis of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Comparative EMSAs with wild-type and mutant RutR proteins binding to a 116 bp carP1 operator fragment , performed in absence and presence of increasing concentrations of uracil or thymine indicated that binding of RutR-W77A and RutR-W167A is similar with and without uracil , even at mM concentrations of the ligand ( Fig. 2a -- c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Representative autoradiographs of EMSAs with the binding of puriﬁed wild pe and mutant RutR proteins to a 116 bp fragment carrying the RutR binding site f the carP1 control region in the absence ( ) and in the presence of uracil and ymine ( ﬁnal concentrations as indicated ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>To better evaluate the effect of uracil and thymine as potential physiologically relevant effector-molecules of RutR binding , we performed EMSAs with RutR binding to DNA fragments bearing the carP1 , rutA -- rutR and ygiF control regions in the presence of increasing concentrations of either uracil or thymine ( Figure 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Representative EMSAs and the corresponding binding proﬁles of RutR binding to ( a ) the carAB , ( b ) the rutA -- rutR and ( c ) the ygiF control region in the absence of potential ligands , and in the presence of increasing concentrations of uracil ( Ura , in nM ) or thymine ( Thy , in mM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In contrast , DNA binding of RutR-L78A was still sensitive to ura-cil , though less than wild-type RutR but , remarkably , the inhibitory effect of thymine was strongly enhanced and similar to the effect of uracil ( Fig. 2d and e ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Co-factor speciﬁcity and mode of action of RutR In vitro the binding of RutR to various targets is strongly inhibited in the presence of sub micromolar concentrations of uracil ( Figure 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In the absence of RutR binding to P1 in the presence of excess uracil or thymine in wild-type E. coli , the PepA repressor might be able to-bind to the target and inhibits carAB transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the presence of excess uracil , the promoter activity markedly decreased in agreement with the in vitro results that RutR binding to P1 is inhibited in the presence of uracil ( see Figs 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Adding either uracil or thymine abolished RutR binding in vitro to the carAB P1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>RutR binding to carAB P1 is abolished in the presence of uracil or thymine ( see Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>To this end we performed in vitro DNA-binding assays with puriﬁed RutR proteins in absence and presence of uracil or thymine , and analysed positive and negative regulatory effects in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Effects of single alanine substitutions in RutR on in vitro DNA binding activity of RutR Previously we have shown that high afﬁnity binding of RutR to the carP1 control region is inhibited in the presence of uracil , whereas thymine has little or no effect [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The inhibitory activity of RutR binding to the respective target DNA is higher for uracil than for thymine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The strongest reduction in RutR binding occurred upon ethylation of the phosphate group 50 to the bases G +3 , G +4 and T-8 of the top strand , and the symmetrically related positions G-4 , G-3 and T +8 of the bottom strand .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Phosphates that upon ethylation interfere with RutR binding are colored red for strong effects and yellow for moderate effects .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>EMSAs with these mutant RutR proteins binding to the cognate DNA duplexes representing a saturation mutagenesis of positions 4 and 5 , respetively , indicated a remarkable decrease in the binding speciﬁcity ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Balls represent purine residues that negatively affect RutR binding when methylated at the N position of guanine in the major groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Here we focus on ligand binding and ligand speciﬁcity of RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Here , we construct single alanine substitution mutants of the effector binding-pocket of RutR , study their effects on effector binding and effector speciﬁcity in vitro and on carP1 promoter activity in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>To conﬁrm this ﬁnding , we next performed a mixed gel shift assay , in which the binding of NemR and RutR to the same target , i.e. , the nemR operator , was examined in the presence and absence of NEM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>This ﬁnding suggests that the repression of the nemR promoter by RutR takes place only in the absence of NemR binding ( or in a derepressed state ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Competition between NemR and RutR in binding to the NemR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>We then tested possible competition between RutR and NemR in binding to the nemR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>These observations allow us to predict that the mechanism of induction of RutR must be in some way similar to those observed in QacR or HrtR , although the changes necessary for RutR to-bind the operator DNA must be of a larger magnitude than those described here 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>This pattern corresponds rather well to the distribution of ribose residues that are protected by RutR against the hydroxyl radical attack , and conﬁrms that RutR contacts three helical turns of the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">RutR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>After an initial rigid body reﬁnement with the two domains of RutR the model was optimized in several cycles of reﬁnement with jelly-body and non-crystallographic symmetry restraints using REFMAC5 [ 36 ] and graphical model building with Coot [ 37 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Protection sites from DNase I digestion were analysed in the presence of RutR or RNA polymerase s70 holoenzyme alone and in the simultaneous presence of both proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Model building The Ca 's of the HTH motif ( amino acid range 17 -- 60 , RutR numbering ) of one monomer of each molecule were superimposed using the LSQ-superpose option in the program Wincoot ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The main chain around Thr 52 ( residue 51 -- 53 ) in RutR is colored in red .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The nature of the amino acid residue in positions equivalent to 51 , 52 , 53 and 56 of RutR is quite variable among the TetR family-members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>As also observed with wild-type RutR , no speciﬁc complex formation was detected with the substitution of A T for C G .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>On both strands the phosphate groups that upon ethylation interfere signiﬁcantly to strongly with RutR binding are clustered in three patches of three to four , and are offset by a few nucleotide towards the 30-end on complementary strands ( Figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Therefore , we may conclude that leucine residue L78 plays a crucial role in setting the effector speciﬁcity of RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Similarly , leucine residue L78 is conserved in PydR from B. suis and S. meliloti , suggesting that these two regulators , which are globally more similar to E. coli RutR than to P. putida PydR , might exhibit the same narrow effector speciﬁcity as RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Therefore , it appears that uracil is the real physiologically important effector molecule for RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>We determined the crystal structure of an unliganded mutant RutR protein and provide a structural basis for the use of uracil as sole effector molecule and the exclusion of the very similar thymine from the ligand-binding pocket .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Furthermore , we provide a structural basis for the strict ligand speciﬁcity of RutR and determine the structure of an unliganded mutant RutR protein , providing evidence of how the effector-binding signal is transmitted between domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Interestingly , the residue at position 55 ( RutR numbering ) is generally a Tyr that makes contacts with both a phosphate residue and a T base in the QacR and TetR structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Thus Lys51 , Asn53 and Tyr56 are conserved and in the model , Asn53 of RutR also appears to interact with a phosphate only , as does Asn38 of QacR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The structure of liganded RutR shows that uracil binds to the LBD in a pocket formed by helices a4 , a5 , a7 and a8 , and closed at the top by helix a6 and by helix a8a of the adjacent subunit ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Superimposition of uracil-bound wild type and W167A mutant RutR structures shows that the dimerization interface ( helices a8 and a9 ) and the conserved central triangle observed in all TetR family members ( helices a5-a7 ) [ 4 ] keep the same conformation in both forms ( Fig. 6b and c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The residues equivalent to position Leu55 of RutR ( Tyr in 74 % of all TetR-family members ) and Tyr57 ( His or Tyr in 98 % of all TetR-family members ) , both located in the recognition helix a3 , and Lys61 ( Lys in 77 % of all TetR-family members ) , located in a4 outside the HTH motif , are all well conserved and probably serve to orient the HTH motif to interact with the DNA major groove and anchor the protein to the operator ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>We examined a PDB-deposited RutR structure ( PDB : 4JYK ; without comment or publication ) , ﬁnding that it shares the canonical fold of the TetR family [ 4 ] , with a DBD domain of 62 amino acids that is formed by three helixes with a HTH DNA-bind-ing motif ( helices a2 and a3 ) , and a 150 residues LBD domain formed by the six conserved helices present in all members of the family plus a seventh short helix ( helix a8a ) inserted between helices a8 and a9 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Structures of TetR ( pdb 1QPI ) , QacR ( pdb 1JT0 ) , IcaR ( pdb2ZCM ) , RutR ( YcdC ; pdb 1PB6 ) and some other family members indicate that in the monomer architecture this region adopts a common 3D structure consisting of a three helix bundle that contains a HTH DNA-binding motif composed of helices a2 and a3 ( for a review see ( 4 ; Figure 7c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The consequence of the structural changes in helix a4 of RutR is a 18 rigid body rotation of the DBD with respect to the ligand binding domain ( Fig. 6b ) , with the hinge located in the middle zone of helix a4 , resulting in a displacement of up to 9 Å of the ﬁrst residues of helix a1 , and of 6 Å for helix a3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The DNA-binding domains of TetR family members are relatively ﬂexible in their apo-form ( higher B-factors for resi-dues in this domain are usually observed , also for RutR , Fig. 6c ) allowing them to adopt the conformation required for DNA-binding [ 15 ] , while the binding of the effector results in the stiffening of the protein in the open , ineffective DNA-binding form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Similar to TetR , the archetype of the family , and many other family members , RutR possesses two symmetric effector-binding sites in the functional dimer ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>As all TetR-family members , RutR undergoes an allosteric transition upon binding of its effector molecule uracil that results in abrogation of its DNA-binding activity [ 9,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In silico identiﬁcation of RutR residues important for ligand binding and ligand selectivity Members of the TetR family are `` T-shaped '' homodimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>As all TetR-like regulators , RutR shows a binding site that is rich in aromatic and hydrophobic residues ( Fig. 1a and b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>This pattern corresponds rather well to the distribution of ribose residues that are protected by RutR against the hydroxyl radical attack , and conﬁrms that RutR contacts three helical turns of the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>From the model it appears that six phosphates and three bases in one half-site of the carP1 operator may be directly contacted by RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>All phosphates that appear to be contacted in the model ( Figure 7b ) negatively interfered with RutR binding upon ethylation ( Figure 3 ) and the strongest effects were observed for the phosphates that are contacted by more than one amino acid residue in the model .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Here , we construct single alanine substitution mutants of the effector-binding-pocket of RutR , study their effects on effector-binding and effector speciﬁcity in vitro and on carP1 promoter activity in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Discussion The availability of two high-resolution structures of uracilbound RutR ( 3LOC and 4JYK ) allowed us to identify the effector-binding site and to test for the importance of particular amino acid residues in effector-binding and speciﬁcity by site directed mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Effects of single amino acid substitutions in the DNA-binding domain of RutR on DNA-binding afinity and sequence speciﬁcity To test the validity of the model presented above for the RutR carP1 complex , we constructed several single amino acid substitution mutants of RutR and analyzed the binding of the cognate puriﬁed His-tagged proteins to the 46 bp consensus duplex and derivatives thereof ( satur-ation mutagenesis ) bearing a symmetrical substitution in both half-sites at the position of the presumed contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Finally , we test the validity of this model with site-directed mutagenesis of the helix -- turn -- helix DNA-binding motif and in vitro binding studies with the cognate purified mutant RutR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The validity of this model is tested with site-directed mutagenesis and in vitro DNA-binding studies of six puriﬁed mutant RutR proteins bearing a single amino acid substitution in the DNA-binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Here , we establish a high-resolution contact map of the RutR -- carP1 operator interaction comprising both backbone and base-speciﬁc contacts , groove and group-speciﬁc interactions and analyze RutR-induced DNA bending .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>To experimentally identify the critical points of contact between RutR and base-speciﬁc groups exposed in the major and minor grooves of the carP1 operator , we performed pre-methylation binding interference experiments and missing contact probing assays with sparingly depurinated and depyrimidated DNA ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>To further analyze the importance of minor and major groove speciﬁc contacts in the binding of RutR to the carP1 operator , we performed EMSAs in the presence of groove-speciﬁc ligands .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Figure 8 shows a comparison of the contacts deduced from the QacR IR1 co-crystal structure and the contacts proposed for the RutR carP1 operator complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>QacR and RutR -- DNA contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>When the HTH motif of one monomer of RutR is superimposed with the A-distal monomer of QacR in the co-crystal structure , similar contacts are made with the DNA ( Figures 7 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>( b ) Model of the RutR -- carP1 operator DNA contacts built on basis of the overlay of the DNA-binding HTH motif of RutR with QacR in the co-crystal structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In contrast , QacR that shows high sequence conservation with RutR in the DNA-binding domain and was used to build a model of the RutR-carP1 operator interactions [ 12 ] , is asymmetric with only one of the subunits binding the effector and undergoing the structural changes that render the regulator unable to bind DNA [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Competition in DNA-binding between NemR and RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Inﬂuence of bases , nucleosides and nucleotides on DNA-binding activity of RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>If the side chain of a particular amino acid of RutR interacts with the DNA , substituting alanine for that residue is expected to cause a decrease in binding afinity , and furthermore , if the contact is established with a base-speciﬁc group , the preference for that base pair is expected to be altered as well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>A close inspection of the effector-binding site of RutR and modelling of the hydrophobic methyl group of thymine on the bound uracil molecule of the co-crystal rather suggests a steric clash of the methyl group with the side chain of leucine residue L78 ( Fig. 1d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Therefore , we may conclude that the C methyl group of a thymine residue at 5 position +4 of the top strand ( and the symmetrically related position 4 of the bottom strand ) strongly interferes with RutR binding , likely by exerting a steric hindrance on DNA conformability and/or on the establishment of one or more nearby contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Both uracil-bound RutR structures show an open conformation incompatible with DNA-binding [ 14 ] , with a distance between the two recognition a3 helices ( the main element in binding of RutR to the major groove of operator DNA ) of 48.3 and 46.2 Å for 4JYK and 3LOC , respectively ( measured as the distance between the Ca atoms of Leu56 of each subunit ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Therefore , it appears that RutR interacts most tightly with two successive major groove segments of the operator , aligned on the same face of the helix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The regions protected against cleavage by DNase I , the 1 , 10-phenanthroline-copper Notice that all these residues also interfered strongly to moderately with RutR binding upon removal of the purine base , in the missing contact probing assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Pre-methylation at any of seven guanine residues signiﬁcantly reduced RutR binding ( Figures 2e and 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>From the high-resolution contact mapping it appears that positions 3 , 4 and 5 are contacted through the major groove , whereas at position 1 , in the center of the binding site , the minor groove is facing RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Signiﬁcant piperidine-induced cleavage associated with an under representation in the bound form was also observed for two methylated A residues , at position 2 and +8 of the top strand , suggestive of minor groove contacts at these positions of the RutR binding site ( Figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Balls represent purine residues that negatively affect RutR binding when methylated at the N position of guanine in the major groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">RutR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>QacR and RutR show remarkable sequence conservation at these positions and their DNA target sequences show a high degree of sequence identity ( Figure 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>journal homepage : www.elsevier.com/locate/febsopenbio Ligand binding speciﬁcity of RutR , a member of the TetR family of transcription regulators in Escherichia coli Phu Nguyen Le Minh a , b , Sergio de Cima b , Indra Bervoets a , Dominique Maes c , Vicente Rubio b , Daniel Charlier a , ⇑ a Research Group of Microbiology , Vrije Universiteit Brussel ( VUB ) , Pleinlaan 2 , B-1050 Brussel , Belgium b Instituto de Biomedicina de Valencia del Consejo Superior de Investigaciones Cientiﬁcas ( IBV-CSIC ) , Centro de Investigación Biomédicaen Red de Enferm ( CIBERER-ISCIII ) , C/Jaime Roig 11 , E-46010 Valencia , Spain c Structural Biology Brussels , Vrije Universiteit Brussel ( VUB ) , Pleinlaan 2 , B-1050 Brussel , Belgium edades Raras a r t i c l e i n f o a b s t r a c t RutR is a member of the large family of TetR transcriptional regulators in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>We examined a PDB-deposited RutR structure ( PDB : 4JYK ; without comment or publication ) , ﬁnding that it shares the canonical fold of the TetR family [ 4 ] , with a DBD domain of 62 amino acids that is formed by three helixes with a HTH DNA-bind-ing motif ( helices a2 and a3 ) , and a 150 residues LBD domain formed by the six conserved helices present in all members of the family plus a seventh short helix ( helix a8a ) inserted between helices a8 and a9 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Structures of TetR ( pdb 1QPI ) , QacR ( pdb 1JT0 ) , IcaR ( pdb2ZCM ) , RutR ( YcdC ; pdb 1PB6 ) and some other family members indicate that in the monomer architecture this region adopts a common 3D structure consisting of a three helix bundle that contains a HTH DNA-binding motif composed of helices a2 and a3 ( for a review see ( 4 ; Figure 7c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>KDrel values of RutR mutant proteins to the consensus duplex and to symmetrical mutant derivatives thereof The RutR carP1 complex Members of the large TetR family of transcriptional regulators show little overall sequence homology and bind a wide variety of ligands as allosteric co-factors ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Superimposition of uracil-bound wild type and W167A mutant RutR structures shows that the dimerization interface ( helices a8 and a9 ) and the conserved central triangle observed in all TetR family members ( helices a5-a7 ) [ 4 ] keep the same conformation in both forms ( Fig. 6b and c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Furthermore , RutR exhibits a very narrow ligand binding speciﬁcity , unlike the broad effector speciﬁcity that characterizes some of the well-studied multidrug resistance regulators of the family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>However , unlike most family members that repress transcription in the apo-form , RutR both represses and activates transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The DNA-binding domains of TetR family members are relatively ﬂexible in their apo-form ( higher B-factors for resi-dues in this domain are usually observed , also for RutR , Fig. 6c ) allowing them to adopt the conformation required for DNA binding [ 15 ] , while the binding of the effector results in the stiffening of the protein in the open , ineffective DNA-binding form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Similar to TetR , the archetype of the family , and many other family members , RutR possesses two symmetric effector-binding sites in the functional dimer ( Fig. 1a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In silico identiﬁcation of RutR residues important for ligand binding and ligand selectivity Members of the TetR family are `` T-shaped '' homodimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Introduction Escherichia coli RutR ( b1013 , ycdC ) is a two-domain transcriptional regulator that belongs to the TetR family [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>RutR , a TetR family member , binds far upstream of carP1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>RutR is a member of the widespread TetR-family of transcriptional regulators with members in both Bacteria and Archaea ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by RutR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>To construct the vector pET24-rutRHis6 for overexpression of his-tagged RutR protein , the coding part of the E. coli rutR gene ( without the stop codon ) was ampliﬁed using genomic DNA of strain MG1655 as a template and the oligonucleotides Fw-NdeI-2aa-rutR and Rv-XhoI-H-rutR as primers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>A homologue of RutR , AcrR , also functions as a secondary modulator of gene-expression by 70-holoenzyme ( 16 ) , as does ArgR , an unrelated protein , at the 54-dependent ast promoter ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16540542" target="_blank">16540542</a>]<br></li>
+<li>As all TetR-like regulators , RutR shows a binding site that is rich in aromatic and hydrophobic residues ( Fig. 1a and b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>In addition , a number of novel targets have been identiﬁed in this research , including the carAB operon encoding carbamoyl phosphate synthetase , which Summary Using the genomic SELEX , a total of six Escherichia coli DNA fragments have been identiﬁed , which formed complexes with transcription factor RutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Erfelijkheidsleer en Microbiologie and Structural Biology Brussels , Vrije Universiteit Brussel ( VUB ) and Vlaams Interuniversitair Instituut voor Biotechnologie ( VIB ) , Pleinlaan 2 , B-1050 Brussel , Belgium INTRODUCTION RutR ( b1013 , ycdC ) was originally identiﬁed as the transcriptional regulator of the rutABCDEFG operon ( b1012 ) , encoding a novel pathway for pyrimidine utilization discovered in Escherichia coli ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In the carAB promoter , at least ﬁve regulatory proteins ( IHF , PepA , PurR , RutR and ArgR ) are involved in the purine , pyrimidine and arginine-speciﬁc control of the promoter activity ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21572102" target="_blank">21572102</a>]<br></li>
+<li>The carP1 control region harbours binding sites for the transcriptional regulators PurR ( purine repressor ) and RutR ( pyrimidine utilization regulator ) , and for the architectural proteins IHF ( integration host factor ) and PepA ( aminopeptidase A , a trigger enzyme ; Figure 1a ; 2,14 -- 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Thus , RutR appears to regulate the glnE gene that is involved in the activity control of GlnE glutamine synthase through reversible adenylylation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The mode of action of RutR in the control of carP1 activity is also very different from its role in autoregulation and in negative control of the ss-dependent gadAXW and gadBC operons involved in glutamate transport and glutamate-dependent acid resistance , where RutR binds downstream of the transcription start and possibly acts as a roadblock , and in the activation of the catabolic 54 rutABCDEFG operon from a s - dependent promoter ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>( a ) Cartoon presentation of wild type RutR dimer ( PDB 4JYK ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>To overcome this problem and identify the genes under the direct control of a test regulator , we have developed the genomic SELEX screening system for search of the recognition and binding sequences by use of a test transcription factor ( 43 ) , and we have successfully employed this system for identiﬁcation of whole sets of regulation targets by a number of transcription factors , such as PdhR ( 35 ) , RutR ( YcdC ) ( 44 ) , and Dan ( YgiP ) ( 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>]<br></li>
+<li>The best overall structural resemblance of RutR is with the transcriptional regulator AefR from Pseudomonas syringae that controls epiphytic ﬁtness and the production of N-acyl homoserine lactone ( AHL ) , a putative quorum-sensing signal ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The RutR box in P1 promoter of carAB encoding carbamoyl phosphate synthetase , a key enzyme of pyrimidine synthesis , overlaps with the PepA ( CarP ) repressor binding site , implying competition between RutR and PepA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Uracil - and thymine-induced dissociation of RutR from RutR boxes In E. coli , carbamoyl phosphate is a common precursor of pyrimidines and arginine , and thus the expression of carAB might be under a complex and feedback regulation by various metabolites on the pathways for pyrimidine and arginine-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Regulation of pyrimidine synthesis by RutR In this study , we also found that RutR regulates the carAB genes encoding carbamoylphosphatase for synthesis of carbamoyl phosphate , the key substrate for the synthesis of pyrimidine ( and arginine ) , from glutamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The E. coli rutABCDEFG operon , that encodes genes for the catabolism of pyrimidines , is regulated by RutR , a TetR family factor whose DNA binding is modulated by uracil ( 4,5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>The Escherichia coli RutR transcription factor binds at LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+<li>36 , No. 12 doi :10.1093 / nar/gkn339 Published online 30 May 2008 The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions 1 Received April 1 , 2008 ; Revised May 6 , 2008 ; Accepted May 11 , 2008 ABSTRACT The Escherichia coli RutR protein is the master regulator of genes involved in pyrimidine catabo-lism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Northern blot analysis of the RutR target genes indicated that RutR represses the Gad system genes involved in glutamate-dependent acid resistance and allantoin-degradation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>) If the SELEX sequence is from the gadA locus , RutR might regulate the downstream gadX gene , which encodes the global regulator of at least 15 genes , including gadAXW and gadBC , involved in acid stress resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_21">
+In fact , the regulatory roles of uncharacterized transcription factors YcdC , YdhM , YgiP and YbjK have been identiﬁed to be RutR ( regulator of pyrimidine synthesis and degradation ) ( Shimada et al. 2007 ) , NemR ( N-ethylmalei-mide reductase repressor ) ( Umezawa et al. 2008 ) , Dan ( DNA-binding protein under anaerobic conditions ) ( Teramoto et al. 2010 ) and RcdR ( regulator of csgD encoding the master regulator of bioﬁlm formation ) ( Shimada et al. 2012 ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></label>
+<input id="rp_similarity_21", type="checkbox">
+<div class="RP_similar">
+<li>For instance , the regulatory roles of uncharacterized transcription factors YcdC , YdhM , and YgiP have been identiﬁed to be RutR ( regulator of pyrimidine synthesis and degradation ) ( Shimada et al. 2007 ) , NemR ( N-ethylmaleimide reductase repressor ) ( Umezawa et al. 2008 ) , and Dan ( DNA-binding protein under anaerobic conditions ) ( Teramoto et al. 2010 ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li></div>
+<li>In the middle of this research , Loh et al. ( 2006 ) reported that the undescribed genes , ycdMLKJIHG , are involved in the degradation of pyrimidines for reutilization as nitrogen sources [ the operon was then renamed to rutABCDEFG ( pyrimidine utilization ) ] and transcription of this rut operon could be repressed by YcdC ( also renamed to RutR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Thus we propose that the RutR regulator plays a key role in balancing the pyrimidine synthesis pathway between the de novo and the salvage pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Thus , RutR is involved in the regulation-of-degradation and synthesis of pyrimidines , degradation of purines , glutamine supply and pH homeostasis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>We then concluded that RutR is also involved in the regulation of purine degradation downstream from allantoin for its reutilzation , through the supply of carbamoylphosphate , the substrate of pyri-midine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>RutR , the Received 28 April 2008 Revised 14 July 2008 master regulator for pyrimidines and arginine , is also involved in this pathway-switching control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>It is noteworthy that the master regulator , RutR , for pyri-midine metabolism also plays a role in regulation of the genes for degradation of purines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>On the bases of SELEX screening of RutR targets and in vitro and in vivo analyses of the target promoters , we propose that RutR is a global regulator controlling a set of genes ( RutR regulon ) involved in the synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Altogether we propose that RutR is the pyrimidine sensor and the master regulator for a large set of the genes involved in the synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Taken altogether , we propose that RutR is a master regulator of a large set of the genes for the synthesis and degradation of pyrimidines , including the genes for supply of glutamine , the initial substrate for pyrimidine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the presence of free uracil and thymine , the RutR regulator functions as a repressor for the carAB genes for inhibition of de novo synthesis of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_33">
+Shimada T , Hirao K , Kori A , Yamamoto K & Ishihama A ( 2007 ) RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimdines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651393" target="_blank">23651393</a>]<br></label>
+<input id="rp_similarity_33", type="checkbox">
+<div class="RP_similar">
+<li>Shimada , T. , Hirao , K. , Kori , A. , Yamamoto , K. and Ishihama , A. ( 2007 ) RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></li>
+<li>[ 9 ] Shimada , T. , Hirao , K. , Kori , A. , Yamamoto , K. and Ishihama , A. ( 2007 ) RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Shimada , T. , Hirao , K. , Kori , A. , Yamamoto , K. , and Ishihama , A. ( 2007 ) RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23506073" target="_blank">23506073</a>]<br></li>
+<li>Shimada , T. , Hirao , K. , Kori , A. , Yamamoto , K. & Ishihama , A. ( 2007 ) RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></li></div>
+<li>RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimdines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20466769" target="_blank">20466769</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_39">
+RutR is the uracil-and thymine-sensing master regulator of a set of genes for degradation and reutilization of pyrimidines ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></label>
+<input id="rp_similarity_39", type="checkbox">
+<div class="RP_similar">
+<li>RutR is the uracil/thymine-sensing master regulator of a set of genes for synthesis and degradation of pyrimidines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913318" target="_blank">23913318</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19633077" target="_blank">19633077</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22442305" target="_blank">22442305</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20400551" target="_blank">20400551</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23475967" target="_blank">23475967</a>]<br></li></div>
+<li>The RutR regulon was found to include a large number of genes encoding components for not only degradation of pyrimidines but also transport of glutamate , synthesis of glutamine , synthesis of pyrimidine nucle-otides and arginine , and degradation of purines .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Other regulatory targets of RutR are genes of pyrimidine and purine catab-olism , synthesis of glutamine , and transport of glutamate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>RutR was thus indicated to be the master regulator for the synthesis of glutamine via the Gad system , the conversion of glutamine to carbamoyl phosphate , the synthesis of pyrimidines , the degradation of pyrimidines , and the downstream pathway of purine degradation from , as well as the synthesis of , arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>RutR , the global regulator of pyrimidine degradation , was also suggested to control the genes of the purine degradation pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Previously , we found that the gcl operon is negatively regulated by RutR , the global regulator of genes for the whole pathway of pyrimidine synthesis and degradation , including the carAB genes for the synthesis of carbamoyl phosphate , a common substrate of pyrimidine and arginine-synthesis ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>Interplay between purine and pyrimidine degradation RutR plays a key role in global regulation of the set of genes for synthesis of pyrimidine and arginine and degradation of both pyrimidines and purines ( Shimada et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>In order to get insight into the regulation of allantoin-degradation gene cluster by RutR , we performed Northern blot analysis by using DIG-labelled gcl ( the ﬁrst gene in the gcl operon ) and glxR ( the third gene ) probes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Regulation of allantoin-degradation-pathway by RutR RutR binding site was also identiﬁed within the coding sequence of hyi encoding hydroxypyruvate isomerase ( see Table 1 ) , which is organized in the allantoin-utilization gene cluster consisting of seven genes in the order of gcl-hyi-glxR-ybbV-ybbW-allB-ybbY-glxK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Regulation of purine degradation by RutR In addition to the control of pyrimidine degradation , we found an RutR binding site on the hyi gene within the gcl-hyi-glxR-ybbVW-allB-ybbY-glxK operon encoding the enzymes involved in the downstream pathway of purine degradation ( see Table 1 and Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>This RutR sequence may be involved in regulation of rutABCDEFG operon or rutR itself ( this SELEX segment is tentatively described as rutA/rutR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Here we identiﬁed that , in addition to these four factors , RutR is also involved in P1 regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">RutR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>As discussed in the case of the RutR box , some of the sequences recognized by a test transcription factor may be lost after repeated SELEX cycles ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Surprisingly , although RutR is bound to some targets in intergenic regions ( Figure 1B ) most targets are located within genes ( Figure 1C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>36 , No. 12 doi :10.1093 / nar/gkn339 Published online 30 May 2008 The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions 1 Received April 1 , 2008 ; Revised May 6 , 2008 ; Accepted May 11 , 2008 ABSTRACT The Escherichia coli RutR protein is the master regulator of genes involved in pyrimidine catabo-lism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24272778" target="_blank">24272778</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25406449" target="_blank">25406449</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21890697" target="_blank">21890697</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21239586" target="_blank">21239586</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25790494" target="_blank">25790494</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19633077" target="_blank">19633077</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20400551" target="_blank">20400551</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_5">
+Shimada , T. , Ishihama , A. , Busby , S.J. and Grainger , D.C. ( 2008 ) The Escherichia coliRutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21572102" target="_blank">21572102</a>]<br></label>
+<input id="sit_similarity_5", type="checkbox">
+<div class="SIT_similar">
+<li>Shimada T , Ishihama A , Busby SJ & Grainger DC ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651393" target="_blank">23651393</a>]<br></li>
+<li>[ 11 ] Shimada , T. , Ishihama , A. , Busby , S.J.W. and Grainger , D.C. ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Shimada , T. , Ishihama , A. , Busby , S.J.W. and Grainger , D.C. ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Shimada , T. , Ishihama , A. , Busby , S.J.W. & Grainger , D.C. ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></li>
+<li>Shimada , T. , Ishihama , A. , Busby , S.J. and Grainger , D.C. ( 2008 ) The Escherichia coli RutR transcription factor binds at targets within genes as well as intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></li></div>
+<li>Primer name Sequence 5 ′ to 3 ′ carA-F carA-R rutR-F rutR-R gadA-F gadA-R gadX-F gadX-R gadB-F gadB-R gadC-F gadC-R gcl-F gcl-R glxR-F glxR-R ygiF-F ygiF-R glnE-F glnE-R CCATCGTTCCGGCGCAAACTT TTACTTAGCGGTTTTACGGTACTG TGGCGGGTGTTTCAAAAACCAATC TTAACGTGGTCGAATCCCCTCAA ATGGACCAGAAGCTGTTAACGGA TGCCAGCAGATTTGTACCGGA CAGAAATGCTACGTAAAAGAGCATTAAT CTATAATCTTATTCCTTCCGCAGAAC ATGGATAAGAAGCAAGTAACGGATTTAA TGCCAGCAGATTTGTACCGGA TGGTGATTACGTCTATCGCGTTG TTAGTGTTTCTTGTCATTCATCACAATATAGT CGCTAGGGGTTTGTGCCG TTATTCATAGTGCATGAAGCAGGTTTC GTGAAGGGACGTTGTCGATTATG TCAGGCCAGTTTATGGTTAGCCA ATGGCTCAGGAAATCGAATTAAAGTTTATT TGTCGCCGCTAAGCAGTTCC CGTGGGAACATCAGGCGCT TCATTCTTCCACCAGCCACTTCT Gel mobility shift assay All the DNA probes for the mobility shift assay were generated by PCR ampliﬁcation of the promoter region of RutR target genes using a set of primers , FITC-labelled T7-F primer and unlabelled T7-R primer , cloned SELEX fragment ( 80 ng each ) as template , and Ex-Taq DNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>2718517 TGGACCAAACAGTCTG 9/14 +373.5 373.5 3197797 CCAACCATTCGGTCAA 10/14 +885.5 3221219 TTTACCATCTGGTCAT 12/14 0.5 3578836 ATGACCATGATTTCGT 8/14 C. Function unknown 1272801 CTGACCAATCGGTCAC 11/14 69.5 intergenic ( ychN ) intergenic 22.5 1724133 TAGACCGACTGGTCTA 11/14 ) ( ydhM ORF ( ves ) +273.5 1822567 TTTACCACCTGGTCCG 11/14 D. Drug resistance/sensitivity ORF +9.5 2371490 TTGACCAGCCATTCCA 10/14 ( pmrD ) E. Transport 624085 ATGACAAATTCGACAA 10/14 intergenic ( fepB ) ORF 45.5 +183.5 2510573 ATCGCCATCAGGTTGG 7/14 ( mntH ) RF ( ulaB ) RF ( fhuF ) O +102.5 4419024 TTGACCATACGGTAAA 12/14 O +176.5 4603338 ATGACCATTGCGCCAG 9/14 Identification and sequence analysis of RutR targets To select peaks for RutR binding , a cut-off was applied to the dataset ( see Materials and Methods section ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>KDrel values of RutR mutant proteins to the consensus duplex and to symmetrical mutant derivatives thereof The RutR carP1 complex Members of the large TetR family of transcriptional regulators show little overall sequence homology and bind a wide variety of ligands as allosteric co-factors ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Peak centre Sequence ( 50 -- 30 ) Match to Position of site with respect to nearest start codon ORF or intergenic consensus A. DNA/RNA related 3211536 TTGACTACCTGGTCAA 13/14 +804.5 ORF ( rpoD ) ORF 3994092 TTGACTGGCTGGTCAG 11/14 +258.5 ( xerC ) B. Metabolism 29360 TTGACCATTTGGTCCA 13/14 intergenic a ( carA ) ORF 284.5 139594 CACACCAGTTGGTCAA 11/14 +1667.5 ( gcd ) 331599 No consensus site N/A intergenic ( yahA ) ORF ( hyi ) a ORF ( fabA ) intergenic a ( rutA ) ORF ( yﬁQ ) ORF a ( ygiF ) ORF ( ebgA ) overlapping ( yhhX ) 535353 TTAACTGTCTGGTCGG 9/14 +312.5 RESULTS AND DISCUSSION 1015645 TTGACCACACGGTCCA 12/14 +117.5 ChIP-chip analysis of RutR binding in mid-log phase E. coli 1073323 TGGACTAAACGGTCAA 11/14 114.5 Our aim was to use ChIP to measure the binding of RutR across the chromosome of growing E. coli cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Dimeric RutR was previously shown to bind to the carAB control region in a uracil and thymine-sensitive manner and to protect an 30 bp strech against DNaseI digestion ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Puriﬁcation of RutR protein Plasmid pYcdC for expression of His-tagged RutR was constructed by inserting a PCR-ampliﬁed RutR-coding sequence DNA into pET21a ( + ) ( Novagen ) between NdeI and NotI sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>A set of six fragments of identical length bearing the RutR binding site at various distances from the extremities were generated by PCR ampliﬁcation with pBendRUT plasmid DNA as template and the oligo-nucleotide pairs EP15-EP16r , EP17-EP18r , EP9-EP10r , EP19-EP20r , EP21-EP22r and DC647f-EP31r as primers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In this study , we employed this system for search of target DNA sequences recognized by RutR , and identiﬁed at least seven target operons , carAB , gadAX , gadBC , ygiF-glnE , gcl-hyi-glxR-ybbVW-allB-ybbY-glxK , yciR-deoLT , and rutR / rutABCDEFG ( see Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In striking contrast to most other bacterial transcriptional regulators , only six out of the twenty experimentally identiﬁed RutR binding sites are located in intergenic regions , and of these , ﬁve were shown to have a regulatory function ( carAB , rutR-rutABC-DEFG , gadAXW , gadBC , gcl-hyi-glxR-ybbVW-allB-ybbY-glxK ) [ 9,11,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Regulation of allantoin degradation pathway by RutR RutR binding site was also identiﬁed within the coding sequence of hyi encoding hydroxypyruvate isomerase ( see Table 1 ) , which is organized in the allantoin-utilization gene cluster consisting of seven genes in the order of gcl-hyi-glxR-ybbV-ybbW-allB-ybbY-glxK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The carA promoter fragment of 500 bp in length upstream from the carA initiation codon , including the target sites for all the transcription factors , PepA , PurR , PepA , RutR and IHF ( see Fig. 3B ) , was inserted into TFP vector so to adjust the initiation codon to that of green ﬂuorescent protein ( GFP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In view of the short distance separating the initiation site from the RutR box , the latter hypothesis appears to be improbable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>RutR binds to a semi-palindromic 15 bp conserved site positioned far upstream ( centred around position 184.5 ) of the start of carP1 transcription [ 9,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Groove-speciﬁc ligand binding interference EMSAs performed with the 162-bp DNA fragment comprising the operator stretch from 113 to 271 upstream of the start of carP1 transcription indicated that RutR binds to the carP1 operator , thereby forming a single complex with a distinct migration velocity and an apparent equilibrium dissociation constant of 10 nM ( Figure 5a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>If the perfect inverted-repeat just upstream of the rut promoter serves as a binding site for RutR , this auxiliary regulator may hinder contact between NtrC and 54-holoenzyme by stiffening the DNA between the enhancer and the promoter ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16540542" target="_blank">16540542</a>]<br></li>
+<li>Because the binding site of a transcription factor is generally located upstream of the protein-coding sequence , we predicted that RutR is involved in regulation of the carAB operon encoding carbamylphosphate synthetase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>We show that this is not the case for the uracil responsive transcription factor RutR ; binding sites are mainly located in genes and hundreds of base-pairs away from the nearest start codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>112 141 Yes Yes 97 125 Genome-wide distribution of binding sites for RutR and other global DNA-binding proteins While 5 of the 20 RutR targets identiﬁed here fall in intergenic regions , 14 are in coding DNA and 1 target overlaps a translation start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Curiously , only 6 of the 20 identiﬁed binding sites for RutR are located in intergenic regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Twenty RutR-binding targets were identified and analysis of these targets generated a DNA consensus logo for RutR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>High-resolution contact mapping of base-speciﬁc RutR -- carP1 operator interactions The sequence comparison of the 20 binding sites for RutR on the E. coli chromosome has allowed Shimada et al. ( 3 ) to deduce a 16 bp consensus sequence for the RutR target -- TTGACCANNTGGTGAA -- and to establish a sequence logo in which the A T and T A base pairs in respective position 5 and +5 of the binding site show the highest degree of conservation ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The sequence including the overlapping binding sites for RutR and PepA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The strongly reduced sequence speciﬁcity in the binding of RutR-L55A to a set of RutR binding sites mutated at position 5 is fully compatible with this proposal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The binding sites of RutR on other probes are separated from the RNA polymerase binding sites ( or the target promoters ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The most striking example in E. coli is RutR , for which 80 % of binding sites are intragenic ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24272778" target="_blank">24272778</a>]<br></li>
+<li>Using equally stringent search conditions for each factor , we screened the E. coli MG1655 genome for DNA sequences that resembled the DNA-binding sites of RutR , LexA , Fur , FruR , FNR , CRP , NarL and Fis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>SELEX search for RutR binding sequences The substrate DNA for SELEX screening was prepared by PCR ampliﬁcation of 200 -- 300 bp long E. coli DNA fragments using the plasmid library as template , each carrying an E. coli genome fragment of 200 -- 300 bp in length ( Shimada et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>A collection of 500-bp sequences centered on each peak and using BioProspector ( ) , which was successfully employed for identification of RutR box sequence [ 33 ] , we identified the 16-bp sequence CRP-box motif for all 323 CRP-binding sites ( Fig. 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21673794" target="_blank">21673794</a>]<br></li>
+<li>This region comprises the conserved 16 bp RutR box , and extends about 8 bp more upstream and 6 bp further downstream .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Previously RutR was shown to bind to the control region of the divergent rutR-rutABCDEFG gene cluster [ 9,12 ] and it was suggested that a single binding site , situated downstream of the start site of rutR transcription might be used to control both wings of the cluster ( Fig. 5 ) [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Along the rutR promoter , RutR binds to a site ( -103 to -129 from the rutR initiation codon ) downstream from , and partially overlapping with , the RNA polymerase binding site , thereby repressing transcription of rutR in an autogenous manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>For the previously identiﬁed RutR targets , carA , rutA , hyi and ygiF/glnE ( 5 ) , the motif that we identiﬁed corresponds exactly to the location of the known RutR-binding site ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>After the genomic SELEX search , we indeed identiﬁed a RutR binding sequence in the intergenic region between rutA-BCDEFG and rutR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the case of rutA-rutR probe , the RNA polymerase ( Es70 ) bound to a site next to the RutR binding site , in agreement with the location of promoter sequence , -10 TAAAAT and -35 TTAATC , in this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>To investigate the importance of this binding site in autoregulation , we constructed an OC derivative of the episome borne p/o-rutR-lacZ reporter gene fusion bearing four bp substitutions in the 15 bp RutR target site ( Fig. 5 ) Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>phase stretches of A T bps in the cloned 36-bp fragment comprising the RutR binding site and ﬂanking sequences , and an apparent bending angle of 37 for the RutR DNA complexes ( Figure 5d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>( a ) Representative autoradiograph of an EMSA with RutR binding to the 162 bp carP1 operator fragment and corresponding binding proﬁle .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Two QacR dimers bind cooperatively to the 28-bp qacA operator , whereas our results indicate that RutR likely binds as a single dimer to a palindromic binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>RutR binding sites are shown in bold and bases that match the consensus RutR binding sequence are underlined This identiﬁed the 16-bp sequence motif shown in Figure 2 , which matches the previously proposed consensus RutR-binding sequence , 50-TTGACCAnnTGGT-0 CAA-3 , and predicts that positions 4 and 13 of the binding site are the most important for RutR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>Sequence speciﬁcity of RutR binding To further determine the sequence speciﬁcity of RutR binding , we studied complex formation with a 46-bp oligo-nucleotide duplex containing a fully symmetrical 16-bp RutR consensus binding site ( Figure 1b ) ﬂanked by the 15-bp stretches that surround the RutR binding site in the carP1 control region , and a series of double bp substitutions thereof , bearing symmetrical substitutions in the two half-sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The RutR binding site overlaps with PepA ( CarP ) binding site at -160 to -186 bp ( Fig. 3B ) , raising a hypothesis that RutR is involved in carA P1 activation by competing with the binding of PepA ( CarP ) repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>No sequence preference can be detected at the center of the RutR binding site ( position 1 / +1 ) in the previously established sequence logo ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>DNase I footprinting assay for determination of RutR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Nucleotide sequence of the RutR binding site in the carP1 control region and compilation of the results of the various footprinting and pre-modiﬁcation binding-interference techniques .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Here the RutR binding site was identiﬁed at -168 to -196 bp from P1 initiation site ( see Figs 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In this study , we indeed identiﬁed the RutR binding site within the 190 bp long spacer region between the rutABCEFG and rutR operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Here we demonstrate that negative autoregulation involves a 15 bp conserved RutR box located downstream of the RNA polymerase binding site ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>They all belong to the 16 bp highly conserved part of the RutR binding site ( RutR box ) and , furthermore , they are mostly located to 0 the 5 - side of bases that are important for RutR binding ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>( b ) DNA sequence alignment of the consensus RutR binding site as determined by Shimada et al. ( 3 ) , the 16 bp conserved RutR binding site in the carAB control region , and the fully symmetrical RutR consensus site used in this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The conserved 15 bp sequence of the RutR binding site ( RutRbox ) in the intergenic region is indicated in bold and the four bp substitutions introduced in the operator constitutive derivative are indicated below the sequence DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The conserved 16 bp RutR binding site is indicated with ﬁlled bar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>This is corroborated at the structural level by a better superimposition of the Ca atoms of the HTH motif of RutR and QacR , which superimpose nearly perfectly ( r.m.s.d. = 0.84 Å ; Figure 8 ) and , furthermore , the DNA binding site of RutR is also more similar to the QacR than to the TetR target sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>QacR and RutR show remarkable sequence conservation at these positions and their DNA target sequences show a high degree of sequence identity ( Figure 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>The 5 ′ - proximal TTGACCC sequence is better conserved ( 7/7 for carA , gadA and gadB ; 6/7 for rutA and ygiF ; and 4/7 for hyi ) , suggesting that this is the core sequence for RutR recognition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The RutR box on the gadA and gadB sequences consists of 7-3-7 sequence with one extra base in the centre .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>DNase I footprinting indicated that RutR recognizes a palindromic sequence of TTGACCAnnTGGTCAA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>A. RutR recognizes a palindromic sequence consisting of the consensus sequence TTGACCAnnTGGTCAA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>RutR box : a consensus palindromic sequence for RutR binding Next we determined the RutR recognition sequences using DNase I footprinting assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Among the six RutR binding sequences , a palindromic consensus 7-2-7 sequence consisting of TTGACCAnnTGGTCAA was identiﬁed ( Fig. 3A ) ( this RutR recognition sequence was hereafter designated as RutR box ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Competition between NemR and RutR in binding to the NemR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>Interestingly the NemR box sequence TAGACC nnnnGGTCTA is close to the sequence recognized by RutR ( RutR box ) , TTGACCAnnTGGTCAA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>RutR box sequences recognized in vitro by RutR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by RutR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>In the absence of RutR , the level of all these transcripts markedly increased , indicating that RutR bound on the coding frames of both gadA and gadB somehow represses transcription of the gadAXW and gadBC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Transcription regulation by a downstream-bound transcription factor In the case of gadAX , gadBC and ygiF-glnE operons , RutR bound within the coding frames of the ﬁrst genes regulate transcription of the entire operons ( see Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Intracellular level of RutR protein Transcription of the rutR gene was indicated to be under the autogenous control ( see above ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Northern blot analysis indicated that transcription of both upstream gcl and downstream glxR were indeed under the control of RutR ( see Fig. 8 ) , indicating that RutR blocks the ﬁrst pathway of ureidoglycolate catabolism by repressing the gcl operon , leading to enhance the second pathway for production of carbamoylphosphate , which is reused for pyrimidine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In the absence of uracil supplementation , RutR exerts negative autoregulation and represses the divergently transcribed rutABC-DEFG operon by binding to a single RutR box in the intergenic region [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>By genomic SELEX screening of the RutR-binding sequences in the E. coli genome , we identified the RutR box within the gcl operon , which possibly affects its expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>]<br></li>
+<li>This site , located upstream of the rutA promoter , was previously proposed to be involved in RutR mediated repression of the rutABCDEFG operon that is transcribed from a r54 promoter and regulated by NtrC , the general regulator of nitrogen metabolism [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>The best-studied and highest afﬁnity target of RutR is the carAB operon encoding carbamoylphosphate synthase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Because the binding site of a transcription factor is generally located upstream of the protein-coding sequence , we predicted that RutR is involved in regulation of the carAB operon encoding carbamylphosphate synthetase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>The RutR binding site with the highest afinity is located in the control region of the carAB operon , encoding carbamoyl-phosphate synthase , far upstream of the transcription start of the carP1 promoter ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>In the middle of this research , Loh et al. ( 2006 ) reported that the undescribed genes , ycdMLKJIHG , are involved in the degradation of pyrimidines for reutilization as nitrogen sources [ the operon was then renamed to rutABCDEFG ( pyrimidine utilization ) ] and transcription of this rut operon could be repressed by YcdC ( also renamed to RutR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>We show that this is not the case for the uracil responsive transcription factor RutR ; binding sites are mainly located in genes and hundreds of base-pairs away from the nearest start codon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>The E. coli rutABCDEFG operon , that encodes genes for the catabolism of pyrimidines , is regulated by RutR , a TetR family factor whose DNA binding is modulated by uracil ( 4,5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18515344" target="_blank">18515344</a>]<br></li>
+<li>The member genes are either activated or repressed by the RutR transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>In contrast , apo-RutR both stimulates and inhibits gene expression at different promoters [ 9 ] , but the molecular mechanisms of RutR-mediated positive and negative control are not known .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25685666" target="_blank">25685666</a>]<br></li>
+<li>Transformants were grown in Luria -- Bertani broth and RutR expression was induced by adding 1 mM IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

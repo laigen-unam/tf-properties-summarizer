@@ -1,0 +1,909 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - RhaR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">RhaR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">RhaR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>Methylation of guanine , ethylation of phosphate , and missing contact studies identified the nucleo-tides and phosphate groups contacted by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Using in vivo dimethyl sulfate footprinting , we previously demonstrated that methylation of guanine -45 was increased twofold by the presence of RhaR ( Tobin & Schleif , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>This suggests that the increased activity of RhaR T279A ( in full-length RhaR ) is unlikely to be due to inter-domain interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>On the other hand , RhaR autoregulates its own synthesis and the kinetics of its induction are fast .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>The level of RhaR expression could not be increased further since , even at I Ol , , the protein was lethal to the cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The k , of RhaR for ps , remains constant under the conditions where it can be reliably measured , whereas k , varies greatly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Deletion of the first 40 or more RhaR residues resulted in increasingly large losses of activity both in the presence and absence of L-rhamnose , and western blots indicated that these same truncations were detected at substantially lower levels than wild-type RhaR ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>n o c lly rtia a P stitutive RhaR variants with substitutions in or near RhaR-NTD The RhaR variants F61L/W75R and H165R/D197G activated transcription of rhaS-lacZ to levels that were approximately 4 - and 6-fold higher , respectively , than wild-type RhaR in the absence of L-rhamnose ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>All 13 RhaR-CTD variants with increased activity in the absence of L-rhamnose had substitutions at residue T279 , and activated transcription of rhaS-lacZ to a level approximately 7-fold higher than wild-type RhaR in the absence of L-rhamnose ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR F61L and W75R each had somewhat higher activation than wild-type RhaR in the absence of L-rhamnose , but both substitutions were required for the full activity of RhaR F61L/W75R in the absence of L-rhamnose ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR H165R activated to higher levels than wild-type RhaR in the absence of L-rhamnose , whereas RhaR D197G did not have significantly higher activation than wild-type RhaR ( Fig. 2 ) ; but may have a subtle effect on transcription activation in combination with RhaR H165R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In the presence of L-rhamnose , RhaR F61L/W75R activated to approximately the same level as wild-type RhaR , while H165R/D197G activated to a level 7-fold higher than wild-type RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR F61L was not fully inducible to the wild-type level in the presence of L-rhamnose , while all of the other single variants were L-rhamnose inducible to at least wild-type levels ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Therefore , our second hypothesis was that the L-rhamnose-independent phenotype of RhaR T279A might be due to increased interaction with the σ70 subunit of RNAP , perhaps by decreasing steric inhibition imposed by T279 in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We propose that in the absence of L-rhamnose , RhaS is limited in its ability to-bind to DNA , whereas RhaR is limited in its ability to contact RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In contrast , we propose that in the absence of L-rhamnose , RhaR is limited in its ability to contact RNAP , and that a structural change is required in HTH # 2 upon Lrhamnose binding to allow RhaR to effectively contact RNAP ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>( C ) In the absence of effector , RhaR is limited in its ability to effectively contact RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Both regulatory proteins , RhaR and RhaS , recognize and bind L-rhamnose , becoming in this way activated to induce the corresponding elements of the rhamnose regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8757746" target="_blank">8757746</a>]<br></li>
+<li>We separated the two double mutants into single mutants in order to determine whether both substitutions in the RhaR variants were required for their increased activity in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>L-Rhamnose likely induces allosteric changes in RhaS - and RhaR-NTD Our screen for RhaS and RhaR substitutions that conferred increased activity in the absence of L-rhamnose resulted in the isolation of a number of substitutions within the NTDs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>L-rhamnose induces an allosteric change in RhaS-CTD HTH # 1 L-rhamnose induces an allosteric change in RhaR-CTD HTH # 2 All of the RhaR variants within RhaR-CTD that conferred increased activity in the absence of L-rhamnose substituted small residues ( Ala or Ser ) for the Thr at position 279 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR H165R was instead located in the α-helical region of RhaR-NTD and , unlike RhaS P141L , high protein levels did not explain its elevated activity in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>This 5.5-fold difference in soluble protein levels could explain some of the decrease in activation by His6-RhaR-CTD at rhaSR relative to His6-RhaS-CTD at rhaBAD ; however , the similarity in the activity of His6-RhaR-CTD to that of full-length RhaR in the absence of L-rhamnose suggests that His6-RhaR-CTD may simply be unable to activate transcription well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>If residues at the very N-terminus of RhaS or RhaR performed functions similar to the AraC Nterminal arm , then one or more N-terminal truncations would be predicted to result in activation of transcription in the absence of L-rhamnose to higher basal levels than wild-type RhaS or RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>To avoid the problem of distinguishing interesting mutations from the large background of those that reduced activity for reasons unrelated to the effector response , we chose to screen for RhaS and RhaR variants with elevated transcription activation in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Substitutions conferring increased activation in the absence of L-rhamnose in the CTDs , however , were found in different regions of RhaS versus RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We used random mutagenesis to isolate RhaS and RhaR variants with enhanced activation in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaS and RhaR variants were then identified that conferred increased activation in the absence of L-rhamnose compared to wild type .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Unlike AraC , Nterminal truncations suggested that RhaS and RhaR do n't use an N-terminal arm to inhibit activity in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Our first hypothesis was that the RhaS and RhaR mechanism might involve inhibition of activity by residues at their very Ntermini in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>SION RhaR do not use `` light-switch '' allosteric-effector mechanisms US ISC D and haS R The goal of this study was to identify the allosteric mechanisms used by the RhaS and RhaR proteins to respond to their common effector , L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Given that AraC 's is the only well-characterized allosteric-effector mechanism among AraC / XylS family proteins , we considered other mechanisms that could explain the allosteric effect of L-rhamnose on the activity of RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Here , we investigated the mechanism by which RhaS and RhaR respond to their effector , L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>One model to explain the above findings is that the RhaS allosteric-effector mechanism involves inhibition in the absence of L-rhamnose and the RhaR mechanism involves stimulation in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>odel for the RhaS and RhaR allosteric-effector responses M Overall , we propose that both the RhaS and the RhaR L-rhamnose responses involve the stimulation of the activity of the CTDs by the NTDs in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The protein levels as well as the protein activities of RhaS and RhaR each increase in the presence of L-rhamnose , with the protein activities increasing on the order of 300-fold and 7-fold , respectively ( Egan and Schleif , 1993 ; Tobin and Schleif , 1990b ; Via et al. , 1996 ) ( unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In spite of the lack of evidence for DNA looping by RhaS or RhaR , binding of an Nterminal arm to their CTDs could , in principle , prevent binding to the adjacent DNA half-sites from which they activate transcription without requiring binding to alternative distant sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>( A ) In the presence of effector , both RhaS and RhaR can efficiently bind to DNA and contact RNAP to activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR activates transcription of rhaSR , and RhaS activates transcription of the operon that encodes the L-rhamnose catabolic enzymes , rhaBAD , as well as the operon that encodes the L-rhamnose transport protein , rhaT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In the presence of L-rhamnose , RhaS and RhaR are required to activate transcription of the operons encoding the L-rhamnose catabolic enzymes ( rhaBAD ) ( see Fig. 1 ) and the L-rhamnose uptake protein ( rhaT ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The transcription activator RhaS , and the closely related RhaR protein , activate transcription of the E. coli L-rhamnose catabolic operons in the presence of the sugar L-rhamnose ( 10 , 11 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The sole identiﬁed function of RhaR is to activate transcription of rhaSR and thereby increase RhaS protein concentration in the presence of L-rhamnose , while RhaS directly activates transcription of the rhaBAD and rhaT operons ( 11 , 12 , 27 -- 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Upon L-rhamnose binding , there are allosteric structural changes transmitted from the NTDs to the CTDs in RhaS and RhaR that overcome their respective limitations and thereby allow them to activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The model that the RhaS - and RhaR-NTD 's must stimulate their respective CTDs in the presence of L-rhamnose in order to activate transcription easily explains why RhaR ( 196-311 ) alone could not activate transcription ( Wickstrum et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>If this were the case , then r,-rhamnose would appear to be the inducer because its addition would stabilize RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>Interestingly , Tobin and Schleif previously found that in the absence of L-rhamnose , full-length RhaR was able to-bind to DNA but was not able to activate transcription ( 38 , 39 ) , suggesting that His - RhaR-CTD ( which lacks an L-rhamnose-binding domain ) 6 may be similar in its activity to full-length RhaR in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>Also , as mentioned above , Tobin and Schleif ( 38 , 39 ) previously found that , similar to His6-RhaR-CTD , full-length RhaR in the absence of L-rhamnose was capable of binding to DNA but not capable of activating transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>The previous results that RhaS is unable to-bind to DNA in the absence of L-rhamnose , and that RhaR is capable of binding to DNA in the absence of L-rhamnose , but is not capable of activating transcription ( Egan and Schleif , 1994 ; Tobin and Schleif , 1990a , b ) , are entirely consistent with our proposed mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>This model is consistent with the previous finding that RhaR is able to-bind to DNA but is not able to activate transcription in the absence of L-rhamnose ( Tobin and Schleif , 1990a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The previous finding that RhaR is capable of binding to DNA both in the absence and presence of Lrhamnose , but can not activate transcription without L-rhamnose ( Tobin and Schleif , 1990a , b ) supports the hypothesis that RhaR contacts with σ70 are central to the RhaR Lrhamnose response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Tobin & Schleif ( 1990a ) found that RhaR protein directly activates rbaSR transcription in response to L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8757746" target="_blank">8757746</a>]<br></li>
+<li>Only L-rhamnose-activated full-length RhaR was capable of robust transcription activation ( Tobin and Schleif , 1990a , b ; Wickstrum et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>encoded in the same operon , there apparently is sufﬁcient RhaR to saturate the rhaSR promoter in the absence of L-rhamnose , as there is no detectable lag in rhaSR mRNA accumulation after L-rhamnose induction ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>Here , we show that purified RhaR can stimulate transcription from the pSr promoter , and that L-rhamnose is required for its activit ' y. LVe used in vitro transcription to determine if purified RhaR was capable of activating transcription from the psr promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>Upon encountering L-rhamnose , RhaR binds upstream of rhaSR and activates transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>upon the inclusion of RhaR and r,-rhamnose , transcription is stimulated fivefold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>However , since the RhaR concentration is 50-fold greater than the Kapp measured in the absence of r,-rhamnose , the pSr site should be fully occupied under t ' he conditions of the in vitro transcription experiment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>In t ' he absence of L-rhamnose , there is no increase in the level of pSr transcription asthe RhaR concentration is increased .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>In vitro transcription from the rhaSR promoter in the presence ( ) and absence ( ) of CRP , RhaR , and L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>In vitro transcription studies RhaR activates transcription from the pSr promoter in the presence of absence of L-rhamnose , RhaR binds to the pSr promoter but does not until L-rhamnose is added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>The DNA alone contains a static bend in the absence of bound RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Suppose that in the absence of n-rhamnose RhaR binds to its DNA site but must undergo an energetically unfavorable conformational change in order to properly align each monomer for correct binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The affinity of RhaR for the pSr binding site is 15fold lower in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Therefore , RhaR requires r,-rhamnose to stimulate transcription from The affinity of RhaR for its pSr binding site in the absence of L-rhamnose is decreased approximately 20 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>Therefore , RhaR must exist , in two or more states or conformations , one , in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>RhaR is able to-bind to its DNA recognition sequence in the absence of L-rhamnose , albeit with a lower afﬁnity than in the presence of L-rhamnose ( 34 , 35 ) ; however , it has been proposed that activation by RhaR does not occur until the addition of L-rhamnose ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The preceding results indicate that RhaR in the presence of L-rhamnose strongly stimulates psr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>The presence or absence of L-rhamnose also affects the dissociation rate but not the association rate of RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The pattern of DNA contacts made by RhaR appear identical both in the presence and absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>We excluded this possibility by showing that RhaR is stable in vitro in the absence of L-rhamnose ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>indicate that all of the RhaR is bound to the supercoiled psr template in the absence of I,-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>However , unlike AraC , deletion of N-terminal residues of RhaS and RhaR did not result in effector-independent phenotypes ( Table 1 ) , suggesting that the mechanism of their effector responses differ from that of AraC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Although AraC R251 ( in the DNA binding domain of AraC ) has been proposed to interact with residues in the N-terminal arm of AraC in the absence of L-arabinose ( Wu and Schleif , 2001b ) , suggesting that RhaR might use a similar mechanism , our results suggest that the RhaR L-rhamnose response is not similar to the AraC light-switch mechanism ( Saviola et al. , 1998 ; Wu and Schleif , 2001b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The importance of aligned residues AraC R251 and RhaR T279 in their respective mechanisms , however , suggests that the AraC and RhaR mechanisms may share the common principle of preventing contacts with σ70 in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In the rhaS rhaR strain , the vector-only samples represent the level of activation by RhaR , while the addition of the RhaS-encoding plasmid shows the RhaS-medi-ated reduction of the RhaR activation ( Fig. 2 , lines 2 and 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>It is not possible to draw conclusions about how or whether differences in the RhaS - 70 and RhaR - 70 interfaces might relate to this difference in CRP binding site position since all but one of the 70 derivatives tested were defective only in the absence of CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In this way , we expected to eliminate from consideration substitutions that simply increased RhaS binding to the RhaR binding site , for example .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>R 'S + R+S - R-S + R-S - G , A L-Rhamnose - + - t - + - + ( e ) RhaR , but not RhaS , binds to the inverted repeats upstream from its gene 's RNA polymerase binding site It is possible that RhaS and RhaR positively regulate their gene expression by binding to the two upstream inverted repeat elements in the ps , promoter ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>The ﬁnding that RhaS can bind to the RhaR binding site at rhaSR suggested a model in which , upon reaching saturating levels in the cell , RhaS might compete for binding to the RhaR binding site and repress expression of rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Given our ﬁnding that RhaS binds relatively weakly to the RhaR binding site ( Fig. 3 ) , we were surprised by the estimate that RhaS outcompetes RhaR for binding at rhaSR two-thirds of the time ( at steady-state levels in the presence of L-rhamnose ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Given that the activation by full-length , chromosomally expressed RhaS at rhaBAD is approximately 33-fold higher than that of chromosomally expressed RhaR at rhaSR , comparable efﬁciencies of activation by the CTDs to their full-length counterparts would have resulted in His - RhaR-CTD activating rhaSR 6 by approximately 30-fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>We predict that CRP bound at site 4 would be on the same `` face '' of the DNA as CRP at site 1 and RhaS and RNAP at rhaBAD , while CRPs bound at sites 2 and 3 are predicted to be on the same `` face '' of the DNA as RhaR and RNAP at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>It was proposed that this RhaS autoregulation could , in principle , occur by the following : formation of inactive RhaS-RhaR heterodimers ; a DNA looping mechanism in which RhaS bound to its site at the rhaBAD promoter would inhibit activation by RhaR bound to its site at the rhaSR promoter ; or RhaS competing for binding to the RhaR binding site at the rhaSR promoter ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Given the precedence of AraC protein forming a repressing DNA loop ( reviewed in reference 22 ) , one question this experiment addressed was whether RhaS autoregulation might involve a DNA looping mechanism in which RhaS , bound to its site at the rhaBAD promoter , interacts with and inhibits activation by RhaR bound at the rhaSR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>'' The RhaS , RhaR , and CRP proteins are pairs of gray ovals , as labeled .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The regulation of rbaBAD expression was shown to respond to a cascade in which RhaR induced rhaSR expression , and RhaS in turn induced rhaBAD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8757746" target="_blank">8757746</a>]<br></li>
+<li>RhaS negative autoregulation likely functions to limit positive autoregulation of rhaSR by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Another possible way that CRP and RhaR could bind cooperatively would be if CRP could bind to site 2 but only cooperatively as part of a complex with RhaR and CRP at site 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Down mutations in CRP site 3 reduced transcription levels of pSR to approximately 50 % of the wild-type levels in the presence of CRP alone as well as in the presence of CRP and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Additionally , the boundaries of the RhaR and CRP footprints did not change when both proteins were present compared with their individual footprints , which argues against the possibility that CRP binds to site 2 in the presence of RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>When RhaR was footprinted in the presence of CRP , there was no signiﬁcant change in the strength of the RhaR footprint , suggesting that RhaR and CRP do not bind cooperatively ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Reactions were performed in the presence ( ) or absence ( ) of 800 nM CRP and 75 nM RhaR as indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>These same concentrations of RhaR were used in the presence of 400 nM CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Synergistic activation of a transcriptional-regulator together with CRP has been shown at several loci including the ara locus by AraC and CRP , malE by MalT and CRP , rha by RhaS / RhaR and CRP and asc by two CRP dimers , among others ( 37,44 -- 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Relative to F ( rhaS-lacZ ) D128 , the synergism between RhaR and CRP increased at F ( rhaS-lacZ ) D216 ( to 36 - or 37-fold ) , and the synergism between CRP and a-CTD decreased ( to 3.2 - or 3.3-fold ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The ﬁnding of synergistic effects between all pairs of activators suggests the possibility of direct RhaR-CRP , RhaR -- a-CTD , and CRP -- a-CTD interactions , although other mechanisms could also account for the synergism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>We also found that CRP , RhaR , and a-CTD each have synergistic effects on activation by the others , suggesting direct or indirect interactions among all three .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The magnitude of the synergistic effects was usually greater with just two activators than with all three , suggesting possible redundancies in the mechanisms of activation by CRP , a-CTD , and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The increased expression from the longer of these fusions is due to the contribution of CRP to the activation ( 15 , 34 ) , which in this case was nearly 100-fold in combination with RhaR but was less than fourfold in combination with RhaS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>However , the CRP contribution to rhaSR activation is substantially lower when RhaS is the primary activator than when RhaR is the primary activator , resulting in a relative decrease in rhaSR expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>However , the contribution to activation by CRP at the promoter activated by RhaS was greatly reduced compared with the CRP-RhaR combination , thereby resulting in a relative repression of rhaSR expression upon activation by RhaS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>In contrast to the expected repression , we found that in the absence of both RhaR and the CRP binding site at the rhaSR promoter , RhaS activated expression to a level comparable with RhaR activation of the same promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>However , when the promoter included the RhaR and CRP binding sites , the level of activation by RhaS and CRP was much lower than that by RhaR and CRP , suggesting that CRP could not fully coactivate with RhaS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>This suggests that under these conditions RhaR does not signiﬁcantly contribute to the activation and that RhaS may fully outcompete RhaR for binding to the RhaR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>This suggests that CRP binding at site 3 may be destabilized at F ( rhaS-lacZ ) D216 , and this destabilization may result in CRP activation from site 3 becoming more dependent upon RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>In the rhaS rhaR strain , where RhaR but not RhaS can activate , we found that the wild-type CRP binding site [ ( rhaS-lacZ ) 128 ] enabled a 30-fold increase in activation compared with no CRP binding site [ ( rhaS-lacZ ) 85 ] ( 216 versus 6.9 Miller units , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>In contrast , the addition of the CRP sites 2 or 3 bp upstream of the RhaR binding site did not result in increased expression compared to ( rhaS-lacZ ) 85 , indicating that there was no contribution of CRP to activation in combination with RhaR from these CRP site positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>We deﬁne fold activation as the lacZ expression in the presence of one activator ( for example , RhaR in Table 8 ) divided by the lacZ expression in the absence of that activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>We certainly expect , however , that not all aspects of RhaS activation and RhaR activation will be identical .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Transcription activation by partially constitutive RhaR variants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Transcription activation by RhaR derivatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Transcription levels were normalized to the divergent p82 promoter , which does not respond to RhaR , CRP , L-rhamnose , or cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>At the rhaSR promoter , CRP alone can weakly activate transcription , but binding of the other L-rhamnose-responsive activator , RhaR , is required for maximal CRP-dependent activation in vivo ( 15 ; unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR positively regulates rhaSR in response to L-rhamnose , and RhaR activation can be enhanced by the cyclic AMP ( cAMP ) receptor protein ( CRP ) protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>When CRP and cAMP were added in combination with RhaR and L-rhamnose , an approximately fourfold synergistic activation of transcription from pSR was seen ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>The - WT RNAP showed levels of activation by CRP and RhaR that were comparable to those obtained with RNAP puriﬁed as a holoenzyme ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>The requirement of both RhaR and - CTD for signiﬁcant CRP activation of pSR suggests a possible mechanism by which RhaR bends DNA to allow CRP to interact with - CTD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>In the case of CRP , this suggests that this activation involves neither an a-CTD interaction nor cooperative binding with RhaR , while in the case of RhaR , this suggests the likelihood of direct interactions with core RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The mechanism by which RhaR increases CRP activation is not known , but it does not appear to be through cooperative binding on the basis of our DNase footprinting results ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Although CRP requires the presence of RhaR for efﬁcient in vivo activation of rhaSR , DNase I footprinting assays indicated that cooperative binding between RhaR and CRP does not make a signiﬁcant contribution to the mechanism of CRP activation at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>In addition , our results indicate that neither CRP-induced DNA bending nor cooperative binding between CRP and RhaR make signiﬁcant contributions to CRP activation at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>CRP activation of rhaSR expression is primarily due to neither cooperative binding with RhaR nor DNA bending .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Tobin and Schleif ﬁrst demonstrated RhaR activation of rhaSR transcription in vitro ( 31 ) ; however , at that time it was not known that CRP also regulates rhaSR expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>This result indicates that in the presence of RhaR , a-CTD can contribute to transcription activation at rhaSR , perhaps by interaction with DNA and/or RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>We have no evidence at this time to argue either for or against a direct interaction between CRP and RhaR ; however , we do have some evidence to suggest that a direct a-CTD -- CRP interaction could contrib-ute to rhaSR activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>We investigated the mechanism of CRP activation at rhaSR both alone and in combination with RhaR in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>CRP and RhaR could each partially activate transcription in the absence of the other two activators , and a-CTD was not capable of activation alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Interdependence of activation by CRP , a-CTD , and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>In the absence of both CRP and RhaR , a-CTD did not contribute any activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>There is also a second component to CRP activation of rhaSR that appears to function through synergism with RhaR and a-CTD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>We therefore investigated the importance of the - CTD for CRP and RhaR activation of rhaSR transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>CRP activation of rhaSR transcription requires - CTD and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>In both cases , there is little or no activation by CRP in the absence of RhaS or RhaR ( Table 2 ) ( 16 ) ; presumably , CRP requires DNA bending by the primary activator to enable contacts with - CTD ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Comparison of transcripts synthesized by the - 235 and - WT enzymes in the absence and presence of CRP demonstrated that nearly all of the CRP-dependent activation of pSR depended on - CTD in the presence of RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>This would represent the 4-fold activation by RhaR , and the 20-fold and 13-fold activation by CRP , in the absence of other activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>While the expression of the mhpR , melR and malT regulators depends only on the presence of CRP ( Webster et al. , 1988 ; Chapon & Kolb , 1983 ) , the expression of rhaSR and prpR depends on the presence of CRP and the transcription activators RhaR and PrpR , respectively ( Tobin & Schleif , 1990a , b ; Wickstrum et al. , 2005 ; Lee et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20966094" target="_blank">20966094</a>]<br></li>
+<li>In addition to the transcription activators RhaS and RhaR , the cAMP receptor protein ( CRP ) is also required for the full activation of all three of the rha operons ( Egan and Schleif , 1993 ; Holcroft and Egan , 2000 ; Via et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Cyclic AMP receptor protein ( CRP ) is required for full expression of all three of the rha operons , but it functions as a coactivator that substantially activates transcription only when RhaS or RhaR also binds to the promoter regions ( 11 , 15 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Wickstrum , J.R. , Santangelo , T.J. and Egan , S.M. ( 2005 ) Cyclic AMP receptor protein and RhaR synergistically activate transcription from the L-Rhamnose-responsive rhaSR promoter in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Upon L-rham-nose induction , RhaR was found to activate rhaSR transcription 5-fold in vitro ( 35 ) ; however , in vivo measurements indicate that overall rhaSR activation was approximately 440-fold ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Our in vitro transcription assay results indicate that CRP can activate transcription only from the `` normal '' pSR transcription start point in the presence of RhaR ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Suppose RhaR can activate transcription but , is unstable in vitro in the absence of I,-rham-nose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>RhaR and CRP synergistically activate transcription of rhaSR in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR does not ' activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>In the present study , we ﬁrst identiﬁed two positively charged amino acids in 70 , K593 and R599 , and three negatively charged amino acids in RhaR , D276 , E284 , and D285 , that were important for RhaR-mediated transcription activation of the rhaSR operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaR residues D276 , E284 , and D285 are important for rhaSR transcription activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We ﬁrst conﬁrmed that RhaR activated transcription only when transcription was initiated from supercoiled templates ( data not shown ) and that this activation was stimulated by the addition of L-rhamnose ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Speciﬁc residues in the CTDs of RhaS and RhaR had previously been shown to contribute to DNA binding and transcription activation ( 4 , 5 , 38 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>In preliminary experiments , we found that His6-RhaS-CTD activated transcription much more efﬁciently from linear DNA templates than from supercoiled DNA templates ( data not shown ) , in contrast to full-length RhaR , which required supercoiled DNA templates for efﬁcient in vitro transcription activation ( 39 , 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>Table 2 lists the apparent equilibrium constants determined in the presence and absence of L-rham-nose and in varying concentrations of KC1 assuming a simple model in which there is only a single binding site for RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>In the presence of RhaR protein , the retardation as a function of the location of the binding site is much larger , and the bending angle appears to be 160 '' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>There are 21 base pairs between CRP site 3 and the RhaR binding site , which may be too far to allow cooperative binding ; however , RhaR binding has been estimated to bend DNA by 160 degrees , and CRP can bend DNA by 87 degrees ( 21 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR was found to bend DNA by 160 degrees in vitro ( 30 ) , and this bending may be required to bring CRP bound at 111.5 close enough to interact with - CTD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>L-Rhamnose could increase the affinity of RhaR for its DNA site if it bound to the protein and causeda similar conformational change , thereby allowing more of the energy available from DNA binding to be expressed in the binding constant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>One possibility was that CRP binds to DNA cooperatively with RhaR to improv the ability of RhaR to activate transcription , similar to the cooperative binding of MelR and CRP at the melAB promoter ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>An alternative explanation for the different kinetics is that the protein activates transcription once it binds to the DNA , and that the affinity of RhaR for its DNA binding sites is lower at promoters p , , pz and p3 than it is at the p , , promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>Amino Acid Contacts between Sigma 70 Domain 4 and the Transcription Activators RhaS and RhaR Jason R. Wickstrum and Susan M. Egan * Departm ent of Molecular Biosciences , University of Kansas , Lawrence , Kansas Received 17 May 2004/Accepted 24 June 2004 The RhaS and RhaR proteins are transcription activators that respond to the availability of L-rhamnose and activate transcription of the operons in the Escherichia coli L-rhamnose catabolic regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Egan * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas Received 13 June 2008/Accepted 30 September 2009 The Escherichia coli RhaR protein activates expression of the rhaSR operon in the presence of its effector , L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>yclic AMP Receptor Protein and RhaR Synergistically Activate C Transcription from the L-Rhamnose-Responsive rhaSR Promoter in Escherichia coli Jason R. Wickstrum ,1 † Thomas J. Santangelo ,2 † ‡ and Susan M. Egan1 * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas 66045,1 and Department of Molecular Biology and Genetics , Cornell University , Ithaca , New York 148502 Received 9 May 2005/Accepted 21 July 2005 The Escherichia coli rhaSR operon encodes two AraC family transcription activator proteins , RhaS and RhaR , which regulate expression of the L-rhamnose catabolic regulon in response to L-rhamnose availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Interdependence of Activation at rhaSR by Cyclic AMP Receptor Protein , the RNA Polymerase Alpha Subunit C-Terminal Domain , and RhaR CAROLYN C. HOLCROFT AND SUSAN M. EGAN * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas 66045 Received 21 August 2000/Accepted 18 September 2000 The Escherichia coli rhaSR operon encodes two AraC family transcription activators , RhaS and RhaR , and is activated by RhaR in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>To induce synthesis of the RhaS and RhaR proteins , isopropyl-fl-n-thiogalactoside was added to a final concentration of @ 1 mM , and the cells were incubated for an additional 2 h .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Residue K593 of 70 has been found to be important for several transcription activators , including AraC , UhpA , cI , FNR , Ada , RhaR ( this study ) , and RhaS ( 4 , 24 , 27 , 35 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The three best-characterized proteins in this subgroup of the family are AraC , RhaR , and XylS ( 84 , 224 , 244 ; see below for further details ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>Among proteins in this subset , including RhaS and RhaR as well as XylS , MelR , and UreR , this domain is generally required for dimerization and/or effector binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The AraC/XylS family proteins whose DNA binding domains do not activate transcription well -- including MelR and ToxT ( Howard et al. , 2002 ; Prouty et al. , 2005 ) -- may be similar to RhaR and unable to effectively contact RNAP ( or otherwise activate transcription at a step after DNA binding ) in the absence of effector ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The sequence accession numbers are : FeaR , EMBUGenBank X99402 ; XylS , SWISS-PROT P07859 ; RhaR , SWISS-PROT P09378 ; RhaS , SWISS-PROT P09377 ; AraC , SWISS-PROT P03021 ; MelR , SWISS-PROT P10411 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9043126" target="_blank">9043126</a>]<br></li>
+<li>This inhibitory function of the NTD is not found in MelR and RhaS/RhaR ( 18 , 56 , 58 ) but is found in AraC and XylS ( 15 , 41 , 59 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24013633" target="_blank">24013633</a>]<br></li>
+<li>Examples of proteins that regulate carbon metabolism ( and the carbon source and species they are found in ) are AraC ( L-arabinose , Escherichia coli ) , RhaS and RhaR ( L-rhamnose , E. coli ) , XylS ( benzoates , Pseudomonas putida ) , and MelR ( melibiose , E. coli ) ( 2 , 14 , 33 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>This group includes AraC , RhaS , RhaR , and MelR from E. coli and XylS from Pseudomonas putida , which are among the most well characterized of the AraC/XylS family proteins ( 4 , 5 , 8 , 12 , 13 , 16 , 19 , 29 , 30 , 38 , 39 , 53 -- 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10940041" target="_blank">10940041</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">RhaR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Displaying the ( b ) Puri $ kation of the RhaR protein PstI PVUJI IWLII Pstl , PvuE 1 dIgestIon DTAC 48 base ¬ ILigation pTAC A Circular pJTC105 ( ai pJTC8 ----- 4 Llgatlon Xhol BglI 89/U , Xhol 1 digestion RhoR 94 base ¬ pair L linker site 4 % ?? hoL R '' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Full activation by RhaR requires contact with 70 ( RhaR D276 contacts 70 R599 ) , and a rhaSR promoter containing a RhaR binding site , but not a cyclic AMP ( cAMP ) receptor protein ( CRP ) binding site , requires the carboxy-terminal domain of the alpha subunit ( - CTD ) of RNAP for full activation ( 15 , 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_3">
+Interdependence of activation at rhaSR by cyclic AMP receptor protein , the RNA polymerase alpha subunit C-termi-nal domain , and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24013633" target="_blank">24013633</a>]<br></label>
+<input id="dom_similarity_3", type="checkbox">
+<div class="DOM_similar">
+<li>Interdependence of activation at rhaSR by cyclic AMP receptor protein , the RNA polymerase alpha subunit C-terminal domain and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Interdependence of activation at rhaSR by cyclic AMP receptor protein , the RNA polymerase alpha subunit C-terminal domain , and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19060147" target="_blank">19060147</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li></div>
+<li>In-vivo dimethyl sulfate footprinting shows that the presence of RhaR within a cell increases the methylation rate of a guanine residue , position -45 ( Fig. 6 ) , upstream from the rhaS and rhaR genes ' RNA polymerase binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>In fact , phosphate -38 would be contacted by both RhaR and RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Figure 8 displays the phosphate contacts of the RhaR protein and the predicted phosphate contacts of RNA polymerase at the psi promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>If the predicted RNA polymerase contacts ( Bushman & Ptashne , 1986 ) are correct , then RhaR makes close contact to RNA polymerase at the psrpromoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>In the case of paraBAD it has been shown that this overlap is essential for transcription-activation , most likely because AraC ( and presumably XylS , RhaR and RhaS at their targets ) makes direct contact with the RNA polymerase σ subunit that is docking to the ® 35 hexamer [ 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8809031" target="_blank">8809031</a>]<br></li>
+<li>In the case of CRP , this suggests that this activation involves neither an a-CTD interaction nor cooperative binding with RhaR , while in the case of RhaR , this suggests the likelihood of direct interactions with core RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>RhaR of the Table 1 Purification of RhaR Total Total Specific activity protein activity Yield Purification ( - fold ) Fractionation step ( units ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Since the carboxy termini of RhaR and AraC are so similar , it is unlikely that , the structural difference that allows one protein to recognize an inverted repeat versus a direct repeat structure is found in this domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The positively charged H165R substitution is positioned , however , across from a negatively charged aspartic acid residue in the RhaR β-barrel ( data not shown ) , suggesting a potential influence of this substitution on the β-barrel structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>This residue is therefore predicted to lie either at the very end of RhaR-NTD or at the beginning of the linker connecting the RhaR domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>This residue mapped to the stabilizing helix of the second RhaR HTH motif ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>All subsequent steps in RhaR puriﬁcation were carried out at 4 ° C using degassed buffers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>On the top strand , RhaR makes close contact with a guanine nucleotide at position -47 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>On the bottom strand , RhaR closely contacts the guanine nucleotides at position - 80 , - 67 and -45 ( Fig. 4 ( b ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Methylation of guanine , ethylation of phosphate , and missing contact studies identified the nucleo-tides and phosphate groups contacted by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_21">
+The nucleotides and phosphate residues contacted by RhaR were identified by chemical interference assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></label>
+<input id="dom_similarity_21", type="checkbox">
+<div class="DOM_similar">
+<li>Using chemical interference assays , we have identified the nucleotides and phosphate residues contacted by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li></div>
+<li>¬ ( e ) RhaR makes speci $ c DNA contacts to its pSr binding site We used chemical interference assays ( Hendrickson & Schleif , 1984 ; Brunelle & Schleif , 1987 ) to determine the nucleotides and phosphate residuesto which RhaR makes specific contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>This value seems small in light of the fact that the RhaR protein contacts at least ten phosphate residues in its psr binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>RhaR apparently makes close contacts to ten phosphate groups .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>cytosine and thymine nucleotides that RhaR contacts are as indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Therefore , RhaR must exist , in two or more states or conformations , one , in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>Therefore , while the instability of the longest truncations introduces some uncertainty , we conclude that RhaR most likely does not use an N-terminal arm to mediate its response to L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Although our results suggest that the very N-terminal residues of RhaR are not involved in its L-rhamnose response ( Table 1 ) , one hypothesis is that RhaR T279 could interact with a different region of RhaR-NTD as part of its L-rhamnose response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR T279 aligns with AraC R251 , which has been proposed to interact with residues in the N-terminal arm of AraC ( Wu and Schleif , 2001b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Although AraC R251 ( in the DNA-binding domain of AraC ) has been proposed to interact with residues in the N-terminal arm of AraC in the absence of L-arabinose ( Wu and Schleif , 2001b ) , suggesting that RhaR might use a similar mechanism , our results suggest that the RhaR L-rhamnose response is not similar to the AraC light-switch mechanism ( Saviola et al. , 1998 ; Wu and Schleif , 2001b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In contrast , we propose that in the absence of L-rhamnose , RhaR is limited in its ability to contact RNAP , and that a structural change is required in HTH # 2 upon Lrhamnose binding to allow RhaR to effectively contact RNAP ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>( C ) In the absence of effector , RhaR is limited in its ability to effectively contact RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>A second hypothesis was based on the location of RhaR T279 on the surface of RhaR-CTD between residues D276 and D285 , which we 've previously identified as sites of contact between RhaS and RhaR and the σ70 subunit of RNAP ( Bhende and Egan , 2000 ; Wickstrum and Egan , 2004 ) ( Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The position of residue T279 on the structural model of RhaR-CTD between two residues that participate in protein-protein interactions with residues in the σ70 subunit of RNAP ( Bhende and Egan , 1999 ; Wickstrum and Egan , 2004 ) ( Fig. 3C ) , suggests that the substitutions to the smaller Ala or Ser residues may allow RhaR to more effectively contact RNAP in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>It is interesting to note that most of the homology between AraC , RhaS and RhaR is found in the C terminus , perhaps the two rha proteins bind their target sites using a similar sequence located in their C termini .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>Eight of the ten amino acids in this region are identical whereas the other two are similar -- a degree of sequence similarity that is unusually high , even for the very similar RhaS and RhaR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>Linker regions of the RhaS and RhaR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Our results also showed that His6-RhaS-CTD and His6-RhaR-CTD did not respond to Lrhamnose availability ( data not shown ) , which was expected since , based on sequence similarity with AraC , L-rhamnose binding is predicted to be a function of the RhaS and RhaR N-terminal domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>Flexible linkers connect the RhaS and RhaR domains ; however , the sequences of the linkers do not appear to be critical for function ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Our work also indicates that , similar to AraC , RhaS and RhaR may have flexible linker regions that connect their two domains ( Carra and Schleif , 1993 ; Kolin et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Based on this similarity , RhaS and RhaR are predicted to consist of two domains connected by a ﬂexible linker ( 5 , 12 , 29 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaR H165R was instead located in the α-helical region of RhaR-NTD and , unlike RhaS P141L , high protein levels did not explain its elevated activity in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>L-rhamnose induces an allosteric change in RhaS-CTD HTH # 1 L-rhamnose induces an allosteric change in RhaR-CTD HTH # 2 All of the RhaR variants within RhaR-CTD that conferred increased activity in the absence of L-rhamnose substituted small residues ( Ala or Ser ) for the Thr at position 279 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We found a 10-residue region which was highly conserved in RhaS ( residues 246 to 255 ) and RhaR ( residues 282 to 291 ) ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>In addition , deletion of the entire 33 residue N-terminal RhaR extension relative to RhaS had very little affect on RhaR activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>( C ) The position of residue RhaR T279 is shown relative to the positions of residues shown to contact RNAP in RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In each case , the substitutions replaced the RhaS residue with the wild-type RhaR residue at the aligned position .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>R Alternative allosteric effector hypotheses Somewhat surprisingly , we had previous evidence that the mechanism of allosteric activation might differ at some level between RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We were therefore unable to hypothesize which residues might be important for the RhaS and RhaR allosteric effector responses , and turned to random mutagenesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Our first hypothesis was that the RhaS and RhaR mechanism might involve inhibition of activity by residues at their very Ntermini in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Two of the alanine substitutions in 70 , K593A and R599A , were defective at all three of the rha promoters , suggesting similar mechanisms of activation by RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We therefore tested alanin substitutions at these positions in RhaR for defects in transcription-activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We used random mutagenesis to isolate RhaS and RhaR variants with enhanced activation in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We certainly expect , however , that not all aspects of RhaS activation and RhaR activation will be identical .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Figure 7 ( b ) shows that in cells containing the RhaS + / RhaR + plasmid transcription from p1 and p2 is only observed in the presence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>RhaR has 33 additional N-terminal residues compared with RhaS , so we constructed a larger number of N-terminal deletions and tested their ability to activate transcription from the rhaSR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Unlike AraC , Nterminal truncations suggested that RhaS and RhaR do n't use an N-terminal arm to inhibit activity in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>If residues at the very N-terminus of RhaS or RhaR performed functions similar to the AraC Nterminal arm , then one or more N-terminal truncations would be predicted to result in activation of transcription in the absence of L-rhamnose to higher basal levels than wild-type RhaS or RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>ranscription Activation by the DNA-Binding Domain of the AraC Family Protein RhaS in the Absence of Its Effector-Binding Domain T Jason R. Wickstrum ,1 † Jeff M. Skredenske ,1 Ana Kolin ,1 ‡ Ding J. Jin ,2 Jianwen Fang ,3 and Susan M. Egan1 * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas 660451 ; Transcription Control Section , Gene Regulation and Chromosome Biology Laboratory , Center for Cancer Research , National Cancer Institute at Frederick , NIH , Bldg. 469 , P.O. Box B , Frederick , Maryland 217022 ; and Bioinformatics Core Facility , University of Kansas , Lawrence , Kansas 660453 Received 6 April 2007/Accepted 9 May 2007 The Escherichia coli L-rhamnose-responsive transcription activators RhaS and RhaR both consist of two domains , a C-terminal DNA-binding domain and an N-terminal dimerization domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>Differences in the Mechanism of the Allosteric L-Rhamnose Responses of the AraC/XylS Family Transcription Activators RhaS and RhaR Ana Kolin † , # , Vinitha Balasubramaniam † , Jeff Skredenske , Jason Wickstrum ^ , and Susan M. Egan * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas MMARY U S Proteins in the largest subset of AraC/XylS-family transcription activators , including RhaS and RhaR , have C-terminal domains ( CTDs ) that mediate DNA-binding and transcription-activation , and Nterminal domains ( NTDs ) that mediate dimerization and effector-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR was overexpressed as a fusion protein with an intein domain and a chitin-binding domain ( CBD ) at the C terminus of RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>This result suggeststhat the carboxy-terminal domain of RhaR is involved in DNA-binding and that the amino-te '' rmina1 portion is involved in oligomerization ( Isackson & Bertrand , 1985 ; Nelson et al. , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The observation that the RhaR binding site contains four phased A-tracts supports the hypothesis that DNA bending is important at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>This unusual pattern of contacts would be expected if RhaR bound to the pSr binding site by making contacts to the two half sites while looping out the intervening spacer DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>This is in agreement with the previous ﬁndings that AraC and RhaR also interact with their DNA-binding sites within two major grooves of each half-site ( 3 , 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>( b ) RhaR contacts displayed on a DNA helix with a 105 base-pair helical repeat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Firstly , RhaR makes no contacts to the 17 base-pairs of spacer DNA separating the two sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The especially large defect of RhaR D285A may be partly due to a role in DNA-binding based on its alignment with D250 in RhaS ( Fig. 3 ) , which makes base-speciﬁc contacts with DNA ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The pattern of DNA contacts made by RhaR appear identical both in the presence and absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The pattern of contacts made by RhaR is different from those made by other well-studied prokaryot ' ic DNA-binding regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Interestingly , Tobin and Schleif previously found that in the absence of L-rhamnose , full-length RhaR was able to bind to DNA but was not able to activate transcription ( 38 , 39 ) , suggesting that His - RhaR-CTD ( which lacks an L-rhamnose-binding domain ) 6 may be similar in its activity to full-length RhaR in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>In contrast , the activity of the RhaR C-terminal domain expressed alone , RhaR ( 196-311 ) , more closely mimicked L-rhamnose-free full-length RhaR in that both were capable of binding to DNA , but barely if at all ( two-fold or less compared with ΔrhaR ) , able to activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>This hypothesis seems highly unlikely given that RhaR residue D276 is located within the stabilizing helix of one of the HTH DNA-binding motifs and that this 70-contacting residue is responsible for approximately two-thirds of the transcription-activation by RhaR ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>This result indicates that in the presence of RhaR , a-CTD can contribute to transcription-activation at rhaSR , perhaps by interaction-with-DNA and/or RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Speciﬁc residues in the CTDs of RhaS and RhaR had previously been shown to contribute to DNA-binding and transcription-activation ( 4 , 5 , 38 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>In order to test whether the CTD of each protein was sufﬁcient for DNA-binding and transcription-activation , we constructed plasmids expressing truncated versions of RhaS ( encoding His6-RhaS-CTD , consisting of RhaS amino acids 163 to 278 ) , and RhaR ( encoding His6-RhaR-CTD , consisting of RhaR amino acids 196 to 312 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>The second motif was identiﬁed based on the hypothesis that a region of especially high amino acid similarity between RhaS and RhaR ( another AraC-family member ) might contact the nearly identical DNA sequences in one major groove of their half-sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>However , we conclude that a model in which RhaS requires Lrhamnose to effectively bind DNA while RhaR requires L-rhamnose to effectively contact RNAP better fits the available data ( further explained below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The AraC/XylS-family proteins whose DNA-binding domains do not activate transcription well -- including MelR and ToxT ( Howard et al. , 2002 ; Prouty et al. , 2005 ) -- may be similar to RhaR and unable to effectively contact RNAP ( or otherwise activate transcription at a step after DNA-binding ) in the absence of effector ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The RhaS and RhaR Nterminal domains ( NTDs ) function in both ligand binding and dimerization ( A. Kolin and S. Egan , unpublished results ) , while the CTDs are responsible for both DNA-binding and direct contact with RNAP to activate transcription ( 4 , 5 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>In the present study , we tested the C-terminal AraC/XylS-family domains of RhaS and RhaR for their ability to bind DNA and activate transcription in the absence of their NTDs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>( A ) In the presence of effector , both RhaS and RhaR can efficiently bind to DNA and contact RNAP to activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The majority of the proteins in the family , including RhaS and RhaR , consist of the conserved DNA-binding domain , as well as at least one additional domain ( Egan , 2002 ; Gallegos et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Among proteins in this subset , including RhaS and RhaR as well as XylS , MelR , and UreR , this domain is generally required for dimerization and/or effector-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In all studied cases of AraC/XylS-family members , including RhaS and RhaR , the characteristic 99-amino-acid region constitutes a DNA-binding domain ( 3 , 10 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In contrast , RhaR may be an additional example of an AraC/XylS-family protein whose DNA-binding domain alone is capable of little or no transcription-activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>plications for other AraC/XylS-family proteins Im As mentioned above , the DNA-binding domains of many multi-domain AraC/XylS-family proteins appear to fall into two classes : ( 1 ) Those that are capable of high levels of transcription-activation when expressed alone , including RhaS ; and ( 2 ) Those that show little or no activation when expressed alone , including RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Alignment of the amino acid sequences of the second helix-turn-helix DNA-binding motifs of RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Each RhaS and RhaR monomer is predicted to contain two helix-turn-helix DNA-binding motifs and thereby contact two consecutive major grooves of DNA ( 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Each monomer of the dimeric RhaS and RhaR proteins contains two helix-turn-helix motifs and contacts two major grooves of DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Triangular protrusions or indentations represent sites of contact between the DNA-binding domain of RhaS or RhaR and DNA or RNAP , whereas rectangular protrusions represent sites that are not in the correct conformation to make contact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We also previously noticed that RhaS and RhaR were not alone in this difference in the activities of their DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>We hypothesized that the RhaS and RhaR proteins might use a conserved DNA-contacting motif to recognize the conserved outer major grooves of their binding sites ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>This suggests that RhaS and RhaR may share a conserved DNA-binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>Bracketed bases are conserved in the RhaS and RhaR DNA-binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>The model of the RhaS or RhaR C-terminal domain ( aqua ) is based on the crystal structure of the MarA-DNA complex ( 38 ) , while the model of 70 domain 4 ( green ) is based on the crystal structure of the same domain of A from Thermus aquaticus on DNA ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaS and RhaR are shown as dimers with two spheres per monomer to represent the N-terminal domain and C-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaS ( dark gray ) and RhaR ( light gray ) are depicted as dimers , with each monomer consisting of two domains , a C-terminal DNA-binding domain and an N-terminal dimerization domain , depicted as spheres .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>Black line , DNA ; dark gray , the DNA-binding domain of the promoter-proximal monomer of either RhaS or RhaR ; light gray , RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The alignment of this residue with AraC and its position on the MarA structure suggest two different hypotheses to explain the phenotype of RhaR T279A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The RhaR purification procedure consists of three steps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The 33 `` extra '' N-terminal amino acids of RhaR are undistinguished .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>The finding that MarA consists of two structurally similar subdomains ( Rhee et al. , 1998 ) , one including HTH # 1 ( involved in the RhaS mechanism ) , and one including HTH # 2 ( involved in the RhaR mechanism ) , suggests the possibility that the underlying mechanisms of the RhaS and RhaR allosteric responses may be more similar than they appear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The importance of aligned residues AraC R251 and RhaR T279 in their respective mechanisms , however , suggests that the AraC and RhaR mechanisms may share the common principle of preventing contacts with σ70 in the absence of effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>To test whether the - CTD was required for full activation by CRP or RhaR , we reconstituted RNAP from its individual subunits in order to obtain RNAP preparations in which both copies of the - CTD were deleted for all residues after amino acid 235 ( - 235 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>There is also a second component to CRP activation of rhaSR that appears to function through synergism with RhaR and a-CTD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>One explanation for the very high relative 70 activity of RhaR E284A in combination with K593A is that a new interaction may have been created in this case .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>One hypothesis is that RhaR E284A and D285A alter the details of the RhaR DNA interaction such that RhaR is no longer in an ideal position to interact with 70 domain 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Speciﬁc amino acid contacts between 70 and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Model of RhaS or RhaR interactions with 70 domain 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Amino acid contacts between sigma 70 domain 4 and the transcription activators RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22465792" target="_blank">22465792</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21097628" target="_blank">21097628</a>]<br></li>
+<li>Amino acid residues in RhaS or RhaR and 70 that are implicated in interactions are shown in a space-ﬁlling model and labeled , with the RhaR or RhaS residues colored red and the 70 residues colored dark blue .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The unlabeled space ﬁlling residues are RhaR E284 ( pink ) , RhaR D285 ( which is at the same position as RhaS D250 ) , and 70 R608 ( light blue ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The downstream half sites overlap the 35 hexamer by 4 bp , placing RhaS and RhaR in position to make protein-protein contacts with RNAP 70 to activate transcription ( 6 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Interestingly , the RhaS and RhaR residues involved in these contacts with 70 are all located in one of the HTH motifs of the proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>We have also identiﬁed two residues in RhaS and one in 70 RhaR that are required to contact the subunit of RNAP to activate transcription and further have identiﬁed the residues in 70 that each of these activator residues contacts ( 5 , 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>We 've identified two residues in RhaS and one in RhaR and the residues in σ70 that they each contact to activate transcription ( Bhende and Egan , 2000 ; Wickstrum and Egan , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In the absence of the results obtained for 70 599A , one might conclude that RhaR D285 contacts 70 K593 , since 70 K593A had no signiﬁcant defect when combined RhaR D285A ; however , the lack of strict allele speciﬁcity sheds doubt on this conclusion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Using the same genetic loss-of-contact approach , we also tested for potential interactions between 70 and RhaR E284 and D285 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>After determining that alanine substitutions at RhaR residues D276 , E284 , and D285 were all defective for rhaSR activation ( Fig. 5 ) , we used a genetic loss-of-contact approach to test for speciﬁc amino acid interactions between 70 and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>These results ﬁt the criteria for an allele-speciﬁc contact between 70 R599 and RhaR D276 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Using a genetic loss-of-contact approach we have obtained evidence for a speciﬁc contact between RhaR D276 and 70 R599 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We then used a genetic loss-of-contact approach to identify an interaction between RhaR D276 and 70 R599 that is required for RhaR-mediated activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We used a genetic loss-of-contact approach to test potential interactions between RhaR D276 and 70 K593 or R599 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Molecular modeling of the RhaR - 70 complex ( Fig. 4 ) shows that 70 R599 and RhaR D276 are in close proximity , consistent with our interpretation that these two residues interact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Molecular modeling of the RhaR - 70 interaction ( Fig. 4 ) indicates that the negatively charged RhaR residue D276 is very close to the positively 70 70 charged residue R599 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>As mentioned above , molecular modeling is consistent with this interaction since RhaR D276 is in close proximity to 70 R599 in the model ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Further , although a RhaR equivalent of the RhaS D250 interaction with 70 K593 was not identiﬁed , our results do not rule out that such an interaction occurs with RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Evidence for an interaction between RhaR D276 and 70 R599 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In this study we identiﬁed an interaction between RhaR D276 and 70 R599 that is equivalent to our previously identiﬁed interaction of RhaS D241 and 70 R599 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Based on the previous ﬁnding in our lab that a contact between RhaS residue D241 and 70 residue R599 is required for full transcription-activation by RhaS ( 4 ) , we predicted that RhaR D276 , which aligns with RhaS D241 ( Fig. 3 ) , might 70 contact R599 at the rhaSR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Previous results showing an interaction between RhaS D241 and 70 R599 at rhaBAD ( 4 ) led us to investigate whether an interaction between RhaR D276 and 70 R599 might be required for RhaR activation at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In the present study , we ﬁrst identiﬁed two positively charged amino acids in 70 , K593 and R599 , and three negatively charged amino acids in RhaR , D276 , E284 , and D285 , that were important for RhaR-mediated transcription-activation of the rhaSR operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We identiﬁed amino 70 acid residues in the C-terminal domain of and in RhaR that are important for RhaR-mediated transcription-activation at the rhaSR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We wished to determine whether any residues near the C-terminal end of 70 were important for transcription-activation by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>These results sug-70 gested that residues K593 , L595 , R599 , and R608 might make protein-protein contacts with RhaR that are required for transcription-activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Based on these pieces of evidence , we hypothesized that contacts between some or all of the RhaR residues 70 D276 , E284 , and D285 and might be required for maximal transcription-activation by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaR residues D276 , E284 , and D285 are important for rhaSR transcription-activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>In order to test whether the side chains of RhaR residues D276 , E284 , and D285 might play a role in transcription-activation by RhaR , we constructed alanine substitutions at each of these positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The molecular model further shows that two adjacent negatively charged RhaR residues , E284 and D285 , are located near 70 K593 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We also used a molecular model of the RhaR - 70 domain 4 interaction in which the structure of MarA ( 38 ) represented RhaR ( Fig. 4 ) to identify the only two negatively charged RhaR residues , E284 and D285 , that were near 70 K593 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>However , a role in DNA-binding for RhaR D285 does not rule out interactions with 70 ; therefore , all three of these RhaR residues are candidates for speciﬁc contacts with 70 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>These results suggest that RhaR D285A may reduce the ability of RhaR to interact with 70 in a non-allele-speciﬁc manner ; therefore , we ca n't conclude whether RhaR D285 contacts any of these 70 residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaR E284 and D285 were therefore considered candidates for residues that might interact with 70 K593 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Since there is no evidence for an interaction between the 261 determinant and CRP , we propose that residue 255 might interact with RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Our alanine scanning analysis of a-CTD identiﬁed three residues ( 255 , 320 , and 322 ) that might be candidates for an interaction with RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>Given the sequence similarity between RhaS and RhaR , residues 320 and 322 might deﬁne a protein interaction with RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>RhaR D197G is not shown , since it is located just beyond the structured residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The results showed that all three of the alanine substitutions in RhaR were signiﬁcantly defective , highlighting the importance of the wild-type residues at those positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>We also tested the 70 R608A derivative in combination with RhaR D276A and found that it had the same relative defective as it did with wild-type RhaR ( 79 % of wild-type 70 activity in both cases [ data not shown ] ) ; therefore , there was no indication of an interaction between these two residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The numbers of the ﬁrst and last residues shown , as well as those of the residues tested for interactions with 70 , are indicated Fig. 6B show that the K593A 70 derivative was not defective in combination with RhaR D285A ( 104 % of wild-type 70 activity ) but the R599A 70 derivative also became less defective ( 81 % of wild-type 70 activity ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">RhaR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>At the left hand side of Figure 5 are depicted a putative sensor kinase ( YpdA ) with 6 putative transmembrane α-helical segments , a response regulator ( YpdB ) , and a putative transcriptional activator ( YpdC ) homologous to several involved in sugar metabolism ( the AraC/RhaR family ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11361063" target="_blank">11361063</a>]<br></li>
+<li>In the amino acid sequence deduced from a new open reading frame ( maoB ) containing the element necessary for increased monoamine oxidase activity , we found high homology between the C-terminal region of MaoB and the conserved sequences in the C-terminal regions of members of the AraC family ( AraC , MelR , and RhaR , etc. ) , positive transcriptional factors ( 5 , 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631685" target="_blank">8631685</a>]<br></li>
+<li>At the rhaBAD promoter , which is regulated by an AraC family member , RhaR binds immediately adjacent to RNA polymerase and CAP binds upstream from RhaR ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9440505" target="_blank">9440505</a>]<br></li>
+<li>Regarding carbon metabolism , members of the family control the degradation of sugars such as arabinose ( AraC ) , cellobiose ( CelD ) , melibiose ( MelR and MsmR ) , rafﬁnose ( RafR and MsmR ) , rhamnose ( RhaR and RhaS ) , and xylose ( XylR ) ; certain amino acids such as valine ( MmsR ) , arginine ( AdiY ) , and ornithine ( OruR ) ; alcohols such as 1,2-propanediol ( PocR ) ; alkylbenzoates ( XylS ) ; p-hydroxyphenylacetic acid ( HpaA ) ; and herbicides such as S-ethyl dipropylthiocarbamate ( TchR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>Differences in the Mechanism of the Allosteric L-Rhamnose Responses of the AraC/XylS Family Transcription Activators RhaS and RhaR Ana Kolin † , # , Vinitha Balasubramaniam † , Jeff Skredenske , Jason Wickstrum ^ , and Susan M. Egan * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas MMARY U S Proteins in the largest subset of AraC/XylS family transcription activators , including RhaS and RhaR , have C-terminal domains ( CTDs ) that mediate DNA-binding and transcription activation , and Nterminal domains ( NTDs ) that mediate dimerization and effector binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>In contrast , RhaR may be an additional example of an AraC/XylS family protein whose DNA-binding domain alone is capable of little or no transcription activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>plications for other AraC/XylS family proteins Im As mentioned above , the DNA-binding domains of many multi-domain AraC/XylS family proteins appear to fall into two classes : ( 1 ) Those that are capable of high levels of transcription activation when expressed alone , including RhaS ; and ( 2 ) Those that show little or no activation when expressed alone , including RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Expression of the DNA-binding domains alone of several AraC/XylS family proteins resulted in high levels of transcription activation ( Gendlina et al. , 2002 ; Kaldalu et al. , 2000 ; Miyazaki et al. , 2003 ; Poore et al. , 2001 ; Wickstrum et al. , 2007 ) , while expression of the DNA-binding domains of others resulted in little or no transcription activation ( Howard et al. , 2002 ; Prouty et al. , 2005 ) , suggesting that the RhaS and RhaR mechanisms may apply to other AraC/XylS family proteins as well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>The AraC/XylS family proteins whose DNA binding domains do not activate transcription well -- including MelR and ToxT ( Howard et al. , 2002 ; Prouty et al. , 2005 ) -- may be similar to RhaR and unable to effectively contact RNAP ( or otherwise activate transcription at a step after DNA binding ) in the absence of effector ( Fig. 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR , another AraC family protein ( 12 , 13 , 29 , 36 ) , activates rhaSR expression ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>RhaR and RhaS are also homologous to portions of the AraC protein from E. coli K12 ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>The second motif was identiﬁed based on the hypothesis that a region of especially high amino acid similarity between RhaS and RhaR ( another AraC family member ) might contact the nearly identical DNA sequences in one major groove of their half-sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>In all studied cases of AraC/XylS family members , including RhaS and RhaR , the characteristic 99-amino-acid region constitutes a DNA-binding domain ( 3 , 10 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Although membership in the AraC family is deﬁned by sequence similarity within a single domain , RhaS and RhaR share amino acid sequence identity with each other , as well as with AraC , over their entire lengths .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>RhaS and RhaR are members of a subset of the AraC/XylS family that share amino acid sequence similarity with AraC over its entire length ( 9 , 13 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The SoxS protein shows homology with the C-terminal regions of a family of regulatory proteins that includes AraC , the positive regulator of the arabinose operon in E. coli ( 26 ) and other gramnegative bacteria ( 27 ) , and RhaS and RhaR , the positive regulators of the L-rhamnose operon in E. coli ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1653416" target="_blank">1653416</a>]<br></li>
+<li>The RhaS and RhaR proteins are AraC/XylS family transcription activators of the Escherichia coli L-rhamnose catabolic regulon and are 30 % identical to each other ( Egan and Schleif , 1993 ; Egan and Schleif , 1994 ; Tate et al. , 1992 ; Tobin and Schleif , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Differences in the mechanism of the allosteric L-rhamnose responses of the AraC/XylS family transcription activators RhaS and RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24013633" target="_blank">24013633</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>RhaS and RhaR are both members of the AraC/XylS family of transcription activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>RhaS is 30 % identical to RhaR at the amino acid level , and both are members of the AraC/XylS family of transcription activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The rhaSR operon encodes the L-rhamnose-responsive transcription activators RhaS and RhaR , both of which are members of the AraC/XylS family of transcription regulators ( 13 ) , while the rhaBAD and rhaT operons encode the L-rhamnose catabolic enzymes and the L-rham-nose transport protein , respectively ( 2 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>The Escherichia coli rhaSR operon encodes two L-rhamnose-responsive members of the AraC/XylS family of transcription activator proteins , RhaS and RhaR ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The rhaSR operon encodes the two L-rhamnose-speciﬁc activators , RhaS and RhaR ( 9 , 34 , 35 ) , which are both members of the AraC family of transcription activators ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>The three best-characterized proteins in this subgroup of the family are AraC , RhaR , and XylS ( 84 , 224 , 244 ; see below for further details ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>of partially constitutive RhaS and RhaR variants tion la o Is The AraC allosteric response to effector is the only mechanism that has been well characterized in the AraC/XylS family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>AraC family regulators that have been well characterized include AraC , MelR , XylS , RhaR , and RhaS ( 9 , 12 -- 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24013633" target="_blank">24013633</a>]<br></li>
+<li>This group includes AraC , RhaS , RhaR , and MelR from E. coli and XylS from Pseudomonas putida , which are among the most well characterized of the AraC/XylS family proteins ( 4 , 5 , 8 , 12 , 13 , 16 , 19 , 29 , 30 , 38 , 39 , 53 -- 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10940041" target="_blank">10940041</a>]<br></li>
+<li>RhaS and RhaR are 30 % identical to each other and likely arose by gene duplication .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>( b ) Sequence of amino acids 246 to 255 of RhaS , showing high similarity with the aligned region of RhaR ( amino acids 282 to 291 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>Given the 30 % amino acid sequence identity and 62 % similarity between RhaS and RhaR , we attempted to identify the difference between RhaS and RhaR that dictates their difference in optimal CRP binding site position .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by RhaR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Operons which have been experimentally verified as being regulated by CRP Gene function Reference e ROMA Operon nam Other CRP sites regulators b Score KE/wt Position Sites a WT HL HL/wt KE 1.96 0.85 # bglG 1.73 -- 61.5 AACTGCGAGCATGGTCATATTT 11.2 Fis Positive regulation of bgl ( 49 ) operon Uptake of C4-dicarboxylic ( 50 ) acids D-ribose high-affinity ( 51 ) transport system Positive regulator for rhabad ( 52 ) operon Succinate dehydrogenase , ( 53 ) cytochrome b556 Tryptophanase leader peptide ( 54 ) PTS-system enzyme II , ( 55 ) trehalose specific Probable formate-transporter ( 43 ) Mgl repressor , galactose ( 56 ) operon inducer Sn-glycerol-3-phosphate ( 57 ) permease PTS-system , maltose and ( 58 ) glucose-specific II ABC Regulator of melibiose operon ( 59 ) Galactose-binding transport ( 56 ) protein PTS-system , glucose-specific ( 35 ) IIBC component PTS-system protein hpr ( 60 ) Orf , hypothetical protein ( 61 ) Aspartate ammonia-lyase ( 62 ) ( aspartase ) 2.44 1.09 # dctA 1.85 -- 81.5 TTGTGCGAGCCAGCTCAAACTT 14.1 DcuR , ArcA 3.80 0.89 # rbsDACBK R 4.10 -- 61.5 CGTTTCGAGGTTGATCACATTT 9.4 RbsR 1.46 0.86 # rhaSR 1.66 -- 113.5 TGATGTGATGCTCACCGCATTT 12.4 RhaR 2.71 1.11 # sdhCDAB 2.38 -- 83.5 TATCGTGACCTGGATCACTGTT 16.4 ArcA , FNR 1.98 0.95 # 3.09 1.35 # tnaLAB treBC 2.08 -- 4.73 -- 61.5 60.5 GATTGTGATTCGATTCACATTT 19.6 AATTGTGATCTTCGCTGCGTTT 8.8 1.39 # 1.09 # 3.90 1.59 # 2.49 1.22 # galS 41.5 41.5 AGATATGATCTATATCAATTTC 10.1 FNR TGCTGTGACTCGATTCACGAAG 10.4 GalR , GalS 2.21 # 4.51 0.89 # glpTQ ATGTGTGCGGCAATTCACATTT 17.2 GlpR 41.5 2.94 # 6.24 1.71 # malXY TTATGTGACAGATAAAACGTTT 11.2 49.5 1.17 # 1.78 # 2.29 1.20 # 6.78 1.49 # melR AACCGTGCTCCCACTCGCAGTC 5.5 MelR ATCTGTGAGTGATTTCACAGTA 16.6 41.5 41.5 mglBAC 1.13 # 2.11 1.14 # ptsG AAACGTGATAGCCGTCAAACAA 14.3 Mlc 40.5 1.56 # 1.10 # 2.65 # 2.95 1.01 # 1.88 0.97 # 6.29 2.50 # yhfA aspA TTTTATGATTTGGTTCAATTCT 9.5 TAATGTGACGTCCTTTGCATAC 11.7 42.5 44.5 90.5 AGCGGTGATCTATTTCACAAAT 15.5 FNR TAAAGTGATCCAGATTACGGTA 14.2 40.5 94.5 deoCABD TTATTTGAACCAGATCGCATTA 17.1 CytR , DeoR 2.37 -- 3.22 2.37 -- 2-Deoxyribose-5-phosphate ( 21 ) aldolase AATTGTGATGTGTATCGAAGTG 11.9 41.5 90.5 4.38 1.72 # AAATGTGAATTGCCGCACACAT 17.2 FNR , ArcA , ( 57 ) glpACB 3.31 -- Sn-glycerol-3-phosphate dehydrogenase FlhD , GlpR AATGACGCATGAAATCACGTTT 3.3 40.5 92.5 2.17 # 4.26 2.59 # manXYZ PTS enzyme IIAB , mannase-specific GAATGTGACAAGGATATTTTAC 2.4 Mlc , NagC ( 63,36 ) ATTACGGATCTTCATCACATAA 7.6 AAATGTATGACAGATCACTATT 12.6 CytR 40.5 89.5 1.39 # 3.25 1.17 # nupC Permease of transport system ( 64 ) for 3 nucleosides TAGTGTGTGTCAGATCTCGTTT 12.6 40.5 92.5 4.45 1.01 # nupG Transport of nucleosides , permease protein AAATGTTATCCACATCACAATT 20.4 CytR , DeoR 3.25 -- ( 65 ) TTATTTGCCACAGGTAACAAAA 10.6 ATTTCATCTCTATGTCACATTT 7.4 CytR 42.5 93.5 41.5 40.5 1.15 # rpoH Sigma ( 32 ) factor ( 22 ) 2.18 1.75 -- ACTTGTGGATAAAATCACGGTC 2.2 AACTGTGAAACGAAACATATTT 12.9 CytR 2.40 # 3.96 1.19 # tsx Receptor of phage T6 and ( 66 ) colicin K 74.5 AAACGTGAACGCAATCGATTAC 5.8 a The centre of an experimentally verified CRP-binding site relative to corresponding transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>Regarding carbon metabolism , members of the family control the degradation of sugars such as arabinose ( AraC ) , cellobiose ( CelD ) , melibiose ( MelR and MsmR ) , rafﬁnose ( RafR and MsmR ) , rhamnose ( RhaR and RhaS ) , and xylose ( XylR ) ; certain amino acids such as valine ( MmsR ) , arginine ( AdiY ) , and ornithine ( OruR ) ; alcohols such as 1,2-propanediol ( PocR ) ; alkylbenzoates ( XylS ) ; p-hydroxyphenylacetic acid ( HpaA ) ; and herbicides such as S-ethyl dipropylthiocarbamate ( TchR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>The analysis revealed a strong similarity between MarA and the family of positive regulators that includes several regulators involved in carbohydrate-metabolism in Escherichia coli ( AraC , RhaR , RhaS , and MelR ) , Erwinia corotovora ( AraC ) , and Pseudomonas putida ( XylS ) , virulence in Yersinia enterocolitica ( VirF ) and E. coli ( Rns ) , and oxidative stress response in E. coli ( SoxS ) ( 1 , 23 , 31 ) ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8383113" target="_blank">8383113</a>]<br></li>
+<li>Also regulates its own synthesis Probable transcriptional activator of genes and/or operons responsible of multidrug-resistance Transcriptional activator of the operon for rafﬁnose catabolism Probable transcriptional activator that confers multidrug-resistance phenotype Transcriptional activator of the operon rhaSR involved in the regulation of rhamnose ca-tabolism Similar to E. coli RhaR LcrF Yersinia pestis 271 116 SP : P28808 SP : Q51872 TE : P73364 SP : Q47129 LumQ Photobacterium leiognathi LumQ Synechocystis sp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>( b ) Construction RhaR overproducing plasmid , pJTCl14 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>S1 mapping located transcriptional start points and showed that RhaR , and possibly RhaS , positively regulate transcription from thcb structural gene promoters as well as transcription from their own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>RhaR plays a major role in positively regulating transcription of rha8R mRN .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>yclic AMP Receptor Protein and RhaR Synergistically Activate C Transcription from the L-Rhamnose-Responsive rhaSR Promoter in Escherichia coli Jason R. Wickstrum ,1 † Thomas J. Santangelo ,2 † ‡ and Susan M. Egan1 * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas 66045,1 and Department of Molecular Biology and Genetics , Cornell University , Ithaca , New York 148502 Received 9 May 2005/Accepted 21 July 2005 The Escherichia coli rhaSR operon encodes two AraC family transcription activator proteins , RhaS and RhaR , which regulate expression of the L-rhamnose catabolic regulon in response to L-rhamnose availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>Tobin & Schleif ( 1990a ) found that RhaR protein directly activates rbaSR transcription in response to L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8757746" target="_blank">8757746</a>]<br></li>
+<li>RhaR activates transcription of rhaSR , and RhaS activates transcription of the operon that encodes the L-rhamnose catabolic enzymes , rhaBAD , as well as the operon that encodes the L-rhamnose-transport protein , rhaT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">RhaR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>It would , however , be amazing if a dimer of RhaR bound to each of these sequences since they are so dissimilar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>This operation introduced a 4 bp insertion , which produced a termination codon at position 1595 within the RhaR coding sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>It is interesting to note that most of the homology between AraC , RhaS and RhaR is found in the C terminus , perhaps the two rha proteins bind their target sites using a similar sequence located in their C termini .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>Binding experiments performed previously ( Tobin & Schleif , 1987 ) and those performed in this study shoviredthat RhaR binds specifically to the inverted-repeat element contained upstream from the psi promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The formation of a RhaR induced micro-loop allows both half sites of the inverted-repeat structure to be held in close proximity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Another possible way that CRP and RhaR could bind cooperatively would be if CRP could bind to site 2 but only cooperatively as part of a complex with RhaR and CRP at site 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR was reported to activate the rhaS promoter by binding to a site that spans positions -83 to -28 relative to the rhaS transcriptional start site ( Egan and Schleif , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18808381" target="_blank">18808381</a>]<br></li>
+<li>Oligonucleotides 2867 ( 5 - CACGAATTCTGTGATGCTCACCGCAGTATCT TGAAAAATCGACG-3 ) and 2868 ( 5 - CACGAATTCTGTGATGCTCACCG CATGTATCTTGAAAAATCGACG-3 ) were used with oligonucleotide 896 , which placed the CRP binding site ( underlined ) 2 bp and 3 bp upstream of the RhaR binding site , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The CRP 2 and CRP 3 constructs replaced the native CRP site ( 20 bp upstream of the RhaR binding site ) with the same sequence 2 or 3 bp upstream as described in the text .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>This ﬁnding indicates that CRP can function as a coactivator from a site 21 bp , but not 2 or 3 bp , upstream of RhaR , and is consistent with the hypothesis that RhaS and RhaR differ in the position of the CRP binding site that is optimal for coactivation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>We compared the expression from the rhaS-lacZ fusions with CRP sites 2 and 3 bp upstream of the RhaR binding site to expression from a fusion with no CRP binding site [ ( rhaS-lacZ ) 85 ] and a fusion with a CRP site at the wild-type position [ ( rhaS-lacZ ) 128 ] ( Table 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>However , the CRP site 3 bp upstream of RhaS ( bound at the RhaR binding site ) enabled a 3.5-fold increase in expression relative to no CRP binding site [ ( rhaS-lacZ ) 85 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>This placed the CRP site 2 bp upstream of the RhaR binding site [ ( rhaS-lacZ ) CRP 2 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Since the CRP site at rhaBAD is 3 bp upstream of the RhaS binding site , we placed the CRP site in the second rhaS-lacZ fusion 3 bp upstream of the RhaR binding site [ at 93.5 , ( rhaS-lacZ ) CRP 3 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Similarly , RhaR activates transcription of the rhaSR operon by binding as a dimer to a site that overlaps the RNAP binding site by 4 bp and extends upstream to 82 ( Fig. 1 ) ( 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>RhaR likely binds to a region of the DNA upstream from the rhaSR RNA polymerase binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>Taken together , our results indicate that RhaS negative autoregulation involves RhaS competition with RhaR for binding to the RhaR binding site at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>RhaS binds to the RhaR binding site at rhaSR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>We next considered the hypothesis that RhaS might compete with RhaR for binding to the RhaR binding site at the rhaSR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>There are several other palindromic sequences contained within RhaR binding site ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Summary of the palindromic sequences within the RhaR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>( C ) The sequences of the RhaS and RhaR binding sites ( bs ) are aligned .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The RhaR binding site is a black box labeled `` RhaR bs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>In-viw dimethyl sulfate footprinting and DBase I footprinting indicate that the RhaR prot , ein may bind to DNA elements upstream from its RPI ; A polymerase binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>R 'S + R+S - R-S + R-S - G , A L-Rhamnose - + - t - + - + ( e ) RhaR , but not RhaS , binds to the inverted-repeats upstream from its gene 's RNA polymerase binding site It is possible that RhaS and RhaR positively regulate their gene expression by binding to the two upstream inverted-repeat elements in the ps , promoter ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>1990 ) demonstrate that RhaR is an r,-rhamnose-dependent , DNA-binding protein that binds specifically to an inverted-repeat DNA sequence located upstream from the RNA polymrrase binding site within the pSr promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1688950" target="_blank">1688950</a>]<br></li>
+<li>¬ ( e ) RhaR makes speci $ c DNA contacts to its pSr binding site We used chemical interference assays ( Hendrickson & Schleif , 1984 ; Brunelle & Schleif , 1987 ) to determine the nucleotides and phosphate residuesto which RhaR makes specific contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>Once the RhaR protein is bound , the retardation as a function of the location of the binding site is much larger , and the bending angle of the DNA appears to be 160 '' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>This observation is interesting in light of the fact that the AraC protein appears to recognize a DNA-binding site that contains a direct repeat structure ( Brunelle & Schleif , 1989 ) , while the RhaR protein recognizes an inverted-repeat binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>On the other hand , some regulators of the same family , including RhaS and RhaR , recognize an inverted-repeat with a gap of 16 or 17 bp ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9371449" target="_blank">9371449</a>]<br></li>
+<li>Depending upon the protein , these approximately 20 bp sequences can be arranged as direct or inverted-repeats and the distance between them also varies with the protein , e.g. 4 bp for AraC but 16 or 17 for RhaS and RhaR ( Bhende and Egan , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15066032" target="_blank">15066032</a>]<br></li>
+<li>at rhaBAD are separated by 3 bp , while the CRP and RhaR sites at rhaSR are separated by 21 bp ( 12 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The binding sites for both RhaS and RhaR overlap the 35 region of their respective core promoters by 4 bp , placing them in ideal positions to interact with the 70 subunit of RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>( f ) The RhaR-DNA complex forms a DNA microloop The RhaR contacts to the pSl site are unusual , in that the protein makes no contacts to the 17 basepair DNA sequence between the half sites of the inverted-repeat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>The DNA binding sites for RhaS and RhaR dimers consist of two 17 bp half-sites separated by 16 or 17 bp , respectively , and overlapping the − 35 promoter hexamer by four bp ( Egan and Schleif , 1994 ; Tobin and Schleif , 1990a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+				<label class="SIT_collapse_similarity" for="sit_similarity_36">
+The long binding sites for RhaS and RhaR each consist of two 17-bp imperfect inverted-repeat half sites that are separated by 16 or 17 bp of uncontacted DNA ( 10 , 43 , 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></label>
+<input id="sit_similarity_36", type="checkbox">
+<div class="SIT_similar">
+<li>The RhaS and RhaR DNA binding sites consist of two imperfect 17-bp inverted-repeat half sites that are separated by 16 or 17 bp ( 12 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li></div>
+<li>The 49-bp DNA fragments each contained one 17-bp RhaS or RhaR binding half site ( rhaI1 , rhaI2 , rhaI3 , or rhaI4 ) ﬂanked by the same 16-bp sequences for each half site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>We tested this using in vitro electrophoretic mobility shift assays with 49-bp DNA fragments , each containing one of the 17-bp half sites for RhaR or RhaS binding and containing identical ﬂanking DNA sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>In spite of the lack of evidence for DNA looping by RhaS or RhaR , binding of an Nterminal arm to their CTDs could , in principle , prevent binding to the adjacent DNA half-sites from which they activate transcription without requiring binding to alternative distant sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>RhaR binds to the psrbinding site by contacting two major grooves of the DNA at each half site while looping out the 17 base-pairs of spacer DNA to form a DNA microloop .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2405166" target="_blank">2405166</a>]<br></li>
+<li>We hypothesized that the RhaS and RhaR proteins might use a conserved DNA-contacting motif to recognize the conserved outer major grooves of their binding sites ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>As previously noted ( 5 , 12 ) , the DNA sequences of the outer major grooves of the RhaS and RhaR binding sites at the rhaBAD and rhaSR promoters , respectively , are nearly identical ( Fig. 1C ) , raising the possibility that RhaS might be capable of binding to the RhaR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by RhaR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Genes encoding alanine substitution derivatives of RhaR D276A and RhaR D285A were constructed by oligonucle-otide-directed mutagenesis of rhaR in pGEM-11Zf ( ) ( Promega , Madison , Wis. ) , using the GeneEditor kit ( Promega ) and oligonucleotides 2208 and 2210 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>Transcription activation by RhaR T279A in RhaR-CTD expressed alone ( RhaR ( 196-311 ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>On the other hand , RhaR autoregulates its own synthesis and the kinetics of its induction are fast .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>RhaR D197G is not shown , since it is located just beyond the structured residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>It was not possible to use a rhaS rhaR strain , since rhaS expression requires RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>Transcription levels were normalized to the divergent p82 promoter , which does not respond to RhaR , CRP , L-rhamnose , or cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR H165R was instead located in the α-helical region of RhaR-NTD and , unlike RhaS P141L , high protein levels did not explain its elevated activity in the absence of L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>S1 mapping located transcriptional start points and showed that RhaR , and possibly RhaS , positively regulate transcription from thcb structural gene promoters as well as transcription from their own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>R 'S + R+S - R-S + R-S - G , A L-Rhamnose - + - t - + - + ( e ) RhaR , but not RhaS , binds to the inverted repeats upstream from its gene 's RNA polymerase binding site It is possible that RhaS and RhaR positively regulate their gene expression by binding to the two upstream inverted repeat elements in the ps , promoter ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>This result and the ﬁnding that these variants had substitutions that made the RhaS amino acid sequence more like that of RhaR further support our conclusion that RhaS autoregulates rhaSR expression by binding to the RhaR binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>We sequenced the rhd gelle and found that it , encoded two proteins , RhaS and RhaR , both of which have extensive homology to the araC '' gene product , the positive act ) ivator of the arabinose operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3316663" target="_blank">3316663</a>]<br></li>
+<li>encoded in the same operon , there apparently is sufﬁcient RhaR to saturate the rhaSR promoter in the absence of L-rhamnose , as there is no detectable lag in rhaSR mRNA accumulation after L-rhamnose induction ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>The regulation of rbaBAD expression was shown to respond to a cascade in which RhaR induced rhaSR expression , and RhaS in turn induced rhaBAD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8757746" target="_blank">8757746</a>]<br></li>
+<li>RhaS negative autoregulation likely functions to limit positive autoregulation of rhaSR by RhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>RhaR , another AraC family protein ( 12 , 13 , 29 , 36 ) , activates rhaSR expression ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10464186" target="_blank">10464186</a>]<br></li>
+<li>Egan * Department of Molecular Biosciences , University of Kansas , Lawrence , Kansas Received 13 June 2008/Accepted 30 September 2009 The Escherichia coli RhaR protein activates expression of the rhaSR operon in the presence of its effector , L-rhamnose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>In the presence of L-rhamnose , RhaS and RhaR are required to activate transcription of the operons encoding the L-rhamnose catabolic enzymes ( rhaBAD ) ( see Fig. 1 ) and the L-rhamnose uptake protein ( rhaT ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>RhaS activates transcription from rhaBAD , and transcription from the rhaS gene is controlled by RhaR ( 63 , 244 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>Upon encountering L-rhamnose , RhaR binds upstream of rhaSR and activates transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The rhaSR operon encodes the L-rhamnose-responsive transcription activators RhaS and RhaR , both of which are members of the AraC/XylS family of transcription regulators ( 13 ) , while the rhaBAD and rhaT operons encode the L-rhamnose catabolic enzymes and the L-rham-nose transport protein , respectively ( 2 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR activates transcription of rhaSR , and RhaS activates transcription of the operon that encodes the L-rhamnose catabolic enzymes , rhaBAD , as well as the operon that encodes the L-rhamnose transport protein , rhaT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+<li>The Escherichia coli rhaSR operon encodes two L-rhamnose-responsive members of the AraC/XylS family of transcription activator proteins , RhaS and RhaR ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19854903" target="_blank">19854903</a>]<br></li>
+<li>The rhaSR operon encodes the two L-rhamnose-speciﬁc activators , RhaS and RhaR ( 9 , 34 , 35 ) , which are both members of the AraC family of transcription activators ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11073923" target="_blank">11073923</a>]<br></li>
+<li>RhaS is encoded in an operon that also encodes a second L-rhamnose-responsive transcription activator , RhaR ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>The other L-rhamnose-responsive activator protein , RhaR , activates transcription of the rhaSR operon ( 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>RhaR activates transcription of the operon that encodes the two activator proteins , rhaSR ( 37 , 38 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513476" target="_blank">17513476</a>]<br></li>
+<li>RhaR activates transcription of the rhaSR operon , which encodes RhaS and RhaR ( Tobin and Schleif , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18366439" target="_blank">18366439</a>]<br></li>
+<li>Tobin and Schleif ﬁrst demonstrated RhaR activation of rhaSR transcription in vitro ( 31 ) ; however , at that time it was not known that CRP also regulates rhaSR expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16166533" target="_blank">16166533</a>]<br></li>
+<li>In the present study , we ﬁrst identiﬁed two positively charged amino acids in 70 , K593 and R599 , and three negatively charged amino acids in RhaR , D276 , E284 , and D285 , that were important for RhaR-mediated transcription activation of the rhaSR operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15342598" target="_blank">15342598</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

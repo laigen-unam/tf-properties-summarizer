@@ -1,0 +1,612 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - FlhDC</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">FlhDC</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">FlhDC transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>In contrast , HilD positively regulates FlhDC ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>Flagellum number can be increased by increasing either FlhDC levels or s28 activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>CsrA directly increases FlhDC expression posttranscriptionally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>TABLE 2 Plasmids used in this study Replication origin pACYC pACYC pACYC pACYC pACYC pACYC Plasmid Expressed protein Expression vector Expression vector Expression vector FlhDC FliL MotAB Resistance Kanamycin Induction Arabinose Arabinose Arabinose Arabinose Arabinose Arabinose Source or reference 38 38 38 J. Mireles This study This study pBAD18-Kan pBAD30 pBAD33 pFlhDC pJP164 pJP192 Ampicillin Chloramphenicol Chloramphenicol Ampicillin Kanamycin Increasing ﬂagellar numbers means an increase in the number of motors , effectively increasing the force available for bacteria to move on harder agar surfaces , which likely present higher frictional resistance to motion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23264575" target="_blank">23264575</a>]<br></li>
+<li>Nutrient Deprivation The strong induction of the bio operon ( Table 2 ) is fully consistent with results suggesting a role for the bioB gene in egg white survival at 42 ◦ C ( Raspoet et al. , 2014 ) and can be considered to represent a rational physiological response of S. Enteritidis to the poor biotin avaibility in egg white resulting from the presence of avidin , a powerful biotin-chelation protein ( Banks et al. , 1986 ; Beckett , 2007 ) that thus supports the TABLE 10  Continued Fur/RyhB regulation Other regulation Fe content 7 m in 25 min 45 min nuoH NADH dehydrogenase subunit H 0.22 0.34 0.33 No nuoI NADH dehydrogenase subunit I 0.24 0.36 0.36 Yes [ 3 , 5 ] [ 3 , 5 ] CpxAR [ 13 ] CpxAR [ 13 ] nuoJ NADH dehydrogenase subunit J 0.27 0.39 0.39 No nuoK NADH dehydrogenase subunit K 0.27 0.42 0.41 No [ 3 , 5 ] [ 3 , 5 ] CpxAR [ 13 ] CpxAR [ 13 ] nuoL NADH dehydrogenase subunit L 0.31 0.56 0.56 No nuoM NADH dehydrogenase subunit M 0.39 0.61 0.64 No [ 3 , 5 ] [ 3 , 5 ] CpxAR [ 13 ] CpxAR [ 13 ] pﬂA Pyruvate formate lyase-activating enzyme 1 0.65 0.56 0.44 Yes pﬂB Formate acetyltransferase 1 n.s. 0.45 0.50 No pﬂE Putative pyruvate formate-lyase 3 activating enzyme 0.14 0.15 0.12 No pﬂF Putative formate acetyltransferase 3 0.14 0.16 0.14 No [ 12 ] sdhA Succinate dehydrogenase ﬂavoprotein subunit n.s. 0.60 0.33 No [ 2 , 5 , 10 , 14 ] FlhDC [ 4 ] , CpxAR [ 13 ] sdhB Succinate dehydrogenase iron-sulfur subunit n.s. n.s. 0.45 Yes [ 2 , 5 , 6 ] FlhDC [ 4 ] , CpxAR [ 13 ] [ 2 , 5 , 6 , 9 , 14 ] FlhDC [ 4 ] , CpxAR [ 13 ] sdhC Succinate dehydrogenase cytochrome b556 large membrane 0.50 0.63 0.44 Yes subunit 0.35 Yes [ 2 , 5 , 6 , 14 ] FlhDC [ 4 ] , CpxAR [ 13 ] sdhD Succinate dehydrogenase cytochrome b556 small membrane 0.41 0.60 subunit 0.45 0.45 0.13 0.05 0.35 No 0.05 No torT TMAO reductase system periplasmic protein TorT [ 9 ] FlhDC [ 4 ] yﬁD Autonomous glycyl radical cofactor GrcA , stress-induced alternate pyruvate formate-lyase subunit Highlighted fold changes correspond to up-regulated ( dark gray ) and down-regulated ( light gray ) genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>The fdo and hyc genes are also regulated by PspF in response to high pH response ( Jovanovic et al. , 2006 ) and other genes are regulated by FlhDC ( Table 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>Moreover , Fur , PspF and OmpR/EnvZ regulate FlhDC ( Stojiljkovic and Hantke , 1992 ; Campoy et al. , 2002 ; Jovanovic et al. , 2006 ; Samanta et al. , 2013 ) and PspF is negatively regulated by RpoH involved in the heat-shock response ( Brissette et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_8">
+Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. and Hughes , K.T. ( 2012 ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></label>
+<input id="act_similarity_8", type="checkbox">
+<div class="ACT_similar">
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012 ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012a ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li>
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012b ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li></div>
+<li>Results showed that premixing of STM1697 and FlhDC and purified STM1697 -- FlhD4C2 complex all exhibited DNA binding activity demonstrating that STM1697 does not prevent FlhD4C2 from binding to DNA , even at high concentration , unlike its homologue YdiV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+<li>Secretion of FliD upon HBB completion allows FliT to-bind FlhDC complex and inhibit FlhD C activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+<li>YdiV binds to FlhD and prevents the FlhD4C2 complex from binding to ﬂagellar class 2 promoters and targets FlhDC for ClpXP-dependent proteolytic degradation ( 34 , 48 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>The YdiV protein binds to the FlhD subunit and prevents binding of FlhDC to Class 2 promoters by targeting FlhDC complex to ClpXP-mediated proteolytic degradation ( Wozniak et al. , 2009 ; Takaya et al. , 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>RESULTS FliZ activates hilA through HilD , independent of FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20889744" target="_blank">20889744</a>]<br></li>
+<li>The ClpPX protease normally degrades the master flagella regulator FlhDC and when it is absent , strains become hyperflagellated [ 19,26,27 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25569606" target="_blank">25569606</a>]<br></li>
+<li>The QseC sensor kinase regulates S. Typhimurium motility The gene `` cascade '' for motility is regulated by the master regulators , FlhDC [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17997077" target="_blank">17997077</a>]<br></li>
+<li>Maximal swarming was observed when all three , FlhDC , MotAB , and FliL , were increased simultaneously , conditions that allowed the bacteria to move out substantially on 1 % agar .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23264575" target="_blank">23264575</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+T 1,000 10 B K2 Activation of HBB expression by FlhDC Michaelis constant for HBB activation by FlhDC Activation of FlgM by FlhDC 5 K2m 10 9 K3 Michaelis constant for FlgM activation by FlhDC Activation of FlgM by FliA Michaelis constant for FlgM activation by FliA 3 K3m K7 5 1 K7m KA.M / KAM 333 Ratio of rate constant of FliA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>FlgM complex formation/break Activation of FliAZ by FlhDC Michaelis constant for FliAZ activation by FlhDC K4 3 8 K4m K8 10 6 0.1 Activation of FliAZ by FliA K8m Michaelis constant for FliAZ activation by FliA Secretion rate constant from HBB Ksec K6 8 Activation of class 3 by FliA K6m 40 Michaelis constant for class 3 activation by FliA Activation of FliDT by FlhDC 1 K9 Michaelis constant for FliDT activation by FlhDC Activation of FliDT by FliA Michaelis constant for FliDT activation by FliA 1 K9m K10 1 1 K10m K12 0.1 Activation of FliT by FlhDC K12m 10 50 Michaelis constant for FliT activation by FlhDC Michaelis constant for FliT activation by FliA K13m KD.T / KDT 1,080 Ratio of rate constant of FliD.FliT complex formation/break Maximal rate of expression of YdiV Repression coefﬁcient of YdiV by FliZ 0.35 30 K C Starvation status of the cell Degradation constant Degradation constant X Between 0 and 1 Parameters without references in the description column were approximated to best represent the experimental data 0.1 1 Kd Kd2 10 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></li></div>
+<li>While class 2 products build up the HBB , FliZ activates FlhDC complex and RﬂM acts as a repressor of ﬂhDC transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+<li>In this screen , a class of T-POP insertions were also isolated that lost FlhDC autorepression but only in the presence of tetracycline ( Tc ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>Under normal growth conditions , FlhDC is an autogenous repressor of ﬂhDC expression , but in the presence of increased s28 activity , FlhDC is an autogenous activator of ﬂhDC expression ( 63 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>It is important to note that rﬂM requires the presence of FlhDC in order to be expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+<li>In summary , we observed down-regulation of most of the genes involved in energy generation by respiration and these effects are likely controlled by Fur/RfrAB , CpxAR , PspF , and/or FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>It was reasonable to hypothesize , therefore , that activation of the HilA regulon by SirA may be indirect and mediated by the FlhDC regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>In E. coli , it was reported that QseB regulates bacterial ﬂagella and motility by directly binding to the high or low afﬁnity binding site of the ﬂhDC promoter which codes the ﬂagellar master regulator FlhDC [ 7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28062286" target="_blank">28062286</a>]<br></li>
+<li>The single class 1 promoter responds to information related to the metabolic and environmental state of the cell to decide when to transcribe the genes for the FlhDC activator complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20639318" target="_blank">20639318</a>]<br></li>
+<li>Our results suggest that ClpA , ClpX , and ClpP are involved in FlgM degradation independent of FlhDC ; the increased FlgM secretion in the clpA null strain was due to an increased cellular level of FlgM alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706743" target="_blank">24706743</a>]<br></li>
+<li>Consequently , the flagellar regulatory cascade is turned off in a complex regulatory network that induces the proteolysis of the flagellar regulator FlhDC , and also induces the synthesis of biofilm matrix components curli and cellulose by transcriptional activation of the biofilm regulator , CsgD ( Brown et al. 2001 ; Pesavento et al. 2008 ; Ogasawara , Yamamoto and Ishihama 2010 ; Liu et al. 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26293911" target="_blank">26293911</a>]<br></li>
+<li>FliT negatively regulates FlhDC activity by inhibiting promoter binding of the FlhDC complex and increases ClpXP-dependent proteolysis of the FlhC subunit ( Yamamoto and Kutsukake , 2006 ; Sato et al. , 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Besides positive regulation of FlhDC , CsrA directly or indirectly inhibits the expression of several GGDEF and/or EAL domain proteins involved in motility repression including the DGCs STM4551 and STM1987 and the degenerated EAL proteins STM1344 and STM1697 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>Additionally , we show that HilD can induce the expression of gtgE-cat , phoH-cat , sinR-cat , lpxR-cat , SL3812-cat and SL4247-cat , but not SL1896-cat , transcriptional fusions , in the E. coli MC4100 strain , and thus in the absence of other Salmonella-specific regulators or FlhDC ; consistently , HilD bound to the regulatory regions of gtgE , phoH , sinR , lpxR and SL4247 , but not to that of SL1896 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>TviA alters expression of S. Typhimurium flhC and motility in response to osmolarity Expression of the flagellum is controlled by the master regulator FlhDC ( reviewed in [ 9 ] ) and is reduced under low osmolarity in S. Typhi compared to S. Typhimurium [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20808848" target="_blank">20808848</a>]<br></li>
+<li>We propose that in the absence of RcsC signalling , phosphorylated levels of RcsB are depleted enabling de-repression of FlhDC and motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22291596" target="_blank">22291596</a>]<br></li>
+<li>At the transcriptional level , the expression of FlhDC as well as of McaS is activated by cAMP-CRP , i.e. , when nutrient availability is suboptimal and cells are in the post-exponential phase of the growth cycle .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>The expression of the FlhDC regulon is decreased in the presence of sirA ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>In contrast to the expression of the FlhDC regulon , the expression of the HilA regulon is increased by sirA ( 2 , 5 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>To investigate whether HilD induces the expression of SL1896 through FlhDC , a ΔflhDC mutant derivative of S. Typhimurium SL1344 was constructed and the activity of the SL1896-cat fusion was determined in this strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>As we considered it likely that the strong effect of CsrA on the mRNA levels of STM3611 was mediated , at least partly , by the indirect regulation of STM3611 through FlhDC and FliA , we attempted to complement the csrA mutation with plasmid-borne expression of fliA and flhDC , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919539" target="_blank">19919539</a>]<br></li>
+<li>Interestingly , FlhDC induces the expression of FliZ that somehow increases activity of HilD and thus the expression of the SPI-1 genes36 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>Since the RNA-binding protein CsrA activates FlhDC expression and downregulates the expression of the biofilm-related pga gene products [ 50,52 ] as well as that of several c-di-GMP-producing enzymes that are involved in PGA production [ 51,53,54 ] , this induction of CsrB/CsrC may be crucial for throwing the switch from the production of flagella to that of the biofilm matrix component PGA [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>For example , if S. Paratyphi A still secretes a putative anti-FlhDC factor in the absence of the ﬁlament while S. Typhimurium blocks its secretion under such conditions , the induction of the motility regulon in the former ( Fig. 7A ) and its repression in the latter ( Fig. 7C and D ) can be explained .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26056383" target="_blank">26056383</a>]<br></li>
+<li>Levels of master regulators , FlhD and FlhC , in the ClpXP protease-depleted mutant Our previous study showed that the level of bgalactosidase activity in cells carrying the ﬂhD-lac fusion Turnover of FlhDC by ClpXP protease 445 was not changed , in contrast to the marked increase of bgalactosidase levels expressed from the ﬂiC-lac fusion , by mutations in either clpX or clpP ( Tomoyasu et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12675803" target="_blank">12675803</a>]<br></li>
+<li>We have recently identiﬁed RﬂM ( formerly EcnR ) as a negative regulator of ﬂhDC transcription that is activated by FlhDC in an FlhDC-RﬂM feedback loop .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>FliT is a negative regulator that inhibits class 2 transcription by direct interaction with the FlhDC activation proteins ( Yamamoto and Kutsukake , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17352921" target="_blank">17352921</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">FlhDC protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>The mutations that were used are located in the conserved 10 and 35 promoter regions or are located in or near the FlhDC binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20639318" target="_blank">20639318</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by FlhDC</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>MltC/E 2672 BarA 1798 RcsD RcsC EnvZ CpxA Motility FliG/M MlrA OmpR CpxR RcsB IHF Crl SirA RpoS FliA RpoD H-NS CsrB/C RprA 3375 csgDEFG csgBAC Curli FlhDC ArcZ expression CsrA Hfq 1697 CsgD P SdsR bcsABZC bcsEFG 1344 MicA BcsE Cellulose synthesis 3611 4451 P CsgD BcsA 1703 adrA yihvW yihU -- yshA 1827 AdrA 1987 bapABCD YihW 2123 4264 3388 DsbA/B O-antigen capsule biosynthesis BapA secretion Figure 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>A A R A A A A A HU MarT SpvR FimWYZ FlhDC FliZ A A A A A R A R A A R CsgD RtsB A A * R * R Lrp Lon DnaK Fur Mlc RNase E R R R A A A A R FadD Pag A R SlyA A a A , activation ; R , repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23554419" target="_blank">23554419</a>]<br></li>
+<li>In contrast , HilD positively regulates FlhDC ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_4">
+Nature 249:73 -- 74 Takaya A , Erhardt M , Karata K , Winterberg K , Yamamoto T , Hughes KT ( 2012 ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25972986" target="_blank">25972986</a>]<br></label>
+<input id="rp_similarity_4", type="checkbox">
+<div class="RP_similar">
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. and Hughes , K.T. ( 2012 ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012 ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27206164" target="_blank">27206164</a>]<br></li>
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012a ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li>
+<li>Takaya , A. , Erhardt , M. , Karata , K. , Winterberg , K. , Yamamoto , T. , and Hughes , K.T. ( 2012b ) YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24127899" target="_blank">24127899</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_9">
+[ 76 ] A. Takaya , et al. , YdiV : a dual function protein that targets FlhDC for ClpXP-de-pendent degradation by promoting release of DNA-bound FlhDC complex , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29369799" target="_blank">29369799</a>]<br></label>
+<input id="rp_similarity_9", type="checkbox">
+<div class="RP_similar">
+<li>YdiV : a dual function protein that targets FlhDC for ClpXP-dependent degradation by promoting release of DNA-bound FlhDC complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25315056" target="_blank">25315056</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=29473025" target="_blank">29473025</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24706743" target="_blank">24706743</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25161191" target="_blank">25161191</a>]<br></li></div>
+<li>Characterization of a novel gene , wosA , regulating FlhDC expression in Proteus mirabilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19942438" target="_blank">19942438</a>]<br></li>
+<li>We have recently identiﬁed RﬂM ( formerly EcnR ) as a negative regulator of ﬂhDC transcription that is activated by FlhDC in an FlhDC-RﬂM feedback loop .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>Evidence that ﬂhDC undergoes autogenous positive regulation ( Kutsukake 1997 ) led us also to compare ﬂhDC expression in FlhDC and FlhDC backgrounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12524328" target="_blank">12524328</a>]<br></li>
+<li>Another Class 2 gene product , FliZ , is a positive regulator of ﬂagellar Class 2 and Class 3 gene transcription , which increases FlhDC activity by two distinct mechanisms ( Kutsukake et al. , 1999 ) ( Figure 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>Also Ecl1 and Scl4 share many similarities : Both include genes for cell-motility and are thus regulated by FlhDC in each case , and both also include genes for aerobic-respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23427276" target="_blank">23427276</a>]<br></li>
+<li>Thus , RtsB both negatively ( through FlhDC and YddX ) and positively ( indirectly , through FlgM ) regulates expression of ﬂagellar motility genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>Taken together , the results from our clustering analysis show that many genes known to be regulated by HilD , directly or through HilA , InvF or FlhDC , including the SPI-1 genes themselves and genes located in different genomic islands , as well as flagellar/chemotaxis genes4 ,34,40,41 , are indeed co-expressed with SPI-1 ( Fig. 1 ; Table S1 in Supplementary File 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>The genes identiﬁed can be grouped into two main subregulons , the FlhDC regulon , which controls motility and chemotaxis ( 55 genes ) , and the HilA regulon , which controls invasion-associated TTSS-1 ( 40 genes ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>The expression of ﬂagella has been shown to be important in Salmonella bioﬁlm formation , especially in the early stages ( Teplitski et al. 2006 ; Crawford et al. 2010 ) , and is regulated by FlhDC , which is a global regulator of ﬂagella production ( Tanabe et al. 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24735176" target="_blank">24735176</a>]<br></li>
+<li>FlhDC controls expression of over 90 genes in S. typhimurium ( Frye et al , 2006 ) , including ﬂiC , which encodes ﬂagellin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24056837" target="_blank">24056837</a>]<br></li>
+<li>We observed direct regulation of 4 TFs ( FlhDC , BssR , SinR , and NhaR ) as well as of two other proteins that regulate transcription ( FlgM and DksA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>CsrA , an RNA-binding protein , regulates flagellar gene-expression by enhancing translation of flhDC mRNA , and DnaK , a chaperone protein , converts the native FlhDC to a functional protein form ( 14 -- 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_23">
+FliA alone or with FlhDC , activates expression of the class III operon genes , which encode the filament protein , hook-associated proteins , motor proteins , and chemotaxis proteins [ 39,40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22291596" target="_blank">22291596</a>]<br></label>
+<input id="rp_similarity_23", type="checkbox">
+<div class="RP_similar">
+<li>FliA alone or with FlhDC complex , activates expression of the class III operon genes encoding motor proteins , hook-associated proteins , the filament protein , and chemotaxis proteins [ 39,40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22291596" target="_blank">22291596</a>]<br></li></div>
+<li>In addition , GadY can be seen as a Group I representative , since it down-regulates FlhDC in an indirect manner [ 62 ] , while also positively controlling the expression of GadX and thereby acid stress response genes [ 83,85 ] , which are clearly relevant in a mature biofilm that contains zones of low oxygen content where acid-generating fermentation probably prevails over respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Furthermore it is also worth noting that FlhDC is the master ﬂagellar regulator and that transcriptional regulation of ﬂhDC is sensitive to several environmental conditions and cell state sensors ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20028809" target="_blank">20028809</a>]<br></li>
+<li>These results indicate that FlhDC and FliA play an important role in the transcriptional regulation of genes encoding the centisome 63 type III system in serovar Typhi and a less important albeit measurable role in serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10768967" target="_blank">10768967</a>]<br></li>
+<li>The operon showed the strongest regulation of all virulence genes by FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>The negative regulator of ﬂagellar class 1 gene-expression , RﬂM , is activated by the FlhDC protein complex , which additionally activates the expression of genes transcribed from ﬂagellar class 2 promoters , including ﬂiZ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24488311" target="_blank">24488311</a>]<br></li>
+<li>FimZ also negatively regulates ﬂagellar synthesis by repressing expression of the master ﬂagellar regulator FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>Special emphasis will be put on sRNAs , that have known targets such as the mRNAs of the flagellar master regulator FlhDC , the stationary phase sigma factor σS ( RpoS ) and the key biofilm regulator CsgD that have recently been shown to act as major hubs for regulation by multiple sRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>CsrA stabilizes the ﬂhDC transcript ( Jonas et al , 2010 ) , which encodes a master regulator ( FlhDC ) of the ﬂagellar regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24056837" target="_blank">24056837</a>]<br></li>
+<li>The early genes , ﬂhDC , encode the FlhDC master regulator complex which dictates the s70-dependent transcription of the middle genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17997077" target="_blank">17997077</a>]<br></li>
+<li>The flhDC encode the master regulator FlhDC , which activates transcription from class two promoters , facilitating expression of middle genes encoding the alternative sigma factor FliA , the anti-sigma factor FlgM , the regulator FliZ , as well as genes required for hook-basal body formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703107" target="_blank">19703107</a>]<br></li>
+<li>In summary , we observed down-regulation of most of the genes involved in energy generation by respiration and these effects are likely controlled by Fur/RfrAB , CpxAR , PspF , and/or FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>However , several differences include ( i ) the presence of three tandem ﬂagellin genes ( ﬂeA , ﬂeB , ﬂeC ) in Y. enterocolitica , ( ii ) a different set of ﬂagellar genes that are controlled directly by FlhDC and FliA ( Class IIIa ) , and ( iii ) different expression levels/operon structure of certain ﬂagellar genes , e.g. , ﬂiA and ﬂiZ ( Horne and Pruss , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>For this speciﬁc example , the shared regulatory input is known : these genes are all involved in motility and chemotaxis , and their expression is known to be controlled directly or indirectly by the master regulator of ﬂagellar synthesis , FlhDC ( 69 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>FlhDC is the global regulator of ﬂagellar and motility-related genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20717675" target="_blank">20717675</a>]<br></li>
+<li>These include genes encoding flagella and T3SS-1 , whose expression in S. Typhi is reduced by a TviA-mediated repression of the master regulator FlhDC [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20808848" target="_blank">20808848</a>]<br></li>
+<li>TviA alters expression of S. Typhimurium flhC and motility in response to osmolarity Expression of the flagellum is controlled by the master regulator FlhDC ( reviewed in [ 9 ] ) and is reduced under low osmolarity in S. Typhi compared to S. Typhimurium [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20808848" target="_blank">20808848</a>]<br></li>
+<li>Besides positive regulation of FlhDC , CsrA directly or indirectly inhibits the expression of several GGDEF and/or EAL domain proteins involved in motility repression including the DGCs STM4551 and STM1987 and the degenerated EAL proteins STM1344 and STM1697 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>In this report , we focus on the pathways leading to SirA-dependent regulation of Salmonella virulence ( the HilA regulon , which includes SPI1 , and the sopB gene within SPI5 ) and ﬂagellar genes ( the FlhDC regulon ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>The central regulators of the flagella regulon , FlhDC , are also a substrate for the ClpXP protease , and the expressions of class 2 and class 3 flagella genes are upregulated in a DclpP mutant due to high levels of FlhDC leading to a hyper-flagellated phenotype ( Tomoyasu et al. , 2002 , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23676436" target="_blank">23676436</a>]<br></li>
+<li>Similarly , our studies leave open the possibility that control of the cob , eut and pdu operons by CsrA occurs through regulation of FlhDC , which is itself a global regulator ( Prüß et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12791144" target="_blank">12791144</a>]<br></li>
+<li>Indirectly , this protein also regulates the transcription of several genes involved in motility , chemotaxis and ﬂagellum synthesis by directly controlling the expression of the master regulator FlhDC ( Lehnen et al. , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28553268" target="_blank">28553268</a>]<br></li>
+<li>In addition , CsrA enhances motility and reciprocally inhibits biofilm-formation in E. coli by binding to and stabilizing the transcript of the flagella master regulator FlhDC ( Wei et al. , 2001 ) and by blocking translation of pgaA and destabilizing pgaABCD mRNA ( Wang et al. , 2005 ) , which encodes the synthesis and secretion apparatus of the PGA ( poly-β-1 ,6 - N-acetylglucosamine ) biofilm polysaccharide adhesin ( Itoh et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919539" target="_blank">19919539</a>]<br></li>
+<li>Consequently , the flagellar regulatory cascade is turned off in a complex regulatory network that induces the proteolysis of the flagellar regulator FlhDC , and also induces the synthesis of biofilm matrix components curli and cellulose by transcriptional activation of the biofilm regulator , CsgD ( Brown et al. 2001 ; Pesavento et al. 2008 ; Ogasawara , Yamamoto and Ishihama 2010 ; Liu et al. 2014 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26293911" target="_blank">26293911</a>]<br></li>
+<li>It is important to note that the E. coli MC4100 strain carries a frameshift mutation in the flhDC operon and thus it does not express the flagellar transcriptional regulator FlhDC45 ,46 ; HilD positively regulates the expression of FlhDC in S. Typhimurium30 ,35 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>To determine whether TviA affects ﬂiC transcription by repressing expression of the ﬂagellar master regulator proteins FlhDC , we constructed a ﬂhC : : lacZ transcriptional fusion in the S. Typhi wild-type strain ( Ty2 ) and the DviaB mutant ( STY2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17725646" target="_blank">17725646</a>]<br></li>
+<li>S1B and S1C in the supplemental material ) by repressing the transcription of the ﬂagellar master regulator FlhDC ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25644011" target="_blank">25644011</a>]<br></li>
+<li>Strikingly , expression of FlhDC restored both the expression and assembly of flagella on the cell surface as determined by fluorescence microscopy ( Figure 9A ) and motility assays ( data not shown ) in DmreC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22291596" target="_blank">22291596</a>]<br></li>
+<li>In the ompR mutant , dependent on the regulators FlhDC and FliA , like the there was no obvious difference of fljB : z66 expression between expression of fliC , and that the expression of fljB : z66 at low qRT-PCR was performed to investigate the expression of fljB : z66 and fliC in wild type strain ( Wt ) , ompR mutant ( ompR - ) , flhDC mutant ( flhDC - ) and fliA mutant ( fliA - ) incubated at high - and low-osmolarity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24031550" target="_blank">24031550</a>]<br></li>
+<li>In addition , DsrA may fall into Group I sRNAs , as it directly stimulates translation of rpoS mRNA , whereas it interferes with the expression of H-NS , which -- by repressing the expression of the flhDC repressor HdfR -- acts as an indirect activator of FlhDC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Furthermore , HilD directly controls the expression of the flhDC operon encoding FlhDC , the master transcriptional complex required for the expression of flagellar and chemotaxis genes30 ,35 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>Since the RNA-binding protein CsrA activates FlhDC expression and downregulates the expression of the biofilm-related pga gene products [ 50,52 ] as well as that of several c-di-GMP-producing enzymes that are involved in PGA production [ 51,53,54 ] , this induction of CsrB/CsrC may be crucial for throwing the switch from the production of flagella to that of the biofilm matrix component PGA [ 68 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>Feedback regulation in the ﬂagellar system targets multiple levels throughout biosynthesis of the ﬂagellum : ( i ) on the level of ﬂhDC gene-expression via FlhD4C2-dependent activation of the LuxR-type repressor RﬂM , ( ii ) on the level of FlhDC protein complex via posttranscriptional repression ( FliT and YdiV ) and activation ( FliZ ) of FlhDC-dependent class 2 gene-expression , and ( iii ) on the level of ﬂagellar class 3 gene-expression by secretion of the anti- 28 factor FlgM after HBB completion and positive regulation of ﬂgM translation by FlgN ( 45 -- 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23873910" target="_blank">23873910</a>]<br></li>
+<li>As a result , the transcription of flhDC comes to an end and , due to proteolytic degradation of FlhDC and σF , the entire flagellar cascade is shut down , including the expression of the yhjH phosphodiesterase gene [ 14,23,24 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>STM1344 ( YdiV ) and Salmonella specific STM1697 binds to FlhD , a component of FlhDC , the master transcription regulator of flagella biosynthesis [ 168,174 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25437188" target="_blank">25437188</a>]<br></li>
+<li>In Salmonella , the Class 2 gene product FliT also has been shown to have a dual function as an f-T3SS secretion chaperone of the ﬁlament cap protein FliD and as a regulator of FlhDC activity ( Fraser et al. , 1999 ; Yamamoto and Kutsukake , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26441883" target="_blank">26441883</a>]<br></li>
+<li>f FlhDC regulates class 2 genes ( hence also class 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16980469" target="_blank">16980469</a>]<br></li>
+<li>FlhDC acts as a positive regulator for class II promoter-transcribed genes , such as ﬂiA and ﬂgM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17725646" target="_blank">17725646</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">FlhDC binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The FlhDC complex binds a ; 40-bp region upstream of the 235 promoter sequence and is thought to interact with the C-terminal region of the a subunit of RNA polymerase to initiate transcription ( 32 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9079927" target="_blank">9079927</a>]<br></li>
+<li>Sequences that closely match consensus GCAATAA and TTATTCC sequences within known and presumed FlhDC binding regions are labeled by arrows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>Sequences termed TTATTCC and GCAATAA elements have been identiﬁed in all class 2 promoters in the region where FlhDC binds and , when deleted in the ﬂgB promoter , are defective for transcription ( Fig. 3 ) ( 44 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11104815" target="_blank">11104815</a>]<br></li>
+<li>The mutations that were used are located in the conserved 10 and 35 promoter regions or are located in or near the FlhDC binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20639318" target="_blank">20639318</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by FlhDC</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Thus , RtsB both negatively ( through FlhDC and YddX ) and positively ( indirectly , through FlgM ) regulates expression of ﬂagellar motility genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27601571" target="_blank">27601571</a>]<br></li>
+<li>The genes labeled in red and green are transcribed from both class 2 ( FlhDC - and 70-dependent ) and class 3 ( 28-dependent ) promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>We show below that the srfABC operon is under FlhDC control but not 28 control , indicating that this operon is a ﬂagellar class 2 operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>Also , cafA appears to be part of a large operon that includes the mreBCD genes , which were not FlhDC dependent on either set of array slides .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>In E. coli , six nonﬂagellar operons were identiﬁed that require FlhDC for expression not picked up in this study of Salmonella FlhDC-dependent genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>The expression of cheV : : MudJ , mcpB : : MudJ , mcpC : : MudJ , and aer : : MudJ fusions was assayed in strains defective in either ﬂiA ( 28 ) or FlhDC compared to expression in the isogenic wild-type strain and in strains locked in either the ﬂiCON ﬂjBOFF ( hin-5717 : : FCF ) or ﬂiCOFF ﬂiBON ( hin-5718 : : FCF ) state of ﬂagellar phase variation to determine if these genes were affected by ﬂagellar phase variation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>FimZ also negatively regulates ﬂagellar synthesis by repressing expression of the master ﬂagellar regulator FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28439039" target="_blank">28439039</a>]<br></li>
+<li>Transcription was 30-fold reduced in the absence of FlhDC but was not signiﬁcantly affected by the ﬂiA null allele ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513753" target="_blank">16513753</a>]<br></li>
+<li>If transcription was under ﬂagellar regulation , then it should not occur in the absence of the FlhDC positive activators required for both class 2 and class 3 gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9079927" target="_blank">9079927</a>]<br></li>
+<li>These include genes encoding flagella and T3SS-1 , whose expression in S. Typhi is reduced by a TviA-mediated repression of the master regulator FlhDC [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20808848" target="_blank">20808848</a>]<br></li>
+<li>TviA alters expression of S. Typhimurium flhC and motility in response to osmolarity Expression of the flagellum is controlled by the master regulator FlhDC ( reviewed in [ 9 ] ) and is reduced under low osmolarity in S. Typhi compared to S. Typhimurium [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20808848" target="_blank">20808848</a>]<br></li>
+<li>To determine whether TviA affects ﬂiC transcription by repressing expression of the ﬂagellar master regulator proteins FlhDC , we constructed a ﬂhC : : lacZ transcriptional fusion in the S. Typhi wild-type strain ( Ty2 ) and the DviaB mutant ( STY2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17725646" target="_blank">17725646</a>]<br></li>
+<li>By activating the expression of RprA and repressing that of FlhDC , the Rcs system is an important additional player in this circuitry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+<li>The mRNA level of the flagellar master gene flhD was not significantly different in the wildtype Salmonella and the stm1697 strain implying that the inhibition of flagella mediated by STM1697 is realized after transcription of FlhDC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=28973452" target="_blank">28973452</a>]<br></li>
+<li>The expression of the FlhDC regulon is decreased in the presence of sirA ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>In contrast to the expression of the FlhDC regulon , the expression of the HilA regulon is increased by sirA ( 2 , 5 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645287" target="_blank">14645287</a>]<br></li>
+<li>It is important to note that the E. coli MC4100 strain carries a frameshift mutation in the flhDC operon and thus it does not express the flagellar transcriptional regulator FlhDC45 ,46 ; HilD positively regulates the expression of FlhDC in S. Typhimurium30 ,35 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>Furthermore , HilD directly controls the expression of the flhDC operon encoding FlhDC , the master transcriptional complex required for the expression of flagellar and chemotaxis genes30 ,35 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>However , our results show that HilD does not control the expression of SL1896 through FlhDC , the master regulator of the flagellar/chemotaxis genes , neither through the SPI-1 regulators HilA and InvF ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=27886269" target="_blank">27886269</a>]<br></li>
+<li>FliA alone or with FlhDC , activates expression of the class III operon genes , which encode the filament protein , hook-associated proteins , motor proteins , and chemotaxis proteins [ 39,40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22291596" target="_blank">22291596</a>]<br></li>
+<li>FlhDC controls the σF sigma factor , which is encoded by the class II gene fliA and which in turn transcribes class III genes , that together with class II genes generate flagella ( Figure 1A ; for a review see [ 17 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23443158" target="_blank">23443158</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>
