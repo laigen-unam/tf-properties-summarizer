@@ -8,37 +8,46 @@ of summaries describing following bacterial transcription factor (TF) properties
 4.	Processes and conditions that regulate (positively or negatively) the activity and/or conformation of the TF.
 5.	Processes and conditions that regulate the activity and organization of the transcription unit that contains the gene encoding the TF.
 6.	Specific attributes of the TF's binding site, such as its size and spatial arrangement.
- 
+
+We were able to recover automatically a median of 77% of the knowledge 
+contained into manual summaries (obtained from RegulonDB) 
+describing properties of 177 TFs of 
+*Escherichia coli* K-12 by processing 5961 scientific articles. 
+Furthermore, training a predictive model with manual summaries of *E. coli*, 
+we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
+
 This approach is based on automatic text summarization and extended 
 our initial approach published on 2017 
 where we generated summaries by focusing on two particular properties: 
 structural domain and 
-biological processed of regulated genes
+biological processes of regulated genes:
 - Carlos-Francisco Méndez-Cruz, Socorro Gama-Castro, Citlalli Mejía-Almonte, 
 Marco-Polo Castillo-Villalba, Luis-José Muñiz-Rascado, Julio Collado-Vides. 
-(2017) First steps in automatic summarization of transcription factor properties 
+(2017). First steps in automatic summarization of transcription factor properties 
 for RegulonDB: classification of sentences about structural domains and regulated 
-processes, Oxford University Press (https://academic.oup.com/database/article/doi/10.1093/database/bax070/4237584)
-
-
-
-We were able to recover automatically a median of 77% of the knowledge 
-contained into manual summaries describing properties of 177 TFs of 
-*Escherichia coli* K-12 by processing 5961 scientific articles. 
-Furthermore, training a predictive model with manual summaries of *E. coli*, 
-we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
+processes. *Database*, Oxford University Press (https://academic.oup.com/database/article/doi/10.1093/database/bax070/4237584)
 
 ## Manual summaries
 
 We employed manual summaries from RegulonDB (http://regulondb.ccg.unam.mx/), 
 the main database on transcriptional regulation for 
-*Escherichia coli* K-12. These were used as training data 
-to train an automatic summarizer 
-that extracts relevant sentences describing these TF properties from article collections. To build such data, we manually classified the sentences of 177 manual summaries of TFs of RegulonDB in one or more of the six TF properties. To classify the sentences, we tagged specific relevant information associated to each TF property using XML tags (see a description of this information in supplementary Table S1, and an example of a tagged manual summary in supplementary Figure S1). By tagging this information, we defined several resources (dictionaries of biological entities, lists of keywords) that were used to enrich the input features into the supervised learning algorithm (see subsection 2.2.2). For properties DOM and RP, we took advantage of the sentences manually classified in our previous study.
-We obtained a training data set with 2244 sentences in total formed by six subsets of sentences from all summaries, one per TF property. Positive examples were those pertaining to the TF property, while negative examples were all the remaining sentences. The obtained data sets showed imbalanced classes, especially for SITE, TU and EVO (Table 1). To deal with this problem, we tested some automatic strategies in our supervised learning approach.
+*Escherichia coli* K-12, as training data to train an automatic summarizer 
+that extracts relevant sentences describing these TF properties 
+from article collections. 
+We manually classified the sentences of 177 manual summaries 
+of TFs of RegulonDB in one or more of the six TF properties. 
+To classify the sentences, we tagged specific relevant information associated 
+to each TF property using XML tags.
+We obtained a training data set with 2244 sentences in total 
+formed by six subsets of sentences from all summaries, 
+one per TF property. 
+Positive examples were those pertaining to the TF property, 
+while negative examples were all the remaining sentences. 
 
 
-
+ 
+(see a description of this information in supplementary Table S1, 
+and an example of a tagged manual summary in supplementary Figure S1). 
 
 
 The automatic summaries are created by the concatenation of the automatically 
