@@ -13,15 +13,15 @@ We were able to recover automatically a median of 77% of the knowledge
 contained into manual summaries (obtained from RegulonDB) 
 describing properties of 177 TFs of 
 *Escherichia coli* K-12 by processing 5961 scientific articles. 
-
-.
-+-- _config.yml
-+-- _drafts
-|   +-- begin-with-the-crazy-ideas.textile
-|   +-- on-simplicity-in-technology.markdown
-
 Furthermore, training a predictive model with manual summaries of *E. coli*, 
 we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
+
+```
+automatic-summaries
+│
+└───ecoli
+└───salmonella
+```
 
 This approach is based on automatic text summarization and extended 
 our initial approach published on 2017 
