@@ -1,0 +1,820 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - NhaR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">NhaR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">NhaR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Translational Repression of NhaR , a Novel Pathway for Multi-Tier Regulation of Bioﬁlm Circuitry by CsrA Archana Pannuri , a Helen Yakhnin , b Christopher A. Vakulskas , a Adrianne N. Edwards , c * Paul Babitzke , b and Tony Romeoa , c Department of Microbiology and Cell Science , University of Florida , Gainesville , Florida , USAa ; Department of Biochemistry and Molecular Biology , Pennsylvania State University , University Park , Pennsylvania , USAb ; and Department of Microbiology and Immunology , Emory University , Atlanta , Georgia , USAc The RNA binding protein CsrA ( RsmA ) represses bioﬁlm formation in several proteobacterial species .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Toulouse III , 118 Route de Narbonne , F-31062 , Toulouse Cedex , France Keywords : transcriptional regulation , osmoregulation , bacterial promoters , NhaR INTRODUCTION To cope with environmental stresses , non-sporulating enterobacteria such as Escherichia coli or Salmonella typhimurium undergo global programmed modiﬁcations of their gene-expression pattern , leading to increased resistance to a number of chemical and physical agents including heat , oxidative agents and hyperosmotic shock ( McCann et al. , 1991 ; Kolter et al. , 1993 ; Hengge-Aronis , 1996b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>relationship with the known pga repressor CsrA and inducer NhaR we analyzed UTI-J , and its isogenic mutants UTI-JDpga ( as a negative control ) , UTI-JDcsrA , UTI-JDnhaR ( Cerca et al. , 2007b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>Transcription of nhaA , the Main Na1/H1 Escherichia coli , Is Regulated b and Growth Phase Antiporter of y Na1 NIR DOVER AND ETANA PADAN * Division of Microbial and Molecular Ecology , Institute of Life Sciences , The Hebrew University of Jerusalem , 91904 Jerusalem , Israel Received 7 August 2000/Accepted 19 October 2000 The transcription of nhaA , encoding the main Na1/H1 antiporter of Escherichia coli , is induced by Na1 , regulated by NhaR , and affected by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>A single amino acid substitution ( Glu 134 -- Ala ) in NhaRl increases the inducibility by Na + of the product of nhaA , a Na + / H + antiporter gene in Escherichia coli O.Carmel , N.Dover , O.Rahav-Manor , P.Dibrov , D.Kirsch , R.Karpel , S.Schuldiner and E.Padan Division of Microbial and Molecular Ecology , Institute of Life Sciences , Hebrew University of Jerusalem , Jerusalem 91904 , Israel Communicated by H.Soreq The mutation nhaAuP ( antup ) has now been identified as a Glu134 to Ala substitution in NhaR and designated nhaRl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>The EMBO Journal Vol .16 No. 19 pp. 5922 -- 5929 , 1997 The NaF-speciﬁc interaction between the LysR-type regulator , NhaR , and the nhaA gene encoding the NaF/HF antiporter of Escherichia coli O.Carmel , O.Rahav-Manor , N.Dover , B.Shaanan1 and E.Padan2 Division of Microbial and Molecular Ecology and 1Department of Biological Chemistry , The Institute of Life Sciences , The Hebrew University of Jerusalem , 91904 Jerusalem , Israel 2Corresponding author e-mail : etana@vms.huji.ac.il We used partially puriﬁed NhaR and a highly puriﬁed His-tagged NhaR derivative to identify the cis-regu - latory sequences of nhaA recognized by NhaR and to F study the speciﬁc effect of Na on this interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_7">
+[ 10 ] O. Rahav-Manor , O. Carmel , R. Karpel , D. Taglicht , G. Glaser , S. Schuldiner , E. Padan , NhaR , a protein homologous to a family o bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli , J. Biol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></label>
+<input id="act_similarity_7", type="checkbox">
+<div class="ACT_similar">
+<li>, 265 , 9247 -- 9250 Rahav-Manor , O. , Carmel , O. , Karpel , R. , Taglicht , D. , Glaser , G. , Schuldiner , S. and Padan , E. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li></div>
+<li>NhaR is a regulator of the LysR family , previously identiﬁed as a trans-criptional activator of the gene nhaA , encoding the NhaA Na + -RCB- H + antiporter , the main system responsible for adaptation to Na + and alkaline pH ( in the presence of Na + ) in E. coli and other enteric bacteria ( RahavManor et al. , 1992 ; Padan & Schuldiner , 1994 ; Dover et al. , 1996 ; Carmel et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>Until now , the only gene that was known to be regulated by NhaR was nhaA , a gene encoding a Na + -RCB- H + antiporter of E. coli ( Rahav-Manor et al. , 1992 ; Dover et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>The molecular mechanism of activation of nhaA by p NhaR has been studied extensively ( Karpel et al. , 1991 ; Rahav-Manor et al. , 1992 ; Carmel et al. , 1997 ; Dover & Padan , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR is a positive regulator required , in addition to nhaA , in order to tolerate high Na1 and Li1 concentrations ( Rahav-Manor et al. , 1992 ; Carmel et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>NhaR was specificallylabeled in the presence of rifam-picin , and -40 % of the label was found in the membrane fraction of the cells even after extensive washes ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>Partial puriﬁcation of native NhaR NhaR was overexpressed from the T7 promoter of plasmid pDT2 in the presence of plasmid pGP1-2 in TA15 cells ( 1L ) and cell-free and membrane-free extract prepared as described ( Carmel et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>These results deﬁne a novel mechanism for regulation of bioﬁlm formation in response to environmental conditions and suggest an expanded role for NhaR in promoting bacterial survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>We propose that this represents a novel means by which NhaR promotes survival of E. coli and perhaps other enteric bacteria in response to environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>We have therefore suggested that NhaR and its effector , NhaA , are involved in a novel signal transduction pathway specific to Na + which is essential for halotolerance in E.coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>Translational repression of NhaR , a novel pathway for multi-tier regulation of biofilm circuitry by CsrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23666921" target="_blank">23666921</a>]<br></li>
+<li>Induction of NhaR , GadE , and GadW by YdeO Four transcription factors , the LysR-type NhaR , the LuxR-type GadE , and the AraC-type GadW , were found to be under the direct control of YdeO ( see Figs. 1 -- 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>After leucine-responsive protein , H-NS and σs , NhaR and RcsB are the fourth and ﬁfth regulators of osmC transcription to have been identiﬁed The participation of so many factors in the regulation of osmC illustrates the notion of cooperation of global regulators in the ﬁne-tuning of stress-inducible genes ( Bouvier et al. , 1998 ; Hengge-Aronis , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>Recently it was also shown that high salt concentrations and alkaline pH increase bioﬁlm formation and this effect was dependent on the cation-responsive regulatory protein NhaR ( Goller et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>Similarly , we found , in agreement with a recent study demonstrating a role in pga transcription for the sodium stress-response protein , NhaR ( Goller et al. , 2006 ) that addition of 1 % NaCl to the growth medium resulted in a signiﬁcant increase ( P o 0.05 , paired samples t-test ) in b-gal activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>NhaR also activates osmC transcription , which is required for resistance to organic peroxides and long-term survival in stationary phase ( 29 , 43 , 68 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>e Cation-Responsive Protein NhaR of Escherichia coli Activates pgaABCD Transcription , Required for Production of the Bioﬁlm Adhesin Poly - -1,6 - N-Acetyl-D-Glucosamine Th Carlos Goller , Xin Wang , Yoshikane Itoh , and Tony Romeo * Department of Microbiology and Immunology , Emory University School of Medicine , Emory University School of Medicine , 3105 Rollins Research Center , 1510 Clifton Rd. , N.E. , Atlanta , Georgia 30322 Received 25 July 2006/Accepted 11 September 2006 The pgaABCD operon of Escherichia coli is required for production of the bioﬁlm adhesin poly - -1,6 - N-acetyl-D-glucosamine ( PGA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>The present study demonstrates that the LysRtype transcriptional-regulator NhaR is necessary and sufﬁcient to activate transcription from the pgaABCD promoter of E. coli K-12 ( Fig. 7 ) and consequently activates PGA production ( Fig. 2 ) and bioﬁlm formation ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Goller C , Wang X , Itoh Y & Romeo T ( 2006 ) The cationresponsive protein NhaR of Escherichia coli activates pgaABCD transcription , required for production of the bioﬁlm adhesin poly-b-1 ,6 - N-acetyl-D-glucosamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_27">
+The cation-responsive protein NhaR of Escherichia coli activates pgaABCD transcription , required for production of the bioﬁlm adhesin poly - -1,6 - N-acetyl-D-glucosamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></label>
+<input id="act_similarity_27", type="checkbox">
+<div class="ACT_similar">
+<li>The cationresponsive protein NhaR of Escherichia coli activates pgaABCD transcription , required for production of the biofilm adhesin poly-b-1 ,6 - N-acetyl-D-glucosamine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li></div>
+<li>( iii ) Under both backgrounds , biofilm requires the presence of the pga operon and its transcriptional-activator NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>The nhaA gene is regulated by a lysR-type regulatory protein called NhaR ( 5 ) , its transcription being stimulated by high Na + concentrations , with increased sensitivity tothat stimulation at elevated cytoplasmic pH values ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8496184" target="_blank">8496184</a>]<br></li>
+<li>Here we determined that CsrA also represses NhaR , a LysR-type transcriptional-regulator which responds to elevated [ Na ] and alkaline pH and activates the transcription of the pgaABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Here we demonstrate that CsrA regulates the translation of nhaR , encoding the LTTR protein NhaR , which responds to elevated [ Na ] and alkaline pH conditions ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Because NhaR is required for pgaABCD transcription and CsrA represses nhaR , we reasoned that CsrA should indirectly repress the transcription of pgaABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>It binds to the upstream noncoding RNA of nhaR and blocks the translation of the transcriptional-activator protein NhaR of the pgaABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>NhaR protein regulates E. coli bio-ﬁlm formation by binding immediately upstream of the single promoter of the pgaABCD operon and activating its transcription ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>We establish here that NhaR , a DNA-binding protein of the LysR family of transcriptional-regulators , activates transcription of this operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>An epitope-tagged NhaR protein , expressed from the nhaR chromosomal locus , and an nhaR posttranscriptional reporter fusion ( PlacUV5-nhaR = - = lacZ ) both showed robust repression by CsrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>These results conﬁrmed the previous suggestion that the lack of Na1 induction of nhaA9-9lacZ on pKRZ2 was due to the very low concentration of NhaR in cells that contain a single chromosomal copy of nhaR ( 5 ) ; the low level of NhaR was readily titrated by binding to the regulatory sequences of nhaA when introduced into the cells on a multicopy plasmid like pKRZ2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>However , although as yet we do not know the pattern of regulation of nhaR , our results suggest that like the other LysR-OxyR members , the level of NhaR in the wild-type cells is very low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>As LTTR proteins often bind to their DNA targets in the absence of coinducer ligands ( 11 , 64 , 71 ) , it was not surprising that NhaR bound to pga promoter DNA without the addition of salts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>It is tempting to suggest that NhaR might not bind directly to its coinducer cations but might function similarly to the LTTR protein GcvA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>However , the data presented in this study show that under appropriate conditions , for instance when stimulated by NhaR , osmC is as p '' eficient as osmC and can contribute signiﬁcantly to p # the expression of osmC under stress conditions during exponential phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR and RcsB Independently Regulate the osmCp1 Promoter of Escherichia coli at Overlapping Regulatory Sites Rachel Sturny , Kaymeuang Cam , Claude Gutierrez , * and Annie Conter Laboratoire de Microbiologie et de Génétique Moléculaire , UMR5100 CNRS-Universite ́ Toulouse III , 31062 Toulouse Cedex , France Received 31 January 2003/Accepted 29 April 2003 Transcription of the Escherichia coli osmC gene is induced by several stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Sturny , R. , Cam , K. , Gutierrez , C. and Conter , A. ( 2003 ) NhaR and RcsB independently regulate the osmCp1 promoter of Escherichia coli at overlapping regulatory sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Printed in Great Britain The transcriptional-activator NhaR is responsible for the osmotic induction of osmCp1 , a promoter of the stress-inducible osmC in Escherichia coli gene Isabelle Toesca , Catherine Perard , Jean Bouvier , Claude Gutierrez and Annie Conter Author for correspondence : Annie Conter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>[ 15 ] Toesca , I. , Perard , C. , Bouvier , J. , Gutierrez , C. and Conter , A. ( 2001 ) The transcriptional-activator NhaR is responsible for the osmotic induction of osmCp1 , a promoter of the stress-inducible gene osmC in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15251200" target="_blank">15251200</a>]<br></li>
+<li>b-Galactosidase activity ( Miller units ) b-Galactosidase activity ( Miller units osmCp1 activation by NhaR is independent of H-NS and σs The sequence required for activation by NhaR is immediately adjacent to the osmC w35 region p1 To identify the sequence required for the stimulation of osmC by NhaR , we made use of a set of osmC -- lac p '' p '' fusion strains in which osmC was carried on various p '' DNA fragments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>The data presented here indicate that NhaR is responsible for the stimulation of osmC by NaCl , p '' LiCl , and , to a lesser extent , the non-ionic solute sucrose ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>b-Galactosidase activity ( Miller units ) b-Galactosidase activity ( Miller units NhaR is responsible for osmCp1 induction by NaCl and LiCl To characterize the physiological role of osmC ac-p '' tivation by NhaR in more detail , we investigated the effects of various osmolytes added to the growth medium ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR was shown to activate only the expression of osmCp1 and to be necessary for the induction of this promoter by LiCl , NaCl and sucrose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR is neces ¬ sary for the osmotic induction of osmCp1 by NaCl , LiCl , and , to a lesser extent , the nonionic solute sucrose ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>For instance , the osmotic shock induction of osmC results from activation of its S-independent osmCp1 promoter by the NhaR activator , whereas its S-dependent osmCp2 promoter is not stimulated by osmotic shock ( 25 , 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15838058" target="_blank">15838058</a>]<br></li>
+<li>Therefore , activation by NhaR is responsible for the osmotic induction of osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>Therefore , NhaR is responsible for the osmotic induction of osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>In contrast , induction by CPZ was still observed in an nhaR mutant background , indicating that the RcsB-dependent response to CPZ does not require NhaR ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>We noted , however , that the activation by CPZ was increased in an nhaR background ( 92 versus 140 U ) , indicating that NhaR partially hampers the complete activation of osmCp1 by RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>As shown in Fig. 3B , transcription from osmCp1 was stimulated by overproduction of RcsB both in wild-type and nhaR mutant backgrounds , indicating that RcsB can activate transcription of osmCp1 independent of NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>The 13-fold activation of osmCp1 by overproduction of NhaR was the same in the presence or in the absence of RcsB , indicating that the activity of NhaR is independent of RcsB , in agreement with the footprint data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>RcsB and NhaR activate an osmCp1-lacZ transcriptional fusion independent of each other .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>The distal promoter , osmCp1 , is activated by NhaR and RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR and RcsB can independently activate the osmCp1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR and RcsB are speciﬁcally required for induction of osmCp1 by different stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR can stimulate osmCp1 in response to an osmotic signal even in the absence of RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>RcsB is responsible for the induction of osmCp1 by alteration of the cell envelope , even in the absence of NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Although the protected site includes the region protected by RcsB , RcsB is not necessary for the protection observed with extracts enriched in NhaR , and it is likely due to direct binding of NhaR upstream from osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>In order to demonstrate that RcsB and NhaR directly bind to the osmCp1 region and to identify their binding sites , we performed DNase I footprint experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR directly binds to the osmCp1 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>RcsC could be acting on or interacting with NhaR or an unknown response-regulator to reinforce their positive effects on pga transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>Whether cross-talk or another interaction between RcsC , OmpR ( and perhaps with another unknown response-regulator ) or NhaR occurs should be investigated further .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>This protected region is not continuous since it is interrupted by sites which became hypersensitive to the enzyme in the presence of NhaR ( Figures 3A and B and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>In addition , a hypersensitive region immediately downstream of the 10 element also became evident in the presence of NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>In view of the weak binding of native NhaR , it is possible that minor structural alterations induced by the His tag render ' binding by the tagged protein too weak to be observed in band-shift experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>Lane 1 , non-induced cells ; lane 2 , cells induced for 2 h ; lane 3 , void volume ; lane 4 , binding wash ; lane 5 , wash with 60 mM imidazole ; lanes 6 and 7 elution with 400 mM imidazole ; lane 8 shows partially puriﬁed native NhaR ( 20 amino acids shorter than His-tagged NhaR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The His-tagged NhaR was overexpressed ( compare lane 2 with lane 1 in Figure 1A ) and bound readily to the Ni21 column .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>There was no effect of Na1 on the methylation reaction in the absence of NhaR ( Figure 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>In the absence of Na1 both in vivo and in vitro , these bases were protected by NhaR or His-tagged NhaR respectively and exposed to methylation in the absence of the regulator ( Figure 4A and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Strikingly , the protection of G at -- 60 by NhaR was affected differently by the ions ( Figure 4A ) ; it remained protected in the absence or presence of 100 mM KCl ( Figure 4A , lanes b and d ) but 100 mM NaCl speciﬁcally removed the protection of G -- 60 by NhaR and exposed it to methylation and subsequent breakage ( Figure 4A , compare lane f with lane d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The binding of the His-tagged NhaR to two guanines was changed dramatically upon addition of Na1 ; G -- 60 was exposed speciﬁcally to DMS methylation by Na1 ( 100 mM ) since in the absence of the ion or in the presence of K1 ( 100 mM ) it was protected by His-tagged NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>It is evident that NhaR activates expression of its target operons , nhaAR , osmC , and pgaABCD , as a coordinated response to elevated Na and/or pH. Consequently , NhaR is required for survival under high concentrations of NaCl , high pH , and certain oxidative-stresses ( 49 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>While NhaR activates gene expression in vivo in response to Na , K , or Li , this cation response has not been reconstituted in vitro ( 10 , 22 , 23 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Previously , NhaR was found to activate gene expression in response to increasing [ NaCl ] , [ KCl ] , [ LiCl ] , or pH of the medium ( 23 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>This regulatory system , recently reviewed [ 2 ] , involves the positive regulator NhaR [ 10 -- 12 ] of the LysR family of regulators [ 13,14 ] , and is induced specifically by Na ; neither ionic strength nor osmolarity + induces the system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_83">
+In logarithmic growth the expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner ( reviewed in refs 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11258962" target="_blank">11258962</a>]<br></label>
+<input id="act_similarity_83", type="checkbox">
+<div class="ACT_similar">
+<li>The expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner [ reviewed in ( 2 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12475238" target="_blank">12475238</a>]<br></li></div>
+<li>Accordingly , the expression of nhaA which is dependent on NhaR is induced by Na in a pH dependent manner [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9877164" target="_blank">9877164</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_86">
+Accordingly expression of nhaA which is dependent on NhaR , a positive regulator , is induced by Na1 in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592922" target="_blank">7592922</a>]<br></label>
+<input id="act_similarity_86", type="checkbox">
+<div class="ACT_similar">
+<li>Accordingly , expression of nhaA which is dependent on NhaR , a positive regulator , is induced by Na1 , in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9756882" target="_blank">9756882</a>]<br></li></div>
+<li>The results show that , as compared with the multicopy wild-type nhaR gene , the multicopy of the mutation nhaRl has two on effects the expression of the nhaA ' - ` lacZ fusion : it slightly increases the maximal nhaA ' - ` lacZ expression ( observed in the presence of 60-100 mM NaCl ) and , most importantly , like although NhaR it is Na + - dependent it requires a much lower Na + concentration to exert its phenotype .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>The regulatory factor NhaR was required for NaCl-induced pga expression , whereas the effects of glucose and ethanol were independent of CsrA and NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>Deletion of nhaR did not affect pgaA expression in TSB - or in the presence of glucose of ethanol but ablated NaCl-induced pgaA expression indicating that induction of pgaA expression by NaCl is dependent upon NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>In line with this conclusion , only the P1 activity was increased in W3313 -- 2S , a strain that was shown to overexpress nhaA because of a point mutation in nhaR causing a change in 1 the Na afﬁnity of NhaR ( 5 ) ( Fig. 1A , lane 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>In contrast , the NhaB pore level is unaffected by the Na + level and its synthesis is not NhaR regulated ( 10 , 17 , 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8017942" target="_blank">8017942</a>]<br></li>
+<li>NhaRl , like NhaR , binds specifically to the promoter region of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>Puriﬁed recombinant NhaR binds speciﬁcally to pgaABCD promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>The nhaAp1 promoter is repressed by H-NS , whereas NhaR relieves H-NS-mediated silencing under alkaline pH and in the presence of Na ( 12 , 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>NhaR is always bound to the DNA and Na changes its + conformation so that its footprint is Na - specific [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+<li>Northern analysis of nhaA transcription in the wild-type strain grown logarithmically showed that the highest level of NhaR-depen-dent nhaA transcription was observed after exposure to 100 to 130 mM Na1 for 2 to 3 h. Although as yet we can not exclude the possibility that NhaR in the presence of Na1 changes the rate of degradation of nhaA mRNA , it is most likely that Na1 induction reﬂects an increase in the rate of nhaA transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Taken together these results conﬁrm that an interplay exists between NhaR and H-NS in the regulation of nhaA expression mediated by the P1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Taken together these results show that , in contrast to Na1 induction of P1 , which is mediated by NhaR , stationary-phase induction of P2 is not dependent on NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Furthermore , P2 is activated by sS and is neither induced by Na1 nor dependent on NhaR or affected by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The present work revealed that the P2 promoter of nhaA is a stationary phase-induced promoter which is activated by sS and neither NhaR nor Na1 or H-NS is involved in this induction ; in the stationary phase , transcription from P2 increased dramatically , and this increase was eliminated in an rpoS mutant strain ( Fig. 6A ) but not in a DnhaR strain ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>When H-NS is present , it represses NhaA and a single copy of NhaR is needed for Na1 induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>The role of H-NS , therefore , appears to be to place the promoter in an appropriate conﬁguration so that it can show increased sensitivity to regulation by NhaR and Na1 , allowing signiﬁcant induction ratios .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In the in vitro system only positive regulation by NhaR was detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>In the presence of 1 Na , however , NhaR functions as a positive regulator of nhaA ( 39 ) and overcomes the repressive effects of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In contrast to its action on nhaA , NhaR activation of osmCp1 is independent of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>Interrelationship between NhaR and H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Thus , H-NS and NhaR interact directly or indirectly in the regulation of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>That is , NhaR in the presence of Na1 acts to overcome H-NS-mediated repression and activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In the absence of H-NS , NhaR can act as a repressor ( in the absence of Na1 ) , suggesting that it is able to-bind to DNA in the vicinity of the nhaA promoter but that its binding does not activate RNA polymerase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Whether or not NhaR can bind to DNA in the absence of Na1 in an hns1 strain is unknown , as transcription is already repressed by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In contrast , in an hns strain , multicopy NhaR is required to establish repression , which is alleviated by the addition of Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In an hns1 strain in the absence of Na1 , nhaA was repressed whether or not nhaR was present ( Fig. 2 and 3 ) ( 39 ) , suggesting that the repression by H-NS is NhaR independent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>In an hns background in the absence of Na1 , when nhaA was derepressed , a novel property of NhaR was revealed ; a multicopy plasmid expressing nhaR restored nhaA repression ( ND1 / pGM42T , ND2/pGM42Tcat , and ND3/pGM42Tcat [ Fig. 8 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Introduction Results Construction of His-tagged NhaR and puriﬁcation of both NhaR and its His-tagged derivative Our previous in vivo experiments showed that NhaR is a positive regulator of nhaA , whose activity is dependent on the concentration of intracellular Na1 ( Dover et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The bases protected by NhaR which were not affected by Na1 , i.e. Discussion Our previous in vivo studies suggested that as an essential part of Na1 homeostasis in E.coli , the regulation of nhaA expression by NhaR is induced speciﬁcally by a change in Na1 concentration rather than by its outcome : a change in ionic strength or osmolarity ( Karpel et al. , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The transcription of nhaA , which is positively regulated by NhaR ( 29 ) , a member of the LysR-OxyR family ( 7 , 14 , 30 , 34 ) , is speciﬁcally induced by intracellular Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>This result suggests that whether Na1 is present or not , NhaR is constantly bound to the nhaA DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The nhaA sequence bound by NhaR is modiﬁed by Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The repressing capacity of NhaR can be seen , even in the hns1 strain , by manipulating its expression level ( Fig. 2A ) ; while increasing nhaR expression in a moderate way increases nhaA expression and Na1 induction ( pKRZ3 ) , a strong overexpression of nhaR results in a decrease in the extent of nhaA expression accompanied by a further increase in the induction ratio ( pKRZ3tac ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The enhancing effect of plasmidic multicopy nhaR on the Na1-induced expression of nhaA9 -- 9lacZ showed that NhaR works in trans and requires Na1 for its activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>In the present study , by molecular dissection of the system in E.coli , we have proven that indeed Na1 itself is the signal for nhaA expression via NhaR , identiﬁed the regulatory cis-elements of nhaA which bind NhaR and established both in vivo and in vitro that Na1 changes the footprint of NhaR on nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>These results show that the His-tagged NhaR is as active as the wild-type protein in promoting in vivo Na1 induction of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>It was critical to show that these speciﬁc in vivo effects of Na1 are indeed dependent on NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>This shorter transcript likely originates from nhaAp1 ( Fig. 1 ) , which is activated by NhaR , and therefore should increase in the csrA mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Measurement of β-galactosidase activity in samples of these cultures indicated that , in the absence of NhaR , osmC expression was unchanged ( Fig. 2a ) p # whereas osmC expression was reduced in both media p '' ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>It should also be pointed out that in the stationary phase in the absence of NhaR , a new rpoS-dependent transcript ( shorter than that observed in the presence of NhaR ) appeared ( Fig. 6 , lanes e and f ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>However , we failed to detect NhaR and GadW even in the presence of YdeO expression ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>The effects of all these solutes were p '' totally abolished in the absence of NhaR ( Fig. 4 , triangles ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>The intensities of two transcripts originating from vector DNA ( V1 and V2 ) did not increase in the presence of NhaR ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>These results indicate that transcription from P1 occurs via s70 and is positively regulated by NhaR in a fashion that is modulated by the level of H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>An in vitro transcription assay demonstrated that P1 is activated by s70-RNA polymerase and both NhaR and H-NS increase the speciﬁcity of P1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Addition of NhaR increased transcription from P1 and reduced that from P2 and nonspeciﬁc transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>H-NS further increased the speciﬁcity to P1 , but the most pronounced speciﬁc transcription from P1 was obtained by adding both H-NS and NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Here we establish that NhaR stimulates pga transcription , and thus bioﬁlm formation , in response to monovalent cations and alkaline conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Recombinant NhaR was necessary and sufﬁcient to activate in vitro transcription from the pga promoter ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Surprisingly , activation of pga in vitro transcription by NhaR did not require monovalent cations ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>In the present work , we describe an additional positive regulator , NhaR , which speciﬁcally stimulates transcription of the σs-independent distal promoter osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>In the presence of NhaR , an hns mutation resulted in a slight increase in transcription from osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>In the absence of NhaR , osmC activity was p '' p '' reduced , and no increase was observed in the nhaR hns double mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>( B ) In vitro transcription in the absence or presence of His-tagged NhaR ( 400 ng ) , H-NS ( 40 ng ) , or both as indicated FIG. 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>( A ) In vitro : DNA was incubated with His-tagged NhaR in the presence or absence of added KCl or NaCl as indicated in the ﬁgure , subjected to DMS methylation followed by piperidine cleavage and the products were analyzed by primer extension as described in Materials and methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>To further examine the role of NhaR in pga expression , in vitro transcription of a pgaABCD-containing supercoiled plasmid template by 70-saturated E. coli RNA polymerase was determined in the presence or absence of NhaR-His6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>The last four lanes ( in vitro ) correspond to transcription reactions conducted in the presence or absence of NhaR ( 455 nM ) and NaCl ( 25 mM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Since antiporter activity reduces intracellular Na + , the findings suggest that intracellular ( rather than extracellular ) Na + is the inducer of nhuA ' - ` lacZ mediated by NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>The metal elements ( Na , Mn , Ni , Cu , Zn , Fe , and Mo ) are directly recognized by the DNA-binding TFs ( NhaR , MntR , NikR , CueR , ZntR/Zur , Fur , and ModE , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>We suggest that NhaR is both sensor and transducer of the NaF signal and that it regulates nhaA expression by undergoing a F conformational change upon Na binding which modiﬁes the NhaR -- nhaA contact points .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Taken together , these results suggest that NhaR is both the sensor and the transducer of the Na1 signal which regulates expression of nhaA , and undergoes a conform-ational change upon Na1 binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Isolated NhaR protein was assumed to be 100 % active for the calculations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>100 mM Na , but not K , removed -- 60 the protection of G conferred by His-tagged NhaR in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Na , up to 100 mM , had no effect on the binding of NhaR to nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>We have puriﬁed the NhaR protein ( partially ) and its His-tagged derivative ( to homogeneity ) , identiﬁed their binding sites to cis-regulatory elements of nhaA and 1 discovered a speciﬁc effect of Na on the NhaR -- nhaA interaction both in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>we do not know whether the effect of Na + on either NhaR or NhaRl is direct , we suggest that either Glu 134 bears a negative charge and is part of the Na + binding site in NhaR or that Glu134 interacts with an additional protein which serves as the ` Na + sensor ' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>This change is expressed directly in a decrease in NhaR binding to G -- 60 in a pH-dependent fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>P1 is + located within the NhaR binding site , and its deletion eliminates Na induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+<li>Therefore , NhaR had a negative effect on activation by RcsB , presumabl through competition for the same binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>The activation of osmC by NhaR p '' might also be direct , involving binding of NhaR near osmC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>This is also manifested in the binding of NhaR to G -- 92 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">NhaR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Therefore , activation by NhaR is responsible for the osmotic induction of osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>P1 is + located within the NhaR binding site , and its deletion eliminates Na induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+<li>Comparison of the putative pgaABCD promoter region with NhaR binding sites of nhaA ( 10 ) and osmC ( 68 ) revealed two T-N11-A motifs , one overlapping the 35 promoter element and a second further upstream ( Fig. 6E and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Within this protected region , two apparent binding sites with dyad symmetry were separated by a small region that became hypersensitive to DNase I digestion in the presence of NhaR , suggestive of an altered conformation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Most interestingly , the deletion mapping of the NhaR binding domain on nhaA shows that each of the DNA fragments which bind NhaR contain one or more of these consensus motifs designated I , II and III ( Figures 2A and 6A ) , which are very close to each other but yet separated by spanning sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The consensus sequences recognized by NhaR which appear sequentially three times in the NhaR-binding domain and are designated I , II and III ( Figure 6A ) are also shown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Gel retardation assay with DNase I footprinting analysis showed that NhaR binds a region of nhaA which spans 92 bp and contains three copies of the conserved LysR - F binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Since the LysR regulatory proteins including NhaR each have only one helix -- turn -- helix motif in their N-terminus , through which binding to DNA is mediated , a single molecule is unlikely to span more than one helix turn .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Observed only in vivo , the G -- 92 -- NhaR interaction suggests an involvement of yet another factor in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Arrows , identiﬁed bases contacting His-tagged NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Dimethylsulfate methylation protection footprinting both in vivo and in vitro identiﬁed four bases in this region which form direct contact with NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>It is remarkable that within the three consecutive consensus motifs , I , II and III , in the binding domain of NhaR , we identiﬁed by the DMS methylation protection assay , but not by the DNase I assay , four single bases which form direct contacts with NhaR : G -- 92 in I , G -- 60 in II and G -- 29 and A -- 24 in III .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>To determine if CsrA affects NhaR protein levels , the chromosomal nhaR gene was modiﬁed in situ such that it produced a protein containing a 3 Flag epitope tag at the C terminus , NhaR-Flag .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>In a system containing both s70-RNA polymerase holoenzyme and puriﬁed NhaR two prominent transcripts were formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>For this purpose , we used a mixture of cell-free extracts , one containing overexpressed NhaR and the other NhaR speciﬁcally labeled with [ 35S ] methionine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">NhaR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>BLAST analyses revealed that homologs of nhaAR are present in the genomic sequences of most Enterobacteriaceae ( 82 % of total ) , including pathogens such as E. coli O157 : H7 ( 99 % NhaR identity ) , Yersinia pestis ( 79 % ) , and Erwinia carotovora ( 77 % ) , which also contain loci homologous to the pgaABCD operon of E. coli ( 77 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_2">
+NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Eschenichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8017942" target="_blank">8017942</a>]<br></label>
+<input id="evo_similarity_2", type="checkbox">
+<div class="EVO_similar">
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium in proton antiporter gene Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8188587" target="_blank">8188587</a>]<br></li>
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li></div>
+<li>[ 16 ] Rahav-Manor , O. , Carmel , O. , Karpel , R. , Taglicht , D. , Glaser , G. , Schuldiner , S. and Padan , E. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia [ 17 ] Stout , V. and Gottesman , S. ( 1990 ) RcsB and RcsC : a two-component regulator of capsule synthesis in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15251200" target="_blank">15251200</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_7">
+Rahav-Manor O , Carmel O , Karpel R , Taglicht D , Glaser G , et al. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></label>
+<input id="evo_similarity_7", type="checkbox">
+<div class="EVO_similar">
+<li>[ 10 ] O. Rahav-Manor , O. Carmel , R. Karpel , D. Taglicht , G. Glaser , S. Schuldiner , E. Padan , NhaR , a protein homologous to a family o bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli , J. Biol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+<li>, 265 , 9247 -- 9250 Rahav-Manor , O. , Carmel , O. , Karpel , R. , Taglicht , D. , Glaser , G. , Schuldiner , S. and Padan , E. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li></div>
+<li>NhaR , aProtein Homologous toa Family of Bacterial Regulatory Proteins ( LysR ) , Regulates nhaA , the Sodium Proton Antiporter Gene in Escherichia coli * On the basis of protein homology , nhaR has previ - min on the E. coli chromosome ( Goldberget al. , 1987 ; Karpel ously been shown to belong to a large family of regu - et al. , 1988 ) , cloned ( Goldberget al. , 1987 ) , sequenced ( Karpel latory proteins , the LysR family ( HenikofSf , .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>RESULTS Sequence of nhR-On the basis of protein sequence homology , NhaR ( AntO ) has been suggested to belong to the LysR family of regulatory proteins ( Henikoff et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>NhaR belongs to the LysR family of regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>' Furthermore , on the basis of proteinsequence homology , NhaR ( AntO ) has been included in a large family of regulatory proteins , the LysR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>Hence , we suggest that similarly to other members of the LysR family , the His-tagged NhaR binds as a multimer in an as yet unknown NhaR -- DNA stoichiometry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Similarly to other members of the LysR family , the long footprint of NhaR on nhaA as revealed by the DNase I protection assay overlaps with P1 , one of the two promoters of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The transcription of nhaA , which is positively regulated by NhaR ( 29 ) , a member of the LysR-OxyR family ( 7 , 14 , 30 , 34 ) , is speciﬁcally induced by intracellular Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_17">
+In logarithmic growth the expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner ( reviewed in refs 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11258962" target="_blank">11258962</a>]<br></label>
+<input id="evo_similarity_17", type="checkbox">
+<div class="EVO_similar">
+<li>The expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner [ reviewed in ( 2 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12475238" target="_blank">12475238</a>]<br></li></div>
+<li>NhaR belongs to the LysR family , a group of transcription activators characterized by unusually large binding sites ( 16 , 28 , 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>We establish here that NhaR , a DNA-binding protein of the LysR family of transcriptional regulators , activates transcription of this operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>It has been reported that transcription of the pgaABCD operon requires NhaR , a LysR family member of DNA-binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>NhaR belongs to the OxyR-LysR family of positive regulators first described by Henikoff et al. ( 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>NhaR is homologous to a large family of positive regulators in prokaryotes , the LysR-OxyR family ( Henikoff et al. , 1988 ; Christman et al. , 1989 ; RahavManor et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>NhaR is a positive regulator of the LysR family and is known to be an activator of the nhaA gene encoding an Na / H antiporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR is a positive regulator belonging to the LysR family and was previously identiﬁed as an activator of nhaA , a gene encoding an Na / H antiporter ( 6 , 9 , 23 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>That NhaR is a positive regulator of nhaA agrees with its previously documented homology to thelarge family of positive regulators , the LysR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>NhaR , a protein that on the basis of sequence homology belongs to the LysR family of positive regulators , has been shown to be a positive regulator of expression of nhaA ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8381959" target="_blank">8381959</a>]<br></li>
+<li>The dps gene , which is transcribed from a single promoter , is controlled by OxyR , which similar to NhaR , is a member of the LysR-OxyR family of positive activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>NhaR is the ﬁrst member of the LysR-OxyR family of activator proteins to be shown to overcome H-NS-mediated repression at a promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by NhaR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Translational Repression of NhaR , a Novel Pathway for Multi-Tier Regulation of Bioﬁlm Circuitry by CsrA Archana Pannuri , a Helen Yakhnin , b Christopher A. Vakulskas , a Adrianne N. Edwards , c * Paul Babitzke , b and Tony Romeoa , c Department of Microbiology and Cell Science , University of Florida , Gainesville , Florida , USAa ; Department of Biochemistry and Molecular Biology , Pennsylvania State University , University Park , Pennsylvania , USAb ; and Department of Microbiology and Immunology , Emory University , Atlanta , Georgia , USAc The RNA binding protein CsrA ( RsmA ) represses bioﬁlm formation in several proteobacterial species .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>In cases where multiple promoters with different regulation have been recognized , they are distinguished as P1 , P2 etc. - Fold up-regulation relative to the anaerobic steady state at the indicated times following the introduction of air 5 min 10 min 15 min 60 min 4.8 5.2 4.6 3.1 3.1 3.5 2.1 2.0 4.2 4.2 5.1 4.6 Oxidative stress and iron-sulfur-cluster-assembly genes Relevant regulatory proteins ahpC alkyl hydroperoxide reductase small subunit ahpF alkyl hydroperoxide reductase large subunit dadA D-amino acid dehydrogenase dadX alanine racemase OxyR * ( ) MetJ ( ) OxyR * ( ) MetJ ( ) P1 , CRP * ( / ) Lrp * ( ) P2 , CRP * ( ) Lrp * ( / ) P3 , CRP * ( ) Lrp * ( ) P1 , CRP * ( / ) Lrp * ( ) P2 , CRP * ( ) Lrp * ( / ) P3 , CRP * ( ) Lrp * ( ) IscR * ( ) SoxRS * ( ) OxyR * ( ) OxyR * ( ) IscR * ( ) IscR * ( ) IscR * ( ) IscR * ( ) IscR * ( ) IscR * ( ) IscR * ( ) OxyR * ( ) P1 , H-NS ( ) Lrp * ( ) NhaR ( ) RcsB ( P2 , H-NS ( ) Lrp * ( ) IscR * ( ) OxyR ( ) IHF ( ) Fur SoxR ( ) SoxS ( ) OxyR * ( ) IHF * ( ) Fur ( ) IscR * ( ) OxyR * ( ) IHF * ( ) Fur ( ) IscR * ( ) OxyR * ( ) IHF * ( ) Fur ( ) IscR * ( ) 3.3 2.1 3.4 1.9 3.2 1.3 7.2 1.6 2.2 2.8 6.3 6.1 3.4 3.0 2.1 5.3 2.1 2.8 3.0 9.1 5.8 4.1 fdx ferredoxin fur ferric uptake regulator 2.1 3.4 2.4 2.8 3.3 10.1 7.0 5.1 2.0 1.9 1.8 2.7 1.8 1.8 2.8 2.5 11.2 5.7 4.4 1.8 1.1 3.6 grxA glutaredoxin 1 hscA co-chaperone involved in IscU iron-sulfur-cluster-assembly hscB co-chaperone involved in IscU iron-sulfur-cluster-assembly iscA iron-sulfur-cluster-assembly protein iscR transcriptional regulator iscS cysteine desulfurase iscU scaffold protein involved in iron-sulfur-cluster-assembly iscX possible role in iron-sulfur-cluster-biosynthesis katG bifunctional hydroperoxidase I osmC organic hydroperoxidase Within 5 min of air exposure the abundance of the soxS transcript is increased 8-fold ( Table 2 ) , indicating activation of the sensor SoxR , which enhances soxS expression , which in turn controls the SoxRS regulon ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16857675" target="_blank">16857675</a>]<br></li>
+<li>A reaction mixture lacking His-tagged NhaR served as a control ( Figure 3A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Toulouse III , 118 Route de Narbonne , F-31062 , Toulouse Cedex , France Keywords : transcriptional regulation , osmoregulation , bacterial promoters , NhaR INTRODUCTION To cope with environmental stresses , non-sporulating enterobacteria such as Escherichia coli or Salmonella typhimurium undergo global programmed modiﬁcations of their gene-expression pattern , leading to increased resistance to a number of chemical and physical agents including heat , oxidative agents and hyperosmotic shock ( McCann et al. , 1991 ; Kolter et al. , 1993 ; Hengge-Aronis , 1996b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR is a soluble protein that exerts its effect in trans as shown , using plasmid n h R .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+<li>Regulatory protein NhaR had an essential role in the expression dependent on P1 , but neither NhaR nor sodium ions were involved in the latter expression [ 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12460671" target="_blank">12460671</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_7">
+NhaR in an hns1 strain is an Na1-dependent positive regulator , but in an hns mutant strain it ( in multicopy ) acts as a repressor which restores Na1 induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></label>
+<input id="rp_similarity_7", type="checkbox">
+<div class="RP_similar">
+<li>NhaR , which acts as an Na1-dependent positive regulator only in an hns1 strain , acts as a repressor when in multicopy and without Na1 in an hns mutant strain ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li></div>
+<li>We have previously provided evidence that NhaR is a positive regulator of nhaA expression , nhaR is Na1 sensitive ( 39 ) , and a multicopy plasmid carrying nhaR increases Na1-depen-dent expression of an nhaA9-9lacZ protein fusion ( 39 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Accordingly , expression of nhaA , which is dependent on NhaR , a positive regulator , is induced by Na1 in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10671505" target="_blank">10671505</a>]<br></li>
+<li>NhaR , a protein that on the basis of sequence homology belongs to the LysR family of positive regulators , has been shown to be a positive regulator of expression of nhaA ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8381959" target="_blank">8381959</a>]<br></li>
+<li>Here we demonstrate that CsrA regulates the translation of nhaR , encoding the LTTR protein NhaR , which responds to elevated [ Na ] and alkaline pH conditions ( 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Here we determined that CsrA also represses NhaR , a LysR-type transcriptional regulator which responds to elevated [ Na ] and alkaline pH and activates the transcription of the pgaABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Transcription of the E. coli pgaABCD operon utilizes a single promoter , which requires NhaR , a LysR-type transcriptional regulator ( LTTR ) that responds to high [ Na ] and alkaline pH ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>NhaR is an activator of a sodium/proton antiporter gene [ 29 ] and both GadE and GadW are involved in regulation of the genes for glutamate-dependent acid resistance system [ 8,9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>NhaR , GadE , GadW E. coli responds to temporary low pH using the glutamate-dependent acid resistant system , which involves two complex regulatory systems : EvgAS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>A single amino acid substitution ( Glu 134 -- Ala ) in NhaRl increases the inducibility by Na + of the product of nhaA , a Na + / H + antiporter gene in Escherichia coli O.Carmel , N.Dover , O.Rahav-Manor , P.Dibrov , D.Kirsch , R.Karpel , S.Schuldiner and E.Padan Division of Microbial and Molecular Ecology , Institute of Life Sciences , Hebrew University of Jerusalem , Jerusalem 91904 , Israel Communicated by H.Soreq The mutation nhaAuP ( antup ) has now been identified as a Glu134 to Ala substitution in NhaR and designated nhaRl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>[ 12 ] O. Carmel , O. Rahav-Manor , N. Dover , B. Shaanan , E. Padan , The Na - specific interaction between the LysR-type regulator , NhaR , and + the nhaA gene encoding the Na / H antiporter of Escherichia coli , + + [ 13 ] M. Schell , Molecular biology of the LysR family of transcriptional regulators , Annu .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_19">
+The Na - speciﬁc interaction between the LysR-type regulator , NhaR , and the nhaA gene encoding the Na / H antiporter of .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></label>
+<input id="rp_similarity_19", type="checkbox">
+<div class="RP_similar">
+<li>The Na1 speciﬁc interaction between the LysR-type regulator , NhaR and the nhaA gene , encoding the Na1/H1 antiporter of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The Na + speciﬁc interaction between the LysR-type regulator , NhaR , and the nhaA gene encoding the Na + -RCB- H + antiporter of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>The Na speciﬁc interaction between the LysR type regulator , NhaR and the nhaA gene encoding the Na / H antiporter of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>The Na - speciﬁc interaction between the LysR-type regulator , NhaR , and the nhaA gene encoding the Na / H antiporter of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li></div>
+<li>NhaR is a regulator of the LysR family , previously identiﬁed as a trans-criptional activator of the gene nhaA , encoding the NhaA Na + -RCB- H + antiporter , the main system responsible for adaptation to Na + and alkaline pH ( in the presence of Na + ) in E. coli and other enteric bacteria ( RahavManor et al. , 1992 ; Padan & Schuldiner , 1994 ; Dover et al. , 1996 ; Carmel et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR is a positive regulator of the LysR family , previously identiﬁed as an activator of nhaA , a gene encoding a NaM/HM antiporter involved in adaptation to NaM and alkaline pH in E. coli and other enteric bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>NhaR is a positive regulator of the LysR family and is known to be an activator of the nhaA gene encoding an Na / H antiporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaR , aProtein Homologous toa Family of Bacterial Regulatory Proteins ( LysR ) , Regulates nhaA , the Sodium Proton Antiporter Gene in Escherichia coli * On the basis of protein homology , nhaR has previ - min on the E. coli chromosome ( Goldberget al. , 1987 ; Karpel ously been shown to belong to a large family of regu - et al. , 1988 ) , cloned ( Goldberget al. , 1987 ) , sequenced ( Karpel latory proteins , the LysR family ( HenikofSf , .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1316901" target="_blank">1316901</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_28">
+NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Eschenichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8017942" target="_blank">8017942</a>]<br></label>
+<input id="rp_similarity_28", type="checkbox">
+<div class="RP_similar">
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium in proton antiporter gene Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8188587" target="_blank">8188587</a>]<br></li>
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li></div>
+<li>[ 16 ] Rahav-Manor , O. , Carmel , O. , Karpel , R. , Taglicht , D. , Glaser , G. , Schuldiner , S. and Padan , E. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia [ 17 ] Stout , V. and Gottesman , S. ( 1990 ) RcsB and RcsC : a two-component regulator of capsule synthesis in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15251200" target="_blank">15251200</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_33">
+[ 10 ] O. Rahav-Manor , O. Carmel , R. Karpel , D. Taglicht , G. Glaser , S. Schuldiner , E. Padan , NhaR , a protein homologous to a family o bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli , J. Biol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15282168" target="_blank">15282168</a>]<br></label>
+<input id="rp_similarity_33", type="checkbox">
+<div class="RP_similar">
+<li>Rahav-Manor O , Carmel O , Karpel R , Taglicht D , Glaser G , et al. ( 1992 ) NhaR , a protein homologous to a family of bacterial regulatory proteins ( LysR ) , regulates nhaA , the sodium proton antiporter gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li></div>
+<li>We have therefore suggested that NhaR and its effector , NhaA , are involved in a novel signal-transduction-pathway specific to Na + which is essential for halotolerance in E.coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>Translational repression of NhaR , a novel pathway for multi-tier regulation of biofilm circuitry by CsrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23666921" target="_blank">23666921</a>]<br></li>
+<li>NhaR is important for bioﬁlm formation in E. coli K-12 , as it activates the transcription of the pgaABCD genes ( 26 ) , which is essential for the synthesis and secretion of the bioﬁlm adhesin PGA ( 30 , 62 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>These results deﬁne a novel mechanism for regulation of bioﬁlm formation in response to environmental conditions and suggest an expanded role for NhaR in promoting bacterial survival .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>NhaR also activates osmC transcription , which is required for resistance to organic peroxides and long-term survival in stationary phase ( 29 , 43 , 68 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>It is evident that NhaR activates expression of its target operons , nhaAR , osmC , and pgaABCD , as a coordinated response to elevated Na and/or pH. Consequently , NhaR is required for survival under high concentrations of NaCl , high pH , and certain oxidative stresses ( 49 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>After leucine-responsive protein , H-NS and σs , NhaR and RcsB are the fourth and ﬁfth regulators of osmC transcription to have been identiﬁed The participation of so many factors in the regulation of osmC illustrates the notion of cooperation of global regulators in the ﬁne-tuning of stress-inducible genes ( Bouvier et al. , 1998 ; Hengge-Aronis , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>For instance , the response-to-copper includes at least four different transcription factors , CueR , CusSR , CpxAR and YedVW , while at least four different transcription factors , Zur , ZraSR , ZntR and NhaR have been identiﬁed for zinc response ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>Within this YdeO regulon , we identified four stress-response transcription factors , DctR , NhaR , GadE , and GadW and enzymes for anaerobic-respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+<li>In this study , we performed a comprehensive interrogation of YdeO-binding sites in vivo on the E. coli genome using ChIP-chip analysis , and identified a set of YdeO-regulated genes , including four stress-response transcription factors , DctR , NhaR , GadE , and GadW , and several genes involved in respiration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25375160" target="_blank">25375160</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">NhaR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Oligonucleotide primers used in this studya Primer name Sequence ( 5 to 3 ) b Comments NhaAR FWD GATTCCTCTATTTATTCGCCCGC NhaAR REV CACTCGTGAGCGCTTACAGCCG 400 bp upstream of nhaAR 3 end of nhaR NhaR FWD AAGAATTCAACGGCTCCCTTTTCATTGTTATCAGGG Contains upstream region of nhaR and EcoRI site for cloning Contains stop codon of nhaR and PstI site for cloning Contains six His codons , stop codon , and PstI site NhaR REV AACTGCAGTTAACGCACCGCTGGACTAAAAAG NhaR-His6 REV PgaA GS FWDc PgaA GS REVc PgaB-C FWDc PgaB-C REVc PEXT3c AACTGCAGTCAGTGGTGGTGGTGGTGGTGACGCA CCGCTGGACTAAAAAG CAATTAAATCCGTGAGTGCCG TCTTCAGGAATACGGCATAAAT ATCATTAATCGCATCGTATCG AGTGAAAGTACGCTACGCATAGGG CCTCATAATCCGTTATTAAACGC Anneals 115 of pgaA Anneals 18 of pgaA Intergenic region between pgaB and pgaC Intergenic region between pgaB and pgaC Anneals between 134 to 154 relative to the initiation of transcription of pgaA pga leader-pgaA forward primer pga leader-pgaA reverse primer 16S rRNA distal , forward primer 16S rRNA distal , reverse primer TTCTCATCATCAACAATTCACGTCTC GCGGCAGTAAGAAGTTTCAAAGC AGTTATCCCCCTCCATCAGG TGCAAGTCGAACGGTAACAG PGART1 PGART2 16S-4d 16S-5d a All primers were purchased from Integrated DNA Technologies Inc. , Coralville , Iowa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Construction of His-tagged NhaR plasmid , pOCRXH A DNA fragment ( 52 bp ) encoding two factor Xa cleavage sites in tandem ﬂanked at the 59 and 39 ends by NotI and XhoI restriction sites respectively was generated by annealing two complementary single-stranded DNA primers 49 and 50 ( Table I ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>For example , CsrA represses pgaA directly by binding to six sites in the pgaA 59 UTR ( Wang et al. 2005 ) and indirectly by repressing the synthesis of NhaR , a transcription activator of the pgaABCD operon ( Pannuri et al. 2012 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23666921" target="_blank">23666921</a>]<br></li>
+<li>In contrast , stimulation was no longer observed with a promoter fragment leaving only 6 bp upstream of the ® 35 box ( DNA fragment obtained with oligonucleotide OsmC13E , in CLG743 ) , indicating that the sequences required for the activation by NhaR had been at least partially deleted in the latter construction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>As shown previously with a cell-free extract obtained from cells overexpressing native NhaR ( Carmel et al. , 1994 ) , the partially puriﬁed NhaR binds speciﬁcally to a DNA fragment containing base pairs -- 424 to 130 of the upstream sequences of nhaA including the nhaA promoters ( Figure 2 , fragment A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>To identify the DNA region containing the cis-elements recognized by NhaR , we PCR-ampliﬁed various sequences overlapping the nhaA promoter region ( Figure 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Figure 2 also shows that whereas the sequences from the 59 end of this fragment down to bp 121 ( fragments B and E ) and sequences from the 39 end up to bp 14 ( fragment D ) do not bind , DNA fragments overlapping the sequences in between ( fragments C , F and G ) contain nhaA sequences recognized by NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>A perfect Pribnow box located 46 bp upstream of P1 and within the binding site of NhaR might be responsible for this new start site ( Fig. 1C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Considering the pga regulatory region as a whole , OmpR binding to this sequence could be hindering RNA polymerase or NhaR interactions with the pgaA promoter , as the OmpR-protected region extends from 248 to 210 , where a downstream NhaR-binding box and the 235 hexamer are also located ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>A puriﬁed recombinant NhaR protein bound speciﬁcally and with high afﬁnity within the pgaABCD promoter region ; one apparent binding site overlaps the 35 element , and a second site lies immediately upstream of the ﬁrst .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Comparison of the putative pgaABCD promoter region with NhaR binding sites of nhaA ( 10 ) and osmC ( 68 ) revealed two T-N11-A motifs , one overlapping the 35 promoter element and a second further upstream ( Fig. 6E and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>NhaR protected a region spanning 60 bp which overlapped and extended upstream from the putative 35 promoter region ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>DNA gel retardation assay and DNase I footprinting analysis showed that NhaR binds a region of 92 bp located 18 to 119 bp upstream of the nhaA initiation codon ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Gel retardation assay with DNase I footprinting analysis showed that NhaR binds a region of nhaA which spans 92 bp and contains three copies of the conserved LysR - F binding motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>To determine whether NhaR-His6 binds to pgaA promoter DNA , gel mobility shift assays were conducted using a 132-bp labeled DNA fragment containing the promoter region and putative NhaR binding sites of pgaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Puriﬁed recombinant NhaR binds speciﬁcally to pgaABCD promoter DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>NhaR directly binds to the osmCp1 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>NhaRl , like NhaR , binds specifically to the promoter region of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8168494" target="_blank">8168494</a>]<br></li>
+<li>As shown in Figure 3 , a very long sequence on each strand of the nhaA promoter region was protected by His-tagged NhaR , extending over 92 bp [ from bp -- 109 to -- 17 of the bottom strand ( Figure 3A ) and from -- 109 to -- 24 of the top strand ( Figure 3B ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The nhaA sequence bound by NhaR is modiﬁed by Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>In this paper we show that RcsB and probably also NhaR are able to directly bind to overlapping sites next to osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>In order to demonstrate that RcsB and NhaR directly bind to the osmCp1 region and to identify their binding sites , we performed DNase I footprint experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Sequences of the RcsB and NhaR binding sites upstream of osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Although the protected site includes the region protected by RcsB , RcsB is not necessary for the protection observed with extracts enriched in NhaR , and it is likely due to direct binding of NhaR upstream from osmCp1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Boxed area , binding site of NhaR ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>RESULTS RcsB and NhaR have overlapping binding sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Upstream from the nhaA promoter , NhaR protects approximately 90 bp , spanning a compound site composed of three core binding sites separated by positions hypersensitive to DNase I ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>Within this protected region , two apparent binding sites with dyad symmetry were separated by a small region that became hypersensitive to DNase I digestion in the presence of NhaR , suggestive of an altered conformation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>Most interestingly , the deletion mapping of the NhaR binding domain on nhaA shows that each of the DNA fragments which bind NhaR contain one or more of these consensus motifs designated I , II and III ( Figures 2A and 6A ) , which are very close to each other but yet separated by spanning sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Shaded areas , nhaA sequences protected by NhaR from DNase I digestion ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Accordingly , the nhaA sequences binding NhaR that are revealed by the gel retardation assay ( Figure 2 ) align with the DNase I-protected sequences ( Figures 3 and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>Accordingly , the DNase I-protected sequences of nhaA by NhaR align with these three motifs and show that the spanning sequences separating them contain hypersensitive DNase I sites ( Figures 3A and 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>These spanning sequences separating the consensus motifs further corroborate our suggestion regarding the multimeric nature of bound NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>It is remarkable that within the three consecutive consensus motifs , I , II and III , in the binding domain of NhaR , we identiﬁed by the DMS methylation protection assay , but not by the DNase I assay , four single bases which form direct contacts with NhaR : G -- 92 in I , G -- 60 in II and G -- 29 and A -- 24 in III .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by NhaR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>NhaR and RcsB Independently Regulate the osmCp1 Promoter of Escherichia coli at Overlapping Regulatory Sites Rachel Sturny , Kaymeuang Cam , Claude Gutierrez , * and Annie Conter Laboratoire de Microbiologie et de Génétique Moléculaire , UMR5100 CNRS-Universite ́ Toulouse III , 31062 Toulouse Cedex , France Received 31 January 2003/Accepted 29 April 2003 Transcription of the Escherichia coli osmC gene is induced by several stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12867437" target="_blank">12867437</a>]<br></li>
+<li>The nhaR gene was ampliﬁed from pCRnhaAR plasmid DNA by using Elongase and the primers NhaR FWD and NhaR REV ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>A C-terminally His-tagged nhaR gene was ampliﬁed from pCRnhaAR by using Pfu Turbo DNA polymerase ( Stratagene ) as indicated by the manufacturer , with primers NhaR FWD and NhaR-His6 REV ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>This shorter transcript likely originates from nhaAp1 ( Fig. 1 ) , which is activated by NhaR , and therefore should increase in the csrA mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Measurement of β-galactosidase activity in samples of these cultures indicated that , in the absence of NhaR , osmC expression was unchanged ( Fig. 2a ) p # whereas osmC expression was reduced in both media p '' ( Fig. 2b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11577158" target="_blank">11577158</a>]<br></li>
+<li>In an hns1 strain in the absence of Na1 , nhaA was repressed whether or not nhaR was present ( Fig. 2 and 3 ) ( 39 ) , suggesting that the repression by H-NS is NhaR independent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Whether or not NhaR can bind to DNA in the absence of Na1 in an hns1 strain is unknown , as transcription is already repressed by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8932307" target="_blank">8932307</a>]<br></li>
+<li>Transcription of nhaA , the Main Na1/H1 Escherichia coli , Is Regulated b and Growth Phase Antiporter of y Na1 NIR DOVER AND ETANA PADAN * Division of Microbial and Molecular Ecology , Institute of Life Sciences , The Hebrew University of Jerusalem , 91904 Jerusalem , Israel Received 7 August 2000/Accepted 19 October 2000 The transcription of nhaA , encoding the main Na1/H1 antiporter of Escherichia coli , is induced by Na1 , regulated by NhaR , and affected by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>nhaR is located downstream of nhaA and encodes a protein ( NhaR ) of 34.2 kDa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>The transcription of nhaA , which is positively regulated by NhaR ( 29 ) , a member of the LysR-OxyR family ( 7 , 14 , 30 , 34 ) , is speciﬁcally induced by intracellular Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The dps gene , which is transcribed from a single promoter , is controlled by OxyR , which similar to NhaR , is a member of the LysR-OxyR family of positive activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>Deletion of nhaR did not affect pgaA expression in TSB - or in the presence of glucose of ethanol but ablated NaCl-induced pgaA expression indicating that induction of pgaA expression by NaCl is dependent upon NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_13">
+In logarithmic growth the expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner ( reviewed in refs 5 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11258962" target="_blank">11258962</a>]<br></label>
+<input id="tu_similarity_13", type="checkbox">
+<div class="TU_similar">
+<li>The expression of nhaA is positively regulated by NhaR , a member of the LysR family , and is induced by Na + in a pH-dependent manner [ reviewed in ( 2 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12475238" target="_blank">12475238</a>]<br></li></div>
+<li>Accordingly , the expression of nhaA which is dependent on NhaR is induced by Na in a pH dependent manner [ 10 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9877164" target="_blank">9877164</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_16">
+Accordingly , expression of nhaA , which is dependent on NhaR , a positive regulator , is induced by Na1 in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10671505" target="_blank">10671505</a>]<br></label>
+<input id="tu_similarity_16", type="checkbox">
+<div class="TU_similar">
+<li>Accordingly , expression of nhaA which is dependent on NhaR , a positive regulator , is induced by Na1 in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8999858" target="_blank">8999858</a>]<br></li>
+<li>Accordingly expression of nhaA which is dependent on NhaR , a positive regulator , is induced by Na1 in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7592922" target="_blank">7592922</a>]<br></li>
+<li>Accordingly , expression of nhaA which is dependent on NhaR , a positive regulator , is induced by Na1 , in a pH-de-pendent manner ( 8 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9756882" target="_blank">9756882</a>]<br></li></div>
+<li>The nhaA sequence bound by NhaR is modiﬁed by Na1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9312050" target="_blank">9312050</a>]<br></li>
+<li>P1 , the Na1-sensitive promoter of nhaA is NhaR dependent and affected by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The results show that in exponentially growing cells P1 is both the dominant promoter and the one which is NhaR dependent and Na1 induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>NhaR is not involved in sS-dependent transcription of nhaA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>The present work revealed that the P2 promoter of nhaA is a stationary phase-induced promoter which is activated by sS and neither NhaR nor Na1 or H-NS is involved in this induction ; in the stationary phase , transcription from P2 increased dramatically , and this increase was eliminated in an rpoS mutant strain ( Fig. 6A ) but not in a DnhaR strain ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11133959" target="_blank">11133959</a>]<br></li>
+<li>( iii ) Under both backgrounds , biofilm requires the presence of the pga operon and its transcriptional activator NhaR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>NhaR is required for induction of pgaA - lacZ expression by monovalent-cations and alkaline pH. To test whether NhaR regulates the pgaABCD operon itself , expression of a chromosomally carried pgaA - lacZ translational fusion containing the upstream noncoding region through the initiation codon of pgaA ( 76 ) was examined in nhaR wild-type and mutant strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>NhaR is important for bioﬁlm formation in E. coli K-12 , as it activates the transcription of the pgaABCD genes ( 26 ) , which is essential for the synthesis and secretion of the bioﬁlm adhesin PGA ( 30 , 62 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>NhaR protein regulates E. coli bio-ﬁlm formation by binding immediately upstream of the single promoter of the pgaABCD operon and activating its transcription ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Regulation of bioﬁlm formation by NhaR depends on the pgaABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>It has been reported that transcription of the pgaABCD operon requires NhaR , a LysR family member of DNA-binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25667010" target="_blank">25667010</a>]<br></li>
+<li>Here we determined that CsrA also represses NhaR , a LysR-type transcriptional regulator which responds to elevated [ Na ] and alkaline pH and activates the transcription of the pgaABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>Because NhaR is required for pgaABCD transcription and CsrA represses nhaR , we reasoned that CsrA should indirectly repress the transcription of pgaABCD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>It is evident that NhaR activates expression of its target operons , nhaAR , osmC , and pgaABCD , as a coordinated response to elevated Na and/or pH. Consequently , NhaR is required for survival under high concentrations of NaCl , high pH , and certain oxidative stresses ( 49 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+<li>NhaR is also required for transcription of the genes for a sodium-proton antiporter , nhaA ( 50 ) , and a hydroperoxidase , osmC ( 39 , 58 ) , and was found to be important for urinary tract infection by the E. coli relative Proteus mirabilis ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22037401" target="_blank">22037401</a>]<br></li>
+<li>NhaR also activates osmC transcription , which is required for resistance to organic peroxides and long-term survival in stationary phase ( 29 , 43 , 68 , 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16997959" target="_blank">16997959</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - MqsA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">MqsA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">MqsA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Escherichia coli toxin/antitoxin pair MqsR/MqsA regulate toxin CspD Younghoon Kim1 , Xiaoxue Wang1 , Xue-Song Zhang1 , Simina Grigoriu2 , Rebecca Page3 , Wolfgang Peti2 , and Thomas K. Wood1 , * 1Department of Chemical Engineering , Texas A&M University , College Station , TX 77843-3122 , USA 2Department of Molecular Pharmacology , Physiology , and Biotechnology , Brown University , Providence , RI 02912 , USA 3Department of Molecular Biology , Cell Biology and Biochemistry , Brown University , Providence , RI 02912 , USA Summary Previously we identified that the Escherichia coli protein MqsR ( YgiU ) functions as a toxin and that it is involved in the regulation of motility by quorum sensing signal autoinducer-2 ( AI-2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Antitoxin MqsA Helps Mediate the Bacterial General Stress Response Xiaoxue Wang1 , Younghoon Kim1 , Seok Hoon Hong1 , Qun Ma1 , Breann L. Brown4 , Mingming Pu1 , Aaron M. Tarone3 , Michael J. Benedik2 , Wolfgang Peti4 , Rebecca Page5 , and Thomas K. Wood1 ,2 , * 1Department of Chemical Engineering , Texas A & M University , College Station , Texas 77843-3122 2Department of Biology , Texas A & M University , College Station , Texas 77843-3122 3Department of Entomology , Texas A & M University , College Station , Texas 77843-3122 4Department of Molecular Pharmacology , Physiology , and Biotechnology , Brown University , Providence , Rhode Island 02912 5Department of Molecular Biology , Cell Biology and Biochemistry , Brown University , Providence , Rhode Island 02912 SUMMARY Although it is well-recognized that bacteria respond to environmental stress via global networks , the mechanism by which stress is relayed to the interior of the cell is poorly understood .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Keywords Toxin/antitoxin ; MqsR/MqsA ; biofilm formation Users may view , print , copy , download and text and data - mine the content in such documents , for the purposes of academic research , subject always to the full Conditions of use : * To whom correspondence should be addressed : Thomas.Wood@chemail.tamu.edu .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>To investigate the regulation of promoters by MqsA , overnight cultures of BW25113/pBS ( Kan ) - mqsR and BW25113/pBS ( Kan ) - mqsA were cultured to a turbidity of 1 at 600 nm , then 1 mM IPTG was added for 1 h to induce mqsR and mqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>To investigate the regulation of promoters by MqsA under oxidative-stress conditions , overnight cultures of Δ6 / pCA24N-mqsA and Δ6 / pCA24N were re-grown to a turbidity of 0.5 , then 1 mM IPTG was added for 2 h to induce mqsA , and after diluting to turbidity ~ 1.0 , the cells were exposed to 20 mM H2O2 for 10 min .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Discussion Previously , a single antitoxin , MqsA , was shown to regulate more than its own synthesis by regulating the general stress response through direct repression of rpoS via its mqsRA-like palindrome ( Wang et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_7">
+Wang , X. , Kim , Y. , Hong , S. H. , Ma , Q. , Brown , B. L. , Pu , M. , Tarone , A. M. , Benedik , M. J. , Peti , W. , Page , R. , and Wood , T. K. ( 2011 ) Antitoxin MqsA helps mediate the bacterial general stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24898247" target="_blank">24898247</a>]<br></label>
+<input id="act_similarity_7", type="checkbox">
+<div class="ACT_similar">
+<li>Wang , X. , Kim , Y. , Hong , S.H. , Ma , Q. , Brown , B.L. , Pu , M. , Tarone , A.M. , Benedik , M.J. , Peti , W. , Page , R. et al. ( 2011 ) Antitoxin MqsA helps mediate the bacterial general stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24748661" target="_blank">24748661</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_9">
+Kim , Y. , Wang , X. , Zhang , X. S. , Grigoriu , S. , Page , R. , Peti , W. , and Wood , T. K. ( 2010 ) Escherichia coli toxin/antitoxin pair MqsR/MqsA regulate toxin CspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24898247" target="_blank">24898247</a>]<br></label>
+<input id="act_similarity_9", type="checkbox">
+<div class="ACT_similar">
+<li>Kim , Y. , Wang , X. , Zhang , X.S. , Grigoriu , S. , Page , R. , Peti , W. , and Wood , T.K. ( 2010 ) Escherichia coli toxin/antitoxin pair MqsR/MqsA regulate toxin CspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li></div>
+<li>Hence , we demonstrate that the MqsR/MqsA TA system controls cell physiology via its own toxicity as well as through its regulation of another toxin , CspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>In the current study , we confirm that MqsR is a toxin paired with its antitoxin MqsA and show that the toxicity of this system is related to its direct regulation of CspD as well as related to the activities ClpX , ClpP , Lon , YfjZ , RelB , RelE and HokA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>However , upon mutating the palindrome in PrpoS , 5 ' - ACCT TGC AGGT , to 5 ' - ACCT TGC TCAC in PrpoS-M , binding of MqsA to PrpoS was abolished ( Fig. 1b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>To confirm that MqsA regulates rpoS expression through the identified mqsRA-like palindrome in rpoS , the four nucleotides in the rpoS palindrome that are used for direct base-specific interactions28 were mutated from 5 ' - AGGT to 5 ' - TCAC ( Supplementary Fig. 2 ) in pKNOCK-PrpoS-M , and integrated into Δ6 ΔlacZ to form Δ6 R2 PrpoS-M ( Fig. 1c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>S2 CRISPR RNase , and GhoS is a where a protein antitoxin inhibits the Keywords Toxin/antitoxin ; Persistence ; GhoT/GhoS RESULTS derepressed upon MqsA degradation during oxidative-stress9 , 14 , which play critical roles in bacterial cell physiology during stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22941047" target="_blank">22941047</a>]<br></li>
+<li>Since the antitoxin MqsA is degraded rapidly upon stress ( Fig. 5 ) and mqsRA is induced upon stress18 , it is expected that the RNase activity of MqsR would be increased during stress ; this enhanced MqsR activity may serve to rapidly direct the cell toward the translation of newly-transcribed , stress-related transcripts by degrading the older σ70-related mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Using Congo red , a dye that binds to both cellulose and curli30 , we found , as expected , that producing MqsA in the presence of oxidative-stress ( 2 mM H2O2 for 180 min at 30 ° C ) decreased curli / cellulose production by 13 ± 2 fold ( Fig. 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>We found that adrA , which encodes a diguanylate cyclase that controls cellulose synthesis and which is positively regulated by RpoS27 , was repressed by 6 ± 1 fold upon producing MqsA from a plasmid in cells under oxidative-stress when directly compared to the identical experiment with cells with an empty plasmid and oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>When the Δ6 cells were exposed to this oxidative-stress in the presence of plasmid-expressed MqsA , rpoS mRNA was reduced by 4 ± 1 fold ( via qRT-PCR ) compared to the empty plasmid control with oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>As expected , csgD was repressed ( 3 ± 1 fold ) when MqsA was produced from a plasmid in the presence of oxidative-stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>As expected , transcription of katE ( 6 ± 1 fold ) and katG ( 4 ± 1 fold ) were both repressed when the Δ6 cells were exposed to oxidative-stress ( 20 mM H2O2 for 10 min ) in the presence of elevated MqsA compared to oxidative-stress with an empty plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Catalase converts H2O2 to H2O and O2 ; hence , the reduced ability of the cells to decompose H2O2 when MqsA represses rpoS was demonstrated by a dramatic reduction in oxygen bubbles upon addition of H2O2 to Δ6 ( Fig. 2d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Control where rpoS was induced in the absence of MqsA was included to show the direct effect of RpoS on motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , MqsA represses rpoS either directly or indirectly resulting in repression of the genes positively regulated by RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , MqsA directly represses rpoS transcription , and the repression is dependent on the palindrome in the promoter of rpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Since rpoS is repressed by MqsA , the genes controlled by RpoS should also be repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Our hypothesis predicts that if MqsA represses rpoS , both curli and cellulose production should likewise be repressed since RpoS induces csgD19 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>To explore further the relationship between the MqsR/MqsA TA system and the regulation of rpoS under stress conditions , we cultured cells under oxidative-stress conditions in which RpoS is crucial for cell survival23 , 24 by regulating antioxidant activities such as those of catalase and superoxide dismutase25 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Our results show clearly that MqsA is degraded in the presence of oxidative-stress ( Fig. 5a , b ) ; this degradation leads to derepression of rpoS transcription ( Fig. 5c ) and an increase in rpoS mRNA , and that production of Lon prevents MqsA from increasing motility ( Fig. 5e ) ; hence , the protease Lon degrades MqsA upon stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Hence , upon oxidative-stress , Lon is induced and degrades MqsA like other antitoxins , rpoS is derepressed , and the cell directs transcription toward stress-related genes which includes increasing c-di-GMP concentrations and catalase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Furthermore , the repression of rpoS by MqsA decreases oxidative-stress resistance via catalase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , both PrpoS activity and RpoS levels are repressed by MqsA but upon oxidative-stress , MqsA is degraded and rpoS is derepressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>MqsA reduces stress resistance Since MqsA represses rpoS , we reasoned that the deletion of the six toxin/antitoxin systems should increase cell survival under stress as RpoS would be constitutively induced and the cells would be preconditioned for a stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Both of these earlier results can now be explained by the direct interaction we have discovered between MqsA and rpoS : increasing MqsA represses rpoS which reduces the ability of the cells to withstand stresses like antibiotics , oxidative-stress , and acid stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Our current results indicate that the formerly ambiguous TA systems , especially MqsR / MqsA , are key regulators of gene activity by controlling in part the induction of the stress response , which , in turn , leads to enhanced biofilm formation and reduced motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>However , in the presence of ClpP , MqsA increased motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>As expected , production of MqsA in Δ6 increased motility by 3.2 ± 0.3 fold ( Fig. 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>The increase in motility by MqsA was also tested in an rpoS deletion background , and as expected , MqsA only increased motility slightly ( 1.2 ± 0.2 fold ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>ases motility cre in sA q M Since c-di-GMP levels are reduced in the presence of antitoxin MqsA , motility should increase due to lower RpoS levels which no longer inhibit expression of flhD , the master regulator of motility19 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Repression of rpoS by MqsA reduces the concentration of the internal messenger 3,5-cyclic diguanylic acid , leading to increased motility and decreased biofilm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>By repressing rpoS , MqsA reduces the concentration of the internal messenger cyclic diguanylate ( c-di-GMP ) , thereby increasing motility and decreasing bioﬁlm forma ¬ Received 28 July , 2011 ; accepted 16 September , 2011 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>ces c-di-GMP u d re sA q M Since MqsA represses rpoS which , in turn , results in the repression of the genes related to synthesizing c-di-GMP , it is expected that c-di-GMP concentrations should decrease in the presence of MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Specifically , during stress , Lon protease degrades MqsA which leads to induction of rpoS , which in turn increases c-di-GMP , inhibits motility , and increases cell adhesion/biofilm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Upon oxi-dative stress , MqsA is rapidly degraded by Lon protease resulting in induction of rpoS , which in turn increases c-di-GMP , inhibits motility and increases cell adhesion and bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>ases biofilm formation re ec d sA q M Since MqsA represses rpoS , which leads to reduced c-di-GMP levels and increased motility , deletion of mqsA should also increase biofilm formation due to the increase in c-di-GMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>In addition , the repression of rpoS by MqsA also decreases c-di-GMP and increases motility and reduces biofilm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Note regulation of RpoS is complex and includes regulation at the level of transcription , translation , and protein stability/activity20 ; hence , Figure 6 is a simplification and shows primarily the features important for MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>In addition , hokA and hokE , encoding small toxic polypeptides that damage the membrane ( Pedersen and Gerdes , 1999 ) , were repressed by deleting mqsR ; hence , it is possible that HokA and HokE are also repressed by MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This gene was also repressed by deleting mqsR ( deletion microarray , Table 1 ) which should increase MqsA ; hence , it is possible that MqsR/MqsA represses bssR transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>qsA autoregulate their transcription as positive regulators M d an sR q M To corroborate that MqsR stimulates its own transcription as predicted by the wholetranscriptome analysis ( Table 1 ) and to investigate whether MqsA stimulates transcription o the mqsRA operon , we confirmed the enhanced transcription of mqsR and mqsA via qRT ¬ f PCR respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>binds the rpoS promoter qsA M There are two palindromes in the promoter of the mqsRA operon ( 5 ' - TAACCT TTT AGGTTA and 5 ' - ACCT TTT AGGT ) , and MqsA as well as the MqsR/MqsA complex bind to the two palindromic sequences to negatively regulate mqsRA7 , 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Furthermore , MqsA is the first antitoxin shown to regulate more than its own transcription as it binds the mqsRA , cspD , mcbR , and spy promoters8 , 18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , MqsA appears to regulate cspD directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Therefore , it appears that MqsR , in association with MqsA , induces mqsRA and acts as a positive regulator of its own transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Discussion Taken together , our results indicate that under normal growth , cspD is repressed by the MqsR/MqsA TA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>cspD is repressed by the MqsR/MqsA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This suggests MqsA represses cspD in the absence of MqsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>To confirm the hypothesis that MqsA represses cspD in the absence of MqsR , we quantified the transcript levels of cspD in BW25113 mqsR mqsA overproducing MqsA using qRT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>MqsR/MqsA regulates PcspD under stress conditions Since TA pairs are induced under stress ( Engelberg-Kulka et al. , 2006 ) and since MqsA binds the promoter region of cspD to repress its transcription and this repression is derepressed by overexpressing mqsR , we investigated further the impact of the MqsR/MqsA complex and stress regulation on cspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>We also reasoned that since MqsA represses cspD , if there is excess MqsA , then cspD would remain repressed even under stress conditions where cspD is induced strongly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">MqsA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Each MqsA of the dimer binds to this palindrome via residues Asn97 and Arg101 , which make base-specific interactions with eight nucleotides including four from one strand ( 5 ' - TAAC ) and four from the anti-parallel strand ( 5 ' - AGGT ) 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>As a negative control , we show that the N-terminal domain of MqsA does not bind to cspD ( Fig. 2B ) ; hence , the Cterminal domain of MqsA is necessary and sufficient to bind the promoter of cspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Furthermore , MqsA binds DNA via its helix -- turn -- helix ( HTH ) C-terminal domain ( Brown et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>The three dimensional structure of MqsR/MqsA8 revealed that MqsR is an RNase similar to RelE and YoeB and that MqsA binds DNA via its helix-turn-helix ( HTH ) motif in the C-terminal domain and binds the toxin via its N-terminal zinc-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Taken together , transcription of cspD is be controlled by the direct binding of the MqsR/MqsA complex or MqsA via the MqsA C-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This direct interaction is mediated via the C-terminal HTH DNA-binding domain of MqsA , as we have shown via multiple gel shift assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by MqsA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Note regulation of RpoS is complex and includes regulation at the level of transcription , translation , and protein stability/activity20 ; hence , Figure 6 is a simplification and shows primarily the features important for MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Escherichia coli toxin/antitoxin pair MqsR/MqsA regulate toxin CspD Younghoon Kim1 , Xiaoxue Wang1 , Xue-Song Zhang1 , Simina Grigoriu2 , Rebecca Page3 , Wolfgang Peti2 , and Thomas K. Wood1 , * 1Department of Chemical Engineering , Texas A&M University , College Station , TX 77843-3122 , USA 2Department of Molecular Pharmacology , Physiology , and Biotechnology , Brown University , Providence , RI 02912 , USA 3Department of Molecular Biology , Cell Biology and Biochemistry , Brown University , Providence , RI 02912 , USA Summary Previously we identified that the Escherichia coli protein MqsR ( YgiU ) functions as a toxin and that it is involved in the regulation of motility by quorum-sensing signal autoinducer-2 ( AI-2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Using a strain deficient in six major TA systems , Δ6 ( MazF/MazE , RelE/RelB , ChpB , YoeB/YefM , YafQ/DinJ , and MqsR/MqsA ) , we provide insights into extracellular stress and both the general stress response and the switch from planktonic growth to biofilm-formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>We used a genetic background devoid of the major E. coli TA pairs via the Δ5 strain2 , which lacks the MazF/MazE , RelE/RelB , ChpB , YoeB / YefM , and YafQ/DinJ TA systems ( Supplementary Results , Supplementary Table 1 ) and the Δ6 strain which also lacks MqsR/MqsA ( Δ5 mqsRA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>S2 CRISPR RNase , and GhoS is a where a protein antitoxin inhibits the Keywords Toxin/antitoxin ; Persistence ; GhoT/GhoS RESULTS derepressed upon MqsA degradation during oxidative stress9 , 14 , which play critical roles in bacterial cell-physiology during stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22941047" target="_blank">22941047</a>]<br></li>
+<li>Our hypothesis is that the antitoxin MqsA plays an essential role in mediating the RpoS stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>A schematic of our understanding of how the antitoxin MqsA plays a key role in mediating the general stress response and biofilm-formation is shown in Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Specifically , the antitoxin MqsA represses rpoS , which encodes the master regulator of stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>MqsA helps mediate the general stress response via its repression of rpoS , which encodes the stationary-phase sigma factor RpoS ; RpoS is the master regulator of the stress response ( Pesavento et al. , 2008 ) and controls 500 genes in E. coli ( Hengge , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>Our results show clearly that MqsA is degraded in the presence of oxidative stress ( Fig. 5a , b ) ; this degradation leads to derepression of rpoS transcription ( Fig. 5c ) and an increase in rpoS mRNA , and that production of Lon prevents MqsA from increasing motility ( Fig. 5e ) ; hence , the protease Lon degrades MqsA upon stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Hence , upon oxidative stress , Lon is induced and degrades MqsA like other antitoxins , rpoS is derepressed , and the cell directs transcription toward stress-related genes which includes increasing c-di-GMP concentrations and catalase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Our current results indicate that the formerly ambiguous TA systems , especially MqsR / MqsA , are key regulators of gene activity by controlling in part the induction of the stress response , which , in turn , leads to enhanced biofilm-formation and reduced motility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>ases biofilm-formation re ec d sA q M Since MqsA represses rpoS , which leads to reduced c-di-GMP levels and increased motility , deletion of mqsA should also increase biofilm-formation due to the increase in c-di-GMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>In addition , the repression of rpoS by MqsA also decreases c-di-GMP and increases motility and reduces biofilm-formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>In the current study , we link TA systems to both biofilm-formation and the general stress response by showing that the antitoxin MqsA represses rpoS which , in turn , alters the level of the secondary messenger c-di-GMP thereby regulating motility and cell adhesins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Specifically , during stress , Lon protease degrades MqsA which leads to induction of rpoS , which in turn increases c-di-GMP , inhibits motility , and increases cell-adhesion/biofilm-formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Upon oxi-dative stress , MqsA is rapidly degraded by Lon protease resulting in induction of rpoS , which in turn increases c-di-GMP , inhibits motility and increases cell-adhesion and bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>This observation may be associated with the reduction of biofilm-formation via MqsR overproduction ( Fig. 1B ) ; i.e. overproducing toxin MqsR should result in the degradation of MqsA which would derepress bssR and thereby reduce biofilm-formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Since mqsR was discovered as an induced gene during biofilm-formation ( eightfold ) ( Ren et al. , 2004a ) , we also tested whether MqsR/MqsA are linked to biofilm development using two K-12 strains , BW25113 and MG1655 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>MqsR/MqsA influence biofilm-formation via qseBC , which controls motility through flhDC ( González Barrios et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>In addition , our results begin to explain how the MqsR/MqsA complex acts as a global regulatory protein ( Table 1 and Table S1 ) that controls more than its own transcription ( González Barrios et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>The crucial regulator of MqsR toxicity , antitoxin MqsA ( YgiT/B3021 ) 20 , is the first antitoxin shown to be a global regulator , as transcription of loci such as rpoS are The NMR structure of GhoS indicates it is related to the CA monomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22941047" target="_blank">22941047</a>]<br></li>
+<li>Of these redundant TA systems , toxin MqsR ( motility quorum-sensing regulator ) ( YgiU / B3022 ) 15 , 16 and antitoxin MqsA ( YgiT/B3021 ) 8 are particularly significant as the genes that encode them are the first locus that upon deletion , decreases the formation of persister cells17 , and mqsR is also the most highly induced gene in persister cells as compared to nonpersisters4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Here , using whole-transcriptome analyses , regulator/DNA binding assays and isogenic mutants , we show eight proteins are involved in MqsR toxicity including toxin CspD ; i.e. the MqsR/MqsA complex regulates cspD transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Summary Antitoxins are becoming recognized as proteins that regulate more than their own synthesis ; for example , we found previously that antitoxin MqsA of the Escherichia coli toxin/antitoxin ( TA ) pair MqsR/MqsA directly represses the gene encoding the stationary-phase sigma factor RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>CspD is reported to be regulated by multiple factors ( MqsR / MqsA toxin-antitoxin pair [ 4 , 11 ] , ppGpp [ 3 ] , CRP [ present study ] , etc. ) as a function of cell-physiology .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>]<br></li>
+<li>Hence , we demonstrate that the MqsR/MqsA TA system controls cell-physiology via its own toxicity as well as through its regulation of another toxin , CspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">MqsA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>To overproduce MqsA , the mqsA sequence was PCR-amplified using primer set pA-mqsA ( Table S2 ) and ligated into the NdeI and HindIII restriction enzyme sites of vector pCA21a ( Expression Technologies , San Diego , CA ) to form pCA21a-MqsA with mqsA expressed from a T7 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>To identify MqsR/MqsA-binding sequences regions under biofilm conditions , we performed a nickel-enrichment DNA microarray in which we cross-linked the MqsR/MqsA complex to DNA using formaldehyde and purified MqsR/MqsA with the bound DNA via a His6-affinity tag on MqsR using biofilms cells ( E. coli AG1/pCA24N-mqsR versus E. coli AG1/pCA24N with 2 mM IPTG induction for 24 h ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Among the identified sequences , MqsR/MqsA appears to bind bssR in vivo ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>To demonstrate direct binding of MqsA to the regulatory sequences of rpoS , electrophoretic mobility shift assays ( EMSA ) were used to detect the binding of MqsA to the 25 bp fragment of PrpoS that includes this palindrome ( from − 161 to − 137 , Supplementary Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Note that bioinformatics analysis showed that the csgD promoter also contains an mqsRA-like palindrome ( 5 ' - AACCT TA AGGTT ) 78 bp upstream of the transcription initiation site that is used by MqsA to regulate transcription7 , 28 ( Supplementary Fig. 1 and Supplementary Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>As with csgD , we identified a similar mqsRAlike palindrome in the promoter region of rpoS ( Supplementary Fig. 2 ) , 5 ' - ACCT TGC AGGT , and thus by direct extension of our work with mqsRA , we hypothesized that MqsA binds directly to the rpoS promoter ( PrpoS ) and thus controls the transcription of the sigma factor that is necessary for control of the general stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , MqsA binds directly and specifically to the mqsRA-like palindrome sequence of the rpoS promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Hence , these palindrome sequences are important for recognition of specific promoter regions by the C-terminal part of MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Therefore , MqsA alone or in a complex with MqsR induces transcription of mcbR and spy and represses transcription of cspD by binding their promoter regions directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>In addition , Yamaguchi and colleagues ( 2009 ) found that there are two palindrome sequences in the promoter region of the mqsRA locus and that the MqsR/MqsA complex or MqsA alone can bind to these two palindromic sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>binds the rpoS promoter qsA M There are two palindromes in the promoter of the mqsRA operon ( 5 ' - TAACCT TTT AGGTTA and 5 ' - ACCT TTT AGGT ) , and MqsA as well as the MqsR/MqsA complex bind to the two palindromic sequences to negatively regulate mqsRA7 , 28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by MqsA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>MqsA helps mediate the general stress response via its repression of rpoS , which encodes the stationary-phase sigma factor RpoS ; RpoS is the master regulator of the stress response ( Pesavento et al. , 2008 ) and controls 500 genes in E. coli ( Hengge , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>In addition , we showed previously that MqsA regulates more than its own operon ( Brown et al. , 2009 ) as it also binds the promoters of mcbR and spy .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>In addition , hokA and hokE , encoding small toxic polypeptides that damage the membrane ( Pedersen and Gerdes , 1999 ) , were repressed by deleting mqsR ; hence , it is possible that HokA and HokE are also repressed by MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Catalase converts H2O2 to H2O and O2 ; hence , the reduced ability of the cells to decompose H2O2 when MqsA represses rpoS was demonstrated by a dramatic reduction in oxygen bubbles upon addition of H2O2 to Δ6 ( Fig. 2d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>This result indicates that MqsA exerts its control directly on rpoS expression and requires its native upstream sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , MqsA directly represses rpoS transcription , and the repression is dependent on the palindrome in the promoter of rpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>When the rpoS palindrome was mutated to disrupt the sequence-specific DNA binding , MqsA binding to the promoter is abolished ( Fig. 1b ) and no longer represses rpoS transcription ( Fig. 1d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Critically , the increase in motility upon producing MqsA was also tested in the lacZ reporter strains where it was found that MqsA no longer increases motility in reporter Δ6 R3 PrpoS ( Fig. 3c ) in which the mutated palindrome lies in the promoter of the chromosomal rpoS gene ( Fig. 1c ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Moreover , when RpoS is produced from the expression vector pCA24N-rpoS such that rpoS lacks its native promoter and leader region , production of MqsA no longer increases cell motility ( Fig. 3d ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Of these redundant TA systems , toxin MqsR ( motility quorum sensing regulator ) ( YgiU / B3022 ) 15 , 16 and antitoxin MqsA ( YgiT/B3021 ) 8 are particularly significant as the genes that encode them are the first locus that upon deletion , decreases the formation of persister cells17 , and mqsR is also the most highly induced gene in persister cells as compared to nonpersisters4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , the protease Lon degrades MqsA , as shown for antitoxin CcdA33 and antitoxin RelE34 , under oxidative stress conditions where lon is induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Therefore , it appears MqsA may induce transcription of mcbR which likely explains the increased biofilm formation detected upon overproducing MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Since rpoS is repressed by MqsA , the genes controlled by RpoS should also be repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Our hypothesis predicts that if MqsA represses rpoS , both curli and cellulose production should likewise be repressed since RpoS induces csgD19 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>We also reasoned that since MqsA represses cspD , if there is excess MqsA , then cspD would remain repressed even under stress conditions where cspD is induced strongly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>MqsA reduces stress resistance Since MqsA represses rpoS , we reasoned that the deletion of the six toxin/antitoxin systems should increase cell survival under stress as RpoS would be constitutively induced and the cells would be preconditioned for a stress response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>qsA autoregulate their transcription as positive regulators M d an sR q M To corroborate that MqsR stimulates its own transcription as predicted by the wholetranscriptome analysis ( Table 1 ) and to investigate whether MqsA stimulates transcription o the mqsRA operon , we confirmed the enhanced transcription of mqsR and mqsA via qRT ¬ f PCR respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Furthermore , MqsA is the first antitoxin shown to regulate more than its own transcription as it binds the mqsRA , cspD , mcbR , and spy promoters8 , 18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21516113" target="_blank">21516113</a>]<br></li>
+<li>Quantitative real-time reverse transcription polymerase chain reaction ( qRT-PCR ) showed that ( i ) the MqsR/MqsA complex ( and MqsA alone ) represses the toxin gene cspD , ( ii ) MqsR overproduction induces cspD , ( iii ) stress induces cspD , and ( iv ) stress fails to induce cspD when MqsR/MqsA are overproduced or when mqsRA is deleted .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Therefore , it appears that MqsR , in association with MqsA , induces mqsRA and acts as a positive regulator of its own transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Therefore , MqsA alone or in a complex with MqsR induces transcription of mcbR and spy and represses transcription of cspD by binding their promoter regions directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This gene was also repressed by deleting mqsR ( deletion microarray , Table 1 ) which should increase MqsA ; hence , it is possible that MqsR/MqsA represses bssR transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Discussion Taken together , our results indicate that under normal growth , cspD is repressed by the MqsR/MqsA TA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This result is supported by our qRT-PCR result that the overexpression of MqsR/MqsA repressed more cspD transcription compared with that of MqsA alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>This suggests MqsA represses cspD in the absence of MqsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>As expected , cspD was repressed ( 2 ± 1-fold ) by the overproduction of MqsA in the absence of MqsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>cspD is repressed by the MqsR/MqsA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>MqsR/MqsA regulates PcspD under stress conditions Since TA pairs are induced under stress ( Engelberg-Kulka et al. , 2006 ) and since MqsA binds the promoter region of cspD to repress its transcription and this repression is derepressed by overexpressing mqsR , we investigated further the impact of the MqsR/MqsA complex and stress regulation on cspD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+<li>Under stress , MqsA is degraded by proteases ( ClpXP and Lon ) , and cspD transcription is derepressed by the breakdown of the MqsA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20105222" target="_blank">20105222</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

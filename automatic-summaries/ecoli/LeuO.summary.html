@@ -1,0 +1,783 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LeuO</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LeuO</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LeuO transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>of genes involved in the response to DNA damage ( SOS response ) , including RecA and LexA ; in the presence of single-stranded DNA , RecA interacts with LexA , causing an autocatalytic cleavage which disrupts the DNA-binding part of LexA , leading to derepression of the SOS regulon and eventually DNA repair Catalyzes the formation of phosphodiester linkages between 5 - phosphoryl and 3 - hydroxyl groups in double-stranded DNA using NAD as a coenzyme and as the energy source for the reaction ; essential for DNA replication and repair of damaged DNA Component of the leucine , isoleucine , valine ( threonine ) transport system , which is one of the two periplasmic binding-protein-dependent transport systems of the high-afﬁnity transport of the branched-chain amino acids ; increases following exposure to the uncoupler of oxidative phosphorylation 2,4-dinitrophenol and in the physiological short-term adaptation to glucose limitation ; decreases after benzoic acid treatment and phosphate limitation late and in the presence of leucine Component of the leucine-speciﬁc transport system , which is one of the two periplasmic binding-protein-dependent transport systems of the high-afﬁnity transport of the branched-chain amino acids ; increases following exposure to the uncoupler of oxidative phosphorylation 2,4-dinitrophenol ; decreases after benzoic acid treatment 5.42 / 44,439 5.93 / 50,340 ( DIGE 4.5 -- 6.5 ) LeuD 5.16 / 22,356.29 P30126 3-Isopropylmalate dehydratase small subunit Probable HTH-type transcriptional-regulator Leucyl-tRNA synthetase 5.20 / 23,000 ( DIGE 4.5 -- 6.5 ) 179 , 321 5.80 / 35,694.73 P10151 LeuO 5.77 / 34,515 293 5.11 / 98,831 5.16 / 97,233.76 P07813 LeuS LexA 6.23 / 22,357.72 P0A7C2 LexA repressor 179 5.39 / 73,606.07 DNA ligase P15042 LigA 79 1 LivJ 5.28 / 41,960 5.28 / 36,772.53 P0AD96 Leu/Ile/Val-binding protein 29 , 61 , 71 , 179 , 228 , 258 , 293 , 294 , 311 , 321 5.18 / 39,439 ( DIGE 4.5 -- 6.5 ) 5.30 / 38,773 ( DIGE 4.5 -- 6.5 ) 5.31 / 40,279 ( 4.5 -- 5.5 ) 5.21 / 16,964 ( 4.5 -- 5.5 ) 5.09 / 50,544 ( 5 -- 6 ) 5.23 / 50,424 ( 5 -- 6 ) 5.67 / 30,753 ( 5 -- 6 ) 5.33 / 23,392 ( 5 -- 6 ) 5.73 / 30,106 ( 5.5 -- 6.7 ) LivK 5.00 / 41,464 5.07 / 36,982.71 Leucine-speciﬁc binding protein P04816 71 , 179 , 212 , 228 , 258 , 287 , 294 , 321 5.09 / 39,439 ( DIGE 4.5 -- 6.5 ) 5.08 / 39,792 ( 4.5 -- 5.5 ) 5.56 / 28,995 ( 4.5 -- 5.5 ) 5.25 / 59,333 ( 5 -- 6 ) Continued on facing pag Induced by L-lactate aerobically Participates in the translocation of lipoproteins from the inner membrane to the outer membrane Plays a critical role in the incorporation of lipoproteins in the outer membrane after they are released by the LolA protein ; essential for E. coli viability Degrades short-lived regulatory and abnormal proteins in the presence of ATP ; induced by stress conditions such as high temperatures , nalidixic acid , and accumulation of abnormal proteins ; positively regulated by htpR Component of the glycine cleavage system as well as of the alpha-ketoacid dehydrogenase complexes ; increases during aerobic-growth and the low temp at 10 ° C ; induced by low pH during anaerobic-growth Interacts with the peptidoglycan both covalently and noncovalently ; contributes to the maintenance of the structural and functional integrity of the cell envelope Catalyzes the transformation of S-ribosylhomocysteine to homocysteine and 4,5-dihydroxy-2 ,3 - pentadione ; involved in the synthesis of autoinducer 2 , which is secreted by bacteria and is used to communicate both the cell density and the metabolic potential of the environment ; changes in cell density in a process called quorum sensing ; induced by low pH Involved in lysine biosynthesis Changes very little throughout the normal temp ( 23 -- 37 ° C ) and increases in level with increasing growth rate Synthesizes a no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Among these predicted targets under the direct control of RgrR , as many as 11 genes are included , including PgrR , LeuO , YagP , MarR , YpdA , XapR , YhgF , GadX and IdnR ( indicated in star in Table 1 ) , indicating that a number of genes must be regulated indirectly by PgrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></li>
+<li>Despite the known potential transcription regula-Key Words : LeuO ; ppGpp ; DNA supercoiling ; tran ¬ Ming Fang , * Arundhati Majumder , * Kan-Jen Tsai , † and Hai-Young Wu * ,1 * Department of Pharmacology , School of Medicine , Wayne State University , Detroit , Michigan 48201 ; and † School of Medical Technology , Chung Shan Medical and Dental College , Taichung , Taiwan min position of the genetic linkage maps of E. coli and S. typhimurium , respectively ( 1 , 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+<li>Majumder , A. , Fang , M. , Tsai , K.J. , Ueguchi , C. , Mizuno , T. , and Wu , H.Y. ( 2001 ) LeuO expression in response to starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>S. typhimurium LeuO level increases during transition from exponential-growth to stationary phase and slightly decreases in leuO Expression Is Unrelated to rpoS Controlled Stationary Phase Regulatory Cascade ppGpp Is Required for leuO Expression isogenic ppGpp free strain , CV1457 , were grown in LB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+<li>SELEX-clos allows the screening of DNA sequences with high afﬁnity to the test transcription factor , but it is not practical for identiﬁcation of the whole set of its binding targets because the number of isolated clones correlates with the binding afﬁnity as demonstrated for a variety of transcription factors such as Cra , CRP , and LeuO ( Shimada et al. 2009 , 2011a , b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+<li>The regulation of RpoS levels by LeuO is indirect and mediated through the small regulatory RNA DsrA , which , at low temperature , enhances translation of the rpoS mRNA and represses translation of the hns mRNA ( Klauck et al. , 1997 ; Lease & Belfort , 2000 ; Repoila & Gottesman , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Examples of such H-NS antagonism are many and include the action of VirB on icsB , SlyA on clyA and hlyA , UreR on ureR-ureD , RovA on inv , HilC/HilD on hilA , Ler on lpf and LeuO on osmS1 ( Westermark et al. , 2000 ; Bustamante et al. , 2001 ; Poore and Mobley , 2003 ; Cathelyn et al. , 2007 ; de la Cruz et al. , 2007 ; 2009 ; Lithgow et al. , 2007 ; Olekhnovich and Kadner , 2007 ; Torres et al. , 2007 ; Turner and Dorman , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20015147" target="_blank">20015147</a>]<br></li>
+<li>More importantly , detailed time course experiment is required for unraveling the exact starting point of LeuO increase since the Northern data demonstrated only an approximate condition when leuO expresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+<li>Many of the target genes regulated by LeuO are repressed by the pleiotropic H-NS ( heat-stable nucleoid structuring ) protein , and thus LeuO emerged as important H-NS antagonist and global regulator ( Hernandez-Lucas et al. , 2008 ; Shimada et al. , 2009 ; 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Medina-Aparicio , L. , Rebollar-Flores , J.E. , GallegoHernandez , A.L. , Vazquez , A. , Olvera , L. , Gutierrez-Rios , R.M. , et al. ( 2011 ) The CRISPR/Cas immune system is an operon regulated by LeuO , H-NS and LRP in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_13">
+Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional-regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></label>
+<input id="act_similarity_13", type="checkbox">
+<div class="ACT_similar">
+<li>Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional-regulator LeuO controls expression of several genes in Salmonella enterica serovar typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_15">
+OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi ompS2 porin gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></label>
+<input id="act_similarity_15", type="checkbox">
+<div class="ACT_similar">
+<li>Fernandez-Mora , M. , Puente , J.L. , and Calva , E. ( 2004 ) OmpR and LeuO positively regulate the Salmonella enterica serovar Typhi ompS2 porin gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17493135" target="_blank">17493135</a>]<br></li></div>
+<li>LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_18">
+de la Cruz , M.A. , Fernández-Mora , M. , Guadarrama , C. , Flores-Valdez , M.A. , Bustamante , V.H. , Vázquez , A. , and Calva , E. ( 2007 ) LeuO antagonizes the H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20015147" target="_blank">20015147</a>]<br></label>
+<input id="act_similarity_18", type="checkbox">
+<div class="ACT_similar">
+<li>De la Cruz , M.A. , Fernandez-Mora , M. , Guadarrama , C. , Flores-Valdez , M.A. , Bustamante , V.H. , Vazquez , A. , and Calva , E. ( 2007 ) LeuO antagonizes H-NS and StpA-dependent repression in Salmonella enterica ompS1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li></div>
+<li>Likewise , AntO seems unrelated to NodD in this analysis ; however , its similarities to MetR , AmpR , LeuO , and TfdO place it within the LysR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>In addition , no coinducer ( or effector ) of LeuO has been deﬁned so far , although the activity of other transcription factors of the LysR-family is controlled by the binding of small molecules ( see for example references 19 , 27 , 35 , and 54 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The absence of the 318-bp AT-rich DNA in pWU812T resulted in an IPTG-inducible pleu-500 activation in S. typhi-2 murium CH582 ( topA ) , regardless of the presence or absence of LeuO ( Fig. 1 , lanes 6 and 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>In contrast , with the 318-bp native AT-rich intervening DNA in place , pleu-500 failed to be activated in pWU802T in the absence of LeuO ( Fig. 1 , compare lanes 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>Consistent with the previous results ( 6 ) , IPTG induction resulted in activation of pleu-500 on pWU802T when LeuO was provided in trans ( Fig. 1 , compare lanes 1 and 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>In the absence of LeuO ( i.e. the absence of pEV101 ) , this replacement resulted in a LeuO-independent pleu-500 activation on the mutant plasmid ( Fig. 6B , lane 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>The molecular basis for pleu-500 activation by the combined action of pleuO and LeuO is still a mystery .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>The function of LeuO is to reverse silencing mediated by the AT4 DNA sequence element , and the function of transcription from pleuO is to provide short-range promoter-promoter interaction for activation of pleu-500 ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>When LeuO expression was induced , samples were taken 30 min after addition of 0.5 mM IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Upon IPTG induction , the coexisting pACYC-based plasmid , pEV101 , provided both LeuO and lac repressor ( LacI ) , whereas pSO1000 provided only LacI in trans .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>When LeuO was provided in trans in MF1 from a coexisting expression vector , pEV101 , AT4-mediated gene silencing was nearly abolished even without IPTG induction ( Fig. 5A , lane 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>Upon further increase of cellular LeuO due to IPTG induction ( Fig. 5C , lanes 3 -- 6 ) , AT4-mediated gene silencing was completely eliminated ( Fig. 5A , lanes 4 -- 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>Interestingly , formation of KMnO4 sensitive sites ` a ' to ` e ' was inhibited when LeuO was added to the reactions ( Figs 5 and S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Expression levels were determined in strains DyjjPQ-bglJ DleuO T308 , DleuO Dhns T316 , Dhns stpA T352 and bglJC T570 in the absence ( - , white bars ) and presence ( + , grey bars ) of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In vitro transcripts 2 , 3 and 4 were repressed in the presence of LeuO protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Four major RNA transcripts were detected in the in vitro transcription assays performed in the absence of LeuO protein but only one transcript was detected in the presence of LeuO protein ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In vitro transcription in presence and in absence of LeuO protein was performed to roughly map start sites and orientation of transcripts ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To determine whether transcription is initiated at the mapped open complexes and to corroborate repression by LeuO , we additionally performed in vitro transcription assays in the absence and presence of LeuO protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To detect the formation of putative open complexes , KMnO4 footprinting experiments were performed in presence and in absence of LeuO protein ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To further characterize the leuO-leu intergenic region and autoregulation of leuO we mapped in vitro RNA polymerase binding sites by KMnO4 footprinting in the absence and presence of LeuO protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>KMnO4 footprinting in the absence and presence of LeuO and sigma70-RNA polymerase revealed the presence of several KMnO4 sensitive sites at which RNA polymerase may form open complexes ( labelled ` a ' to ` h ' in Figs 5 and S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>If this hypothesis is true , then the afﬁnity of LeuO to cadC promoter is probably low because LeuO needs to be in excess in order to show the cad-repressing effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>This has been demonstrated for the expression of the cryptic bgl gene and is strongly supported from recent studies , which indicate that LeuO induces expression of membrane components involved in the response to external stress and proteins known to act as drug efflux pumps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>elevated levels of the LysR-type regulator LeuO induce the pcas promoter and concomitantly activate the cRIspR-mediated immunity against phages .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Although we were able to show that CRISPR-based immunity is activated by overproducing LeuO , the natural growth conditions that induce CRISPR-based defence are still unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Number Loci of known function 39 38 5 2 13 11 1 Total RcsB-dependent leuO , rhsA , rhsB , rhsC , setA , sfsB , osmB , btuB , blc cas , rhsE , elfA bgl , chiA LeuO-dependent Co-activated by LeuO and BglJ Loci of putative function in inner/outer membrane Loci of unknown function RcsB-independent csrB Fig. 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Previously , we have shown that the CRISPR system can be activated in E. coli when the concentration of the transcription factor LeuO is artificially increased by transformation with a leuO-overexpressing plasmid .21 The promoters of the leuO gene have been characterized recently , and it has been shown that the heterodimeric transcriptional-regulator RcsBBglJ is able to induce leuO expression .26 Both transcriptional-regulators , RcsB and BglJ , belong to the FixJ/NarL-type family and regulate several genes in the form of RcsB-BglJ heterodimers in E. coli K12 if BglJ is expressed constitutively .26,27 Microarray analyses revealed that , among others , the transcription of casA gene was induced by RcsB-BglJ in a LeuO-dependent manner .26 In the present study , we analyzed the role of RcsB-BglJ on the induction of the CRISPR system in E. coli , by comparing the CRISPR promoter activities , crRNA processing and Cascade gene expression in strains expressing either BglJ or LeuO constitutively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>To test whether crRNA maturation is induced upon upregulation of LeuO , we analyzed the effect of BglJ on CRISPR defense , as leuO transcription is strongly activated when BglJ is constitutively expressed .26 We found that the constitutive expression of BglJ activates the Cascade transcription to equal levels as obtained by constitutive expression of the LeuO protein itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>-1.2 -1.1 1.0 1.1 -1.2 1.2 1.1 LeuO activates cas gene expression To study the effect of LeuO on cas expression , gene Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>However , LeuO did not cause full activation ( approximately 200 units in the presence of LeuO compared to 690 units in the presence of BglJ ) , possibly because plasmid-directed expression of the pleiotropic LeuO affects the accuracy of the - ga-lactosidase assay ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In the presence of plasmidic LeuO , expression of the leuO promoter lacZ fusion increased slightly from 3 units to 5 units ( Fig. 4A ) , demonstrating a marginal approximately twofold upregulation by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In contrast , the expression of the yjjQ promoter-lacZ fusion encompassing position 347 to 26 was activated by LeuO and was repressed more efﬁciently by H-NS than the shorter constructs were ( Fig. 5A , PQ 347 to 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Thus , BglJ -- RcsB is a pleio-tropic transcriptional-activator that coordinates regulation with global regulators including CRP , LeuO and HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>The above data suggest that LeuO is an autoregulator that may have a moderate positive autoregulatory effect , but that strongly represses leuO transcription in the absence of H-NS and StpA and that counteracts activation of leuO by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Activation of the HNS and StpA repressed leuO gene by BglJ -- RcsB is inhibited by LeuO ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>This sixfold downregulation of leuO promoter activity by LeuO in the presence of RcsB-BglJ suggests that LeuO counteracts activation of P2leuO by RcsB-BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Moreover , LeuO antagonizes activation of leuO by RcsB-BglJ and acts as negative autoregulator in vivo and in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Furthermore , activation of the leuO P2 promoter by BglJ -- RcsB is inhibited by LeuO acting as negative autoregulator ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>Thirdly , to investigate whether LeuO can downregulate its expression in the presence of RcsB-BglJ , we performed the experiments using bglJC strain T570 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>however , the maturation of the crRNAs was activated in LeuO but not in BglJ-expressing cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>The BglJ-induced activation depended on RcsB and LeuO , consistent with the upregulation of leuO expression by RcsB-BglJ , which , in turn , leads to de-repression of the Pcas promoter ( Fig. 1A , lanes 4 , 5 ) .26 Activation of Pcas by RcsB-BglJ does not result in accumulation of mature crRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>We demonstrate that the Pcas promoter is activated by constitutive expression of BglJ to the same extent as in presence of elevated LeuO levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>In contrast to the constitutive expression of LeuO , the strong activation of the Pcas promoter in presence of BglJ did not lead to a significant accumulation of the crRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>As LeuO is a virulence factor in S. enterica ( 32 , 57 ) and as YjjQ , which is coencoded with BglJ , is presumably important for infection by avian-pathogenic E. coli ( 34 ) , it is conceivable that certain conditions in the host environment induce their expression , which in turn should also relieve repression of the bgl operon and allow its induction by substrate ( aryl - , D-glucosides ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition , we show that LeuO also binds to the bgl URE and directly activates the bgl promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition , we have shown that LeuO likewise binds to the bgl URE and activates bgl directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Likewise , as shown here , bgl promoter activity is increased in the bglJ and leuO mutants , which express BglJ and LeuO constitutively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>These mutations increase the bgl promoter activity , as shown here for BglJ and LeuO and as known for RpoS and Crl , and thus compensate indirectly for the more efﬁcient downstream repression in the lon mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>At the bgl operon , which is controlled by HNS , StpA , CRP , and LeuO , BglJ -- RcsB and CRP presumably act synergistically to overcome repression by HNS ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>In addition to being controlled by H-NS , StpA , LeuO , and BglJ-RcsB , the bgl promoter is CRP dependent and is repressed by FIS ( 4 , 48 , 52 ) DISCUSSION BglJ , a LuxR-type transcriptional-regulator , and LeuO , a LysR-type transcriptional-regulator , relieve repression of the bgl operon by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition to being controlled by H-NS , StpA , LeuO , and BglJ-RcsB , the bgl promoter is CRP dependent and is repressed by FIS ( 4 , 48 , 52 ) ACKNOWLEDGMENTS This work was supported by a grant from the Deutsche Forschungsgemeinschaft ( Schn371/10 -1 ) and by the Cologne Graduate School of Genetics and Functional Genomics .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In addition , we show that LeuO , a pleiotropic LysR-type transcriptional-regulator , likewise binds to the bgl upstream regulatory region and relieves repression of bgl independently of BglJ-RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Furthermore , we demonstrated that LeuO directly binds to the bgl upstream regulatory region and relieves repression independently of BglJ-RcsB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>In dnaK mutants , downstream repression of bgl by H-NS is speciﬁcally reduced , whilst BglJ and LeuO have no impact .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>These data demonstrate that upstream and downstream repression of bgl by H-NS is regulated independently by LeuO and BglJ , as well as DnaKJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Consistent with our previous results ,13,21 no Pcas-specific cDNA product was detected in wild-type cells , but an efficient transcription could be demonstrated in the hns-deficient or leuO strains , confirming the antagonistic regulation of Pcas C transcription by H-NS and LeuO ( Fig. 1A , lanes 2 , 6 and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Providing LeuO in trans had no effect on the expression of these yjjQ promoterlacZ fusions in the wild-type strain but caused repression in the hns leuO double mutant ( Fig. 5A , PQ 87 to 26 and PQ 147 to 26 ) , suggesting the presence of a weak LeuO binding site between positions 147 and 47 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Interestingly , this full construct was activated by LeuO in the wild-type strain and repressed only 2.2-fold by LeuO in the hns leuO double mutant ( Fig. 5B ) , indicative of a more complex pattern of regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Independent of this interesting case of regulation of the leu-leuO-ilvIH gene cluster by DNA topology some ambiguity about the importance of LeuO in regulation of the divergent leu operon originates in the nomenclature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>As LeuO is an H-NS antagonist with pleiotropic function , activation of leuO expression should occur in response to speciﬁc environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Our data conﬁrm a moderate ( two - to threefold ) positive effect of LeuO on expression of the leu operon and the leuO gene , respectively , as well as a moderate upregulation in response to the availability of branchedchain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Summary The LysR-type transcription factor LeuO is involved in regulation of pathogenicity determinants and stress responses in Enterobacteriaceae , and acts as antagonist of the global repressor H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>The Escherichia coli RutR transcription factor binds at LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+<li>We demonstrate that relieving H-NS-mediated repression of cas gene transcription is required for CRISPR-based immunity and that derepression is mediated by LeuO through direct binding of DNA sequences upstream of casA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_84">
+Westra , E.R. , Pul , U. , Heidrich , N. , Jore , M.M. , Lundgren , M. , Stratmann , T. , et al. ( 2010 ) H-NS-mediated repression of CRISPR-based immunity in Escherichia coli K12 can be relieved by the transcription activator LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></label>
+<input id="act_similarity_84", type="checkbox">
+<div class="ACT_similar">
+<li>Westra , E.R. , Pul , U. , Heidrich , N. , Jore , M.M. , Lundgren , M. , Stratmann , T. , Wurm , R. , Raine , A. , Mescher , M. , Van Heereveld , L. et al. ( 2010 ) H-NS-mediated repression of CRISPR-based immunity in Escherichia coli K12 can be relieved by the transcription activator LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25326321" target="_blank">25326321</a>]<br></li></div>
+<li>However , since under laboratory growth conditions the genomic leuO gene itself is repressed by H-NS ( Klauck et al. , 1997 ; Majumder et al. , 2001 ) all LeuO regulation studies make use of plasmid encoded leuO under control of constitutive or inducible promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>It has also been shown that LeuO when binding in between an H-NS bound fragment and a promoter can delimit repression by H-NS ( Chen et al. , 2003 ; Chen and Wu , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Transcription of leuO is negatively autoregulated Previous studies suggested that LeuO might act as an activator of its own transcription by antagonizing H-NS-mediated repression ( Chen et al. , 2003 ; Chen and Wu , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Further , it was proposed that LeuO acts as a positive regulator of the leu operon and leuO gene with activation based on transcription induced changes in DNA supercoiling and delimiting of H-NS spreading by LeuO ( Fang and Wu , 1998b ; Chen et al. , 2003 ; Chen and Wu , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>As leuO expression is negatively regulated by H-NS and positively by LeuO itself ( Hommais et al. , 2001 ; Chen et al. , 2005 ) , this would further amplify the activating signal for cas gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>LeuO is required for derepressing the repressed leuABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>Expression of rscA is autoregulated , while expression of the yjjQ-bglJ operon is activated by the LysR-type transcription factor LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>However , while the relevance of LeuO and YjjQ for pathogenicity indicates that their genes are expressed under certain in vivo conditions in the host environment , both the leuO gene and the yjjQ-bglJ operon are repressed by H-NS under laboratory growth conditions ( 6 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Transcription of the yjjQ-bglJ operon is repressed by the global repressor H-NS ( heat-stable nucleoid structuring protein ) , and it is activated by the pleiotropic transcriptional-regulator LeuO ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>Expression of the yjjQ gene , which is encoded in the yjjQ-bglJ operon , is repressed by the global repressor H-NS and activated by the pleiotropic transcriptional-regulator LeuO , as shown for the laboratory E. coli K-12 strain ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>RESULTS H-NS represses and LeuO activates the yjjQ-bglJ operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Here we show that yjjQ and bglJ are expressed as an operon , which is repressed by H-NS and activated by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The yjjP gene located upstream of the yjjQ-bglJ operon and in a divergent orientation is likewise repressed by H-NS but is not activated by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>This suggests the presence of a LeuO binding site in between positions 347 and 147 and also binding of H-NS within that region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>B and C. ( B ) DNase I footprint of IGLB in the presence of either H-NS or LeuO or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>For instance , transcription of the bgl operon is shut off in presence of H-NS ( Dole et al. , 2004 ) , and LeuO relieves this silencing ( Stratmann et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>In this study , we found that LeuO is able to lead the bgl operon to its derepressed state ( i.e. , Bgl1 ) , even in the presence of H-NS , provided that LeuO was overexpressed under certain conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></li>
+<li>Possibly , LeuO has a dual role in the regulation of the yjjP promoter ; it may repress the promoter directly and also counteract its repression by H-NS when the binding site downstream of the yjjP promoter is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Binding of LeuO to this fragment is in agreement with repression of the yjjP promoter by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Binding of LeuO and putative concomitant DNA looping could prevent spreading of the H-NS nucleoprotein complex into the yjjQ promoter and thus relieve its repression by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>However , in the case of the yjjP-yjjQ-bglJ locus , H-NS binds to the center of the intergenic region with the highest afﬁnity , while LeuO binds with highest afﬁnity to the yjjP promoter fragment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Taken together , the data conﬁrm the regulation of the yjjQ-bglJ operon by H-NS and LeuO , and they demonstrate the repression of yjjP by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>LeuO counteracts the repression of yjjQ by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Thus , LeuO , which counteracts the H-NS-mediated repression of several loci , indirectly controls H-NS and RpoS synthesis under speciﬁc conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The EMSA and footprint results ( Fig. 3 ) support the ﬁnding that elevated amounts of LeuO counteract H-NS-mediated repression of casABCDE12 in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LeuO protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>As LeuO is an H-NS antagonist with pleiotropic function , activation of leuO expression should occur in response to speciﬁc environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>We ﬁnd that LeuO is acting in a conserved region of the dsrA promoter ( motif III , Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>The deduced amino acid sequence for LeuO showed high homology to LysR-family proteins ( 4 ) , all of which have a helix-turn-helix motif at an aligned position and most of which are known activator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>Like other LysR proteins , there is a helix-turn-helix DNA-binding motif located in the N-terminus of LeuO ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_5">
+LeuO protein delimits the transcriptionally active and repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></label>
+<input id="dom_similarity_5", type="checkbox">
+<div class="DOM_similar">
+<li>Chen , C.C. , and Wu , H.Y. ( 2005 ) LeuO protein delimits the transcriptionally active and repressive domains on the bacterial chromosome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li></div>
+<li>KMnO4 footprinting in the absence and presence of LeuO and sigma70-RNA polymerase revealed the presence of several KMnO4 sensitive sites at which RNA polymerase may form open complexes ( labelled ` a ' to ` h ' in Figs 5 and S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>To detect the formation of putative open complexes , KMnO4 footprinting experiments were performed in presence and in absence of LeuO protein ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LeuO evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Since leuO appears to be homologous to the lysR family of genes that code for helix-turn-helix DNA-binding proteins , it is likely that LeuO directly binds to cadC promoter sequences to reduce cadC gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>Likewise , AntO seems unrelated to NodD in this analysis ; however , its similarities to MetR , AmpR , LeuO , and TfdO place it within the LysR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>If the relationships detected above are real , then one expectation is that the 75-amino acid predicted sequence of E. coli LeuO present on the database is the NH2 terminus of a LysR family member .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>The deduced amino acid sequence for LeuO showed high homology to LysR family proteins ( 4 ) , all of which have a helix-turn-helix motif at an aligned position and most of which are known activator proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>The putative LeuO protein was categorized as a LysR family transcription regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+<li>LeuO , a regulator in the LysR family , down-regulates DsrA synthesis when overexpressed ( 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>Conditions affecting either the synthesis or the activity of LeuO or another LysR family regulator may signiﬁcantly perturb DsrA synthesis and therefore synthesis of RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>LeuO is a member of the LysR-type family of transcription factors which bind as tetramers and affect the DNA structure by bending ( Maddocks and Oyston , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>One of these proteins is the regulator LeuO ( Chen and Wu , 2005 ; De la Cruz et al. , 2007 ) , which belongs to the LysR family of transcription factors ( Stoebel et al. , 2008 ) and is found in all proteobacteria , except the d subdivision ( Maddocks and Oyston , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LeuO</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>of genes involved in the response to DNA damage ( SOS-response ) , including RecA and LexA ; in the presence of single-stranded DNA , RecA interacts with LexA , causing an autocatalytic cleavage which disrupts the DNA-binding part of LexA , leading to derepression of the SOS regulon and eventually DNA-repair Catalyzes the formation of phosphodiester linkages between 5 - phosphoryl and 3 - hydroxyl groups in double-stranded DNA using NAD as a coenzyme and as the energy source for the reaction ; essential for DNA-replication and repair of damaged DNA Component of the leucine , isoleucine , valine ( threonine ) transport system , which is one of the two periplasmic binding-protein-dependent transport systems of the high-afﬁnity transport of the branched-chain amino acids ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol and in the physiological short-term adaptation to glucose limitation ; decreases after benzoic acid treatment and phosphate limitation late and in the presence of leucine Component of the leucine-speciﬁc transport system , which is one of the two periplasmic binding-protein-dependent transport systems of the high-afﬁnity transport of the branched-chain amino acids ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol ; decreases after benzoic acid treatment 5.42 / 44,439 5.93 / 50,340 ( DIGE 4.5 -- 6.5 ) LeuD 5.16 / 22,356.29 P30126 3-Isopropylmalate dehydratase small subunit Probable HTH-type transcriptional regulator Leucyl-tRNA synthetase 5.20 / 23,000 ( DIGE 4.5 -- 6.5 ) 179 , 321 5.80 / 35,694.73 P10151 LeuO 5.77 / 34,515 293 5.11 / 98,831 5.16 / 97,233.76 P07813 LeuS LexA 6.23 / 22,357.72 P0A7C2 LexA repressor 179 5.39 / 73,606.07 DNA ligase P15042 LigA 79 1 LivJ 5.28 / 41,960 5.28 / 36,772.53 P0AD96 Leu/Ile/Val-binding protein 29 , 61 , 71 , 179 , 228 , 258 , 293 , 294 , 311 , 321 5.18 / 39,439 ( DIGE 4.5 -- 6.5 ) 5.30 / 38,773 ( DIGE 4.5 -- 6.5 ) 5.31 / 40,279 ( 4.5 -- 5.5 ) 5.21 / 16,964 ( 4.5 -- 5.5 ) 5.09 / 50,544 ( 5 -- 6 ) 5.23 / 50,424 ( 5 -- 6 ) 5.67 / 30,753 ( 5 -- 6 ) 5.33 / 23,392 ( 5 -- 6 ) 5.73 / 30,106 ( 5.5 -- 6.7 ) LivK 5.00 / 41,464 5.07 / 36,982.71 Leucine-speciﬁc binding protein P04816 71 , 179 , 212 , 228 , 258 , 287 , 294 , 321 5.09 / 39,439 ( DIGE 4.5 -- 6.5 ) 5.08 / 39,792 ( 4.5 -- 5.5 ) 5.56 / 28,995 ( 4.5 -- 5.5 ) 5.25 / 59,333 ( 5 -- 6 ) Continued on facing pag Induced by L-lactate aerobically Participates in the translocation of lipoproteins from the inner membrane to the outer membrane Plays a critical role in the incorporation of lipoproteins in the outer membrane after they are released by the LolA protein ; essential for E. coli viability Degrades short-lived regulatory and abnormal proteins in the presence of ATP ; induced by stress conditions such as high temperatures , nalidixic acid , and accumulation of abnormal proteins ; positively regulated by htpR Component of the glycine-cleavage-system as well as of the alpha-ketoacid dehydrogenase complexes ; increases during aerobic growth and the low temp at 10 ° C ; induced by low pH during anaerobic growth Interacts with the peptidoglycan both covalently and noncovalently ; contributes to the maintenance of the structural and functional integrity of the cell envelope Catalyzes the transformation of S-ribosylhomocysteine to homocysteine and 4,5-dihydroxy-2 ,3 - pentadione ; involved in the synthesis of autoinducer 2 , which is secreted by bacteria and is used to communicate both the cell density and the metabolic potential of the environment ; changes in cell density in a process called quorum-sensing ; induced by low pH Involved in lysine-biosynthesis Changes very little throughout the normal temp ( 23 -- 37 ° C ) and increases in level with increasing growth rate Synthesizes a no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>For example , cAMP-CRP , GlcIIa , BarA , polyphosphate , homoserine lactone , acetate , and the NADH/NAD ratio have been shown to affect rpoS transcription , whereas DnaK , DksA , Hfq , HU , StpA , LeuO , and several small regulatory RNAs control rpoS translation ( Hengge-Aro-nis 2002 ; Repoila et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17403784" target="_blank">17403784</a>]<br></li>
+<li>RNA was isolated from cultures of wild-type strain S3974 , DyjjPQ-bglJ strain T75 and Dhns stpA strain T447 , all harbouring either control vector pKESK22 ( - ) or LeuO expression vector pKETS5 ( + ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Microarray To determine putative target genes of BglJ and LeuO , DyjjPQ-bglJ strain T75 , DyjjPQ-bglJ DrcsB strain T175 and DyjjPQ-bglJ DleuO strain T177 ( Table 1 ) were transformed with either pKETS1 ( BglJ ) or pKESK22 ( control , Table S3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Thus , LeuO , which counteracts the H-NS-mediated repression of several loci , indirectly controls H-NS and RpoS synthesis under speciﬁc conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>LeuO is involved in the control of bio-ﬁlm formation and pathogenicity in several bacteria ( 29 , 42 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Among other targets , LeuO acts as a transcriptional activator of the bgl ( b-glucoside ) operon ( Ueguchi et al. , 1998 ) , of outer membrane porins ompS1 and ompS2 ( Flores-Valdez et al. , 2003 ; Fernandez-Mora et al. , 2004 ; Rodriguez-Morales et al. , 2006 ) , the yjjQ-bglJ operon ( Stratmann et al. , 2008 ) , and the CRISPR-associated cas operon ( Hernandez-Lucas et al. , 2008 ; Westra et al. , 2010 ; Medina-Aparicio et al. , 2011 ) , while LeuO represses transcription of the acid stress regulator CadC ( Shi and Bennett , 1995 ) and the small RNA dsrA ( Repoila and Gottesman , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>This has been demonstrated for the expression of the cryptic bgl gene and is strongly supported from recent studies , which indicate that LeuO induces expression of membrane components involved in the response to external stress and proteins known to act as drug efflux pumps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>Our data conﬁrm a moderate ( two - to threefold ) positive effect of LeuO on expression of the leu operon and the leuO gene , respectively , as well as a moderate upregulation in response to the availability of branchedchain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>LeuO expression in response-to-starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Majumder , A. , Fang , M. , Tsai , K.J. , Ueguchi , C. , Mizuno , T. , and Wu , H.Y. ( 2001 ) LeuO expression in response-to-starvation for branched-chain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>In addition to transcriptional activity from pleuO , the leuO gene product , LeuO , is also required to provide a trans-acting function for activation of pleu-500 ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>These LeuO targets include the CRISPR-associated casA gene , elfA ( encoding a ﬁmbrial-like adhesion protein ) as well as the RhsE cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>LeuO protein-mediated derepression , which relieves the repression of leuO gene , is also a crucial part of the promoter relay mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15582999" target="_blank">15582999</a>]<br></li>
+<li>LeuO protein negates AT4-mediated gene silencing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>A phage infectiondependent regulation of the CRISPR response has been reported to occur in Streptococcus thermophilus or Thermus thermophi-lus ,31,32 and crRNAs are among the most abundant sRNAs in Streptococcus pyogenes .33 In contrast , in E. coli K12 , the crRNA level is nearly undetectable under laboratory growth condition ,12,13 while the type I-F CRISPR system in E. coli LF82 has been reported to be constitutively active and to limit the transformation of target plasmid DNA .34 In E. coli K12 , the transcriptional inhibition of Cascade expression by H-NS has been shown to be responsible for the dormant crRNA maturation .13 Consistently , the transcriptional regulator LeuO , a well-known anti-silencer of H-NS , has been identified as an activator of the CRISPR system , inducing Cascade gene transcription and concomitantly crRNA maturation .21 Thus , the upregulation of the LeuO protein was considered to be one factor triggering the CRISPR defense in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Furthermore , LeuO positively regulates the Yersinia enterocolitica rovA gene , encoding a MarR-type transcriptional regulator of the inv gene , which encodes the major adherence factor invasin ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Thus , BglJ -- RcsB is a pleio-tropic transcriptional activator that coordinates regulation with global regulators including CRP , LeuO and HNS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>More recent studies demonstrated that BglJ -- RcsB also activates the transcription of the leuO gene encoding the pleiotropic transcriptional regulator and HNS antagonist LeuO ( 20 -- 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>]<br></li>
+<li>As LeuO is an H-NS antagonist with pleiotropic function , activation of leuO expression should occur in response to speciﬁc environmental cues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Regulation of leuO by RcsB-BglJ and LeuO as shown here and activation of yjjQ-bglJ by LeuO ( Stratmann et al. , 2008 ) indicates a feedback control mechanism of two global transcriptional regulators that may ensure turn on of their expression in response to speciﬁc environmental signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>It has also been shown before that constitutive expression of BglJ and LeuO , respectively , relieves silencing of bgl ( Giel et al. , 1996 ; Ueguchi et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Microarray Escherichia coli K12 MG1655 was transformed with plasmid pKEDR13 ( KanR lacIq Ptac leuO ) ( Stratmann et al. , 2008 ) for expression of LeuO or with control vector pKESK22 ( KanR lacIq Ptac ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>qPCR analysis of gene-expression Escherichia coli RNAP , LeuO and H-NS were puriﬁed according to published procedures ( Stratmann et al. , 2008 ; Pul et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>LeuO , a regulator that is conserved in Enterobacteriaceae , is of pleiotropic function which includes virulence control in Salmonella enterica , and it is considered an antagonist of the global repressor H-NS ( 13 , 15 , 56 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>LeuO is a global regulator of gene-expression in Salmonella enterica serovar Typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_28">
+Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar Typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></label>
+<input id="rp_similarity_28", type="checkbox">
+<div class="RP_similar">
+<li>Hernandez-Lucas , I. , Gallego-Hernandez , A.L. , Encarnacion , S. , Fernandez-Mora , M. , Martinez-Batallar , A.G. , Salgado , H. , et al. ( 2008 ) The LysR-type transcriptional regulator LeuO controls expression of several genes in Salmonella enterica serovar typhi .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li></div>
+<li>Based on these genome-wide analyses we propose that the expression of the type E ( Cse ) cas genes from S. enterica are likely to be regulated by H-NS and LeuO as well .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Overproduction of LeuO affects bgl expression in H-NS-independent manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></li>
+<li>Altogether these data indicate that LeuO plays an important role in the regulation of casABCDE12 gene-expression by antagonizing H-NS-dependent repression of Pcas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Other systems in which LeuO activates expression include the H-NS-repressed E. coli bgl ( aryl - , D-glucoside ) operon ( 60 ) , the H-NS-re-pressed Salmonella enterica serovar Typhi ompS1 gene , and the ompS2 gene encoding outer-membrane proteins and pathoge-nicity determinants ( 12 , 22 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Furthermore , the data support the conclusion that LeuO , whose expression is likewise repressed by H-NS and which is a virulence factor in Salmonella enterica , is a master regulator that among other loci , also controls the yjjQ-bglJ operon and thus indirectly the presumptive targets of YjjQ and BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>DISCUSSION Previously , the presumptive transcriptional regulator YjjQ of E. coli has been implicated in virulence of the avian pathogenic E. coli strain IMT5155 ( 6 ) , and yjjQ expression has been shown to be regulated by H-NS and LeuO ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>Expression of the yjjQ gene , which is encoded in the yjjQ-bglJ operon , is repressed by the global repressor H-NS and activated by the pleiotropic transcriptional regulator LeuO , as shown for the laboratory E. coli K-12 strain ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>r r LeuO also activates the bgl promoter ( Fig. 3a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>LeuO also represses the cadC and dsrA genes in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Finally , analysis of a leu promoter lacZ reporter fusion in a wildtype strain and a DleuO mutant conﬁrmed that the LeuO protein has a moderate ( 2.5-fold ) effect on expression of the divergent leu operon ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Again , LeuO had little effect on the expression of the 147-to - 166 promoter fusion but efﬁciently activated the 347-to - 166 promoter fusion in the wild-type strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Upon expression of plasmidic LeuO in trans , we again observed a moderate twofold increase of leuO expression ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In conclusion , the results shown in Fig. 2A suggest that excess LeuO protein ( from the leuO gene on a multicopy plasmid ) drastically represses cadC gene-expression at the transcriptional level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>-1.2 -1.1 1.0 1.1 -1.2 1.2 1.1 LeuO activates cas gene-expression To study the effect of LeuO on cas expression , gene Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>ReseARch pApeR ReseARch pApeR RNA Biology 10:5 , 708 -- 715 ; May 2013 ; © 2013 Landes Bioscience RcsB-BglJ-mediated activation of Cascade operon does not induce the maturation of CRISPR RNAs in E. coli K12 Zihni Arslan ,1 Thomas stratmann ,2 Reinhild Wurm ,1 Rolf Wagner ,1 Karin schnetz2 and Ümit pul1 , * 1Molecular Biology of Bacteria ; heinrich-heine University ; Düsseldorf , Germany ; 2Institute for Genetics ; University of cologne ; cologne , Germany Keywords : CRISPR , Cas protein , transcription regulation , H-NS , LeuO , Cascade prokaryotic immunity against foreign nucleic acids mediated by clustered regularly interspaced short palindromic repeats ( cRIspR ) depends on the expression of the cRIspR-associated ( cas ) proteins and the formation of small cRIspR RNAs ( crRNAs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Feb. 1995 , p. 810 -- / 95 / $ 04.0010 Copyright q 1995 , American Society for Microbiology Effects of Multicopy LeuO on the Expression of the Acid - Inducible Lysine Decarboxylase Gene in Escherichia coli XIAOLU SHI AND GEORGE N. BENNETT * Department of Biochemistry and Cell Biology , Rice University , Houston , Texas 77251 Received 10 June 1994/Accepted 19 November 1994 We previously reported that mutations in hns , the structural gene for the histone-like protein H-NS , cause derepressed expression of cadA , which encodes the acid-inducible lysine decarboxylase at noninducing pH ( pH 8.0 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_46">
+Effects of multicopy LeuO on the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></label>
+<input id="rp_similarity_46", type="checkbox">
+<div class="RP_similar">
+<li>Effects of multicopy LeuO in the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Shi , X. , and Bennett , G.N. ( 1995 ) Effects of multicopy LeuO on the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Shi , X. , and Bennett , G. N. ( 1995 ) Effects of multicopy LeuO on the expression of the acid-inducible lysine decarboxylase gene in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li></div>
+<li>In the case of LeuO , there is no evidence that it is involved in regulation of the leu operon upstream or the ilvIH operon downstrea ( unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>Klauck , E. , Böhringer , J. , and Hengge-Aronis , R. ( 1997 ) The LysR-like regulatory LeuO in Escherichia coli is involved in the 10 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_52">
+The LysR-like regulator LeuO in Escherichia coli is involved in the translational regulation of rpoS by affecting the expression of the small regulatory DsrA-RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></label>
+<input id="rp_similarity_52", type="checkbox">
+<div class="RP_similar">
+<li>Klauck , E. , Bohringer , J. , and Hengge-Aronis , R. ( 1997 ) The LysR-like regulator LeuO in Escherichia coli is involved in the translational regulation of rpoS by affecting the expression of the small regulatory DsrA-RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17493135" target="_blank">17493135</a>]<br></li></div>
+<li>Likewise , transcription factors of the genes for amino-acid-metabolism , including AdiY and CysB ( regulator of Cys synthesis ) , LeuO ( regulator of Leu synthesis ) , and TdcA and TdcR ( reg ¬ The change in amino acid levels was interconnected with the changes in the level of intermediate metabolites of carbohydrate-catabolism and energy metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>Interestingly , the genes coding for local regulators of the genes for individual amino acids are under the control of Lrp , including AdiY ( a regulator of Arg regulon ) , CysB ( a regulator of the Cys regulon ) , GadW ( a regulator of Glu reg ¬ Lrp Network Y J YhjI AdiY OLm r pR BluR YbaO YedW CadX CadW SdiA PhoP H-NS Cbl CysB TyrR TdcR DeoT TdcA CadX CadW DctR SdiA EnvR TdcA TdcA FabR StpA GadW LeuO GadE GadW GadX DtcR SlyA LeuO BglG StpA QseB Rob LrhA MatA NanR ~ 20 TFs FlhDC FliE LrhA FlhDC ~ 10 TFs FliZ MatA FlhDC QseCB Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>The Escherichia coli RutR transcription factor binds at LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_57">
+Shimada , T. , Yamamoto , K. and Ishihama , A. ( 2009 ) Involvement of leucine-response transcription factor LeuO in regulation of the genes for sulfa-drug eﬄux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></label>
+<input id="rp_similarity_57", type="checkbox">
+<div class="RP_similar">
+<li>Shimada , T. , Yamamoto , K. , and Ishihama , A. ( 2009 ) Involvement of the leucine response transcription factor LeuO in regulation of the genes for sulfa drug efflux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>Involvement of the leucine response transcription factor LeuO in regulation of the genes for sulfa drug efflux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22442305" target="_blank">22442305</a>]<br></li>
+<li>Involvement of the leucine response transcription factor LeuO in regulation of the genes for sulfa drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913318" target="_blank">23913318</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19633077" target="_blank">19633077</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22344666" target="_blank">22344666</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>]<br></li>
+<li>Involvement of leucine-response transcription factor LeuO in regulation of the genes for sulfa-drug efﬂux .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li></div>
+<li>The gene is under the control of the LeuO protein , a global regulator controlling a number of genes , including stress response genes and virulence-related genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22344666" target="_blank">22344666</a>]<br></li>
+<li>Summary The LysR-type transcription factor LeuO is involved in regulation of pathogenicity determinants and stress responses in Enterobacteriaceae , and acts as antagonist of the global repressor H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Introduction LeuO is a LysR-type transcription factor and a master regulator of multiple loci including genes related to stress response and pathogenicity of Enterobacteriaceae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_65">
+Shimada , T. , Bridier , A. , Briandet , R. & Ishihama , A. ( 2011a ) Novel roles of LeuO in transcription regulation in E. coli : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23301696" target="_blank">23301696</a>]<br></label>
+<input id="rp_similarity_65", type="checkbox">
+<div class="RP_similar">
+<li>Shimada T , Bridier A , Briandet R & Ishihama A ( 2011a ) Novel roles of LeuO in transcription regulation in E. coli : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651393" target="_blank">23651393</a>]<br></li>
+<li>Shimada , T. , Bridier , A. , Briandet , R. , and Ishihama , A. ( 2011 ) Novel roles of LeuO in transcription regulation of E. coli genome : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Shimada , T. , Bridier , A. , Briandet , R. & Ishihama , A. ( 2011 ) Novel roles of LeuO in transcription regulation in E. coli : antagonistic interplay with the universal silencer H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li></div>
+<li>Recent data indicate that LeuO is involved in regulating transcription of many genes , often as an H-NS antagonist ( Stoebel et al. , 2008 ; Shimada et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Also noteworthy is that the anti-silencer LeuO ( also a global regulator of membrane function ) ( Shimada et al. , 2011a ) and CsgD ( the master regulator of biofilm-formation ) ( Ogasawara et al. , 2010a , b , 2011 ) were regulated by BasR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22442305" target="_blank">22442305</a>]<br></li>
+<li>LeuO is another Leu-sensing global regulator that controls * 140 targets , of which most are involved in anti-silencing against the H-NS silencer ( Shimada et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LeuO binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The mapping of the regions responsible for the temperature control and the mapping of the LeuO regulatory site in the dsrA promoter separately from the site necessary for LeuO action conﬁrm the earlier conclusion of Klauck et al. ( 24 ) that LeuO is not involved in temperature control of dsrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>The LeuO footprint showed protection of approximately 60 bp , extending from positions 101 to 160 relative to the bgl promoter transcription start site ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>LeuO site 1 is located 20 bp downstream of Pcas and LeuO site 2 spans the divergent anti-Pcas ( Fig. 3B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>To test whether or not the effect of LeuO is specific for AT4 , a 72-bp DNA consisting of a DNA sequence from the lacZ coding region was synthesized and used to replace the 72-bp AT4 DNA in pWU802T ( illustrated in Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>Therefore , the region between 264 and 246 bp of dsrAp that carries motif III ( Fig. 3 ) was necessary for the LeuO effect ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>Therefore , directly or indirectly , LeuO repression of the dsrA promoter requires sequences in the region between 264 and 246 , the location of conserved motif III ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>]<br></li>
+<li>An alternativ mechanism in which LeuO prevents the binding of H-NS to a nucleation site seems less likely .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Sequence of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>For LeuO , three sites were mapped .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Repression of PleuO by LeuO is presumably direct as the two LeuO binding sites mapped by DNase I footprinting are located next to this promoter and one of the sites overlaps with the core sequence of PleuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>No LeuO consensus binding sequence is available to date .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Similarly , LeuO binds to three regions , including a site at the center , a site distal to the yjjQ promoters , and with the highest afﬁnity , at a site overlapping the yjjP promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Binding of LeuO and H-NS to the DNA sequence upstream of casA The casA-cas3 intergenic region ( here denoted IGLB ) contains Pcas , for which H-NS has strong binding affinity as well as the divergently oriented anti-cas3 ( known as anti-Pcas ) promoter , that is located 80 bp upstream of Pcas and gives rise to an antisense transcript of unknown function ( Figs 1A and 3C ) ( Pul et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Nonetheless , the data suggest , that LeuO derepresses bgl by directly binding to the upstream regulatory region of the bgl promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>The location of binding sites for LeuO and H-NS deduced from the yjjP promoter-lacZ fusions are summarized schematically in Fig. 5B .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Mapping of the promoters as well as the H-NS and LeuO binding sites within the 555-bp intergenic region revealed that H-NS binds to the center of the AT-rich regulatory region and distal to the divergent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>In the case of the antagonistic regulation of the yjjQ-bglJ operon , analyzed here , the arrangement of the binding sites indicates that LeuO may form a DNA loop by binding to the yjjP promoter and to the center of the intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LeuO</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>The RT-qPCR primers T351 and T352 are speciﬁc for ampliﬁcation of a 63 base-pair fragment of the non-translated leuO mRNA leader ( coordinates indicated ) which is not present on LeuO expression vector pKETS5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>We further found that some of the known targets of LeuO were activated by RcsB-BglJ in the leuO + strain T75 but not in its DleuO derivative ( T177 ) which was analysed in parallel ( Tables 2 , S1 and S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Expression levels were determined in strains DyjjPQ-bglJ DleuO T308 , DleuO Dhns T316 , Dhns stpA T352 and bglJC T570 in the absence ( - , white bars ) and presence ( + , grey bars ) of LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In vitro transcription in presence and in absence of LeuO protein was performed to roughly map start sites and orientation of transcripts ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Since leuO appears to be homologous to the lysR family of genes that code for helix-turn-helix DNA-binding proteins , it is likely that LeuO directly binds to cadC promoter sequences to reduce cadC gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7836317" target="_blank">7836317</a>]<br></li>
+<li>To test whether crRNA maturation is induced upon upregulation of LeuO , we analyzed the effect of BglJ on CRISPR defense , as leuO transcription is strongly activated when BglJ is constitutively expressed .26 We found that the constitutive expression of BglJ activates the Cascade transcription to equal levels as obtained by constitutive expression of the LeuO protein itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23392250" target="_blank">23392250</a>]<br></li>
+<li>Although cas3 gene expression was not strongly induced when LeuO was expressed from a plasmid ( Table 1 and Fig. 1B ) , the expression of cas3 was not a limiting factor for resistance , since introduction of a cas3 expression plasmid into E. coli J3 expressing leuO did not lead to elevated resistance levels ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>However , leuO expression is induced in a ppGpp-dependent manner by starvation for branched-chain amino acids , and LeuO is necessary for resuming growth after such a starvation ( Fang et al. , 2000 ; Majumder et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Among the genes sensitive to LeuO expression are ygcL ( casA ) and downstream encoded cas genes ( Shimada et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>LeuO expression is independent of rpoS genetic backphase ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11006083" target="_blank">11006083</a>]<br></li>
+<li>The expression of LeuO was induced with 1 mM IPTG in the overnight and exponential cultures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>In this respect , it may be noted that , although it was previously reported that overproduction of LeuO negatively affects cadBA expression ( 17 ) , the result described here demonstrated that overproduction of LeuO also has a somewhat positive effect on expression of this particular operon ( bgl ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></li>
+<li>As LeuO is a virulence factor in S. enterica ( 32 , 57 ) and as YjjQ , which is coencoded with BglJ , is presumably important for infection by avian-pathogenic E. coli ( 34 ) , it is conceivable that certain conditions in the host environment induce their expression , which in turn should also relieve repression of the bgl operon and allow its induction by substrate ( aryl - , D-glucosides ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>LeuO also represses the cadC and dsrA genes in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Due to stresses , such as upon entry into stationary phase , increased expression of LeuO was observed in several E. coli strains , which also activated the operon sdsRQP ( 82 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22344666" target="_blank">22344666</a>]<br></li>
+<li>The other three are incomplete predicted NH2-terminal sequences : one is found upstream of the E. coli leu operon ( LeuO ) , another is its homologue in S. typhimurium , and another is found upstream of Alcaligenes eutrophus tfdA gene ( TfdO ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>Moreover , our data suggest that LeuO acts predominantly as a negative autoregulator , with a moderate positive effect on transcription of leuO and the divergent leu operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Our data conﬁrm a moderate ( two - to threefold ) positive effect of LeuO on expression of the leu operon and the leuO gene , respectively , as well as a moderate upregulation in response to the availability of branchedchain amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Independent of this interesting case of regulation of the leu-leuO-ilvIH gene cluster by DNA topology some ambiguity about the importance of LeuO in regulation of the divergent leu operon originates in the nomenclature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>In the case of LeuO , there is no evidence that it is involved in regulation of the leu operon upstream or the ilvIH operon downstrea ( unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3413113" target="_blank">3413113</a>]<br></li>
+<li>Transcription of CRISPR-1 and casA -- E is repressed by H-NS [ 31 ] and de-repressed by LeuO [ 32 ] or BaeR [ 33 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21699496" target="_blank">21699496</a>]<br></li>
+<li>We demonstrate that relieving H-NS-mediated repression of cas gene transcription is required for CRISPR-based immunity and that derepression is mediated by LeuO through direct binding of DNA sequences upstream of casA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Further , it was proposed that LeuO acts as a positive regulator of the leu operon and leuO gene with activation based on transcription induced changes in DNA supercoiling and delimiting of H-NS spreading by LeuO ( Fang and Wu , 1998b ; Chen et al. , 2003 ; Chen and Wu , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Transcription of leuO is negatively autoregulated Previous studies suggested that LeuO might act as an activator of its own transcription by antagonizing H-NS-mediated repression ( Chen et al. , 2003 ; Chen and Wu , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>As leuO expression is negatively regulated by H-NS and positively by LeuO itself ( Hommais et al. , 2001 ; Chen et al. , 2005 ) , this would further amplify the activating signal for cas gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Other systems in which LeuO activates expression include the H-NS-repressed E. coli bgl ( aryl - , D-glucoside ) operon ( 60 ) , the H-NS-re-pressed Salmonella enterica serovar Typhi ompS1 gene , and the ompS2 gene encoding outer-membrane proteins and pathoge-nicity determinants ( 12 , 22 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Furthermore , the data support the conclusion that LeuO , whose expression is likewise repressed by H-NS and which is a virulence factor in Salmonella enterica , is a master regulator that among other loci , also controls the yjjQ-bglJ operon and thus indirectly the presumptive targets of YjjQ and BglJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>However , while the relevance of LeuO and YjjQ for pathogenicity indicates that their genes are expressed under certain in vivo conditions in the host environment , both the leuO gene and the yjjQ-bglJ operon are repressed by H-NS under laboratory growth conditions ( 6 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>However , regulation of the yjjQ-bglJ operon by H-NS and LeuO indicates that these genes are related to the control of stress responses and/or virulence-associ-ated traits ( 15 , 18 , 19 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>Transcription of the yjjQ-bglJ operon is repressed by the global repressor H-NS ( heat-stable nucleoid structuring protein ) , and it is activated by the pleiotropic transcriptional regulator LeuO ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>Expression of the yjjQ gene , which is encoded in the yjjQ-bglJ operon , is repressed by the global repressor H-NS and activated by the pleiotropic transcriptional regulator LeuO , as shown for the laboratory E. coli K-12 strain ( 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></li>
+<li>Considering the fact that LeuO also relieves H-NS-mediated repression of the yjjQ-bglJ operon ( 55 ) , this suggests that LeuO can affect bgl expression in two ways , directly by activating the bgl promoter and indirectly by activating expression of the yjjQ-bglJ operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Expression of rscA is autoregulated , while expression of the yjjQ-bglJ operon is activated by the LysR-type transcription factor LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Furthermore , we determined whether the transcription factor LeuO regulates expression of the yjjQ-bglJ operon ( Fig. 2 , and see discussion below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>One of these LeuO sites that overlapped the divergent yjjP promoter was required for the complete derepression of the promoter of the yjjQ-bglJ operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>RESULTS H-NS represses and LeuO activates the yjjQ-bglJ operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_37">
+LeuO also activates expression of the yjjQ-bglJ operon ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></label>
+<input id="tu_similarity_37", type="checkbox">
+<div class="TU_similar">
+<li>LeuO also activates the yjjQ-bglJ operon ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li></div>
+<li>Taken together , the data conﬁrm the regulation of the yjjQ-bglJ operon by H-NS and LeuO , and they demonstrate the repression of yjjP by H-NS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Here we show that yjjQ and bglJ are expressed as an operon , which is repressed by H-NS and activated by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The yjjP gene located upstream of the yjjQ-bglJ operon and in a divergent orientation is likewise repressed by H-NS but is not activated by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The divergent arrangement of transcription units at the yjjP-yjjQ-bglJ locus raises the possibility that transcription-induced supercoiling ( 34 ) plays a role in its antagonistic regulation by H-NS and LeuO , which again would relate to autoregulation of the leuO gene ( 20 , 21 , 62 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Regulation of the yjjQ-bglJ Operon , Encoding LuxR-Type Transcription Factors , and the Divergent yjjP Gene by H-NS and LeuO † Thomas Stratmann , S. Madhusudan , and Karin Schnetz * Institut für Genetik , Universität zu Köln , Zülpicher Str .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>The yjjQ and bglJ genes encoding LuxR-type transcription factors form an operon whose repression by H-NS is counteracted by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_45">
+Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26078445" target="_blank">26078445</a>]<br></label>
+<input id="tu_similarity_45", type="checkbox">
+<div class="TU_similar">
+<li>Stratmann , T. , Madhusudan , S. , and Schnetz , K. ( 2007 ) Regulation of the yjjQ-bglJ operon encoding LuxR-type transcription factors and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20132443" target="_blank">20132443</a>]<br></li>
+<li>Stratmann , T. , Madhusudan , S. , and Schnetz , K. ( 2008 ) Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19843219" target="_blank">19843219</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Stratmann , T. , Madhusudan , S. and Schnetz , K. ( 2008 ) Regulation of the yjjQ-bglJ operon , encoding LuxR-type transcription factors , and the divergent yjjP gene by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24335284" target="_blank">24335284</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20965974" target="_blank">20965974</a>]<br></li></div>
+<li>We also conﬁrmed that H-NS in strain CU305 is fully functional , because the expression of the proVWX operon is not derepressed by the LeuO overproduction ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></li>
+<li>( B ) Expression of the bgl operon in the cells in which LeuO is overproduced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422614" target="_blank">9422614</a>]<br></li>
+<li>LeuO is required for derepressing the repressed leuABCD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>S1 ) , indicating that transcription of the cas-ABCDE12 operon is tightly controlled by H-NS and LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Later , it was found that repression of the bgl operon by H-NS can be relieved by the LysRtype transcription factor LeuO ( see below ) and by BglJ ( 25 , 58 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20952573" target="_blank">20952573</a>]<br></li>
+<li>Furthermore , we have shown that constitutive expression of transcription factors LeuO and BglJ relieves silencing of the bgl operon by counteracting repression of the promoter by H-NS through the upstream site , whilst BglJ and LeuO do not affect downstream repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>The second , downstream level of bgl operon repression by H-NS is not affected by LeuO , BglJ or RpoS/Crl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16207917" target="_blank">16207917</a>]<br></li>
+<li>Altogether these data indicate that LeuO plays an important role in the regulation of casABCDE12 gene expression by antagonizing H-NS-dependent repression of Pcas .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>Possibly , LeuO has a dual role in the regulation of the yjjP promoter ; it may repress the promoter directly and also counteract its repression by H-NS when the binding site downstream of the yjjP promoter is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>It is also possible that H-NS traps RNA polymerase at the yjjQ promoter by binding upstream and downstream and that LeuO prevents the formation of that repressing DNA loop .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>To further analyze the regulation of yjjQ by H-NS and LeuO , a series of fragments encompassing the putative yjjQ promoters was fused to a promoterless lacZ gene as the reporter for expression ( Fig. 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>In contrast , the expression of the yjjQ promoter-lacZ fusion encompassing position 347 to 26 was activated by LeuO and was repressed more efﬁciently by H-NS than the shorter constructs were ( Fig. 5A , PQ 347 to 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Finally , analysis of a leu promoter lacZ reporter fusion in a wildtype strain and a DleuO mutant conﬁrmed that the LeuO protein has a moderate ( 2.5-fold ) effect on expression of the divergent leu operon ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>A. Expression of the leuO promoter lacZ fusion ( as shown in Fig. 1A ) is repressed by LeuO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22295907" target="_blank">22295907</a>]<br></li>
+<li>Interestingly , when LeuO was provided in trans , expression dropped to 10 units in the wild-type strain and to 8 units in the hns leuO double mutant ( Fig. 5B ) , suggesting that LeuO binds next to this yjjP promoter and represses it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>Interestingly , the transcript levels of the casABCDE12 operon were higher in cells expressing leuO than in hns knockout strains ( Fig. 1B ) , suggesting that either LeuO functions as an enhancer of casABCDE12 transcription , or that derepression in K12Dhns is incomplete .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+<li>These extended yjjP promoterlacZ fusions were also repressed by LeuO ( Fig. 5B , PP 250 to 25 and PP 450 to 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18055596" target="_blank">18055596</a>]<br></li>
+<li>LeuO site 1 is located 20 bp downstream of Pcas and LeuO site 2 spans the divergent anti-Pcas ( Fig. 3B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20659289" target="_blank">20659289</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

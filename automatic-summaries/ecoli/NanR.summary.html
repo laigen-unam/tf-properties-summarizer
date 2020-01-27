@@ -1,0 +1,653 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - NanR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">NanR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">NanR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>A tnGTnnnACna tnGTnnnACna tnGTnnnACna 5 ' - CTTAA TTGATCTGGTATAACAGGTATAAAGGTATATCGTTT ATACGACA-3 ' AnCTGGTcngACntnTt AnCTGGTcngACntaTt AnCTGGTcngACtnTt B Sd ( ) 5 ' - cgaATtTGGTATAACAGGTATAAAGGTATATCGTTT-3 ' Ck ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTATgTaGTca-3 ' St ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTAggTaGTTa-3 ' Cs ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTATATaGTca-3 ' Et ( ) 5 ' - TTaAcCTGGTATAACAGGTATAcAGGTATgTaGTTa-3 ' Sp ( ) 5 ' - TTatggTGGTATAACAGGTATAcAGcTAgccacTaa-3 ' Ph ( ) 5 ' - cctAggTGGTATAACAGGTATAcAccacaaacaGGTATAcaGttg-3 ' Ph ( ) 5 ` - aacAacTGGTATAACAGGTATAcAtccgaaacaGtgtTAtccatc-3 ' Cf ( ) 5 ` - TTGATCTGGTATAACAGGTATAAAGGTATgcaGTca-3 ' Consensus : 5 ' - ttnannTGGTATAACAGGTATAnAGnTAnnnnnTnn-3 ' FIG 7 Nan boxes in E. coli and selected bacteria predicted to encode orthologs of NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>To purify native NanR , JM109 harboring pSX675 was grown in 1 liter of Terriﬁc broth to an A of 0.4 and induced with 0.2 % L-arabinose for 3 h with 600 vigorous aeration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In agreement with this assertion , we found previously that mutation of nagC , or the addition of GlcNAc to the growth medium , enhances methylation protection of GATCNanR ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Binding of NanR to its operator sequence ONR , and NagC to ONC1 , is alternate , as judged by Dam methylation protection studies in vivo ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The pattern of methylation protection of GATCNanR and GATCNagC in vivo appears to alternate , suggesting that when NanR is bound to the DNA , ONC1 is unoccupied and vice versa ( El-Labany et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>DISCUSSION NanR belongs to the FadR/GntR family of transcriptional-regulators that includes activators , repressors , and molecules which both activate and repress a wide range of bacterial op-erons ( 17 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>S2 support the overall importance of the Nan box for NanR binding and repression of the sialoregulon using a repressor in the FadR family of helix-turn-helix ( HTH ) regulators with , however , atypical responses to inducer , its oligomerization state , and binding mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Though not shown in Fig. 5 , the C-terminal NanR effector binding domain is predicted to be composed of either turns or - helical secondary structural units ( 6 ) , which is topologically identical to FadR and clearly places NanR in the FadR subfamily of bacterial HTH regulators despite the fact that NanR uses overlapping binding sites instead of wings for speciﬁcity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The puriﬁed amplicon was ligated to the doubly digested pBAD24 vector , and the transformed plasmids expressed in strain JM109 were screened for overproduction of NanR by polyacrylamide gel electrophoresis after induction with 0.2 % L-arabinose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In this assay , plasmids bearing subcloned wild-type or mutated operators are transformed into reporter strain 12-1 such that increased - galac-tosidase activity indicates in vivo titration of wild-type NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The indicated plasmids expressing wild-type or mutant nanR were induced with arabinose , and extracts were subjected to Western blot analysis against anti-NanR antibody , as indicated by the expected 30-kDa bands shown in lane 1 and lanes 3 through 10 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Chemical cross-linking is thus a useful method for assessing the effects of various ligands on sialoregulators such as NanR when EMSA is unsuccessful ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>In E. coli , the nanATEK-yhcH operon is positively controlled by cyclic AMP receptor protein ( CRP ) and negatively regulated by the upstream nanR-encoded transcriptional-repressor , NanR ( 6 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Cooperative regulation of the Vibrio vulniﬁcus nan gene cluster by NanR protein , CAMP receptor protein , and N-acetylmannosamine 6-phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>A physical analysis of the actual form of Neu5Ac bound to NanR or present intracellularly will be necessary to conﬁrm our hypothesis that the isomer of Neu5Ac is the physiological inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Although both our present and previous results ( 30 , 38 , 39 ) clearly implicate Neu5Ac as the nan inducer , we were initially surprised by the failure to duplicate the in vitro equivalent of induction by incubating NanR with Neu5Ac .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>We thank Guy Condemine , Eric Vimr , Marjan van der Woude , Shadi Shafei , and Gary Robinson for discussions ; Kathryn Kalivoda and Eric Vimr ( University of Illinois at Urbana-Champaign , Urbana ) , for purified NanR and Charles Bell and Mitchell Lewis , ( University of Pennsylvania School of Medicine , Philadelphia ) for purified NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Previous evidence suggested that these complexes are not conformational isomers ( 6 , 7 ) , indicating that they might represent increasing numbers of NanR molecules bound per operator ; the complex with the lowest mobility represents the most NanR bound per DNA molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>NanR bound to all coregulated operons with similar efﬁciencies ( Fig. 1C to E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Therefore , if complexes C2 and C3 represent 4 and 6 NanR monomers bound , respectively ( Fig. 6 ) , some oligomerization must occur through solely protein-protein interactions with bound NanR , as observed for NtrC ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The amount of - galactosidase stimulated by transformation by pGEM-6 approaches the level of the nanR mutants ( Table 1 ) , suggesting that increasing the number of tandem repeats beyond the usual three GGTATA motifs results in an increased afﬁnity of NanR for its operator in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Our results demonstrate that the high level of nanA induction which is achieved through loss of NanR by mutation or titration or the presence of Neu5Ac is comparable to that produced by LacI binding to its three separated operators ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Mutant operators 1 , 2 , and 4 to 6 with defects in any one of the three GGTATA repeats had decreased induction in the titration assay and worse binding ( except for mutant 5 ) , reﬂected by increased dissociation constant , indicating that all three repeats are important for full repression by NanR ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Since we know nothing about the kinetics of NanR dimerization , we can not be certain that the functional ( binding ) form of NanR is the homodimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Model 1 also includes the possibility that NanR binds to DNA as a monomer , as in the case of WH proteins of the OmpR family , which bind to tandem repeats with a monomer binding to each successive major groove ( 4 , 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>It will also be interesting to determine the effects of increasing the distance or altering the orientation between repeats to further test our hypotheses about the NanR binding mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>DISCUSSION In the absence of a NanR crystal structure , we investigated interactions between nan repressor , inducer , and operator using genetic and biochemical approaches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>NanR is a repressor of the nan operon , and growth on Neu Ac prevents repression 5 ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Testing dilutions of the repressor shows that NanR binds sequentially to three sites , which is consistent with the presence of the three retarded bands in the gel mobility shift assay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Binding of NanR to artiﬁcial operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>NanR binds to this sequence ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>NanR binds to the fimB-yjhA region by EMSA to produce the same ladder pattern of three complexes reported for nan ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Thus , NanR binds with high affinity to region 1 in a way analogous to its binding at nan ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Transcriptome analysis indicated that expression of a wider range of genes not directly controlled by NanR in E. coli is either increased or decreased by direct and probably indirect effects of sialic acid by-products .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>We refer to genes directly regulated by NanR as the sialoregulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Although the nature of the inhibitory effect exerted by the yjhA proximal sequences is not yet understood , we hypothesize that NagC and NanR somehow interrupt long-range cis-acting repression by forming alternative incompatible nucleoprotein structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>To verify whether NanR could also control yjhA expression , we measured expression of a yjhA-lacZ fusion in the absence and presence of Neu5Ac .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>When the fusion was introduced into a nanR background , its expression was identical to that in the Neu5Ac-induced strain and it was not further inducible by Neu5Ac , conﬁrming that induction of yjhA by Neu5Ac occurs through NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Activation is a specialized function of transcriptional-regulators , and it seems unlikely to us that NanR activates ﬁmB by a different mechanism in the wild-type and D3 mutant backgrounds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>yjhA encodes an outer membrane channel that can facilitate Neu5Ac uptake ( G. Condemine , personal communication ) , and this gene is also repressed strongly by NanR , an effect which is modulated by NagC binding to the NagC1 site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Such differential actions are also observed for NanR and NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Neither sequences up to 820 bp upstream of ONR , nor those 270 bp downstream of ONC2 , are required for activation by NanR and NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>In contrast to the situation with NagC and IHF , we where unable to demonstrate methylation protection of ONR in the presence of NanR in the assay described above ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Moreover , NagC and IHF binding to the DNA in vitro does not inhibit NanR binding to ONR or vice versa ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The combined effects of mutations in IHF , NagC and NanR binding sites on ﬁmB expression and of IHF on methylation protection in vivo The results presented above show that IHF , bound to an element situated midway between the NagC operators ONC1 and ONC2 , forms a cooperative complex with NagC in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>However , neither mutation of ONC1 , nor that of ONC2 , seems to enhance the methylation protection of GATCNanR relative to the wild type in vivo as would be expected if the binding of NagC and IHF inhibited NanR binding ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>If NanR is less effective at enhancing fimB expression than NagC , as it seems to be , then the recombinase genes expression must therefore be controlled by phase variation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Thus , NagC could form a more extensive looped DNA structure than that formed by NanR binding to three adjacent sites , and this might at least in part , contribute to NagC being more effective as an antirepressor than NanR for fimB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Thus , Dam could affect fimB expression by inhibiting NanR and NagC binding to their cognate sites as it can do for Lrp and OxyR ( 49 , 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>One interpretation of these results was that NagC and NanR antagonize the inhibitory action of one or more cis-active silencer elements that repress ﬁmB from a distance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The increased efficacy with which NanR activates ﬁmB expression in the D3 mutant background can be explained most simply by proposing that NanR functions more effectively as an activator when ONR is placed closer to the ﬁmB promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The results described above also suggest that when ONR is placed closer to the ﬁmB promoter , NanR is better able to activate ﬁmB expression , and further work supports this idea .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>However , it is nevertheless clear that loss of NagC function in the D3 mutant background is indeed compensated for by an increased efficacy of NanR as an activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Increased efficacy of NanR in the D3 background compensates for loss of NagC function The results described above show that ONC2 activates ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Accordingly we reasoned that a loss of ﬁmB expression as a result of decreased NagC activity in the D3 background might be compensated for by enhanced activation by NanR for some reason .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>This observation not only allows us to understand how a modest mutation in ONC2 can affect ﬁmB expression whereas the D3 mutation does not , but it also supports our prior assertion that NanR activates ﬁmB expression without NagC ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The results extend our understanding of how NanR and NagC , and hence Neu5Ac and GlcNAc , control ﬁmB expression and type 1 ﬁmbriation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus one function of the large segment of DNA that separates the ﬁmB and nanC promoters seems to be to insulate ﬁmB expression from the effects of NanR and NagC , and hence presumably to optimize the control of type 1 ﬁmbriation by Neu5Ac and GlcNAc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Taken together , these observations support a model in which ﬁmB expression is activated alternately by NanR and NagC , with GlcNAc inhibiting one , and Neu5Ac both , of these pathways ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Discussion We showed in earlier work that ﬁmB expression , and hence the OFF-to-ON phase switching of type 1 ﬁmbriation , is activated by NanR and NagC and hence repressed by Neu5Ac and GlcNAc ( El-Labany et al. , 2003 ; Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>On the other hand , the double ibs ONR mutation exhibited a much lower level of ﬁmB expression , as would be expected if it prevents activation by both NagC and NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus , activation of ﬁmB expression by NanR , as judged by the effect of mutations in nanR , or in its operator sequence ( ONR ) , is enhanced considerably in the D3 deletion mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>NanR and NagC each bind to operator sequences [ ONR ( originally termed region 1 ) and ONC1 ( originally termed region 2/NagC1 ) respectively ] situated far upstream of ﬁmB ( Sohanpal et al. , 2004 ; Fig. 1 ) to stimulate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>NanR and NagC activate ﬁmB expression by binding to operator sequences ( ONR and ONC1 respectively ; Fig. 1 ) situated further upstream of the regulated promoter than is usual in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The DNA sequences upstream of the D2 region are not required for NanR or NagC to control ﬁmB expression We previously presented evidence suggesting that the D2 region , and hence NanR and NagC , could activate ﬁmB expression by blocking the inhibitory effect of additional cis-acting element ( s ) positioned closer to nanC ( El-Labany et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Although we have not characterized these fortuitous regulatory sequences further , it now seems unlikely that NanR and NagC overcome the inhibitory effect of cis-acting sequences further upstream of ﬁm to activate ﬁmB expression as we supposed originally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Furthermore , deletion of this region increases the efficacy of both NanR and NagC as activators , producing an overall increase in ﬁmB expression of nearly threefold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>However , it is clear that they allow coordination of nanC and ﬁmB expression , since NanR and NagC repress one and activate the other of these divergently arranged genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Alternatively , the sequence used in the replacement construct might somehow inhibit ﬁmB expression independently of NanR or NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus the D3 region is not apparently required for NanR to activate ﬁmB expression in the wildtype background , and it could contain speciﬁc sequences that inhibit this .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus , NanR and NagC appear to activate ﬁmB expression independently .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>In contrast to the situation with NagC , IHF is not required for NanR to activate ﬁmB expression in the wildtype background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>This regulation occurs via the NanR and NagC regulators , which also control ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>NanR and NagC are two regulators that control nanC expression by binding to or in the vicinity of its promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Indeed opposing effects of IHF on activation by NanR and NagC could explain why mutations that affect IHF function have less effect on ﬁmB expression than do those affecting NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>IHF therefore does seem to have a small activating effect on ﬁmB expression in the absence of both NagC and NanR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>In the absence of NagC binding , a residual activating effect of IHF on ﬁmB expression could thus be offset by an inhibi-tory effect of IHF on NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>However , placing the NanR , IHF and NagC binding sites closer to the ﬁmB promoter enhances the ability of the regulators to activate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>This suggests that IHF binding to ibs has a small inhibitory effect on the ability of NanR to activate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Moreover , in contrast to the situation in the wild type , IHF also appears to enhance NanR activation of ﬁmB expression in the deletion mutant background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>In contrast , IHF does not enhance the ability of NanR to activate ﬁmB expression in the wild-type background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>The results presented above show that IHF does not enhance the ability of NanR to activate ﬁmB expression in the wild-type background ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>We suppose that the 274 bp wild-type region adjacent to ONC2 analysed could contain one or more sequences that activate ﬁmB expression even in the absence of NanR or NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>While the basis for this effect is uncertain , it is nevertheless evident that neither NanR nor NagC requires the wild-type segment of D7 DNA in order to be able to activate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>By replacing the 274 bp of wild-type DNA from -467 to -194 with heterologous sequences it was shown that neither NanR nor NagC requires this segment of DNA in order to activate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Here , we show that whereas NanR , a sialic acid-response-regulator , binds to region 1 , NagC , a GlcNAc-6P-responsive protein , binds to region 2 instead .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Sialic acid catabolism generates GlcNAc-6-P , and whereas GlcNAc disrupts methylation protection by NagC alone , Neu5Ac inhibits the protection mediated by both NanR and NagC as expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Thus , the loss of methylation protection at both regions 1 and 2 in the presence of Neu Ac is explained by the fact 5 that the Neu5Ac generates the inducing signal for NanR , and its metabolism produces GlcNAc-6-P , the inducing signal for NagC ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>It would not be surprising if , like NanR , NagC , and OmpR , CpxR plays a role in the control of type 1 ﬁmbriation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Thus , like NagC , NanR may require an additional cofactor in order to prevent Dam methylation of the GATC site adjacent to its binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus , like NagC at GATCNagC , an additional cofactor could be required for NanR to prevent Dam methylation of GATCNanR in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>When E. coli is growing in glucose minimal medium , nanA expression is barely detectable due to inactivation of CRP and repression by NanR ( 4 , 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>However , with CRP activated during growth on a non-catab-olite-repressing substrate like glycerol , nanA expression increases , presumably by RNA polymerase blocking repressor binding ( 14 ) , followed by at least another 10-fold increase resulting from inactivating NanR with Neu5Ac ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>From this standard curve , the molecular mass of tagged NanR was calculated to be 53,315 Da , which is most consistent with NanR existing as a homodimer in solution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In the presence of EGS and NanR ( 5.4 to 9 M ) , homodimers predominated together with a concentration-dependent increase in oligomers with estimated masses consistent with 3 or more cross-linked monomers or a combination of monomers and dimers ( Fig. 3A , lanes 3 to 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">NanR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In model 2 , the GGTATA motif is considered a pseudo-palindrome , GGTA : TAnc , so that NanR should bind as a dimer but possibly interacts asymmetrically with one side of the major groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Though not shown in Fig. 5 , the C-terminal NanR effector-binding domain is predicted to be composed of either turns or - helical secondary structural units ( 6 ) , which is topologically identical to FadR and clearly places NanR in the FadR subfamily of bacterial HTH regulators despite the fact that NanR uses overlapping binding sites instead of wings for speciﬁcity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The C-terminal domain of NanR has predicted secondary structure most similar to FadR , placing it in the FadR subfamily of the GntR superfamily ( 6 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The predicted secondary structure of the NanR DNA-binding domain ( Fig. 5B ) provides scant evidence for a structure , while the three N-terminal - helices typical of GntR superfamily regulators ( 17 ) are clearly present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Three-dimensional modeling of the NanR N terminus with the equivalent FadR domain indicates topological similarity between the predicted structure of NanR and the corresponding structural elements of FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>This region in NanR was previously hypothesized to be the recognition domain on the basis of its similarity to FadR ( 7 , 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>This could imply that NanR makes contacts with DNA similar to those made by FadR , with the nonidentical amino acids conferring speciﬁcity on the NanR operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The solid arrows indicate amino acids that are identical in FadR and NanR , while the dotted arrows indicate those amino acids without homology to NanR that could be responsible for speciﬁc recognition , as described in the text .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>However , we note that 9 of the 13 FadR amino acid residues lying within hydro-gen-bonding distance of the DNA target are potentially shared with the NanR N terminus ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Amino acid residues are numbered from the N terminus of FadR ( A ) or NanR ( B ) and are shown below the known or predicted regions of - helical , - helical , or random helical structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Lane 3 , 3.5 g of puriﬁed native NanR with the amino acid sequence of the ﬁrst 10 residues on the right .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Further , we identify some of the NanR amino acid residues and operator nucleotides critical for NanR-operator interactions ﬁrmly placing NanR in the GntR superfamily ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>This would provide just about sufﬁcient room for three NanR homodimers binding to three turns of the DNA helix of 100 Å .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>When two different DNA fragments with three repeats were tested , the number of residues ﬂanking the GGTATA motifs did not inﬂuence NanR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In model 3 , the speciﬁc NanR recognition sequence covers two GGTATA motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Since NanR lacks obvious homology to other known sialic acid binding proteins , determining the exact interaction of NANA with the repressor should provide new insight into the structure and function of sialic acid recognition macromol-ecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9864311" target="_blank">9864311</a>]<br></li>
+<li>S2 support the overall importance of the Nan box for NanR binding and repression of the sialoregulon using a repressor in the FadR family of helix-turn-helix ( HTH ) regulators with , however , atypical responses to inducer , its oligomerization state , and binding mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>To facilitate the characterization of NanR and its binding to the putative nan operator ( Fig. 3 ) , the repressor was puriﬁed in two molecular forms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>DISCUSSION In the absence of a NanR crystal structure , we investigated interactions between nan repressor , inducer , and operator using genetic and biochemical approaches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>When this result is considered together with the genetic and biochemical characterization of the repressor , it appears that full induction of nan occurs when the inducer ( Neu5Ac ) destabilizes NanR oligomers upon binding to the C-terminal domain , which is the common domain for regulation of all characterized members of the GntR superfamily ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">NanR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Model 1 also includes the possibility that NanR binds to DNA as a monomer , as in the case of WH proteins of the OmpR family , which bind to tandem repeats with a monomer binding to each successive major groove ( 4 , 15 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>DISCUSSION NanR belongs to the FadR/GntR family of transcriptional regulators that includes activators , repressors , and molecules which both activate and repress a wide range of bacterial op-erons ( 17 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>S2 support the overall importance of the Nan box for NanR binding and repression of the sialoregulon using a repressor in the FadR family of helix-turn-helix ( HTH ) regulators with , however , atypical responses to inducer , its oligomerization state , and binding mechanism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by NanR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Interestingly , the genes coding for local regulators of the genes for individual amino acids are under the control of Lrp , including AdiY ( a regulator of Arg regulon ) , CysB ( a regulator of the Cys regulon ) , GadW ( a regulator of Glu reg ¬ Lrp Network Y J YhjI AdiY OLm r pR BluR YbaO YedW CadX CadW SdiA PhoP H-NS Cbl CysB TyrR TdcR DeoT TdcA CadX CadW DctR SdiA EnvR TdcA TdcA FabR StpA GadW LeuO GadE GadW GadX DtcR SlyA LeuO BglG StpA QseB Rob LrhA MatA NanR ~ 20 TFs FlhDC FliE LrhA FlhDC ~ 10 TFs FliZ MatA FlhDC QseCB Fig. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2162465" target="_blank">2162465</a>]<br></li>
+<li>Results NanR Is a Positive Regulator of fimB Expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Cooperative regulation of the Vibrio vulniﬁcus nan gene cluster by NanR protein , CAMP receptor protein , and N-acetylmannosamine 6-phosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Because we have not detected orthologues of NanR in organisms with putative nan systems that are not closely related to E. coli , nan expression in different organisms may involve alternative regulators and inducing signals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>This regulation occurs via the NanR and NagC regulators , which also control ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>To verify whether NanR could also control yjhA expression , we measured expression of a yjhA-lacZ fusion in the absence and presence of Neu5Ac .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Control of the Escherichia coli Sialoregulon by Transcriptional Repressor NanR Kathryn A. Kalivoda , * Susan M. Steenbergen , Eric R. Vimr University of Illinois at Urbana-Champaign , Urbana , Illinois , USA NanR , one of > 8,500 GntR superfamily helix-turn-helix transcriptional regulators , controls expression of the genes required for catabolism of sialic acids in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>NanR is a regulator of N-acetylneuraminic acid ( Neu5Ac or sialic acid ) metabolism in E. coli ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">NanR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>A tnGTnnnACna tnGTnnnACna tnGTnnnACna 5 ' - CTTAA TTGATCTGGTATAACAGGTATAAAGGTATATCGTTT ATACGACA-3 ' AnCTGGTcngACntnTt AnCTGGTcngACntaTt AnCTGGTcngACtnTt B Sd ( ) 5 ' - cgaATtTGGTATAACAGGTATAAAGGTATATCGTTT-3 ' Ck ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTATgTaGTca-3 ' St ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTAggTaGTTa-3 ' Cs ( ) 5 ' - TTGATCTGGTATAACAGGTATAAAGGTATATaGTca-3 ' Et ( ) 5 ' - TTaAcCTGGTATAACAGGTATAcAGGTATgTaGTTa-3 ' Sp ( ) 5 ' - TTatggTGGTATAACAGGTATAcAGcTAgccacTaa-3 ' Ph ( ) 5 ' - cctAggTGGTATAACAGGTATAcAccacaaacaGGTATAcaGttg-3 ' Ph ( ) 5 ` - aacAacTGGTATAACAGGTATAcAtccgaaacaGtgtTAtccatc-3 ' Cf ( ) 5 ` - TTGATCTGGTATAACAGGTATAAAGGTATgcaGTca-3 ' Consensus : 5 ' - ttnannTGGTATAACAGGTATAnAGnTAnnnnnTnn-3 ' FIG 7 Nan boxes in E. coli and selected bacteria predicted to encode orthologs of NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Matrix Consensus ( IUPAC ) order sites Total IC IC per FPR50 % ( LOO ) FPR90 % ( LOO ) FPR100 % ( LOO ) FPR50 % FPR90 % FPR100 % ( matrix sites ) LOO/Matrix sites ( FPR 50 % ) ( matrix sites ) ( matrix sites ) colum n 1 0 1 1 e e e e mem mem mem mem TrpR CRP CysB NanR 24 24 30 20 6 tyGtACtmGykaACtaGTaCratr aaawwtgtGayryagaTCACawww gGAavGrrrtaAyKrmwtrmcarakykm ktATAmMwGktataMmrGww 13.62 7.29 10.67 10.28 0.57 0.30 0.36 0.51 6.67 E 1.38 E 9.29 E 1.53 E + + + + 03 00 03 05 1.30 E-10 6.40 E-242 1900 8.30 E-07 1.00 E 6.20 E 2.60 E 2.30 E -08 -05 -04 -06 7.70 E-06 3.70 E-03 1.40 E-01 1.60 E-03 7.70 E-06 2.80 E-02 1.40 E-01 1.60 E-03 1.50 E 4.50 E 2.80 E 1.50 E -12 -05 -08 -11 1.50 E 2.70 E 3.20 E 6.40 E -09 -03 -05 -07 1.50 E 2.10 E 3.20 E 6.40 E -09 -02 -05 -07 198 8 6 kt 1 1 0 meme meme LexA HipB FNR 21 4 72 22 18 20 wwtrCTGtayatamammCAGya ATCCsskagmGCGGATAA tdywwwtTGaTwwmraTCaa 11.65 10.95 6.94 0.53 0.61 0.35 1.33 E 3.33 E 1.71 E + + + 01 03 0 2.60 E-46 0.00022 2.09 E-71 2.00 E 5.00 E 1.30 E -08 -08 -04 4.60 E-04 4.30 E-06 5.30 E-03 3.10 E-03 4.30 E-06 1.80 E-02 1.50 E 1.50 E 7.60 E -09 -11 -05 1.50 E 3.10 E 2.90 E -05 -09 -03 1.50 E 3.10 E 9.80 E -04 -09 -03 consensus B C Figure 8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20923783" target="_blank">20923783</a>]<br></li>
+<li>Gel shift analysis with puriﬁed hexahistidine-tagged or native NanR detected three retarded complexes , suggesting that NanR binds sequentially to the three repeats .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>When an extract containing overproduced NanR was incubated with a 246-bp radiolabeled DNA fragment covering 39 bp 5 from the termination codon of nanR to 86 bp 3 from the translational codon of nanA and including the 121-bp intergenic region ( Fig. 3 ) , a concentration-dependent ladder of three retarded bands was detected by gel mobility shift analysis ( Fig. 5A , lanes 2 to 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The 5 end of the major nanA transcript lies within the middle repeat , so that bound NanR would be expected to prevent RNA polymerase binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The CAP and NanR binding sites are indicated , and the nucleotides known or proposed to constitute these sites are boxed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The 35 and 10 regions of the promoter are underlined , the NanR binding site is boxed in gray , the NagC binding site is boxed in white , and the CAP binding site is underlined with a wavy line .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Thus , NanR polydispersity and disorganization in the presence of sialic acid ( Fig. 3 ) , an overlapping DNA binding site consisting of three weak consensus GntR superfamily palindromes ( 6 , 7 , 17 , 33 ) ( Fig. 7A ) , and unusual binding stoichi-ometry likely contributed to our inability to crystallize otherwise exceptionally pure native NanR ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Binding of puriﬁed native NanR to operators with four or six repeats displayed the same concentration dependence as binding to the natural operator shown in Fig. 5C , with Kds near 1 and 0.5 nM , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Puriﬁed CAP protected a region corresponding to the consensus CAP binding motif shown in Fig. 3 ( Fig. 2B , lanes 4 and 5 ) , and both CAP and NanR can bind simultaneously ( Fig. 2B , lane 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>This suggestion is consistent with deviation of the third repeat in the consensus NanR binding site ( Fig. 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Some TFs from the FADR and HUTC subfamilies recognize unique motifs with different or no symmetry [ 20 ] , for example , FarR ( direct repeats TGTATTAWTT ) [ 35 ] , NagQ ( direct repeats TGGTATT ) [ 30 ] , BioR ( TTATMKATAA ) [ 36 , 37 ] , NanR ( direct repeats TGGTA-TAW ) [ 38 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>The examples are NanR that binds direct repeats TGGTATAW [ 38 ] , or BioR with the binding site consensus TTATMKATAA [ 36,37 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>In model 3 , the speciﬁc NanR recognition sequence covers two GGTATA motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>NanR binds to this sequence ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Although most HTH transcriptional regulators recognize palindromic or pseudopalindromic targets , we have provided evidence that NanR recognizes three tandem GGTATA repeats .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Binding of NanR to artiﬁcial operators with various numbers of tandem GGTATA repeats Operatora Length No .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The three models that can most plausibly account for our results are that ( i ) NanR speciﬁcally recognizes each of three tandem direct repeats , ( ii ) each GGTATA site is itself a pseu-do-inverted-repeat ( GGTA : TAnc ; the colon indicates the location of the pseudo-inverted-repeat ; `` nc '' indicates nonconserved residues ) , and ( iii ) each adjacent pair of GGTATA repeats contributes an inverted-repeat , forming a FadR-like pseudopalindrome ( Fig. 3 ) so that NanR binds to two overlapping inverted-repeats .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Here we show that NanR regulates nanATEK-yhcH , nanCMS , and yjhBC operons by binding with similar afﬁnities to a set of conserved operators with two or three exact , or nearly exact , repeats of the hexanucleotide sequence GGTATA , designated the Nan box ( 6 , 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The region protected by NanR contains three tandem repeats of the hexameric sequence GGTATA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The region protected corresponds to the three direct GGTATA repeats bound by native NanR and shows that the distal site 1 has the highest afﬁnity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Region 1 contains , with two mismatches , three direct repeats of the hexanucleotide sequence ( 5 - GGTATA ) separated by 2 -- 3 bp that characterize the binding site for NanR at nan ( 40 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>The start site corresponds to a 10 sequence of TATAAC and lies within the predicted NanR binding site containing two repeats of the GGTATA hexamer ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Since the GGTATA motif is repeated after 8 or 9 bp ( i.e. , less than a single turn of the B form of DNA ) , this would imply that three dimers of NanR coat the operator by binding around the DNA and are not lying in the same plane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Note that the footprint of the NanR binding to the operator shows protection of 30 bp , implying that the sequence protected by each NanR molecule extends beyond the GGTATA repeat .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>We conclude that the NanR operator is composed of overlapping binding sites accommodating the various numbers of bound NanR molecules within three turns of the DNA helix , or about 30 bp , as detected by DNase I protection assay showing coverage of all three repeats ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>S1 analysis identiﬁed the nan transcriptional start , and DNA footprint analysis showed that NanR binds to a region of 30 bp covering the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Furthermore , NanR protects , from digestion with DNase I , a region of 30 bp that coincides with the hexanucleotide repeats ( Fig. 3B , lanes 2 -- 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Dam methylation protection at regions 1 and 2 is apparently mutually exclusive , suggesting that NanR and NagC each form alternative , stable nucleoprotein complexes with their cognatebinding sites ( 21 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>The sequence includes the NanR and NagC operator sites ( ONR and ONC1 respectively ) ( shown in bold ) , the -10 and -35 region of the nanC promoter ( underlined ) , and the methylation-protected GATC sites ( GATCNanR and GATCNagC ; shown by a larger font size ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>ONR and ONC1 lie close to Dam methylation sites ( GATCNanR and GATCNagC respectively ; Fig. 1 ) , which are frequently unmodiﬁed ( El-Labany et al. , 2003 ) , and NanR and NagC produce methylation protection of the GATC sequences adjacent to their binding sites in vivo ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Binding of NanR to its operator sequence ONR , and NagC to ONC1 , is alternate , as judged by Dam methylation protection studies in vivo ( Sohanpal et al. , 2004 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>ﬁmB expression is regulated by Neu5Ac through the binding of the NanR regulator at a speciﬁc site in the ﬁmB-yjhA intergenic region ( Fig. 1A ) ( 7 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>NanR ( Neu5Ac-responsive ) and NagC ( GlcNAc-6P-responsive ) activate ﬁmB expression by binding to operators ( ONR and ONC1 respectively ) located more than 600 bp upstream of the ﬁmB promoter within the large ( 1.4 kb ) nanC-ﬁmB intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>NanR and NagC each bind to operator sequences [ ONR ( originally termed region 1 ) and ONC1 ( originally termed region 2/NagC1 ) respectively ] situated far upstream of ﬁmB ( Sohanpal et al. , 2004 ; Fig. 1 ) to stimulate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>NanR and NagC activate ﬁmB expression by binding to operator sequences ( ONR and ONC1 respectively ; Fig. 1 ) situated further upstream of the regulated promoter than is usual in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Neither sequences up to 820 bp upstream of ONR , nor those 270 bp downstream of ONC2 , are required for activation by NanR and NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>To evaluate the importance of this region for the activation of ﬁmB expression further , the 274 bp portion of the D3 region adjacent to ONC2 was replaced with heterologous sequences of the same length derived from the bla gene ( Fig. 1 ; the D7 region ) , and the effect of this mutation on the ability of both NanR and NagC to activate ﬁmB expression was determined ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>We suppose that the 274 bp wild-type region adjacent to ONC2 analysed could contain one or more sequences that activate ﬁmB expression even in the absence of NanR or NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>By replacing the 274 bp of wild-type DNA from -467 to -194 with heterologous sequences it was shown that neither NanR nor NagC requires this segment of DNA in order to activate ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by NanR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Additional work is thus required to determine why methylation protection of GATCNanR and GATCNagC alternates as it does , and if and how methylation of these elements affect ﬁmB and nanC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>When the fusion was introduced into a nanR background , its expression was identical to that in the Neu5Ac-induced strain and it was not further inducible by Neu5Ac , conﬁrming that induction of yjhA by Neu5Ac occurs through NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>To identify loci directly regulated by NanR , we compared the relative gene expression of an E. coli K-12 nanR strain ( EV730 ) with that of its wild-type MC4100 parent , both grown in M63 with glycerol and no Neu5Ac , as well as MC4100 grown in glycerol minimal medium either with or without Neu5Ac ( see Materials and Methods ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>When E. coli is growing in glucose minimal medium , nanA expression is barely detectable due to inactivation of CRP and repression by NanR ( 4 , 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>It can be noted that the nanC promoter is located in exactly the same position relative to the NanR binding site as the nanA promoter is within the NanR operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>Thus , activation of ﬁmB expression by NanR , as judged by the effect of mutations in nanR , or in its operator sequence ( ONR ) , is enhanced considerably in the D3 deletion mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>If NanR is less effective at enhancing fimB expression than NagC , as it seems to be , then the recombinase genes expression must therefore be controlled by phase variation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Although we have not characterized these fortuitous regulatory sequences further , it now seems unlikely that NanR and NagC overcome the inhibitory effect of cis-acting sequences further upstream of ﬁm to activate ﬁmB expression as we supposed originally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>However , it is clear that they allow coordination of nanC and ﬁmB expression , since NanR and NagC repress one and activate the other of these divergently arranged genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>NanR ( Neu5Ac-responsive ) and NagC ( GlcNAc-6P-responsive ) activate ﬁmB expression by binding to operators ( ONR and ONC1 respectively ) located more than 600 bp upstream of the ﬁmB promoter within the large ( 1.4 kb ) nanC-ﬁmB intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>NanR and NagC activate ﬁmB expression by binding to operator sequences ( ONR and ONC1 respectively ; Fig. 1 ) situated further upstream of the regulated promoter than is usual in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+<li>Thus the same factors , NanR and NagC , control both fimB and yjhA expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>NanR and NagC are two regulators that control nanC expression by binding to or in the vicinity of its promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743943" target="_blank">15743943</a>]<br></li>
+<li>( A ) Genetic organization of the sialoregulon , which is negatively controlled by NanR , with sizes ( in kilobases ) of nanA and operon transcripts shown above the arrows at the top .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Figure 1A shows the genetic organization of the nanATEK-yhcH operon and the upstream locus encoding the transcriptional repressor of the operon , NanR , in E. coli K-12 ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In E. coli , the nanATEK-yhcH operon is positively controlled by cyclic AMP receptor protein ( CRP ) and negatively regulated by the upstream nanR-encoded transcriptional repressor , NanR ( 6 -- 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Fluorometric analysis of Neu5 ,9 Ac2 by detection of 1,2-diamino-4 ,5 - methyl-enedioxybenzene ( DMB ) - labeled sialyl derivatives after separation by reverse-phase chromatography ( 22 ) indicated contamination with 7 % Neu5 ,8 Ac2 and 3 % Neu5Ac , while Neu4 ,5 Ac2 The coregulated nanATEK-yhcH , yjhATS , and yjhBC operons involved in sialic acid catabolism in Escherichia coli are thought to be induced by the most common sialic acid , N-acetylneuraminic acid ( Neu5Ac ) , through reversible inactivation of the NanR repressor encoded by nanR mapping immediately upstream of nanA ( 15 , 27 , 28 ; http://vetmed.illinois.edu / path/sialobiology / ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19749043" target="_blank">19749043</a>]<br></li>
+<li>The yjhBC and yjhATS operons were apparently controlled by upstream DNA sequences that are similar or identical to the previously identiﬁed Nan box controlling nanATEK-yhcH expression ( 7 ) , supporting the conclusion that NanR regulates expression of the sialoregulon by binding to identical or nearly identical operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Previous results ( 47 , 48 ) now suggest that sialic acid induces the nan operon by binding to NanR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9864311" target="_blank">9864311</a>]<br></li>
+<li>Results NanR Is a Positive Regulator of fimB Expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>Expression of the operon is induced by Neu5Ac , which inactivates the NanR repressor ( Kalivoda et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

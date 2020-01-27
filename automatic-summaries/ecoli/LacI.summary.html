@@ -1,0 +1,864 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LacI</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LacI</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LacI transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>The complicated network of acceptors and donors results in stereospecific requirement for A at - 7 in order to achieve optimal hydrogen bonding interactions G ~ in-Arg-Glu-Leu - Lys-Asn-Glu-Leu-Gly-Ala-Gly - Ile-Ala-Thr-Leu-Thr-Arg-Gly - se r-As n-Be r-Leu-Lys-Ala • T • -- • • • • • • • ~ rpR galR Ile-Lys-Asp-Val-Ala-Arg - Leu-Ala-Gly-Val-Ser-Val-Ala-Thr-Val-Se r-Arg-Va l-I le-Asn-Asn-Ser - P r ° - Lys LacI Leu-Tyr-Asp-Val-Ala-Glu-Tyr-Ala-Gly-Val-Ser - Tyr-Gln-Thr-Val-Se r-Arg-Va l-Val-As n-Gln-Ala-Se r-His 434R Gln-Ala-Glu-Leu-Al a-Gln-Lys-Val-Gly-Thr - Thr - Gln-Gln-Se r-Ile-G lu-Gln - Leu-Glu-As n-Gly - Lys-Thr - Lys ; ~ Cro Gln-Thr - Ly s-Th r-AIa-Ly s-Asp-Leu-GIy-Val-Ty r-Gln-Ser-Ala - Ile-Asn-Ly s-Al a - Ile-His-Ala-Gly-Arg - Lys lcl G1 n-G lu-Se r-Va l-Ala-Asp-Lys-Met-Gl y-Met-Gly-Gln-Ser - G Iy-Val-GIy-AI a - Leu-Phe-As n-Gly - Ile-As n-Ala CAP Arg-Gl n-Glu - Ile-Gly-G lu - Ile-Val-Gly-Cys-Ser - Arg-Glu-Thr - Val-Gly-Arg - Ile - Leu-Lys-Met-Leu-Glu-Asp Fig. 8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2182120" target="_blank">2182120</a>]<br></li>
+<li>TA BL Act 0 0 0 Pr Reg Op AraC AraC AraC ArgR ArgR ArgR ArgR ArgR ArgR BioB BioB CRP CRP CRP CytR CytR CytR DeoR DeoR DnaA FNR Fur Fur Fur Fur GaIR GaIR GlpR IlvY LacI LexA LexA LexA LexA LexA LexA LexA LexA LexA MetJ MetJ MetJ MetJ MetR MetJ NR ( I ) NR ( I ) OxyR PapB PifC PurR PurR PurR PurR PurR PurR PurR PurR PurR PutA PutA RafR TetR TetR TetR TrpR araBAD araC araE argCBH argE argF argl argRpl carABp2 bioA bioB cya ompA spf ccd cytR tsx deopi deop2 rpoHp4 fnr cir pl cir p2 ffhuA * iucApl galpl galp2 glpD ilv Y lac cloDF14 colElpl lexA recA ssb sulA uvrA uvrBp2 uvrD metApi metB * metJpl * metE metR metF glnApi glnL oxyR papB pifC purC purE purF purH purL purM purR pyrC pyrD * putA * putP * rafA * tet tetRpl tetRp2 aroH 1,2 1,2 1 69 , 102 , 135 71 1 1 R R 1 0 1 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 0 0 0 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 2 1,4 1 4 4 2 1,2 1 1 2 2 4 4 1 4 1,2 1,2 2 4 2 2 4 2 1,2 1,2 2 3 1,2 4 2,4 2 2 4 4 2,4 2 2 4 1,2 1,2 1,4 1,3 1,4 1,2 1,2 3 2 1 3 3,4 1,3 3 3,4 4 1,2 1,3,4 4 2 2 3 2 2 2 2 145 25 25 25 25 76 18 , 125 24 , 104 24,104 2 97 109 86 142 86 , 142 4 , 86 , 163 , 164 4 , 86 , 163 , 164 167 35 45 45 23 , 30 16 , 29 , 30 1 , 85 1 , 36,101 166 33 , 34 11 , 77 11 , 77 32 92,160 140 , 160 140 , 160 106 , 158 20 , 146 , 149 37 64 49 49 , 168 122 , 123 49 49 , 89 89,141 89 , 124 19 , 171 171 47 47 6 52 , 53 52 , 53 52 , 53 65 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 P P P P P P 0 0 0 0 0 0 0 0 R R P 0 0 0 0 P R R P P R 0 P P 0 0 0 0 0 0 0 0 0 0 0 0 P 0 0 R 0 0 0 0 0 0 0 R only 0 0 0 0 P P P P 0 0 P P P P 0 0 0 P ( ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943993" target="_blank">1943993</a>]<br></li>
+<li>Crp , GalS MglAB Crp , RbsR RbsAB Crp , GalS MglA Crp , GntR GntK Crp , EbgR EbgA Crp , LacI LacZ Crp , RhaS RhaBD Crp , AraC AraBD Crp , FucR FucK Crp , YiaJ LyxK Crp , FucR FucA Crp , YiaJ SgbE RcsB WcaB CpxR LpxA RcsB WcaB CpxR LpxD RcsB B2060 PhoB PhnCKLN RcsB B2060 PhoB PstB RcsB B2060 PhoB PhoH MhpR MhpF Fur EntA FecI , Fur FecI UidR , UxuR UidR Crp , FucR FucR Crp , Fur Fur Homologous pairs of transcription factors with autoregulation IdnR PurR AsnC Lrp Fnr Crp Homologous triplets of transcription factors with autoregulation TorR PhoB CpxR EmrR PdhR ExuR Eight homologous transcription factors with autoregulation DsdC GcvA CynR Hcar IlvY LysR OxyR CysB Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12582243" target="_blank">12582243</a>]<br></li>
+<li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>Moreover , some of these galactosides , if added to growth media , altered either LacZ or LacI activity , which allowed the selection of mutants that would otherwise be extremely difficult to isolate ( see later ) -- this , we suggest , is the essence of chemical genetics .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11929525" target="_blank">11929525</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_7">
+Abo , T. , Inada , T. , Ogawa , K. and Aiba , H. ( 2000 ) SsrA-mediated tagging and proteolysis of LacI and its role in the regulation of lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11917023" target="_blank">11917023</a>]<br></label>
+<input id="act_similarity_7", type="checkbox">
+<div class="ACT_similar">
+<li>References Abo , T. , Inada , T. , Ogawa , K. , and Aiba , H. ( 2000 ) SsrAmediated tagging and proteolysis of LacI and its role in the regulation of lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522083" target="_blank">15522083</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21062370" target="_blank">21062370</a>]<br></li></div>
+<li>Effect of excess repressor on expression of gal and lac operons Repressor Enzyme activity EOP with glycerol plus from plasmid galactokinase 13-galactosidase nothing Gal qb-Gal None 24.5 3.7 1.0 ~ 10 -6 ~ 10 -6 LacI + 2.0 0.012 1.0 1.0 1.0 LacI '' ti 7.7 0.010 1.0 -10 -6 1.0 Cell growth and enzyme assays were done as described in Materials and methods , except that 50 wg/ml of ampicillin was present in the growth medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2186968" target="_blank">2186968</a>]<br></li>
+<li>Except for a B. subtilis transacting protein that is involved in catabolite repression of a-amylase and shows similarity to the LacI and GalR repressors of E. coli ( 168 ) , no other gene products have been identified that are responsible for the regulation of various catabolite-repressible genes in nonenteric bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8246840" target="_blank">8246840</a>]<br></li>
+<li>Mall , anove protein involved in regulation of the maltose system of Escherichia coli is highlyhomologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_12">
+Reidl , J. , Römisch , K. , Ehrmann , M. , and Boos , W. ( 1989 ) MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9484893" target="_blank">9484893</a>]<br></label>
+<input id="act_similarity_12", type="checkbox">
+<div class="ACT_similar">
+<li>Reidl , J. , RoÈmisch , K. , Ehrmann , M. , and Boos , W. ( 1989 ) MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692154" target="_blank">10692154</a>]<br></li>
+<li>Reidl J , Romisch K , Ehrmann M & Boos W ( 1989 ) MalI , a novel protein involved in the regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20141531" target="_blank">20141531</a>]<br></li>
+<li>MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to therepressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304369" target="_blank">1304369</a>]<br></li>
+<li>MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003949" target="_blank">12003949</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9529892" target="_blank">9529892</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li></div>
+<li>VH32 , a PTS − LacI − LacZ − W3110 derivative strain , was used to evaluate the roles of GalP and Glk in replacing glucose transport and phosphorylation previously provided by PTS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12889033" target="_blank">12889033</a>]<br></li>
+<li>Therefore , FadR seemed to be LacI revisited , except that the fad regulon genes are scattered around the genome and hence FadR must bind several operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>[ 59 ] L. Swint-Kruse , C.R. Elam , J.W. Lin , D.R. Wycuff , K. Shive Matthews , Plasticity of quaternary structure : twenty-two ways to form a LacI dimer , Protein Sci .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15950160" target="_blank">15950160</a>]<br></li>
+<li>Geometry of loops Gal loops In contrast to the LacI , the GalR tetramer is likely to have a rather rigid V-shaped structure that is formed via stacking interactions of two GalR dimers with relatively weak afﬁnity for each other .18,19 These properties restrict the conditions ( e.g. phasing and spatial separation of operators along DNA , presence or absence of HU , negative superhelicity etc. ) in which the bound GalR dimers are able to form a loop .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Under conditions used in our experiments with minicircles , this geo-metry is more preferable , LacI tetramer adopting the V-shaped conformation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>It is noticeable that in FruR , this well-struc-tured segment accommodates the presence of three additional residues without signi ® cant change in the position of helix III when compared to PurR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>This segment , containing three additional residues in FruR and without equivalent in LacI and PurR , is highly structured and stabil ised by several hydrogen bonds and the cycle stacking of Tyr19 and Tyr28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Structural comparisons with PurR and LacI counterparts The comparison of FruR , LacI and PurR DBD , reported in Figure 8 , shows the close correspondence of helices I , II and III , and HTH motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Moreover , the overall topology of the three a-helices of FruR DBD is close to that of LacI and PurR , as illustrated in Figure 9 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Finally , concerning the connecting segment between helices II and III that contains three additional residues when compared to LacI and PurR , we propose that its particular conformation may be related to the property of FruR DBD to-bind to several natural DNA operators of low palindromy Resonance assignment Results and Discussion Overproduction and purification of FruR ( 1-57 ) * FruR residues ( 1-57 ) * We have shown previously that FruR DBD could be overproduced in E. coli as a functional domain able to-bind strongly and speci ® cally to its operator ( FruR ( 2-57 ) , Scarabel et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>One can wonder whether the connecting segment between helices II and III contains three additional residues that provide a particular conformation to FruR DBD when compared to LacI and PurR counterpart .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_28">
+Crystal structure of LacI member , PurR , bound to DNA : Minor groove binding by helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></label>
+<input id="act_similarity_28", type="checkbox">
+<div class="ACT_similar">
+<li>Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by alpha helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19703465" target="_blank">19703465</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by a helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10197993" target="_blank">10197993</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7791215" target="_blank">7791215</a>]<br></li>
+<li>Crystal structure of LacI member PurR , bound to DNA : minor groove binding by a helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_32">
+[ 54 ] M.A. Schumacher , K.Y. Choi , H. Zalkin , R.G. Brennan , Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by alpha helices , Science 266 ( 1994 ) 763 -- 772 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15950160" target="_blank">15950160</a>]<br></label>
+<input id="act_similarity_32", type="checkbox">
+<div class="ACT_similar">
+<li>Schumacher , M.A. , Choi , K.Y. , Zalkin , H. , and Brennan , R.G. ( 1994 ) Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by a helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>Schumacher , M.A. , Choi , K.Y. , Zalkin , H. and Brennan , R.G. ( 1994 ) Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by α helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11139621" target="_blank">11139621</a>]<br></li></div>
+<li>Asp73 may help to stabilize the helix N-termini pointing to the binding cleft in ab As the complex of TreR with its operator is not knownso far , we canonly speculateabouttheallosterictransition , whichoccurs uponDNA binding by comparing with theknownstructures of LacI and PurR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The DNA-binding conformation of LacI and TreR thus may be stabilized by an induced fit of the repressor to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The corepressor complex of the effector-binding domain of PurR thus resembles the corresponding inducer binding complexes of LacI and TreR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The corepressor-free effector binding domain structure of PurR appears , however , to be different from the inducerfree structures of TreR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>This is paralleled by the sensitivity of this domain to proteolytic cleavage as reported for 251 LacI ( Plattet al. , 1973 ) , PurR ( Choi & Zalkin , 1992 , 1994 ) , and TreR ( Horlacher & Boos , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>In particular , residue 54 of PurR ( corresponding to resi-dues 56 and 62 in LacI and CytR respectively ; Fig. 6 ) is crucial to proper function and most likely has to be a leu-cine or methionine ( Choi and Zalkin , 1994 ; Schumacher et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>Interestingly , PurR was found in this study to excentrationsused for crystallization , thusshiftingtheconforma - hibitlow affinity bindingtononoperatorDNA.Thesedataand tional ensemble of the Tre-bound form toward the Tre6-P bound others ( Spronk et al. ,1996 ) alsoindicatethatinthenon-DNA-conformation , which resembles the inducer-bound conformao tifon bindingconformationthehingehelixsegmentassumesanex-LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>An un - PurR and LacI that makes the first contact D t toNAhoeperatorsite expected negative potential was found in the phosphate binding andpriestheminorgrooveopen by intercalation ( Schumacher cleft of PBP ( Ledvinaet al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>This is in striking contrast to PurR and LacI in which the interdomain linkers undergo a folding transition upon operator binding forming hinge a-helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>Proteolysis and NMR studies revealed that the interdomain linker of two of CytR 's closest relatives , the PurR and LacI repressors , is disordered in the absence of operator DNA ( Wade-Jard-etzky et al. , 1979 ; Choi and Zalkin , 1994 ; Nagadoi et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Several studies have predicted that the interdomain linker of PurR and LacI plays a role in operator binding and that this region is unfolded in the absence of operator but becomes structured upon sequence-speciﬁc contacts with DNA ( Geisler and Weber , 1977 , 1978 ; Ha et al. , 1989 ; Kleina and Miller , 1990 ; Choi and Zalkin , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>sence of the phosphoryl group ( Shoemakeret al. , 1987 ; Sali et al. , Both in PurR and LacI , binding to D thNeA operator site induces 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Moreover , this r.m.s.d. decreases to about 1 A Ê when the HTH motif of free FruR was compared to that of LacI and PurR complexed with DNA ( Chuprina et al. , 1993 ; Schumacher et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The conformational change of the effector binding domain between the induced and DNA-bound form was examined both for PurR and LacI ( Friedman et al. , 1995 ; Schumacher et al. , 1995 ; Lewis et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>This fact is in agreement with the unfolding state of this hinge helix in free PurR , LacI , and FruR DBD , con - ® rming that hinge helix formation is induced by speci ® c binding in DNA minor groove and oligo-merisation of the whole repressor ( Schumacher et al. , 1995 ; Nagadoi et al. , 1995 ; Spronk et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Besides , LacI appears to require only the ® rst three DBD helices to-bind speci ® cally to its operator site ; in contrast , PurR DBD can not bind the purF operator site ( Choi & Zalkin , 1992 ) and speci ® c hinge helix recognition in the minor groove seems to be essential for speci ® c DNA binding , as stated by Nagadoi et al. ( 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>This result is in agreement with the data of Nagadoi et al. ( 1995 ) and Spronk et al. ( 1996 ) , who reported that the hinge helix is unfolded in free PurR and LacI DBD , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>As described for free PurR and LacI DBD , the putative hinge helix ( helix IV ) of free FruR is unfolded .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>In this context , FruR is particularly interesting , since its DBD shows a good similarity to the LacI and PurR counterparts , but exhibits differences obviously related to the speci ® cities of the operators ( NeÁgre et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>In fact , when compared to LacI and PurR speci ® c DNA operators , FruR operators exhi-bit a much lower palindromy .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>It is conserved in most members of the LacI family cleft , whether positive or negative , are caused by arrays ofuni - ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>In support of this view , all LacI members carry a leucine or methionine at the position corresponding to leucine 54 of PurR , with the lone exception of CytR ( for an alignment of LacI members , see Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>The presence of a capping box for helix II is more obvious , since it seems to occur on FruR for the Ser13-X-X-Thr16 sequence which is , on the other hand , strictly conserved in 86 % of the LacI members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>In LacI two hydrogen bonds to the inducer are provided by Arg197 , which is homologous to Arg194 of TreR which binds the Tre moiety .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Examination of hydrogen bonds highlights the importance of homologous residues that seem to be conserved for their ability to ful ® l helix N and C-capping roles in the LacI repressor family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>This is consistent with previous work , which showed that Occ ~ OLL ~ was partially repressed by GalR and OEc OILwas partially repressed by LacI ( Haber and Adhya 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2186968" target="_blank">2186968</a>]<br></li>
+<li>1 Abbreviations : RNA , ribonucleic acid ; RNAP , RNA polymerase ; LacI , Lac repressor ; GalR , Gal repressor ; CAP , catabolite activator protein ( also known as CRP , cAMP receptor protein ) ; O , `` external '' E operator ; OI , `` internal '' operator ; bp , base pair ; BSA , bovine serum albumin ; DTT , dithiothreitol ; EDTA , ethylenediaminetetraacetic acid ; Bis-tris , bis ( 2-hydroxyethyl ) iminotris ( hydroxymethyl ) methane ; DNase I , deoxyribonuclease I ( EC 3.1.21.1 ) ; DNA , deoxyribonucleic acid ; cAMP , adenosine 3 ′ 5 ′ - cyclic monophosphate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8619994" target="_blank">8619994</a>]<br></li>
+<li>Our results demonstrate that the high level of nanA induction which is achieved through loss of NanR by mutation or titration or the presence of Neu5Ac is comparable to that produced by LacI binding to its three separated operators ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>LacI occupancy tends to decrease in the presence of inducer and RNA polymerase holoenzyme subunits are enriched on the single operator control constructs with modest effect of inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24598256" target="_blank">24598256</a>]<br></li>
+<li>As indicated by Perros & Steitz ( 1996 ) , the wild-type lac operator does not seem to bend in solution upon binding to LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>]<br></li>
+<li>LacI binds to its operator site at the lac genes and downstream of the RNA-polymerase binding site in the absence of its natural inducer allolactose and thus controls the expression of enzymescoded by the lac operon for the degradation of @ - galactosides ( Jobe & Bourgeois , 1972 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Maximal gene expression , RNA polymerase binding and minimal LacI binding are observed for single operator controls ( Figure 5A and B ) under induced conditions , as expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24598256" target="_blank">24598256</a>]<br></li>
+<li>Similar phenomena were observed in the s - driven promoters of sulA , uvrA , recA , fecI , entC and lacZ , 70 70 the transcription of which is directly controlled by a repressor protein ( LexA , Fur and LacI ) , but not in promoters of the housekeeping genes ftsA and ftsY , or in s - driven treA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21396442" target="_blank">21396442</a>]<br></li>
+<li>This fact along with the presence of the GTG initiation codon is consistent with the poor expression of this protein observed in minicells , in which it is expressed less efficiently than the LacI protein ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8509333" target="_blank">8509333</a>]<br></li>
+<li>The five most abundant proteins were GlmS , SlyD , and cAMP receptor protein ( Crp ) , which are usual contaminants during His tag purification in E. coli ( 32 ) ; LacI , which controls the expression of the lac promoter and was probably found because ychF was cloned under the control of the lac promoter ; and IscS , which is involved in Fe-S cluster biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23139412" target="_blank">23139412</a>]<br></li>
+<li>The co-purification of GlmS , SlyD , cAMP receptor protein , and LacI was not significantly influenced by H2O2 treatment , whereas IscS slightly increased upon H2O2 treatment ( Fig. 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23139412" target="_blank">23139412</a>]<br></li>
+<li>Transcription of the lacZYA operon for lactose catabolism is activated by the cyclic AMP ( cAMP ) receptor protein ( Crp ) and is repressed by the LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644479" target="_blank">12644479</a>]<br></li>
+<li>Increased levels of galactokinase activity were observed for all plasmids when the lacZop : : IexA fusion in the cell was repressed by LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1577702" target="_blank">1577702</a>]<br></li>
+<li>Scaife and Beckwith13 used this to show that the low levels of LacZ in strains that carry lac promoter mutations were still subject to repression by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11929525" target="_blank">11929525</a>]<br></li>
+<li>This effect may be due to very low endogenous levels of the lac repressor protein ( LacI ) produced by the NST strains under our culture conditions that used glycerol as the major carbon source .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18080813" target="_blank">18080813</a>]<br></li>
+<li>The operonsregulated by LacI and GalR are also subject to induction by sugars , a situationentirely analogous to that for threbs op-eron .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Whereas LacI + repressor caused , as expected , full repression -LCB- 50-fold ) of the gal operon ( line 2 ) , there was only 2.3-fold repression in the presence of the I `` u mutant repressor ( line 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2186968" target="_blank">2186968</a>]<br></li>
+<li>Allolactose then acts to release the repression of the system by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22916001" target="_blank">22916001</a>]<br></li>
+<li>The similarity values for identical residues in the headpiece were 38 for LacI , 36 for GalR , 34 for PurR , 28 for DeoR and 35 for RbtR ( the lac , gal , put and deo repressors from E. coli , and the rbt repressor from Klebsiella pneumoniae respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1851954" target="_blank">1851954</a>]<br></li>
+<li>The similarity of GntR to other repressor proteins , together with previous genetic studies indicating that gluconate utilization by the GntI system of E. coli is negatively regulated by the gntR product in response to induction by gluconate , argues strongly in favor of the conclusion that GntR fulﬁlls a regulatory role similar to that of LacI for the lac operon ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>The LacI protein family catabolite repressor/activator , Cra , was initially characterized as the fructose repressor , FruR , because it negatively regulates transcription of the fructose utilization operon ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21849503" target="_blank">21849503</a>]<br></li>
+<li>The PCR product was cloned into the SphI and BglII sites of a modified pQE-70 vector that encodes LacI for repression of gene expression in the absence of IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20921376" target="_blank">20921376</a>]<br></li>
+<li>The expression of mKO -- LacI was induced for 20 min before the cells were harvested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17581120" target="_blank">17581120</a>]<br></li>
+<li>The lac promoter was regulated by LacI derived from pBMK11 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10844684" target="_blank">10844684</a>]<br></li>
+<li>The tetrameric LacI repressor effects about 20-fold repression of lacZYA operon expression in constructs lacking both auxiliary operators O2-lac and O3-lac ( 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644479" target="_blank">12644479</a>]<br></li>
+<li>Upon IPTG induction , the coexisting pACYC-based plasmid , pEV101 , provided both LeuO and lac repressor ( LacI ) , whereas pSO1000 provided only LacI in trans .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>LacI is required for controlling expression from the IPTG-inducible ptac in pWU802T , pWU812T , and pEV101 in the lac repressor-free CH582 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11121424" target="_blank">11121424</a>]<br></li>
+<li>The His-tagged protein was overproduced in the E. coli M15 strain harboring the plasmid pREP4 ( Table 1 ) , which produces the LacI repressor to strictly control gene expression from pQE32 derivatives in the presence of isopropyl-1-thio - - D-galactopyranoside .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>SOS gene promoters synthesized higher levels of GalK when expression of the LexA repressor was inhibited by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1577702" target="_blank">1577702</a>]<br></li>
+<li>pTolAIII derivative expression was regulated by the AraC ( TolAIII1 and TolAIII2 ) or LacI ( TolAIII3 ) repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11851406" target="_blank">11851406</a>]<br></li>
+<li>Recent identification of a leu-cine zipper motif at theC-terminus of LacI ( Alberti et al. , 1991 ; Chakerian et al. ,1991 ) , which appears to beessential for the dimer-to-tetramer transition , does not appear to be relevant to the rest of this family , since it occurs in LacI C-terminal to the termination of the other members in the alignment in Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Expression of these repressor proteins is also believed to be driven by s ; since transcriptional-regulatory proteins , like the 70 LacI repressor , have been shown to be present in the cell cytoplasm in low numbers ( Elf et al. , 2007 ) ; they may be more sensitive to changes in their level that occur when s is 70 underproduced , resulting in enhanced induction of promoters which are subjected to their repression activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21396442" target="_blank">21396442</a>]<br></li>
+<li>Conclusions Members of the LacI -- GalR family of transcriptional-repressors are usually functional as dimers , although in some cases , repression depends on the dimerization of dimers or interactions with other proteins , such as CRP ( Weickert & Adhya , 1992 ; Valentin-Hansen et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20141531" target="_blank">20141531</a>]<br></li>
+<li>In a similar setup , the homologous dimeric LacI repressor lacking the C-termi-nal domain also displayed residual repression , believed to be due to residual dimer -- dimer interactions resulting in weak DNA looping ( Muller et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>Similarly , tetramerization of hybrid GalR via the LacI flexible Cterminal heptad repeats results in poor repression compared to dimeric GalR in vivo ( Barker et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>As expected , such an effect is abolished if a mutant LacI ( LacIadi ) , which fails to tetramerize but interacts with lac operator normally , is used ( Mandal et al. , 1990 ; Alberti et al. , 1991 ; Brenowitz et al. , 1991 ; Choy and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9218807" target="_blank">9218807</a>]<br></li>
+<li>In vivo , however , GalR , like LacI and unlike LacIadi , represses gal transcription from both P1 and P2 ( Haber and Adhya , 1988 ; Mandal et al. , 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9218807" target="_blank">9218807</a>]<br></li>
+<li>LacI tetramer forms a DNA loop and concurrently represses P1 and P2 transcription without HU ( Mandal et al. , 1989 ; Choy and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9218807" target="_blank">9218807</a>]<br></li>
+<li>The common denominator of these promoters is that they are all negatively regulated by a repressor protein : lacZ is controlled by LacI that dissociates from the lac operator upon its interaction with lactose ( Reznikoff , 1992 ) ; SOS promoters are controlled by LexA , which is self-cleaved upon interaction with RecA single-strand DNA ﬁlament ( Butala et al. , 2009 ) ; iron acquisition genes are repressed by Fur when it is bound to Fe , and are derepressed þ2 when iron is scarce ( Brickman et al. , 1990 ; Braun et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21396442" target="_blank">21396442</a>]<br></li>
+<li>Using a hybrid gal DNA template , in which the OE segment was replaced by a lac operator sequence , we previously showed that ( i ) binding of LacI repressor to the cognate operator also stimulated P2 and repressed P1 , and the nature of the regulation at P1 or P2 depended upon the relative angular orientation of the promoter to OE ( Choy et al. , 1995a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9325090" target="_blank">9325090</a>]<br></li>
+<li>In addition to sugars such as allolactose and thio - & galactosides , which act as inducers , other sugars such as lactose , glucose , phenyl P-galactoside , and orthonitrophenylfucoside bind to LacI as anti-inducers ( Barkley et al. , 1975 ) and stabilize the lac repressor-lac operator complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>In a model study looking at AraC activation of a LacI repressed promoter , the presence of the repressor considerably modiﬁed the activation kinetics of AraC as well as the promoter efﬁciency ( Lutz et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15066032" target="_blank">15066032</a>]<br></li>
+<li>Repressors such as the tetrameric LacI simultaneously bind to a bipartite operator separated by nine helical turns on supercoiled DNA by itself , resulting in the looping out of the intervening DNA ( Riggs et al. 1970 ; Oehler et al. 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16204188" target="_blank">16204188</a>]<br></li>
+<li>Reidl et al. ( 1989 ) found that the divergently expressed gene upstream of malX , malI , encodes a LacI family transcription repressor that represses malXY expression , most likely by binding to operator targets in the malX -- malI intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19054084" target="_blank">19054084</a>]<br></li>
+<li>The sites that bind inducer and those that arerequired to form di-mers and tetramers in LacI all map to the region C-ter-minal to the 59-amino acid N-terminal headpiece ( Platt et al. , 1973 ) , the region homologous to the binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>In the closely related LacI protein , the mechanism of inducer binding was explained by the allosteric transition model ( Lewis et al. , 1996 ; Bell and Lewis , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12169637" target="_blank">12169637</a>]<br></li>
+<li>That issue is relevant for this family of repressorproteins , since LacI is known to formatetramer when binding productively to the target DNA sequences ( Platt et al. , 1973 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>However , the LacI protein , LacIY17V , Q18A , which carried the GalR recognition sequences , was shown to have DNA-binding specificity of GalR in in vitro DNA-bind-ing assays as well as in in vivo transcription repression ( Lehming et al. 1990 ; Barker et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>Of special interest , however , is theobservationthatthe C-terminal270 residues of RbsR are homologousto the ribosebindingprotein.Homology between short sequence fragments of arabinose ( ABP ) , galactose ( GBP ) , and ribose ( RBP ) binding proteins and thelac and gal repressors had been noted in 1983 ( Muller-Hill , 1983 ) , and hypothesesrelating to the sugarbindingsiteinLacI ( Sams et al. , 1984 ) and various functional sites on LacI ( Gordon et al. , 1988 ) were proposed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>The hydrophobic coreresidues in RbsR would be `` 4 , V-7 , A-8 , V-17 , V-20 , 1-21 , A-38 , 1-39 , L-42 , and Y-44 by homology to LacI ( Fig. 1 ; Kaptein et al. , 1985 ; Gordon et al. , 1988 ; Mauzy & Hermodson , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304369" target="_blank">1304369</a>]<br></li>
+<li>Thus , protein -- protein interactions ( reminiscent of that seen for PurR and LacI ) could account for the protein 's preference for particular arrangements of target sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>LacI binds at low-afﬁnity secondary sites , which creates a LacI sink ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118257" target="_blank">20118257</a>]<br></li>
+<li>Failure to repress P2 could be explained by the failure of both proteins to tetramerize and form a DNA loop ; when OE and OI are mutated to form lacI operators , addition of LacI causes simultaneous repression of both P1 and P2 ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Because the LacI tetramer is formed in the absence of the inducer , itis conceivable that the weak tendency of the apo-binding proteins to form dimers as observed by Richarme ( 1983 ) is a vestige of the common ancestor to the binding protein and the repressors , but detailed structural analyses of the repressors in both the holo - and apo-repressor forms will be needed to address such points .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>DNA binding assays using crude extracts containing either pGS280 or control vector pTrc99A were complicated by the presence of shifted bands that were later shown to be speciﬁc to the pTrc99A vector and likely due to the overproduced LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665470" target="_blank">7665470</a>]<br></li>
+<li>Differences in the height of the DNA chain crossovers between the control and DNA -- protein samples were assumed to be caused by the presence of a GalR ( b ) or a LacI ( c ) tetramer bound to the operators on minicircles .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Gene control at lac depends upon the homotetrameric lac repressor ( LacI ) protein ( 3 ) whose DNA binding is weakened when allolactose or isopropyl - D-1-thiogalactopyranoside ( IPTG ) are bound to allosteric sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24598256" target="_blank">24598256</a>]<br></li>
+<li>( ii ) The crystal structure of LacI is known .16,17 ( iii ) LacI tetramer forms stable DNA loops and does not require HU and supercoiled DNA although the latter enhances looping efﬁciency .1,33,36 Besides , LacI has higher speciﬁc binding afﬁnity to DNA than GalR .1,10,33 ( iv ) The gal promoters can be negatively regulated via DNA looping by binding of the LacI repressor to the gal operon in which the OE and OI operators were modiﬁed to be recognized by LacI .29 The C-terminal tetramerization domain of Lac repressor is ﬂexible and , therefore , depending on phasing and separation of operators along the DNA , the LacI-mediated DNA complex can potentially adopt various types of loops .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>The amino terminus pur repressor is not known , but thepurR 5 ' sequence suggests in GalR , LacI , and CytR has been implicated in DNA recog - an interesting possibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3058704" target="_blank">3058704</a>]<br></li>
+<li>The transcription reactions were performed in the absence and presence of 80 nM GalR and HU with OE -- OI DNA template , and in the presence of 80 nM LacI with OLE -- OL I .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>The position of the putative IdnR binding site is interesting because this location is atypical of negative control , despite the fact that IdnR and GntR belong to the GalR-LacI family of negative regulators ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>Multiple binding sites allow some repressors , such as LacI or GalR , to form DNA loops which decrease transcription by restricting the conformational ﬂexibility needed for DNA to melt or wrap around RNAP ( 3 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10913075" target="_blank">10913075</a>]<br></li>
+<li>Conversely , homologous repressors , like GalS and LacI , when provided with their cognate operators , can not replace GalR in bringing about HU binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11544184" target="_blank">11544184</a>]<br></li>
+<li>In experiment I , LacI ÷ was 0.8 riM , and LacIa ~ uwas 1.6 nM to equalize concentration of dimer DNA-binding units .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2186968" target="_blank">2186968</a>]<br></li>
+<li>Disruption of H-NS binding or oligomerization by site-specific DNA binding of the lcI or LacI repressors has been shown to cause transcriptional activation by releasing H-NS repression ( Caramel and Schnetz , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11123679" target="_blank">11123679</a>]<br></li>
+<li>This is required to maintain an effective local LacI concentration at the highafﬁnity binding site that mediates LacI-dependent repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118257" target="_blank">20118257</a>]<br></li>
+<li>For most regulatory proteins ( regulators ) , the ligand binding reduces ( e.g. , TetR and LacI ) or increases ( e.g. , TrpR and cyclic AMP receptor protein ) their binding afﬁnity to their target DNA by several orders of magnitude ( 14 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8626295" target="_blank">8626295</a>]<br></li>
+<li>From the LacI paradigm , such mutant FadR proteins should either be defective in acyl-CoA binding or should bind the ligand but fail to undergo the conformational change that releases the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>TreR belongs to the LacI family of prokaryotic DNA-binding proteins of which more than 25 members are known that regulate the metabolism of sugars and nucleotides ( Weickert & Adhya , 1992 ; Nguyen & Saier , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>A similar fold and mode of ligand binding is found in members of the Lac repressor family .17 This implies that the LTTR , PBP and LacI families of proteins are related .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>For example , the galE promoter is repressed by GalR , the lacZ promoter repressed by LacI and many CRP-activated promoters are repressed by CytR ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>For example , LacI in Group 4 is well known to-bind to the promoter region at the low concentration of some inducers , lactose or certain other galactosides , while it is released from DNA at the high concentration of the inducer even in the absence of cAMP-CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8729576" target="_blank">8729576</a>]<br></li>
+<li>Although , CRP binds to this promoter during sugar starvation , no trans-cription occurs unless the LacI repressor binds lactose and releases the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17068078" target="_blank">17068078</a>]<br></li>
+<li>Opposing activation and repression , mediated by CRP and a LacI family member , respectively , is one of the most common ways in which transcription of catabolic genes is regulated in bacteria to meet the cell 's metabolic needs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>Coordinate gene regulation is achieved by nesting local repression by the LacI family member , CytR , on the global activation mediated by CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>Introduction The Escherichia coli CytR regulator belongs to the LacI Received 28 July , 1997 ; revised 26 September , 1997 ; accepted 27 September , 1997 ; * For correspondence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>The EMBO Journal Vol .16 No. 8 pp. 2108 -- 2118 , 1997 Protein-induced ﬁt : the CRP activator protein changes sequence-speciﬁc DNA recognition by CytR repressor , a highly ﬂexible LacI member the Henrik Pedersen1 and Poul Valentin-Hansen2 Department of Molecular Biology , Odense University , Campusvej 55 , DK-5230 Odense M , Denmark 1Present address : Department of Chemistry , University of California , Berkeley , Berkeley , CA 94720 , USA 2Corresponding author The CytR repressor and the cAMP receptor protein ( CRP ) bind cooperatively to several promoters in Escherichia coli to repress transcription initiation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Pedersen H , Valentin-Hansen P. Protein-induced fit : the CRP activator protein changes sequencespecific DNA recognition by the CytR repressor , ahighly flexible LacI member .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12144778" target="_blank">12144778</a>]<br></li>
+<li>CytR has two features that are not observed in other LacI family members and that appear to be important to its role as a differential transcriptional-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>Effect of Cytidine Binding to CytR on Cooperativity -- CytR has a unique mechanism of induction among LacI family repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>M. Smith , dues in LacI and CytR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3058704" target="_blank">3058704</a>]<br></li>
+<li>1 The abbreviations used are : CRP , cAMP receptor protein ; CRP1 and CRP2 , CRP operator sites 1 and 2 , respectively ; RNAP , E. coli RNA member of the LacI family of bacterial repressors , and is induced when CytR binds cytidine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>The significance of CytR-CRP cooperativity to this competition is underscored by the fact that binding of cytidine ( the inducer ligand ) to CytR is coupled to CytR-CRP cooperativity ( 19 , 21 ) , a feature that is unique among LacI family repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>While regulatory ligand binding to most LacI family proteins is coupled intrinsic DNA-binding affinity , in CytR , cytidine binding is coupled to protein-protein cooperativity and not to intrinsic protein-DNA-binding affinity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>Summary The Escherichia coli CytR regulator belongs to the LacI family of sequence-speciﬁc DNA-binding proteins and prevents CRP-mediated transcription in the CytR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>LacO foci visualized by the binding of mKO -- LacI in LMC1426pSA053 cells grown in TY at 28 ° C in the presence of A22 or mecillinam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17581120" target="_blank">17581120</a>]<br></li>
+<li>Number of mKO -- LacI foci per mm cell length of LMC1426pSA053 cells grown in TY at 28 ° C in the presence of A22 or mecillinam .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17581120" target="_blank">17581120</a>]<br></li>
+<li>To examine whether high levels of Fis were responsible for the lack of topA P1 activation upon exposure to hydrogen peroxide , we cloned the ﬁs gene downstream of the tac promoter , under the control of the LacI repressor and repeated the experiments in cells carrying an inducible ﬁs-expressing plasmid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233826" target="_blank">17233826</a>]<br></li>
+<li>To examine Sxy dependence , exponentially growing cells carrying E.coli sxy cloned under LacI repression were induced with IPTG ( Figure 7B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17068078" target="_blank">17068078</a>]<br></li>
+<li>Transcription from both gal promoters in the latter plasmid was completely repressed in the presence of LacI implying stable loop formation ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Transcription of oxyR in MV243-derived isolates was repressed by AraC encoded by the chromosome and LacI q encoded by pMV110 , and was induced with the addition of 1 mM IPTG and 0.05 % or 0.1 % arabinose for protein production or in vivo repression respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692164" target="_blank">10692164</a>]<br></li>
+<li>Expression of fluorescence protein fused LacI or TetR on plasmid was induced at an optical density of 0.04 with arabinose ( 0.05 % ) in the presence of IPTG ( 1 mM ) or arabinose ( 0.02 % ) in the presence of anhydrotetracycline ( 80 ng ml ) , respectively [ 39,58 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25333813" target="_blank">25333813</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LacI protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>However , mutational analyses of LacI suggest that replacement of glycine a t position 20 isnotdeleteriousto function , whereas the adjacent valine and serin r esidues are critical for function ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3058704" target="_blank">3058704</a>]<br></li>
+<li>Both in the Bacillus/Clostridium group [ 15 ] and in gamma Proteobacteria they form one locus containing one regulated operon and the regulator gene from the LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11750821" target="_blank">11750821</a>]<br></li>
+<li>This is in contrast to other prokaryotic HTH proteins , like CAP ( 32 ) or LacI ( 20 ) , which contact two adjacent major grooves .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>The amino acids involved in dimerization of CytR have been determined genetically ( Barbier and Short , 1993 ) , and correspond well with amino acids involved in dimerization of other LacI members ( Schumacher et al. , 1994 ; Lewis et al. , 1996 ; Friedman et al. , 1995 ; for review , see Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Tungtur , S. , Egan , S. M. , and Swint-Kruse , L. ( 2007 ) Functional consequences of exchanging domains between LacI and PurR are mediated by the intervening linker sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>Most of these residues are components of the consensus HTH LacI family signature , and their structural role provides a rational explanation for this signature deduced from protein sequence alignments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Recent identification of a leu-cine zipper motif at theC-terminus of LacI ( Alberti et al. , 1991 ; Chakerian et al. ,1991 ) , which appears to beessential for the dimer-to-tetramer transition , does not appear to be relevant to the rest of this family , since it occurs in LacI C-terminal to the termination of the other members in the alignment in Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>We thus divided the repertoire of helix-turn-helix TFs into three categories : ( a ) classical HTH ( cHTH ) proteins with a tight loop between H-1 and H-2 , and no additional elements in the C-terminus , e.g. the GalR/LacI , family ( see Table 1 ) ; ( b ) the winged HTH proteins ( wHTH ) containing the C-terminal - hairpin and , in some proteins additional - sheets in between H-1 and H-2 , such as the OmpR , family ; and ( c ) the miscellaneous HTH ( mHTH ) , an heterogeneous collection of proteins that differ from the typical HTH in certain features , such as shortened helices or the incorporation into other super-structures , e.g. Rob in E. coli ( Tobes and Ramos , 2002 ) , or members of the enhancer-binding proteins ( EBP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>CytR has two features that are not observed in other LacI family members and that appear to be important to its role as a differential transcriptional regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>Sequence homologies reveal this residue to be conserved in most of the members of the LacI family ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>All the regulatory proteins in Group 4 are the members of LacI family ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8729576" target="_blank">8729576</a>]<br></li>
+<li>For the remaining LacI family members , the N terminus of putative helix I presents a sequence similar to FruR ( i.e. a basic and an acidic residue at the Ncap and N3 position , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>It is thus probable that these LacI members exhibit an N-terminal stabilis-ation of helix I by formation of a salt-bridge , as observed for FruR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Examination of hydrogen bonds highlights the importance of homologous residues that seem to be conserved for their ability to ful ® l helix N and C-capping roles in the LacI repressor family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>ScrR is a member of the GalR-LacI repressor family ( 521 ) with a characteristic helix-turn-helix motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8246840" target="_blank">8246840</a>]<br></li>
+<li>For helix II , the Schellman motif conservation is not obvious in the LacI family because of the large variability observed in this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>In a similar setup , the homologous dimeric LacI repressor lacking the C-termi-nal domain also displayed residual repression , believed to be due to residual dimer -- dimer interactions resulting in weak DNA looping ( Muller et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>For helix I , because of the helix geometry , a salt-bridge between the side-chains of Lys2 and Glu5 likely exists and stabilises the Nterminal end of helix I. Examination of a sequence alignment of FruR DBD with LacI and PurR ( Figure 8 ) , and with the 33 other LacI members identi ® ed so far ( not shown ) , reveals the presence of conserved consensus capping box motifs ( Harper & Rose , 1993 ) for the three helices in most cases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Besides the identi ® cation of residues likely to be involved in DNA-recognition , a detailed analysis of helices end capping highlights the fact that consensus residues are conserved in the whole LacI family to ensure the stabilisation of helices I , II and III by current N and C-capping motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Similar modes of stabilisation were observed for all DBD LacI family members , which exhibit well conserved key residues for the N - and C-capping of the three helices , except for helices II and III ends ¯ anking the connecting segment because of a large sequence variability in this region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>This highly de ® ned N-terminal part of the structure reveals a similar topology for the three a-helices when compared to the 3D structures of LacI and PurR counterparts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>However , the structure comparison of the connecting fragment between helix II and helix III in FruR with that of LacI and PurR showed a striking difference .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The FruR DBD exhibits a typical HTH motif stabilised by a third helix , and the top-ology of these structural elements is very close to that of LacI and PurR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Free or complexed LacI and PurR DBD exhibit a very similar topology for their HTH motif ( a-helices I and II ) and their a-helix III , which stabilises the HTH structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Structural comparisons with PurR and LacI counterparts The comparison of FruR , LacI and PurR DBD , reported in Figure 8 , shows the close correspondence of helices I , II and III , and HTH motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>As described for free PurR and LacI DBD , the putative hinge helix ( helix IV ) of free FruR is unfolded .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The three structures were superimposed by their common helix-turn-helix motifs ( residues 3 to 21 for FruR , 4 to 22 for PurR , and 6 to 24 for LacI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Finally , concerning the connecting segment between helices II and III that contains three additional residues when compared to LacI and PurR , we propose that its particular conformation may be related to the property of FruR DBD to bind to several natural DNA operators of low palindromy Resonance assignment Results and Discussion Overproduction and purification of FruR ( 1-57 ) * FruR residues ( 1-57 ) * We have shown previously that FruR DBD could be overproduced in E. coli as a functional domain able to bind strongly and speci ® cally to its operator ( FruR ( 2-57 ) , Scarabel et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>One can wonder whether the connecting segment between helices II and III contains three additional residues that provide a particular conformation to FruR DBD when compared to LacI and PurR counterpart .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>It is noticeable that in FruR , this well-struc-tured segment accommodates the presence of three additional residues without signi ® cant change in the position of helix III when compared to PurR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>This segment , containing three additional residues in FruR and without equivalent in LacI and PurR , is highly structured and stabil ised by several hydrogen bonds and the cycle stacking of Tyr19 and Tyr28 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>D N A loop formation by LacI + but not LacP a ~ repressor The critical test of the role of double occupancy plus protein association is direct visualization by electron microscopy of looped DNA between the two operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2186968" target="_blank">2186968</a>]<br></li>
+<li>Since the RDs of LysR-type regulators are closely related in structure to the ligand-binding domains of the PBPs and LacI family members , the cofactor-binding site of Cbl is expected to lie in the cleft formed by RDI and RDII subdomains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The regulator gene for this operon ( rbsR ) is considered to form an independent operon , located immediately downstream of the rbsDACBK operon ( Laikova et al. , 2001 ) , but this organi-member of LacI family transcription factor , forms the bundle of four helices characteristic of proteins implying the HTH DNA contact motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651393" target="_blank">23651393</a>]<br></li>
+<li>An un - PurR and LacI that makes the first contact D t toNAhoeperatorsite expected negative potential was found in the phosphate binding andpriestheminorgrooveopen by intercalation ( Schumacher cleft of PBP ( Ledvinaet al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Keywords : LacI family ; phosphate binding ; protein structure ; trehalose repressor Trehalose ( Tre ) is a nonreducing disaccharide consisting of two glucosyl residues with their C1-atoms linked in a , a ' configuration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>By homology to LacI ( Mauzy & Hermodson , 1992 ) the first 60 residues of RbsR form theDNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304369" target="_blank">1304369</a>]<br></li>
+<li>The IPTG-binding residues Asp149 and Asp246 of LacI are almost equivalent ( shifted by one residue in the structure alignment ) to the effector-binding residues Arg147 and Thr242 of TreR ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The model consists of residues 61 to 315 comprising the effector-binding domain , which forms a dimer as in other members of the LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The residues at positions 84 and 88 of the LacI sequence correspond to residues near the hinge of the binding protein structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>In LacI , inducer-binding does not affect protein tetramerization because the two protein dimers are linked by the relatively ¯ exible four helix bundle ( Alberti et al. , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12169637" target="_blank">12169637</a>]<br></li>
+<li>GalR is a member of the GalR-LacI family of gene regulatory proteins .14 In the absence of a crystal structure , GalR monomer was modeled by homologous extension using the X-ray diffraction structures of two related repressors , PurR and LacI ( 31 % and 27 % sequence homology , respectively ) .8,15,16 The GalR dimer was constructed also on the basis of PurR and LacI structures , which have similar pattern of dimerization .8 However , the tetramerization mode of GalR is different from that of LacI , since the former does not have an antiparallel four-helix bundle tetramerization domain found in LacI .16,17 GalR appears to be a dimer in solution at micromolar concentrations .18 Structure-based genetic studies involving hom-ology-scanning mutagenesis identiﬁed amino acid substitutions that are defective in GalR tetrameri-zation but do not affect DNA-binding .19,20 The sensitive amino acids constitute a potential tetramerization interface conﬁned within a `` crescent '' and located on either side of the GalR dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>The second helix in the HTH is involved mainly in binding to DNA , and most amino acid residues for DNA-binding in LacI and MalI seem to be within the ﬁrst six residues in the second helix ( 17 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>To create GalR with altered DNA-binding specificity , we changed the critical first and/or second residues of the recognition helix ( residues 15 and 16 , respectively ) of GalR to the corresponding residues of the homologous LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>CytR has extensive homology with known DNA-binding proteins like LacI , GalR , PurR , and MalI ( 22 , 24 , 33 ) , and CytR contains a region exhibiting a high level of homology to the a-helix-turn-a-helix motif found in the DNA-binding domain of several DNA-binding proteins ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2170326" target="_blank">2170326</a>]<br></li>
+<li>The protein presents a GntRlike DNA-binding domain and a C-terminal domain that is GntR-like and a C-terminal domain typical of the HTH LacI / GalR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>The CytR repressor belongs to the LacI family of regulators , and possesses , like the other members , an N-terminal helix -- turn -- helix ( HTH ) DNA-binding motif ( Valentin-Hansen et al. , 1986 ; Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>GntR belongs to the GalR-LacI family of regulators and possesses an N-terminal helix-turn-helix DNA-binding motif , suggesting that GntR ful-ﬁlls a regulatory role similar to that of LacI for the lac operon ( 45 , 46 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>This is in agreement with the fact that this helix appears to be folded only when LacI family members are oligomerised and complexed with their DNA operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Like other LacI family members , the basic DNA-binding unit of CytR is a homodimer ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>( i ) LacI and GalR are closely related members of the paradigm family of the helix-turn-helix DNA-binding proteins35 though they have different stable oligomeric units : LacI tetramer versus GalR dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>However , rather large differences in the amino acid sequences and operator speci ® cities are observed among the 36 putative members of the LacI family , and detailed 3D structural analyses of several other members are required to obtain a better knowledge of the DNA-binding speci ® cities in the entire family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>A group of 10 amino acids contributes toa structurally significant hydrophobic core in the DNA-binding domain of LacI ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3058704" target="_blank">3058704</a>]<br></li>
+<li>It is also possible that amino acid residues outside the HTH contact the DNA as has been shown for the Trp-repressor ( 33,34 ) and PurR and LacI ( 29,30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11139621" target="_blank">11139621</a>]<br></li>
+<li>Several studies have predicted that the interdomain linker of PurR and LacI plays a role in operator binding and that this region is unfolded in the absence of operator but becomes structured upon sequence-speciﬁc contacts with DNA ( Geisler and Weber , 1977 , 1978 ; Ha et al. , 1989 ; Kleina and Miller , 1990 ; Choi and Zalkin , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>Furthermore , the high sequence homology among the HTH motifs of LacI members ( 60 % amino acid identity among PurR and CytR HTHs ) , as well as between their DNA operator half-sites ( Schumacher et al. , 1994 ) , strongly suggests that the HTH motifs take very similar structures , and that they interact with their half-operators in very similar ways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Concerning the residues of the HTH motif involved in DNA-binding , PurR and LacI complexed with DNA display intermolecular contacts at the same positions ( Chuprina et al. , 1993 ; Schumacher et al. , 1994 ) , which likely also exists in the FruR-DNA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The crystal structures ofPurR and LacI as well as the NMR structure of the DNA-binding domain of the E. coli fructose repressor ( FruR ) ( Penin et al. , 1997 ) revealed that the region between the effector-binding domain and the helix-turn-helix ( HTH ) - motif is disordered in the absence of DNA and forms a so-called `` hinge-helix '' only when presented to the DNA operator site ( Schumacher et al. , 1994 ; Spronk et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Based on the PurR -- DNA co-crystal structure ( Schumacher et al. , 1994 ) , and three crystal structures of LacI ( as free protein and in complex with operator DNA or inducer ; Lewis et al. , 1996 ) , CytR is expected to consist of an N-terminal DNA-binding domain of ~ 60 amino acids , connected via a hinge region to a ~ 270 amino acid C-terminal domain that mediates dimerization and ligand binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Based on the PurR -- DNA co-crystal structure ( Schumacher et al. , 1994 ) and the crystal structures of LacI , as free protein and in complex with operator DNA ( Lewis et al. , 1996 ) , CytR is expec-ted to consist of two functional domains : an N-terminal DNA-binding domain ( residues 1 -- 51 ) connected via an interdomain linker ( residues 52 -- 68 ) to a larger C-terminal domain ( residues 69 -- 341 ) that mediates dimerization and effector-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>For the free LacI domain , the connecting segment between helix II and helix III is slightly disordered and a signi ® cant conformational change occurs in this region upon binding on the DNA operator ( Slijper et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The coil to hinge helix transition results not only from speci ® c DNA-binding but requires protein-protein interaction between the two related hinge helices , as shown recently for LacI DBD by Spronk et al. ( 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Besides , LacI appears to require only the ® rst three DBD helices to bind speci ® cally to its operator site ; in contrast , PurR DBD can not bind the purF operator site ( Choi & Zalkin , 1992 ) and speci ® c hinge helix recognition in the minor groove seems to be essential for speci ® c DNA-binding , as stated by Nagadoi et al. ( 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Thus , the DNA-binding domains of LacI and PurR consist of two sequence speciﬁc-motifs : the HTH motifs that make base-speciﬁc contacts to half-operators in the major groove of the DNA and the hinge a-helices that bind at the centre of the operator and wedge open the DNA minor groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_65">
+Crystal structure of LacI member , PurR , bound to DNA : Minor groove binding by helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></label>
+<input id="dom_similarity_65", type="checkbox">
+<div class="DOM_similar">
+<li>Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by alpha helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Crystal structure of LacI member , PurR , bound to DNA : minor groove binding by a helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>]<br></li>
+<li>Crystal structure of LacI member PurR , bound to DNA : minor groove binding by a helices .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li></div>
+<li>Thus , PurR ( and LacI ) contains two different DNA-binding motifs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Sequence alignment and comparison of secondary structure of FruR , LacI and PurR DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Comparison of PurR , LacI and FruR DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>In contrast to LacI ( 23 , 24 ) , the PurR corepressor-binding domain does not bind to specific operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li>
+<li>In spite of different physiological functions , the crystal structures of the two complexes of TreR turned out to be virtually identical to each other with the conformation being similar to those of the effector-binding domains of the LacI and PurR in complex with their effector molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The corepressor complex of the effector-binding domain of PurR thus resembles the corresponding inducer-binding complexes of LacI and TreR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The corepressor-free effector-binding domain structure of PurR appears , however , to be different from the inducerfree structures of TreR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>* In order to save space , the N-terminal four residues of MalI and six residues of CytR are omitted as are the C-terminal seven residues of LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>PurR does not contain a C-terminal leucine-zipper motif similar to that which is involved in LacI tetramer formation ( 1 , 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li>
+<li>Both GalR and GalS lack the leucine-rich C-terminal domain involved in LacI tetramerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Importantly , the overall shape of the GalR mediated loop proved to be indistinguishable from that in the chimerical loop of the same size containing two lac operators ( instead of two gal operators ) and formed by LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>The previous experimental and theoretical studies on relaxed DNA minicircles or linear DNA fragments , which contained lac operators with different phasing , showed possibility of forming a `` closed '' DNA loop ( with crossover ) when LacI has a V-shaped conformation like the one revealed by X-ray diffraction16 ,17 or an `` open '' U-shaped DNA loop when conformation of LacI is rather extended than V-shaped .1,33,37 -- 39 Thus , the ﬂexibility of the tetrameri-zation domain allows LacI to adapt to variable `` conditions '' , which resulted in a relatively high frequency of loop formation in our experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LacI evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Other common regulator families are ArsR ( 175 ) , AsnC ( 140 ) , Crp ( 233 ) , DeoR ( 17 ) , GntR ( 29 , 104 , 213 ) , IclR ( 214 ) , LacI ( 253 ) , LuxR/UphA ( 112 ) , LysR ( 111 ) , MarR ( 56 ) , MerR ( 107 ) , NtrC ( 189 ) , TetR ( 198 ) , YedF/YeeD/YhhP ( 14 ) , and YhdG/YjbN/YohI ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>A comparison of GntR with CcpA , the catabolite control protein from Bacillus subtilis ( 22 ) , shows that 30.3 % of the residues ar identical and that 47 % are chemically conserved , and a comparison of GntR with LacI from E. coli ( 15 ) shows that 24.4 % of the residues are identical and that 44.4 % are chemically conserved ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>Citation : Sernova NV , Gelfand MS ( 2012 ) Comparative Genomics of CytR , an Unusual Member of the LacI Family of Transcription Factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23028500" target="_blank">23028500</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_4">
+Pedersen , H. , and Valentin-Hansen , P. ( 1997 ) Protein-induced ﬁt : the CRP activator protein changes sequencespeciﬁc DNA recognition by the CytR repressor , a highly ﬂexible LacI member .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767576" target="_blank">9767576</a>]<br></label>
+<input id="evo_similarity_4", type="checkbox">
+<div class="EVO_similar">
+<li>Pedersen , H. , and Valentin-Hansen , P. ( 1997 ) Protein-induced ﬁt : CRP activator protein changes sequencespeciﬁc DNA recognition by the CytR repressor , a highly ﬂexible LacI member .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li></div>
+<li>( 1997 ) 270 , 496 ± 510 Three-dimensional Structure o the NA-binding main of s y 1H f D epressor fro the Fructose R d 15N Do m E cherichia an NMR coli b Ë ois Penin * , Christophe Geourjon , Roland M Anja Bo È ckmann , Anne Lesage , Yin Shan Yang Christelle Bonod-Bidaud , Jean-Claude Cortay , Didier Ne Á gre Alain J. Cozzone and Gilbert Dele Â age Franc ontserret Institut de Biologie et Chimie des ProteÂines , Centre National de la Recherche Scienti ® que 7 passage du Vercors 69367 Lyon , France FruR is an Escherichia coli transcriptional regulator that belongs to the LacI DNA-binding protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The most abundant families described in prokaryotes , the LysR ( 16 % of the whole dataset ) , and the OmpR families ( 7 % of the TF dataset ) , have the wHTH motif , while the GalR/LacI and MerR families with the cHTH motif are scarce in all genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>We show the striking structural similarity of TreR to PurR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>The structure-based sequence alignment of the effector-binding domains of TreR , PurR , and LacI ( Fig. 4 ) reveals surprisingly low sequence identity of this domain between TreR-PurR and TreR-Lac1 ( 17.3 and 15.7 % , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>GalR is a member of the GalR-LacI family of gene regulatory proteins .14 In the absence of a crystal structure , GalR monomer was modeled by homologous extension using the X-ray diffraction structures of two related repressors , PurR and LacI ( 31 % and 27 % sequence homology , respectively ) .8,15,16 The GalR dimer was constructed also on the basis of PurR and LacI structures , which have similar pattern of dimerization .8 However , the tetramerization mode of GalR is different from that of LacI , since the former does not have an antiparallel four-helix bundle tetramerization domain found in LacI .16,17 GalR appears to be a dimer in solution at micromolar concentrations .18 Structure-based genetic studies involving hom-ology-scanning mutagenesis identiﬁed amino acid substitutions that are defective in GalR tetrameri-zation but do not affect DNA binding .19,20 The sensitive amino acids constitute a potential tetramerization interface conﬁned within a `` crescent '' and located on either side of the GalR dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Copyright 0 1998TheProteinSociety Crystal structure of the effector-binding domain of the trehalose-repressor of Escherichia coli , a member of the LacI family , in its complexes with inducer trehalose-6-phosphate and noninducer trehalose ULRIKE HARS , REINHOLD HORLACHER , WINFRIED BOOS , WOLFRA AND KAY DIEDERICHS Department of Biology , University of Konstanz , Universitatsstr .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>In the Sinorhizobium meliloti and Agrobacterium tumefaciens ge-nomes , the xylA and xylB genes form a putative operon with a LacI family regulator , which might function as XylR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11750821" target="_blank">11750821</a>]<br></li>
+<li>The systems for utilization of these sugars are regulated on the transcriptional level by protein factors which belong to di ¡ erent structural families : the ribose regulator ( RbsR ) belongs to the LacI family , whereas the arabinose ( AraC ) and xylose ( XylR ) regulators are members of the AraC family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11750821" target="_blank">11750821</a>]<br></li>
+<li>The system for transport and utilization of these sugars are regulated on the transcriptional level by transcription factors which belong to different structural families : the ribose regulator ( RbsR ) belongs to the LacI family ( Mauzy & Hermodson , 1992a ) , whereas the arabinose ( AraC ) ( Stoner & Schleif , 1983 ; Miyada et al. , 1984 ) and xylose ( XylR ) ( Song & Park , bers of these families have the opposite modes of action : RbsR is a classical repressor whose inducer is D-ribose , whereas AraC and XylR are activators of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23651393" target="_blank">23651393</a>]<br></li>
+<li>Opposing activation and repression , mediated by CRP and a LacI family member , respectively , is one of the most common ways in which transcription of catabolic genes is regulated in bacteria to meet the cell 's metabolic needs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20000490" target="_blank">20000490</a>]<br></li>
+<li>The structures of PurR and LacI as well as the model of the COOH-terminal domain of the E. coli galactose repressor ( Hsieh et al. , 1994 ) suggest that the LacI family repressor proteins share a single common fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Furthermore , the high sequence homology among the HTH motifs of LacI members ( 60 % amino acid identity among PurR and CytR HTHs ) , as well as between their DNA operator half-sites ( Schumacher et al. , 1994 ) , strongly suggests that the HTH motifs take very similar structures , and that they interact with their half-operators in very similar ways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Its high degree of conservation in the LacI family , as well as the signi ® cant sequence identity of their 16 to 18 bp operator sites in this family , suggest that FruR binds to its operator in a similar way to that of all members of the family ( Schumacher et al. , 1994 ; NeÁgre et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Comparison of the deduced amino acid sequence of TreR with that of the LacI ( 27 ) , PurR ( 28 ) , and other repressors of the LacI-GalR subfamily shows a high degree of homology at the NH2-terminal part of the protein sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9148912" target="_blank">9148912</a>]<br></li>
+<li>When the amino acid sequences were appropriately aligned , MalI showed 28 % identity to GalR , 21 % to CytR , and 24 % to LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2670898" target="_blank">2670898</a>]<br></li>
+<li>MalI exhibited high homology to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2670898" target="_blank">2670898</a>]<br></li>
+<li>PurR is a member of the lac repressor family , which includes LacI ( 4 , 9 ) , GalR ( 46 ) , RbsR ( 25 ) , MalI ( 36 ) , RafR ( 3 ) , RbtR ( 50 ) , CytR ( 44 ) , EbgR ( 43 ) , CcpA ( 13 ) , and FruR ( 16 , 45 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li>
+<li>Recent identification of a leu-cine zipper motif at theC-terminus of LacI ( Alberti et al. , 1991 ; Chakerian et al. ,1991 ) , which appears to beessential for the dimer-to-tetramer transition , does not appear to be relevant to the rest of this family , since it occurs in LacI C-terminal to the termination of the other members in the alignment in Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Examination of hydrogen bonds highlights the importance of homologous residues that seem to be conserved for their ability to ful ® l helix N and C-capping roles in the LacI repressor family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The divergently transcribed lfaR-lfaTA genes encode , respectively , a LacI family repressor , an MFS-type transporter ( homologous to ExuT ) , and a family 31 glycosylhydrolase sim ilar to - glucosidase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>We thus divided the repertoire of helix-turn-helix TFs into three categories : ( a ) classical HTH ( cHTH ) proteins with a tight loop between H-1 and H-2 , and no additional elements in the C-terminus , e.g. the GalR/LacI , family ( see Table 1 ) ; ( b ) the winged HTH proteins ( wHTH ) containing the C-terminal - hairpin and , in some proteins additional - sheets in between H-1 and H-2 , such as the OmpR , family ; and ( c ) the miscellaneous HTH ( mHTH ) , an heterogeneous collection of proteins that differ from the typical HTH in certain features , such as shortened helices or the incorporation into other super-structures , e.g. Rob in E. coli ( Tobes and Ramos , 2002 ) , or members of the enhancer-binding proteins ( EBP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>Some transcriptional regulators bind their target sites as monomers ( e.g. , members of the AraC family and MotA from bacteriophage T4 ) ( 11 , 17 ) , or as homomultimers ( e.g. , LacI , H-NS , and the LysR family ) ( 4 , 6 , 34 , 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21685294" target="_blank">21685294</a>]<br></li>
+<li>Thus by mere number alone the Crp-Fnr family has gained the status of a major group of regulators akin to the LysR , AraC or LacI families .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14638413" target="_blank">14638413</a>]<br></li>
+<li>ORF1 encodes a protein homologous to repressors including CytR , GalR , and LacI ( Weickert & Adhya , 1992 ) as shown in Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>On the basis of high sequence similarity with other bacterial regulatory proteins , FruR has been classi ® ed in the GalR-LacI family ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9512708" target="_blank">9512708</a>]<br></li>
+<li>On the basis of sequence similarities with other bacterial regulatory proteins , FruR has been classi ® ed in the LacI and GalR superfamily of repressors ( Weickert & Adhya , 1992 ) , which contains at least 36 members to date according to the Pro-site dictionary of signatures and potential sites ( Bairoch , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Sequence analysis shows that MalI is a typical member of the LacI family of transcription repressors ( Reidl et al. , 1989 ; Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20141531" target="_blank">20141531</a>]<br></li>
+<li>Conclusions Members of the LacI -- GalR family of transcriptional repressors are usually functional as dimers , although in some cases , repression depends on the dimerization of dimers or interactions with other proteins , such as CRP ( Weickert & Adhya , 1992 ; Valentin-Hansen et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20141531" target="_blank">20141531</a>]<br></li>
+<li>The CytR repressor belongs to the LacI family of regulators , and possesses , like the other members , an N-terminal helix -- turn -- helix ( HTH ) DNA-binding motif ( Valentin-Hansen et al. , 1986 ; Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>CytR belongs to the LacI repressor family and exhibits extensive amino acid sequence homology to several other members ( e.g. PurR , LacI and GalR ; Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>GaIR and GalS are over 53 % identical and 85 % similar and are members of a large family of related transcriptional regulatory proteins in bacteria , called the GalR-LacI family ( Weickert and Adhya , 1992b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>In this section , diverse proteins were excluded due they did not exhibit a DBD , such as for instance the ribose transporter RbsB of E. coli that share a high similarity with members of the LacI family , but it lacks the DBD ( Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>TreR belongs to the LacI family of prokaryotic DNA-binding proteins of which more than 25 members are known that regulate the metabolism of sugars and nucleotides ( Weickert & Adhya , 1992 ; Nguyen & Saier , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>All the regulatory proteins in Group 4 are the members of LacI family ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8729576" target="_blank">8729576</a>]<br></li>
+<li>Sequence homologies reveal this residue to be conserved in most of the members of the LacI family ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>It is conserved in most members of the LacI family cleft , whether positive or negative , are caused by arrays ofuni - ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>For example , FruR is one of 13 proteins in E. coli K12 belonging to the LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>RbsRis also homologous to a family of bacterial repressor proteins including LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Even though it belongs to the same family as the tetrameric LacI repressor , the TreR repressor only forms a dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9148912" target="_blank">9148912</a>]<br></li>
+<li>The results described above extend this observation to all other known gluconate-inducible genes regulated by GntR , a member of the GalR-LacI family of repressor proteins ( 5 ) ; nearly identical operator sequences were found in the gntT and edd regulatory regions ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+<li>Analysis of the LacI family regulators of Erwinia chrysanthemi 3937 , involvement in the bacterial phytopathogenicity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>One of the groups classified as a group of transporter proteins actually contains both transport proteins ( periplasmic binding components of the ABC superfamily ) and regulatory proteins ( transcriptional regulators of the GalR/LacI family ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15757509" target="_blank">15757509</a>]<br></li>
+<li>One of the groups of periplasmic binding components also contains sequence related transcriptional regulators of the GalR/LacI family , agreeing with previous reports [ 25,26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15757509" target="_blank">15757509</a>]<br></li>
+<li>CRP , which is not a member of the GalR-LacI family of regulators , also functions as a symmetric dimer by binding to DNA sites with dyad symmetry located upstream of the RNA polymerase in the promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Sequence comparison of the HTH of GntR with that of GntH and with those of the GalR-LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>A 20-amino-acid sequence of the HTH of GntR was compared with that of GntH and those of the members of GalR-LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>These repressors are members of the GalR-LacI family of transcriptional regulators in E. coli ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Like GntR , GntH appears to belong to the GalR-LacI family of bacterial regulators ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>GalS and GalR belong to the GalR-LacI family of regulators ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>ScrR is a member of the GalR-LacI repressor family ( 521 ) with a characteristic helix-turn-helix motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8246840" target="_blank">8246840</a>]<br></li>
+<li>Cra , a member of the GalR-LacI family , was originally iden ¬ * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>]<br></li>
+<li>Phylogenetic , structural and functional analyses of the LacI -- GalR family of bacterial transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>GalS is the third member of the GalR-LacI family of bacterial regulatory proteins for which negative autoregulation has been demonstrated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>The position of the putative IdnR binding site is interesting because this location is atypical of negative control , despite the fact that IdnR and GntR belong to the GalR-LacI family of negative regulators ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>GntR belongs to the GalR-LacI family of regulators and possesses an N-terminal helix-turn-helix DNA-binding motif , suggesting that GntR ful-ﬁlls a regulatory role similar to that of LacI for the lac operon ( 45 , 46 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The protein presents a GntRlike DNA-binding domain and a C-terminal domain that is GntR-like and a C-terminal domain typical of the HTH LacI / GalR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>On the basis of sequence similarity , Cra is classiﬁed in the GalR-LacI family ( Leclerc et al. 1990 ; N. Fujita , unpublished ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16115199" target="_blank">16115199</a>]<br></li>
+<li>Significantly , this sequence contains a central CG which has been found in all operators of the LacI family ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9148912" target="_blank">9148912</a>]<br></li>
+<li>Since the RDs of LysR-type regulators are closely related in structure to the ligand-binding domains of the PBPs and LacI family members , the cofactor-binding site of Cbl is expected to lie in the cleft formed by RDI and RDII subdomains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>For the remaining LacI family members , the N-terminus of putative helix I presents a sequence similar to FruR ( i.e. a basic and an acidic residue at the Ncap and N3 position , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The three-dimensional structures of two LacI family members are now available : the lactose repressor , LacI , and the pur-ine repressor , PurR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Limited proteolysis of radiolabelled CytR protein The different members of the LacI family show strong sequence similarity and are expected to take up a very similar three-dimensional structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>CytR has two features that are not observed in other LacI family members and that appear to be important to its role as a differential transcriptional regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>However , analysis under denaturing conditions on SDS-polyacrylamide gels indicates variable proteolysis of the CytR by endogenous proteases ( 5 ) , similar to what has been observed for other members of the LacI repressor family ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>Most members of the LacI family are dimeric , whereas LacI functions asa tetramer composed of adimer of dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Summary The Escherichia coli CytR regulator belongs to the LacI family of sequence-speciﬁc DNA-binding proteins and prevents CRP-mediated transcription in the CytR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>A similar fold and mode of ligand binding is found in members of the Lac repressor family .17 This implies that the LTTR , PBP and LacI families of proteins are related .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17010379" target="_blank">17010379</a>]<br></li>
+<li>The model consists of residues 61 to 315 comprising the effector binding domain , which forms a dimer as in other members of the LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Many LacI family members have closely related binding speci - ® cities ( Lehming et al. , 1990 ; Schumacher et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>( i ) LacI and GalR are closely related members of the paradigm family of the helix-turn-helix DNA-binding proteins35 though they have different stable oligomeric units : LacI tetramer versus GalR dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Second , CytR exhibits lower DNA binding specificity than other LacI family members and most other bacterial repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+<li>Like other LacI family members , the basic DNA binding unit of CytR is a homodimer ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10347150" target="_blank">10347150</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LacI</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Templates for expression of - lacta-mase as a positive control ( pGEM9Zf ) ( lanes 2 and 5 ) , MqsR ( pTX4 ) ( lanes 4 to 6 ) , and YgiT plus LacI ( pAT3 ) ( lanes 3 and 6 ) were added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20233923" target="_blank">20233923</a>]<br></li>
+<li>Catabolite response Deoxirribose assimilation D 87 135 Crp w 27 Pérez - Rueda and Collado-Vides ( 2000 ) 220 -- R 235 10 DeoR DicA 35 w Pérez - Rueda and Collado-Vides ( 2000 ) -- n/d 0 -- -- n/d HLH R 4 DicC DnaA 0 Transcription and replication regulation Positive regulator of cytochrome c552 77 0 -- Pérez - Rueda and Collado-Vides ( 2000 ) 41 -- n/d DniR 0 Kajie et al. ( 1991 ) 209 8 215 -- A Ebp FhlC 77 m Pérez - Rueda and Collado-Vides ( 2000 ) Pérez - Rueda and Collado-Vides ( 2000 ) n/d 0 -- 7 -- Pérez - Rueda and Collado-Vides ( 2000 ) Schnetz ( 2002 ) n/d R FhlD FrvR 0 -- Phosphoenolpyruvate sugar phosphotransferase system operon regulation Iron assimilation 8 0 -- -- 128a Fur R w Achenbach and Yang ( 1997 ) 107 460 35 Carbon sources assimilation Nguyen and Saier ( 1995 ) ; Weickert and Adhya ( 1992 ) 388 GalR/LacI 55 R c -- 13 GcvR GntR Rigali et al. ( 2002 ) Glycine cleavage operon repression 0 R 735 775 Ghrist and Stauffer ( 1998 ) 96 R w Yamada and Saier ( 1988 ) Activator of the glucitol operon in E. coli High-frequency persistence of the lethal effects of inhibition of either DNA or peptidoglycan-synthesis regulation ( HipAB ) -- 8 GutM 0 A -- Black et al. ( 1991 ) -- 1 HipA 1 0 n/d -- n/d HipB HtgA Black et al. ( 1991 ) Missiakas et al. ( 1993 ) 87 0 -- -- -- n/d 7 Heat shock regulation 0 -- HycA HypF 6 -- n/d ZnF A 0 -- 0 Bouhouche et al. ( 2000 ) Gui et al. ( 1996 ) 27 -- Glyoxylate bypass operon Integration host factor 31 106 161 w R -- IclR Ihf -- 15 8 Pérez - Rueda and Collado-Vides ( 2000 ) Campoy et al. ( 2002 ) -- D 43 -- DNA-repair 54 LexA R w 102 279 Miller and Bassler ( 2001 ) Schell ( 1993 541 LuxR/UhpA m A Quorum sensing 1548 LysR 1271 Amino acid biosynthesis regulation D w 3.3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_3">
+Abo , T. , Inada , T. , Ogawa , K. and Aiba , H. ( 2000 ) SsrA-mediated tagging and proteolysis of LacI and its role in the regulation of lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11917023" target="_blank">11917023</a>]<br></label>
+<input id="rp_similarity_3", type="checkbox">
+<div class="RP_similar">
+<li>References Abo , T. , Inada , T. , Ogawa , K. , and Aiba , H. ( 2000 ) SsrAmediated tagging and proteolysis of LacI and its role in the regulation of lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15522083" target="_blank">15522083</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21062370" target="_blank">21062370</a>]<br></li></div>
+<li>Comparative Genomics of CytR , an Unusual Member of the LacI Family of Transcription Factors Natalia V. Sernova , Mikhail S. Gelfand * 1 1,2 1 A.A.Kharkevich Institute for Information Transmission Problems , Russian Academy of Sciences ( IITP RAS ) , Moscow , Russia , 2 Faculty of Bioengineering and Bioinformatics , M.V.Lomonosov Moscow State University , Moscow , Russia Abstract CytR is a transcription regulator from the LacI family , present in some gamma-proteobacteria including Escherichia coli and known not only for its cellular role , control of transport and utilization of nucleosides , but for a number of unusual structural properties .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23028500" target="_blank">23028500</a>]<br></li>
+<li>The LacI protein family catabolite repressor/activator , Cra , was initially characterized as the fructose repressor , FruR , because it negatively regulates transcription of the fructose utilization operon ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21849503" target="_blank">21849503</a>]<br></li>
+<li>Except for a B. subtilis transacting protein that is involved in catabolite repression of a-amylase and shows similarity to the LacI and GalR repressors of E. coli ( 168 ) , no other gene products have been identified that are responsible for the regulation of various catabolite-repressible genes in nonenteric bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8246840" target="_blank">8246840</a>]<br></li>
+<li>ORF1 encodes a protein homologous to repressors including CytR , GalR , and LacI ( Weickert & Adhya , 1992 ) as shown in Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Mall , anove protein involved in regulation of the maltose system of Escherichia coli is highlyhomologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_10">
+Reidl , J. , Römisch , K. , Ehrmann , M. , and Boos , W. ( 1989 ) MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9484893" target="_blank">9484893</a>]<br></label>
+<input id="rp_similarity_10", type="checkbox">
+<div class="RP_similar">
+<li>Reidl , J. , RoÈmisch , K. , Ehrmann , M. , and Boos , W. ( 1989 ) MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692154" target="_blank">10692154</a>]<br></li>
+<li>Reidl J , Romisch K , Ehrmann M & Boos W ( 1989 ) MalI , a novel protein involved in the regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20141531" target="_blank">20141531</a>]<br></li>
+<li>MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to therepressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304369" target="_blank">1304369</a>]<br></li>
+<li>MalI , a novel protein involved in regulation of the maltose system of Escherichia coli , is highly homologous to the repressor proteins GalR , CytR , and LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003949" target="_blank">12003949</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9529892" target="_blank">9529892</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li></div>
+<li>The five most abundant proteins were GlmS , SlyD , and cAMP receptor protein ( Crp ) , which are usual contaminants during His tag purification in E. coli ( 32 ) ; LacI , which controls the expression of the lac promoter and was probably found because ychF was cloned under the control of the lac promoter ; and IscS , which is involved in Fe-S cluster biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23139412" target="_blank">23139412</a>]<br></li>
+<li>The His-tagged protein was overproduced in the E. coli M15 strain harboring the plasmid pREP4 ( Table 1 ) , which produces the LacI repressor to strictly control gene-expression from pQE32 derivatives in the presence of isopropyl-1-thio - - D-galactopyranoside .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19520845" target="_blank">19520845</a>]<br></li>
+<li>DISCUSSION Transcriptional control of metabolic pathways for carbohydrate utilization in bacteria is mediated by a variety of TFs from different protein families ( e.g. AraC , LacI , GntR , DeoR , and ROK ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21849503" target="_blank">21849503</a>]<br></li>
+<li>The gntT : : lacZ fusion was constitutively expressed in multicopy , as is expecte for a gene under negative control , e.g. , GntR of the GalR-LacI family ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LacI binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>u birA331 I 35 40 [ Ala Ala Ile Asn LYS His m Gln Gln Thr Val Ser Arg Val Val Asn Val m Asn Gly Ser Asn Leu Phe Asn Ala m His m Gln Tyr Asp Val BirA LacI GalR TrpR CI Cro Lys Asp Val Ala Arg Leu Ar Glu Lys Asn Glu rc $ lu Ser Ala Asp Lys Tyr Lys Thr Ala Lys Asp *** === Ala Ile/Val GUY DNA Backbone Binding Helix DNA Sequence Specificity Helix Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3536662" target="_blank">3536662</a>]<br></li>
+<li>Helix I - Turn I - Helix II form the HTH motif de ® ned in the LacI family by the following consensus sequence pattern : [ LIVM ] - x - [ DE ] - [ LIVM ] - A-x ( 2 ) - [ STAG ] - x-V - [ GSTP ] - x ( 2 ) - [ STAG ] - [ LIVMA ] - x ( 2 ) - [ LIVMAFYN ] - [ LIVMC ] ( LacI family signature , Prosite 13 database ; Bairoch , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>Inspection of sequence alignments of the 36 LacI members reveals the conservation of the Schellman motif for helix I , with glycine ( 75 % ) or asparagine ( 17 % ) at the C0 position and apolar residues at the C3 position ( Ala , 100 % ) and C00 position ( Val , 94 % ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>For helix I , because of the helix geometry , a salt-bridge between the side-chains of Lys2 and Glu5 likely exists and stabilises the Nterminal end of helix I. Examination of a sequence alignment of FruR DBD with LacI and PurR ( Figure 8 ) , and with the 33 other LacI members identi ® ed so far ( not shown ) , reveals the presence of conserved consensus capping box motifs ( Harper & Rose , 1993 ) for the three helices in most cases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>For helix III , a consensus capping box sequence Ser-X-X-Thr is present in 47 % of the LacI members ( 61 % when considering all possible capping box residues ) , but the existence of a capping box is neither demonstrated here for FruR , nor for LacI DBD ( Slijper et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>LacI forms tetramers by flexible C-terminal heptad repeats .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15289461" target="_blank">15289461</a>]<br></li>
+<li>LacI binds at low-afﬁnity secondary sites , which creates a LacI sink ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20118257" target="_blank">20118257</a>]<br></li>
+<li>The base pairs that were changed to alter OE and OI from GalR to LacI recognition sequences are shown in the line marked LacI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8619994" target="_blank">8619994</a>]<br></li>
+<li>The protection of base pairs downstream of OI occurs with both the native O ( O G I I ) and the altered OI sequence , which has been modified to a LacI recognition site , O L I .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8619994" target="_blank">8619994</a>]<br></li>
+<li>In pSV111LX constructed for experiments with LacI , left insert L2 containing 42 bp ( 50-CGGCATCGTTGAAC GCACAGATCTATGGTTATTTCATACCAT-30 ) was made at þ8 site and 16 bp O and O operator sequences were E I change to the operator sequence of the lac O ( 50-TTGTG 1 AGCGCTCACAA-30 ) from the regulatory region of the lac operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14596799" target="_blank">14596799</a>]<br></li>
+<li>Moreover , inspection of the recognition sequences reveals the conservation of the central CpG dinucleotide in all LacI family operators ( Schumacher et al. , 1994 ) , again with the exception of CytR operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9155036" target="_blank">9155036</a>]<br></li>
+<li>Its high degree of conservation in the LacI family , as well as the signi ® cant sequence identity of their 16 to 18 bp operator sites in this family , suggest that FruR binds to its operator in a similar way to that of all members of the family ( Schumacher et al. , 1994 ; NeÁgre et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9237914" target="_blank">9237914</a>]<br></li>
+<li>The predicted sugar binding site for LacI advanced by Sams et al. ( 1984 ) and theextensive use of that model to explain the results of a mutagenesis analysis of LacI by Gordon et al. ( 1988 ) must be largely revised to account for themore accurate alignment of sequences ( Fig. 2 ) made possible by the completedata set .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>That issue is relevant for this family of repressorproteins , since LacI is known to formatetramer when binding productively to the target DNA sequences ( Platt et al. , 1973 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>The sites that bind inducer and those that arerequired to form di-mers and tetramers in LacI all map to the region C-ter-minal to the 59-amino acid N-terminal headpiece ( Platt et al. , 1973 ) , the region homologous to the binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>Alignment was done with the nucleotide sequences of the binding sites for the PaaX repressor in Pa ( PaaX ( Pa ) ) and Pz ( PaaX ( Pz ) ) promoters , the CRP activator in lac promoter ( CRP - ( Plac ) ) ( 25 ) , the LacI repressor ( 26 ) , the GntR repressor ( 6 ) , and the PdhR repressor ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>The residues at positions 84 and 88 of the LacI sequence correspond to residues near the hinge of the binding protein structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1304370" target="_blank">1304370</a>]<br></li>
+<li>Thus , the DNA-binding domains of LacI and PurR consist of two sequence speciﬁc-motifs : the HTH motifs that make base-speciﬁc contacts to half-operators in the major groove of the DNA and the hinge a-helices that bind at the centre of the operator and wedge open the DNA minor groove .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9466254" target="_blank">9466254</a>]<br></li>
+<li>The primary operator ( O1-lac ) for LacI repressor binding consists of two inverted half-sites centered at position 11 with respect to the transcription initiation site ( Fig. 1 and 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644479" target="_blank">12644479</a>]<br></li>
+<li>sence of the phosphoryl group ( Shoemakeret al. , 1987 ; Sali et al. , Both in PurR and LacI , binding to D thNeA operator site induces 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>In contrast to LacI ( 23 , 24 ) , the PurR corepressor-binding domain does not bind to specific operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1400170" target="_blank">1400170</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LacI</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Strains and plasmids used in this study Relevant characteristicsa Strain or plasmid Source or reference Strains MG1655 F lambda ilvG rfb-50 rph-1 Laboratory collection This study MG1655 att-kmgfp Insertion , at the att site , of the gfp gene under the control of the constitutive pR promoter ; source of the kmPcL and kmPcLrbs cassettes ; Kmr Insertion , at the att site , of the gfp gene under the control of the constitutive pR promoter ; source of the ampPcL and ampPcLrbs cassettes ; Ampr ﬂu : : cat Cmr oxyR : : aph Kmr oxyR : : aph ﬂu : : cat Kmr Cmr ﬂu placed under the control of the kmRExTETrbs cassette PLtetO-1 promoter ; Kmr ﬂu with its own RBS sequence placed under the control of the kmPcL cassette pR promoter ; Kmr lacZ with its own RBS sequence placed under the control of the kmRExTET cassette PLtetO-1 promoter ; Kmr lacZ placed under the control of the kmRExTETrbs cassette P r LtetO-1 promoter ; Km lacZ with its own RBS sequence placed under the control of the kmPcL cassette pR promoter ; Kmr lacZ placed under the control of the kmPcLrbs cassette pR promoter ; Kmr lacZ with its own RBS sequence placed under the control of the ampPcL cassette pR promoter ; Ampr lacZ placed under the control of the ampPcLrbs cassette pR promoter ; Ampr E. coli commensal strain bcsABZC : : aph Kmr bcsABZC operon placed under the control of the kmRExTETrbs cassette P r LtetO-1 promoter ; Km DH5 with integrated transcription units encoding LacI and TetR at the att site MG1655 att-ampgfp This study 1655 ﬂu 1655 oxyR MG MG MG MG 68 68 1655 oxyR ﬂu 1655kmRExTETrbs-ﬂu 68 This study MG1655kmPcLﬂu This study MG1655kmRExTETlacZ This study MG1655kmRExTETrbs-lacZ This study MG1655kmPcLlacZ This study MG1655kmPcLrbs-lacZ This study MG1655ampPcLlacZ This study MG1655ampPcLrbs-lacZ This study 1094 1094 bcsABZC 18 18 1094kmRExTETrbs-bcsA This study DH5 Z1 49 Plasmids pZE21-gfp gfp under the control of the synthetic PLtetO-1 promoter ; Kmr pZEtetR21-gfp Same as pZE21-gfp with an insertion of PN25-tetR-T1 between the nptII gene and the terminator t0 ; Kmr pZE2R-gfp gfp under the control of the constitutive pR promoter ; Kmr pZE1R-gfp gfp under the control of the constitutive pR promoter ; Ampr pAg43 Pﬂu : : lacZ transcriptional fusion in pQF50 ; Ampr a Kmr , kanamycin resistance ; Ampr , ampicillin resistance ; Cmr , chloramphenicol resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17384304" target="_blank">17384304</a>]<br></li>
+<li>Sequence annotation indicates that idnK is monocistronic and is divergently transcribed from a putative operon consisting of idnD , idnO , and idnT along with idnR , which encodes a repressor of the GalRLacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>To examine Sxy dependence , exponentially growing cells carrying E.coli sxy cloned under LacI repression were induced with IPTG ( Figure 7B and C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17068078" target="_blank">17068078</a>]<br></li>
+<li>E. coli JM103 ( Alacpro , supE , thi , strA , sbcB15 , endA , hsdR4 , F'traD 36 , proAB , LacI ^ ZAMlS ) was used to assay the expression of the lac DNA of the M13mpl9 phage ( IS ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3897211" target="_blank">3897211</a>]<br></li>
+<li>LacI binds to its operator site at the lac genes and downstream of the RNA-polymerase binding site in the absence of its natural inducer allolactose and thus controls the expression of enzymescoded by the lac operon for the degradation of @ - galactosides ( Jobe & Bourgeois , 1972 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9865945" target="_blank">9865945</a>]<br></li>
+<li>Maximal gene expression , RNA polymerase binding and minimal LacI binding are observed for single operator controls ( Figure 5A and B ) under induced conditions , as expected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24598256" target="_blank">24598256</a>]<br></li>
+<li>The deduced amino acid sequence of the malI gene product revealed that it is highly similar to the classical repressor proteins , such as LacI or GalR ( 209 ) and must represent a repressor itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9529892" target="_blank">9529892</a>]<br></li>
+<li>The gntT : : lacZ fusion was constitutively expressed in multicopy , as is expecte for a gene under negative control , e.g. , GntR of the GalR-LacI family ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+<li>The PCR product was cloned into the SphI and BglII sites of a modified pQE-70 vector that encodes LacI for repression of gene expression in the absence of IPTG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20921376" target="_blank">20921376</a>]<br></li>
+<li>Reidl et al. ( 1989 ) found that the divergently expressed gene upstream of malX , malI , encodes a LacI family transcription repressor that represses malXY expression , most likely by binding to operator targets in the malX -- malI intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19054084" target="_blank">19054084</a>]<br></li>
+<li>This indicates that the cpdA gene product inhibits lacZ expression independently of the LacI repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8810311" target="_blank">8810311</a>]<br></li>
+<li>pTolAIII derivative expression was regulated by the AraC ( TolAIII1 and TolAIII2 ) or LacI ( TolAIII3 ) repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11851406" target="_blank">11851406</a>]<br></li>
+<li>The divergently transcribed lfaR-lfaTA genes encode , respectively , a LacI family repressor , an MFS-type transporter ( homologous to ExuT ) , and a family 31 glycosylhydrolase sim ilar to - glucosidase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The common denominator of these promoters is that they are all negatively regulated by a repressor protein : lacZ is controlled by LacI that dissociates from the lac operator upon its interaction with lactose ( Reznikoff , 1992 ) ; SOS promoters are controlled by LexA , which is self-cleaved upon interaction with RecA single-strand DNA ﬁlament ( Butala et al. , 2009 ) ; iron acquisition genes are repressed by Fur when it is bound to Fe , and are derepressed þ2 when iron is scarce ( Brickman et al. , 1990 ; Braun et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21396442" target="_blank">21396442</a>]<br></li>
+<li>istR-1 and istR-2 sequences were cloned downstream of the Lambda PL promoter under the control of LacI repressor [ 18 ] to define which one of the RNAs repressed TisB toxicity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15620655" target="_blank">15620655</a>]<br></li>
+<li>Similar phenomena were observed in the s - driven promoters of sulA , uvrA , recA , fecI , entC and lacZ , 70 70 the transcription of which is directly controlled by a repressor protein ( LexA , Fur and LacI ) , but not in promoters of the housekeeping genes ftsA and ftsY , or in s - driven treA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21396442" target="_blank">21396442</a>]<br></li>
+<li>In these strains the malK and malK941 genes are controlled by the hybrid trp -- lac , Ptrc promoter and the LacI repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9822819" target="_blank">9822819</a>]<br></li>
+<li>Transcription was from a phage T5 promoter controlled by two lacZYA operators and the vector-encoded LacI repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19679654" target="_blank">19679654</a>]<br></li>
+<li>The tetrameric LacI repressor effects about 20-fold repression of lacZYA operon expression in constructs lacking both auxiliary operators O2-lac and O3-lac ( 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644479" target="_blank">12644479</a>]<br></li>
+<li>The LacI protein family catabolite repressor/activator , Cra , was initially characterized as the fructose repressor , FruR , because it negatively regulates transcription of the fructose utilization operon ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21849503" target="_blank">21849503</a>]<br></li>
+<li>On plasmid pFDX3851 , ptsH and ptsI are transcribed as an operon from the artiﬁcial tac promoter , which is repressed by the LacI repressor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17449611" target="_blank">17449611</a>]<br></li>
+<li>Upstream of the operon , the operon repressor ( LacI ) is expressed in a co-directional orientation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22916001" target="_blank">22916001</a>]<br></li>
+<li>For example , the galE promoter is repressed by GalR , the lacZ promoter repressed by LacI and many CRP-activated promoters are repressed by CytR ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>Transcription of the lacZYA operon for lactose catabolism is activated by the cyclic AMP ( cAMP ) receptor protein ( Crp ) and is repressed by the LacI protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12644479" target="_blank">12644479</a>]<br></li>
+<li>Transcription of oxyR in MV243-derived isolates was repressed by AraC encoded by the chromosome and LacI q encoded by pMV110 , and was induced with the addition of 1 mM IPTG and 0.05 % or 0.1 % arabinose for protein production or in vivo repression respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10692164" target="_blank">10692164</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

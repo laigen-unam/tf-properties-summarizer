@@ -1,0 +1,853 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - PspF</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">PspF</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">PspF transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Just the presence of the plasmid results in a signi ® cant amount of PspA synthesis ( Figure 2B , lane 3 ) , indicating that the pMJ16 construct is leaky and produces some 6 HisPspF Figure 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>1.3 1.9 5.0 2.4 4.7 2.7 2.6 1.4 PspF , IHF PhoB RbsR , Crp 37.9 22.0 2.6 1.2 1.8 2.3 0.8 1.1 Inner membrane Unknown Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport pspG ( yjbO ) ytfK rbsD rbsA rbsC rbsB rbsK rbsR 0.7 3.8 1.8 1.0 1.6 1.4 1.2 0.8 0.9 3.0 8.2 5.4 21.3 6.6 9.0 2.8 manX Mannose permease 4.2 2.1 1.1 5.0 manY Mannose permease 3.4 2.6 1.1 5.2 manZ Mannose permease 6.5 5.7 1.0 16.7 NagC , DgsA , Crp a. Genes and operons which are induced 10-fold in three independent experiments are listed with the average fold induction for the three experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18710431" target="_blank">18710431</a>]<br></li>
+<li>23.5 20.0 3.8 16.3 9.1 12.7 Maltose transport MalT , Crp malK lamB malM ibpB ibpA htpG Maltose transport MalT , Crp 18.6 5.3 3.3 39.0 24.4 11.7 32.7 13.3 9.1 24.2 20.2 8.2 2.6 2.1 1.7 4.6 4.1 2.0 48.6 19.2 20.0 52.6 35.9 16.6 s32 Heat shock Heat shock s32 Heat shock chaperone s32 Protease ; chaperone Regulator Regulator ; chaperone Protease Periplasmic clpB 11.5 12.9 17.3 21.0 20.4 14.3 3.3 3.2 1.3 1.8 2.5 2.9 8.0 2.7 2.9 24.5 6.8 5.7 1.7 1.3 yceP/bssS cpxP ( b3913 ) degP ( htrA ) spy CpxR CpxR , H-NS CpxR , BaeSR CpxR CpxR Unknown Unknown ydeH yebE 49.2 44.8 63.1 21.0 30.7 32.2 56.9 33.1 9.5 1.1 1.6 6.1 7.3 7.3 2.6 1.5 1.6 2.0 1.4 1.2 1.3 2.9 Unknown ; signal peptide Putative transporter Regulator ; phage shock protein Regulator ; phage shock protein Regulator ; phage shock protein Inner membrane Sulphurtransferase yncJ ( b1436 ) yhjX pspA pspB pspC pspD pspE 1.6 44.1 1.1 1.6 1.7 1.2 1.2 3.1 165.6 1.8 1.5 2.1 1.2 1.5 PspF , IHF 1.3 1.9 5.0 2.4 4.7 2.7 2.6 1.4 PspF , IHF PhoB RbsR , Crp 37.9 22.0 2.6 1.2 1.8 2.3 0.8 1.1 Inner membrane Unknown Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport pspG ( yjbO ) ytfK rbsD rbsA rbsC rbsB rbsK rbsR 0.7 3.8 1.8 1.0 1.6 1.4 1.2 0.8 0.9 3.0 8.2 5.4 21.3 6.6 9.0 2.8 manX Mannose permease 4.2 2.1 1.1 5.0 manY Mannose permease 3.4 2.6 1.1 5.2 manZ Mannose permease 6.5 5.7 1.0 16.7 NagC , DgsA , Crp a. Genes and operons which are induced 10-fold in three independent experiments are listed with the average fold induction for the three experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18710431" target="_blank">18710431</a>]<br></li>
+<li>Activators that , like PspF , lack an N-terminal domain ( e.g. CheB , HrpR and HrpS ) or in which the N-terminal domain has been deleted ( e.g. DctD , NifA , XylR and DmpR ) have elevated or constitutive activity ( Ronson , 1988 ; Huala & Ausubel , 1989 ; Huala et al. , 1992 ; Gu et al. , 1994 ; Lee et al. , 1994 ; Xiao et al. , 1994 ; Berger et al. , 1995 ; Grimm et al. , 1995 ; Shingler & Pavel , 1995 ; Perez-Martin & Lorenzo , 1996b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_6">
+Dworkin J , Jovanovic G , Model P ( 1997 ) Role of upstream activation sequences and integration host factor in transcriptional activation by the constitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></label>
+<input id="act_similarity_6", type="checkbox">
+<div class="ACT_similar">
+<li>Role of upstream activation sequences and integration host factor in transcriptional activation by the consitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>Role of upstream activation sequences and integration host factor in transcriptional activation by the constitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li></div>
+<li>Both probes identiﬁed the same proteins : AtoC , the product of b1201 , FhlA , HyfR , NRI , PrpR , PspF , RtcR , YfhA YgaA , YgeV , and ZraR ( HydH ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Apr. 1996 , p. 1936 -- / 96 / $ 04.0010 Copyright q 1996 , American Society for Microbiology Identiﬁcation , Nucleotide Sequence , and Characterization of PspF , the Transcriptional Activator of the Escherichia coli Stress-Induced psp Operon GORAN JOVANOVIC , LORIN WEINER , † AND PETER MODEL * Rockefeller University , New York , New York 10021 Received 15 November 1995/Accepted 26 January 1996 The phage shock protein ( psp ) operon ( pspABCE ) of Escherichia coli is strongly induced in response to a variety of stressful conditions or agents such as ﬁlamentous phage infection , ethanol treatment , osmotic shock , heat-shock , and prolonged incubation in stationary phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1997 , p. 5232 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Autogenous Control of PspF , a Constitutively Active Enhancer - Binding Protein of Escherichia coli GORAN JOVANOVIC , † JONATHAN DWORKIN , AND PETER MODEL * Laboratory of Genetics , The Rockefeller University , New York , New York 1002l Received 10 March 1997/Accepted 3 June 1997 Escherichia coli s54-dependent phage shock protein operon ( pspA to - E ) transcription is under the control of PspF , a constitutively active activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>This could have a basis in changes in self-association and related protomer conformations of PspF , which prevents the R ﬁnger engaging the analogue of the ATP g phosphate , and is the focus of our future research .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Attempts to study the behavior of PspF at low concentrations on native gels led to dreadful smears , and the lower the concentration the lower the mobility of the smear , even in the presence of non-ionic detergents ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>An EM structure for such a complex was recently reported for PspF / 54 , in which two-thirds of the mass for 54 was bound to the top side of the ATPase , slightly offset from its center ( Rappas et al. 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16751184" target="_blank">16751184</a>]<br></li>
+<li>PspF responds to heat-shock and ethanol treatment , but the strongest reaction is evoked by bacterial membrane impairments coincident with the dissipation of charge as by the gene IV protein of ﬁlamentous phages ( e.g. f1 , M13 ) or by carbonylcyanide m-chlorophenylhydrazone ( CCCP ; Model et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>The relative amounts of PspF ( in arbitrary units ) obtained in three replicate experiments were , as shown in lanes 1 through 5 , 1 , 0 , 1.360.4 , 1.160.3 , and 1.260.4 , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Addition of increasing amounts of His-tagged PspF shifts the probe ; at 15 nM , none of the free probe band remains ( Figure 6B , lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Middle part , DNase I protection of supercoiled DNA ( pBRPS-1 ) in the presence of His-tagged PspF ( 5 and 25 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PMF maintenance under pIV stress can be attributed to a functioning Psp response , which is consistent with Psp 's proposed role under stress [ 25 , 29 , 30 ] , since a drop in PMF is only evident in stressed cells where the Psp activator protein PspF is deleted ( MG166DpspF ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></li>
+<li>Transcription of pspF does not RESULTS show any change in response to pIV expression , consistent with pIV Secretin Stress Results in the Up-regulation of pspAB - control of PspF being exclusively at the level of activity ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspG Is an Effector of the PspF Regulon -- Considering the putative membrane location of PspG , and that PspG is not involved in psp regulation per se , it is likely that this protein is an effector of the psp system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspG up-regulation does not induce the PspF regulon response ,2 therefore we assume that PspG can function independently of the inducing signal and the Psp response .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Sigma isomerisation assays were conducted using 1 mM s54 , 4 mM dGTP and 16 nM 32P-labelled 88mer early melted promoter DNA duplex .17 Lane 1 represents labelled DNA alone ; lane 2 , s54 bound to labelled DNA represented by s -- DNA ; lane 3 , sigma isomerisation , with the isomerised complex marked as sss -- DNA , in the presence of 2.5 mM wild-type PspF and hydrolysable nucleotide ( dGTP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Lane 10 , sigma isomerisation , in the presence of 2.5 mM wild-type PspF bound to UAS in a ratio of 8:1 and hydrolysable nucleotide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Pre-incubation of 3 mM PspA with 1 mM PspF ( bound to UAS DNA ) resulted in around 72 % inhibition of sigma isomerisation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Lane 1 , UAS DNA alone ; lane 2 , UAS DNA bound by PspF ; lane 3 , UAS DNA and 360 nM PspA ; lane 4 , UAS DNA and 180 ng BSA ; lane 5 , UAS DNA , PspF and BSA ; lane 6 , UAS DNA , PspA and BSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Lanes 7 -- 11 represent the incubation of increasing concentrations of PspA ( 45 , 90 , 180 , 360 nM ) with the UAS-bound PspF complex in the pre-sence of 180 ng BSA as non-speciﬁc protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The 32Pi released from [ g32P ] ATP by PspF per minute was shown to be inhibited by the pre-incubation of PspF with increasing concentrations of PspA , with complete inhibition at a ratio of 0.5 mM PspF to 2 mM PspA ( Figure 9 ( a ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>( b ) A graphical representation of the effects of increasing substrate concentration on turnover of ATP by either 250 nM PspF alone ( ﬁlled squares ) or 250 nM PspF pre-incu-bated with 500 nM PspA ( open squares ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>To analyse the ATPase activity of PspF and the effects of PspA on this activity we employed a thin-layer chromatography approach and measured the free orthophosphate ( 32Pi ) released from radiolabelled [ g32P ] dATP under different conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Even at low concentrations ( 2 -- 5 nM ) PspF is able to hydrolyse ATP ( Jörg Schumacher , personal communication ) .23 To ascertain whether PspA alters the ATPase activity of PspF , 500 nM PspF was pre-incubated for ten minutes with increasing concentrations of Figure 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>A ratio of 0.5 mM PspA to 0.25 mM PspF , where PspF still has ATPase activity but is reduced compared to PspF in the absence of PspA , was used to determine whether PspA alters the apparent Vmax , and Km of the ATPase reaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA ( 0.5 , 0.75 , 1 , 1.5 , 2 and 2.5 mM ) in a total volume of 20 ml of protein storage buffer to rule out any effects of added buffer on the ATPase activity of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Graphical representation of the effects on PspF ATPase activity of pre-incu-bation with increasing concentrations of PspA ( 0.5 , 0.75 , 1 , 1.5 , 2 and 2.5 mM ) for ten minutes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>It is ( at least ) a bi-functional protein that controls proton leakage accoss the membrane under stress conditions ,12 but is also known to represses the activity of the PspF transcriptional-activator by binding to it.13-15 While PspA has been shown to exist in at least two oligomeric states in vitro , low order ( probably a 6-mer ) and high order ( 36-mer ) oligomers ,12 , 13 , 16 the stoichiometry of the functional PspA complexes in vivo is undetermined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20830338" target="_blank">20830338</a>]<br></li>
+<li>Transcription of the psp genes is controlled by 54 s - RNA polymerase and activated by the bacterial enhancer-binding protein PspF ( reviewed by Model et al. , 1997 ; Darwin , 2005 ; Wigneshweraraj et al. , 2008 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Under non-stress growth conditions , PspA inhibits the ATPase activity of PspF and negatively controls expression of the psp genes ( Elderkin et al. , 2002 , 2005 ; Joly et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Under non-stress conditions in enterobacteria , 54 s - RNA polymerase-dependent psp expression is negatively regulated by PspA via its direct ~ 1 : 1 binding to the surfaceexposed hydrophobic ` W56 loop ' of the hexameric bacterial enhancer-binding protein PspF ( Joly et al. , 2009 ; Zhang et al. , 2013 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>The data presented here show that PspF is negatively autogenously regulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The expression of PspF is negatively autogenously controlled ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>We present evidence that yjbO expression is driven by 54-RNA polymerase , activated by PspF and integration host fac - tor , and negatively regulated by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>This data shows that expression of pspG is negatively regulated by PspA and its transcription may be activated by PspF via a 54 promoter and positively regulated by PspBC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Because PspA and the previously unknown PspF regulon member , PspG , are so tightly co-regulated , our results raise issues about previously described phenotypes attributed to PspA , in particular the contribution of PspG to these phenotypes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>This is in good agreement with in vitro data establishing that at least three PspA proteins are necessary to-bind PspF for negative control ( Zhang et al. , 2013 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>This peak stoichiometry of GFPs per spot corresponds well to the gel filtration data from Joly et al. 13 where six subunits of PspA were bound to the hexameric PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20830338" target="_blank">20830338</a>]<br></li>
+<li>The PspC putative periplasmic domain ( residues 69 -- 119 , present in the PspC40 -- 119 fragment that induces psp but not in the PspC1 -- 68 or PspC40 -- 68 fragments , which do not induce psp ) can function independently of upstream signalling and so may be directly involved in the release of the PspA -- PspF inhibitory complex and hence functions positively in psp induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>The integrity of the putative leucine zipper motif of PspC is required for psp induction The fragmentation approach demonstrated that the putative periplasmic region of PspC may be involved in psp induction and hence presumably might receive the inducing signal or contact PspA in order to release the negative regulation that PspA imposes on PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Importantly , in the absence of stress , PspBC overexpression has been shown to strongly induce psp ( Weiner et al. , 1991 ; Maxson & Darwin , 2006 ) , implying that under these conditions PspBC may bypass upstream signalling pathways and directly release the PspA -- PspF inhibitory complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Gueguen et al. ( 2009 ) proposed that the cytoplasmic domains of PspC and PspB are involved in the negative regulation of psp in the absence of stress , and then interact with the Psp [ A -- F ] inhibitory complex upon stress to release PspF negative regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Under inner membrane ( IM ) stress , induction of psp involves the IM-bound PspB and PspC proteins sensing stress and recruiting the PspA-PspF inhibitory complex to the IM ( Jovanovic et al. , 2010 ; Yamaguchi et al. , 2010 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>Relieving the inhibition of PspF imposed by PspA involves changing PspA 's interacting partner from PspF to PspBC , resulting in strong induction of psp genes and formation of PspA effector complexes at the IM ( Yamaguchi et al. , 2013 ; Mehta et al. , 2013 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>How relief of repression is achieved is not clear , but likely involves the direct or indirect action of other psp proteins upon PspF and/or PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>This ultimately results in the release of the PspA -- PspF inhibitory complex , leading to psp induction and greatly elevated expression of the Psp proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Under IM stress , PspF is stably bound to the nucleoid and involved in transcription while V -- PspA [ or eGFP ( enhanced green fluorescent protein ) -- PspA ] is found within static polar and dynamic lateral IM complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>When the dynamics of lateral membrane eGFP-PspA complexes are abolished or when PspA is mutated so it can interact with PspF and PspBC but can not bind to the IM and form the lateral membrane complexes , it is able to form the polar IM complexes and respond to PspBC-dependent IM stress but is unable , for example , to conserve the pmf .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>Deletion or mutation of the VIPP1 gene prevents the formation of thylakoids and thus these organisms can not carry out photosynthesis .15,16 The binding of PspA to the AAAþ domain of PspF may change the protomer structure of PspF to account for the inhibition of formation of the higher order self-associated PspF complex that depends upon binding ADP · AlF .13 x The changes in ATP hydrolysis that PspA brings about may also be related to changes in self-association .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In the ﬁrst , PspA inhibits the access of nucleotides to the active sites on PspF or in the second , PspA prevents the self-association of PspF monomers and as a consequence the association state required for ATP hydrolysis is not reached .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Binding of PspA to the PspFDHTH : ADP · AlFx complex suggests that PspA may be able to recognise more than one functional state of PspF , one which exists prior to-binding ADP · AlFx , and by inference ATP , and that which exists at the transition state of ATP hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Binding of PspA to either functional state of PspF may result in an inhibition of ATP hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA forms a complex with PspF , independent of s54 Since pre-incubation of PspA with PspF was required to inhibit both PspF-dependent transcription and sigma isomerisation , it is possible that PspA modiﬁes PspF and/or forms a binary complex with PspF to bring about inhibition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>So far our experiments have clearly demonstrated that one function of PspA is to inhibit the productive interaction between PspF and s54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In our current model , under normal conditions , PspF is bound to PspA , which in turn is attached to a PspB/C membrane-bound complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19614590" target="_blank">19614590</a>]<br></li>
+<li>In each case a binary complex of PspA -- PspFDHTH forms , distinguished by whether or not ADP · AlFx is bound or not and whether PspF is in the trapped state or not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA inhibits the ATPase activity of wild - type PspF Previous results showed that PspA inhibits the ability of PspFDHTH to be trapped by ADP · AlFx implying that when PspA and PspF interact to form a complex , the interaction of PspF with nucleotide may be altered .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Since interactions of PspF with nucleotide may be altered or inhibited by PspA , we exploited the ADP · AlFx-dependent trapping to explore further the mode of PspA activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Thus PspA may interact with the ADP · AlFx-bound state of PspF to inhibit transcription , and may also prevent the formation of that nucleotide-bound state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA may therefore interact with PspF to prevent formation of PspF : ADP · AlFx complex and hence subsequent nucleotide-dependent interactions with s54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Due to the differences in methodology between transcription assays described11 and in this study ( Figure 2 ) the inhibi-tory effects of PspA on sigma isomerisation cata-lysed by NifA central domain and phosphorylated NtrC were analysed to further conﬁrm that negative effects of PspA are speciﬁc to PspF , and do not play a role in global regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The possibility was raised by the fact that PspA functions in trans upon the AAAþ domain of PspF common to all s54 activators and the reported inﬂuence of PspA upon activation by NtrC .11 We , on the other hand , were unable to show any negative regulation of the AAAþ central domain of NifA nor NtrC by PspA ( Figures 2 ( c ) and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>To determine how PspF production is affected by PspA , the negative regulator of the pspA to - E operon , or by PspB and - C , the positive regulators , we measured the synthesis of wild-type activator from the chromosomal copy of pspF1 in strains overproducing PspA [ K561 ( pJLB24 ) ; pJLB24 ( 25 ) carries the psp gene under the control of the lac UV5 promoter-operator ] , deleted for PspA to - E ( J134 ) , or overproducing the psp operon inducer , f1 pIV [ K561 ( pNAL200 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Although some inducing stimuli are more dependent on the presence of PspB and PspC than others , the common step needed to increase expression of the operon is probably this loss of PspA 's repressive effect on PspF 's function as a transcriptional-activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Strains lacking functional IHF will therefore under normal growth conditions have increased concentrations of the activator PspF and decreased concentrations of the negative regulator PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Since overproduction of PspF does stimulate PspA synthesis from the pspA to - E promoter ( 7 , 9 ) , it is likely that PspF is a target for regulation by PspA and that overproduction of the activator bypasses this regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Here we have shown that the pspG promoter is more sensitive to PspF activation than the pspA promoter implying that under stress conditions and release of PspA negative regulation , pspG responds rapidly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Hence , the increased level of pspG expression in IHF mutants should be because of the high sensitivity of the pspG promoter to PspF activation and diminished negative regulation by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>pspG is physically unlinked with the psp operon but is co-conserved 54 and co-regulated with the psp operon genes by , PspF , IHF , and PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>It is striking that the psp operon and the pspG 54 promoters , which are physically unlinked , are both regulated by PspF , PspA , and IHF in exactly the same fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspF , PspF HTH and their His-tagged derivatives overproduced from an inducible , heterologous promo-ter activate psp expression under both noninducing and inducing conditions , bypassing negative regulation by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Because the expression of the activator PspF is constant under all growth conditions , the key regulatory point under normal growth conditions is strong negative regulation imposed by PspA , whereas under inducing conditions this regulation is lifted leading to the coordinated expression of the psp operon and pspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Since PspA levels massively increase under inducing conditions the state of PspA or PspF must somehow change to allow induction of the psp operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In the absence of inducing stimuli , multicopy-plasmid-borne PspF or PspFDHTH overcomes repression of the psp operon mediated by the negative regulator PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>These roles are suggested by the association of PspA homologues with membranes in a variety of organisms that lack the PspF activation system , notably the VIPP1 protein of Pisum sativum and A. thaliana .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Induction of PspF production by IPTG led to a modest further increase in the amount of PspA ( Figure 2B , compare lanes 3 and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>There appears to be no comparable circuit for PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Autogenous regulation of PspF production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Upon damage to the inner membrane , PspB/C appears to undergo structural changes , which leads to the release of PspF from PspA [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19614590" target="_blank">19614590</a>]<br></li>
+<li>Production of chromosomally encoded PspF is independent of PspA , PspB , and PspC and of induction by f1 pIV .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Elderkin , S. , Jones , S. , Schumacher , J. , Studholme , D. and Buck , M. ( 2002 ) Mechanism of action of the Escherichia coli phage shock protein PspA in repression of the AAA family transcription factor PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19969540" target="_blank">19969540</a>]<br></li>
+<li>In vitro assays showed that PspA inhibits transcription from the pspA promoter , which was independent of PspF binding to its UAS .11 The relationship that exists between PspF and PspA also appears to exist between other transcription activators such as HrpR and HrpS , which may form a hetero-oligomer , and are negatively regulated by the HrpV protein of Pseudomonas syringiae ( HrpV however shares no sequence homology to PspA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspF , like NifA , is negatively regulated by its partner protein PspA .5 A previous study11 showed that PspA inhibits s54-dependent transcription initiation from the pspA promoter : ratios of 300 nM PspA to 4 nM PspF gave total inhibition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>As a negative regulator , PspA may provide the equivalent of the regulatory domain , found in many EBPs , while PspF provides the DNA binding and activation functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>( b ) A comparison of the effects of PspA on NifA PspA was analysed to determine whether the binding site of PspA with PspF is available when PspF is bound to s54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Since ATP binding and hydrolysis are needed for activation of transcription by PspF , these effects offer a clear set of possibilities to explain inhibition by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Interactions involving PspF and nucleotide are changed by the action of PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Interactions analogous to those of PspA and PspF may occur in other AAAþ proteins , where accessory proteins and ligands control their activities .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Molecular determinants for PspA-mediated repression of the AAA transcriptional-activator PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Overproduction of PspF can then overcome the negative regulation mediated by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>One role of the PspA protein is to impose negative control on PspF activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>One key regulatory point is the negative control of PspF imposed by its binding to PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Our results show that the PspA protein speciﬁcally negatively controls-the-activity of the PspF activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In contrast PspF is not , and is regulated by a second protein PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>An example is PspF , which is negatively regulated by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In the absence of an inducing stimulus , it would be the ratio of PspA to PspF that determines the activity of the pspABCE promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Instead , as described below , PspA controls PspF activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>PspA inhibits the ATPase activity of wild-type PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA is known to exert its effects upon steps in transcription that may depend upon the action of the AAAþ domain .11 The PspA protein appears bi-functional , and has a role in helping the E. coli cell cope with the insertion of secretins into the cell membrane14 that is in addition to its role in interacting with PspF to control transcription of the psp operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>These changes and the complexes that form between PspF and PspA can explain how PspA exerts its negative effects upon transcription activated by PspF , and are of signiﬁcance when considering how activities of other AAAþ proteins might be controlled .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Measuring the direct effects of PspA upon self-association of PspF should be revealing in working out how regulation by controlled assembly relates to psp transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Given that PspA inhibits PspF-dependent transcription ( Figure 1 ) 11 we next investigated , using a variety of in vitro assays , how PspA imposed negative control on PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Here we describe , using puriﬁed components , in vitro experiments that show that the PspA protein directly interacts with PspF to inhibit transcription , and changes interactions that the PspF protein makes with nucleotides .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA binds to PspF , which blocks its ability to activate transcription ( 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>We show that PspA directly and speciﬁcally acts upon and binds to the AAAþ domain of the PspF transcription activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Cells were treated with 2 mM IPTG for 30 minutes to induce PspF synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF specifically regulates only members of the PspF regulon : pspABCDE and yjbO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>In fact , PspF specifically regulates only pspABCDE and pspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspF lacks an ami-no-terminal regulatory domain , and it activates transcription without phosphorylation or an activating ligand ( 91 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>This inhibition occurs partly by diminishing NifA ATPase activity and the ability of NifA to-bind UAS DNA .25,26 PspF lacks an N-terminal regulatory domain and like NifA is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>IHF enhances psp operon transcription ( 20 , 46 ) and facilitates binding of PspF to its upstream activation sequences in the psp operon regulatory region , autogenously down-regulat-ing pspF transcription ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>IHF works to enhance transcriptional activation of the psp operon ( 20 , 46 ) and facilitates the binding of PspF to upstream activation sequences I and II in the psp operon regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>These data strongly support an autogenous control mechanism for pspF transcription that is mediated by the binding of PspF to the psp enhancer ( UASs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Thus IHF enhances both the activation of psp transcription and the negative autogenous control of pspF keeping the PspF concentration at a low level ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Moreover , PspF and IHF bind cooperatively in the psp promoter-regulatory region , and this effect is dependent on the presence of an intact psp enhancer ( Jovanovic & Model , 1997b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF , even when present at 50 nM , binds speciﬁcally to the UASs , and no other binding of PspF is observed in the psp promoter-regulatory region , while PspFDHTH at 200 nM does not bind , speciﬁcally or nonspe-ciﬁcally , to the DNA ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The PspFDHTH comprises the catalytic AAAþ domain of PspF , which activates transcription and hydrolyses nucleotides , but is unable to-bind UAS DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspFDHTH , which is unable to-bind DNA , can also activate transcription but only if provided at about 300 times the concentration of wild-type PspF protein ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Interaction from sol-ution is consistent with results obtained in vitro in which mutant PspF that can not bind DNA activates psp transcription when present at a concentration 300-fold higher than wild-type PspF ( Dworkin et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The data obtained in this study show that when overproduced and present in a 140-fold higher concentration than chromosomally encoded PspF , the DNA-binding mutant activates pspA to - E transcription even in unstimulated cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>In Escherichia coli transcription of the pspABCDE and pspG genes requires activation of s54-RNA polymerase by the enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Jovanovic G , Rakonjac J & Model P ( 1999 ) In vivo and in vitro 54 activities of the Escherichia coli s transcriptional-activator , PspF , and its DNA-binding mutant , PspFDHTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19076234" target="_blank">19076234</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_130">
+In vivo and in vitro activities of the Escherichia coli sigma54 transcription activator , PspF , and its DNA-binding mutant , PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></label>
+<input id="act_similarity_130", type="checkbox">
+<div class="ACT_similar">
+<li>In vivo and in vitro activities of the Escherichia coli sigma54 transcription activator , PspF , and its DNA-binding mutant , PspFDHTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>In vivo and in vitro activities of the Escherichia coli s54 transcription activator , PspF , and its DNA-binding mutant , PspFDHTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li></div>
+<li>This implies a possible inﬂuence of PspF on its own transcription and suggests that pspF transcription may be autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF inhibits its own transcription in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Hence , PspF binding to the UASs might be expected to inhibit transcription of pspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Hence , wild-type PspF inhibits its own transcription presumably by binding to the UASs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>In this study we address the speciﬁcs of the putative pspF autoregulation and examine the roles of the UAS elements and PspF binding and the potential inﬂuence of PspA in the regulation of pspF transcription under normal growth conditions or with inducing stimuli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Since binding of wild-type PspF to the psp enhancer facilitates activation of pspA to - E transcription , the chromosomally encoded ( pspF877 ) DNA-binding mutant PspFDHTH , in which the helix-turn-helix ( HTH ) motif is deleted , is not capable of activating pspA to - E transcription in vivo , either under noninducing or inducing conditions ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The amounts of PspF and PspFDHTH protein in vivo correlate with activation of transcription of pspA to - E under both noninducing and inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Model for activation of the psp operon transcription by PspF activator under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>) transcription activator protein PspF for negative regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></li>
+<li>PspA negatively regulates psp transcription by binding to the activator protein PspF ( 22 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>B , the addition of increasing concentrations ( 0 -- 400 nM ) of wild type PspF to the transcription assay in A. C , the addition of increasing concentrations ( 0 -- 200 nM ) of IHF to the transcription assay in A. DISCUSSION Our data show that expression of pIV in both E. coli and S. typhimurium results in the significant up-regulation of psp-ABCDE and pspG ( yjbO ) transcripts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>It has been shown that this is due to the activated Psp response as cells lacking the activator of psp transcription , PspF , fail to maintain PMF at wild-type levels [ 25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></li>
+<li>Transcription in vitro ( activated by PspF ) was slightly inhibited by IHF ( data not shown ) , which is consistent with the observation that IHF stimulates transcription only with a speciﬁc activator ( Dworkin et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>However , under the conditions of our experiment on in vitro transcription from P6 , with PspF as an activator , IHF slightly inhibited the reaction ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>This allows the cell to maintain a constant and low intracellular level of the activator , so that the pspA to - E promoter can be induced but is not gratuitously activated , and perhaps to prevent PspF from crossactivating heterologous s54-dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>An increase in the general intracellular concentration of molecules after hyperosmotic shock might also facilitate direct interaction between PspF ( or some other heterologous s54 activator ) and the s54-RNAP holoenzyme .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF and PspA may compete for the same regulatory target on s54-RNAP holoenzyme , and induction of the psp operon by high activator concentration in vivo could be due to mass action , either by PspF bound to its UASs , or by direct interaction from/in solution between PspF or PspF HTH and s54-RNAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>In the model shown in Figure 9 , psp transcription is initiated by interaction of s54-RNAP with the active PspF complex bound to the psp enhancer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspA inhibits open complex formation of PspF-dependent transcription Open complex formation , a step in transcription initiation , was assayed using a gel mobility shift assay .18,19 The open complex assay involves s54 RNA holoenzyme bound to an 88 bp homoduplex S. meliloti nifH promoter DNA fragment ( see Materials and Methods ) as a closed complex , which is activated in the presence of PspF and ATP to form an open complex that is heparin stable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>IHF bound between the PspF UASs and pspA-E s54-dependent promoter bend DNA and PspF molecules bound to the UASs interact with s54-RNAP ( arrow ) , activate pspA-E transcription and autogenously regulate pspF transcription ( bar ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>This implies that when produced at high levels , PspFDHTH directly interacts with s54-RNAP bound to the pspA to - E promoter and that binding of the wild-type PspF activator to a speciﬁc UAS ( s ) and the presence of IHF-bent DNA must increase the effectiveness of the activator-s54-RNAP contact approximately 100 times .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>ADP-AlFx , frequently used as a transition state analog for ATP hydrolysis , is known to stabilize the ring form of PspF and its complex with 54 ( Chaney et al. 2001 ) , and to alter the protein/DNA footprint of an activated form of DctD ( Wang et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16751184" target="_blank">16751184</a>]<br></li>
+<li>When E 54 was used , an unspeciWc activator protein HTH-PspF , which can stimulate transcription from 54-dependent promoters independently of the DNA sequence ( Jovanovic et al. 1999 ; Janaszak et al. 2007 ; Wigneshweraraj et al. 2003 ) , was added to 1 M together with 2.5 mM ATP , and incubation was continued for 10 min ( in experiments with other holoenzymes , this stage was omitted ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20700605" target="_blank">20700605</a>]<br></li>
+<li>We discuss our results i relation to the oligomeric structure of PspF and the creation of the active site for ATP hydrolysis between protomers of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspF hydrolyzed ATP even at very low protein concentrations ( 2.5-5 nM ) , while PspF HTH was active only at much higher concentrations ( 150 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>ATP-dependent transcriptional activation by bacterial PspF AAA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15491603" target="_blank">15491603</a>]<br></li>
+<li>Changes in Km and Vmax calculated from ATPase assays suggest changes in the nucleotide binding and active sites of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>EMSA , EM and footprinting experiments were used to check the possible binding of PspF and NtrC-P ( NtrC phosphorylated in vitro by carbamyl phosphate ) to the 707 bp DNA fragment W1-W2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>Therefore , PspFDHTH , a derivative of PspF , devoid of DNA binding capability but retaining its ATPase activity , was used for transcription in vitro , taking advantage of the relaxed speciﬁcity of ATP-dependent activators acting in solution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>A protein induced DNA bend increases the speci ® city of a prokaryotic enhancer-binding protein , PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Unlike other EBPs , PspF and its DNA-binding mutant oligomerize in solution in the absence of ATP and speci ® c DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Thus , the ATPas activity of PspF is stimulated by speci ® c DNA and is 30-fold higher than that of the DNA-binding mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF catalyzes ATP hydrolysis , and in the presence of speci ® c DNA has approximately 10 ± 30-fold higher activity than the DNA-binding mutant protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The rate of hydrolysis of ATP catalyzed by PspF is stimulated only about twofold by DNA containing the psp enhancer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Puri ® ed PspF is not modi ® ed and has an ATPase activity that is increased twofold in the presence of DNA carrying the psp cis-acting sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The ATPase activity of PspF increased two - to threefold when speci ® c DNA was present but not when non-speci ® c DNA was added .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The enzyme activity of 5 nM PspF in the presence of speci ® c DNA was similar to that obtained with 150 nM PspF HTH protein alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Although the intermediate bands are not abundant or well de ® ned , their presence suggests either that multiple PspF-binding sites are present in the psp cis-acting sequence or that oligomerization of PspF bound to one or more sites occurs in discrete steps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Overproduced His-tagged PspF ( Figure 2B , lanes 3 and 6 ) or PspF HTH ( data not shown ) activate pspA expression in the absence of any other stimuli as do native PspF and PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Transcripts from the pspG promoter increased with increasing concentrations of PspF ( Fig. 6B ) and it appears that in the absence of IHF the pspG promoter is much more sensitive to PspF concentration than the pspA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Consistent with this data and the increased sensitivity of the pspG promoter to PspF in comparison to the pspA promoter ( Fig. 6B ) , PspG expression in an IHF mutant ( MC1068 ) is increased both before and after induction by pIV in vivo ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>The target for activation by PspF , the pspA to - E operon , is induced by expression of ﬁlamentous phage pIV protein , many of its homologs , and a variety of other stresses including extreme heat-shock , hyperosmotic shock , inhibition of fatty acid biosynthesis , uncouplers , and nutrient shifts that reduce the energy charge of the cell ( reviewed in reference 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Laboratory of Genetics The Rockefeller University 1230 York Avenue , New York NY 10021 , USA # 1999 Academic Press Keywords : s54 ; PspF ; PspF HTH ; oligomerization ; psp enhancer * Corresponding author Introduction Transcription of the phage-shock protein ( psp ) operon ( pspA-E ) of Escherichia coli is under control of the alternative sigma factor , s54 , is stimulated by integration host factor ( IHF ) , and is dependent on a cis-acting sequence and the PspF activator protein ( Weiner et al. , 1991 , 1995 ; Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Identi ® - cation , nucleotide sequence , and characterization of PspF , the transcriptional-activator of the Escherichia coli stress-induced psp operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Jovanovic , G. , Weiner , L. , and Model , P. ( 1996 ) Identiﬁcation , nucleotide sequence , and characterization of PspF , the transcriptional-activator of the Escherichia coli-induced psp operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14731270" target="_blank">14731270</a>]<br></li>
+<li>Results Overproduction and activity of native and His-tagged PspF and PspF HTH proteins in vivo We showed previously that in vivo pspF is transcribed and translated at a modest level that does not increase in response to stimuli that induce the pspA-E operon ( Jovanovic et al. , 1996 , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The enhancer is located so that it facilitates transcription of the pspA-E operon , and interferes with pspF transcription when PspF is bound to it ( Jovanovic et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF protein levels in strains in which proteins encoded by the pspA to - E operon are absent , overproduced , or induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Negative autoregulation of PspF is continual and not affected by stimuli , like f1 pIV , that induce the pspA to - E operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>However , when overproduced from multicopy plasmids , both PspF and PspFDHTH activate transcription and induce the pspA to - E operon in the absence of any other stimuli ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The search for a possible enhancer was focused on sequences resembling those of PspF - and 54 NtrC-binding sites , since PspF is the activator of the sdependent stress-induced pspA -- E operon , and NtrC 54 activates a few s - dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>PspF , the activator of the pspA -- E operon , occurs in cells at low concentrations and is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>The continual and independent autogenous control of PspF maintains the physiological intracellular concentration of the activator at a low level , which , in stimulated cells , is sufﬁcient for speciﬁc control and induction of the pspA to - E operon by PspF bound to the psp enhancer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>When the strain is also deleted for pspF , low , but distinct activation of the operon occurred in response to hyperosmotic shock whether or not the enhancer was present , although induction was somewhat higher when the PspF UASs were present ( Figure 8B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>pspG is dispensable for basal level expression and induction of the PspF regulon by pIV , ethanol shock , or extreme heat-shock under normal growth conditions and so PspG is not acting to regulate the expression of psp genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>However , the low-level psp expression that occurs in response to hyperosmotic stimulation even in the absence of PspF can not be explained solely by changes in supercoiling .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF negatively autoregulates its own synthesis by binding to the same sites that activate psp operon expression ( 88 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Full expression of the psp operon upon hyperosmotic shock depends on wild-type PspF , but only partially requires the presence of the psp enhancer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Thus , after hyperosmotic shock the psp operon can be expressed even when no PspF is present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Expression of the pspA-E operon was not further increased upon IPTG induction of PspF synthesis , presumably because even the uninduced level of PspF expression saturates the system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Finally , placing the entire pspA to - E operon on the plasmid together with pspF1 ( pBRPS-1 [ 27 ] ) , which substantially increases the uninduced level of all the psp proteins , leads to a reduction in PspF production ( Fig. 4 , lane 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">PspF protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Analysis of 6 HisPspF HTH by native gel electrophoresis , showed that it oligomerizes in the same fashion as the wild-type protein ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>ATP-dependent transcriptional activation by bacterial PspF AAA protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15491603" target="_blank">15491603</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_3">
+Dworkin J , Jovanovic G , Model P ( 1997 ) Role of upstream activation sequences and integration host factor in transcriptional activation by the constitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></label>
+<input id="dom_similarity_3", type="checkbox">
+<div class="DOM_similar">
+<li>Role of upstream activation sequences and integration host factor in transcriptional activation by the consitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>Role of upstream activation sequences and integration host factor in transcriptional activation by the constitutively active prokaryotic enhancer-binding protein PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li></div>
+<li>Control extracts from cells that contained the vector pQE-32 were eluted from Ni-NTA resin columns with imidazole at concentrations corresponding to those used for elution of PspF or PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>c Strain K1247 [ D ( pspF-pspABCDE ) ] , carrying the pspF-lacZ transcriptional fusion vector pMJ12 , was used to obtain b-galactosidase activity in the absence of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The PspC putative periplasmic domain ( residues 69 -- 119 , present in the PspC40 -- 119 fragment that induces psp but not in the PspC1 -- 68 or PspC40 -- 68 fragments , which do not induce psp ) can function independently of upstream signalling and so may be directly involved in the release of the PspA -- PspF inhibitory complex and hence functions positively in psp induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>The integrity of the putative leucine-zipper motif of PspC is required for psp induction The fragmentation approach demonstrated that the putative periplasmic region of PspC may be involved in psp induction and hence presumably might receive the inducing signal or contact PspA in order to release the negative regulation that PspA imposes on PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>Nevertheless , we explored the possibility that PspF requires modi ® - cation for activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Oguiza & Buck ( 1997 ) have shown that PspF HTH has a GTPase activity , and hence the activator may use either ATP or GTP as a hydrolyzable nucleotide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Thus , the possible changed interaction between nucleotide and PspF due to PspA may result in altered ATPase activity of the activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The physical uncoupling of PspA from PspF may be important for roles PspA plays that are in addition to controlling the activity of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>So far our experiments have clearly demonstrated that one function of PspA is to inhibit the productive interaction between PspF and s54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>This suggests that localization of the inhibitory PspA-PspF complex or PspA within the PspA-PspBC regulatory complex at the poles of cells may depend on PspA interacting with the PspBC bound to CL-rich membrane domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li>
+<li>Since ATP-binding and hydrolysis are needed for activation of transcription by PspF , these effects offer a clear set of possibilities to explain inhibition by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Deletion or mutation of the VIPP1 gene prevents the formation of thylakoids and thus these organisms can not carry out photosynthesis .15,16 The binding of PspA to the AAAþ domain of PspF may change the protomer structure of PspF to account for the inhibition of formation of the higher order self-associated PspF complex that depends upon binding ADP · AlF .13 x The changes in ATP hydrolysis that PspA brings about may also be related to changes in self-association .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Thus PspA may interact with the ADP · AlFx-bound state of PspF to inhibit transcription , and may also prevent the formation of that nucleotide-bound state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA may therefore interact with PspF to prevent formation of PspF : ADP · AlFx complex and hence subsequent nucleotide-dependent interactions with s54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspA forms a complex with PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>We showed that PspA inhibits both the formation of a potential transition state intermediate complex PspFDHTH : ADPAlFx and also ATP hydrolysis by PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Binding of PspA to the PspFDHTH : ADP · AlFx complex suggests that PspA may be able to recognise more than one functional state of PspF , one which exists prior to binding ADP · AlFx , and by inference ATP , and that which exists at the transition state of ATP hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspF , a naturally simpler activator , is a useful tool for studying the processes involved in the activation of s54-dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Binding of nucleotides occurs at the interface between activator subunits and residues from the adjacent protomer contrib-ute to the active site for ATP hydrolysis .3 Here we explore how the activity of one activator of the s54 RNA polymerase , the Escherichia coli phage shock protein PspF , is controlled .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>We discuss our results i relation to the oligomeric structure of PspF and the creation of the active site for ATP hydrolysis between protomers of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The formation of the active site for ATP hydrolysis by PspF and other s54 activators is predicted to involve protomer -- protomer interactions that correctly position the catalytic arginine ﬁnger ( R ﬁnger , Figure 1 ) for ATP hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspF has a second helix that differs from those found in other EBPs and de ® nes a novel subfamily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Since the PspF second helix does not resemble that of any of the others , it is probably a member of a novel subfamily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Alignment of the PspF HTH motif with other members of the family shows homology with the relatively well-conserved ® rst helix and turn , but none with the second or recognition helix ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>However , the HTH motif of PspF , especially the second recognition helix , differs signiﬁcantly from that of other members of this EBP-family ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>The pspG promoter region contains regions predicted to bind PspF , IHF , and 54 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Insertion of the transposon resulted in the addition of 11 amino acids ( underlined amino acid sequence ) to the truncated PspF protein , creating the PspFDHTH protein ( the scheme of the protein is at the bottom of the ﬁgure : shaded box , central domain ; box with wavy lines , additional 11 amino acids ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Oligomerization of PspF and PspF HTH The molecular size of the 6 HisPspF monomer , calculated from its amino acid sequence and con - ® rmed by denaturing protein gels , is 38.5 kDa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Nucleotide positions and relevant amino acid residues of the pspF gene and encoded PspF protein are indicated ( 1/1 to 978/325 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>In the in vitro assays described below we used two forms of PspF , wild-type and a mutant , PspFDHTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Substitution of wild-type PspF by the mutant PspFDHTH was carried out to determine whether PspA targets the DNA-binding domain of PspF to cause inhibition ( Figure 4 lanes 17 -- 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Since the DNA-binding mutant and the wild-type PspF dimerize to the same extent , we reason by analogy that the dimerization determinants in PspF lie between amino acid residues 268 and 293 ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>By contrast , plasmid pMJ3 , which codes for a PspF protein that lacks the HTH motif ( PspFDHTH ) , was able to complement the identical chromosomal mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>In contrast , the addition of either speci ® c or nonspeci ® c DNA had little in ¯ uence on the extent of ATP hydrolysis by PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>In vivo and in vitro activities of the Escherichia coli sigma54 transcription activator , PspF , and its DNA-binding mutant , PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Nucleic Acids Res 35:2494 -- 2502 Jovanovic G , Rakonjac J , Model P ( 1999 ) In vivo and in vitro activities of the Escherichia coli 54 transcription activator , PspF , and its DNA-binding mutant , PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20700605" target="_blank">20700605</a>]<br></li>
+<li>A miniTn10 insertion mutant , pspF877 , encodes a protein lacking the helix-turn-helix ( HTH ) DNA-binding motif ( PspF HTH ; Figure 1 ) and does not support psp expression or induction when present as a chromosomal copy ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Since binding of wild-type PspF to the psp enhancer facilitates activation of pspA to - E transcription , the chromosomally encoded ( pspF877 ) DNA-binding mutant PspFDHTH , in which the helix-turn-helix ( HTH ) motif is deleted , is not capable of activating pspA to - E transcription in vivo , either under noninducing or inducing conditions ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The enzyme-activity of 5 nM PspF in the presence of speci ® c DNA was similar to that obtained with 150 nM PspF HTH protein alone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Puri ® ed mutant His-tagged PspF that lacks the C-terminal DNA-binding motif has a DNA-independent ATPase activity when present at 30-fold the concentration of the wild-type protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF catalyzes ATP hydrolysis , and in the presence of speci ® c DNA has approximately 10 ± 30-fold higher activity than the DNA-binding mutant protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF , wild-type protein : shaded box , central domain ; box with horizontal lines , HTH motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF protein ( numbers are amino acid positions ) : 1 to 325 , wild-type protein ; 1 to 268 , central domain ; 268 to 325 , DNA-binding domain ; 268 to 296 , linker subdomain ; 296 to 325 , HTH domain ; 1 to 206 , pMJ4-encoded protein ; 1 to 293 ( 304 ) , pMJ3-encoded protein ; 1 to 325 , pMJ5 - , pMJ6 - , and pMJ7-encoded protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>The reaction in lane 4 was conducted with 1000 nM PspF1 -- 275 ( PspF lacking the DNA-binding domain ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>The ﬁrst helix in the PspF HTH motif has a signiﬁcant degree of homology to the other s54-dependent activators , while the second helix ( YHQFRALLK ) of the putative DNA-binding motif is unique to the PspF protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>The greater solubility of PspF HTH compared to PspF must re ¯ ect the additional lack of a HTH motif in the DNA-binding mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>ATPase activity of PspF and PspF HTH The central domain of PspF contains a nucleo-tide-binding motif ( Figure 1 ) that should re ¯ ect an ATPase activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Like other EBP regulators , the PspF C-terminal domain contains a helix-turn-helix ( HTH ) motif , characteristic of DNA-binding proteins ( 39 ) ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>The COOH-terminal domain of PspF contains an HTH motif , characteristic of DNA-binding proteins ( 2 , 14 , 41 , 43 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Bailey and Davidson have studied the behavior of PspF HTH by equilibrium sedimentation and have also noted oligomerization ( M. Bailey and B. E. Davidson , personal communication ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Overproduced His-tagged PspF ( Figure 2B , lanes 3 and 6 ) or PspF HTH ( data not shown ) activate pspA expression in the absence of any other stimuli as do native PspF and PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>B , Lanes 1 and 2 , His-tagged DNA-binding mutant PspF HTH ( 6 HisPspF HTH ; 36 kDa ) puri ® ed from strain K1527 ( pMJ15 ) ; 0.3 and 0.31 M imidazole fractions , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Puri ® ed 6 HisPspF and 6 His PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Here , we have studied the in vivo activities of native or His-tagged PspF and PspF HTH , and the in vitro activities of the puri ® ed His-tagged proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Purification of the His-tagged PspF and PspF HTH proteins His-tagged PspF and PspF HTH were puri ® ed to near-homogeneity by af ® nity chromatography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF HTH at 200 nM does not shift the 260 fragment ( Figure 6B , lane 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>A schematic of functional domains of PspF and PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>It may be that the greater solubility of the PspF HTH mutant re ¯ ects such a conformational difference .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Due to the differences in methodology between transcription assays described11 and in this study ( Figure 2 ) the inhibi-tory effects of PspA on sigma isomerisation cata-lysed by NifA central domain and phosphorylated NtrC were analysed to further conﬁrm that negative effects of PspA are speciﬁc to PspF , and do not play a role in global regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>These proteins control transcription of the plant pathogenicity hrp genes by the s54 RNA polymerase .12 PspF , HrpR and HrpS are composed of two domains , a central AAAþ domain that binds and hydrolyses ATP and directly interacts with the s54 protein to activate transcription ,13 and a DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The PspFDHTH comprises the catalytic AAAþ domain of PspF , which activates transcription and hydrolyses nucleotides , but is unable to bind UAS DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>We show that PspA directly and speciﬁcally acts upon and binds to the AAAþ domain of the PspF transcription activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>The possibility was raised by the fact that PspA functions in trans upon the AAAþ domain of PspF common to all s54 activators and the reported inﬂuence of PspA upon activation by NtrC .11 We , on the other hand , were unable to show any negative regulation of the AAAþ central domain of NifA nor NtrC by PspA ( Figures 2 ( c ) and 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>As a negative regulator , PspA may provide the equivalent of the regulatory domain , found in many EBPs , while PspF provides the DNA-binding and activation functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>From an evolutionary view it seems that PspA is an escaped regulatory domain that acts to impose control on PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>We are carrying out experiments both in vivo and in vitro which should shed further light on the nature of the PspA-PspF interaction and , hence , also on whether PspA represents an `` escaped '' regulatory domain of PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF protein has a two-domain structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>A putative ATP-binding pocket ( GERGTGKE ) in PspF is found in the N-terminal part of the central domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF differs from the other members of the EBP-family by the apparent lack of an N-terminal regulatory domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF differs from other members of the EBP-family in the complete absence of an N-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>To identify 54-dependent activators , we used PspF ( which lacks an amino-terminal regulatory domain ) and the central activation domain of NRI as probes for BLAST searches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>PspF lacks an ami-no-terminal regulatory domain , and it activates transcription without phosphorylation or an activating ligand ( 91 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Discussion The hallmark of the PspF activator is its constitutive activity , as a result of the absence of an N-terminal regulatory domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF lacks the N-terminal regulatory domain and hence would be expected to have constitutive catalytic-activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>This inhibition occurs partly by diminishing NifA ATPase activity and the ability of NifA to bind UAS DNA .25,26 PspF lacks an N-terminal regulatory domain and like NifA is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>PspF does not have an N-terminal domain and is constitutively active in vivo ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Since PspF lacks the regulatory N-terminal domain , this may explain why this activator is synthesized in a constitutively active form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF contains a catalytic domain , which in other s54 activators would be the central domain , and a C-terminal DNA-binding domain but entirely lacks an N-terminal regulatory domain and is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF belongs to the enhancer binding protein family but lacks an N-terminal regulatory domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF belongs to the enhancer-binding protein ( EBP ) family of activators but , unlike most , does not have an N-terminal regulatory domain and is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The central domain of PspF shows strong homology to the corresponding domain of known EBPs ( 36 ) ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Alignment of PspA with PspF and the other EBPs identiﬁes an amino acid sequence in the PspA C-terminal region which is homologous to a relatively conserved amino acid sequence block in the C3 region of the central domain of the PspF and other EBPs ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">PspF evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The central-domain of PspF shows strong homology to the corresponding domain of known EBPs ( 36 ) ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Alignment of PspA with PspF and the other EBPs identiﬁes an amino acid sequence in the PspA C-terminal region which is homologous to a relatively conserved amino acid sequence block in the C3 region of the central-domain of the PspF and other EBPs ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>A comparison of the amino acid sequence with the GenBank database indicated that PspF is a member of the bacterial EBP family of s54 transcriptional activators ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>This suggests that PspF could belong to the Nif subgroup of the EBP family of response regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Schematic representation of the alignment of the E. coli PspF protein with members of the s54 bacterial EBP family ( only proteins with the highest BLASTP scores ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF differs from the other members of the EBP family by the apparent lack of an N-terminal regulatory domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF differs from other members of the EBP family in the complete absence of an N-terminal domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>PspF belongs to the enhancer binding protein ( EBP ) family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF belongs to the enhancer binding protein family but lacks an N-terminal regulatory domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF belongs to the enhancer-binding protein ( EBP ) family of activators but , unlike most , does not have an N-terminal regulatory domain and is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The ﬁrst helix in the PspF HTH motif has a signiﬁcant degree of homology to the other s54-dependent activators , while the second helix ( YHQFRALLK ) of the putative DNA-binding motif is unique to the PspF protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Alignment of the PspF HTH motif with other members of the family shows homology with the relatively well-conserved ® rst helix and turn , but none with the second or recognition helix ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>However , the HTH motif of PspF , especially the second recognition helix , differs signiﬁcantly from that of other members of this EBP family ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by PspF</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>E. coli operons with conﬁrmed 54-dependent promoters Promoter sequencea Operon Regulator Function argT-hisJQMP NRI-NRII Arginine , histidine-transport astCADBE NRI-NRII-ArgR Arginine catabolism atoDAEB AtoC-AtoS Acetoacetate-catabolism fdhF FhlA FDH glnALG NRI-NRII Nitrogen assimilation glnHPQ NRI-NRII Glutamine-transport glnK-amtB NRI-NRII PII paralog , NH3 transport hycABCDEFGHI FhlA Hydrogenase hydN-hypF FhlA Hydrogenase hypABCDE-fhlA FhlA Hydrogenase nac NRI-NRII Nitrogen assimilation prpBCDE PrpR Propionate catabolism pspABCDE PspF Phage shock and other stresses rtcBA RtcR RNA terminal cyclase ygjG NRI-NRII ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>23.5 20.0 3.8 16.3 9.1 12.7 Maltose transport MalT , Crp malK lamB malM ibpB ibpA htpG Maltose transport MalT , Crp 18.6 5.3 3.3 39.0 24.4 11.7 32.7 13.3 9.1 24.2 20.2 8.2 2.6 2.1 1.7 4.6 4.1 2.0 48.6 19.2 20.0 52.6 35.9 16.6 s32 Heat shock Heat shock s32 Heat shock chaperone s32 Protease ; chaperone Regulator Regulator ; chaperone Protease Periplasmic clpB 11.5 12.9 17.3 21.0 20.4 14.3 3.3 3.2 1.3 1.8 2.5 2.9 8.0 2.7 2.9 24.5 6.8 5.7 1.7 1.3 yceP/bssS cpxP ( b3913 ) degP ( htrA ) spy CpxR CpxR , H-NS CpxR , BaeSR CpxR CpxR Unknown Unknown ydeH yebE 49.2 44.8 63.1 21.0 30.7 32.2 56.9 33.1 9.5 1.1 1.6 6.1 7.3 7.3 2.6 1.5 1.6 2.0 1.4 1.2 1.3 2.9 Unknown ; signal peptide Putative transporter Regulator ; phage-shock protein Regulator ; phage-shock protein Regulator ; phage-shock protein Inner membrane Sulphurtransferase yncJ ( b1436 ) yhjX pspA pspB pspC pspD pspE 1.6 44.1 1.1 1.6 1.7 1.2 1.2 3.1 165.6 1.8 1.5 2.1 1.2 1.5 PspF , IHF 1.3 1.9 5.0 2.4 4.7 2.7 2.6 1.4 PspF , IHF PhoB RbsR , Crp 37.9 22.0 2.6 1.2 1.8 2.3 0.8 1.1 Inner membrane Unknown Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport pspG ( yjbO ) ytfK rbsD rbsA rbsC rbsB rbsK rbsR 0.7 3.8 1.8 1.0 1.6 1.4 1.2 0.8 0.9 3.0 8.2 5.4 21.3 6.6 9.0 2.8 manX Mannose permease 4.2 2.1 1.1 5.0 manY Mannose permease 3.4 2.6 1.1 5.2 manZ Mannose permease 6.5 5.7 1.0 16.7 NagC , DgsA , Crp a. Genes and operons which are induced 10-fold in three independent experiments are listed with the average fold induction for the three experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18710431" target="_blank">18710431</a>]<br></li>
+<li>Bailey and Davidson have studied the behavior of PspF HTH by equilibrium sedimentation and have also noted oligomerization ( M. Bailey and B. E. Davidson , personal communication ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Expression of wild-type PspF from a multicopy plasmid under its own promoter restores PspA synthesis in a strain with the pspF877 mutation ( Fig. 10B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>The formation of the active site for ATP-hydrolysis by PspF and other s54 activators is predicted to involve protomer -- protomer interactions that correctly position the catalytic arginine ﬁnger ( R ﬁnger , Figure 1 ) for ATP-hydrolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>Other than the psp operon genes , scripts from cells lacking the positive regulator PspF only a single gene , yjbO , showed a significant and sizeable ( MG1655 pspF ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspF lacks an ami-no-terminal regulatory domain , and it activates transcription without phosphorylation or an activating ligand ( 91 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>This cooperative binding also strengthens the autogenous control of PspF expression , keeping the production of this activator at a low intracellular level ( Jovanovic & Model , 1997b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF , a naturally simpler activator , is a useful tool for studying the processes involved in the activation of s54-dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The target for activation by PspF , the pspA to - E operon , is induced by expression of ﬁlamentous phage pIV protein , many of its homologs , and a variety of other stresses including extreme heat shock , hyperosmotic shock , inhibition of fatty-acid-biosynthesis , uncouplers , and nutrient shifts that reduce the energy charge of the cell ( reviewed in reference 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The pspF gene encodes a constitutively active 37 kDa activator protein , PspF , which is required for expression of the psp operon ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Laboratory of Genetics The Rockefeller University 1230 York Avenue , New York NY 10021 , USA # 1999 Academic Press Keywords : s54 ; PspF ; PspF HTH ; oligomerization ; psp enhancer * Corresponding author Introduction Transcription of the phage-shock protein ( psp ) operon ( pspA-E ) of Escherichia coli is under control of the alternative sigma factor , s54 , is stimulated by integration host factor ( IHF ) , and is dependent on a cis-acting sequence and the PspF activator protein ( Weiner et al. , 1991 , 1995 ; Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1997 , p. 5232 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Autogenous Control of PspF , a Constitutively Active Enhancer - Binding Protein of Escherichia coli GORAN JOVANOVIC , † JONATHAN DWORKIN , AND PETER MODEL * Laboratory of Genetics , The Rockefeller University , New York , New York 1002l Received 10 March 1997/Accepted 3 June 1997 Escherichia coli s54-dependent phage-shock protein operon ( pspA to - E ) transcription is under the control of PspF , a constitutively active activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The set includes several gene pairs that encode proteins of opposing function , such as entS and fepD , encoding an enterobactin efﬂux system and a ferric enterobactin ABC transporter , respectively , and pspF and pspA , encoding the transcription factor PspF ( phage-shock protein F ) and its antagonizing regulatory protein , PspA ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25266388" target="_blank">25266388</a>]<br></li>
+<li>) transcription activator protein PspF for negative regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21259006" target="_blank">21259006</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_16">
+A lower-order oligomer form of phage-shock protein A ( PspA ) stably associates with the hexameric AAA transcription activa - + tor protein PspF for negative regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></label>
+<input id="rp_similarity_16", type="checkbox">
+<div class="RP_similar">
+<li>A lower-order oligomer form of phage-shock protein A ( PspA ) stably + associates with the hexameric AAA transcription activator protein PspF for negative regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25118250" target="_blank">25118250</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">PspF binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>( c , f ) Statistical analysis of about 100 EM images showing PspF ( c ) and NtrC-P ( f ) bound within the 707 bp W1-W2 DNA fragment containing the rpoH regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>s54 -- RNAP binding to the putative P6 promoter IHF , NtrC and PspF binding upstream of the P6 promoter Analysis of the regulatory region of the rpoH gene revealed the presence of a putative IHF-binding site , with remarkable homology to the consensus site ( Craig & Nash , 1984 ; Goodrich et al. , 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>By analogy with NifA ( Buck et al. , 1986 ; Fischer , 1994 ) , and NtrC ( Porter et al. , 1993 ) , the sequences marked UAS I and UAS II are likely to represent the core binding site for PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>These sequences are compared to the consensus sequences of PspF ( Dworkin et al. , 1997 ) and NtrC ( Weiss et al. , 1992 ) at the bottom of the ﬁgure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>PspF binds to a sequence in the pspF-pspA-E promoter-regulatory region A DNA fragment ( 260 ) comprising the entire pspF-pspA-E promoter-regulatory region ( Figure 6A ) was incubated with puri ® ed His-tagged PspF in the presence of ATP ( 3 mM ) and electrophoresed on a non-denaturing 5 % polyacrylamide gel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>DNase I protection assays using purified components confirmed that the pspG upstream DNA region was bound by PspF ( Fig. 5A , lane 3 ) and by the 54-RNAP ( Fig. 5B , lane 3 ) at the promoter sequence predicted by bioinformatics .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Using the program fuzzpro ( EMBOSS programs ) and the consensus sequence WWWTCAA [ N4 ] TTR for IHF binding ( 45 ) and sequences GGCACGCAAATTGT for 54 binding and TAGTGTAATTCGCTAACT for PspF binding ( based on the 54 and PspF binding sites in the pspA promoter ) ( 20 , 46 ) we found potential binding sites for 54 , IHF , and PspF ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Consensus sequence for IHF binding is WWWTCAA [ N4 ] TTR ( 45 ) and the sequences for 54 ( GGCACGCAAAT-TGT ) and PspF ( TAGTGTAATTCGCTAACT ) binding are present in the pspA promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>P1and P2 , pspF s70-dependent promoters ( Jovanovic et al. , 1996 ) ; bold nucleotide , pspF start of transcription ( A from the other strand ) driven by the major pspF s70 promoter P1 ( Jovanovic et al. , 1996 ) ; asterisks , position of the nucleo-tides relative to the pspA-E start of transcription ; ÿ76 to ÿ125 , predicted psp cis-acting sequence ( Weiner et al. , 1995 ) ; psp Enhancer ( UASs ) ( ÿ80 to ÿ126 ) , DNA sequence protected by 6 HisPspF ; UAS I and II , putative PspF-binding sites , upstream activating sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The locations of the upstream activating sequences ( UASs I and II ) or the psp enhancer to which PspF binds , the IHF-binding site , the s54 recognition sequence ( s54 , pspABCDE promoter ) , the pspF s70-dependent promoters ( P1 , P2 , and P3 ) , the pspABCDE start of transcription ( bracket arrow , 11 ) and starts ( bracket arrows ) of the pspF transcriptional units are indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Analysis of the sequence protected by PspF demonstrates the presence of two upstream binding sites within the sequence , UAS I and UAS II , which together constitute the psp enhancer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>UASs I and II are the sites to which PspF binds .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Although the intermediate bands are not abundant or well de ® ned , their presence suggests either that multiple PspF-binding sites are present in the psp cis-acting sequence or that oligomerization of PspF bound to one or more sites occurs in discrete steps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The wild-type PspF activator binds to the psp cis-acting sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Identification of PspF-binding sites in the psp cis-acting sequence In order to more precisely locate the site to which PspF binds , DNAse I footprinting experiments were performed using the 260 bp linear DNA template ( 260 fragment ) or supercoiled DNA of plasmid pBRPS-1 carrying the entire pspF-pspA-E region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by PspF</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Clone pSLE15B has an engineered HMK tag .22 Plasmids pSLE13 and pSLE40 , which express wild-type His6-PspF , were constructed using primers SE3 ( 50 AATTTCCATATGGCAGAATACAAAGAT ) and SE4 ( 50 GGCAAGCTTTATTGCTCAACTTCGCTAAATC ) using E. coli MRE600 DNA as a template .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>1.3 1.9 5.0 2.4 4.7 2.7 2.6 1.4 PspF , IHF PhoB RbsR , Crp 37.9 22.0 2.6 1.2 1.8 2.3 0.8 1.1 Inner membrane Unknown Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport Ribose transport pspG ( yjbO ) ytfK rbsD rbsA rbsC rbsB rbsK rbsR 0.7 3.8 1.8 1.0 1.6 1.4 1.2 0.8 0.9 3.0 8.2 5.4 21.3 6.6 9.0 2.8 manX Mannose permease 4.2 2.1 1.1 5.0 manY Mannose permease 3.4 2.6 1.1 5.2 manZ Mannose permease 6.5 5.7 1.0 16.7 NagC , DgsA , Crp a. Genes and operons which are induced 10-fold in three independent experiments are listed with the average fold induction for the three experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18710431" target="_blank">18710431</a>]<br></li>
+<li>Expression is inducible due to the PspF encoded by the chromosomal copy of pspF1 , which suggests that PspFDHTH , at least at these levels , is not dominant negative .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Nucleotide positions and relevant amino acid residues of the pspF gene and encoded PspF protein are indicated ( 1/1 to 978/325 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Expression of the pspABCDE genes in E. coli requires their transcription by the s54 RNA polymerase from the pspA promoter and depends upon the activator PspF , which is itself expressed independently of s54 via a divergent s70-dependent promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12079332" target="_blank">12079332</a>]<br></li>
+<li>This data shows that expression of pspG is negatively regulated by PspA and its transcription may be activated by PspF via a 54 promoter and positively regulated by PspBC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>pspG transcription requires 54-RNA polymerase , PspF , and ATP and is facilitated by IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>The expression of PspF is negatively autogenously controlled ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>IHF enhances psp operon transcription ( 20 , 46 ) and facilitates binding of PspF to its upstream activation sequences in the psp operon regulatory region , autogenously down-regulat-ing pspF transcription ( 20 , 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>The amounts of PspF and PspFDHTH protein in vivo correlate with activation of transcription of pspA to - E under both noninducing and inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The enhancer is located so that it facilitates transcription of the pspA-E operon , and interferes with pspF transcription when PspF is bound to it ( Jovanovic et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The observation that the presence of the entire pspA to - E operon on the plasmid reduces expression of PspF is somewhat surprising , because this construct contains an additional promoter ( P3 ) driving pspF transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Whether pspF gene expression is modulated at the level of transcription initiation and elongation or postranscriptionally by stabilization of PspF mRNA remains to be determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>This implies a possible inﬂuence of PspF on its own transcription and suggests that pspF transcription may be autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>s70-dependent transcription of pspF is under autogenous control by wild-type PspF but not by a DNA-binding mutant , PspFDHTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Inhibition of pspF transcription in vitro by PspF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The autogenous control of pspF transcription observed in the in vitro transcription assay shows that PspF does not require the presence of an auxiliary factor ( s ) to repress its own transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The target for activation by PspF , the pspA to - E operon , is induced by expression of ﬁlamentous phage pIV protein , many of its homologs , and a variety of other stresses including extreme heat shock , hyperosmotic shock , inhibition of fatty acid biosynthesis , uncouplers , and nutrient shifts that reduce the energy charge of the cell ( reviewed in reference 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>The pspF gene encodes a constitutively active 37 kDa activator protein , PspF , which is required for expression of the psp operon ( Jovanovic et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>The gene into which the transposon inserted , designated pspF , is a 978-nucleotide open reading frame divergently oriented from the pspABCE operon and encodes a 37-kDa protein ( PspF ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>In Escherichia coli the PspF regulon consists of the pspABCDE operon , the adjacent pspF gene and the pspG gene ( reviewed by Model et al. , 1997 ; Darwin , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20595257" target="_blank">20595257</a>]<br></li>
+<li>The only exception is the binding site for PspF , which activates the pspABCDE operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Activation from the psp promoter requires PspF , which is speciﬁed by a gene adjacent to , but divergently transcribed from , the pspABCDE operon ( 91 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Because our experiments indicated that pspG transcription is regulated by the same elements that regulate psp operon transcription , we used a bioinformatic approach to search the pspG promoter region for the control elements that are present in the psp operon promoter , which are binding sites for 54 , PspF , and IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Therefore , the co-regulated expression of the psp operon and pspG by PspF and PspA is likely to be a widely conserved and important feature of cellular adaptation to secretin-induced stress .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>pspG is physically unlinked with the psp operon but is co-conserved 54 and co-regulated with the psp operon genes by , PspF , IHF , and PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>It is striking that the psp operon and the pspG 54 promoters , which are physically unlinked , are both regulated by PspF , PspA , and IHF in exactly the same fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspA , pro-duct of the psp operon , which is induced upon overproduction of the native or His-tagged PspF and PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>B , PspF was induced with 2 mM IPTG and the psp operon by treatment with 10 % ethanol ( EtOH ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF negatively autoregulates its own synthesis by binding to the same sites that activate psp operon expression ( 88 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>These results show that PspF synthesis is not the target for the negative or positive control of psp operon expression mediated by PspA or PspB and - C , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>In the absence of inducing stimuli , multicopy-plasmid-borne PspF or PspFDHTH overcomes repression of the psp operon mediated by the negative regulator PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8606168" target="_blank">8606168</a>]<br></li>
+<li>Model for activation of the psp operon transcription by PspF activator under inducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Because the expression of the activator PspF is constant under all growth conditions , the key regulatory point under normal growth conditions is strong negative regulation imposed by PspA , whereas under inducing conditions this regulation is lifted leading to the coordinated expression of the psp operon and pspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>PspF production is independent of PspA ( the negative regulator of the pspA to - E operon ) and of PspB and - C ( positive regulators ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>To determine how PspF production is affected by PspA , the negative regulator of the pspA to - E operon , or by PspB and - C , the positive regulators , we measured the synthesis of wild-type activator from the chromosomal copy of pspF1 in strains overproducing PspA [ K561 ( pJLB24 ) ; pJLB24 ( 25 ) carries the psp gene under the control of the lac UV5 promoter-operator ] , deleted for PspA to - E ( J134 ) , or overproducing the psp operon inducer , f1 pIV [ K561 ( pNAL200 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Expression of the pspA-E operon was not further increased upon IPTG induction of PspF synthesis , presumably because even the uninduced level of PspF expression saturates the system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Negative autoregulation of PspF is continual and not affected by stimuli , like f1 pIV , that induce the pspA to - E operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>However , when overproduced from multicopy plasmids , both PspF and PspFDHTH activate transcription and induce the pspA to - E operon in the absence of any other stimuli ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>PspF , the activator of the pspA -- E operon , occurs in cells at low concentrations and is constitutively active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>PspF protein levels in strains in which proteins encoded by the pspA to - E operon are absent , overproduced , or induced .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>Testing factors that might induce transcription from P6 In an attempt to identify conditions that might affect the induction of transcription , heat shock ( from 30 uC to 42 or 50 uC ) , 10 % ethanol or CCCP treatments were applied , since these treatments induce transcription of the pspA -- E operon by the PspF activator ( Darwin , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17185540" target="_blank">17185540</a>]<br></li>
+<li>Expressing wild-type PspF from a multicopy plasmid ( pMJ7 [ 9 ] carries the intact pspF gene ) increases the amount in the cell 30 times ( compare lanes 1 and 3 or 5 [ Fig. 4 ] ) and decreases the production of chromosomally encoded PspFDHTH 10-fold ( Fig. 4 , lane 3 ) ; the effect of this PspF overproduction is to induce the pspA to - E operon constitutively ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260970" target="_blank">9260970</a>]<br></li>
+<li>pspG is dispensable for basal level expression and induction of the PspF regulon by pIV , ethanol shock , or extreme heat shock under normal growth conditions and so PspG is not acting to regulate the expression of psp genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Using the translational fusion for pspG ( pLL1 ) we found that 54-RNAP and activation by PspF are required in vivo for pIV-induced PspG expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>In mutant strains for and PspF , pspG expression is abolished both before and after induction ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>Consistent with this data and the increased sensitivity of the pspG promoter to PspF in comparison to the pspA promoter ( Fig. 6B ) , PspG expression in an IHF mutant ( MC1068 ) is increased both before and after induction by pIV in vivo ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15485810" target="_blank">15485810</a>]<br></li>
+<li>However , the low-level psp expression that occurs in response to hyperosmotic stimulation even in the absence of PspF can not be explained solely by changes in supercoiling .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>Overproduced His-tagged PspF ( Figure 2B , lanes 3 and 6 ) or PspF HTH ( data not shown ) activate pspA expression in the absence of any other stimuli as do native PspF and PspF HTH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+<li>PspF , PspF HTH and their His-tagged derivatives overproduced from an inducible , heterologous promo-ter activate psp expression under both noninducing and inducing conditions , bypassing negative regulation by PspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9878422" target="_blank">9878422</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

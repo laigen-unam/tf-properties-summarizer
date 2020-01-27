@@ -1,0 +1,898 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - ArgR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">ArgR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">ArgR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>TA BL Act 0 0 0 Pr Reg Op AraC AraC AraC ArgR ArgR ArgR ArgR ArgR ArgR BioB BioB CRP CRP CRP CytR CytR CytR DeoR DeoR DnaA FNR Fur Fur Fur Fur GaIR GaIR GlpR IlvY LacI LexA LexA LexA LexA LexA LexA LexA LexA LexA MetJ MetJ MetJ MetJ MetR MetJ NR ( I ) NR ( I ) OxyR PapB PifC PurR PurR PurR PurR PurR PurR PurR PurR PurR PutA PutA RafR TetR TetR TetR TrpR araBAD araC araE argCBH argE argF argl argRpl carABp2 bioA bioB cya ompA spf ccd cytR tsx deopi deop2 rpoHp4 fnr cir pl cir p2 ffhuA * iucApl galpl galp2 glpD ilv Y lac cloDF14 colElpl lexA recA ssb sulA uvrA uvrBp2 uvrD metApi metB * metJpl * metE metR metF glnApi glnL oxyR papB pifC purC purE purF purH purL purM purR pyrC pyrD * putA * putP * rafA * tet tetRpl tetRp2 aroH 1,2 1,2 1 69 , 102 , 135 71 1 1 R R 1 0 1 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 1 0 0 1 1 0 1 0 0 1 0 0 0 0 0 1 0 1 1 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 2 1,4 1 4 4 2 1,2 1 1 2 2 4 4 1 4 1,2 1,2 2 4 2 2 4 2 1,2 1,2 2 3 1,2 4 2,4 2 2 4 4 2,4 2 2 4 1,2 1,2 1,4 1,3 1,4 1,2 1,2 3 2 1 3 3,4 1,3 3 3,4 4 1,2 1,3,4 4 2 2 3 2 2 2 2 145 25 25 25 25 76 18 , 125 24 , 104 24,104 2 97 109 86 142 86 , 142 4 , 86 , 163 , 164 4 , 86 , 163 , 164 167 35 45 45 23 , 30 16 , 29 , 30 1 , 85 1 , 36,101 166 33 , 34 11 , 77 11 , 77 32 92,160 140 , 160 140 , 160 106 , 158 20 , 146 , 149 37 64 49 49 , 168 122 , 123 49 49 , 89 89,141 89 , 124 19 , 171 171 47 47 6 52 , 53 52 , 53 52 , 53 65 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 P P P P P P 0 0 0 0 0 0 0 0 R R P 0 0 0 0 P R R P P R 0 P P 0 0 0 0 0 0 0 0 0 0 0 0 P 0 0 R 0 0 0 0 0 0 0 R only 0 0 0 0 P P P P 0 0 P P P P 0 0 0 P ( ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943993" target="_blank">1943993</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>BMC Microbiology BioMed Central ss Open Acce Research article Integration of regulatory signals through involvement of multiple global regulators : control of the Escherichia coli gltBDF operon by Lrp , IHF , Crp , and ArgR Ligi Paul1 ,6 , Pankaj K Mishra2 , Robert M Rowena G Matthews1 ,4,5 Blumenthal * 2,3 and Address : 1Life Sciences Institute , University of Michigan , Ann Arbor , Michigan 48109 , USA , 2Department of Medical Microbiology and Immunology , University of Toledo Health Science Campus , Toledo , Ohio 43614-5806 , USA , 3Program in Bioinformatics and Proteomics / Genomics , University of Toledo Health Science Campus , Toledo , Ohio 43614-5806 , USA , 4Biophysics Research Division , University of Michigan , Ann Arbor , Michigan 48109 , USA , 5Department of Biological Chemistry , University of Michigan , Ann Arbor , Michigan 48109 , USA and 6Vitamin Metabolism and Aging Laboratory , Jean Mayer USDA Human Nutrition Research Center on Aging , Tufts University , Boston , Massachusetts 02111 , USA Email : Ligi Paul - Pankaj K Mishra - Pankaj.Mishra@utoledo.edu; Robert M Blumenthal * - Robert.Blumenthal@utoledo.edu; Rowena G Matthews - RMatthew@umich.edu * Corresponding author Received : 22 September 2006 Accepted : 18 January 2007 Published : 18 January 2007 BMC Microbiology 2007 , 7:2 doi :10.1186 / 1471-2180-7-2 This article is available from : http://www.biomedcentral.com/1471-2180/7/2 © 2007 Paul et al ; licensee BioMed Central Ltd. .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Sedimentation equilibrium analysis of ArgR Speed ( rpm ) Sample 8000 10,000 12,000 Globala Apo ArgR , 10 mM Apo ArgR , 6 mM Apo ArgR , 2 mM Apo ArgR , 1 mMb Holo ArgR , 10 mM Holo ArgR , 6 mM Holo ArgR , 2 mM 91,547 109,544 104,778 108,558 104,000 ( 5500 ) 104,100 ( 3500 ) 98,800 ( 6000 ) 102,300 ( 1700 ) 104,800 ( 5400 ) 106,400 ( 3400 ) 96,100 ( 9400 ) 104,696 101,901 98,368 96,231 108,600 ( 9600 ) c 105,681 108,064 94,752 100,258 98,100 ( 4100 ) 106,257 107,243 95,163 104,284 106,010 96,560 Values are the best - ® t molecular mass obtained from analysis of the data using a single-species m cular mass 16,994.5 Da ; hexamer molecular mass 101,967 Da .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Examples of transcriptional control in which the action of ArgR occurs in combination with ( an ) other regulatory protein ( s ) and co-factors have been documented previously for CRP , NtrC , Lrp , and IHF .22,23,29,50 Furthermore , artP mRNA levels were found to be induced in the stationary phase by EσS , the general stress-specific RNA polymerase ,51 upregulated ( 1.9-fold ) by the superoxide generating agent paraquat , an inducer of the soxRS system , and by sodium salicylate ( NaSal ) , an inducer of the marRA system ( 2.5-fold ) ,52 and down-regulated by Lrp ( about sixfold ) .53 Genome-wide expression profiling studies in E. coli indicate that argT and hisJ transcription are activated by NtrC ( GlnG ) ,45 and that in anaerobiosis hisJ expression is strongly increased in fnr ( 25-fold ) and arcA ( 60-fold ) mutants .54,55 None of the underlying molecular mechanisms has been unraveled yet , but the induction of E. coli artP in the stationary phase appears to depend on several secondary promoters ,51 upstream of PartP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>HrcA Heat shock A-CS-EBM-XYTP Predicted ` winged helix ' HTH and uncharacterized domain possibly responsible for activation by chaperonin GroE ADC-VEBMH -- P ` Winged helix ' HTH and arginine-binding domain [ 5,6 ] 1.72 0.22 CIRCE box : 1-TTAGCACTCn9GAGTGCTAA ArgR Arginine ( Gram-negative ) metabolism AhrC ( Gram-positive ) 1.81 0.22 ARG box : [ 8-11 ] TGMATwwwwATKCA * Abbreviations for species : B , Bacillus subtilis ; C , Clostridium acetobutylicum ; M , Mycobacterium tuberculosis ; D , Deinococcus radiodurans ; A , Thermotoga maritima ; S , Synechocystis sp ; H , Haemophilus influenzae ; E , Escherichia coli ; P , Chlamydia pneumoniae ; T , Chlamydia trachomatis ; Z , Mycoplasma genitalium ; Y , Mycoplasma pneumoniae ; V , Vibrio cholerae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11305941" target="_blank">11305941</a>]<br></li>
+<li>Binding of trimers to DNA The ability of ArgR trimers to-bind to DNA was assessed using the subunit exchange assay described by Van Duyne et al. 7 These authors showed that mixed multimers could be formed when intact ArgR is combined with truncated ArgR-C , a fragment of ArgR bearing only the C terminal domain , which itself can form hexamers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>This approach is particularly well sui-ted to identify critical points of contact between ArgR and its target sites , especially since structural data on repressor-operator complexes are still lacking and appear particularly dif ® cult to obtain ( Van Duyne et al. , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Half-depletion of the free DNA duplex occurs near 10 nM ArgR , slightly weaker than the af ® nity values previously reported for natural tandem palindromes on restriction fragments .9 ± 11 At ArgR concentrations of ca 300 nM , the free hairpin forms of the tandem palindrome also become depleted , and the bound forms undergo further reduction in mobility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>ArgR bound to the artJP/O , artPP/O and hisJP/0 fragments with a rather similar KD value of 60 , 69 and 79 nM , respectively ( Table 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Three observations from the ArgRc crystal structures reported here suggest that a consequence of L-arginine binding to ArgR would be a stabilization of the liganded hexamer relative to the unliganded hexamer : ( 1 ) interactions between trimers in the absence of L-arginine involve only three patches of hydrophobic interactions between van der Waals surfaces formed from four side-chains in each subunit ; ( 2 ) the side-chains of Asp113 , Asp128 , and Asp129 form a negatively charged surface complementary to each bound L-arginine , creating an array of 18 carboxylates in the trimer-trimer interface that should destabilize the hexamer in the absence of bound L-arginine ; ( 3 ) in addition to partially neutralizing the effect of the Asp side-chains , each bound L-arginine makes polar interactions with three out of the six subunits , in effect crosslinking subunits both within a trimer and between trimers with largely buried salt bridges .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>This is particularly important , since transcription initiated at P1 has to override P2 and , moreover , we have shown previously that variations in P1 activity affect the repressibility of P2 by arginine and ArgR .7 The 463 bp fragment ( 2419 to þ44 ) delimited by the oligonucleotides AB1Bam and AB3Eco ( Figure 1 ) was cloned in front of the truncated lacZ0 gene of plasmid pFW11-null and the fusion subsequently transferred by a double cross-over to the F0 episome of strain CSH100 ( see Materials and Methods for constructions and growth conditions , and Tables 1 and 2 for genotypes and oligonucleotides used as primers in ampliﬁcation reactions ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>One of the highest ArgR producers , pDB169 ( Fig. 3 , lane 9 ) , was chosen for purification of ArgR , after verifying that the ArgR produced by it is functional in the indicator strain EC146 ( XAZ-7 ) ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>Overexpression and purification of ArgR ArgR was purified to electrophoretic homogeneity from an IPTG induced culture of E. coli strain JM101 transformed with the Apr plasmid pDB169 , as described20 by using ( NH4 ) 2SO4 and L-arginine precipitation followed by ion-exchange chromatography on Resource Q and Resource S columns .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>doi :10.1006 / jmbi .2001.4941 available online at http://www.idealibrary.com on Quantitative Analysis of DNA Binding by the herichia coli Arginine or Esc Repress Danuta Szwajkajzer1 , Lizhong Dai1 , June Wong Fukayama1 Bozena Abramczyk1 , Robert Fairman2 and Jannette Carey1 * 1 Chemistry Department Princeton University Princeton , NJ 08544-1009 USA 2 Department of Molecular , Cell and Developmental Biology 370 Lancaster Ave. , Haverford College , Haverford , PA 19041 USA # 2001 Academic Press Keywords : transcription ; recombination ; trimer ; bending ; analytical ultracentrifugation * Corresponding author Introduction Allosteric activation of the hexameric arginine repressor ( ArgR ) for speci ® c operator DNA binding appears to involve alteration in its quaternary structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>This mixture shows the seven expected bands on the native gel , corresponding to 6:0 , 5:1 , 4:2 , 3:3 , 2:4 , 1:5 , 0:6 ratios of ArgR : ArgRc subunits in order of increasing mobility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Incubation of consensus operator fragments with a ® xed amount of ArgR protein and increasing concentrations of distamycin resulted in a gradual decrease in complex formation , as determined by mobility-shift assay ( Figure 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Arginine concentration ( mM ) Proteins 1.25 0.62 0.31 0.15 0.08 2.5 SF44 SL47 ArgRK in in II II ¬ ± Arginine concentration ( mM ) Proteins 10.0 20.0 50.0 100 1000 2.5 GDI 23 ¬ AVI 05 - - ± ± - Different amounts of L-arginine were added to 200 tit of cell extracts containing about 50ng of transdominant ArgR mutant proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>Furthermore , the corresponding ABC-trans-porter encoding the hisJQMP cluster should not be too strongly repressed by liganded ArgR neither , since it is also involved in histidine transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>None-theless , there is an additional unidentiﬁed factor that activates the ast operon and other operons in stationary phase ( 47 ) , and ArgR could potentially enhance its ability to stimulate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Also , Lu and Abdelal proposed that expression of the putative 54-dependent astC promoter in S. enterica serovar Typhimurium is subject to carbon catabolite repression and requires CRP , together with arginine and ArgR , for activation of the ast operon ( 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li>
+<li>Additionally , the arginine repressor , ArgR , has been shown to be involved in the transcriptional regulation of the ast operon in S. enterica serovar Typhimurium ( 23 ) , and IHF is involved in the regulation of some NR 54 I - and - dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>In contrast , ArgR appears to be required for the S. enterica sero-var Typhimurium ast operon ( 103 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The E. coli ast operon differs in its regulation from the S. enterica serovar Typhi-murium operon , which appears to absolutely require ArgR for expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_27">
+Role of ArgR in activation of the ast operon , encoding enzymes of the arginine succinyltransferase pathway in S. typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></label>
+<input id="act_similarity_27", type="checkbox">
+<div class="ACT_similar">
+<li>Role of ArgR in activation of the ast operon , encoding enzymes of the arginine succinyltransferase pathway in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>]<br></li></div>
+<li>The ArgR protein of Bacillus licheniformis activates the arcABCD gene cluster , which encodes the enzymes of the arginine deiminase pathway ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>[ 123 ] Maghnouj , A. , de Sousa Cabral , T.F. , Stalon , V. and Vander Wauven , C. ( 1998 ) The arcABDC gene cluster , encoding the arginine deiminase pathway of Bacillus licheniformis , and its activation by the arginine repressor ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14638413" target="_blank">14638413</a>]<br></li>
+<li>The arcABDC gene cluster , encoding the arginine deiminase pathwa of Bacillus licheniformis , and its activation by the arginine repressor ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>The presence of pHYD2847 in an argR argO double mutant impaired its resistance to CAN in MA medium containing 2 g/ml CAN , indicating that ArgR encoded on the plasmid pHYD2847 was biologically active .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>The observation that yggA expression is elevated in an argR mutant raises the formal possibility that ArgR is a second regulator for yggA ; however , the fact that the argR effect is also ArgP dependent ( that is , it is not observed in an argR argP double mutant [ Fig. 3 ] ) indicates once again that it is the increased intracellular Arg concentration in the argR mutant which is responsible for yggA induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150242" target="_blank">15150242</a>]<br></li>
+<li>Similarly , an argR argO double mutant is rendered more resistant to CAN than an argO mutant , owing to elevated levels of intracellular Arg in the former strain due to the absence of ArgR ( 28 ) , which mitigates to some extent the growth-inhibitory effects of CAN .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>E-mail address of the corresponding author : carey@chemvax.princeton.edu 0022-2836/01 / 050949 ± 14 $ 35.00 / 0 # 2001 Academic Pres Results ArgR subunit assembly The subunit assembly state of ArgR was determined by analytical ultracentrifugation using equilibrium sedimentation as a function of protein concentration in the presence and absence of L-Arg .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Arg repression of ybjE-lac was absent in a strain lacking ArgR , the repressor protein of the Arg regulon ( reviewed in references 34 and 35 ) , and was independent of the presence or absence of the inverted repeat located in the cis regulatory region of ybjE ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>The magnitude of ybjE-lac was not elevated by the absence of ArgR ( Table 2 ) , which is in contrast to that seen for genes of the Arg regulon that are signiﬁcantly derepressed in an argR mutant ( 34 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Consequently , the repressive effect of ArgR would be seen upon increased ArgR hexamer formation , which would occur when cytoplasmic Arg level is elevated during growth in Arg-con-taining medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>ArgR mediates repression of gene expression at hisJ and gltBDF in mechanistically distinct ways which in both cases are different from its mode of action on genes involved in Arg biosynthesis ( 37 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>It may be noted that for the gltBDF operon , hisJ , and genes involved in Arg biosynthesis , the absence of ArgR leads to derepression of gene expression , which is not the case for ybjE ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>ArgR also binds to a single Arg box , but with 100-fold lower afﬁnity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Since the afﬁnity of the ArgR hexamer for the classical ARG box is very high , hexameric ArgR binds to the ARG box even during growth in minimal medium , and hence its absence causes derepression of expression of genes involved in Arg biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Since ArgP was previously shown not to exert autoregulation ( Nandineni and Gowrishankar , 2004 ; Caldara et al. , 2006 ) , in contrast to many other LysR-family members , we may conclude that argP expression is regulated neither by Lrp or ArgR , nor by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>However , according to the model presented by Paul et al. 29 ArgR is supposed to exerts its effect on the gltB promoter by interfering with the Lrp-mediated activation of transcription initiation , but should have no effect by itself ( in the absence of Lrp ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The artPIQM operon is , besides being downregulated by Lrp ( Hung et al. , 2002 ) , also repressed by ArgR ( Caldara et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>( 12950 ; A streptavidin ) ArgR , 16863 Lrp , 18756 IhfB , IhfA , 10520 11223 Lrp , 18756 B Crp , 23509 A second possibility , which we did not test , is that the Crp-induced bend in the DNA [ 23 ] opposes that generated by IHF , preventing proper activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Expression and purification of Lrp , ArgR , Crp and IHF In all cases , protein purity was assessed from single ( or , in the case of IHF , double ) Coomassie-stained bands when μg amounts were loaded onto SDS polyacrylamide gels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Results : Crp and a more local regulator , ArgR , directly control gltBDF transcription , both acting negatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>We report here that gltBDF is directly and negatively controlled by Crp and ArgR , in addition to the direct positive control by Lrp and IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>In addition to the previously-demon-strated direct positive roles of Lrp and IHF , there are direct negative roles for Crp and ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Lrp directly and strongly activates gltBD transcription in E. coli [ 74,92 ] , in a process that also requires the global regulator IHF [ 93 ] and is antagonized by Crp and ArgR [ 94 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18405378" target="_blank">18405378</a>]<br></li>
+<li>In E. coli , PgltB is controlled by Lrp , Crp , IHF , and ArgR [ 67,74,93,94,112 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18405378" target="_blank">18405378</a>]<br></li>
+<li>The mixture was incubated for 10 more minutes after addition 54 of ArgR and IHF in that order for reactions with or of ArgR and CRP S simultaneously for reactions with .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Our working hypothesis is that ArgR allows pre-assembly of the Lrp-IHF-RNAP complex , but blocks a specific contact required for transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>The DNAse I footprint of RNAP in the presence of Lrp and IHF is altered by ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>ArgR alters , but does not prevent , footprint formation by RNAP + Lrp + IHF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>PepA binds to the carAB control region and also to its own control region ( 6 ) and to the ColE1 cer site ( 1 , 22 ) , where it imposes in conjunction with ArgR the directionality of the site-speciﬁc resolution reaction of ColE1 multimers ( 15 , 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16621816" target="_blank">16621816</a>]<br></li>
+<li>IHF did not stimulate transcription and appeared to inhibit it when ArgR was also present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>It is also possible that , earlier in bacterial evolution , IHF was involved in ast operon expression and that ArgR preempted this function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Binding sites for the regulatory proteins IHF , PepA , PurR and ArgR involved in the purine , pyrimidine and arginine-speciﬁc control of promoter activity are colored .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>Interestingly , IHF , PepA/CarP , PyrH and ArgR , all involved in the regulation of the tandem pair of carAB promoters , are one and all multifunctional proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9677289" target="_blank">9677289</a>]<br></li>
+<li>Indeed , alternative explanations such as a direct effect of ArgR on PargO-bound RNA polymerase or an indirect effect via the modulation of PargP activity can be deﬁnitively excluded since we could not detect speciﬁc binding of puriﬁed ArgR to the argO and argP control regions in vitro ( not shown ) , and since ArgR has no effect on PargP activity in vivo ( see above Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The simultaneous occurrence of the ArgR and RNA polymerase footprints , when the RNA polymerase was allowed to-bind first , strongly suggests that ArgR can bind to a RNA polymer-ase-bound hisJ control region , thereby forming a ternary complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>DNase I footprinting experiments with both proteins , sole and in combinations in which the order of addition of ArgR and of the polymerase was inversed , demonstrated that the binding of ArgR prior to the addition of the polymerase inhibits the binding of the latter to the artJ and artP control regions ( Figure 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>DNase I footprinting experiments indicate that ArgR inhibits the binding of the polymer-ase to the hisJ control region , but the inverse does not occur : ArgR can bind to a preformed RNA polymerase -- hisJ operator complex ( Figure 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Apparent dissociation constants ( KD ) of in vitro binding of ArgR to artPO , artJO , hisJO and operator mutants MUD MD MU WT ) KD ( nM artJO artPO hisJO 145 ± 13 162 ± 8 66 ± 4 60 ± 7 69 ± 15 79 ± 15 229 ± 34 78 ± 8 142 ± 16 Figure 6 ( legend on next page Liganded ArgR inhibits in vitro transcription with Eσ70 at PartJ and PhisJ in an arginine-dependent manner Single-round in vitro transcription assays were performed to evaluate the potential of ArgR to inhibit the transcription initiation at the PartJ and PhisJ promoters in an arginine-dependent manner ( Figure 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>ArgR at 1 nM already occasioned over 50 % inhibition of PartJ , whereas between 20 and 80 nM ArgR was required to inhibit PhisJ to a similar extent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>PartJ was completely inhibited at 4.0 nM ArgR but , in contrast , PhisJ could not be completely inhibited in a specific manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>When the RNA polymerase was allowed to-bind to the DNA prior to the addition of ArgR no significant inhibition of PartJ and PhisJ activity was observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Liganded ArgR inhibits the binding of Eσ70 to PartP and PartJ but not to PhisJ by steric exclusion The − 35 promoter element of PartJ and PartP is encompassed within the downstream , promoter proximal ARG box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>However , whereas ArgR inhibits PartJ and PartP activity by steric exclusion of the RNA polymerase binding , inhibition of PhisJ likely occurs through ArgR-induced conformational changes of the promoter region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>There are other examples of divergently transcribed genes that are regulated from a common site , for instance , in the ArgR regulon ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3294794" target="_blank">3294794</a>]<br></li>
+<li>These more robust upstream regulatory analyses can be used to assign function to unknown genes , as illustrated here with the ArgR , CRP and PurR regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11897025" target="_blank">11897025</a>]<br></li>
+<li>AraC , CRP I I I araBAD AraC AraC AraC I I AraC , CRP araC J ¬ I +100 I AraC AraC , CRP araE I l rI - t - Ag I I 3 ~ ~ ~ AA ~ rgR I argCBH ArgR I I !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1943993" target="_blank">1943993</a>]<br></li>
+<li>No extensive similarity was found with the regulatory proteins AraC , RhaC , MelR , ArgR , BioR or LysR from E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1851954" target="_blank">1851954</a>]<br></li>
+<li>The low-level activity might be due to P1 activation by the decreased reiterative transcription of U clusters at P1 initiation site ( Han and Turnbough , 1998 ) owing to the decrease in UTP level or a change in the intracellular level of other four transcription factors , IHF , PepA ( CarP ) , PurR and ArgR ( see Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>This study does not explore the specific mechanisms of activation or repression at gltBDF , but the results are consistent with the possibility that Crp and ArgR inhibit transcription in such a way as to leave the RNAP poised for rapid transcription initiation when conditions require it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>, Winteler , H. , Abdelal , A. and Haas , D. ( 1999 ) The ArgR regulatory protein , a helper to the anaerobic regulator ANR during transcriptional activation of the arcD promoter in Pseudomonas aeruginosa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14638413" target="_blank">14638413</a>]<br></li>
+<li>The mechanism by which ArgR represses PgltB is not clear , but our evidence is consistent with the possibility that ArgR interferes with formation of the final activation complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Our results rule out this mechanism of activation , suggest alternative interpretations of the results that led to those models , and imply new features of allosteric activation for ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Discussion The results presented here provide constraints that can be used to evaluate mechanisms for ArgR allosteric activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The results and analysis presented here have a number of hopeful implications for future studies of ArgR that may elucidate its allosteric activation mechanisms in greater detail .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>In the latter procedure it was necessary to elute ArgR in the presence of at least 0.15 M NaCl to avoid interaction of the purified protein with the Superose beads .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>The relatively weak extinction coef ® cient of ArgR in the aromatic region of the spectrum , due to the presence of only three Tyr residues per polypeptide chain and no Trp , dictated the use of much lower detection wavelengths at most protein concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Both artPIQM and artJ are preceded by a single ARG box ( Makarova et al. , 2001 ) and repression is indeed mediated by ArgR , as shown by the increased mRNA levels in P4XB2 ( Tables 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>Analysis of their control region with reporter gene fusions and electrophoretic mobility shift in the presence of pure ArgR repressor showed the involvement in repression of the ArgR protein and an ARG box 120 bp upstream of hisJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>Arginine repression of the histidine transporter genes The functionality of the putative ARG box AATGAAAAATAATACGTC located 120 -- 103 bp upstream of the hisJ start codon was tested by measuring arginine repression in a set of reporter fusions with lacZ , and by electrophoretic mobility shift experiments in the presence of pure ArgR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>ArtJ is the previously characterized arginine-specific periplasmic binding protein ArgBP-I .14,15 Isolated ArtJ binds L-arginine ( Kd 0.4 μM ) , but not ornithine .13 Recently artI was proposed to be the gene encoding the periplasmic AO binding protein ( ArgBP-II ) instead of abpS , as proposed previously .16,17 Indeed , a computer analysis showed that ArgI is the closest E. coli protein to the AO protein , and that no protein near the proposed site of abpS had anything resembling this amino acid composition .18 The E. coli artJ , artPIQM and hisJQMP genes and operons were recently discovered as new members of the ArgR regulon .19 The hexameric repressor protein ArgR is the master regulator of this regulon .1 In the presence of arginine , ArgR inhibits the transcription of several biosynthetic and transport genes/operons , and its own synthesis .19 -- 21 Liganded ArgR also functions as a co-activator of the astCADBE operon encoding the arginine succinyltransferase pathway for arginine catabolism .22,23 At the mole-cular level the action of ArgR is only well documen-ted in the biosynthetic pathway , where a single liganded ArgR hexamer was shown to-bind to a tandem pair of 18 bp long ARG box sequences that overlap the core promoter elements to a variable extent , but systematically cover the Pribnow box and the transcription start site .1,21,24 -- 28 The upstream box may or may not ( partially ) overlap the − 35 promoter element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The presence of a single 18 bp ARG box-like sequence upstream of the open reading frame of the E. coli artJ and artP genes had been predicted from in silico analyses ,30 but previous studies indicated that arginine transport is ArgR independent .15 Furthermore , whereas the amount of ArtJ protein found in periplasmic extracts was strongly reduced in bacteria grown with excess arginine , no difference was observed for ArtI .13 Recently , however , micro-array and RTq-PCR experiments indicated a significant arginine and ArgR-dependent down-regu-lation of both the artJ ( about 50-fold ) and artPIQM ( about three to sixfold ) mRNA levels .19 The mole-cular mechanism of this repression and the precise identity of the ArgR binding sites had not been investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>A , The 50 single end-labelled consensus operator DNA molecules ( upper and lower strand visualized ) were submitted to hydroxyl radical attack : lanes 1 , in the absence of repressor ; lanes 2 to 4 , in the presence of 22 , 55 and 110 nM ArgR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>The 50-single end-labelled DNA was denatured , unpaired T residues were sparingly modi ® ed with KMnO4 , strands were allowed to reanneal and , after puri ® cation of double-stranded operator DNA , modi ® ed duplexes were incubated in 20 ml of binding buffer in the absence of ArgR ( I ) or in the pre-sence of it ( 37.1 ng for B1 and F1 ; 49.5 ng for B2 and F2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>B , The 50-single end-labelled carAB operator DNA ( upper strand visualized ) was submitted to phosphate ethylation by treatment with ethylnitrosourea and modi ® ed DNA was incubated in 20 ml of binding buffer in the absence of repressor ( I ) or with 11.0 ng of ArgR ( F and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Lanes 1 , without ArgR ; lanes 2 to 5 with increasing amounts of repressor , 12.4 ng , 123.6 ng , 1.24 mg and 12.4 mg ( in a ® nal volume of 20 ml ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Lanes 1 , in the absence of repressor ; lanes 2 to 6 , with 0.124 , 0.62 , 3.1 , 15.5 and 77.5 nM ArgR , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Furthermore , the apo and holo ArgR af ® nities presented here for operator and non-operator DNA molecules indicate that L-Arg is an effector of DNA speci ® city and not only of af ® - nity , as the presence of L-Arg differentially enhances operator af ® nity compared to non-oper-ator af ® nity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Given the magnitude of errors in the measured sedimentation values , the maximum difference between apo and holo ArgR that is consistent with the data is no more than about 1 A Ê in Stokes ' radius .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Sedimentation equilibrium experiments at this protein concentration show no difference in molecular mass between apo and holo ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Sedimentation equilibrium analysis of apo ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Theoretical binding isotherms ( continuous lines ) were calculated using Kd 100 nM for different ® xed ArgR concentrations ( from right to left at fraction bound 0.2 , ArgR 10 nM , 100 nM , 1 mM , and 10 mM ( hexamer ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Theoretical calculations Theoretical calculations were based on the equilibrium binding reaction : mArgR nDNA , ArgR ... DNA m n described by the dissociation binding constant Kd : DNA n Kd ArgR ... DNA m n ArgR m ... 1 For chosen values of Kd , m , and n , a standard graphical calculator was employed to solve the equation and generate theoretical curves of bound fraction versus concentration of the variable component .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>DNA bending analysis Every one of the previously identiﬁed DNA-binding proteins that bind to the carAB control region ( ArgR , PurR , IHF , PepA ) induces a pronounced bending ( 97 -- 144 ) or even wrapping ( ± 260 wrapping around hexameric PepA ) of the operator ( 16,18 , and unpublished observations from this laboratory ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20472642" target="_blank">20472642</a>]<br></li>
+<li>Other evidence adduced in support of the exist-ence of ArgR trimers and their activity in DNA binding was presented by Miller et al. ,14 who demonstrated that the ArgR homolog from B. subtilis , AhrC , displayed DNA-binding af ® nity that increased with DNA concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The results for both the single and tandem palindromic arg operator DNA molecules demonstrate that both these DNA molecules can bind to the intact ArgR hexamer , as expected , as well as to the 5:1 and 4:2 multimeric species ( top three bands in the stained gel , visible also on the autoradiogram ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>It also indicates that , although natural operators may engage only four subunits of the ArgR hexamer , all six subunits are active for DNA binding , and can be occupied simultaneously .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Thus , consistent with results presented above , all subunits of the ArgR hexamer are active for DNA binding , and can be occupied simultaneously .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Thus , even though all subunits of the intact ArgR hexamer are active for DNA binding and there is a one-to-one correspondence between ArgR subunits and DNA half-sites , a single ArgR trimer present in a 3:3 hexamer is unable to-bind palindromic DNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Thus , even though crystallographic data show that the ArgR hexamer is organized as a pair of trimers and that all six subunits are equivalent in the absence of DNA , and , as shown here , each subunit of the hexamer can bind an individual DNA half-site , the effective minimal functional unit of ArgR in DNA binding is one pair of subunits .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Thus , measurements of binding cooperativity on this DNA under 1:1 binding conditions can be used to evaluate the model of ArgR trimer-hexamer assembly coupled to DNA binding .15 If hexamer dissociation occurs at nanomolar ArgR concentrations then DNA binding might be coupled to hexamer reassembly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>This effect would be manifested as a DNA-binding iso-therm that displays cooperativity with respect to ArgR concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Thus , even though DNA binding occurs in the nanomolar ArgR concentration range , the breadth of the iso-therm demonstrates that assembly of ArgR hexamers is not coupled to DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Serial dilutions of ArgR or DNA made in binding buffer were added and incubation was continued for 30 minutes on ice .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Typical gels showing ArgR binding to the tandem palindromic DNA oligomer in the presence and absence of L-Arg are shown in Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>As well , apo ArgR binding to most of these DNA molecules is non-cooperative , indicating that even in the absence of L-Arg at nanomolar protein concentrations , hexamer assembly is not linked to DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>To investigate the molecular basis for ArgR operator interactions , we have carried out a series of quantitative analyses of ArgR subunit assembly and of the af ® nity , stoichiometry , cooperativity , and L-arginine - and DNA sequence-dependence of ArgR-DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The structural results suggest that L-arginine binding to ArgR should result in stabilization of the hexamer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The binding of six L-arginine molecules at the trimer-trimer interface of ArgR activates the regulator , allowing it to-bind to the ARG boxes in DNA ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The crystal structures and solution experiments together suggest possible mechanisms of how arginine activates ArgR to-bind to its DNA targets and provides a stereochemical basis for interpreting the results of mutagenesis and biochemical experiments with ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The structures of the unliganded and arginine bound forms of the hexameric ArgR core provide an important start in establishing ( 1 ) the structure of ArgR , ( 2 ) the stereochemical details of - arginine binding , ( 3 ) L mechanisms by which ArgR is activated to-bind Arg boxes , and ( 4 ) an important component of the ArgR/DNA complex for model building in conjunction with further structural studies and for interpreting mutagenesis and biochemical experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The total concentrations of ArgR and DNA used in these experiments were high enough to permit detectable binding for interactions with Kd values as weak as ca 0.1 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The absence of cooperativity in high-af ® nity DNA binding reported here establishes that hexamer assembly is not linked to DNA binding , and the results with mixed multimers on native gels suggest that ArgR trimers are unlikely to-bind to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The results indicate that subunit assembly plays no role in activation , although communication among subunits of the ArgR hexamer is required for speci ® c DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The quantitative features of DNA binding established here can be evaluated in ArgR mutants to give new clues about activation mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The present ® nding that one DNA palindrome is bent upon binding to ArgR but each half-site is not bent demonstrates that binding of the palindrome enforces cooperation o two ArgR subunits , again implying that DNA is an allosteric-effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The hexameric nature of ArgR also distinguishes it from most other prokaryotic sequence-speciﬁc DNA binding proteins , which are typically dimers , and occasionally trimers and tetramers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The data suggest that DNA is also an allosteric-effector of ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The fact that the DNA af ® nity enhancement exerted by L-Arg depends on DNA identity implies that DNA is itself an allosteric-effector for ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The mechanism by which binding of the co-repressor L-Arg to ArgR allosterically activates the protein for DNA binding is presently unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The af ® nity estimates for the binding of each DNA oligonucleotide to apo and holo ArgR are collected in Table 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Lane 1 , ArgR ; lane 2 , ArgR-C ; lane 3 , ArgR and ArgR-C mixed under native conditions to form 3:3 hexamer ( middle band ) ; lane 4 , ArgR and ArgR-C mixed under denaturing conditions to form mixed hexamers ( from top to bottom : 6:0 , 5:1 , 4:2 , 3:3 , 2:4 , 1:5 , 0:6 ArgR : ArgR-C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Protein samples in lanes 1 , ArgR ; lanes 2 , 3:3 hexamers ; lanes 3 , mixed hexamers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Similarly , we demonstrated that ArgR does not repress PargP ( Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Binding of the duplex DNA is ® rst detected as a single complex with slow mobility at ArgR concentrations of ca 50 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Binding of ArgR multimers to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>ArgR concentrations in this and the following figures are expressed as concentration of hexamer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>The concentrations of both Lrp and ArgR were 25 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>( b ) Apo ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Hexamer concentrations of ArgR are indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>The residuals improved steadily as the Kd value was reduced to 2.5 nM , suggesting that the stability of ArgR hexamers is at least as strong as 2.5 nM under the conditions used .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The proteins and their concentration used in each lane are as follows : lane 1.2 x l O ^ M wild-type ArgR ; lane 2 , no protein ; lanes 3-8 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>The involvement of ArgR in gltBDF regulation is reinforced by the following three observations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>ArgR bound to gltB DNA ( -406 to +246 ) with a K app d of 1.8 ± 0.7 nM ( Fig. 8B ) , and to a 3 ' - short-ened fragment ( -406 to -128 ) with essentially the same affinity ( K app d of 1.7 ± 0.06 nM ; not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>As the ArgR concentration is increased to the micromolar range , the mobility of the bound forms decreases further until at the highest ArgR concentrations tested the bound forms barely enter the gel .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The bound forms with decreasing mobility seen when protein is in great excess over DNA presumably represent complexes with additional ArgR hexamers bound .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>This second bound species is also unlikely to represent a complex in which each hexamer has both duplex and hairpin DNA molecules bound , since it forms when ArgR is in excess over DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>In this range of ArgR concentration , ultracentrifugation analysis indicates that ArgR in the absence of DNA exists exclusively in the hexameric state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>DNA bound fraction determined by densitometry ( circles ) is plotted versus ArgR concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>To account for the DNA concentration dependence , they postulated that ArgR trimers bound DNA in a ® rst step , and that the DNA-bound form mediated the assembly of hexamers in a subsequent step .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Further con ® rmation of the importance of pyrimidines , and more precisely of the 5-methyl group of thymine residues , in ArgR sequence speci ® c binding was sought by deoxyuridine substitution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>In contrast , binding to the equivalent fragment bearing the ARG box-KO region required higher protein concentrations and resulted in the formation of unstable and non-speciﬁc complexes as indicated by the intense smearing and the ArgR concentration-dependent position of the retarded DNA ( Fig. 4b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>To test whether the cis regulatory region of ybjE contains an ArgR binding site ( s ) , we puriﬁed ArgR and showed that in vitro ArgR bound only in the presence of Arg to a DNA fragment extending from 301 to 55 of ybjE , bearing the ybjE core promoter ( Fig. 6 ; also , see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>We engineered substitutions of 4 bases , A to C , G to T , T to G , and T to G at 37 , 40 , 41 , and 42 , respectively , of ybjE ( 4S ) ( Fig. 6A ) and found that the presence of 4S led to an overall reduction in the magnitude of ybjE-lac and loss of repression by ArgR ( Table 2 ) and impaired the binding of ArgR to the ybjE promoter DNA template bearing 4S ( Fig. 6D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>In vitro binding of ArgR to single base-pair substitution mutant carAB operators To test the validity of the chemical modi ® cation approach , we measured binding of ArgR to three single base-pair substitution mutant operator fragments , A12 !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>In vitro binding of ArgR to the wild-type and mutant artJ , artP and hisJ operators EMSAs ( electrophoretic mobility shift assays ) in the presence of L-arginine indicated that ArgR binds specifically to the artJ , artP and hisJ control regions ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Remarkably , depurination of A14 in the downstream ARG box of the hisJ operator strongly improved ArgR binding in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Since no such effect was observed upon removal of the complementary residue T5 ' we may conclude that the adenine residue specifically inhibits ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>For both operators the strongest reduction in ArgR binding was observed upon ethylation of the phosphate group 50 to the bases T11 or T110 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Our results do not exclude the possibility that there is a binding site for an unidentiﬁed activator and that ArgR enhances its ability to activate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>While the existence of a putative ArgR binding site suggests that transcription from PrraB might be regulated by the availability of L-arginine , we observed that the transcriptional activity , as determined from the level of - galactosidase , was unaffected by the presence or absence of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19717586" target="_blank">19717586</a>]<br></li>
+<li>Open boxes indicate the presence of ArgR binding sites identified in this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>NRI , sites of increased sensitivity to digestion denoted the bending caused by ArgR binding to the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Arg modestly repressed ybjE transcription in an ArgR-dependent manner , and ArgR displayed Arg-sensitive binding to the ybjE promoter region in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>ArgR also binds to the gltBDF promoter region , upstream of the Lrp binding sites , and decreases transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>As shown in Fig. 8 , and illustrated in Fig. 2 , ArgR binds far upstream of the promoter , near the Lrp-binding region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>This allowed us to distinguish bases that are crucial for ArgR binding from bases that contribute less , or are irrelevant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Alternatively , one might argue that ArgR might inhibit PhisJ by binding to a potential UP-element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>This may mean that CAP and ArgR are located on the same side of the DNA helix , especially when the concentration of CAP is high , thus allowing them to act synergistically to repress the metY promoter in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The intracellular concentration of cAMP is known to remain relatively low , even when cells are grown on glycerol , and in contrast to ArgR , the cAMP-CAP complex is a pleiotropic regulator that possesses many more available targets on the chromosome than the speciﬁc regulator ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The binding of cAMP-CAP and/or ArgR ( kindly provided by D. Charlier ) to the 268-bp DNA fragment encompassing the argG promoter was performed in HEPES-Mg-K glutamate buffer in the presence of 160 M cAMP as previously described ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The cAMP-CAP complex activates argG and represses metY , whereas ArgR also represses metY but only in the presence of CAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>However , the effects observed in vitro and in vivo seemed to contradict each other : ArgR repressed metY in vitro by increasing the cAMP-CAP complex repression effect , whereas in vivo it seemed to prevent the inhibitory action of CAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Since argG is known to be regulated by a speciﬁc repressor , ArgR , we studied the direct effect of CAP and ArgR , in vivo and in vitro , on the transcription of argG and metY .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>It is known that argG is regulated by the hexameric ArgR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>This prompted us to study the interaction between the binding of the cAMP-CAP complex and the hexameric ArgR repressor in arg regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>We also show that ArgR , the speciﬁc repressor of the arginine biosynthetic pathway , together with its arginine cofactor , acts on the regulation of metY mediated by CAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In summary , the regulation of argG and metY expression is coupled by the cAMP-CAP complex but in an opposite way and in an even more complex manner with ArgR and arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In this article , we show that a regulation mechanism for metY transcription exists , mediated by the cAMP-CAP complex and by the repressor of argG , ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Finally , the ArgR of Pseudomonas aeruginosa , a transcriptional-activator of the AraC/XylS family unrelated to the ArgR of the enteric bacteria and the bacilli , activates the arginine anabolic genes and represses the arginine catabolic genes ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Since the cellular concentration of ArgR has been estimated to be 1 to 3 mM ( Tian et al. , 1994 ) , the hexamer is probably the relevant species in vivo , regardless of cellular L-arginine levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Burke et al. ( 1994 ) describe a D128N , D129V double mutant that is a hexamer at micromolar concentration by molecular sieve chromatography and binds to an argF operator independent of L-arginine with an afﬁnity ( Kd = 50 to 100 nM ) that is 0300-fold lower than wild-type ArgR with L-arginine ( Kd = 0.2 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>This electrostatic change , the new set of functional groups presented by bound arginine , and the conformational change discussed above result in an ArgR core structure that is chemically quite different with arginine bound than in the unbound form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Binding of ArgR to the argG promoter region in the presence and absence of CAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In contrast , ArgR repressed the transcription of metY twofold in the presence of CAP , although ArgR had no detectable effect without CAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In the absence of its corepressor arginine , the ArgR regulator had no effect on the transcription of either metY or argG , whether in the presence or in the absence of CAP ( Fig. 7 ) , in agreement with the DNase I footprinting results .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In the presence of CAP , the inhibi-tory effect of ArgR plus arginine remained predominant and of the same magnitude as that on argG ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>This suggests that both regulators can bind to their own sites together in vitro , as shown by footprinting experiments , and that the binding of ArgR to the third ARG box , which occurs at a high concentration of arginine , reinforces the repressor effect of CAP on the binding of RNA polymerase to the metY P 1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>ARG box with CAP alone were no longer visible in the presence of ArgR and arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>ArgR only exerted its effect in the presence of CAP and a high concentration of arginine , i.e. , when the third ARG box , which is centered at position 60 with respect to the 1 position of metY , was occupied by ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>However , in footprinting experiments , ArgR with arginine , when bound ﬁrst , partially prevented the binding of CAP , especially when CAP was added at the same concentration as ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Indeed , the cAMP-CAP complex remained stably bound to DNA when ArgR was subsequently added in the presence of arginine ( Fig. 4C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In the presence of arginine , ArgR bound to the three boxes , even at a high concentration of CAP ( 100 nM ) ( Fig. 4C and 4D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In contrast , when ArgR with arginine was already bound to DNA , the binding of CAP to DNA was less efﬁcient , even at a high concentration ( 100 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>In this study , we focus on the oligomeric nature and arginine binding of ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Again , in the absence of arginine , the ArgR regulator did not bind and had no effect on the binding of the cAMP-CAP complex to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>As shown in Fig. 5 ( only the sense strand is shown , the antisense strand gave similar results ) , ArgR binds to the ARG boxes , but only with L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>At a higher arginine concentration ( 0.5 mM ) , when ArgR also bound to the third isolated ARG box , no further inhibition was observed at the argG promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The binding of ArgR to the tandem ARG boxes around the 1 start site , in the presence of arginine ( 0.05 mM ) , repressed the transcription of argG 10-fold , even in the presence of the cAMP-CAP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>0.05 mM arginine , ArgR ( 7.5 nM ) bound to the tandem ARG boxes around the argG 1 start site , whereas with 0.5 mM arginine , ArgR also bound to the third single ARG box ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>With 0.05 mM arginine , when bound to the tandem ARG boxes , ArgR ( 9 nM ) repressed argG transcription 10-fold ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Lanes : 1 , G+A ladder ; 2 , without ArgR and L-arginine ; 3 , with 136 ng of ArgR in 5 MM L-arginine ; 4 , with 68 ng of ArgR in 5 mMM L-arginine ; 5 , with 34 ng of ArgR in 5 MM L-arginine ; 6 , with 17 ng of ArgR in 5 MM L-arginine ; 7 , with 272 ng of ArgR , no L-arginine ; 8 , with 136 ng of ArgR , no L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>In the presence of canavanine , the afﬁnity of ArgR for its DNA target drops by a factor of 10 to 100 compared to the afﬁnity in the presence of L-arginine as measured in gel shift assays ( H. Niersbach and W. Maas , unpublished results ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>In a final volume of 20 , ul , -0.05 pmol of this fragment were incubated at 37 ° C for 15 min with various amounts of ArgR in the presence or absence of 5 mM L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>To test this possibility , full length ArgR was mixed with ArgRc in both a low salt and medium salt buffer , and in the presence and absence of 5 mM L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The full length and truncated forms of ArgR are both hexamers in solution in the presence and in th absence of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>PI and P2 are proximal and with 32P and incubated with the purified ArgR in the absence or presence Of L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>Footprinting with ArgR was done in the presence of 5 mM arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Binding of transdominant ArgR mutants , GD123 and AV105 , to argFDNA by gel retardation , with and without 5mM L-arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>Structural effects of bound arginine The quaternary structure of the hexameric ArgR core with and without L-arginine bound is the same .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The number of ArgR molecules per cell appears to be relatively high , around 600 ( 300 in the presence of excess arginine ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_209">
+The results of a gel retardation experiment with the GD123 mutant ArgR in the presence of arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></label>
+<input id="act_similarity_209", type="checkbox">
+<div class="ACT_similar">
+<li>The results of a gel retardation experiment wilti the AV105 mutant ArgR in the presence of arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li></div>
+<li>Single-round transcription assays performed in the presence of 5 mM L-arginine and increasing concentrations of ArgR indicate that PartJ and PhisJ are sensitive to liganded ArgR , but to a different degree .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>) Because ArgR is precipitated by L-arginine in low salt conditions , mixtures with L-arginine and L-arginine analogs were made up in buffers containing 200 mM NaCl .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The total concentration of ArgR subunits and of ArgRc subunits for each lane was 0.06 mM and the concentration of arginine and arginine analogs used was 5 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>ArgR concentrations of 0 , 3.13 , 6.25 , 12.5 , and 25 nM were used , and 5 mM L-arginine was present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Under conditions of high cellular concentration of the corepressor , L-arginine , ArgR binds to these operators with high afﬁnity and blocks transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>A conformational change of the hexameric core upon binding arginine suggests an allosteric contribution to the switch from low to high afﬁnity DNA binding forms of ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>This result supports the idea that the existence of ArgR hexamers is alone insufﬁcient for high afﬁnity DNA binding and that the role of L-arginine as corepressor is not simply to increase the concentration of hexamers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Discussion Here we identified the arginine and ArgR-repres-sible promoters that direct the transcription of the artJ , artPIQM and hisJQMP gene and operons and demonstrate that arginine-specific repression of these three promoters is mediated by binding of liganded ArgR to a pair of similar but non-equivalent Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>An interesting chemical consequence of L-arginine binding to ArgR that illustrates this change is a drastic reduction in solubility of the protein at low ionic strength .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>P2 , downstream , is repressed by arginine and the ArgR protein , whereas P1 is submitted to pyrimidine-speciﬁc regulation and as shown here to purine-speciﬁc control exerted by binding of the PurR protein to a PUR box sequence centered around nucleotide 2128.5 with respect to the start of P1 transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>The transcription of the artJ , artPIQM and hisJQMP genes and operons is repressed by liganded ArgR , whereas argT , encoding the LAO ( lysine , arginine , ornithine ) periplasmic binding protein , is insensitive to the repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The production of the histidine-binding periplasmic binding protein HisJ and of the ABC-type transporter ( HisQMP ) common to HisJ and ArgT is repressed by ArgR , whereas , in contrast , the production of the high affinity arginine binding ArgT protein is not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Arginine-dependent gene regulation via the ArgR repressor is species specific in Chlamydia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>For example , the arginine catabolic operon , astCADBE , not only responds to Ntr control ( via NtrC ) , but also to specific hyperinduction by arginine ( via ArgR ) , and activation by σS ( Schneider et al. , 1998 ; Kiupakis and Reitzer , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23531166" target="_blank">23531166</a>]<br></li>
+<li>For example , ArgR mediates arginine-speciﬁc stimulation of astCADBE expression and this control may be unique among Ntr genes ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>]<br></li>
+<li>Indeed , overexpressed ArgR can be selectively precipitated from E. coli lysates by adding L-arginine to 1 to 2 mM ( Lim et al. , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>ArgR purification Hexameric E. coli K-12 arginine repressor was puri ® ed to homogeneity from an IPTG induced culture of JM101/pDB169 as described by ( Lim et al. , 1987 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Recently , we have demonstrated that the Es70 promoters PartJ , PartP and PhisJ are repressed by the arginine repressor protein ArgR and excess L-arginine ( Caldara et al. , 2006 ; 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The downstream promoter P2 responds to arginine and is regulated by the arginine sensor ArgR ( Devroede et al. , 2004 ; Wang et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>Generally , repression is mediated by the repressor protein , ArgR , with L-arginine acting as corepressor , ArgR also represses its own formation ( Lim Received 2 March , 1994 ; revised and accepted 11 May , 1994 , ` For correspondence , Tel , ; Fax .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>In arginine biosynthesis , the arginine repressor protein ArgR , the product of the argR gene , in conjunction with L-arginine inhibits the synthesis of the ten enzymes of arginine formation and its own synthesis ( Maas , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>Interestingly , arginine uptake genes also appear to be ArgR regulated in the human pathogen Chlamydia pneumoniae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The arginine repressor of Escherichia coli , ArgR , is the master regulator of a set of genes known as the arg regulon .1 ArgR transduces the signal from intracellular L-arginine ( L-Arg ) to repress transcription of a group of genes involved in arginine bio-synthesis ( reviewed by Maas2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>However , all the genes in the arginine regulon are regulated by a master transcriptional-regulator and repressor , ArgR , which functions as a direct sensor of arginine availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>ArgR and PurR are responsible for the regulation by purines and arginine , but the sensor for pyrimidines and the corresponding regulator has not yet been identiﬁed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></li>
+<li>ArgR could be precipitated from crude extracts by L-arginine , which facilitated its purification .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>A possible mechanism of repression would involve ArgR , which mediates arginine repression for the enzymes of arginine synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Instead of ArgR , ArgP and ArgK have been proposed to mediate arginine repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Their expression is repressed by arginine to different extents , but in a coordinated fashion through the action of the arginine repressor ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>Expression of OprD is speciﬁcally induced by arginine via the arginine repressor ArgR ( 471 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14665678" target="_blank">14665678</a>]<br></li>
+<li>Repression of ybjE transcription by arginine via the ArgR repressor , together with the lysine repression of argO effected by ArgP , is indicative of a mechanism of maintenance of arginine/lysine balance in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>In addition , experiments on the genetic regulation of ybjE implicated the involvement of Arg in mediating transcriptional repression of ybjE via the arginine repressor ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>ArgR ( alias XerA ) and PepA/CarP ( alias XerB ) , respectively involved in arginine and pyri-midine-speci ® c regulation of the carAB operon , also act by imposing directionality in the cer/Xer site-speci ® c DNA recombination process that resolves ColE1 plasmid dimers ( Stirling et al. , 1988 ; 1989 ; Guhathakurta et al. , 1996 ) , a mechanism that ensures stable plasmid inheritance in a bacterial population .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9677289" target="_blank">9677289</a>]<br></li>
+<li>The eventual goal of our structural studies of the ArgR system is an understanding of ArgR activation by L-arginine and of the ArgR/DNA complexes involved in transcriptional regulation of arginine biosynthetic genes and site-speciﬁc recombination of ColE1 plasmid dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>ArgR is also required as a cofactor in the resolution of plasmid ColE1 multimers during replication .3 ArgR homo-logs in Bacillus subtilis ( AhrC ) and Salmonella typhi-murium have been shown to activate transcription of certain genes involved in arginine catabolism .4,5 The ArgR polypeptide chain of 156 residues assembles into a hexamer of total molecular mass approximately 100 kDa .6 Binding of L-Arg to the ArgR hexamer allosterically activates the protein for binding to DNA operator sequences upstream of each of the regulated genes , and in the cer locus for recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>7 1996 Academic Press Limited * Corresponding author Keywords : ArgR ; repressor ; arginine ; structure ; hexamer Introduction Arginine biosynthesis in Escherichia coli is regulated primarily at the level of transcription of the 12 biosynthetic genes that convert glutamate to arginine in eight enzymatic steps .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>7 1996 Academic Press Limite 0022 -- 2836/96/070377 -- 15 $ 12.00 / 0 In Bacillus subtilis , regulation of arginine biosynthesis is similar to that found in E. coli and the ArgR homolog AhrC has been shown to-bind to DNA targets resembling those of ArgR ( Smith et al. , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Thymine premodi ® cation interference contact probing of ArgR to the carAB operator ; upper and lower strands are visualized .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Fnr , MetJ , TyrR and ArgR have sites scoring lower than mi ÿ 2si .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>So far , little is known about the structure of ArgR and how it binds to its operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>However , the N-termi-nal helix R1 of IIB is missing in ArgR and the quaternary structures of IIB and ArgR are also different .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8784182" target="_blank">8784182</a>]<br></li>
+<li>Loss of ArgR appeared to prevent argininespeciﬁc induction , which suggests that ArgR mediates this induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Based on the in vivo and in vitro results of our analysis , ArgR mediates this speciﬁc induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>In contrast , the mechanism of ArgR media-ted repression of the Eσ70-dependent PhisJ is different .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Such an organization is unprecedented for a promoter that is directly repressed by ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Further studies are needed to delineate the mechanism of ArgR repression at the ybjE promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">ArgR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>HrcA Heat shock A-CS-EBM-XYTP Predicted ` winged helix ' HTH and uncharacterized domain possibly responsible for activation by chaperonin GroE ADC-VEBMH -- P ` Winged helix ' HTH and arginine-binding domain [ 5,6 ] 1.72 0.22 CIRCE box : 1-TTAGCACTCn9GAGTGCTAA ArgR Arginine ( Gram-negative ) metabolism AhrC ( Gram-positive ) 1.81 0.22 ARG box : [ 8-11 ] TGMATwwwwATKCA * Abbreviations for species : B , Bacillus subtilis ; C , Clostridium acetobutylicum ; M , Mycobacterium tuberculosis ; D , Deinococcus radiodurans ; A , Thermotoga maritima ; S , Synechocystis sp ; H , Haemophilus influenzae ; E , Escherichia coli ; P , Chlamydia pneumoniae ; T , Chlamydia trachomatis ; Z , Mycoplasma genitalium ; Y , Mycoplasma pneumoniae ; V , Vibrio cholerae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11305941" target="_blank">11305941</a>]<br></li>
+<li>Our working hypothesis is that ArgR allows pre-assembly of the Lrp-IHF-RNAP complex , but blocks a specific contact required for transcriptional activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Determination of the energy landscape of the ArgR -- operator contacts by missing contact probing and mutant studies indicated that each box of a pair contributes to complex formation in vitro and to the repressibility in vivo , but to a different extent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Each ARG box establishes sequence-specific contacts with ArgR in vitro and contributes to the repressibility in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>We found further evidence to support the idea that the C-terminal half of ArgR was an oligomerization domain when we analyzed ArgR that had undergone partial proteolysis by endogenous E. coli proteases ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>E. coli ArgR is 156 amino acids long and is composed of a basic N-terminal half and an acidic C-terminal half .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>We overexpressed the C-terminal domain of ArgR ( ArgRc ) corresponding to amino acids 80 to 156 in a T7 polymerase-driven system and puriﬁed the protein to homogeneity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>IIB is monomeric in solution , while the ArgR domains trimerize to a 12-stranded antiparallel super-barrel , and two such superbarrels further dimerize by tail-to-tail contacts to a hexameric structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8784182" target="_blank">8784182</a>]<br></li>
+<li>Combined , these elements indicate that fullrange transcriptional control of the carAB operon by arginine , pyrimidines and purines requires the elaboration of a speci ® c nucleoprotein structure comprising at least three speci ® c sensors ( ArgR , PyrH and PurR ) and two architectural elements ( IHF and PepA/CarP ) , which interact by establishing protein-DNA and protein-protein contacts in a complex interplay that requires also a pronounced susceptibility of the extended control region ( about 400 bp ) to undergo structural distortion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9677289" target="_blank">9677289</a>]<br></li>
+<li>An earlier study on ArgR / ARG box interaction has pointed to the importance of a T base at the seventh position ( T7 ) , with minor groove occupancy , which is highly conserved in DNA sequences of all ARG boxes , mediating contact with ArgR ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>This suggests that ArgR might also be involved in th regulation of the S promoter , perhaps by facilitating an interaction between E S and another DNA-bound transcription factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>For both strands of the consensus and carAB operators , the ethylated phosphate groups that interfere with repressor binding are clustered in groups of two or three ( Figure 1 ) and most of them are located to the 50 side of bases shown to be important for ArgR binding by the base-speci ® c techniques .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Further con ® rmation of the importance of pyrimidines , and more precisely of the 5-methyl group of thymine residues , in ArgR sequence speci ® c binding was sought by deoxyuridine substitution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>This is further con ® rmed by the observation that ArgR shows phosphate and deoxyribose contacts with the same residues that were found to be essential for repressor interaction by these base-speci ® c methods .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>On the other hand , trimers of ArgR have been reported to bind operator DNA ,12,13 with DNA-binding apparently mediating their assembly into hexamers .14,15 Structural comparison of apo and holo forms of ArgR also suggested that domain adjustments induced by L-Arg-binding may alter the disposition of the DNA-binding surfaces of the protein .8 Operator-region DNAs from regulon members show a clear consensus site for ArgR binding , comprising a pair of half-sites in palindromic arrangement , 50TGNAT ( A/T ) 4ATNCA30 , repeated with ® xed spacing to form a tandem pair of palindromes ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>ArgR binding took place in 20 mM Tris/HCl , pH 7 ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>This suggests that an adenine residue at this particular position is highly unfavorable for ArgR binding ( see Discussion ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Since no such effect was observed upon removal of the complementary residue T5 ' we may conclude that the adenine residue specifically inhibits ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Detailed modeling using the protein structure showed that available high-resolution DNA chemical footprinting data could be accounted for by the binding of only four DNA-binding domains to typical operators containing tandem palindromes .16 This result suggests that only four of the six equivalent subunits of hexameric ArgR are engaged in operator binding , consistent with the organization of Arg operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>To provide basic information about DNA-binding that can be used to constrain models for allo-steric activation in the ArgR system , we have carried out a series of quantitative analyses of its DNA and subunit interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Assuming that one ArgR hexamer binds to two sites , as it does in other promoters ( 24 ) , the binding of more than one ArgR hexamer would be required to give the observed footprint .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Solution experiments with wild-type ArgR and oligomerization domain indicate that the hexameric form is greatly stabilized upon arginine-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Upon binding L-arginine , a conformational change occurs in the oligomerization domain of ArgR that may play a role in orienting the DNA-binding domains to form an appropriate interaction surface to bind Arg boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>¶ The ` winged helix ' superfamily is defined in the SCOP database [ 40 ] ; LexA [ 41 ] and ArgR [ 42-44 ] DNA-binding domains have been resolved by X-ray crystallography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11305941" target="_blank">11305941</a>]<br></li>
+<li>Discussion The C-terminal domain of ArgR forms a hexameric protein core that contains the binding sites for L-arginine and provides a central , symmetric scaffold for six DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The ArgR hexamer is represented by a tripartite pie representing the two trimeric layers of the C-terminal hexamerization domain , with three pairs of peripheral circles representing the DNA-binding domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The assumption that one DNA palindrome interacts with one pair of ArgR DNA-binding domains as depicted is validated in the present work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The E. coli ArgR DNA-binding domain consists of a three helix bundle and a b - ® nger , of which the third helix ( residues 43 to 53 ) most likely interacts with the major grooves of the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Could it be that E. coli ArgR bears a similar combination of DNA-binding motifs ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>The results indicate that subunit assembly plays no role in activation , although communication among subunits of the ArgR hexamer is required for speci ® c DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The quantitative features of DNA-binding established here can be evaluated in ArgR mutants to give new clues about activation mechanisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The location of L-Arg-binding sites at the interface between two trimeric layers in the ArgR hexamer , as determined from X-ray crystallographic analysis , suggested that L-Arg may stabilize the hexameric state .7,8 The hexamer appears to be the active form of ArgR for DNA-binding ; 9 ± 11 thus , hexamer stabilization could provide a link between L-Arg-binding and DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>It also indicates that , although natural operators may engage only four subunits of the ArgR hexamer , all six subunits are active for DNA-binding , and can be occupied simultaneously .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>Recently , the structure of the monomeric DNA-binding domain ( residues 1 to 78 ) of E. coli ArgR was determined by NMR spectroscopy and shown to belong to the winged-helix-turn-helix family of gene regulators ( Sunnerhagen et al. , 1997 ; see also Discussion ) that comprises prokaryotic and eukaryotic regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Residues involved in binding arginine are underlined Results The domain structure of ArgR The mutagenesis results of two laboratories have shown that the ArgR subunit is made up of two functional regions : a basic N-terminal half responsible for DNA-binding and an acidic C-terminal half responsible for both oligomerization and for binding arginine ( Burke et al. , 1994 ; Tian & Maas , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The stoichiometry of L-arginine-binding to ArgR has not been conclusively determined , but a preliminary study has indicated a K = 10 − 4 d M and three L-arginine residues bound per hexamer using titration calorimetry and a model of independen binding sites ( Tian et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The interactions between hydrophobic residues that form the trimer-trimer interface in wild-type ArgR might be preserved in this case , resulting in mutant ArgR dimers ( see Figure 2 ( c ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The oligomerizing domain of ArgR forms a 32-symmet-ric hexamer in which the subunits are organized into two trimers , each with tightly packed hydrophobic cores .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The oligomeric core is a 3-fold rotationally symmetric hexamer formed from six identical subunits corresponding to the 77 C-terminal residues ( 80 to 156 ) of ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The â1â2R1â3â4R2 motif of IIB and ArgR appears to be a novel fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8784182" target="_blank">8784182</a>]<br></li>
+<li>Therefore , the negative effect of an A · T pair at position 14 · 5 ′ on ArgR binding is likely indirect , and might occur by steric interference of an adeninespecific hydrogen bonding group , possibly the exocyclic amino group , with the establishment of one or more nearby contacts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>To further evaluate the importance of backbone contacts in ArgR binding , we performed phosphate ethylation interference assays with operator DNA randomly modi ® ed by N-ethyl-nitroso urea , so that on average each molecule was ethylated at one phosphate hydroxyl group only ( Siebenlist & Gilbert , 1980 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Fine mapping of ArgR -- operator contacts in the PartJ , PartP and PhisJ operators The ArgR binding site in the artJ , artP and hisJ control regions was identified and delimited by DNase I and in gel phenanthroline-copper ( OP-Cu ) footprinting , and functionally dissected by missing contact probing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Missing contact probing with the carAB and consensus operators26 and with the artP and artJ operators ( this work ) indicate that position 14 · 5 ′ does not contribute much to complex formation and that a T · A or G · C pair at this site appears to be more `` neutral '' for ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>In contrast , ArgR did not bind to the promoter region of the respective artJ genes coding for a putative periplasmic arginine-binding protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Both RNA polymerase and ArgR are known to bind to one face of the DNA helix and the points of contact revealed by the missing contact probing experiments reported here for ArgR indicate that the repressor and the polymerase ( region 4.2 of σ70 ) bind to the same major groove segment and contact identical residues of the top ( coding ) strand of the helix in the − 35 region of the PartJ and P promoters .27,48 artP This is illustrated for the methyl groups ( major groove ) of the two T residues of the − 35 promoter element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>As demonstrated previously , these methyl groups play a crucial role in the binding of the polymerase49 and similarly , the methyl group of one of these residues , at position 3 of the ARG box , significantly contributes to ArgR binding .27 Therefore , it appears highly unlikely that ArgR would be able to bind to the RNA polymerasebound artJ or artP control region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>E-mail address of the corresponding author : carey@chemvax.princeton.edu 0022-2836/01 / 050949 ± 14 $ 35.00 / 0 # 2001 Academic Pres Results ArgR subunit assembly The subunit assembly state of ArgR was determined by analytical ultracentrifugation using equilibrium sedimentation as a function of protein concentration in the presence and absence of L-Arg .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>In the latter procedure it was necessary to elute ArgR in the presence of at least 0.15 M NaCl to avoid interaction of the purified protein with the Superose beads .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>The relatively weak extinction coef ® cient of ArgR in the aromatic region of the spectrum , due to the presence of only three Tyr residues per polypeptide chain and no Trp , dictated the use of much lower detection wavelengths at most protein concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">ArgR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Finally , the ArgR of Pseudomonas aeruginosa , a transcriptional activator of the AraC/XylS family unrelated to the ArgR of the enteric bacteria and the bacilli , activates the arginine anabolic genes and represses the arginine catabolic genes ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>These stretches include the deoxyriboses belonging to the bases A12 , T11 and T13 , and the homologous positions on the opposite strand , that by several other methods ( see above ) were shown to be important for ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Taxonomically , B. subtilis and E. coli are distantly related prokaryotes and it is unusual to ﬁnd a regulatory system that shares homologous proteins between these organisms , as occurs with ArgR and AhrC ( Maas , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Recently , the structure of the monomeric DNA-binding domain ( residues 1 to 78 ) of E. coli ArgR was determined by NMR spectroscopy and shown to belong to the winged helix-turn-helix family of gene regulators ( Sunnerhagen et al. , 1997 ; see also Discussion ) that comprises prokaryotic and eukaryotic regulatory proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>The B. subtilis repressor is 35 % identical in amino acid sequence to ArgR in the C-terminal half of the protein but only 19 % identical in the N-terminal half , with 27 % identity overall .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>A similar distribution was observed in the DnaA , ArgR , and Ihf families ( where a high proportion in small genomes was observed ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by ArgR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Functionb Other regulator ( s ) Reference ( s ) Rich Minimal Medium Medium No 15 12 Yes 24 18 No 6 6 ybaY gabP ugpE Unknown GABA-transporter protein b0453 b2663 b3451 GabC ( ) , Nac ( ) PhoBR ( ) 55 , 66 , 93 15 G-3-P transporter membrane bound component ATP binding protein of G-3-P transporter Putative binding protein of ABC transporter Hypothetical ATP-binding protein of ABC transporter Beta subunit of nitrate reductase-II Subunit of cytochrome bd-II oxidase Lysine decarboxylase Induced by alkylating agents ; protects DNA from alkylation damage Hydroperoxidase II Universal stress protein B ; required for ethanol resistance Periplasmic protein induced by high osmolarity ; function unknown Multidrug efﬂux pump No 20 9 Yes 6 2 No 28 21 ugpC ydcS yehX b3450 b1440 b2129 PhoBR ( ) Nac ( ) 15 93 narY appB IdcC aidB b1467 b0979 b0186 b4187 13 23 Yes Yes Yes Yes 10 25 7 36 2 7 AppR ( ) 47 , 79 45 , 46 11 33 Lrp ( ) Yes 40 66 Yes 4 8 katE uspB b1732 b3494 74 26 Yes 35 64 osmY Lrp ( ) , Crp ( ) , IHF ( ) EvgA ( ) , Lrp ( ) b4376 20 , 90 , 91 No 31 yhiV b3514 56 , 57 , 74 , 78 56 , 57 , 78 25 72 , 74 12 77 24 4 yhiU mltB otsA ecnB argH aroM Multidrug efﬂux pump EvgA ( ) b3513 b2701 b1896 8 2 Yes No Yes Yes No No 39 2 31 23 2 15 Membrane-bound lytic transglycosylase B Trehalose phosphate synthase Bacteriolytic lipoprotein entericidin B Argino-succinate lyase Unknown ; may play a role in aromatic-amino-acid biosynthesis Putative lipase 2,5-diketo-D-gluconic acid reductase A ; catalyzes the conversion of 2,5-KGDR to 2-KLG Aldehyde dehydrogenase B ; converts lactaldehyde and NAD to lactate and NADH Succinate-semialdehyde dehydrogenase Membrane-bound subunit of carbonphosphorus lyase complex Transaldolase A ; converts Sed-7-P and Gly-3-P to Fru-6-P and Ery-4-P Putative glutathione S-transferase Putative dehydrogenase Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Unknown Lrp ( ) 57 74 5 78 ( ) EnvZ/OmpR ArgR ( ) TyrR ( ) b3960 b0390 No 15 No 8 yhjY yqhE b3548 b3012 9 92 11 aldB 22 Yes 21 b3588 74 , 87 gabD phnP B2661 B4092 16 8 No No GabC ( ) , Nac ( ) PhnF and PhnO ( ) 55 , 93 51 13 2 talA B2464 26 20 No CreBC ( ) 7 , 70 yfcG yliI yjbJ yjbE ygaU ygdI ygaF yjgR ydaM ydcK yhiN yebF yjiN yeaG yodC ybiO yhjG yphA yhjD B2302 B0837 B4045 B4026 B2665 B2809 B2660 B4263 B1341 B1428 B3492 B1847 B4336 B1783 B1957 B0808 B3524 B2543 B3522 52 37 37 17 22 22 4 7 3 6 16 15 5 41 4 13 41 13 17 24 5 No Yes No No No No No No No No No No No Yes No No No No Yes SdiA ( ) 84 66 179 58 12 5 7 3 23 9 7 25 6 10 17 26 15 18 34 Lrp ( ) 74 63 , 74 Lrp ( ) Lrp ( ) 63 a Genes were identiﬁed using the BLAST algorithm ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15576800" target="_blank">15576800</a>]<br></li>
+<li>E. coli operons with conﬁrmed 54-dependent promoters Promoter sequencea Operon Regulator Function argT-hisJQMP NRI-NRII Arginine , histidine-transport astCADBE NRI-NRII-ArgR Arginine catabolism atoDAEB AtoC-AtoS Acetoacetate-catabolism fdhF FhlA FDH glnALG NRI-NRII Nitrogen assimilation glnHPQ NRI-NRII Glutamine-transport glnK-amtB NRI-NRII PII paralog , NH3 transport hycABCDEFGHI FhlA Hydrogenase hydN-hypF FhlA Hydrogenase hypABCDE-fhlA FhlA Hydrogenase nac NRI-NRII Nitrogen assimilation prpBCDE PrpR Propionate catabolism pspABCDE PspF Phage shock and other stresses rtcBA RtcR RNA terminal cyclase ygjG NRI-NRII ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>Table 1 TFs identiﬁed in complete genomes Family DBD Role PFAM Annotations Total 1 16 Function AlpA C n/d -- Lipopolysaccharide adhesion to human gastric tissue Tatusova et al. ( 1999 ) ; Odenbreit et al. ( 2002 ) AraC/XylS A M 733 124 813 Carbon metabolism , cell-wall-synthesis , stress responses , and pathogenesis regulation Arginine biosynthesis regulation Tobes and Ramos ( 2002 ) R 56 ArgR ArsR W 14 60 Campoy et al. ( 2002 ) 335 R W 50 313 Pérez - Rueda and Collado-Vides ( 2000 ) ; Sato and Kobayashi ( 1998 ) ; Diorio et al. ( 1995 ) Arsenic resistance regulation -- AslB n/d AsnC D 87 -- 39 72 -- w 277 Leucine repressor protein Biosynthesis of biotin Napoli et al. ( 1999 ) ; Leonard et al. ( 2001 ) Wilson et al. ( 1992 ) -- -- 24 0 BirA R CaiF n/d w 75 6 Co-activator of the carnitine operon Low temperature adaptation Buchet et al. ( 1998 ) Obokata et al. ( 1991 ) 201 -- 198 8 Cold shock CSD A Crl -- R 0 0 Schnetz ( 2002 ) Global regulator protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>ACTGCATAATCAATCAAA-3nt-ACCGAAATTTCATGCATA PgltBDF WNTGAATWWWWATTCANW -- ArgR cons A nM ArgR B Modeling analysis [ 47 ] suggests that the major control of relative flux between the alternative pathways shown in Fig. 1 should involve regulation of GlnA activity ( via ade-nylylation and deadenylylation [ 48 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>Control at the transcriptional level has been demonstrated for both inﬂux and efflux genes , by several speciﬁc ( ArgR , ArgP ) and more general ( NtrC , Lrp ) repressors and activators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>ArgR may play a structural role in this reaction , acting as a scaffolding protein to ensure the proper architecture for intramolecular recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>Some of thisgroup regulators such as ArgR and GlnG control a large number of genes ( more than 40 by ArgR and more than 50 by GlnG ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21673794" target="_blank">21673794</a>]<br></li>
+<li>We investigated the possible role of other regulators in pga expression , and analysis of the pga promoter region using the BPROM online promoter analysis tool , revealed possible binding sites for the transcription factors Lrp , Crp , and ArgR , which are global regulators in E. coli ( Paul et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18445167" target="_blank">18445167</a>]<br></li>
+<li>Results : Crp and a more local regulator , ArgR , directly control gltBDF transcription , both acting negatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_10">
+Integration of regulatory signals through involvement of multiple global regulators : control of the Escherichia coli gltBDF operon by Lrp , IHF , CRP and ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></label>
+<input id="rp_similarity_10", type="checkbox">
+<div class="RP_similar">
+<li>Integration of regulatory signals through involvement of multiple global regulators : control of the Escherichia coli gltBDF operon by Lrp , IHF , Crp , and ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li></div>
+<li>A homologue of RutR , AcrR , also functions as a secondary modulator of gene-expression by 70-holoenzyme ( 16 ) , as does ArgR , an unrelated protein , at the 54-dependent ast promoter ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16540542" target="_blank">16540542</a>]<br></li>
+<li>It appears therefore that ArgR at the ybjE promoter is likely to exert its repressive effects in a manner analogous to its role as a repressor of genes involved in Arg biosynthesis , that is , by occluding promoter binding of the RNA polymerase holoenzyme ( 34 , 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Since the afﬁnity of the ArgR hexamer for the classical ARG box is very high , hexameric ArgR binds to the ARG box even during growth in minimal medium , and hence its absence causes derepression of expression of genes involved in Arg biosynthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>ArgR mediates repression of gene-expression at hisJ and gltBDF in mechanistically distinct ways which in both cases are different from its mode of action on genes involved in Arg biosynthesis ( 37 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>It may be noted that for the gltBDF operon , hisJ , and genes involved in Arg biosynthesis , the absence of ArgR leads to derepression of gene-expression , which is not the case for ybjE ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Furthermore , the corresponding ABC-trans-porter encoding the hisJQMP cluster should not be too strongly repressed by liganded ArgR neither , since it is also involved in histidine-transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>HI1209 HI0811 HI1727 H1177 HI1178 HI1179 HI1180 HI0596 Vibrio cholerae ArgR VC2645 VC2644 VC2643 VC2642 VC2641 VC2618 VC2390 VC2389 VC2508 VC2316 VCA0757 VCA0758 VCA0759 VCA0760 Figure 1 Schematic representation of the operon organization and regulation of the arginine-metabolism and transport genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11305941" target="_blank">11305941</a>]<br></li>
+<li>Keywords : arginine repressor ( ArgR ) ; arginine-transport ; histidine-transport ; transcription regulation ; protein -- DNA interactions Edited by J. Karn Introduction Three uptake systems for the nitrogen and energy-rich basic amino acid arginine have been described so far in Escherichia coli K-12 : ( i ) the arginine-specific system ; ( ii ) the AO system for arginine and ornithine ; and ( iii ) the LAO system for basic amino acids ( lysine , arginine , ornithine ) ( Figure 1 ) ( for a review see Charlier & Glansdorff ,1 and Reitzer2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>ArgR interacts with two major groove segments and the intervening minor groove segment of each box , all aligned on one face of the helix .27 Recently , the glutamate synthase operon gltBDF , also involved in nitrogen metabolism , was added to the ArgR regulon .29 In spite of genome-wide studies and their recent identification as members of the ArgR regulon , expression and regulation of the arginine-transport genes remains poorly documented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The E. coli ast operon differs in its regulation from the S. enterica serovar Typhi-murium operon , which appears to absolutely require ArgR for expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>It is also possible that , earlier in bacterial evolution , IHF was involved in ast operon expression and that ArgR preempted this function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Additionally , the arginine repressor , ArgR , has been shown to be involved in the transcriptional regulation of the ast operon in S. enterica serovar Typhimurium ( 23 ) , and IHF is involved in the regulation of some NR 54 I - and - dependent promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Both Lrp and ArgR are also involved in transcriptional regulation of the gltBDF operon for glutamate synthase ( GOGAT ) , which plays an important role in the synthesis of glutamate , a precursor of arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Nishijyo T , Park SM , Lu CD , Itoh Y , Abdelal AT : Molecular characterization and regulation of an operon encoding a system for transport of arginine and ornithine and the ArgR regulatory protein in Pseudomonas aeruginosa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11305941" target="_blank">11305941</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_26">
+Role of ArgR in activation of the ast operon , encoding enzymes of the arginine succinyltransferase pathway in S. typhi-murium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></label>
+<input id="rp_similarity_26", type="checkbox">
+<div class="RP_similar">
+<li>Role of ArgR in activation of the ast operon , encoding enzymes of the arginine succinyltransferase pathway in Salmonella typhimurium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15805526" target="_blank">15805526</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li></div>
+<li>[ 123 ] Maghnouj , A. , de Sousa Cabral , T.F. , Stalon , V. and Vander Wauven , C. ( 1998 ) The arcABDC gene cluster , encoding the arginine-deiminase-pathway of Bacillus licheniformis , and its activation by the arginine repressor ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14638413" target="_blank">14638413</a>]<br></li>
+<li>The ArgR protein of Bacillus licheniformis activates the arcABCD gene cluster , which encodes the enzymes of the arginine-deiminase-pathway ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Precedent for the use of a specific regulatory protein for other purposes is seen in the case of ArgR , which is both the regulator of arginine-biosynthesis and part of the cer recombination of ColEl ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1532173" target="_blank">1532173</a>]<br></li>
+<li>The DNA bending proteins that participate in - depen-dent gene-expression in E. coli are integration host factor ( IHF ) and ArgR , the arginine repressor ( 72 , 103 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>A possible mechanism of repression would involve ArgR , which mediates arginine repression for the enzymes of arginine-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>In arginine-biosynthesis , the arginine repressor protein ArgR , the product of the argR gene , in conjunction with L-arginine inhibits the synthesis of the ten enzymes of arginine-formation and its own synthesis ( Maas , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>The transcription of the artJ , artPIQM and hisJQMP genes and operons is repressed by liganded ArgR , whereas argT , encoding the LAO ( lysine , arginine , ornithine ) periplasmic binding protein , is insensitive to the repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>ArgR is a well studied regulon repressor that affects pyrimidine , arginine , and polyamine-synthesis ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>Abbreviations used : CPSase , carbamoylphosphate synthetase ; ArgR , arginine repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>Abbreviations used : ArgR , arginine repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>The analysis suggested ArgR ( regulator for the arginine regulon ) and Crp ( catabolite repressor protein ) as potential additional regulators of gltBDF ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>The arginine repressor of Escherichia coli , ArgR , is the master regulator of a set of genes known as the arg regulon .1 ArgR transduces the signal from intracellular L-arginine ( L-Arg ) to repress transcription of a group of genes involved in arginine bio-synthesis ( reviewed by Maas2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>However , all the genes in the arginine regulon are regulated by a master transcriptional regulator and repressor , ArgR , which functions as a direct sensor of arginine availability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Binding sites for the regulatory proteins IHF , PepA , PurR and ArgR involved in the purine , pyrimidine and arginine-speciﬁc control of promoter activity are colored .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>In the carAB promoter , at least ﬁve regulatory proteins ( IHF , PepA , PurR , RutR and ArgR ) are involved in the purine , pyrimidine and arginine-speciﬁc control of the promoter activity ( 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21572102" target="_blank">21572102</a>]<br></li>
+<li>ArgR is also required as a cofactor in the resolution of plasmid ColE1 multimers during replication .3 ArgR homo-logs in Bacillus subtilis ( AhrC ) and Salmonella typhi-murium have been shown to activate transcription of certain genes involved in arginine-catabolism .4,5 The ArgR polypeptide chain of 156 residues assembles into a hexamer of total molecular mass approximately 100 kDa .6 Binding of L-Arg to the ArgR hexamer allosterically activates the protein for binding to DNA operator sequences upstream of each of the regulated genes , and in the cer locus for recombination .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>ArgR ( alias XerA ) and PepA/CarP ( alias XerB ) , respectively involved in arginine and pyri-midine-speci ® c regulation of the carAB operon , also act by imposing directionality in the cer/Xer site-speci ® c DNA-recombination process that resolves ColE1 plasmid dimers ( Stirling et al. , 1988 ; 1989 ; Guhathakurta et al. , 1996 ) , a mechanism that ensures stable plasmid inheritance in a bacterial population .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9677289" target="_blank">9677289</a>]<br></li>
+<li>In addition to regulating the transcription of arginine biosynthetic genes , ArgR plays an obligatory role in a site-speciﬁc recombination reaction that resolves ColE1-like plasmid multimers to monomers and is necessary for plasmid stability ( Stirling et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The eventual goal of our structural studies of the ArgR system is an understanding of ArgR activation by L-arginine and of the ArgR/DNA complexes involved in transcriptional regulation of arginine biosynthetic genes and site-speciﬁc recombination of ColE1 plasmid dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">ArgR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>At cer and other natural plasmid sites , Xer recombination shows strong resolution selectivity ; this is accompanied by the requirement for 180 bp of accessory sequences adjacent to the core recombination site and for the accessory proteins ArgR and PepA ( Stirling et al. , 1988 , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8402918" target="_blank">8402918</a>]<br></li>
+<li>Similar observations have been reported with the ArgR protein where the repressor bound 50 bp downstream from the transcription start site of the carAB P1 promoter failed to stop transcription elongation ( Charlier et al. , 1988 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12207706" target="_blank">12207706</a>]<br></li>
+<li>Both of the DNA bending proteins that facilitate the activation of 54-dependent genes in E. coli , IHF and ArgR , have an AT-rich consensus sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The sequence to which ArgR binds was determined by DNase I protection using gltB DNA from -462 to +161 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>On the other hand , trimers of ArgR have been reported to bind operator DNA ,12,13 with DNA binding apparently mediating their assembly into hexamers .14,15 Structural comparison of apo and holo forms of ArgR also suggested that domain adjustments induced by L-Arg binding may alter the disposition of the DNA-binding surfaces of the protein .8 Operator-region DNAs from regulon members show a clear consensus site for ArgR binding , comprising a pair of half-sites in palindromic arrangement , 50TGNAT ( A/T ) 4ATNCA30 , repeated with ® xed spacing to form a tandem pair of palindromes ( Figure 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11580241" target="_blank">11580241</a>]<br></li>
+<li>B , Binding of ArgR to wild-type carAB operator and carAB operator sequences bearing inosine substitutions at positions A6 and A120 of the upstream ARG box , and of G6 and A120 in the dowstream ARG box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>ArgR with 5 mM arginine bound to an extended region from 20 to 120 ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>P2 , downstream , is repressed by arginine and the ArgR protein , whereas P1 is submitted to pyrimidine-speciﬁc regulation and as shown here to purine-speciﬁc control exerted by binding of the PurR protein to a PUR box sequence centered around nucleotide 2128.5 with respect to the start of P1 transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14741201" target="_blank">14741201</a>]<br></li>
+<li>Inspection of the nucleotide sequence in the argI-rraB intergenic region revealed the presence of a putative arginine repressor ( ArgR ) binding site ( ARG box ) , which consists of two neighboring 18-bp palindromic sequences separated by 3 nucleotides ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19717586" target="_blank">19717586</a>]<br></li>
+<li>In fact , ArgR , in conjunction with its corepressor arginine , represses argG transcription by binding to three ARG boxes : ﬁrst to tandem ARG boxes , constituted of 18-bp boxes separated by 3 bp , located around the 1 site of argG , and then to a third single ARG box , located 101 bases upstream ( Fig. 5 ) ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>0.05 mM arginine , ArgR ( 7.5 nM ) bound to the tandem ARG boxes around the argG 1 start site , whereas with 0.5 mM arginine , ArgR also bound to the third single ARG box ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The binding of ArgR to the tandem ARG boxes around the 1 start site , in the presence of arginine ( 0.05 mM ) , repressed the transcription of argG 10-fold , even in the presence of the cAMP-CAP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>ArtJ is the previously characterized arginine-specific periplasmic binding protein ArgBP-I .14,15 Isolated ArtJ binds L-arginine ( Kd 0.4 μM ) , but not ornithine .13 Recently artI was proposed to be the gene encoding the periplasmic AO binding protein ( ArgBP-II ) instead of abpS , as proposed previously .16,17 Indeed , a computer analysis showed that ArgI is the closest E. coli protein to the AO protein , and that no protein near the proposed site of abpS had anything resembling this amino acid composition .18 The E. coli artJ , artPIQM and hisJQMP genes and operons were recently discovered as new members of the ArgR regulon .19 The hexameric repressor protein ArgR is the master regulator of this regulon .1 In the presence of arginine , ArgR inhibits the transcription of several biosynthetic and transport genes/operons , and its own synthesis .19 -- 21 Liganded ArgR also functions as a co-activator of the astCADBE operon encoding the arginine succinyltransferase pathway for arginine catabolism .22,23 At the mole-cular level the action of ArgR is only well documen-ted in the biosynthetic pathway , where a single liganded ArgR hexamer was shown to bind to a tandem pair of 18 bp long ARG box sequences that overlap the core promoter elements to a variable extent , but systematically cover the Pribnow box and the transcription start site .1,21,24 -- 28 The upstream box may or may not ( partially ) overlap the − 35 promoter element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The presence of a single 18 bp ARG box-like sequence upstream of the open reading frame of the E. coli artJ and artP genes had been predicted from in silico analyses ,30 but previous studies indicated that arginine transport is ArgR independent .15 Furthermore , whereas the amount of ArtJ protein found in periplasmic extracts was strongly reduced in bacteria grown with excess arginine , no difference was observed for ArtI .13 Recently , however , micro-array and RTq-PCR experiments indicated a significant arginine and ArgR-dependent down-regu-lation of both the artJ ( about 50-fold ) and artPIQM ( about three to sixfold ) mRNA levels .19 The mole-cular mechanism of this repression and the precise identity of the ArgR binding sites had not been investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Arginine repression of the histidine transporter genes The functionality of the putative ARG box AATGAAAAATAATACGTC located 120 -- 103 bp upstream of the hisJ start codon was tested by measuring arginine repression in a set of reporter fusions with lacZ , and by electrophoretic mobility shift experiments in the presence of pure ArgR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17074904" target="_blank">17074904</a>]<br></li>
+<li>The presence of a pair of wellconserved ARG box sequences has been predicted upstream of the glnPQ genes that encode a potential ABC transporter and ATPase .30 In a recent study , Shaumburg & Tan57 have shown that recombinant C. pneumoniae ArgR binds specifically to the glnPG control region of C. pneumoniae and Chlamydia caviae .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>It should be noted that the distance between the CAP binding site and the distal ArgR box is 42 bp , i.e. , exactly four full turns of the DNA double helix , assuming a DNA pitch of 10.5 bp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>ArgR bound with greater avidity to the argF DNA template than the ybjE DNA template , indicating that the binding site for ArgR in the cis regulatory region of ybjE represented a weak ArgR binding site ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>Assuming that the mode of binding of ArgR to the DNA of the cis regulatory region of ybjE was similar to that seen in the case of its cognate targets in promoters of genes involved in Arg biosynthesis , we searched for a pair of 18-bp DNA sequences located in close proximity to the ybjE promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>A short horizontal line with a dot represents a site that becomes hyper-reactive for DNase I upon ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Regions that are protected against DNase I upon ArgR binding are boxed and sites that become hyper-reactive for DNase I are indicated by a short vertical line with a dot .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Missing contact probing with the carAB and consensus operators26 and with the artP and artJ operators ( this work ) indicate that position 14 · 5 ′ does not contribute much to complex formation and that a T · A or G · C pair at this site appears to be more `` neutral '' for ArgR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Deoxyuridine substitution interference effect on ArgR binding to the consensus operator sequence ( A , upper strand visualized ) and the carAB operator ( B , upper strand visualized ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9545374" target="_blank">9545374</a>]<br></li>
+<li>Binding assays , footprinting , determination of the energy landscape of ArgR binding by missing contact probing and mutant studies indicated that each operator bears two functional but non-equiva-lent ARG boxes separated by 3 bp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>However , the G+C - rich sequence upstream of the − 35 core promoter element of PhisJ is not reminiscent of an UP-element .43,44 Very recently , ArgR was shown to negatively affect the expression of the gltBDF operon by binding to two ARG boxes centered around position − 342 , far upstream of the transcription start and core promoter elements .29 This is yet another example where the ARG boxes do not overlap the promoter elements .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>B Lrp ArgR ( -- ) + Crp IHF ( + ) ( -- ) RNAP gFlitgBDurFepr2omoter region Our inspection of the gltBDF DNA sequence revealed a potential Crp-binding site between -76 and -55 ( Fig. 5A , top two lines ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>ArgR also binds to the gltBDF promoter region , upstream of the Lrp binding sites , and decreases transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>There are two good matches to the consensus ArgR binding site sequence [ 24,25 ] upstream of the promoter-distal Lrp binding site ( Figs. 2A and 8A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233899" target="_blank">17233899</a>]<br></li>
+<li>The strong RNAP induced hyper-reactivity for DNase I in the hisJ promoter is indicated with a vertical line with a dot The ArgR and RNA polymerase binding sites of the artJ and artP control regions overlap partially , but only the − 35 promoter element is included in the strongest promoter proximal ARG box sequence ( Figure 2 ( c ) ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>( c ) Nucleotide sequence of the artJ , artP and hisJ control regions with indication of the experimentally identified transcription start sites and ArgR binding sites , and the proposed promoter sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>( c ) Nucleotide sequence of the ArgR binding sites in the artJ , artP and hisJ promoter/operator regions showing a compilation of the results of DNase I and OP-Cu footprinting , and of de-purination and de-pyrimidation missing contact probing .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>A clear case of this is the ArgR regulon , where each of the six regions has two binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11897025" target="_blank">11897025</a>]<br></li>
+<li>These results confirm the suggestion from sequence comparisons of arg genes and mutational studies that the ARG box sequences are the binding sites for ArgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>Below , we demonstrate that the ArgR binding sites comprise two ARG box sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by ArgR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Combined , these data demonstrate that in the growth conditions used in this work the hisJQMP operon is transcribed from an ArgR repressible Eσ70 promoter and not from an Eσ54 promoter , as suggested for S. typhimurium .2,18,32 We presume that the same conclusion would hold for S. typhimurium hisJ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Since ArgP was previously shown not to exert autoregulation ( Nandineni and Gowrishankar , 2004 ; Caldara et al. , 2006 ) , in contrast to many other LysR-family members , we may conclude that argP expression is regulated neither by Lrp or ArgR , nor by ArgP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>Simultaneous regulation of two divergent promoters by ArgR has been described for a number of adjacent gene pairs , such as argE and argC or argG and metY ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19717586" target="_blank">19717586</a>]<br></li>
+<li>By putting the gene , argR gene and an argR-lacZ gene fusion under the control of strong promoters , clones were obtained that hyperproduce ArgR and an ArgR-p-galactosidase fusion protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3116542" target="_blank">3116542</a>]<br></li>
+<li>The argR gene itself contains an upstream ArgR binding site and is autoregulated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8594204" target="_blank">8594204</a>]<br></li>
+<li>The choice of this particular base-pair was dictated by : ( i ) the results of the missing contact probing experiments ( see below ) , which indicated a strong inhibition of ArgR binding upon removal of A12 ' ( or its symmetrical counterpart A12 ) ; and ( ii ) by the observation that a G · C pair never occurs at position 7 · 12 ' in the ARG boxes of the 13 E. coli arginine operators characterized ( eight arginine biosynthetic , the gltBDF operon , argR 's own operator , and the three uptake systems ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>However , the G+C - rich sequence upstream of the − 35 core promoter element of PhisJ is not reminiscent of an UP-element .43,44 Very recently , ArgR was shown to negatively affect the expression of the gltBDF operon by binding to two ARG boxes centered around position − 342 , far upstream of the transcription start and core promoter elements .29 This is yet another example where the ARG boxes do not overlap the promoter elements .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The hisJQMP operon is the first member of the E. coli ArgR regulon , directly repressed by liganded ArgR , where none of the core promoter elements overlaps the ARG boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>PhisJ is the first example of a promoter that has none of its core promoter elements overlapping the ARG boxes and yet is directly repressed by liganded ArgR , also in a pure in vitro transcription system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>Furthermore , the corresponding ABC-trans-porter encoding the hisJQMP cluster should not be too strongly repressed by liganded ArgR neither , since it is also involved in histidine transport .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>hisJQMP , encoding the histi-dine-binding protein and the ABC-type transporter of the LAO system , are repressed by Arg-loaded ArgR ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+<li>The transcription of the artJ , artPIQM and hisJQMP genes and operons is repressed by liganded ArgR , whereas argT , encoding the LAO ( lysine , arginine , ornithine ) periplasmic binding protein , is insensitive to the repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>The production of the histidine-binding periplasmic binding protein HisJ and of the ABC-type transporter ( HisQMP ) common to HisJ and ArgT is repressed by ArgR , whereas , in contrast , the production of the high affinity arginine binding ArgT protein is not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17850814" target="_blank">17850814</a>]<br></li>
+<li>IHF did not stimulate transcription and appeared to inhibit it when ArgR was also present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>ArgR is required for optimal transcription of the E. coli ast operon but is not absolutely necessary ( Kiupakis and Reitzer , unpublished ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>None-theless , there is an additional unidentiﬁed factor that activates the ast operon and other operons in stationary phase ( 47 ) , and ArgR could potentially enhance its ability to stimulate transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Generally , repression is mediated by the repressor protein , ArgR , with L-arginine acting as corepressor , ArgR also represses its own formation ( Lim Received 2 March , 1994 ; revised and accepted 11 May , 1994 , ` For correspondence , Tel , ; Fax .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7997172" target="_blank">7997172</a>]<br></li>
+<li>It is known that argG is regulated by the hexameric ArgR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>Expression of OprD is speciﬁcally induced by arginine via the arginine repressor ArgR ( 471 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14665678" target="_blank">14665678</a>]<br></li>
+<li>The DNA bending proteins that participate in - depen-dent gene expression in E. coli are integration host factor ( IHF ) and ArgR , the arginine repressor ( 72 , 103 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11528004" target="_blank">11528004</a>]<br></li>
+<li>The expression of argF is under the control of the ArgR repressor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10600368" target="_blank">10600368</a>]<br></li>
+<li>For example , the arginine catabolic operon , astCADBE , not only responds to Ntr control ( via NtrC ) , but also to specific hyperinduction by arginine ( via ArgR ) , and activation by σS ( Schneider et al. , 1998 ; Kiupakis and Reitzer , 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23531166" target="_blank">23531166</a>]<br></li>
+<li>For example , ArgR mediates arginine-speciﬁc stimulation of astCADBE expression and this control may be unique among Ntr genes ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>]<br></li>
+<li>It may be noted that for the gltBDF operon , hisJ , and genes involved in Arg biosynthesis , the absence of ArgR leads to derepression of gene expression , which is not the case for ybjE ( Table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25845847" target="_blank">25845847</a>]<br></li>
+<li>It is also possible that , earlier in bacterial evolution , IHF was involved in ast operon expression and that ArgR preempted this function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12003934" target="_blank">12003934</a>]<br></li>
+<li>Both Lrp and ArgR are also involved in transcriptional regulation of the gltBDF operon for glutamate synthase ( GOGAT ) , which plays an important role in the synthesis of glutamate , a precursor of arginine .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>The artPIQM operon is , besides being downregulated by Lrp ( Hung et al. , 2002 ) , also repressed by ArgR ( Caldara et al. , 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19906180" target="_blank">19906180</a>]<br></li>
+<li>On the other hand , expression of the artPIQM operon , one of the systems responsible for arginine uptake , is downregulated by ArgR ( 5 ) and Lrp ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21441513" target="_blank">21441513</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - LsrR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">LsrR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">LsrR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>LsrR Quorum Sensing `` Switch '' Is Revealed by a Bottom - Up Approach Sara Hooshangi , William E. Bentley * 1,2 2,3 1 College of Professional Studies , The George Washington University , Washington , DC , United States of America , 2 Fischell Department of Bioengineering , University of Maryland College Park , College Park , Maryland , United States of America , 3 Institute of Bioscience and Biotechnology Research , University of Maryland , College Park , Maryland , United States of America Abstract Quorum sensing ( QS ) enables bacterial multicellularity and selective advantage for communicating populations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Quorum Sensing in Escherichia coli Is Signaled by AI-2 / LsrR : Effects on Small RNA and Bioﬁlm Architecture † Jun Li ,1,3 Can Attila ,5 Liang Wang ,1,4 Thomas K. Wood ,5 James J. Valdes ,6 and William E. Bentley1 ,2,3 * Center for Biosystems Research , University of Maryland Biotechnology Institute ,1 Fischell Department of Bioengineering ,2 Department of Chemical and Bimolecular Engineering ,3 and Department of Cell Biology and Molecular Genetics ,4 University of Maryland , College Park , Maryland 20742 ; Department of Chemical Engineering , Texas A&M University , College Station , Texas5 ; and Army Edgewood Chemical Biological Center , Aberdeen Proving Ground , Maryland 210106 Received 3 January 2007/Accepted 28 May 2007 The regulatory network for the uptake of Escherichia coli autoinducer 2 ( AI-2 ) is comprised of a transporter complex , LsrABCD ; its repressor , LsrR ; and a cognate signal kinase , LsrK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>TABLE 1 Data collection and structure refinem ent statistics LsrR Data collection Space group I222 EXPERIMENTAL PROCEDURES Cloning , Expression , and Purification of LsrR and Mutants -- LsrR was cloned , expressed , and purified as described with minor modifications ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Published in the U.S.A. Structural Basis for Phosphorylated Autoinducer-2 Modulation of the Oligomerization State of the Global Transcription Regulator LsrR from Escherichia coli * Received for publication , March 29 , 2013 , and in revised form , April 9 , 2013 Published , JBC Papers in Press , April 15 , 2013 , DOI 10.1074 / jbc.M112 .417634 Minhao Wu1 , Yue Tao1 , Xiaotian Liu , and Jianye Zang2 From the Hefei National Laboratory for Physical Sciences at Microscale and School of Life Sciences , University of Science and Technology of China , Hefei , Anhui 230026 , China Background : The Escherichia coli global transcription regulator LsrR regulates the expression of many genes in response to autoinducer-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>E. coli K12 BW25113 , its isogenic mutants and the pCA24N-based plasmids for expressing YncC , MqsR , B3023 , LsrR , LsrK , LuxS and TqsA under the tight regulation via the lacIq repressor , were obtained from the Genome Analysis Project in Japan ( Baba et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Figure 4 The GFP fluorescence intensity normalized with cell turbidity at 600 nm of MG1655/pPyncC-gfp overexpressing MqsR , B3023 , TqsA , LsrR , LsrK or LuxS with IPTG induction from plasmid pCA24N-mqsR , pCA24N-b3023 , pCA24N-tqsA , pCA24N-lsrR , pCA24N-lsrK or pCA24N-luxS , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Ligand binding to LsrR might induce conformational changes in loops A and B. No electron density could be assigned to residues 215 -- 224 of the loop connecting 6 - 11 in LBD of LsrR , indicating high flexibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>As shown in Figure 4 , one region from -- 20 to -- 49 bp is protected , which is indicated by the disappearing nucleo-tide peaks as the LsrR protein concentration increases ( from line A to D ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>/ LsrR interaction Summary of the initial concentration of the species in the first model and the complete list of kinetic rates that provided the best fit to the experimental data shown in Figure 2B .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>A , cross-linking SDS-PAGE analysis of LsrR with ligands .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR was incubated with ligands on ice for 30 min before cross-linking .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR was incubated with ligands on ice for 30 min before incubating with DIG-p-lsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>For control , no LsrR was added in lane 1 and 10-fold unlabeled fragments were used as specific competitors in lane 6 , and no protein-DNA complex was formed under these two conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>As the amount of added LsrR protein increased from 5 to 40 pmol ( the final concentration was from 0.5 to 4 μM ) , the amount of the complex formed increased and the amount of free probes decreased correspondingly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>From lane 2 to 5 , the amount of the LsrR protein was equivalent , and when different amounts of AI-2 ( the final concentration was increased from 0 to 390 μM ) were added in the reaction mixtures , no reduction of the DNA-protein complex was observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Since ADP exists as one of the products in the phos-pho-AI-2 preparation , and there may be residual ATP that was not converted to ADP during the in vitro phosphorylation reaction , we incubated ATP and ADP , respectively , with the LsrR protein and the DIG-labeled p-lsrR fragments under the same conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>ATP or ADP was incubated with the LsrR protein and the DIG-labeled p-lsrR fragments under the same conditions as shown in Figure 3A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_18">
+Increasing LsrR was incubated with excess DIG-labeled probes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></label>
+<input id="act_similarity_18", type="checkbox">
+<div class="ACT_similar">
+<li>Increasing amount of LsrR was incubated with excess DIG-labeled probes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_20">
+In lane 6 , besides the labeled probes , 500 fmol of unlabeled probes were incubated with the LsrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></label>
+<input id="act_similarity_20", type="checkbox">
+<div class="ACT_similar">
+<li>In lane 6 , besides the labeled probes , 1 pmol of unlabeled probes were incubated with the LsrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li></div>
+<li>LsrR final concentration was 4 M , and labeled DNA concentration was 10 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>From lane 2 to 5 , the same amount of LsrR ( the concentration was 4 μM ) was incubated with 50 fmol of labeled probes and increasing amount of AI-2 ( from lane 2 to 5 , the final concentration of AI-2 was 0 , 3.9 , 39 , and 390 μM , respectively ) ; From lane 7 to 10 , the same amount of LsrR and labeled probes ( similar with the above situation ) was incubated with increasing amount of phospho-AI-2 ( from lane 7 to 10 , the final concentration of phospho-AI-2 was 0 , 3.9 , 39 , and 390 μM , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>In each panel , lanes 1 -- 5 show LsrR at 0 , 1 , 2 , 4 , and 4 M ; DIG-labeled probes were 100 fmol ( concentration , 10 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In each panel , from lane 1 to 6 , the concentration of LsrR was 0 , 0.5 , 1 , 2 , 4 , and 4 μM , respectively ; the amount of DIG-labeled probes was all the 50 fmol ( the concentrations were all 5 nM ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>In each panel , from lane 1 to 6 , the concentration of LsrR was 0 , 0.5 , 1 , 2 , 4 , and 4 μM , respectively ; the amounts of DIG-labeled probes were all the 100 fmol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Although LsrR monomers and higher oligomerization forms were pres-ent , LsrR dimers were nearly unobservable , indicating that LsrR assembled in tetramer form in solution ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Note that P and an identical rate irrespective of i 6 the product Y migrate slightly differently depending on the the presence or absence of the presence or the absence of proteins ( LsrR or BSA ) , and this LsrK enzyme ( Figure 2 , panel c , is indicated by the arrows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>c ) The left-most TLC plate shows DPD and [ -32 P ] ATP following 0 The LsrR Repressor Binds P-DPD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>The right-most TLC plate shows the results following removal of the LsrK protein by ﬁltration and then continued incuba-lowing LsrK action on internalized DPD , LsrR repression tion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>As a control , we Speciﬁcally , a brief 10 min incubation of LsrK , DPD , and carried out the same series of experiments with bovine ATP is sufﬁcient for full consumption of ATP and forma-serum albumin ( BSA ) substituted for the LsrR protein tion of the phosphorylated , immobile product X. Small ( Figure 3 , lanes 4 -- 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>To test that , in the absence of the DPD substrate , incubation of this possibility , we puriﬁed the LsrR protein and incu-LsrK with [ -32 P ] ATP results in some low-level ATP hy - bated it for 10 min with the products of reaction of LsrK drolysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>We im - DPD and [ -32 P ] ATP for 120 min to allow the formation of mediately subjected half of the products X and Y. Subsequently , this reaction mixture was reaction mixture to ﬁltration to incubated with LsrR protein ( lanes 1 -- 3 ) or with BSA ( lanes 4 -- 6 ) for 10 min at 37 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>First , expression of LsrR should be induced at 16 ºC ; the purification should be performed at low temperature ( 4 ºC ) and high salt concentration ( 1 M ) , and imidazole in the eluant should be removed by ultrafiltration rather than dialysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Liu , X. , Wu , M. , Sun , D. , and Zang , J. ( 2010 ) Cloning , purification , crystallization , and preliminary crystallographic analysis of LsrR from Esche-richia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Our data showed that the transcriptional activities of the parental p-lsrR and p-lsrA remained at low levels throughout the growth cycle because of the LsrR repression ; in contrast , the transcriptional activities of the p-lsrR and p-lsrA mutants with 6 - to 9-bp deletions or random GC replacement increased to higher levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>In vitro expressed His6-tag LsrR protein had the characteristic of strong binding affinity but weak stability , resulting in its quick denaturation and precipitation , thus bringing many challenges for the gel shift assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We hypothesize that noncovalent interactions ( most probably , van der Waals in nature ) engage the alkyl chains of DPD analogs with certain residues in the active site of LsrR , and locks the protein into a conformation that has a higher afﬁnity for the DNA binding sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>Cross-linking , size exclusion chroma-tography , and gel shift assays determined that phosphorylated autoinducer-2 triggered the disassembly of the LsrR tetramer into dimers and reduced the DNA binding ability of LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR is homologous to SorC , a DNA-binding-transcriptional-regulator involved in sorbose metabolism in Klebsiella pneumoniae ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>We had attempted to improve the stability of LsrR by adding the GST tag at its N-terminus , but it did make LsrR more stable and also dramatically decreased its DNA-binding affinity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>It is likely that GST , due to its relatively large size ( 27 kD ) , affected the conformation of the LsrR Nterminal , which is responsible for the DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>It is intriguing to speculate that LsrR associates with RydB to assist in ﬁne-tuning QS circuitry through the regulation of the global regulator RpoS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>lsr operon LsrR CAP cAMP glycolysis ATP ADP 2 FAD FADH GlpK GlpD Glycerol G3P DHAP Glycerol GlpF GpsA NAD NADP NADPH GldA NADH DHA DhaM-P DhaM DhaK periplasm cytoplasm FIG. 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>Substrates that lack primary hydroxyl functionalities are however not accepted as substrates , but the mere presence of a primary hydroxyl group is not sufﬁcient for kinase processing , as it has already been shown that LsrK from S. typhimurium phosphorylates AI-2 but not ribose or glucose , which also contain primary hydroxyl units .35 There are three known AI-2 processing enzymes which would be the most likely checkpoints for analog function namely LsrK , LsrR , and LsrG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>We also used a random DNA sequence as the probe for the negative control , and the results show that LsrR can not bind to this random fragment ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>These results suggest that LsrR was unable to-bind to the promoters of lsrA and lsrR firmly when the 6-bp or 9-bp sequences were deleted .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We propose that the effect of LsrR repression is due to its competitive inhibition of these transcriptional factors , thus making them unable to-bind to the promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Our results show that ADP and ATP do not affect the binding of LsrR to the promoter regions ( Figure 3B ) , ruling out the possibility that the above phenomenon was due to the presence of ADP or ATP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>It is possible tha weak transcription from the lsrR promoter in the luxS mutant , which is therefore repressed by LsrR , accounts for the polar effect of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Results show that LsrR specifically binds to both lsrA and lsrR promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>These data indicate that LsrR can specifically bind to the lsrA and lsrR promoter regions in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Phospho-AI-2 inhibits the binding of LsrR to the lsrR promoter in a dose dependent manner , while AI-2 has no such effect ( Figure 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Figure 3 Phospho-AI-2 but not AI-2 causes LsrR to relieve its binding to the lsrR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Putative DNA-binding Site -- LsrR is reported to specifically bind to the lsrR promoter region ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>A , binding of LsrR to the lsrR promoter by gel shift assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The ptsIcrr phenotype is rescued by AI-2 internalization via an IPTG-inducible Lsr transporter Our data show that in a ptsIcrr mutant , LsrR strongly represses the lsrACDB transport genes and lsrK ; we hypothesized that the phenotype of the ptsIcrr mutant could be explained by its inability to take up sufficient AI-2 to inactivate LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>Our results show that LsrR is required for the repression that we observed in the glpD mutant ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>The profile of LsrR alone , LsrR with AI-2 , and LsrR with p-AI-2 are shown in blue , red , and green , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The profile of wild-type LsrR , mutants V153E and P173A , P175A are shown in blue , red , and green , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Size Exclusion Chromatography Assays -- The purified wildtype or mutant ( V153E and P173A , P175A ) LsrR proteins in the presence or absence of AI-2 and p-AI-2 were loaded onto a Superdex GL column ( GE Healthcare ) pre-equili-brated with column buffer and eluted using the same buffer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The major fraction of LsrR in the absence of AI-2 or p-AI-2 was eluted as a single peak , and the apparent molecular mass was estimated as 150 kDa .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The molecular masses of LsrR in the presence of AI-2 and p-AI-2 are about 132 and 80 kDa , corresponding to tetrameric and dimeric states of LsrR , respectively ( Fig. 6B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR subunit A , green ; LsrR subunit D , red ; CggR-apo , blue ; and CggR-DHAP , purple .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR subunit A , CggR-apo , and CggR-DHAP are superimposed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Molar ratio of LsrR with ligand was 1:20 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Purified LsrR protein was concentrated to 5 mg/ml for crystallization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The grooves of LsrR , SorC , and CggR varied in shape due to accommodation of different inducer molecules .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The groove in LsrR was composed of the helices 5 , 6 , 7 , and loops connecting 3 - 6 , 7 - 8 , 6 - 11 , and 9 - 14 ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The incubation condition of LsrR with ligands is the same as that in A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The regulation of LsrR and Table 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Right , schematic drawing of LsrR topology .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Transcriptional regulation of lsrR by LsrR and CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>However , when inducers are available , repression by LsrR is released , and transcription of the two operons is increased rapidly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>These results indicate that LsrR , LsrK and TqsA induce yncC expression , whereas LuxS represses yncC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Multimeric LsrR represses system expression emanating from the intergenic region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22916001" target="_blank">22916001</a>]<br></li>
+<li>In the ptsIcrr , lsrR the levels of lsr -- lacZ expression were very similar to the lsrR single and the lsrR , luxS double mutants ( Fig. 6A ) , thus inhibition of lsr -- lacZ induction in the ptsIcrr mutant is relieved in the absence of LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>Inhibition of lsr transcription and LsrK protein expression in a ptsIcrr mutant is rescued if repression by LsrR is absent To further test whether the inability to induce lsr transcription and expression of LsrK of the ptsIcrr mutant was due to a direct effect upon LsrK expression and/or function or the indirect effect of impaired signal uptake , we examined if this inhibition could be relieved by the absence of the major repressor of the system , LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>Thus , ptsIcrr-dependent inhibition of lsr -- lacZ transcription and expression of LsrK is mediated by LsrR , and not due to a direct ptsIcrr-dependent effect upon expression of either .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>These observations support our earlier proposal that the active DPD analogue species that are acting to repress lsr expression are the phosphorylated forms .10 To test whether the phosphorylated analogues work through repressor LsrR , we carried out studies in isogenic lsrR null mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22433054" target="_blank">22433054</a>]<br></li>
+<li>To elucidate the action pathway of the analog once inside the cells , we looked at the importance of the transcriptional-repressor of the circuit LsrR and observed that the analog could not function in repressing lsr expression in the absence of LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>Previous work showed that DPD analogues did not alter lsr expression in the absence of LsrR , which is the transcriptional-repressor of the circuit .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22433054" target="_blank">22433054</a>]<br></li>
+<li>The best correlation between the model and the experiments occurred when the relative affinity of the LsrR for the lsrR promoter was of the same order as the LsrR affinity for the lsr-operon promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>The cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) complex stimulates the expression of lsrR and the lsr operon , which includes lsrACDBFG , while LsrR represses their expression and is located adjacent to , while being transcribed divergently from , the lsr operon [ 14-16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>The cAMP-CRP complex stimulates the expression of lsrR and the lsr operon , while LsrR represses their expression [ 14 , 15 ] , suggesting that cAMP , the CRP , or both may be affected by sdiA-ydiV double mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>In E. coli , the cAMP-CRP complex stimulates the expression of both lsrR and the lsr operon by binding to the promoter regions , while LsrR represses their expression [ 14 , 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>Expression of lsrR and the lsr operon is inhibited by LsrR and stimulated by the cAMP-CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>In Escherichia coli , LsrR serves as a global transcription regulator that responds to autoinducer-2 to regulate the expression of a variety of genes , including the lsr operon and the lsrR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Whether the two CRP binding sites are independent or cooperate in stimulation of transcription of lsrR and the lsr operon needs further investigation ; however , our results clearly indicate that th promoters of lsrR and the lsr operon are both subject to LsrR repression and CRP activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Previous physiological studies showed that LsrR represses the transcription of lsr operon and itself , but did not reveal whether the effects are through direct or indirect interactions between LsrR and these promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Our present study has provided direct evidence for the DNA-binding ability of LsrR , and confirmed that LsrR represses the transcription of lsr operon and itself by directly binding to their promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>LsrR inhibits transcription of the lsr-operon by binding to the lsr-operon promoter site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>LsrR is a negative regulator that inhibits both the transcription of the lsr-operon and its own .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Also , lsrR and lsrK belong to the same operon , lsrRK , which is positively regulated by the cyclic AMP receptor protein and negatively regulated by LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>It was shown recently that the functions of the E. coli lsr operon and its regulators , LsrR and LsrK , are similar to those in S. enterica serovar Typhimurium , and cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) are involved in regulation of the lsr operon ( 50 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>We note that the presence of glucose completely shuts off lsr expression and swamps the QS regulation mediated by LsrR [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>cAMP-CRP , a positive regulator , stimulates expression of both operons in the absence of glucose , while LsrR prevents their expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>It was unexpected that the lsr and lsrRK operons , which are divergently transcribed , are controlled by the same transcriptional-regulators : CRP and LsrR ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>cAMP-CRP and LsrR are involved in transcriptional control of lsr and lsrRK operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Our observation of bioﬁlm phenotypes in lsrR and lsrK mutants cooperates with this model : AI-2 probably binds with LsrR to mediate bioﬁlm architecture and formation by coordinately regulating interactions of bioﬁlm-related genes , including the colanic acid synthesis regulator wza and the ﬂu gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Since RpoS and H-NS play an important role in globally regulating genes in response to changing environments , it is not surprising that AI-2-related QS networks utilize their uptake regulators ( e.g. , LsrR and LuxP ) , together with DsrA , in a hierarchical modality for mediating prompt responses to environmental stimuli and extracellular stresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>It is under this condition that LsrR , LsrK , LsrF , and LsrG play a greater role in regulating and `` tuning '' AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>Finally , and perhaps most importantly , our results suggest that lsrR and lsrK ( or , more speciﬁcally , LsrR and AI-2 ) operate in tandem and in the inverse of their role in regulating AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Docking was started with p-AI-2 and LsrR and driven by interaction restraints with active residues ( Lys-288 and Asp-243 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Moreover , p-AI-2 formed hydrophobic interactions with the LsrR residues Phe-124 , Ile-210 , Ile-244 , and Leu-245 , strengthening the interaction between p-AI-2 and LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Sequence analysis of LsrR-binding box and phenotypic assays of the mutated promoters of lsrR and lsrA LsrR has been proposed to be a QS regulator that interacts with phospho-AI-2 and regulates transcription of a variety of genes in the previous studies [ 32 ] , suggesting that LsrR might possess the ability to-bind to diverse gene promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Furthermore , in agreement with the conclusion that phosphorylated AI-2 can relieve the repression of LsrR in previous studies , our data show that phospho-AI-2 renders LsrR unable to-bind to its own promoter in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>In summary , phospho-AI-2 renders LsrR unable to-bind to the lsrR promoter in in vitro assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Although a previous study has revealed that phospho-AI-2 can bind to LsrR directly using in vitro assays [ 29 ] , whether it is the same case in vivo and the detailed mechanism by which phospho-AI-2 derepresses the lsr transcription still remain obscure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>A recent study showed that phospho-AI-2 can directly bind to LsrR in vitro [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>A previous study has demonstrated that LsrR can bind to phospho-AI-2 in vitro , the effective form of the QS signal , indicating that LsrR is capable of signal detection [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We suspect that a phosphorylated form of AI-2 binds and antagonizes LsrR , raising the possibility that this phosphorylated form of AI-2 is the intracellular signal responsible for lsr activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>Phospho-AI-2 binds specifically to LsrR and antagonizes it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>Following internalization by the Lsr transporter encoded by genes in the lsr operon , AI-2 is phosphorylated by LsrK , and phospho-AI-2 binds specifically to LsrR and antagonizes it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>Following internalization , AI-2 is phosphorylated by LsrK ; then , phospho-AI-2 binds specifically to LsrR and antagonizes it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>The function of LsrR is inhibited when cell density increases and inducer phospho -- AI-2 accumulates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>LsrK is a kinase responsible for converting AI-2 to phospho-AI-2 , which is required for relieving LsrR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>However , it remains unclear how phospho-AI-2 relieves the LsrR repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>The effect of this autoregulation of LsrR is a more severe or ampliﬁed `` switch '' that responds to high levels of AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>In the presence of high AI-2 concentrations , REG ( like LsrR ) binds AI-2-P and the auto-regulation effect of REG decreases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>p-AI-2 Induces Dissociation of LsrR Tetramer into Dimers -- LsrR interaction with DNA is impaired in the presence of p-AI-2 ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR tetramers were captured in the absence of p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Structural basis for disassembly of LsrR tetramer in the presence of p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>To validate this hypothesis , we are currently purifying LsrR for binding and competition assays with phospho-AI-2 and DHAP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>AI-2 interaction and binding to LsrR was modeled as a formation of a complex and its eventual decay ( Eq .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Previous work has already demonstrated that phospho AI-2 and not AI-2 bind to LsrR40 ,39 Data from the aforementioned studies , coupled with our observation that DPD analogs do not inhibit lsr expression in LsrR mutant bacteria strongly suggest that the biological proﬁles of these analogs are due to the binding of phospho-DPD or phospho-analogs to LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>Since phospho -- AI-2 is an inducer that releases LsrR repression ( 46 ) , it is reasonable to see that deletion of either luxS or lsrK reduced the lsrR expression , because there is no phospho -- AI-2 available in these two deletion strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Increased levels of LsrR provide a mechanism for quickly shutting down expression of the lsr and lsrRK operons when the inducer phospho -- AI-2 is not available later due to the degradation by LsrF and LsrG ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>A TP LsrC LsrA LsrB LsrD LsrA LsrK LsrR ADP P AI-2 lsrA lsrC lsrD lsrB lsrF lsrG lsrK lsrR Results DPD SRH LsrR binds to lsrA and lsrR promoters LsrR has been revealed to be able to repress transcription from the lsrA and lsrR promoters , with deletion of lsrR resulting in maximal transcription of the lsr operon and the lsrR gene in S. typhimurium and E. coli [ 26 , 31 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>This hypothesis is also not supported by our data as de-repression of lsr transcription can occur in the absence of the PTS when AI-2 uptake is undertaken by an IPTG-inducible Lsr , thus demonstrating that LsrR inactivation does not require a functional PTS ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>This result demonstrates that in terms of AI-2 transport , lsrR is epistatic to glpD , suggesting that LsrR is involved in the mechanism by which mutation of glpD causes lsr repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>Phospho-AI-2 can bind the cognate transcriptional-regulator LsrR and derepress gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Phospho-AI-2 has been reported to-bind to LsrR and relieve its repression effect on the lsr transporter genes , thus stimulating additional AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Phospho-AI-2 has been reported to-bind LsrR and relieve its repression of the lsr transporter genes , triggering their expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>C ) The lsrK knock-out represent the third sub-network where in the absence of the LsrK kinase , LsrR completely represses the lsr-operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Since then , AI-2 phosphorylation by LsrK and binding of AI-2-P to LsrR have been shown in vitro ( Xavier et al. , 2007 ) , and it was recently shown biochemically that the intracellular levels of AI-2-P directly correlate with the induction of the lsr promoter ( Marques et al. , 2011 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>The expression of levels of lsr-operon is still somewhat dependent on AI-2 despite the fact that there is no LsrR to repress the lsr-operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>In the model , in the absence of Lsr-operon , the AI-2 uptake is significantly impaired and LsrR is able to repress the operon expression level to very low levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>In the absence of glucose , cAMP-CRP is needed to stimulate lsr expression , while LsrR represses its expression in the absence of the inducer phospho -- AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>In the absence of active inducer phospho -- AI-2 , the LsrR proteins not only repress expression of the lsr operon but also repress transcription of the lsrRK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>In this model , the lsr operon is tightly repressed ( by the LsrR repressor ) such that no AI-2 uptake occurs through the Lsr system in the absence of the inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>In the absence of p-AI-2 , the expression of the lsr operon is repressed by LsrR , the key sensor of p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In the absence of AI-2 , LsrR represses the lsr operon ( Figure 1 , panel b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>It has also been postulated that phospho-AI-2 binds to LsrR and inactivates it to derepress the transcription of lsr [ 25 , 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>It is postulated that phospho-AI-2 binds to the LsrR repressor and inactivates it and that this results in derepression of lsr transcription ( 49 ) ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>The lsr operon of seven genes lsrACDBFGE is induced by phospho-AI-2 and regulated by LsrR , LsrK and GlpDK ( Taga et al. , 2001 , 2003 ; Xavier and Bassler , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>The regulator LsrR represses the AI-2 uptake operon lsr , which is derepressed by the binding of phospho-AI-2 to LsrR ( Taga et al. , 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Phosphorylated AI-2 causes LsrR to relieve its binding to the promoters in vitro In S. typhimurium and E. coli , LsrK can phosphorylate AI-2 , and phospho-AI-2 is thought to be the signal molecule that activates transcription of the lsr operon via inactivation of LsrR [ 25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>This was initially unexpected , because the produced LsrR can not repress the lsr operon ( or lsr regulon ) in the presence of the inducer phospho -- AI-2 under this condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>DHAP could act as an anti-inducer of the lsr operon by inhibiting the binding of phospho-AI-2 to LsrR , which could cause LsrR to remain locked in its active , repressing state .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>A phosphorylated form of AI-2 ( P-AI-2 ) induces lsr transcription and is proposed to act by binding to LsrR , the repressor of the lsr operon , thereby inactivating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>Phospho-AI-2 is the inducer of transcription of the lsr operon and is proposed to act by binding to LsrR , the repressor of the lsr operon , inactivating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>We suggest that DHAP inhibits binding of phospho-AI-2 to LsrR and that this prevents induction of transcription of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>If there is no inducer ( phospho -- AI-2 ) , LsrR represses transcription of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>The phospho -- AI-2 inactivates the repressor LsrR and increases transcription of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>Phospho-AI-2 reportedly binds the LsrR protein and prevents inhibition of the lsr-operon , hence alleviating repression and increasing Lsr transporter production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>The AI-2 which enters the cell via the Alter pathway , is phosphorylated by LsrK ( AI-2-P ) , binds the LsrR protein and prevents the repression of the lsr-operon promoter by LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Without the presence of the repressor protein , LsrR , the lsr-operon is not repressed and AI-2 can enter the cell via both the lsr-operon and the alternative pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Without the LsrK protein and the corresponding AI-2-P in the system , LsrR is free to fully repress the lsr-operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>AI-2-P binds the negative regulator , LsrR , alleviating the repression of lsr expression that otherwise occurs due to LsrR binding to the promoter of the lsr operon ( and that of lsrRK , encoded in the opposite orientation ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>The degree of regulation of the lsr-operon by REG protein was less than the LsrR auto-regulation strength and the binding affinity of AI-2 for the lsr-regulator was also lower than its affinity for the LsrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>This indicates that LsrR has similar binding affinity for its own promoter and the lsr-operon promoter site and that a competitive dynamics exists within this network architecture to-bind LsrR repressor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>One possible explanation , as shown in Figure 4A , is that the lsrregulator [ 28 ] , similar to LsrR , could bind AI-2-P and reduce the repression of the lsr-operon in the presence of high concentrations of AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_164">
+Speciﬁcally , cAMP-CRP is shown to-bind to a CRP binding site located in the upstream region of the lsr promoter and works with the LsrR repressor to regulate AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></label>
+<input id="act_similarity_164", type="checkbox">
+<div class="ACT_similar">
+<li>cAMP-CRP is shown to-bind to the upstream region of the promoter of the lsr operon and works with the LsrR repressor to regulate AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li></div>
+<li>At this time , LsrR has not been shown to-bind to the promoter region of the lsr operon , and it is not clear whether the effect of phospho -- AI-2 on LsrR is direct , although these are likely , based on the available data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>AI-2-P can bind the LsrR protein and prevent the inhibition of the lsr-operon promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>As the concentration of AI-2 increases , more AI-2-P is available to-bind LsrR resulting in higher transcription from the lsr-operon promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Phosphorylated DPD ( P-DPD ) binds speciﬁcally to the repressor of the lsr operon , LsrR , consistent with P-DPD being the inducer of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>We have also shown that the product of the LsrK reaction ( P-DPD ) is speciﬁcally bound by the repressor of the lsr operon , LsrR , supporting our genetic evidence that a phosphorylated form of the AI-2 signal is the inducer of the lsr operon as proposed ( Figure 1 , panel b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>The cytoplasmic kinase LsrK phosphorylates AI-2 into an activated molecule that is suggested to-bind and derepress the lsr repressor LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>AI-2 is phosphorylated inside the cell by LsrK , and phosphorylated AI-2 induces inactivation of the lsr operon repressor LsrR ( 62 , 69 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16385049" target="_blank">16385049</a>]<br></li>
+<li>Once AI-2 is inside the cell , it is phosphorylated by LsrK and the phosphorylated AI-2 ( AI-2-P ) interacts with the LsrR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Spe-ciﬁcally , we propose that for the lsr operon to be activated in WT E. coli , extracellular AI-2 is ﬁrst imported in a PTS-dependent manner , then phosphorylated by LsrK which derepresses LsrR and activates the Lsr transporter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>To ensure this initial repression of the lsr operon and at the same time enable the phosphorylation of the initial PTS-dependent pool of AI-2 that then alleviates this repression , basal levels of LsrR and LsrK must be present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>t004 REG ( negative feedback motifs ) were coupled with the AI-2-P binding of the LsrR and REG ( where the binding acts as de-repressing mechanism and hence has an overall positive feedback effect ) to give this network a combination of both negative and positive feedback regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>RESULTS Overall Structure of LsrR -- To determine the regulation mechanism of LsrR in response to p-AI-2 , we overexpressed and purified full-length E. coli LsrR and crystallized it in the presence or absence of p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Although LsrR is important in p-AI-2 sensing and gene transcription regulation , its detailed molecular mechanism remains unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Based on structural and biochemical analysis , we propose a hypothetical transcriptional regulation mechanism of LsrR in response to p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>These ﬁndings suggest that AI-2 , in addition to phospho-AI-2 , is an LsrR regulator ; that is , for the apparently coregulated genes , we suspect that a totally different regulatory mechanism than that shown in Fig. 1 exists ( in which LsrR is a repressor [ and at times an activator ] and its repression is released by phospho-AI-2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>First , the PTS could be required for LsrK expression or activity ; however , we showed that when repression by LsrR is absent the PTS is not required for LsrK expression or for its ability to sequester AI-2 ( Figs 6B and 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>Second , in addition to AI-2-P , inactivation of LsrR repression could require a component of the PTS system or a co-regulator that is not present in PTS mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>LsrR has even been hypothesized to be a global QS regulator that acts in tandem with unphosphorylated AI-2 or its anomer to regulate the transcription of a variety of genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We propose an extended hypothesis that LsrR is a QS regulator that acts in tandem with unphosphorylated AI-2 or its anomer ( Fig. 6 ) ; namely , AI-2 binds to LsrR and derepresses the transcription of a variety of genes , those identiﬁed in Table S1 in the supplemental material , which one might expect should be under QS regulation ( as opposed to metabolic genes associated with the activated methyl cycle ) ( 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>As a consequence , AI-2-P is sequestered in the cytoplasm where it inactivates the transcriptional-regulator , LsrR , inhibiting its repression of the lsr and lsrRK operons ( Wang et al. , 2005b ; Xavier et al. , 2007 ; Xue et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>Our work suggests that the antagonistic activity of C1-alkyl analogs of AI-2 is likely due to competitive binding to the LsrR transcriptional-regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>Like AI-2 , the analogs are activated by the bacterial kinase , LsrK , and modulate AI-2 speciﬁc gene transcription through the transcriptional-regulator , LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>Upon entering the cell , AI-2 is phosphorylated by a cytoplasmic kinase , LsrK , and the phosphorylated AI-2 interacts with a transcriptional-regulator , LsrR [ 23 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>This phosphorylated AI-2 then binds and derepresses LsrR , the transcriptional-regulator of QS genes in enteric bacteria ( Figure 6 , panel a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22433054" target="_blank">22433054</a>]<br></li>
+<li>Our results suggest that AI-2 is indeed a QS signal in E. coli , especially when it acts through the transcriptional-regulator LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>The role of LsrR as a transcriptional-regulator that responds to the QS signal AI-2 has been determined in the previous studies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>LsrR is a known transcriptional-regulator that responds to the binding of QS signal AI-2 ( 62 , 75 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>The phosphate moiety in phospho-AI-2 and analogs , therefore , seems important for binding to LsrR , but it appears that the stabilization of the LsrR/DNA complex is governed by the C1 alkyl chain ( C3 is the minimum requirement ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>In contrast , when p-AI-2 was added , formation of LsrR tetramers was disrupted , and the LsrR oligomerization equilibrium shifted to dimer form ( Fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Because the mutants of V153E and P173A , P175A in dimer form of AB retains the DNA binding ability in the absence of p-AI-2 ( Fig. 6G ) , p-AI-2 might not only induce dissociation of LsrR tetra-mers into dimers but also trigger conformational changes of DBDs to impair the formation of LsrR-DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We can not exclude the possibility that upon p-AI-2 binding , the structure of loop 6 - 11 is stabilized by ligand , contributing to the rearrangement of loops A and B. Because the conformational changes of the corresponding loops in CggR trigger tetramer dissociation , we propose that the interactions between loops A and B and A and B from neighboring subunits of LsrR are necessary to stabilize the tetramer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We propose that binding of p-AI-2 to LsrR leads to conformational changes in loops A and B , resulting in disassembly of the LsrR tetramer into dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We hypothesize that p-AI-2 induces the disassembly of LsrR tetramers , reducing DNA binding ability .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We found that upon binding of p-AI-2 , interactions between subunits were destabilized , leading to disassembly of LsrR tetramers into dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We were unable to obtain stable LsrR dimers in AD form , so we can not exclude that LsrR tetramers disassemble into dimers in AD form upon p-AI-2 binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Based on these observations , we propose that phosphorylated autoinducer-2 triggers the disassembly of the LsrR tetramer to activate the transcription of its target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Structural Basis for Disassembly of LsrR Tetramer in the Presence of p-AI-2 -- Binding of regulator molecules induces the conformational change of CggR and disrupts tetramer assembly ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In this model , in the absence of AI-2 , LsrR behaves as functional tetramer binding to promoter regions and repressing transcription of target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Based on structural and biochemical analysis , we propose that p-AI-2 disrupts the tetrameric assembly of LsrR , resulting in dissociation of LsrR from the promoter region and activation of target gene transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Binding of p-AI-2 induces the conformational changes of LsrR and disrupts the tetrameric assembly , triggering the dissociation of LsrR from promoter regions and the activation of target genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR does not bind the product of tion mixture were applied to the bation time , Table 1 , reaction 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>This supports that LsrR binds to target gene sites in tetramer form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Similar to CggR , tetrameric LsrR might bind target gene sites cooperatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>However , we obtained LsrR crystals only in free form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>However , in the form of tetramer , LsrR still could bind to DNA probably because of the exposure of the N-terminal HTH domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Our findings reveal a mechanism for the change in the oligomerization state of LsrR in the presence of phosphorylated autoin-ducer-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Studies by Bassler and others39 ,40 have indicated that phosphorylated DPD , and not the unphosphorylated form , binds to LsrR to destabilize the LsrR/DNA complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>To test this strate that the product X formed from reaction of LsrK idea , we ran the LsrK reaction with DPD is speciﬁcally bound by LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>Our analysis of the LsrK reaction shows that LsrK phosphorylates the ring-open form of DPD at the C5 position , and that phosphorylated DPD ( P-DPD ) binds directly to the repressor LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>LsrR binds the phosphorylated product of the LsrK only trace amounts of Y reaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">LsrR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Although only two molecules are found in one asymmetric unit , two neighboring dimers pack to form a tetramer that is consistent with the oligomerization state of LsrR in solution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Two LsrR subunits in one asymmetric unit form a dimer through interactions around the 1-strand from each subunit ( Figs. 1D and 3C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Lane 5 contains labeled probes and 1.5 pmol of unlabeled probes with LsrR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We hypothesize that noncovalent interactions ( most probably , van der Waals in nature ) engage the alkyl chains of DPD analogs with certain residues in the active site of LsrR , and locks the protein into a conformation that has a higher afﬁnity for the DNA-binding sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>The β-galactosidase reporter assays further suggest that two motifs in both the lsrR and lsrA promoter regions are crucial for the LsrR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>These data indicate that the above motifs might be essential for LsrR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Putative Ligand-binding Site -- LsrR is a repressor in the large SorC/DeoR family of prokaryotic transcriptional regulators , and it contains an N-terminal DBD and a C-terminal LBD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Here , we report the crystal structure of fulllength LsrR from E. coli , which has an N-terminal DNA-binding domain and a C-terminal ligand-binding domain connected by a - strand .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The LsrR protomer had two distinct domains , the N-termi-nal DNA-binding domain ( DBD ) and the C-terminal ligandbinding domain ( LBD ) , connected by a linker region containing a - strand ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>An N-terminal DBD and a C-terminal LBD were observed in LsrR , connected by a linker region containing a - strand ( Fig. 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>We hypothesized that LsrR bound the promoter region through its DNA-binding helix-turn-helix motif .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Since LsrR contains a helix-turn-helix ( HTH ) DNA-binding domain , it was hypothesized that LsrR represses the expression of lsr operon and itself by binding to their promoter regions [ 26 , 29 , 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Since LsrR contains a predicted HTH DNA-binding domain , it has been suggested to repress the transcription of the lsr operon and itself by directly binding to their promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>However , in the form of tetramer , LsrR still could bind to DNA probably because of the exposure of the N-terminal HTH domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Characteristics of the LsrR protein Three-dimensional structure prediction indicates that LsrR is composed of a typical HTH domain at the Nterminal and a sugar-ligand domain at the C-terminal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We found that the instability of the LsrR protein was mainly due to the instability of the N-terminal HTH domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We suspect that a phosphorylated form of AI-2 binds and antagonizes LsrR , raising the possibility that this phosphorylated form of AI-2 is the intracellular signal responsible for lsr activation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>The position of the phosphoryl group was fixed by an ionic interaction and a hydrogen bond between p-AI-2 and LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Several residues in the putative p-AI-2 binding groove of LsrR were predicted to be important for p-AI-2 recognition based on a docking model ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Docking was started with p-AI-2 and LsrR and driven by interaction restraints with active residues ( Lys-288 and Asp-243 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Moreover , p-AI-2 formed hydrophobic interactions with the LsrR residues Phe-124 , Ile-210 , Ile-244 , and Leu-245 , strengthening the interaction between p-AI-2 and LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Triangles , hydrophobic residues possibly involved in p-AI-2-LsrR interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Superposition of the LsrR LBD onto CggR demonstrated that two loops in LsrR connecting 4 - 8 ( residues 149 -- 153 , loop A ) and 5 - 9 ( residues 171 -- 180 , loop B ) were located at sites corresponding to the two loops of CggR structure ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Ligand binding to LsrR might induce conformational changes in loops A and B. No electron density could be assigned to residues 215 -- 224 of the loop connecting 6 - 11 in LBD of LsrR , indicating high flexibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>This evidence further supports the important roles of loops A and B in regulating the oligomerization state of LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>This previous work indicates that LsrR binds the two recognition sites cooperatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">LsrR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The LsrR protein , a member of the transcription factor family based on the structural prediction , most probably acts as the important connector linking the detection of AI-2 to the regulation of gene expression [ 25 , 28 , 29 , 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>A grouping of Rhizobiales common to plant symbioses had a conserved set of adjacent , low homology elements and nonscoring elements that consisted of unidirectionally expressed genes annotated as : ABC-type transporters ( ribose , putative , putative ) , a DeoR family repressor ( LsrR synonym ) , aldo-keto reductase ( non-scoring ) , glycerol-3-phosphate dehydrogenase ( nonscoring LsrF synonym ) , fructose-biphosphate aldolase ( LsrF synonym ) , and xylulose kinase ( LsrK synonym ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22916001" target="_blank">22916001</a>]<br></li>
+<li>Putative Ligand-binding Site -- LsrR is a repressor in the large SorC/DeoR family of prokaryotic transcriptional regulators , and it contains an N-terminal DBD and a C-terminal LBD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR is homologous to SorC , a DNA-binding transcriptional regulator involved in sorbose metabolism in Klebsiella pneumoniae ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by LsrR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Glu-269 in CggR is at the position corresponding to Asp-243 in LsrR and is involved in orienting DHAP orientation ( Fig. 5C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR subunit A , green ; LsrR subunit D , red ; CggR-apo , blue ; and CggR-DHAP , purple .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Published in the U.S.A. Structural Basis for Phosphorylated Autoinducer-2 Modulation of the Oligomerization State of the Global Transcription Regulator LsrR from Escherichia coli * Received for publication , March 29 , 2013 , and in revised form , April 9 , 2013 Published , JBC Papers in Press , April 15 , 2013 , DOI 10.1074 / jbc.M112 .417634 Minhao Wu1 , Yue Tao1 , Xiaotian Liu , and Jianye Zang2 From the Hefei National Laboratory for Physical Sciences at Microscale and School of Life Sciences , University of Science and Technology of China , Hefei , Anhui 230026 , China Background : The Escherichia coli global transcription regulator LsrR regulates the expression of many genes in response to autoinducer-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Byrd , C. M. , and Bentley , W. E. ( 2009 ) Quieting cross talk -- the quorum-sensing regulator LsrR as a possible target for fighting bacterial infections .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>LsrR , as a repressor protein for both operons , undergoes dynamic control of the transcription network through a negative autoregulation feedback loop , which has been shown to speed up the transcription response and reduce cell-to-cell ﬂuctuations in the steady-state level of the transcription repressor ( 1 , 10 , 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>This indicates that LsrR plays a more significant role in regulating the dynamics of the QS network suggesting that this protein might be involved in other metabolic pathways within the cell as speculated by others [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>LsrR is homologous to SorC , a DNA-binding transcriptional regulator involved in sorbose-metabolism in Klebsiella pneumoniae ( 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>In brief , genes encoding LsrR and its mutants were individually cloned into a pET28a expression vector with a C-terminal His6 tag for overexpression in E. coli BL21 ( DE3 ) ( Novagen ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The query Lsr system consists of a kinase ( LsrK : BAA15191 ) , a repressor ( LsrR : BAA15192 ) , ABC transporter genes ( LsrA : BAA15200 , LsrC : BAA15201 , LsrD : BAA15202 , and LsrB : BAE76456 ) , and phospho-AI-2 ( AI-2-P ) processing genes ( LsrF : BAE76457 , LsrG : BAE76458 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22916001" target="_blank">22916001</a>]<br></li>
+<li>It is under this condition that LsrR , LsrK , LsrF , and LsrG play a greater role in regulating and `` tuning '' AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>Since RpoS and H-NS play an important role in globally regulating genes in response to changing environments , it is not surprising that AI-2-related QS networks utilize their uptake regulators ( e.g. , LsrR and LuxP ) , together with DsrA , in a hierarchical modality for mediating prompt responses to environmental stimuli and extracellular stresses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Deletion of lsrR caused a signiﬁcant increase in lsr expression ( Fig. 6 and Table 3 ) , conﬁrming the role of the LsrR protein as a repressor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>An lsrR mutation leads to deﬁcient LsrR expression and identiﬁcation of LsrR-regulated genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Meanwhile , a greater impact of LsrR on gene-expression control has been revealed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We have also demonstrated that unphosphorylated AI-2 plays a role in modulating LsrR regulated gene-expression [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Based on structural and biochemical analysis , we propose a hypothetical transcriptional regulation mechanism of LsrR in response to p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Triangles , hydrophobic residues possibly involved in p-AI-2-LsrR interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>This result demonstrates that in terms of AI-2 transport , lsrR is epistatic to glpD , suggesting that LsrR is involved in the mechanism by which mutation of glpD causes lsr repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>It was shown recently that the functions of the E. coli lsr operon and its regulators , LsrR and LsrK , are similar to those in S. enterica serovar Typhimurium , and cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) are involved in regulation of the lsr operon ( 50 , 55 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>cAMP-CRP and LsrR are involved in transcriptional-control of lsr and lsrRK operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Biological Evaluations of DPD Analogues on E. coli AI-2 Processing Enzymes ( LsrK ) and AI-2 Receptor ( LsrR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22433054" target="_blank">22433054</a>]<br></li>
+<li>Our working model for AI-2 synthesis and transport in E. coli ( Fig. 8 ) is that cAMP-CRP acts as a global controller , while LsrR functions as a speciﬁc controller .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>AI-2 AHL Glucose AI-2 LsrK AHL LsrR sdiA Phospho-AI-2 lsrK lsrR lsrACDBFG AHL SdiA X cAMP CRP ydiV YdiV Figure 5 Conceptual model of signaling-pathway interactions in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>The middle TLC plate shows the results fol - has shown that LsrR represses the lsr operon , and following continued incubation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>The glycerol uptake and metabolism system encoded by glpDFK also influences AI-2 signaling by regulating lsr transcription through LsrR ( Xavier and Bassler , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Dihydroxyacetone phosphate ( DHAP ) also accumulates in the glpD mutant , and DHAP represses lsr transcription by a cAMP-CAP-independent mechanism involving LsrR , the lsr operon repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>Upstream of the lsr operon , there is a divergently transcribed gene encoding LsrR , which was reported previously to repress the transcription of the lsr operon and itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>The AI-2 uptake repressor LsrR represses many genes including the lsr operon ( comprised of lsrACDBFG ) and the lsrRK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>In Escherichia coli , LsrR serves as a global transcription regulator that responds to autoinducer-2 to regulate the expression of a variety of genes , including the lsr operon and the lsrR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In addition to controlling the transcription of the lsr operon , LsrR serves as a global regulator of a variety of genes in response to p-AI-2 ( 14 , 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In a similar manner , we evaluated the effect of several other AI-2-related proteins on yncC expression , including LuxS ( the AI-2 synthesis protein ) , LsrR ( the repressor of the AI-2 uptake transporter complex ) , LsrK ( cytoplasmic kinase , which phosphorylates AI-2 into an activated mole-cule inside E. coli cells ) and TqsA ( exporter of AI-2 ) ( Figure 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>yncC expression is influenced by MqsR , LsrR , LsrK , TqsA and YncC We also investigated the possibility that AI-2 regulates yncC expression as previous microarray analysis indicated that the E. coli quorum-sensing regulator MqsR induces yncC expression ( González Barrios et al. , 2006 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Overexpressing the AI-2 exporter TqsA , lsr-operon regulators LsrR and LsrK , and quorum-sensing regulator MqsR induced yncC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>In summary , two key functions known to affect bioﬁlm formation and architecture , colanic-acid-synthesis and ﬁmbria formation , were shown to be regulated by genes of the QS regulators LsrR and LsrK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>Our observation of bioﬁlm phenotypes in lsrR and lsrK mutants cooperates with this model : AI-2 probably binds with LsrR to mediate bioﬁlm architecture and formation by coordinately regulating interactions of bioﬁlm-related genes , including the colanic-acid-synthesis regulator wza and the ﬂu gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>AI-2 is transported into these cells by an ABC cassette-like transporter ( Lsr ) ,19 followed by phosphorylation via a kinase LsrK .20,21 The phosphorylated AI-2 binds to and derepresses the transcriptional regulator ( LsrR ) , releasing it from the lsr ( luxS regulated ) operator , allowing transcription of the genes encoding the aforementioned AI-2 processing proteins .22 LsrR has been shown to play an important role in E. coli bioﬁlm maturation ,23 as well as regulating the expression of over 68 proteins in E. coli , including important virulence determinants .24 LsrR-like proteins are therefore important targets for the development of small molecule quorum-sensing modulators .25 By targeting AI-2 / Lsr interactions we have attempted to modulate QS circuitry in a variety of bacterial species .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>This phosphorylated AI-2 then binds and derepresses LsrR , the transcriptional regulator of QS genes in enteric bacteria ( Figure 6 , panel a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22433054" target="_blank">22433054</a>]<br></li>
+<li>LsrR has even been hypothesized to be a global QS regulator that acts in tandem with unphosphorylated AI-2 or its anomer to regulate the transcription of a variety of genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>We propose an extended hypothesis that LsrR is a QS regulator that acts in tandem with unphosphorylated AI-2 or its anomer ( Fig. 6 ) ; namely , AI-2 binds to LsrR and derepresses the transcription of a variety of genes , those identiﬁed in Table S1 in the supplemental material , which one might expect should be under QS regulation ( as opposed to metabolic genes associated with the activated methyl cycle ) ( 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">LsrR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The total reported length of the two recognition sites of LsrR and the linker between them is 22 bp , about 74 Å in length , and is compatible with the distance between the DBDs of each AB-type dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Similar to CggR , tetrameric LsrR might bind target gene sites cooperatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>This previous work indicates that LsrR binds the two recognition sites cooperatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>This supports that LsrR binds to target gene sites in tetramer form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>The 30 bp putative LsrR binding site in E. coli40 was aligned to the respective promoter region in S. typhimurium using Clustal W48 and showed 83 % homology ( see Supporting Information Figure S10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20698680" target="_blank">20698680</a>]<br></li>
+<li>These footprinting results further demonstrated that LsrR binds to a 30-bp region ( tga aca att gca tta aag att taa ata tgt ) of its own promoter located just within the -- 35 to -- 10 promoter box relative to the translation start site ( Figure 5A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>C A p-lsrA-box p-lsrR-box p-lsrR-LacZ p-lsrA-Lac ( a ) Site 2 Site 1 pPlsrA pPlsrAD6 pPlsrAM6 pPlsrAD9 pPlsrAM9 -- 32 -- 27 50 0 B pPlsrAD6 lacZY -- 32 -- 27 pPlsrAM6 lacZY -- 11 -- 19 pPlsrAD9 lacZY 12 16 20 Time ( h ) 8 4 0 24 -- 11 -- 19 pPlsrAM9 lacZY ( b ) 250 -- 47 -- 42 pPlsrR pPlsrRD6 lacZY 200 pPlsrRD6 pPlsrRM6 pPlsrRD9 pPlsrRM9 150 -- 47 -- 42 pPlsrRM6 lacZY 100 -- 26 -- 34 pPlsrRD9 lacZY 5 0 -- 26 -- 34 0 pPlsrRM9 lacZY 24 0 8 4 0 12 16 2 Time ( h ) Figure 6 The conserved binding sequences of LsrR and the maps of the β-galactosidase reporter plasmids with mutated promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Sequence analysis of LsrR-binding box and phenotypic assays of the mutated promoters of lsrR and lsrA LsrR has been proposed to be a QS regulator that interacts with phospho-AI-2 and regulates transcription of a variety of genes in the previous studies [ 32 ] , suggesting that LsrR might possess the ability to bind to diverse gene promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>A LsrR ( μM ) : 0 4 4 4 4 0 4 4 4 4 AI-2 ( μM ) : 0 0 3.9 39 390 0 0 0 0 0 p-AI-2 ( μM ) : 0 0 0 0 0 0 0 3.9 39 390 1 2 3 4 5 6 7 8 9 10 Lane : B LsrR ( μM ) : 0 4 4 4 4 0 4 4 4 4 ATP ( μM ) : 0 0 3.9 39 390 0 0 0 0 0 ADP ( μM ) : 0 0 0 0 0 0 0 3.9 39 390 Identification of the LsrR-binding sites in the lsrR and lsrA promoters Lane : 1 2 3 4 5 6 7 8 9 10 To further identify the precise LsrR-binding sequence , a DNase I footprinting was performed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>These results suggest that LsrR was unable to bind to the promoters of lsrA and lsrR firmly when the 6-bp or 9-bp sequences were deleted .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>A p-lsrA-box p-lsrR-box B LsrR ( μM ) : 0 0.5 1 2 4 4 LsrR ( μM ) : 0 0.5 1 2 4 4 DIG-lsrR-box 50 50 50 50 50 50 ( fmol ) : 50 50 50 50 50 50 Unlabeled-p-0 0 0 0 0 500 - lsrR-box ( fmol ) : 0 0 0 0 0 500 DIG-lsrA-box ( fmol ) : Unlabeled-p -- lsrA-box ( fmol ) : Lane : 1 2 3 4 5 6 Lane : 1 2 3 4 5 6 Figure 5 Nucleotide sequence alignment between the p-lsrR-box and the p-lsrA-box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>As mentioned above , the p-lsrR-box and p-lsrA-box do not share high similarity at the sequence level , indicating that the binding sites of LsrR are loosely conserved .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>The study of the LsrR-binding sequences in the promoter regions ( p-lsrA and p-lsrR ) shows that both on p-lsrA and p-lsrR , there exists a 30-bp binding box , which can be recognized by LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>By sequence alignment , we found that a 6-bp sequence ( AAAACT in p-lsrA-box and AACAAT in p-lsrR-box ) and a 9-bp sequence ( AAAACTGAA in p-lsrA-box and AAGATTTAA in p-lsrR-box ) are relatively conserved ( Figure 6A ) , which led us to hypothesize that these two sequences might be crucial for LsrR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>( A ) The conserved binding sequences of LsrR were identified by sequence alignment between the p-lsrR-box and p-lsrA-box using Vector NTI Suite 9 software .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Conserved binding sequences of LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>To narrow down the sequences essential for LsrR binding , we performed a detailed analysis of the two binding boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>B , surface representation of predicted LsrR p-AI-2 binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Speciﬁcally , cAMP-CRP is shown to bind to a CRP binding site located in the upstream region of the lsr promoter and works with the LsrR repressor to regulate AI-2 uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>LsrR inhibits transcription of the lsr-operon by binding to the lsr-operon promoter site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>Phospho-AI-2 binds specifically to LsrR and antagonizes it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>Further studies indicated that LsrR binds a consensus sequence in the promoter region of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Putative DNA-binding Site -- LsrR is reported to specifically bind to the lsrR promoter region ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Mechanism of Transcriptional Regulation -- Xue et al. ( 15 ) reported that LsrR binds a 30-bp DNA sequence at lsrA and the lsrR gene promoter regions containing two conserved recognition sites for LsrR ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Results show that LsrR specifically binds to both lsrA and lsrR promoter regions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by LsrR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>First , expression of LsrR should be induced at 16 ºC ; the purification should be performed at low temperature ( 4 ºC ) and high salt concentration ( 1 M ) , and imidazole in the eluant should be removed by ultrafiltration rather than dialysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>It is possible tha weak transcription from the lsrR promoter in the luxS mutant , which is therefore repressed by LsrR , accounts for the polar effect of transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>LsrR also acts an auto-regulator by binding the lsrR promoter site and inhibiting its own transcription [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>These results indicate that LsrR , LsrK and TqsA induce yncC expression , whereas LuxS represses yncC expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Also , lsrR and lsrK belong to the same operon , lsrRK , which is positively regulated by the cyclic AMP receptor protein and negatively regulated by LsrR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Thus , ptsIcrr-dependent inhibition of lsr -- lacZ transcription and expression of LsrK is mediated by LsrR , and not due to a direct ptsIcrr-dependent effect upon expression of either .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>This hypothesis is also not supported by our data as de-repression of lsr transcription can occur in the absence of the PTS when AI-2 uptake is undertaken by an IPTG-inducible Lsr , thus demonstrating that LsrR inactivation does not require a functional PTS ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>The glycerol uptake and metabolism system encoded by glpDFK also influences AI-2 signaling by regulating lsr transcription through LsrR ( Xavier and Bassler , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Increased levels of LsrR provide a mechanism for quickly shutting down expression of the lsr and lsrRK operons when the inducer phospho -- AI-2 is not available later due to the degradation by LsrF and LsrG ( 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>Since LsrR contains a helix-turn-helix ( HTH ) DNA-binding domain , it was hypothesized that LsrR represses the expression of lsr operon and itself by binding to their promoter regions [ 26 , 29 , 32 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>Expression of lsrR and the lsr operon is inhibited by LsrR and stimulated by the cAMP-CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>The cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) complex stimulates the expression of lsrR and the lsr operon , which includes lsrACDBFG , while LsrR represses their expression and is located adjacent to , while being transcribed divergently from , the lsr operon [ 14-16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>In E. coli , the cAMP-CRP complex stimulates the expression of both lsrR and the lsr operon by binding to the promoter regions , while LsrR represses their expression [ 14 , 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>The cAMP-CRP complex stimulates the expression of lsrR and the lsr operon , while LsrR represses their expression [ 14 , 15 ] , suggesting that cAMP , the CRP , or both may be affected by sdiA-ydiV double mutation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>In the model , in the absence of Lsr-operon , the AI-2 uptake is significantly impaired and LsrR is able to repress the operon expression level to very low levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>In Escherichia coli , LsrR serves as a global transcription regulator that responds to autoinducer-2 to regulate the expression of a variety of genes , including the lsr operon and the lsrR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Dihydroxyacetone phosphate ( DHAP ) also accumulates in the glpD mutant , and DHAP represses lsr transcription by a cAMP-CAP-independent mechanism involving LsrR , the lsr operon repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>Upstream of the lsr operon , there is a divergently transcribed gene encoding LsrR , which was reported previously to repress the transcription of the lsr operon and itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>LsrR is transcribed in its own monocistronic operon with the kinase LsrK in a manner divergent from that of the lsr operon ( 70 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+<li>The lsr operon of seven genes lsrACDBFGE is induced by phospho-AI-2 and regulated by LsrR , LsrK and GlpDK ( Taga et al. , 2001 , 2003 ; Xavier and Bassler , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18309357" target="_blank">18309357</a>]<br></li>
+<li>Following internalization by the Lsr transporter encoded by genes in the lsr operon , AI-2 is phosphorylated by LsrK , and phospho-AI-2 binds specifically to LsrR and antagonizes it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18560382" target="_blank">18560382</a>]<br></li>
+<li>AI-2-P binds the negative regulator , LsrR , alleviating the repression of lsr expression that otherwise occurs due to LsrR binding to the promoter of the lsr operon ( and that of lsrRK , encoded in the opposite orientation ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>This was initially unexpected , because the produced LsrR can not repress the lsr operon ( or lsr regulon ) in the presence of the inducer phospho -- AI-2 under this condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>In the absence of glucose , cAMP-CRP is needed to stimulate lsr expression , while LsrR represses its expression in the absence of the inducer phospho -- AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>In the absence of active inducer phospho -- AI-2 , the LsrR proteins not only repress expression of the lsr operon but also repress transcription of the lsrRK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>If there is no inducer ( phospho -- AI-2 ) , LsrR represses transcription of the lsr operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15743955" target="_blank">15743955</a>]<br></li>
+<li>In this model , the lsr operon is tightly repressed ( by the LsrR repressor ) such that no AI-2 uptake occurs through the Lsr system in the absence of the inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>In the absence of p-AI-2 , the expression of the lsr operon is repressed by LsrR , the key sensor of p-AI-2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>In the absence of AI-2 , LsrR represses the lsr operon ( Figure 1 , panel b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_30">
+The AI-2 uptake repressor LsrR represses the lsr operon ( comprised of lsrACDBFG ) and the lsrRK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></label>
+<input id="tu_similarity_30", type="checkbox">
+<div class="TU_similar">
+<li>The AI-2 uptake repressor LsrR represses many genes including the lsr operon ( comprised of lsrACDBFG ) and the lsrRK operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li></div>
+<li>LsrR is the repressor of the lsr operon and itself .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19636340" target="_blank">19636340</a>]<br></li>
+<li>LsrR is a negative regulator that inhibits both the transcription of the lsr-operon and its own .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21980272" target="_blank">21980272</a>]<br></li>
+<li>A phosphorylated form of AI-2 ( P-AI-2 ) induces lsr transcription and is proposed to act by binding to LsrR , the repressor of the lsr operon , thereby inactivating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17274596" target="_blank">17274596</a>]<br></li>
+<li>Phospho-AI-2 is the inducer of transcription of the lsr operon and is proposed to act by binding to LsrR , the repressor of the lsr operon , inactivating it .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15601708" target="_blank">15601708</a>]<br></li>
+<li>Intracellular AI-2 is phosphorylated by LsrK , and the phosphorylated form of the signal ( P-AI-2 ) induces lsr transcription by derepressing the repressor of the lsr operon ( LsrR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23246794" target="_blank">23246794</a>]<br></li>
+<li>AI-2 is phosphorylated inside the cell by LsrK , and phosphorylated AI-2 induces inactivation of the lsr operon repressor LsrR ( 62 , 69 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16385049" target="_blank">16385049</a>]<br></li>
+<li>cAMP-CRP , a positive regulator , stimulates expression of both operons in the absence of glucose , while LsrR prevents their expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>As a consequence , AI-2-P is sequestered in the cytoplasm where it inactivates the transcriptional regulator , LsrR , inhibiting its repression of the lsr and lsrRK operons ( Wang et al. , 2005b ; Xavier et al. , 2007 ; Xue et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22384939" target="_blank">22384939</a>]<br></li>
+<li>It was unexpected that the lsr and lsrRK operons , which are divergently transcribed , are controlled by the same transcriptional regulators : CRP and LsrR ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>cAMP-CRP and LsrR are involved in transcriptional control of lsr and lsrRK operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16321939" target="_blank">16321939</a>]<br></li>
+<li>In brief , genes encoding LsrR and its mutants were individually cloned into a pET28a expression vector with a C-terminal His6 tag for overexpression in E. coli BL21 ( DE3 ) ( Novagen ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23589368" target="_blank">23589368</a>]<br></li>
+<li>Indeed , the present analysis reveals a host of genes regulated by LsrR and LsrK , most of which did not appear in luxS mutants .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17557827" target="_blank">17557827</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

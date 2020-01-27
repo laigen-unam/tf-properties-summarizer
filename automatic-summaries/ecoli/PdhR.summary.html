@@ -1,0 +1,807 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - PdhR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">PdhR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">PdhR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>sigma scores boxes evidence 1 glkP1 - P2 k n glk FruR C [ 36 ] , in this work GCGTTGTTGTTATGCCCCCAGGTATTTACAGTGTGAGAA 236 s38 2 s70 : 3.92 glkP3 - P4 n n s70 3 in this work A , C CCCCCAGGTATTTACAGTGTGAGAAAGAATTATTTTGAC 221 s38 : 2.95 pgiP1 - P2 k n [ 37 ] , in this work A , B , E ¬ pgi ACCATCACATTTTTCTGTGACTGGCGCTACAATCTTCCA 236 s70 : 6.9 ; s38 : 7.44 pfkAP1 - P2 k n ¬ A , B FruR pfkA [ 39 ] , in this work ATCAATTCAGCAGGAAGTGATTGTTATACTATTTGCACA 278 s70 : 8.61 ; s38 : 5.7 pfkAP3 - P4 n n s38 2 in this work A , E TCACTTCGATGTGCAAGAAGACTTCCGGCAACAGATTTC 229 s70 : 1.12 ki CTGCCCTGCGGGGCGGCCATCTTCCTTTATTCGCTTATA 219 ¬ tpiA tpiAP [ 40 ] ¬ ¬ tpiAP1 - P2 in this work n n ¬ A , E CAAAGCCTTTGTGCCGATGAATCTCTATACTGTTTCACA 262 s70 : 8.07 ; s38 : 7.4 gapA gapAP1 - P1a [ 41,43 ] , in k n this work gapAP2 [ 41,43 ] k ¬ A , B , D CGCTTGACGCTGCGTAAGGTTTTTGTAATTTTACAGGCA 236 s70 : 3.76 ; s38 : 0.82 ¬ A CCTTTAAAATTCGGGGCGCCGACCCCATGTGGTCTCAAG 2153 ¬ k TCACATTTTTATCGTAATTGCCCTTTAAAATTCGGGGCG 2174 - - ¬ gapAP3 [ 41,43 ] Crp k AACACCAACTGGCAAAATTTTGTCCTAAACTTGATCTCG 2245 - - ¬ gapAP4 [ 41,43 ] ACATTCCTTTTATTCCACGTTTCGCTTATCCTAGCTGAA 2132 no predictions s703 , s382 A , D epdP1 - P2 k FruR , Crp epd [ 45 ] , in this work pgkP1 k A pgk [ 45 ] AAGCAGCACAAGGTGCATTTCATGGTATAGTTGACTATA 2235 - ¬ n TGTTGCTTTCAGGTAAGACGCAAGCAGCGTCTGCAAAAC 226 no predictions ¬ pgkP2 in this work D , E n GCACACCTGATCAAAACGTTGGTCTGGTGCGATAACGAA 2113 no predictions s703 pgkP3 in this work A , D gpmA gpmAP1 - P2 [ 46 ] , in this ki n work gpmAP3 - P4 in this work n n Fur A ¬ AAGCATTGCTGTTGCTTCGTCGCGGCAATATAATGAGAA 237 s70 :7.56 ; s38 : 3.66 ¬ ¬ CCTTACACTGCGCCACTATTTTCGCTATGGTTATGCGTA 275 s70 :5.80 ; s38 : 7.48 eno enoP1 [ 47 ] k ¬ ¬ AATCGTGTCAGCGTCAACATCAAACTGATCGATTCACAA 2731 ¬ k CGAAGCACTGAAACACGGTGGGCTGAAGAATCGTGTCAG 2760 - - ¬ enoP2 [ 47 ] k TAAACGATTCAGCTTAAACTGCCCGGAAGCGAATCTGTC 2903 - - ¬ enoP3 [ 47 ] n GCGTACCCTGGGTACGCGTTGTTTGTCTGGAGTTTCAGT 227 no predictions s703 , s382 A , D , E enoP4 - P5 in this work n GAGTTCCAGAAACGTCAGGCGAAGTAAGTAAAAAAGTTA 277 no predictions - D enoP6 in this work n n GGGGATGATCAGTTGGTCGAGATCATCGAAGTTCCGAAT 2212 no predictions s703 , s382 D enoP7 - P8 in this work pykF pykFPPki [ 49 ] FruR TGTTTTCCTTTTGGATTAATTTCAGCGTATAATGCGCGC 2231 - -- pykFP1 - P2 in this work n n GGATTCGCTTTCCGGCAGTGCGCCCAGAAAGCAAGTTTC 234 no predictions s703 , s382 A , B , D n GATGTCACCTATCCTTAGAGCGAGGCACCACCACTTTCG 280 no predictions - D pykFP3 in this work pykFP4 - P5 n n in this work CCTCTGCACGCTTTTTCGATGTCACCTATCCTTAGAGCG 297 s70 : 4.79 ; s38 : 9.95 ¬ B , D pykA pykAP1 - P2 n n s38 2 in this work AAGTGACGATCGCTAAAAACGACTGTCACTGTCCTAATC 2105 s70 : 0.90 , D B n n GTCAAAGAAGCGCTGAAGGAATCGCGTTTTGATAAGCAG 2153 s70 : 1.76 s382 A , B , D pykAP3 - P4 in this work Crp , Fnr , GTATGGACATAAGGTGAATACTTTGTTACTTTAGCGTCA 258 no predictions s703 , s382 B , D PdhR s38 2 pdhR pdhRP1 - P2 k n [ 51 -- 52 ] , in this work aceE aceEP1 - P2 k n ¬ AACCTGTCTTATTGAGCTTTCCGGCGAGAGTTCAATGGG 248 s70 : 1.90 [ 50 ] , in this work poxB poxBP1 - P2 k n [ 57,58 ] , in his work B , C ¬ MarA , SoxS TCCCTTCCCCCTCCGTCAGATGAACTAAACTTGTTACCG 227 s70 : 5.31 ; s38 : 9.5 acs acsP1 k [ 60 -- 61 ] ¬ Fis , Crp , Ihf TCTTTAATCAATTGTAAGTGCATGTAAAATACCACTTTA 2224 ¬ k n CCCCTACATTTAACGCTTATGCCACATATTATTAACATC 220 s70 : 4.03 ; this work s38 : 4.97 B , C ¬ acsP2 - P3 [ 60 -- 61 ] , in Fis , Crp , Ihf consensus sigma 70 : TGGTATAATG sigma 38 : CTACACTT sequences Proposed promoters in which putative s and s overlapping recognition sequences have been determined , are presented as bold sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>Crp , GalS MglAB Crp , RbsR RbsAB Crp , GalS MglA Crp , GntR GntK Crp , EbgR EbgA Crp , LacI LacZ Crp , RhaS RhaBD Crp , AraC AraBD Crp , FucR FucK Crp , YiaJ LyxK Crp , FucR FucA Crp , YiaJ SgbE RcsB WcaB CpxR LpxA RcsB WcaB CpxR LpxD RcsB B2060 PhoB PhnCKLN RcsB B2060 PhoB PstB RcsB B2060 PhoB PhoH MhpR MhpF Fur EntA FecI , Fur FecI UidR , UxuR UidR Crp , FucR FucR Crp , Fur Fur Homologous pairs of transcription factors with autoregulation IdnR PurR AsnC Lrp Fnr Crp Homologous triplets of transcription factors with autoregulation TorR PhoB CpxR EmrR PdhR ExuR Eight homologous transcription factors with autoregulation DsdC GcvA CynR Hcar IlvY LysR OxyR CysB Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12582243" target="_blank">12582243</a>]<br></li>
+<li>aerobic to anaerobic anaerobic to aerobic ArgR CysB BirA DgsA MalT GadW MetJ NikR OxyR SoxR SoxS DcuR CueR FadR HcaR NtrC PhoB PurR SgrR TdcA TrpR ZraR ArcA CpxR CRP CusR FhlA Fis FNR Fur H-NS IHF IscR Lrp ModE NarL NrdR PdhR FlhDC GlcC EvgA GadX LeuO PspF RbsR steady states Figure 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>OppD 179 5.78 / 37,188.43 Oligopeptide transport ATP-binding protein P76027 9.31 / 4,580.12 P0ADA7 Osmotically inducible lipoprotein B OsmB 103 , 137 5.57 / 14,956.95 P0C0L2 Peroxiredoxin OsmC 30 , 82 , 103 179 OsmE P0ADB1 Osmotically inducible 6.9 / 10,061.26 lipoprotein E P0AFH8 Osmotically inducible protein Y 5.42 / 18,161.15 OsmY 103 , 156 , 179 6.37 / 53,479.99 , - Trehalose-phosphate synthase ( UDP-forming ) P31677 OtsA 79 , 103 79 , 103 , 321 4.5 -- 6.5 ) 5.32 / 29,821 ( DIGE 5.38 / 29,175.28 Trehalose-phosphatase P31678 OtsB Pal 179 P0A912 Peptidoglycan-associated lipoprotein 5.59 / 16,616.32 5.15 / 28,237.44 179 3-Methyl-2-oxobutanoate hydroxymethyltransferase Pantoate-beta-alanine ligase P31057 PanB PanC 4.5 -- 6.5 ) 5.63 / 32,442 ( DIGE 5.25 / 35,056 ( 5 -- 6 ) 5.92 / 31,597.67 179 , 287 , 321 P31663 Rate-limiting gluconeogenic enzyme 5.92 / 31,597.67 179 , 287 , 321 P31663 5.46 / 59,643.48 179 Phosphoenolpyruvate carboxykinase ( ATP ) P22259 PckA Continued on following pag Transcriptional repressor for the pyruvate dehydrogenase complex genes aceEF and lpd Involved in de novo synthesis of pyridoxine ( vitamin B6 ) and pyridoxal phosphate ; induced as growth rate increases Phosphorylates B6 vitamers ; functions in a salvage pathway ; uses pyridoxal , pyridoxine , and pyridoxamine as substrates See PdxK ; uses pyridoxamine but has negligible activity toward pyridoxal and pyridoxine as substrates Probably plays an important role in intracellular peptide degradation Has speciﬁcity for the unusual dipeptide beta-alanyl-L-histidine Hydrolyzes Xaa-Pro dipeptides and also acts on aminoacylhydroxyproline analogs ; increases after benzoic acid treatment Involved in key control step of glycolysis ; subject to allosteric activation by ADP and other diphosphonucleosides and inhibition by phosphoenolpyruvate See PfkA ; sensitive to inhibition by fructose 1,6-diphosphate and increases during phosphate limitation and phosphonate growth Activates pyruvate formate-lyase 1 under anaerobic conditions by generation of an organic free radical , using S-adenosylmethionine and reduced ﬂavodoxin as cosubstrates to produce 5-deoxy-adenosine Induced by pﬂ-activating enzyme under anaerobic conditions by generation of an organic free radical ; decreases signiﬁcantly during phosphate limitation Involved in the pathway of glycolysis PdhR P0ACL9 Pyruvate dehydrogenase complex repressor 6.04 / 29,425.47 179 Erythronate-4-phosphate dehydrogenase P05459 PdxB 6.23 / 41,367.65 179 Pyridoxine kinase P40191 PdxK 179 5.14 / 30,847.4 Pyridoxamine kinase P77150 PdxY 179 6.04 / 31,322.2 PepB 5.6 / 46,180.17 Peptidase B P37095 PepD 5.20 / 52,784.22 P15288 Aminoacyl-histidine dipeptidase 5.22 / 52,046 ( DIGE 4.5 -- 6.5 ) 179 , 321 PepQ 5.62 / 50,340 ( DIGE 4.5 -- 6.5 ) 5.60 / 50,176.17 Xaa-Pro dipeptidase P21165 179 , 321 PfkA 5.45 / 38,156 5.47 / 34,842.04 6-Phosphofructokinase isozyme I P0A796 179 , 212 , 228 , 286 , 287 , 294 , 321 5.43 / 36,348 ( DIGE 4.5 -- 6.5 ) 5.43 / 45,820 ( 5 -- 6 ) PfkB 5.25 / 32,455.99 5.30 / 38,005 6-Phosphofructokinase isozyme 2 P06999 179 , 212 , 228 , 293 , 294 6/28 ,073.1 P0A9N7 Pyruvate formate-lyase 1 activating enzyme PﬂA 179 PﬂB 5.69 / 85,226.01 5.62 / 85,417 Formate acetyltransferase 1 P09373 179 , 212 , 228 , 293 5.61 / 82,279 Pgk 5.08 / 40,987.03 5.07 / 41,960 5.02 / 41,794 179 , 228 , 286 , 287 , 294 , 321 P0A799 Phosphoglycerate kinase 5.00 / 41,464 5.30 / 52,681 ( DIGE 4.5 -- 6.5 ) 5.14 / 39,792 ( 4.5 -- 5.5 ) 5.15 / 40,443 ( 4.5 -- 5.5 ) 2,3-Bisphosphoglycerate-dependent phosphoglycerate mutase P62707 PgmA Catalyzes the interconversion of 2-phosphoglycerate and 3-phosphoglycerate ; regulated by the Fur protein Changes very little throughout the normal temp ( 23 -- 37 ° C ) and increases in level with increasing growth rate 179 5.43 / 58,360.95 PheS P08312 29 , 109 , 179 , 228 , 230 , 287 , 294 5.85 / 38,689 5.79 / 36,831.81 Phenylalanyl-tRNA synthetase alpha chain 5.81 / 45,820 ( 5 -- 6 ) 5.74 / 40,430 ( 5 -- 6 ) 5.88 / 40,109 ( 5.5 -- 6.7 ) 5.14 / 94,205 5.17 / 87,378.11 Phenylalanyl-tRNA synthetase beta chain Protein Alkaline phosphatase P07395 29 , 228 , 294 PheT 4.97 / 12,345.05 5.54 / 47,199.79 P0AFJ1 P00634 179 PhnA PhoA Signiﬁcantly induced during phosphate limitation and phosphonate growth P0AFJ1 P00634 179 PhnA PhoA 293 , 325 5.54 / 47,200 Continued on facing pag Uptakes inorganic phosphate , phosphorylated compounds , and some other negatively charged solutes ; induced during phosphate limitation and phosphonate growth Member of the two-component regulatory system PhoQ/PhoP , involved in the regulation of acid phosphatase May facilitate the secretion of the peptide antibiotic microcin B17 ( MccB17 ) by completing its maturation ; suppresses the inhibitory activity of the carbon storage regulator ( CsrA ) Involved in the RNA degradosome , a multienzyme complex important in RNA processing and mRNA degradation ; induced by low temp at 10 ° C but decreases after benzoic acid treatment The transhydrogenation between NADH and NADP is coupled to respiration and ATP hydrolysis and functions as a proton pump across the membrane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>This core network was extended to include local regulators ( CpxR , CusR , FhlA , Fur , IscR , ModE , NarL , NrdR and PdhR ) that exhibited responses in the stable environments o steady-state cultures across the aerobiosis scale and in the unstable environments of the transitions ( figure 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>As was mentioned earlier , the typical distance between GT and AC in most FADR-subfamily TF-binding sites is 3 nt ( DgoR , ExuR , FadR , GlcC , LldR , PdhR etc ) , although in several orthologous groups it is 2 nt ( e.g. , GntR , HpxS , HypR , MdcY , PrpR , UxuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>Additionally to the new experimentally validated targets indicated in the above table , a regulation of mraZ , murF , ddlB , ftsQ , ftsA , ftsZ and lpxC by PdhR was confirmed as they are part of the operon that forms the dcw-cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Sumnnary The repressor of the pdhR-aceEF-lpd operon of Escfierichia coii , PdhR , was amplified to 23 % of total cell protein and purified to homogeneity by heparin-agarose and cation-exchange chromatography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Molecular Microbioiogy ( 1995 ) 15 ( 3 ) , 519-529 of PdhR , the transcriptional-repressor of the pdhR-aceEF ~ lpd operon of Escherichia coii M. A. Quail and J. R. Guest * The Krebs Institute , Departmetit of Molecular Biology and Biotechnology , University of Sheffield , Sheffield SW 2UH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_12">
+Quail MA , Guest JR : Purification , characterization and mode of action of PdhR , the transcriptional-repressor of the pdhR-aceEF-lpd operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></label>
+<input id="act_similarity_12", type="checkbox">
+<div class="ACT_similar">
+<li>Puriﬁcation , characterization and mode of action of PdhR , the transcriptional-repressor of the pdhR-aceEF-lpd operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8892825" target="_blank">8892825</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Puriﬁcation , characterization and mode of action of the PdhR , the transcriptional-repressor of the pdhR-aceEF-lpd operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>]<br></li></div>
+<li>DE3 ( pGS680 ) after growth in L broth plus ampicillin and induction wifiT iPTG ( 40Ligml '' ' ) in late-iogarithmic growth - The 30,2 kDa protein reached a maximum of 23 % of total cell protein 16h after induction , based on SDS-PAGE fractionation and densitometric anaiysis of stained gels , PdhR was first purified by heparin-agarose chromatography according to Sorger ef a / .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>As a result the M , deduced for PdhR increases from 27,050 ( 236 residues ) to 29,425 ( 254 residues ) , which is closer to the value of 30,000 estimated from the SDS-PAGE mobility of overproduced and purified pdhR protein [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>The present work describes the purification of PdhR to homogeneity and its characterization as a monomeric protein -LCB- M , 29 300 ) that binds to a region of hyphenated dyad symmetry between +11 and +27 relative to the Pp ^ i , , transcript start-site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Metabolite abbreviations : Ac , acetate ; AcP , acetyl-phosphate ; AcCoA , acetyl-CoA , Cit , citrate ; Glx , glyoxylate ; Icit , isocitrate ; Succ , succinate ; Fum , fumarate ; Mal , malate ; OAA , oxaloacetate ; PEP , phosphoenolpyruvate ; Pyr , pyruvate Conclusions Taken together , we identified 22 new target genes contained in two operons controlled by PdhR using a bioinformatic and an experimental approach .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>We predicted that PhoP regulates cysB encoding a global regulator of cysteine biosynthesis , KdgR putatively regulates edd encoding the gluconate dehydratase , Fis putatively regulates rpsI and rplM encoding two ribosomal proteins , and PdhR regulates lipA encoding the lipoate synthase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>With respect to the number of DNA-binding sites , Dan is different from the well-characterized global regulators so far examined by the genomic SELEX , including CRP , Cra , RstA , PdhR , RutR , TyrR , NemR , AllR and CitB ( 7 -- 10,12,13 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></li>
+<li>PdhR + citrate ; 9 , PdhR i-isocitrate ; 10 , PdhR-i-acetate ; 11 , PdhR + suocinate ; 12 , PdhR + lactale ; 13 , PdhR-i - , - > - ketobutyiate ; 14 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Further work is now in progress to define the PdhR operator site and to explain how the independent tpd promoter is coregulated with the sue and gcv operons in order to supply subunits for assembly into the independently regulated ODH complex and glycine cleavage system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Since the predicted targets of LexA have already been experimentally verified in [ 12,16 ] , we thus chose the regulation of lipA by PdhR as best candidate for an experimental validation of a predicted interaction To confirm the presence of a PdhR binding site in the promoter region of lipA , we performed electro-phoretic mobility shift assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>, 1991 ) , Fig. 8 , DNase I footprint analysis with RNA polymerase in the presence and absence of PdhR , Ttie pdh promoter-containing SamHI-W/ndlil fragment of pGS698 was end-labelled with [ • j - ^ ^ ` Sj-dGTP at the Bam \ - \ \ site ( coding strand ) and incubated with : 1 , no protem ; 2 , 340nM PdhR : 3 , 1,2 pM RNA polymetase ; 4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>In tho presence of pre-bound PdhR , no retarded bands that could be attri-buted to the binding of RMA polymerase were detected ( Fig. 7B ) but the labeiled fragment degenerated into a smear at approximately the same polymerase concentration as was observed witli the free tragment .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>In order to determine whether pre-bound PdhR affects RNA poiymerase binding , gei-retardation experiments were performed with increasing amounts of RNA polymerase in the absence ( Fig. 7A ) and presence of the minimum amount of PdhR needed to retard all of the added DNA ( Fig , 7B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>In the absence of PdhR , the retarded band was sharp but degenerated to a smear containing at least two further and barely discernibie retarded fragments at the highest RNA poiymerase concentrations where non-specific binding might be increasing ( Fig , 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>These results indicate fhat the presence of bound PdhR at the operator prevents specific binding by RNA poiymerase and the formation of a stable open complex at the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Despite the lack of gel-retardation evidence for open complex formation in the presence of PdhR , it is possible that RNA polymerase might still bind to the pdh protnoter under these conditions because the binding of PdhR in the +8 to +33 region shouid not necessarily occlude the recognition hexamers at - 3 5 and - 1 0 , DNase I lootprinting with RNA polymerase accordingly showed Ihal RNA polymerase protects a region of P , , , !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>, 1992 ) , The PdhR * ̂ protein failed to-bind the PdhR operator , indicating Ihat despite its looalion outside the helix-turn-helix motif , the R118C substitution prevents DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>To assess the function of the PdhR preparation , binding of PdhR to its speciﬁc operator was analyzed as a control ( Fig. 5B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>It is concluded that PdhR represses transcription by binding to an operator site centred at +19 such that effective binding of RNA polymerase is prevented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Cultures containing the PdhR expression plasmid ( but not the PdhR * ̂ plasmid or the vector alone ) grew very slowly in L broth ( doubling time 1,5 h ) , indicating that the uninduced level of functional repressor exerts a deleterious effect .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Assessing the global architecture of the PdhR regulon Pertaining to the large number of processes regulated by PdhR we furthermore determined its mean expression level over the mean expression levels of all transcription factors of E. coli in the microarray data of M3D .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>For the tested primer pairs , the amount of PCR product for the ptsG gene that is not regulated by PdhR , served as a negative control PCR and was set as 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>As in the case of PdhR , at higher LldR concentrations another complex with reduced mobility was observed with probe P77 , probably resulting from the interaction between two dimeric LldR molecules , with one of them being tightly bound to O1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>One possible explanation is that two molecules of PdhR bind to each half of the inverted repeat of the PdhR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access More than just a metabolic regulator - elucidation and validation of new targets of PdhR in Escherichia coli Anna-Katharina Göhler1 , Öznur Kökpinar2 ,3 , Wolfgang Schmidt-Heck4 , Robert Geffers5 , Reinhard Guthke4 , Ursula Rinas2 ,3 , Stefan Schuster6 , Knut Jahreis1 and Christoph Kaleta6 ,7 * Abstract Background : The pyruvate dehydrogenase regulator protein ( PdhR ) of Escherichia coli acts as a transcriptional-regulator in a pyruvate dependent manner to control central metabolic fluxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>diaiysed eiuate from caiion-exchange column : 5 , PdhR ' [ purified to same stage as PdhR in lane 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The isolation of his-tagged PdhR protein was checked by analyzing 5 μl of the elution fraction by SDS-PAGE and Western blot analysis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Therefore , a culture which expresses his-tagged PdhR was grown in LB medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>His-tagged PdhR was crosslinked to DNA and purified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Purification of his-tagged PdhR His-tagged PdhR was produced and purified as described earlier [ 7 ] Figure 6 A new view on the PdhR regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>The ammonium sulfate concentration of fractions containing PdhR were increased from 0.45 to 2.0 M for Phenyl Superose reverse-phase chromatography with an ammonium sulfate gradient ( 2-0 M in bu ¡ er A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>1993 ) , so it wouid appear that the degree of repression is limited by a low intracellular PdhR concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Further work is now needed in order to correlate the intracellular concentration of PdhR with the degree of Ppdi , repression in order to provide a greater understanding of the in wVo role of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The predicted activity of PdhR ( figure 6a ) implied that it slowly switched to a lower activity during the transition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>The TFINFER model implied that the PdhR response was fast and strong upon transfer of anaerobic cultures to aerobic conditions , consistent with the presence of pyruvate in the culture medium from this transition ( figure 6a , diamonds , solid line ; table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>But , crucially , the PdhR response was predicted to have the same sign in both transitions ( figure 6a ) -- that is , in both anaerobic -- aerobic ( figure 6a , diamonds , solid line ) and aerobic -- anaerobic ( figure 6a , squares , dashed line ) -- and PdhR activity was predicted to decrease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>In the pdhR deletion strain , the activities of both promoters increased under both anaerobic and aerobic conditions ( Fig. 6A and C , lanes 3 and 4 ) , supporting the repression model of these operons by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The repression effect by PdhR was , however , not so strong under anaerobic conditions ( Fig. 6B ) , implying that Fnr plays a major role in the repression of the cyoA gene under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>This family includes GntR , HutC , KorA , and five regulatory proteins of E. coli : PdhR , FadR , LctR , PhnF , and MngR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645248" target="_blank">14645248</a>]<br></li>
+<li>Since we were interested in regulatory targets of PdhR we subsequently discarded z-scores for all interactions not involving PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Since PdhR is known to repress the transcription of most of its targets , we expect known targets of PdhR to have a high regulatory score in our experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>So the formal possibility that the effects of PdhR overproduction are mediated by activating the synthesis ( or modifying the activity ) of a protein that binds to the pdhR promoter , has not been excluded .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Indeed , until active preparations of homogeneous PdhR protein have been recovered , the possibility that PdhR moduiates the activity or synthesis of the actual regulatory protein can not be excluded .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>These data suggest that PdhR may function as a sensor of the enzymatic activity or cellular concentration of PDH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16606699" target="_blank">16606699</a>]<br></li>
+<li>These observations suggest that the increase in independent lpdA-lacZ expression in the PdhR-de cents cient strain is an indirect e ¡ ect and it was therefore concluded that PdhR controls the synthesis of the PDH complex solely by regulating Ppdh activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>Among these , three of the negatively regulated genes ( pdhR , ndh and yfiD ) are known to be negatively regulated by PdhR ( Buck & Guest , 1989 , Ogasawara et al. , 2007 ) , suggesting that a change in PdhR levels or activity may be found in mgrR mutant cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19889087" target="_blank">19889087</a>]<br></li>
+<li>This was confirmed in studies with pdhR-tacZ and ipd-lacZ fusions , which showed that PdhR negatively autoregulates Ppd , , activity and represses transcription irotn Pip , t by up to 40 % ( Quail ef ai , 1994 ) , Expression of a pdhR-lacZ fusion was induced 3.5-fold by pyruvate and increased a further threetold in a strain containing a pdhR deletion that abolishes pyruvate inducibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>and pdhR multicopy strains established that PdhR represses Pp ^ , , - mediated transcription in vivo ( Quail ef ai , 1994 ; Haydon et ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Thus , ndh expression was rapidly and strongly enhanced in the anaerobic to aerobic transition , which could be explained by ArcA , FNR and PdhR all repressing ndh expression under the initial anaerobic conditions followed by rapid de-repression upon introduction of oxygen , which inactivates ArcA and FNR , and causes pyruvate accumulation , by inhibition of pyruvate for-mate-lyase [ 20 ] , to inactivate PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Expression of yﬁD as monitored by the yﬁD : : lac reporter fusion pGS1000 in the presence or absence of the transcription factors FNR , ArcA and PdhR , and the effect of acidity on the activity of these regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>Here it has been shown that the anaerobic transcription factor FNR is the major activator of yﬁD expression , but that the extent of FNR-mediated activation can be modulated by the indirect oxygen sensor ArcA and the pyruvate sensor PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>Consistent with this hypothesis , growth in the presence of pyruvate or under microaerobic conditions elevates the level of YﬁD ( 50 , 290 ) , while the pyruvate-sensitive regulator PdhR and the ox-ygen-sensitive global regulators FNR and ArcA control yﬁD transcription ( 290 , 476 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15755952" target="_blank">15755952</a>]<br></li>
+<li>Kinetic modelling indicated that ArcA and FNR behaviour could not explain the ndh transcript profile , leading to the identification of another TF , PdhR , as the source of the asymmetry .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>In addition , CRP can regulate transcription of other transcription factors , such as MelR , RpoH , BlgG , Fis and PdhR , which could further regulate transcription of genes involved in the above processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>For instance , the apparent repression by PdhR could be due to an interference of activation by another factor such as CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>> ; 10 '' M for PdhR and > 5x10 '' '' ^ M for PdhR ^ Pyruvate ( 1 mfVl final concentration ) completely abolished the interaction between pure PdhR and the Pp ^ , , fragment in gelretardation assays , but none of 13 other potential coeffectors ( including pyruvate metabolites ) had any effect on PdhR binding ( Fig. 3B ) , This strongly indicates that pyruvate is the specific co-effector for PdhR rather than a derivative formed in the retardation mixtures by a contaminating enzyme ( s ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Indeed , proteins with an A / - terminai alanine residue like PdhR belong to a group having the highest intracellular stability ( Tobias ef af , 1991 ) , PdhR was specific for its co-effector , pyruvate , which prevents binding to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Moreover we identified metB , which encodes an enzyme in methionine biosynthesis , as a putative target of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Also , sinoe pyruvate and L-laotate are thought to share the same active transport system ( Lang ef ai , 1987 ) , the IctP product might be involved and the IctPRD operon couid in turn be subject to dual control by pyruvate - and Iaetate-responsive regulators ( PdhR and LctR ) acting at one or more operator sites in lhe let promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Although the patterns of PdhR regulation of the Ipd-lacZ fusion were similar in pyruvate - and glucose-grown cultures , the enzyme activities were three-fold lower in the latter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>For the validation of our approach , one of them , the regulation of lipoate synthase ( LipA ) by the pyruvate-sensing pyruvate dehydrogenate repressor ( PdhR ) , was experimentally checked and confirmed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>One of them , the regulation of lipA by the transcriptional-regulator PdhR was validated experimentally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates , such as pyruvate ( PdhR ) , gluconate ( GntR ) , glycolate ( GlcC ) , and L-lactate ( LldR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>We show that this regulation could be part of a cross-induction between genes necessary for acetate and pyruvate utilisation controlled through PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>This is supported by the regulation of the glcDEFGBA operon by PdhR and the finding , that many genes known to be upregulated during growth on acetate show no marked difference in expression during growth on acetate and pyruvate , while genes which encode enzymes that convert pyruvate into acetate are strongly upregulated during growth on pyruvate but not on acetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>It wouid thus appear that PdhR performs a negative role in Pip ^ regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>We ranked the genes in this list independently according to the z-score of a regulation by PdhR and according to the regulatory score obtained from our own microarray experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Pyruvate dehydrogenase complex ; Transcriptional regulation ; PdhR regulatory protein ; Gene expression ; Escherichiacoli * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>PdhR We found strong evidence , both on an expression and phylogenetic level , for the regulation of lipA by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>This suggests that PdhR is not involved in the in vivo regulation of lldPRD expression under the conditions tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Finally , genome-wide data analysis and modeling was the driving force to design experiments for the discovery of the regulation of lipA by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>Moreover , a link of PdhR regulation to the replication machinery of the cell via control of the transcription of the dcw-cluster was verified in experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Taken together with our observations reported here , these results suggest that the increased level of pyruvate leads to the inactivation of the repressor PdhR , lead ing to the derepression of the ndh and cyoA promoters in the F1-ATPase-defective strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Results described herein demonstrate that the ndh and cyoABCDE operons are under the direct control of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Effect of PdhR on the ndh and cyoABCD promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The observation that the aceE-iacZ fusion is not affected by deleting pdhR and the failure of PdhR to retard the pdhR-aceE intergenic fragment , argue against the alternative possibility that PdhR functions by activating Pace - In contrast , parallel studies with the / pd - / acZfusion indicate that the Ipd promoter is negatively regulated by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Qnly the Ppcihcontaining fragment was retarded , indicating that PdhR is specific for its own promoter and is unlikely to regulate transcription of the gltA , sdh , Ipd .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Furthermore , we could demonstrate that the interaction of PdhR with the lipA promoter region was abolished in the presence of pyr-uvate ( Fig. 4E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>Furthermore , there is a perfect palindrome ( TJQTJAACAA ) between the - 3 5 and - 1 0 hexamers of the tpd promoter , which could mediate the observed repression of Pipd by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Results Amplification atid purification of PdhR The PdhR protein was amplified to 23 % of total cell protein using the IPTG-induoibie T7 promoter in the pGS680 expression plasmid of JRG2864 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR and PdhR '' were amplified from the IPTG-inducible T7 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>This is known to prevent the binding of PdhR to the promoter of the pdh operon ( Figure 5 ; [ 31 ] ) , finally leading to the expression of aceEF and lpdA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>PdhR was not bound to the lpd promoter nor was ArcA bound specifically to the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>This has been investigated here by mapping the start point of lpd transcription , and by in vitro studies on the binding of ArcA , Fis and PdhR to the lpd promoter , and of ArcA to the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>Studies with appropriate tacZ fusions and partially purified PdhR protein further show that PdhR negatively regulates PdhR and PDH complex synthesis and binds to the pdh promoter region in the absence of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>The pdh promoter is negatively autoregulated by PdhR , which binds to a speci cents c operator sequence in the absence of pyruvate [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>The primary pdh promoter Ppdh is negatively autoregulated by PdhR , the product of the ﬁrst gene in this pdh operon ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The mechanism by which pdhR regulates expression of the PDH complex is not known but it could involve activation of the ace promoter by the PdhR protein , or cotranscription of the entire pdhR-aceEF-tpd region from an upstream promoter ( the pdh promoter ) that is negatively autoregulated by the PdhR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Autoregulation of PdhR expression The possibility that the pdh promoter is autoregulated by the PdhR protein was investigated by comparing the activities of the pdhR-IacZ fusior ) in pdhR * , ^ pdhR and multicopy pdhR * backgrounds ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>The results presented in Fig. 5B show binding of LldR to both fragments , whereas PdhR was able to-bind only to fragment P77 , containing O1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Expression and puriﬁcation of LldR and PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Analysis of LldR and PdhR binding to O1 and O2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>However , the afﬁnity of PdhR for O1 was much lower than that of LldR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>In this paper , we provide evidence that lldPRD is not under the control of PdhR but is under the control of LldR , which has a dual regulatory function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The low afﬁnity of PdhR for O1 may not be compatible with an in vivo role of this regulator in the control of the lldPRD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>According to these locations , PdhR was proposed to be an activator and LldR a repressor of the lldPRD operon , although no experimental data were presented by these authors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>On the basis of computational data , it had been proposed that LldR and its homologue PdhR act as regulators of the lldPRD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>LldR and PdhR in the regulation of the lldPRD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>PdhR -1 - 2-oxoglutarate ; 15 , PdhR + lauric acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The genes shown in boldface type indicate the PdhR regulation targets .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The KQ for PdhR was again 5 x 1 0 ^ M .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The binding in vitro of PdhR to the PdhR box decreased in the presence of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The same site was detected previously in database searches for PdhR boxes by Quail and Guest ( 25 ) , who suggested that the cyoABCDE operon might be regulated by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>A The PdhR binding site of the pdhR-aceEF-ldpA operon was incubated with increasing amounts of PdhR as indicated ( 9 , 18 , 28 , 37 pmol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>The probe encompassing the PdhR operator site was added to-binding mixtures containing increasing amounts of PdhR ( 0.1 , 0.4 , 0.8 , or 2 pmol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>In the case of a high glyco-lytic flux , indicated by higher levels of pyruvate , the negative influence of PdhR on the dcw cluster is reduced whereas it is increased by a low glycolytic flux resulting in low pyruvate levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>In the reverse transition , the PdhR response was relatively slow and weaker , consistent with the failure to detect pyruvate excretion ( table 2 ) , presumably because when PFL is synthesized , pyruvate is rapidly consumed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Inspection of the compendium data suggested that FecI and PdhR might regulate the fecA operon using AND-like logic , where both proteins must be activated for expression of the fecA operon ( Figure 6F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>To test this hypothesis , we used real-time quantitative PCR to measure the expression level of fecA over 16 combinations of pyruvate ( to derepress PdhR protein and induce pdhR transcription ; Figure 6G ) and citrate ( to activate FecI and induce fecI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>The fecA operon reached its highest levels of induction only when citrate and pyruvate were both present in high concentrations , supporting the hypothesis that full activation of fecA is only possible in the presence of derepressed PdhR and activated FecI ( Figure 6H ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>This might be accommodated by a special feature of the auto-regulatory circuit , an irreversible pyruvate-mediated inactivation of PdhR , or there may be an overriding activation system which ensures that pdh expression does not tall to the lowest possible level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR , the pyruvate-sensitive repressor that crucially controls the synthesis of the PDH complex via Ppdh , also failed to-bind to Plpd , indicating that although PdhR regulates the synthesis of lipoa-mide dehydrogenase via P , it does not regulate pdh P .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>Evidence that the pyruvate-sensing repressor ( PdhR ) might regulate Plpd came from the 40 % increase in L-galactosidase activity observed when an lpdA-lacZ fusion lacking the proximal segment of the pdh operon , is expressed in a pdhR deletion strain [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>In the wild type strain growing fast on glucose the complete Pdh operon ( pdhR-aceEF-lpd ) is expressed as a polycistronic mRNA , because in these growing conditions the concentration of pyruvate is relatively high , and therefore , there is no repression by PdhR Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>These results are in agreement with the proposition that in strain PB11 , in which low pyruvate concentrations are apparently present , the addition of alanine , increased its m 100 % , because in these conditions more pyruvate is probably utilized by Pdh instead of PoxB due to the lack of repression of the transcription of pdhR-aceEF-lpd operon by PdhR in the presence of pyruvate [ 51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>As mentioned , in the transformation of pyruvate into AcCoA , PdhR works as a specific transcriptional-repressor of the Pdh operon when pyruvate is present at low concentrations ; its 38 expression is controlled by Crp and regulated by s [ 5,11,51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>The first gene encodes the pyruvate dehydrogenase complex regulator ( PdhR ) , which functions as a transcriptional-regulator in a self-regulatory manner for this operon [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>This operon codes for the pyruvate dehydrogenase ( Pdh ) subunits and its transcriptional-regulator PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>( C ) PdhR , a regulator of pyruvate metabolism , is not known to regulate the fecA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>Besides the pdhR operon , the only regulation target of PdhR identiﬁed so far is the yﬁD gene , encoding a putative formate acetyltransferase ( 36 ) , that is induced at low pH or by pyruvate ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Previous studies on the regulation of PdhR unveiled that pyruvate inactivates the PdhR binding activity in several promoter regions including the PdhR binding site in the pdhR-aceEF-ldpA operon [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>Previous studies on the regulation of the pdhR-aceE-aceF operon indicated that pyruvate prevents PdhR binding to the promoter of this operon , as detected by gel retardation assays ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>PdhR senses the status of the intracellular pyruvate pool by binding the co-effector , pyruvate , and because the PdhR -- pyruvate complex can not bind target DNA , expression of the pdhR -- aceEF -- lpd operon , encoding pyruvate dehydrogenase , is derepressed when pyruvate is available ( Quail & Guest , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>PdhR negatively regulates the expression of the pdhR-aceEF-lpd operon , involved in the oxidative decarboxylation of pyruvate to acetyl-coenzyme A ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The promoter of the pdhR-aceEF-lpd operon is repressed by pyruvate-sensing PdhR ( 33 ) and Cra ( this study ) and is activated by CRP ( 55 ; T. Shimada et al. , manuscript in preparation ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>]<br></li>
+<li>Transcription of the Escherichia coli genes for all three components of the PDH complex in the pdhR-aceEF-lpdA operon is repressed by the pyruvate-sensing PdhR , a GntR family transcription regulator , and derepressed by pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The pdhR-aceEF operon is repressed by PdhR and derepressed by pyruvate , the substrate of th PDH complex ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>However , in strains growing slowly on glucose , such as PB11 , where the glycolytic flux is reduced , pyruvate concentration is also reduced allowing PdhR to repress transcription of its own promoter , with the subsequent decrease in the transcription of the Pdh operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>A possible role for PdhR as an activator of the lctPRD operon , such as to enhance uptake and oxidation of L-lactate when glycolytic sources of pyruvate are exhausted , has been suggested ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8892825" target="_blank">8892825</a>]<br></li>
+<li>However , it could inactivate DNA-binding in some other way , and this will be investigated by amplifying the mutant protein and comparing its DNA-binding activity with that of wild-type PdhR , in the presence and absence of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>However , analysis of the pﬂB locus revealed no good matches to the PdhR binding site close to promoter 6 or promoter 7 , and so they are unlikely to be directly inﬂuenced by intracellular pyruvate pools via PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>In this respect , recent microarray , promoter enrichment , and DNA-binding data implicate the pyruvate dehydrogenase complex regulator PdhR as a possible transcriptional-regulator of Pmra , although the effects are very subtle ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24659771" target="_blank">24659771</a>]<br></li>
+<li>Attempts to demonstrate ArcA-binding at the PdhR promoter Studies with pdhR-lacZ fusions indicated that Ppdh is not regulated by ArcA [ 1 ] even though a 1.7-fold anaerobic derepression of pyruvate dehydrogenase synthesis was observed in an arcA mutant [ 5 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>However , the restoration of pynjvate inducibility when pdhR * is suppiied in trans shows that PdhR negativeiy regulates the pdh promoter , possibly using pyruvate as an inducing coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>In the absence of pyruvate , PdhR binds to the palindromic sequence ( 11AATTGGTaagACCAATT 27 ) located downstream of the transcriptional start site of the pdhR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Promoter assays in vivo using a two-ﬂuorescent-protein vector also indicated that the newly identiﬁed operons are repressed by PdhR and derepressed by the addition of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>( regulated by NrdR ) , over-metabolite production ( formate and pyruvate ; sensed by FhlA and PdhR ) and cell-envelope stress ( sensed by CpxR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Interestingly , this is 50-fold higher than the pyruvate concentration that prevents PdhR-binding in gel-retardation assays ( Fig , SB ) where the PdhR concentration is fourtold lower .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The response to pyruvate is refiected in the gel retardation studies ( Fig. 7 ) but purer preparations of PdhR will be needed to confirm that pyruvate rather than a pyruvate-derived metabolite , is the functionai coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>lane 4 ) , confirming that pyruvate is the coeffector for PdhR , and no protection was afforded by homogeneous PdhR ' ̂ ( Fig. 4 , lane 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The formation of both transcripts was repressed by PdhR ( Fig , 6A , lanes 2-6 ) , but not by PdhR '' '' ( lane 8 ) , and pyruvate ( 50 mM ) completely abolished the repression ( lane 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>It is possible that an increase in intracellular pyruvate , which is the inducer for PdhR , may signal the need for increased ﬂow through respiratory pathways .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>In addition to regulation by ArcA and FNR , ndh expression is repressed by the pyruvate-responsive TF PdhR ; repression is relieved by pyruvate [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>In the wild-type strain , the addition of pyruvate markedly increased the activity of the ndh promoter due to the inactivation of PdhR ( Fig. 6B , lane 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>These resuits are consistent with PdhR acting as a negative regulator of its own expression and pyruvate serving as the inducing coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>These observations suggested that PdhR regulates expression of the aceEF-tpd genes and implicated pyruvate as the coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>These observations indicated that PdhR regulates expression of the PDH complex and implicated pyruvate as the co-effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR senses the intracellular pyruvate pool , and its activity is controlled by pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Moreover , the pyruvate sensor PdhR was shown to act as a minor anaerobic repressor of yfiD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>The pyruvate responsive regulator PdhR acts as a minor repressor of yfiD expression when the intracellular pyruvate pool is low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>Repression of in viiro transcription from the pdh promoter by PdhR and its release by pyruvate were shown to be concentration-dependent for both repressor and co-effector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR repression is antagonized by pyruvate , its effector-molecule ( 23 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>In vitro trans-cription from Ppdh was repressed > 1000-fold by PdhR and this repression was antagonized in a concentration-dependent manner by its co-effector , pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>While PdhR represses the transcription of its target genes , the pyruvate-bound state of the regulator is not able to-bind DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Since the transcription factor PdhR is inactivated by pyruvate , the deletion is of no consequence under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Repression of in vitro transcription by PdhR , A. Eftect of increasing amounts of PdhR : 1 , no PdhR ; 2 , 22 nM PdhR ; 3 , 4 ̂ 1 nM PdhR ; 4 , 88 nM PdhR ; 5 , 132 nM PdhR ; 6 , 176 nM PdhR ; 7 , 176nM PdhR + 50mM pyriivate ; and 8 , 176nM PdhR ^ B , Relief of repression by PdhR ( 132nM ) at differeni pyruvate concentralions ( mM ) : 1 , no PdhR or pyruvate ; 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>i ) between - 4 4 and +21 ( approx , ) in the absence of PdhR ( Fig. 8 , lane 3 ; protected sequence underlined in Fig - 5A ) , whereas in the presence of PdhR , the pattern of protection ( Fig , 8 , lanes 4-6 ) resembled that produced by PdhR alone ( Fig. 8 , lane 2 ) , and was not affected by the addition of heparin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>( B ) Fluorescently labeled DNA probes of cyoA or ndh were incubated at 37 ° C for 30 min in the absence ( lane 1 ) or presence ( lanes 2 to 5 ) of 5 pmol of PdhR and in the absence ( lane 2 ) or presence ( lane 3 , 100 mM ; lane 4 , 200 mM ; lane 5 , 500 mM ) of increasing concentrations of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Labelied 5coRI-H ( ndill orEcoRI-Kpnl ( pGS708 ) digests ( 6,7 nM DNA ) , were incubated with : a , no PdhR ; b , 22 nM PdhR ; and c , 440 nM PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>A. Two-site labelled digestion products of pGS346 were incubated with increasing final concentrations of PdhR protein , prior to electrophoresis : 1 , none ; 2 , 1.4 ngni '' '' ; 3 , 7ngtil '' ' ; and 4 , 14ngial ' .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>B. Single-site labelled digestion products were incubated with PdhR pnjtein ( 30ng ( ir '' ) in the presence ( + ) or absence ( - ) of pynjvate ( 1 mM ) and divalent cations ( 1 mM ) : 1 , no protein or cation ; 2 and 3 , no cation ; 4 and 5 , Mn ^ * ; 6 and 7 , Mg ^ ^ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>B. Potentiai co-effectors ( 1 mM ) were incubated with the end-labelled digesi of pGS346 , 44 nM pure PdhR , and : 1 , no PdhR ; 2 , PdhR ; 3 , PdhR + pyruvate ; 4 , PdhR i-acGtyl-CoA ; 5 , PdhR + acetylphosphale ; 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>:( - ^ ^ S ] - dATP at the M'ndlll site ( non-coding strand ) , were incubated with : 1 , no protein ; 2 , 255nt ^ l PdhR ; 3 , 640nM PdhR ; 4 , 640nM PdhRiSOrnM pyruvate ; 5 , 640 nM PdhR ' - .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">PdhR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>As a result the M , deduced for PdhR increases from 27,050 ( 236 residues ) to 29,425 ( 254 residues ) , which is closer to the value of 30,000 estimated from the SDS-PAGE mobility of overproduced and purified pdhR protein [ 12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>Plasmids pGS612 and pGS342 encode hybrid proteins comprising 22 or 502 N-terminal residues of PdhR or Elp ( respectively ) , fused to a & galactosidase lacking 8 N-terminal residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>The molecular basis of the PdhR ' ̂ lesion is uncertain unless the second cysteine residue forms an intramolecular disulphide bond vvhich precludes adoption of the active conformation without otherwise affecting the protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>They share 13 identical and 3 consei ` vatively substituted sites in the proposed 20-residue helix-turn-helix motif , and the substituted arginine residue of PdhR ' ̂ is conserved in LctR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Indeed , proteins with an A / - terminai alanine residue like PdhR belong to a group having the highest intracellular stability ( Tobias ef af , 1991 ) , PdhR was specific for its co-effector , pyruvate , which prevents binding to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Studies on RNA polymerase binding at Ppdti showed that RNA polymerase protects the - 4 4 to +21 region in the absence of PdhR , but no RNA polymerase binding or protection upstream of +9 could be detected in the presence of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Despite the lack of gel-retardation evidence for open complex formation in the presence of PdhR , it is possible that RNA polymerase might still bind to the pdh protnoter under these conditions because the binding of PdhR in the +8 to +33 region shouid not necessarily occlude the recognition hexamers at - 3 5 and - 1 0 , DNase I lootprinting with RNA polymerase accordingly showed Ihal RNA polymerase protects a region of P , , , !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>LldR is highly homologous to PdhR ( 35 % identity and 62 % similarity overall ) in both the amino-terminal and carboxy-terminal domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Recent studies of the pyruvate dehydrogenase regulator protein ( PdhR ) of E. coli , which is homologous to LctR in both the amino-terminal and carboxy-terminal domains , have led to the proposal of a potential LctR binding site located in the lctPRD promoter region ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8892825" target="_blank">8892825</a>]<br></li>
+<li>However , it could inactivate DNA-binding in some other way , and this will be investigated by amplifying the mutant protein and comparing its DNA-binding activity with that of wild-type PdhR , in the presence and absence of pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>The failure to purify PdhR to homogeneity without loss of DNA-binding activity could signify that an essential cofactor is removed or that another protein may be required for operator binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Purified PdhR had a solubility of only 40-60Ligml '' ^ ( 1.3-2 .0 j.iM ) in buffers containing < 200mM salt , but it could be stored tor over three months at 4 C without significant loss of DNA-binding activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>We also identiﬁed a potential PdhR binding motif in the promoter region of the operon ( Figure 6D and 6E ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>Following this analysis , we identified four potential binding sites of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>, 1992 ) , The PdhR * ̂ protein failed to bind the PdhR operator , indicating Ihat despite its looalion outside the helix-turn-helix motif , the R118C substitution prevents DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The GntR protein binds to a sequence that overlaps the - 1 0 and +1 sites in the gntR promoter , and it also shares a significant degree of W-terminal amino acid sequence similarity with PdhR , particularly in the predicted helix-tum-helix motif of the putative DNA-binding domain ( Haydon and Guest , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>PdhR is a member of the Gnt family of transcription factors and shares sequence similarity in its N-terminal DNA-binding domain with other members ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">PdhR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>The pyruvate dehydrogenase complex regulator ( PdhR ) belongs to the Gnt family of transcription factors [ 3 ] and is regulated by a pyruvate-sensing mechanism [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>1994 ) , PdhR ( formerly GenA ) is a member ot the GntR family of regulatoiy proteins sharing sequence similarities in their / vf-terminal DNA-binding domain ( Haydon and Guest , 1991 ; Dong el ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR is a member of the Gnt family of transcription factors and shares sequence similarity in its N-terminal DNA-binding domain with other members ( 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>LldR is highly homologous to PdhR ( 35 % identity and 62 % similarity overall ) in both the amino-terminal and carboxy-terminal domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>LctR and PdhR are unique amongst known members of the GntR family because their similarity is sustained throughout the amino aoid sequence ( 35 % identity and 62 % similarity overail ) rather than being confined to an A / - terminal segment ( Haydon and Guest .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by PdhR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>In addition , CRP can regulate transcription of other transcription factors , such as MelR , RpoH , BlgG , Fis and PdhR , which could further regulate transcription of genes involved in the above processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>Using chromatin immunoprecipitation ( ChIP ) in combination with quantitative PCR and gel shift assays we discovered that the glcDEFGBA operon ( genes for glycolate utilisation , malate synthase ) as well as the mraZW-ftsLI-murEF-mraY-murD-ftsW-murGC-ddlB-ftsQAZ-lpxC transcription unit ( genes for proteins involved in cell-division ) are controlled by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>OppD 179 5.78 / 37,188.43 Oligopeptide-transport ATP-binding protein P76027 9.31 / 4,580.12 P0ADA7 Osmotically inducible lipoprotein B OsmB 103 , 137 5.57 / 14,956.95 P0C0L2 Peroxiredoxin OsmC 30 , 82 , 103 179 OsmE P0ADB1 Osmotically inducible 6.9 / 10,061.26 lipoprotein E P0AFH8 Osmotically inducible protein Y 5.42 / 18,161.15 OsmY 103 , 156 , 179 6.37 / 53,479.99 , - Trehalose-phosphate synthase ( UDP-forming ) P31677 OtsA 79 , 103 79 , 103 , 321 4.5 -- 6.5 ) 5.32 / 29,821 ( DIGE 5.38 / 29,175.28 Trehalose-phosphatase P31678 OtsB Pal 179 P0A912 Peptidoglycan-associated lipoprotein 5.59 / 16,616.32 5.15 / 28,237.44 179 3-Methyl-2-oxobutanoate hydroxymethyltransferase Pantoate-beta-alanine ligase P31057 PanB PanC 4.5 -- 6.5 ) 5.63 / 32,442 ( DIGE 5.25 / 35,056 ( 5 -- 6 ) 5.92 / 31,597.67 179 , 287 , 321 P31663 Rate-limiting gluconeogenic enzyme 5.92 / 31,597.67 179 , 287 , 321 P31663 5.46 / 59,643.48 179 Phosphoenolpyruvate carboxykinase ( ATP ) P22259 PckA Continued on following pag Transcriptional repressor for the pyruvate dehydrogenase complex genes aceEF and lpd Involved in de novo synthesis of pyridoxine ( vitamin B6 ) and pyridoxal phosphate ; induced as growth rate increases Phosphorylates B6 vitamers ; functions in a salvage pathway ; uses pyridoxal , pyridoxine , and pyridoxamine as substrates See PdxK ; uses pyridoxamine but has negligible activity toward pyridoxal and pyridoxine as substrates Probably plays an important role in intracellular peptide-degradation Has speciﬁcity for the unusual dipeptide beta-alanyl-L-histidine Hydrolyzes Xaa-Pro dipeptides and also acts on aminoacylhydroxyproline analogs ; increases after benzoic acid treatment Involved in key control step of glycolysis ; subject to allosteric activation by ADP and other diphosphonucleosides and inhibition by phosphoenolpyruvate See PfkA ; sensitive to inhibition by fructose 1,6-diphosphate and increases during phosphate limitation and phosphonate growth Activates pyruvate formate-lyase 1 under anaerobic conditions by generation of an organic free radical , using S-adenosylmethionine and reduced ﬂavodoxin as cosubstrates to produce 5-deoxy-adenosine Induced by pﬂ-activating enzyme under anaerobic conditions by generation of an organic free radical ; decreases signiﬁcantly during phosphate limitation Involved in the pathway of glycolysis PdhR P0ACL9 Pyruvate dehydrogenase complex repressor 6.04 / 29,425.47 179 Erythronate-4-phosphate dehydrogenase P05459 PdxB 6.23 / 41,367.65 179 Pyridoxine kinase P40191 PdxK 179 5.14 / 30,847.4 Pyridoxamine kinase P77150 PdxY 179 6.04 / 31,322.2 PepB 5.6 / 46,180.17 Peptidase B P37095 PepD 5.20 / 52,784.22 P15288 Aminoacyl-histidine dipeptidase 5.22 / 52,046 ( DIGE 4.5 -- 6.5 ) 179 , 321 PepQ 5.62 / 50,340 ( DIGE 4.5 -- 6.5 ) 5.60 / 50,176.17 Xaa-Pro dipeptidase P21165 179 , 321 PfkA 5.45 / 38,156 5.47 / 34,842.04 6-Phosphofructokinase isozyme I P0A796 179 , 212 , 228 , 286 , 287 , 294 , 321 5.43 / 36,348 ( DIGE 4.5 -- 6.5 ) 5.43 / 45,820 ( 5 -- 6 ) PfkB 5.25 / 32,455.99 5.30 / 38,005 6-Phosphofructokinase isozyme 2 P06999 179 , 212 , 228 , 293 , 294 6/28 ,073.1 P0A9N7 Pyruvate formate-lyase 1 activating enzyme PﬂA 179 PﬂB 5.69 / 85,226.01 5.62 / 85,417 Formate acetyltransferase 1 P09373 179 , 212 , 228 , 293 5.61 / 82,279 Pgk 5.08 / 40,987.03 5.07 / 41,960 5.02 / 41,794 179 , 228 , 286 , 287 , 294 , 321 P0A799 Phosphoglycerate kinase 5.00 / 41,464 5.30 / 52,681 ( DIGE 4.5 -- 6.5 ) 5.14 / 39,792 ( 4.5 -- 5.5 ) 5.15 / 40,443 ( 4.5 -- 5.5 ) 2,3-Bisphosphoglycerate-dependent phosphoglycerate mutase P62707 PgmA Catalyzes the interconversion of 2-phosphoglycerate and 3-phosphoglycerate ; regulated by the Fur protein Changes very little throughout the normal temp ( 23 -- 37 ° C ) and increases in level with increasing growth rate 179 5.43 / 58,360.95 PheS P08312 29 , 109 , 179 , 228 , 230 , 287 , 294 5.85 / 38,689 5.79 / 36,831.81 Phenylalanyl-tRNA synthetase alpha chain 5.81 / 45,820 ( 5 -- 6 ) 5.74 / 40,430 ( 5 -- 6 ) 5.88 / 40,109 ( 5.5 -- 6.7 ) 5.14 / 94,205 5.17 / 87,378.11 Phenylalanyl-tRNA synthetase beta chain Protein Alkaline phosphatase P07395 29 , 228 , 294 PheT 4.97 / 12,345.05 5.54 / 47,199.79 P0AFJ1 P00634 179 PhnA PhoA Signiﬁcantly induced during phosphate limitation and phosphonate growth P0AFJ1 P00634 179 PhnA PhoA 293 , 325 5.54 / 47,200 Continued on facing pag Uptakes inorganic phosphate , phosphorylated compounds , and some other negatively charged solutes ; induced during phosphate limitation and phosphonate growth Member of the two-component regulatory system PhoQ/PhoP , involved in the regulation of acid phosphatase May facilitate the secretion of the peptide antibiotic microcin B17 ( MccB17 ) by completing its maturation ; suppresses the inhibitory activity of the carbon storage regulator ( CsrA ) Involved in the RNA degradosome , a multienzyme complex important in RNA-processing and mRNA-degradation ; induced by low temp at 10 ° C but decreases after benzoic acid treatment The transhydrogenation between NADH and NADP is coupled to respiration and ATP-hydrolysis and functions as a proton pump across the membrane .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>Relative amounts of identified proteins involved in the central carbon metabolism of E. coli VI Mw ( kDa1 P '' ' IB Name of genes Glycolysis PtsH PM Crr GlR '' Pgi '' Pfk PfRB Fba Fbp TpiA GapA Pgk GP ~ fWp 41kA '' PpsA 1.254 1.758 1.13 0.746 0.480 0.818 0.717 1 0.525 0.787 0.714 0.964 0.670 2.032 3.310 0.6 1.082 0.935 0.945 0.677 1.41 0.44 0.269 0.094 1.076 0.983 0.385 0.537 0.547 0.649 0.308 0.849 1.770 1 1.844 1.932 0.927 3.016 2.88 0.44 1 1.66 0.128 0.983 0.355 0.537 0.547 0.640 0.329 0.849 1.735 1.2 1.834 1.973 5.65 4.78 4.57 6.06 5.85 5.45 5.30 5.43 5.68 5.57 6.93 5.07 5.86 5.77 6.24 5.00 5.52 5.46 10.3 59.8 20.0 34.7 61.5 38.1 38.0 39.7 32.5 26.9 23.0 41.9 28.4 50.7 51.3 86.4 99.0 59.6 0.063 0.067 0.11 0.08 0.061 0.51 0.084 0.102 0.28 0.007 0.087 0.2 0.331 0.087 0.09 0.009 0.115 0.04 0.055 0.062 0.1 0.075 0.052 0.55 0.078 0.359 0.236 0.08 0.084 0.114 0.094 0.093 0.087 0.005 0.109 0.031 PPC '' PCW Pdh complex ( i , pyruvate dehydrogenaseb ( ii ) dihydrolipoate transacetylaseb ( iii ) dihydrolipoate dehydrogenaseb PdhR '' PPP pathway 99.6 5.70 0.25 0.145 0.848 0.820 0.779 0.17 74.7 5.12 0.039 0.692 0.410 0.230 0.31 0.029 49.3 29.4 6.25 6.04 0.259 0.041 0.722 0.975 0.490 0.95 1 0.405 1.024 5.61 5.05 5.13 5.06 5.43 5.86 5.01 0.153 0.899 0.077 0.046 0.059 0.124 0.068 0.16 0.78 0.064 0.051 0.047 0.11 0.076 51.5 51.4 24.5 25.9 72.2 73.0 35.8 0.738 0.952 0.896 1.369 8.237 0.846 0.838 0.111 0.780 0.909 1.673 7.711 0.685 1.029 0.111 1.087 0.974 5.434 6.372 0.677 0.176 W !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16233096" target="_blank">16233096</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates , such as pyruvate ( PdhR ) , gluconate ( GntR ) , glycolate ( GlcC ) , and L-lactate ( LldR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates related to amino acids metabolism or at the crossroads of various metabolic pathways such as aspartate ( AnsR ) , pyruvate ( PdhR ) , glycolate ( GlcC ) , galactonate ( DgoR ) , lactate ( LldR ) , malonate ( MatR ) , or gluconate ( GntR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Most FADR-subfamily proteins are involved in the regulation of oxidized substrates related to amino acids or emerging from the central metabolism , or at the crossroads of various metabolic pathways , such as glycolate ( GlcC ) , galactonate ( DgoR ) , pyruvate ( PdhR ) , lactate ( LldR ) , or gluconate ( GntR ) [ 18 , 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>Moreover we identified metB , which encodes an enzyme in methionine-biosynthesis , as a putative target of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Click here for file [ http://www.biomedcentral.com/content/supplementary/1475-2859-8-54-S1.DOC] List of abbreviations used aceBAK : glyoxylate shunt operon ; aceE : subunit E1p of pyruvate dehydrogenase complex ; aceF : lipoate acetyltransferase subunit of pyruvate dehydrogenase complex ; Ack ( ack ) : acetate kinase ; Acs ( acs ) : acetyl-CoA synthetase ; ADH ( adhE ) : alcohol dehydrogenase ; cAMP : cyclic AMP ; CoASH : coenzyme A ; Cra/FruR ( cra ) : catabolite repressor activator ; Crp ( crp ) : catabolic repressor via cAMP receptor protein ; Icdh ( icd ) : isocitrate dehydrogenase ; IcIR ( iclR ) : glyoxylate shunt repressor ; Icl ( aceA ) : isocitrate lyase ; iD-Ldh ( dld ) : D-lactate dehydrogenase ( NAD + - independent ) ; α IHF subunit ( ihfA ) : subunit of integration host factor ; iL-Ldh ( lldD ) : L-lactate dehydrogenase ( NAD + - independ-ent ) ; Ldh ( ldhA ) : lactate dehydrogenase ( NAD + - depend-ent ) ; Lpd ( lpd ) : lipoamide dehydrogenase , pyruvate dehydrogenase E3 monomer ; MaeB ( maeB ) : malic enzyme NADP + - requiring ; Mdh ( mdh ) : malate dehydrogenase ; MS ( aceB ) : malate synthase ; OAA : oxaloacetate ; Pcc ( ppc ) : PEP carboxylase ; Pck ( pck ) : PEP carboxykinase ; Pdh : pyruvate dehydrogenase complex ; PdhR ( pdhR ) : pyruvate dehydrogenase complex regulator ; PEP : phosphoe-nolpyruvate ; Pfl ( pflB ) : pyruvate formate lyase ; PflA ( pflA ) : pyruvate formate lyase activating enzyme ; polA : DNA polymerase I ; PoxB ( poxB ) : pyruvate oxidase ; Pps ( pps ) : phosphoenolpyruvate synthase ; Pta ( pta ) : phosphotransacetylase ; PtsG ( ptsG ) : subunit of Enzyme IIglc ; Pyk ( pykF , pykA ) : pyruvate kinase ; RpoD ( or σ32 ) : sigma subu-nit of RNA polymerase ; RpoS ( or σS ) : sigma subunit of RNA polymerase ; Sdh ( sdhC ) : succinate dehydrogenase membrane protein ; SfcA ( sfcA/maeA ) : malic enzyme NAD + - requiring ; sucA : subunit of E1 ( 0 ) component of 2-oxoglutarato dehydrogenase ; TCA : tricarboxylic acids cycle ; Zwf ( zwf ) : glucose 6-phosphate dehydrogenase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>We predicted that PhoP regulates cysB encoding a global regulator of cysteine-biosynthesis , KdgR putatively regulates edd encoding the gluconate dehydratase , Fis putatively regulates rpsI and rplM encoding two ribosomal proteins , and PdhR regulates lipA encoding the lipoate synthase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>To overcome this problem and identify the genes under the direct control of a test regulator , we have developed the genomic SELEX screening system for search of the recognition and binding sequences by use of a test transcription factor ( 43 ) , and we have successfully employed this system for identiﬁcation of whole sets of regulation targets by a number of transcription factors , such as PdhR ( 35 ) , RutR ( YcdC ) ( 44 ) , and Dan ( YgiP ) ( 50 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>]<br></li>
+<li>The CLR algorithm identiﬁed PdhR , a pyruvatesensing repressor and necessary component of the energy transduction cascade , as a possible additional regulator of the fecA operon ( Figure 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>In cases where multiple promoters with different regulation have been recognized , they are distinguished as P1 , P2 etc. - Fold up-regulation relative to the anaerobic steady state at the indicated Glycolysis , citric-acid-cycle , and respiratory chain genes times following the introduction of air 5 min 10 min 15 min 60 min 6.0 6.7 6.9 4.7 3.6 5.7 6.1 3.2 Relevant regulatory proteins aceE pyruvate dehydrogenase ( decarboxylase component ) aceF pyruvate dehydrogenase ( dihydrolipoyltransacetylase component ) acnA aconitase A acnB aconitase B cyoA cytochrome bo terminal oxidase subunit II cyoB cytochrome bo terminal oxidase subunit I cyoC cytochrome bo terminal oxidase subunit III cyoD cytochrome bo terminal oxidase subunit IV cyoE heme o synthase gltA citrate synthase gpmA phosphoglycerate mutase icdA isocitrate dehydrogenase ( NADP ) lpdA lipoamide dehydrogenase ( E3 monomer ) mdh malate dehydrogenase mqo malate dehydrogenase ( quinone ) ndh NADH dehydrogenase II pdhR pyruvate-responsive transcription regulator poxB pyruvate oxidase sdhA succinate dehydrogenase flavoprotein sdhB succinate dehydrogenase iron-sulfur protein PpdhR , FNR ( / ) PdhR * ( ) CRP ( ) PpdhR , FNR ( / ) PdhR * ( ) CRP ( ) ArcA ( ) FNR ( ) Cra ( ) CRP ( ) SoxRS ( ) ArcA ( ) Cra ( ) CRP ( ) Fis ( ) ArcA ( ) ArcA ( ) ArcA ( ) ArcA ( ) ArcA ( ) ArcA * ( ) Fur ( ) P1 , ArcA * ( ) P2 , Cra * ( ) PpdhR , FNR ( / ) PdhR * ( ) CRP ( ) Plpd-ArcA * ( ) FNR ( ) CRP ( ) PdhR ( ) Fis ( ) ArcA ( ) CRP ( ) FlhD ( ) ArcA ( ) FNR * ( ) PpdhR , FNR ( / ) PdhR * ( ) CRP ( ) SoxRS ( ) MarR ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 - CRP ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 - CRP ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2-CRP ( ) P1 - ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 - CRP ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 , ArcA ( ) FNR ( ) IHF ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 , ArcA ( ) FNR ( ) IHF ( ) P1 , ArcA * ( / ) FNR ( ) CRP ( ) Fur ( ) P2 , ArcA ( ) FNR ( ) IHF ( ) P1 , ArcA * ( / ) FNR * ( ) CRP ( ) Fur ( ) P2 , ArcA ( ) FNR ( ) IHF ( ) 2.0 3.1 2.6 2.9 6.8 8.6 9.9 7.3 5.2 2.7 1.9 5.0 3.3 3.2 7.4 3.2 5.8 7.3 9.1 11.7 7.8 6.5 4.7 2.1 6.1 4.9 10.4 12.9 9.2 5.7 4.4 1.5 4.8 8.6 10.0 7.9 6.3 4.0 2.1 5.3 3.0 2.4 4.8 2.9 3.5 3.9 3.4 6.9 4.2 4.6 3.5 8.6 5.0 5.0 2.2 3.5 2.4 6.6 3.1 3.0 4.7 2.1 3.7 6.8 9.9 5.5 9.1 5.8 8.7 4.3 2.9 5.8 2.8 sdhC succinate dehydrogenase membrane protein sdhD succinate dehydrogenase membrane protein sucA 2-oxoglutarate decarboxylase 16.6 4.6 3.2 3.6 7.8 1.9 2.0 2.1 2.1 3.2 3.6 3.1 sucB dihydrolipoamide succinate transferase sucC succinyl-CoA synthetase , subunit sucD succinyl-CoA synthetase , subunit 3.5 4.7 2.7 TABLE 2 Transcripts encoding proteins involved in the oxidative stress response that are present in increased abundance after the introduction of air to anaerobic cultures of E. coli MG1655 Fold regulation ( at least 2-fold at one or more time point ) is the ratio of transcript levels at the indicated time after the introduction of air to the transcript levels at t 0 ( the initial anaerobic state ; p 0.05 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16857675" target="_blank">16857675</a>]<br></li>
+<li>Furthermore , a connection between central metabolism and iron-transport has been described by the regulation of the fecABCDE operon ( genes for ferric citrate-transporter ) by PdhR [ 5 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Since PdhR plays an important role in the control of metabolic flux , we aimed to identify further targets of this regulator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>PdhR acts as an important regulator of many cellular-processes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Moreover they underline the key role of the regulator PdhR in the control of fluxes at the pyr-uvate node that connects glycolysis , citric-acid-cycle and lipid-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>Since the PDH multienzyme complex is a key enzyme for the metabolic interconnection between glycolysis and the TCA-cycle , PdhR could be an important regulator for the steady-state maintenance of the central metabolism for energy production in response to changes in external environmental conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>These results indicate that PdhR plays a key regulatory role in not only the formation of the PDH complex for the metabolic interconnection between glycolysis and the TCA-cycle but also the synthesis of two key enzymes ( Ndh and CyoA ) in the terminal electron transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>PdhR behaviour during transitions accounts for the irreversibility of the ndh transcript profile One of the key adaptations made by E. coli in response to altered oxygen availability is switching between alternative aerobic-electron-transport-chains by ` mixing and matching ' combinations of primary dehydrogenases ( e.g. NADH dehydrogenase I , Ndh-I , encoded by the nuo operon , and NADH dehydrogenase II , Ndh-II , encoded by ndh ) and terminal oxidases ( e.g. cytochrome bo0 , encoded by the cyoA-E operon , and cyto-chrome bd-I , encoded by the cydAB operon ) to optimize energy conservation and growth potential ( figure 4a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>Ogasawara H , Ishida Y , Yamada K , Yamamoto K , Ishihama A : PdhR ( Pyruvate Dehydrogenase Complex Regulator ) Controls the Respiratory Electron Transport System in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21272324" target="_blank">21272324</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access More than just a metabolic regulator - elucidation and validation of new targets of PdhR in Escherichia coli Anna-Katharina Göhler1 , Öznur Kökpinar2 ,3 , Wolfgang Schmidt-Heck4 , Robert Geffers5 , Reinhard Guthke4 , Ursula Rinas2 ,3 , Stefan Schuster6 , Knut Jahreis1 and Christoph Kaleta6 ,7 * Abstract Background : The pyruvate dehydrogenase regulator protein ( PdhR ) of Escherichia coli acts as a transcriptional regulator in a pyruvate dependent manner to control central metabolic fluxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>After a systematic search for the regulation targets of PdhR using genomic systematic evolution of ligands by exponential enrichment ( SELEX ) , we have identiﬁed two novel targets , ndh , encoding NADH dehydrogenase II , and cyoABCDE , encoding the cytochrome bo-type oxidase , both together forming the pathway of respiratory electron transport downstream from the PDH cycle .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>In the case of PdhR , the regulator for the genes encoding pyruvate dehydrogenase ( PDH ) multienzyme complex , was found to control the genes for the downstream metabolism , i.e. , the respiratory electron transport pathway , including ndh ( NADH dehydrogenase ) and cyoABCDE ( cytochrome boptype oxidase ) [ 45 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21673794" target="_blank">21673794</a>]<br></li>
+<li>Previously we identified by Genomic SELEX screening that PdhR , originally identified as the regulator of genes coding for components of PDH complex , regulates ndh encoding NADH dehydrogenase II and cyoABCDE encoding the cytochrome bo-type oxidate , both together forming the pathway of respiratory electron transport downstream from the PDH cycle [ 45,62 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21673794" target="_blank">21673794</a>]<br></li>
+<li>Role of PdhR as a master regulator of the metabolic pathways including both NAD-linked oxidative decarboxylation of pyruvate to acetyl-CoA and respiratory electron transport of NADH to oxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>PdhR controls not only the transcription of the multi-enzyme complex of the pyruvate dehydrogenase complex , but also targets the ndh and cyoABCDE operons ( genes encoding proteins for electron transport ) , which leads to the hypothesis that PdhR functions as a master regulator of genes involved in energy production and the following terminal electron transport from NADH to oxygen [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>We then propose that PdhR is a master regulator of the genes involved in the main pathway of energy production , starting with the PDH system for the transfer of pyruvate , the ﬁnal product of glycolysis , into the TCA-cycle , followed by the Ndh-Cyo system for terminal electron transport from NADH to oxygen .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>PdhR is an important regulator of central metabolism by controlling the transcription of the components of the pyruvate dehydrogenase complex and several genes involved in the respiratory chain [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_30">
+Ogasawara , H. , Ishida , Y. , Yamada , K. , Yamamoto , K. , and Ishihama , A. ( 2007b ) PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17919280" target="_blank">17919280</a>]<br></label>
+<input id="rp_similarity_30", type="checkbox">
+<div class="RP_similar">
+<li>[ PubMed : 16077120 ] Ogasawara H , Ishida Y , Yamada K , Yamamoto K , Ishihama A. PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19889087" target="_blank">19889087</a>]<br></li>
+<li>Ogasawara H , Ishida Y , Yamada K , Yamamoto K & Ishihama A ( 2007b ) PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20874755" target="_blank">20874755</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20874755" target="_blank">20874755</a>]<br></li>
+<li>Ogasawara , H. , Ishida , Y. , Yamada , K. , Yamamoto , K. and Ishihama , A. ( 2007 ) PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20156994" target="_blank">20156994</a>]<br></li>
+<li>Ogasawara H , Ishida Y , Yamada K , Yamamoto K , Ishihama A : PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_35">
+PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electrotransport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19633077" target="_blank">19633077</a>]<br></label>
+<input id="rp_similarity_35", type="checkbox">
+<div class="RP_similar">
+<li>PdhR ( pyruvate dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23913318" target="_blank">23913318</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18957590" target="_blank">18957590</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25568260" target="_blank">25568260</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25790494" target="_blank">25790494</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22442305" target="_blank">22442305</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20466769" target="_blank">20466769</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18567656" target="_blank">18567656</a>]<br></li>
+<li>PdhR ( pyruvte dehydrogenase complex regulator ) controls the respiratory electron transport system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23233451" target="_blank">23233451</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21421764" target="_blank">21421764</a>]<br></li></div>
+<li>Pyruvate dehydrogenase complex ; Transcriptional regulation ; PdhR regulatory protein ; Gene expression ; Escherichiacoli * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>The PdhR protein is responsible for repressing the expression of the pyruvate dehydrogenase complex , and thus plays a key role in the regulation of the central metabolic pathways in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>This operon is subjected to complex transcriptional regulation , which involves a specific regulator ( PdhR ) and three different promoters [ 27,28 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>( C ) PdhR , a regulator of pyruvate-metabolism , is not known to regulate the fecA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>The pdhR gene Received 7 October 1993 The aceE-aceF-lpd genes encoding the pyruvate dehydrogenase ( PDH ) complex of Escherichiacoli are preceded by a gene encoding a putative transcriptional regulator , PdhR ( formerly designated GenA ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>The first gene encodes the pyruvate dehydrogenase complex regulator ( PdhR ) , which functions as a transcriptional regulator in a self-regulatory manner for this operon [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Moreover , the pyruvate sensor PdhR was shown to act as a minor anaerobic repressor of yfiD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>It is concluded that the pdhR gene encodes a regulatory protein ( PdhR ) , which represses synthesis of the PDH complex in response to pyruvate-limitation , by acting at the pdhR promoter of the pdhR-aceEF-lpd operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>PdhR negatively regulates the expression of the pdhR-aceEF-lpd operon , involved in the oxidative decarboxylation of pyruvate to acetyl-coenzyme A ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The family also includes the HutC regulators of histidine utilisation in Pseudomonas putida and Klebsiella aerogenes , the KorA regulator of conjugal plasmid transfer in Streptomyces , and five regulatory proteins of Escherichia coli : PdhR ( formerly GenA ) , the repressor of the pyruvate dehydrogenase operon ( pdhR-aceEF-lpd ) ; FadR , the repressor of fatty-acid-degradation ; LctR , a potential regulator of L-lactate utilisation encoded by the 1ctPRLI operon ; PhnF , a potential regulator of alkylphosphonate uptake and metabo-lism ; and FarR , an uncharacterised regulator that was formerly designated P30 [ 1,3,4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7805834" target="_blank">7805834</a>]<br></li>
+<li>Quail MA , Guest JR : Purification , characterization and mode of action of PdhR , the transcriptional repressor of the pdhR-aceEF-lpd operon of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">PdhR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>sigma scores boxes evidence 1 glkP1 - P2 k n glk FruR C [ 36 ] , in this work GCGTTGTTGTTATGCCCCCAGGTATTTACAGTGTGAGAA 236 s38 2 s70 : 3.92 glkP3 - P4 n n s70 3 in this work A , C CCCCCAGGTATTTACAGTGTGAGAAAGAATTATTTTGAC 221 s38 : 2.95 pgiP1 - P2 k n [ 37 ] , in this work A , B , E ¬ pgi ACCATCACATTTTTCTGTGACTGGCGCTACAATCTTCCA 236 s70 : 6.9 ; s38 : 7.44 pfkAP1 - P2 k n ¬ A , B FruR pfkA [ 39 ] , in this work ATCAATTCAGCAGGAAGTGATTGTTATACTATTTGCACA 278 s70 : 8.61 ; s38 : 5.7 pfkAP3 - P4 n n s38 2 in this work A , E TCACTTCGATGTGCAAGAAGACTTCCGGCAACAGATTTC 229 s70 : 1.12 ki CTGCCCTGCGGGGCGGCCATCTTCCTTTATTCGCTTATA 219 ¬ tpiA tpiAP [ 40 ] ¬ ¬ tpiAP1 - P2 in this work n n ¬ A , E CAAAGCCTTTGTGCCGATGAATCTCTATACTGTTTCACA 262 s70 : 8.07 ; s38 : 7.4 gapA gapAP1 - P1a [ 41,43 ] , in k n this work gapAP2 [ 41,43 ] k ¬ A , B , D CGCTTGACGCTGCGTAAGGTTTTTGTAATTTTACAGGCA 236 s70 : 3.76 ; s38 : 0.82 ¬ A CCTTTAAAATTCGGGGCGCCGACCCCATGTGGTCTCAAG 2153 ¬ k TCACATTTTTATCGTAATTGCCCTTTAAAATTCGGGGCG 2174 - - ¬ gapAP3 [ 41,43 ] Crp k AACACCAACTGGCAAAATTTTGTCCTAAACTTGATCTCG 2245 - - ¬ gapAP4 [ 41,43 ] ACATTCCTTTTATTCCACGTTTCGCTTATCCTAGCTGAA 2132 no predictions s703 , s382 A , D epdP1 - P2 k FruR , Crp epd [ 45 ] , in this work pgkP1 k A pgk [ 45 ] AAGCAGCACAAGGTGCATTTCATGGTATAGTTGACTATA 2235 - ¬ n TGTTGCTTTCAGGTAAGACGCAAGCAGCGTCTGCAAAAC 226 no predictions ¬ pgkP2 in this work D , E n GCACACCTGATCAAAACGTTGGTCTGGTGCGATAACGAA 2113 no predictions s703 pgkP3 in this work A , D gpmA gpmAP1 - P2 [ 46 ] , in this ki n work gpmAP3 - P4 in this work n n Fur A ¬ AAGCATTGCTGTTGCTTCGTCGCGGCAATATAATGAGAA 237 s70 :7.56 ; s38 : 3.66 ¬ ¬ CCTTACACTGCGCCACTATTTTCGCTATGGTTATGCGTA 275 s70 :5.80 ; s38 : 7.48 eno enoP1 [ 47 ] k ¬ ¬ AATCGTGTCAGCGTCAACATCAAACTGATCGATTCACAA 2731 ¬ k CGAAGCACTGAAACACGGTGGGCTGAAGAATCGTGTCAG 2760 - - ¬ enoP2 [ 47 ] k TAAACGATTCAGCTTAAACTGCCCGGAAGCGAATCTGTC 2903 - - ¬ enoP3 [ 47 ] n GCGTACCCTGGGTACGCGTTGTTTGTCTGGAGTTTCAGT 227 no predictions s703 , s382 A , D , E enoP4 - P5 in this work n GAGTTCCAGAAACGTCAGGCGAAGTAAGTAAAAAAGTTA 277 no predictions - D enoP6 in this work n n GGGGATGATCAGTTGGTCGAGATCATCGAAGTTCCGAAT 2212 no predictions s703 , s382 D enoP7 - P8 in this work pykF pykFPPki [ 49 ] FruR TGTTTTCCTTTTGGATTAATTTCAGCGTATAATGCGCGC 2231 - -- pykFP1 - P2 in this work n n GGATTCGCTTTCCGGCAGTGCGCCCAGAAAGCAAGTTTC 234 no predictions s703 , s382 A , B , D n GATGTCACCTATCCTTAGAGCGAGGCACCACCACTTTCG 280 no predictions - D pykFP3 in this work pykFP4 - P5 n n in this work CCTCTGCACGCTTTTTCGATGTCACCTATCCTTAGAGCG 297 s70 : 4.79 ; s38 : 9.95 ¬ B , D pykA pykAP1 - P2 n n s38 2 in this work AAGTGACGATCGCTAAAAACGACTGTCACTGTCCTAATC 2105 s70 : 0.90 , D B n n GTCAAAGAAGCGCTGAAGGAATCGCGTTTTGATAAGCAG 2153 s70 : 1.76 s382 A , B , D pykAP3 - P4 in this work Crp , Fnr , GTATGGACATAAGGTGAATACTTTGTTACTTTAGCGTCA 258 no predictions s703 , s382 B , D PdhR s38 2 pdhR pdhRP1 - P2 k n [ 51 -- 52 ] , in this work aceE aceEP1 - P2 k n ¬ AACCTGTCTTATTGAGCTTTCCGGCGAGAGTTCAATGGG 248 s70 : 1.90 [ 50 ] , in this work poxB poxBP1 - P2 k n [ 57,58 ] , in his work B , C ¬ MarA , SoxS TCCCTTCCCCCTCCGTCAGATGAACTAAACTTGTTACCG 227 s70 : 5.31 ; s38 : 9.5 acs acsP1 k [ 60 -- 61 ] ¬ Fis , Crp , Ihf TCTTTAATCAATTGTAAGTGCATGTAAAATACCACTTTA 2224 ¬ k n CCCCTACATTTAACGCTTATGCCACATATTATTAACATC 220 s70 : 4.03 ; this work s38 : 4.97 B , C ¬ acsP2 - P3 [ 60 -- 61 ] , in Fis , Crp , Ihf consensus sigma 70 : TGGTATAATG sigma 38 : CTACACTT sequences Proposed promoters in which putative s and s overlapping recognition sequences have been determined , are presented as bold sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>Table 3 Primer pairs for qPCR Binding site Sequence 5 ' -3 ' PdhR CACAGTTTCATGATTTC op GAGAGTGCCTTCGAG CGGACCTCGTGCACAG GTGCCATCAGTACCG AACGGTGATGACGATG + ¬ + GlcDop ¬ + MraZop GGTAGGCACTGATAAG GTGTAATGCACCTGTC ¬ + MetBop AACCCGCTACGCACTG ATGCAGCTCTTCCGC TTCTCAGTGTCGCTTG GTCGGTAAATCGCTGATGCTGCC CAACAACTGCGGCCAGCGC ¬ + YnfMop ¬ + PtsGop ¬ Gel shift assays Assays were carried out as described previously [ 7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>For the genomic SELEX screening of PdhR-binding sequences , 5 pmol DNA fragments and 20 pmol His-tagged PdhR were mixed in a binding buffer ( 10 mM Tris-HCl [ pH 7.8 at 4 ° C ] , 3 mM Mg acetate , 150 mM NaCl , 1.25 g/ml bovine serum albumin [ BSA ] ) and incubated for 30 min at 37 ° C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>For the identiﬁcation of DNA sequences that are recognized by E. coli PdhR , we used the genomic SELEX method ( 24 , 30 ) , which uses a complete library of E. coli genome DNA fragments , instead of synthetic oligonucleotides , with all possible sequences used with the original SELEX method ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Thus PdhR might be expected to bind at an analogous site , and it may be significant that the protected region contains related sequences , e.g. ^ ^ GTJAAaAt ^ ^ and '' ^ ' ^ GQJAagAc ^ ' ^ ^ ( Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>This is in agreement with the recent description of the PdhR consensus sequence derived from the ndh and cyoABCDE operators , where these positions are always conserved ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>PdhR was found to bind to a 26-bp sequence between positions 18 and 43 upstream of the ndh transcriptional start position ( Fig. 3 ) and to a 28-bp sequence between positions 158 and 185 upstream of the cyoABCDE transcriptional start position ( Fig. 4A and B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>One possible explanation is that two molecules of PdhR bind to each half of the inverted-repeat of the PdhR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>C The Mlc consensus sequence was incubated with purified PdhR ( 18 , 28 , 37 , 46 pmol ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>The PdhR-binding sequence ( cAaTGGTtttACCAATT , 12/14 match with the consensus [ nonconsensus bases are in lowercase type ] ) within this region is similar to the consensus PdhR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Using gel shift and DNase I footprinting assays , the PdhR-binding site ( PdhR box ) was deﬁned , which includes a palindromic consensus sequence , ATTGGTNNNACCAAT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>In both PdhR-binding sequences , there is a common 15-bp ATT GGTNNNACCAAT sequence , which includes an inverted AT TGGT repeat , referred to as the PdhR box ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>This sequence also includes the inverted-repeat sequence AATTG GTNNNACCAATT of the PdhR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Consensus sequence for the PdhR box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Alignment of the O1 and O2 sequences with the PdhR operator site present in the pdhR promoter ( AATTGGTaagAC CAATT ) revealed high identity in the palindromic sequences , except for the nucleotides ﬂanking the spacer of the operator ( underlined ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Previously , Quail et al. ( 26 ) reported that on the pdhR-aceEF operon promoter , PdhR binds to the sequence between positions 8 and 28 on the coding strand and positions 10 and 33 on the noncoding strand downstream from transcriptional start site ( 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>In the absence of pyruvate , PdhR binds to the palindromic sequence ( 11AATTGGTaagACCAATT 27 ) located downstream of the transcriptional start site of the pdhR promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The PdhR operator sequence is located downstream of the transcriptional start site where it oould typically serve as the binding site for a repressor of a a ™ - dependent promoter ( Collado-Vides ef ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>D The operator promoter sequence of lipA ( ca 500 bp in front of the start codon ) was incubated with PdhR ( 33 , 44 , 50 , 55 pmol ) E The lipA operator promoter was incubated with 44 pmol PdhR ( lane 2 ) and with PdhR and 100 mM pyruvate ( lane 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20718955" target="_blank">20718955</a>]<br></li>
+<li>The pdh promoter is negatively autoregulated by PdhR , which binds to a speci cents c operator sequence in the absence of pyruvate [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>t > 300 3Z0 330 GAATGTTGCCAATACATMCATTTAGTT@ACCATTCATTGTCATTATCCtTACACAACACAATTGGCAGt ' ' ( i-t ) Ma y.O 3911 ` iUO GCCACTTTTACACAACGTGTGACAAGGAGATGAGCAACAGACTCATTACACGATGTGCCtGGACTCCAGG A G A CCTGGA [ AiB \ AT C T C T G ' tMtT A -- * ii ly : ii ` Trp DAM binding studies with RNA polymerase and the pdh promoter Because it binds to an operator site situated just downstream of the Ppiji , transcription start-site in the +8 to +33 region , PdhR could repress transcription by interfering with RNA polymerase binding , by inhibiting opencomplex formation , or by providing a ` road-biock ' to transcriptional elongation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>These results indicate fhat the presence of bound PdhR at the operator prevents specific binding by RNA poiymerase and the formation of a stable open complex at the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>It is concluded that PdhR represses transcription by binding to an operator site centred at +19 such that effective binding of RNA polymerase is prevented .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Discussion PdhR has been characterized as a 29.3 kDa mono-meric prolein which represses transcription of the pdhR-aceEF-lpd operon by binding to an operator sequence conditions , so as to exclude RNA polymerase from the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>Alignment was done with the nucleotide sequences of the binding sites for the PaaX repressor in Pa ( PaaX ( Pa ) ) and Pz ( PaaX ( Pz ) ) promoters , the CRP activator in lac promoter ( CRP - ( Plac ) ) ( 25 ) , the LacI repressor ( 26 ) , the GntR repressor ( 6 ) , and the PdhR repressor ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>The sequences protected by PdhR and RNA polymerase overlap at +8 to +21 , and the fact that PdhR totally exclLides the polymerase is consistent with the 30-fold higher binding affinity observed for PdhR , There is no sign of PdhR-mediated protection upstream of +8 , or any hypersensitive sites in the PdhR footprint indicative of DNA bending , so the pdh promoter elements should in theory be accessible for RNA polymerase binding , as observed with the lacUV5 promoter ( Straney and Crothers , 1987 ) - It is therefore concluded that sequences in the +8 to +21 region are needed in addition to the core promoter elements , for RNA poiymerase binding at the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Analysis of the yﬁD promoter region revealed the presence of a near consensus ( cAaTGGTTTTACCAA-TT , 12 -RCB- 14 , non-consensus bases in lower case ) PdhR binding site ( Quail & Guest , 1995 ) centred at 17 relative to the transcript start .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>Since the aceE - / acZ fusion extends 635 bp upstream of the ace transcriptional start site , including over half of the pdhR coding region and all of the pdhR-aceE intergenic region ( Spencer and Guest , 1985 ) , it should contain the necessary binding sites for activation by chromosomaliy encoded PdhR , were the latter mechanism operative .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>A potential PdhR site was found within the pﬂB coding region , some 1787 bp upstream of the PFL activase gene ( pﬂA ) transcript start , and it is thus unlikely that this potential PdhR site is transcriptionally relevant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>The GntR protein binds to a sequence that overlaps the - 1 0 and +1 sites in the gntR promoter , and it also shares a significant degree of W-terminal amino acid sequence similarity with PdhR , particularly in the predicted helix-tum-helix motif of the putative DNA-binding domain ( Haydon and Guest , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>The nucleo-tide sequence of region 2 contains an element ( 5 - AATTcGT-NNNACaAAaT ) that shows partial dyad symmetry homologous to ( 5 - AATTGGTNNNACCAATT ) thought to be important for DNA binding of the pyruvate-responsive regulator , PdhR ( 42 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15534208" target="_blank">15534208</a>]<br></li>
+<li>If we thus identified a DNA sequence that resembled known binding sites of PdhR , we checked whether the corresponding region coincides with a part of the promoter known to be phylogenetically conserved upstream of genes in ten proteobacterial genomes [ 35,36 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>The gene with the strongest overexpression possessing a putative phylogenetically conserved binding site of PdhR was ynfM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>In the third approach , we searched for putative phylogenetically conserved binding sites of PdhR in the upstream region of each gene of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Identification of candidates for experimental validation To identify potential candidates for experimental validation of potential interactions we determined for each gene of E. coli whether we could identify a putative phylogenetically conserved transcription factor binding site of PdhR in its upstream region as described previously [ 7 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Comparison of the PdhR binding sites present in different target promoters led to the establishment of ATTGGTNNNACCAT as a consensus sequence for PdhR recognition ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>This analysis identiﬁed two sites displaying sequences similar to the PdhR recognition site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Following this analysis , we identified four potential binding sites of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by PdhR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>For the tested primer pairs , the amount of PCR product for the ptsG gene that is not regulated by PdhR , served as a negative control PCR and was set as 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Results described herein demonstrate that the ndh and cyoABCDE operons are under the direct control of PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Using chromatin immunoprecipitation ( ChIP ) in combination with quantitative PCR and gel shift assays we discovered that the glcDEFGBA operon ( genes for glycolate utilisation , malate synthase ) as well as the mraZW-ftsLI-murEF-mraY-murD-ftsW-murGC-ddlB-ftsQAZ-lpxC transcription unit ( genes for proteins involved in cell division ) are controlled by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>In the pdhR deletion strain , the activities of both promoters increased under both anaerobic and aerobic conditions ( Fig. 6A and C , lanes 3 and 4 ) , supporting the repression model of these operons by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The repression effect by PdhR was , however , not so strong under anaerobic conditions ( Fig. 6B ) , implying that Fnr plays a major role in the repression of the cyoA gene under anaerobic conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>This was confirmed in studies with pdhR-tacZ and ipd-lacZ fusions , which showed that PdhR negatively autoregulates Ppd , , activity and represses transcription irotn Pip , t by up to 40 % ( Quail ef ai , 1994 ) , Expression of a pdhR-lacZ fusion was induced 3.5-fold by pyruvate and increased a further threetold in a strain containing a pdhR deletion that abolishes pyruvate inducibility .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Qnly the Ppcihcontaining fragment was retarded , indicating that PdhR is specific for its own promoter and is unlikely to regulate transcription of the gltA , sdh , Ipd .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>( F ) Viewing the expression of fecA ( the z-axis is represented as color changes corresponding to the values on the color bar on the right ) as a function of both transcription factors suggests its regulation by FecI and PdhR might be AND-like .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>Inspection of the compendium data suggested that FecI and PdhR might regulate the fecA operon using AND-like logic , where both proteins must be activated for expression of the fecA operon ( Figure 6F ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>The results further support the hypothesis that fecA expression is controlled with AND-like behavior by FecI and PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>To test this hypothesis , we used real-time quantitative PCR to measure the expression level of fecA over 16 combinations of pyruvate ( to derepress PdhR protein and induce pdhR transcription ; Figure 6G ) and citrate ( to activate FecI and induce fecI ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>The fecA operon reached its highest levels of induction only when citrate and pyruvate were both present in high concentrations , supporting the hypothesis that full activation of fecA is only possible in the presence of derepressed PdhR and activated FecI ( Figure 6H ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>The tomB-hha operon ( antitoxin ( TomB ) - toxin ( Hha ) - module ) [ 4 ] and the genes hemL ( glutamate-1-semialdehyde aminotransferase ) [ 4 ] , yfiD ( pyruvate formate-lyase subunit ) [ 6 ] , and lipA ( lipoate synthase ) [ 7 ] are also directly controlled by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Discussion Regulation of glcDEFGBA by PdhR The glcD gene is the first gene of the transcription unit glcDEFGBA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>While PdhR represses the transcription of its target genes , the pyruvate-bound state of the regulator is not able to bind DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>Using the genomic SELEX system followed by in vitro and in vivo transcription studies , we found that PdhR , the regulator of the genes for the PDH complex , regulates both the ndh gene and the cyoABCDE operon ( Fig. 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>Furthermore , a connection between central metabolism and iron transport has been described by the regulation of the fecABCDE operon ( genes for ferric citrate transporter ) by PdhR [ 5 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>As mentioned , in the transformation of pyruvate into AcCoA , PdhR works as a specific transcriptional repressor of the Pdh operon when pyruvate is present at low concentrations ; its 38 expression is controlled by Crp and regulated by s [ 5,11,51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>Besides the pdhR operon , the only regulation target of PdhR identiﬁed so far is the yﬁD gene , encoding a putative formate acetyltransferase ( 36 ) , that is induced at low pH or by pyruvate ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>( C ) PdhR , a regulator of pyruvate metabolism , is not known to regulate the fecA operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17214507" target="_blank">17214507</a>]<br></li>
+<li>This is supported by the regulation of the glcDEFGBA operon by PdhR and the finding , that many genes known to be upregulated during growth on acetate show no marked difference in expression during growth on acetate and pyruvate , while genes which encode enzymes that convert pyruvate into acetate are strongly upregulated during growth on pyruvate but not on acetate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22168595" target="_blank">22168595</a>]<br></li>
+<li>These resuits are consistent with PdhR acting as a negative regulator of its own expression and pyruvate serving as the inducing coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>In addition to regulation by ArcA and FNR , ndh expression is repressed by the pyruvate-responsive TF PdhR ; repression is relieved by pyruvate [ 40 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22870390" target="_blank">22870390</a>]<br></li>
+<li>It is thus conceivable that expression of the cyoABCDE operon might be modulated by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The same site was detected previously in database searches for PdhR boxes by Quail and Guest ( 25 ) , who suggested that the cyoABCDE operon might be regulated by PdhR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>In the present study , the putative role of PdhR in the control of the lldPRD operon was analyzed by measuring ( lldP : : lacZ ) expression in strain JA217 ( MC4100 acec816 ) , which carries a nonfunctional PdhR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>This suggests that PdhR is not involved in the in vivo regulation of lldPRD expression under the conditions tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>On the basis of computational data , it had been proposed that LldR and its homologue PdhR act as regulators of the lldPRD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>LldR and PdhR in the regulation of the lldPRD operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Independently from the results concerning the TSS in the pdhR gene , the data presented here also indicate that an aceEF internal putative dual promoter is apparently functional in all strains , and may work as a constitutive promoter because PdhR does not repress it [ 51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>In the wild type strain growing fast on glucose the complete Pdh operon ( pdhR-aceEF-lpd ) is expressed as a polycistronic mRNA , because in these growing conditions the concentration of pyruvate is relatively high , and therefore , there is no repression by PdhR Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>However , in strains growing slowly on glucose , such as PB11 , where the glycolytic flux is reduced , pyruvate concentration is also reduced allowing PdhR to repress transcription of its own promoter , with the subsequent decrease in the transcription of the Pdh operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19838295" target="_blank">19838295</a>]<br></li>
+<li>The pdh promoter is negatively autoregulated by PdhR , which binds to a speci cents c operator sequence in the absence of pyruvate [ 1 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9868788" target="_blank">9868788</a>]<br></li>
+<li>The primary pdh promoter Ppdh is negatively autoregulated by PdhR , the product of the ﬁrst gene in this pdh operon ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>The mechanism by which pdhR regulates expression of the PDH complex is not known but it could involve activation of the ace promoter by the PdhR protein , or cotranscription of the entire pdhR-aceEF-tpd region from an upstream promoter ( the pdh promoter ) that is negatively autoregulated by the PdhR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Autoregulation of PdhR expression The possibility that the pdh promoter is autoregulated by the PdhR protein was investigated by comparing the activities of the pdhR-IacZ fusior ) in pdhR * , ^ pdhR and multicopy pdhR * backgrounds ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>E-mail MB1JRG © Sheftield.AC.UK ; Tel , ( 01142 ) 824406 ; Fax ( 01142 ) 728697 , The operon generates a 7,4 kb pdhR-aceEF-lpd transcript initiated 58 bp upstream of the pdhR gene by the pdh promoter , Pp / ̂ , ( Quail et aL. 1994 ) ; and a 1.7 kb Ipd transoript initiated 189bp upstream of the Ipd gene by P , pa ( Spencer and Guest , 1985 ) , The first gene of the operon ( pdhR ) was recently shown to encode a regulator ( PdhR ) that represses transcription from Pp̂ , ̂ ( Quail etai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Sumnnary The repressor of the pdhR-aceEF-lpd operon of Escfierichia coii , PdhR , was amplified to 23 % of total cell protein and purified to homogeneity by heparin-agarose and cation-exchange chromatography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>PdhR senses the status of the intracellular pyruvate pool by binding the co-effector , pyruvate , and because the PdhR -- pyruvate complex can not bind target DNA , expression of the pdhR -- aceEF -- lpd operon , encoding pyruvate dehydrogenase , is derepressed when pyruvate is available ( Quail & Guest , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11932447" target="_blank">11932447</a>]<br></li>
+<li>The promoter of the pdhR-aceEF-lpd operon is repressed by pyruvate-sensing PdhR ( 33 ) and Cra ( this study ) and is activated by CRP ( 55 ; T. Shimada et al. , manuscript in preparation ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21115656" target="_blank">21115656</a>]<br></li>
+<li>PdhR negatively regulates the expression of the pdhR-aceEF-lpd operon , involved in the oxidative decarboxylation of pyruvate to acetyl-coenzyme A ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>It is concluded that the pdhR gene encodes a regulatory protein ( PdhR ) , which represses synthesis of the PDH complex in response to pyruvate-limitation , by acting at the pdhR promoter of the pdhR-aceEF-lpd operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8262214" target="_blank">8262214</a>]<br></li>
+<li>It is now clear that the pdhR gene is the proximal gene of a multicistronic operon ( pdhR-aceEF-lpd ) which encodes the PDH complex , and that synthesis of the complex is negatively regulated at an upstream promoter site by the PdhR protein with pyruvate ( or a derivative ) as the inducing coeffector .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>This is known to prevent the binding of PdhR to the promoter of the pdh operon ( Figure 5 ; [ 31 ] ) , finally leading to the expression of aceEF and lpdA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19852855" target="_blank">19852855</a>]<br></li>
+<li>( Right ) Sequence alignment of the PdhR operator present in the pdhR-aceEF-ldp operon promoter and the operators O1 and O2 in the lldP promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Discussion PdhR has been characterized as a 29.3 kDa mono-meric prolein which represses transcription of the pdhR-aceEF-lpd operon by binding to an operator sequence conditions , so as to exclude RNA polymerase from the pdh promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - CspA</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">CspA</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">CspA transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>sitesa % CGb Count % Non-codinge Ada 3 38.7 AraC 6 40.3 2 3 100 100 47 76 100 28 33 32 73 38 100 52 100 86 79 89 100 67 26 100 28 100 70 37 67 28 100 82 100 47 50 51 100 100 38 33 64 3 6 100 100 38 54 100 23 40 18 43 29 100 38 100 39 27 53 58 71 19 100 23 33 47 100 40 65 21 23 60 25 100 41 100 26 43 36 100 35 35 30 64 36 23 22 26 14 100 83 28 ArcA 12 20.0 ArgR 17 22.9 CarP 2 46.0 Crp 49 37.0 CspA 4 41.3 CynR 2 33.3 CysB 3 34.2 CytR 5 37.8 DeoR 3 22.9 DnaA 8 36.7 FadR 7 47.0 FarR 4 20.0 FhlA 3 42.0 Fis 19 38.2 FlhCD 3 53.8 Fnr 9 25.8 FruR 12 42.7 Fur 9 23.4 GalR 7 43.8 GcvA 4 22.5 GlpR 13 39.6 HipB 4 40.9 Hns 15 31.5 IclR 2 26.7 Ihf 26 32.6 IlvY 2 32.4 LacI 3 44.4 LexA 18 33.9 Lrp 18 28.9 MalT 10 61.0 MarR 2 37.5 MelR 2 33.3 MetJ 15 40.1 MetR 8 33.3 NagC 6 22.5 NarL 9 34.6 NtrC 6 51.9 OmpR 9 26.7 OxyR 4 42.3 PdhR 3 33.3 PhoB 15 29.7 PurR 23 45.3 RhaS 2 50.0 RpoD15 27 37.4 RpoD16 48 34.9 RpoD17 116 37.3 RpoD18 34 38.0 RpoD19 25 38.2 RpoE 3 38.9 RpoH13 8 42.1 RpoH14 7 44.3 RpoN 7 40.6 RpoS17 15 43.0 RpoS18 7 45.2 SoxS 14 40.8 TorR 4 37.5 TrpR 4 38.5 Tus 6 26.8 TyrR 17 33.2 a The number of input sites used to construct the matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9813115" target="_blank">9813115</a>]<br></li>
+<li>of additional probable sites in predictionsd 3 3 7e 7 -- 4 22e 0 1 0 2 -- -- 5 0 1 -- 13 7 18 1 0 6e 1 1 1 3 Ada AraC ArcA ArgR CarP CpxR Crp CspA CynR CysB CytR DeoR DnaA FadR FhlA Fis FlhCD Fnr FruR Fur GalR GcvA GlpR IciA ( ArgP ) IclR Ihf IlvY LacI LexA Lrp MalT MarR MelR MetJ MetR Mlc ( DgsA ) ModE NagC NarL NarP NtrC OmpR OxyR PdhR PhoB PurR RhaR RhaS SoxR SoxS TorR TrpR TyrR Stem -- loopsf 6 2 0 5 2 9 1 3 4 5e 5 -- 5 5 4 6 3 4 2 -- 1 3 5 1 3 -- aThe number of genes in our study set with documented binding sites for each TF .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11160901" target="_blank">11160901</a>]<br></li>
+<li>As depicted in Figure 9 , the StpA , FIS and CspA proteins seem to influence the autoregulatory system of hINs ( La Teana et al. , 1991 ; Dersch et al. , 1993 ; Ueguchi and Mizuno , 1993 ; Falconi et al. , 1996 ; this paper ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8890170" target="_blank">8890170</a>]<br></li>
+<li>Both the wild-type and the mutant mRNAs appeared to be derepressed to a certain extent , presumably because of the lack of CspA , a negative regulator of its own gene , in those cells .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>There are some distinct similarities and differences in the RNA unwinding activities and functions of these three proteins , ( 1 ) CsdA , RNase R and CspA can not act on blunt ended substrates ; CsdA and CspA can act on substrates with both 3 ' or 5 ' extensions ,24,32 while RNase R requires presence of a 3 ' overhang in its substrate , ( 2 ) CsdA and CspA exhibit low unwinding activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></li>
+<li>It should be noted that in the presence of 0.4 mg of RNase T1 ( lane 14 ) , the background in the region higher than band l was very low , and a faint band at position n observed in the absence of CspA ( lanes 11 -- 13 ) was not detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>'' Lane 1 , fragment B alone without heat-denaturation ; lane 2 , heat-denatured fragment B ; lanes 3 -- 7 , increasing amounts of CspA ( 0.2 , 0.5 , 1 , 2 , and 3 mg of CspA , respectively ) were added to undenatured fragment B ; lanes 8 -- 10 , increasing amounts of BSA ( 1 , 2 , and 3 mg of BSA , respectively ) were added to undenatured fragment B ; lane 11 , digestion of the undenatured fragment B by RNase A ( 1 mg ) ; Lane 12 , digestion of undenatured fragment B by RNase A in the presence of CspA ; lane 13 , digestion of undenatured fragment B by RNase A in the presence of BSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>A. Electrophoretic separation of three DNA fragments in the presence of increasing amounts of CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>When increasing amounts of CspA were added to the annealed complex , its migration became retarded shifting from position b to c ( lanes 3 -- 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In particular , at 37 ° C , translation of CspA is apparently very inefﬁcient ( 4 ) , although it is not known if this due to active repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>The cspA promoter is highly active at 37 ° C , although CspA protein is hardly detected at this temperature ( 5 , 22 ) , indicating that cspA expression at low temperatures is regulated posttranscriptionally .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>The induction of CspA at low temperature is largely independent of transcription and is dependent primarily on posttranscriptional controls , including enhanced translation ( 4 , 14 , 15 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>While CspA is drastically induced after temperature downshift , it is hardly detectable at 37 ³ C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li>
+<li>In contrast to its dramatic induction after temperature downshift , CspA is barely detectable at 37 ³ C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li>
+<li>It is , however , less likely that the same mechanism of induction would be in operation for CspB during temperature cycling as for CspA , because CspB is not located near the oriC [ 42 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>It should be noted , however , that CspB and CspG are induced in a narrower range of low temperature than is CspA ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>In contrast to CspA , CspB , and CspG , CspI was induced only when the temperature was shifted to or below 15 ° C ( Fig. 5B ) , indicating that CspI has the narrowest and lowest temperature range for its induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>FRGY2 , however , binds to a 95-base RNA having a specific 6-base sequence at a Kd value of 2 3 1028 M , 1000-fold lower than the concentration of CspA required for its binding to RNA ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In previous studies , it has been suggested that CspA binds to DNA and is involved in gene regulation ( 3 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>However , CspA can not bind to dsDNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In this paper , we demonstrate that CspA cooperatively binds to ssRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In this paper , we have demonstrated that CspA binds cooperatively to heat-denatured ssRNA as well as ssDNA with a low sequence specificity , while CspA can not bind to dsDNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In the presence of CspA , ssRNA became much more sensitive to ribonucleases , and furthermore , secondary structures formed in the RNA molecule that are resistant to ribonucleases became highly susceptible to ribonuclease digestion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In the view of the above observations , it is interesting that in addition to the complementation of cold-shock function of CsdA by RhlE , an RNA chaperone , PoiNt-of-view PoiNt ofview CspA and an exoribonuclease , RNase R are also able to complement CsdA at low temperature , albeit somewhat weakly .23 It is also interesting that similar to CsdA , both CspA1 and RNase R26 are induced by cold-shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></li>
+<li>It is possible that CsdA unwinds stable secondary structures formed in mRNAs at low temperatures and that CspA , as an RNA chaperone , binds to unwound mRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>It was proposed that CspA functions at low temperatures as an RNA chaperone , which binds to mRNAs to prevent the formation of secondary structures for efﬁcient translation of mRNAs at low temperatures ( 16 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>CspA induction is also observed at 378C in the presence of a certain group of antibiotics ( VanBogelen and Neidhardt , 1990 ) , as well as during early exponential phase after dilution of cell cultures into fresh medium ( Brandi et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>This implies that expression of cspE is negatively regulated by CspA , CspB and CspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>CspA is an RNA chaperone and also negatively regulates its own gene expression , thus it may also participate in the regulation of the stability of its own mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>CspA negatively regulates its own gene expression and also downregulates the expression of cspB and cspG since the expression of these genes was found to be upregulated and prolonged after cold-shock in the DcspA strain ( Bae et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>When interpreting the results shown below , it should be borne in mind that in the ﬁrst case , which corresponds to ` standard cold-shock ' [ 24 ] , the cells experience a very large increase ( ≥ 10-fold ) in the level of CspA while during early exponential-growth the cells already contain large amounts of this protein whose level is further increased by only ≤ three-fold [ 15 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>FEMS Microbiology Letters 176 ( 1999 ) 39 ^ 43 Transcription of cspA , the gene for the major cold-shock protein of Escherichia coli , is negatively regulated at 37 ³ C by the 5P-untranslated region of its mRNA Li Fang 1 , Bing Xia , Masayori Inouye * Department of Biochemistry , Robert Wood Johnson Medical School , 675 Hoes Lane , Piscataway , NJ 08854 , USA Received 8 April 1999 ; received in revised form 27 April 1999 ; accepted 28 April 1999 Abstract The gene for CspA , the major cold-shock protein in Escherichia coli , is tightly regulated at both optimal and low temperatures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li>
+<li>CspA , the major cold-shock protein , binds RNA with low sequence speci ® city and low binding af ® nity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_34">
+Massive presence of the Escherichia coli ` major cold-shock protein ' CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11567013" target="_blank">11567013</a>]<br></label>
+<input id="act_similarity_34", type="checkbox">
+<div class="ACT_similar">
+<li>Massive presence of the Escherichia coli major cold-shock protein CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_36">
+[ 15 ] Brandi A. , Spurio R. , Gualerzi C.O. , Pon C.L. , Massive presence of the Escherichia coli major cold-shock protein CspA under non-stress conditions , EMBO J. 18 ( 1999 ) 1653 -- 1659 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></label>
+<input id="act_similarity_36", type="checkbox">
+<div class="ACT_similar">
+<li>[ 8 ] A. Brandi , R. Spurio , C.O. Gualerzi , C.L. Pon , Massive presence of the Escherichia coli ` major cold-shock protein ' CspA under non-stress conditions , EMBO J. 18 ( 1999 ) 1653 -- 1659 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14527658" target="_blank">14527658</a>]<br></li>
+<li>Brandi A , Spurio R , Gualerzi CO , Pon CL : Massive presence of the Escherichia coli ` major cold-shock protein ' CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>[ 23 ] Brandi , A. , Spurio , R. , Gualerzi , C.O. and Pon , C.L. ( 1999 ) Massive presence of the Escherichia coli `` major cold-shock protein '' CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16143461" target="_blank">16143461</a>]<br></li>
+<li>Brandi , A. , Spurio , R. , Gualerzi , C.O. , and Pon , C.L. ( 1999 ) Massive presence of the Escherichia coli ` major cold-shock protein ' CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17233826" target="_blank">17233826</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_41">
+Etchegaray JP & Inouye M ( 1999 ) CspA , CspB , and CspG , major cold-shock proteins of Escherichia coli , are induced at low temperature under conditions that completely block protein synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18318713" target="_blank">18318713</a>]<br></label>
+<input id="act_similarity_41", type="checkbox">
+<div class="ACT_similar">
+<li>[ 17 ] Etchegaray , J.P. and Inouye , M. ( 1999 ) CspA , CspB , and CspG , major cold-shock proteins of Escherichia coli , are induced at low temperature under conditions that completely block protein synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li></div>
+				<label class="ACT_collapse_similarity" for="act_similarity_43">
+CspA , the major cold-shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></label>
+<input id="act_similarity_43", type="checkbox">
+<div class="ACT_similar">
+<li>References Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold-shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold-shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li></div>
+<li>This delay and the lower increase of the protein level compared to that of its mRNA are not typical of the cold-shock proteins ( e.g. , CspA , DeaD and H-NS ) which are synthesized with a much shorter delay due to the efficient utilization of cold-shock mRNAs by the cold-shock-modiﬁed translational apparatus ; the accumulation of CAT activity is typical instead of non-cold-shock proteins ( e.g. , - galactosidase ) whose mRNAs are inefficiently translated during cold-shock [ 18 , 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>It is thus presumed that the practically absent CspA expression in mid - to late exponential phase is attributable to the extreme instability of its mRNA and that the posttranscriptional mRNA stabilization plays a major role in the induction of CspA after cold-shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>Though we can not predict the function of Hsc66 on the basis of this ﬁnding , it seems unlikely that Hsc66 regulates induction of a subset of the cold-shock stimulon like CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>This factor may induce cold-shock activators , including CspA , which in turn activate cold-inducible genes such as hscA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>Recently , it was reported that the level of the IF1 protein increased during cold-shock and was hypothesized to contribute to the cold-shock translational bias along with CspA to some extent , although the most important factor of cold-shock translational bias is IF3 [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16405963" target="_blank">16405963</a>]<br></li>
+<li>The one clear exception to this is under conditions of cold-shock , when hns expression is increased three - to fourfold as a result of transcriptional activation by the CspA protein ( La Teana et aL , 1991 ; Brandi et aL , 1994 ) with a corresponding increase in protein levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8596450" target="_blank">8596450</a>]<br></li>
+<li>The absence of a relative increase in CspA levels during thermo cycling may be the result of reduced translation of the cold-shock proteins [ 19 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>This indicates that CspI production is transiently induced during the acclimation phase upon cold-shock , as for CspA , CspB , and CspG ( 4 , 10 , 23 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>The levels of known cold-shock-induced proteins , such as CspA , CspG , and H-NS , increased upon the shift to the lower temperature ( Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9422595" target="_blank">9422595</a>]<br></li>
+<li>However , upon cold-shock , the temperature dependence of CspA induction is broader while that of CspB and CspG is restricted to lower temperatures and to a narrower temperature range ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>Control of H-NS expression and activity In addition to regulation by H-NS , StpA and Fis , the hns promoter is stimulated by cold-shock through the CspA protein37 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15100692" target="_blank">15100692</a>]<br></li>
+<li>H-NS , which is activated by CspA , likely acts as a cold-shock transcriptional-repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>Conversely , H-NS transcription is enhanced coordinately with DNA synthesis and is induced by the cold-shock positive regulator CspA and the FIS protein ( reviewed in ref .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9770507" target="_blank">9770507</a>]<br></li>
+<li>CspA and H-NS induction patterns are consistent with the hypothesis that proteins induced early act as regulatory elements while proteins induced late perform functions directly required by the cold-shocked cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>This result suggests the possibility that hscBA induction is independent of the CspA regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>This in turn leads to a higher gene dosage effect and higher cspA mRNA stability due to lower RNase activity , and allows CspA to reach one-sixth of its cold-shocked induction level [ 39,41 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">CspA protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>Seven of eight aromatic residues are distributed on the same surface of the CspA molecule , suggesting potential interactions between CspA and nucleic acids through hydrophobic interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>Mutational analysis of CspA ( Hillier et al. , 1998 ) showed that mutations of the three phenylalanine residues from the aromatic cluster adversely affected DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>CspA consists of five anti-parallel b sheets , which form a b-barrel structure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>The first 10 amino acids from this sample gave the sequence RQNGTVKWFN , which is an exact match for residues 4-13 from the P. aeruginosa cold shock protein A ( CspA , see Figure 6a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10450164" target="_blank">10450164</a>]<br></li>
+<li>Among them , CspA is a major cold shock protein consisting of 70 amino acid residues ( 12 ) , and its three-dimen-sional structure has been determined to consist of ﬁve antipa-rallel b-strands which form a b-barrel structure ( 23 , 28 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>Among them , CspA has been identiﬁed as a major cold shock protein , consisting of 70 amino acid residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>CspA consists of 70-amino-acid residues and forms a b-barrel structure composed of five antiparallel b strands ( Newkirk et al. , 1994 ; Schindelin et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>CspA consists of 70 amino acid residues with a molecular mass of 7.4 kDa ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA contains an OB-fold domain ( 1 , 29 ) , which is typical of many RNA-binding proteins ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>Therefore , we next tested this notion by examining a S1 domain , another RNA-binding protein outside the CspA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>CspA is a small protein consisting of a nucleic-acid-binding domain called the cold-shock domain ( CSD ) , one of the most evolutionarily conserved domains found in various life forms , including bacteria , plants and animals ( Wolffe , 1994 ; Graumann & Marahiel , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177308" target="_blank">18177308</a>]<br></li>
+<li>A homoiogy search reveaied that the amino acid sequences of irath MsmB and MsmC possessed high simiiarity to proteins containing the coid-shock domain , such as CspA of E. coli and the Y-box binding proteins of eukaryotes ; this suggests that MsmB and MsmC might be DNA-binding proteins that recognize the CCAAT sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>CspA is the prototype of a large family of small ( ca. 70 amino acid ) , mostly acidic proteins ( CSPs ) conserved among bacteria and containing the `` cold shock domain '' , a universally conserved RNA-binding fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14527658" target="_blank">14527658</a>]<br></li>
+<li>The amino acid sequence of CspA shows 43 % identity to the `` cold-shock domain '' of the eukaryotic Y-box protein family , which interacts with RNA and DNA to regulate their functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>Interestingly , the amino acid sequence of CspA shows 43 % identity to the `` cold-shock domain '' ( CSD ) of the eukaryotic Y-box protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA Binding to ssDNA -- It is known that most Y-box proteins that contain a cold-shock domain are capable of nucleic-acid-binding ( for review , see Refs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>Interestingly , the proteins of the CspA family resemble signiﬁcantly the cold shock domain of eukaryotic Y-box ( or CCAAT motif ) - binding transcription factors ( e.g. , YB1 of humans ) ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>CspA shows high sequence similarity to the DNA-binding domain , named the cold-shock domain ( Wistow , 1990 ; Tafuri and Wolffe , 1992 ) , of a family of eukaryotic DNA-binding proteins , known as the Y-box binding transcription factors ( for a review see Wolffe et ai , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>This result suggests that S1 domains playing essential roles in translation and RNA metabolisms share a common functional property with CspA homologues and that these proteins are probably evolutionarily related .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>However , the resolution of the three-dimen-sional structures of the S1 domain of PNPase and translation initiation factor IF1 revealed striking structural similarities between these S1 domains and CspA ( Bycroft et al. , 1997 ; Sette et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Indeed , the fact that the cold-sensitive celldivision defect of BX04 can be suppressed by not only CspA homologues but also the PNPase S1 domain strongly suggests that the S1 domains and CspA homologues have been probably divergently evolved from a common ancestral RNA-binding protein to accommodate their specific functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Interestingly , the cold sensitivity of the mutant was also suppressed by the S1 domain of polynucleotide phosphorylase ( PNPase ) , which also folds into a bbarrel structure similar to that of CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>A. Sequence alignment of CspA and PNPase S1 domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>It is interesting to note that these motifs are highly conserved in CspA , CspB , CspC and CspE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>Members of the CspA family appear to function in a redundant fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>The conserved folding-core residues of the CspA family are indicated by black dots .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>CspI contains well-conserved hydrophobic residues including V9 , I21 , V30 , V32 , and V51 ( Fig. 1A ) , which form a hydrophobic core in CspA ( 7 , 24 , 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">CspA evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>In spite of high sequ-ence homology ( 60 ± 80 % ) of CspB , CspC and CspE to CspA , the surface loop Phe-34 ± Gln-49 is least conserved among them .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>CspC and CspE show high sequence similarity to CCAAT-binding proteins , such as CspA of E. eoli ( Goldstein et ai , 1990 ) and YB1 of H. sapiens ( Didier ef al. , 1988 ) ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>CspA is homologous to a class of eukaryotic Y-box-binding proteins ( reviewed in reference 46 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>CspE shows 70 % identity and 81 % similarity to the major E. coli cold shock protein , CspA ( GOTTESMAN et ul .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8844142" target="_blank">8844142</a>]<br></li>
+<li>Italy Summary ~ Escherichia coil protein CS7 .4 ( CspA ) , homologous to the class of eukaryotic Y-box DNA-binding proteins , is a cold shock transcriptional activator of at least two genes , hns and gyrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7748932" target="_blank">7748932</a>]<br></li>
+<li>, Jones , P.G. , and Inouye , M. ( 1994 ) Family of the major cold-shock protein , CspA ( CS7 .4 ) of Escherichia coti .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>, G. JONES et al. , 1994 Family of the major cold-shock protein , CspA ( CS7 .4 ) , of Escherichiacoli , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8844142" target="_blank">8844142</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_8">
+Family of the major cold-shock protein , CspA ( CS7 .4 ) , of Escherichia coli , whose members show a high sequence similarity with the eukaryotic Ybox binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>]<br></label>
+<input id="evo_similarity_8", type="checkbox">
+<div class="EVO_similar">
+<li>Family of the major cold-shock protein , CspA ( CS7 .4 ) , of Escherichia coli , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16513732" target="_blank">16513732</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></li>
+<li>Family of the major cold-shock protein , CspA ( CS7 .4 ) of Escherichia coli , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>Lee , S.J. , Xie , A. , Jiang , W. , Etchegaray , J.P. , Jones , P.G. , and Inouye , M. ( 1994 ) Family of the major cold-shock protein , CspA ( CS7 .4 ) , of Escherichia coli , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>[ PubMed : 15554979 ] Lee SJ , Xie A , Jiang W , Etchegaray JP , Jones PG , Inouye M. Family of the major cold-shock protein , CspA ( CS7 .4 ) , of Escherichia coli , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22957931" target="_blank">22957931</a>]<br></li>
+<li>Lee SJ , Xie A , Jiang W , Etchegaray JP , Jones PG , Inouye M. Family of the major cold-shock protein , Escherichia coli CspA ( CS7 .4 ) , of , whose members show a high sequence similarity with the eukaryotic Y-box binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></li></div>
+<li>DISCUSSION CspA shows 43 % identity with the CSD of eukaryotic Y-box proteins that have RNA or DNA binding activities ( for review , see Refs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA shows high sequence similarity to the DNA-binding domain , named the cold-shock domain ( Wistow , 1990 ; Tafuri and Wolffe , 1992 ) , of a family of eukaryotic DNA-binding proteins , known as the Y-box binding transcription factors ( for a review see Wolffe et ai , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>The amino acid sequence of CspA shows 43 % identity to the `` cold-shock domain '' of the eukaryotic Y-box protein family , which interacts with RNA and DNA to regulate their functions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>Interestingly , the amino acid sequence of CspA shows 43 % identity to the `` cold-shock domain '' ( CSD ) of the eukaryotic Y-box protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>The control of uspA expression has been studied extensively , and it has been shown that it is regulated positively by ppGpp of the stringent response , RecA of the SOS modulon , and two members of the CspA family , CspC and CspE [ 9,14,36,37 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12071968" target="_blank">12071968</a>]<br></li>
+<li>This bacterium is known to possess ﬁve additional genes , each encoding a protein highly similar to CspA ( referred to as the CspA family ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>These features of its temperature-respon-sive expression seem to be similar to those of some CspA family genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11873911" target="_blank">11873911</a>]<br></li>
+<li>The coldsensitivity and filamentation phenotypes were suppressed by all members of the CspA family except for CspD , which causes lethality upon overexpression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>This observation suggests that the functions of the CspA family members may overlap and they are able to substitute for each other during cold acclimation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></li>
+<li>CspA is not essential at both optimal and low temperatures ( 6 ) , apparently as a result of substantial functional redundancy of CspA family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>Biochemical analyses of members of the CspA family will bring their cellular functions to light and will make us consider their functional variety .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>Members of the CspA family appear to function in a redundant fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>Similarity of the C-terminal portion of Ves to the CspA family suggests that Ves belongs to this family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11873911" target="_blank">11873911</a>]<br></li>
+<li>An alignment of those amino acid sequences with the one newly determined in this study clearly indicated that the clone encodes a member of the CspA family of proteins , as far as the primary structure is concerned .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>A computer-aided search revealed that its deduced amino acid sequence highly similar to the members of the CspA family of proteins ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>The determined nucleotide and deduced amino acid sequences of cspG and comparison of its amino acid sequence with those of the CspA family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>( B ) The amino acid sequences of seven members of the CspA family of proteins are aligned .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>Another feature of the proteins of the CspA family has also emerged from an apparently unlinked line of experimentation ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>Finding a novel member of the CspA family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>Among these is a family of low-molecular-weight proteins including CspA ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>Beside these CSPs , recently much attention has focused on the newly discovered CspA family of proteins ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>It is of much interest that E. eoli possesses at least five proteins of a CspA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1997 , p. 5126 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Growth-Phase-Dependent Expression of cspD , Encoding a Member of the CspA Family in Escherichia coli KUNITOSHI YAMANAKA AND MASAYORI INOUYE * Department of Biochemistry , Robert Wood Johnson Medical School , University of Medicine and Dentistry of New Jersey , Piscataway , New Jersey 08854 Received 12 February 1997/Accepted 7 June 1997 The cspD gene of Escherichia coli encodes a protein of high sequence similarity with the cold shock protein CspA , but cspD expression is not induced by cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>CspI , the Ninth Member of the CspA Family of Escherichia coli , Is Induced upon Cold Shock NAN WANG , KUNITOSHI YAMANAKA , AND MASAYORI INOUYE * Department of Biochemistry , Robert Wood Johnson Medical School , University of Medicine and Dentistry of New Jersey , Piscataway , New Jersey 08854 Received 17 September 1998/Accepted 10 December 1998 Escherichia coli contains the CspA family , consisting of nine proteins ( CspA to CspI ) , in which CspA , CspB , and CspG have been shown to be cold shock inducible and CspD has been shown to be stationary-phase inducible .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>More detailed characterization of each member of the CspA family may provide some clues as to why E. coli possesses so many CspA homologs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_39">
+Yamanaka , K. , and Inouye , M. ( 1997 ) Growth-phase-depen-dent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></label>
+<input id="evo_similarity_39", type="checkbox">
+<div class="EVO_similar">
+<li>Yamanaka , K. , and Inouye , M. ( 1997 ) Growth-phase-depen-dent expression of cspD , encoding a member of the CspA family of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li></div>
+				<label class="EVO_collapse_similarity" for="evo_similarity_41">
+Growth-phase-dependent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21926233" target="_blank">21926233</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10368152" target="_blank">10368152</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150239" target="_blank">15150239</a>]<br></label>
+<input id="evo_similarity_41", type="checkbox">
+<div class="EVO_similar">
+<li>Growth-phase dependent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12904550" target="_blank">12904550</a>]<br></li></div>
+				<label class="EVO_collapse_similarity" for="evo_similarity_43">
+[ 34 ] Phadtare S. , Inouye M. , Sequence-selective interactions with RNA by CspB , CspC and CspE , members of the CspA family of Escheri-chia coli , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10673004" target="_blank">10673004</a>]<br></label>
+<input id="evo_similarity_43", type="checkbox">
+<div class="EVO_similar">
+<li>Phadtare S , Inouye M : Sequence-selective interactions with RNA by CspB , CspC and CspE , members of the CspA family of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>Phadtare , S. , and Inouye , M. ( 1999 ) Sequence ± selective interactions with RNA by CspB , CspC and CspE , members of the CspA family of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Phadtare , S. , and Inouye , M. ( 1999 ) Sequence-selective interactions with RNA by CspB , CspC and CspE , members of the CspA family of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li></div>
+<li>Escherichia coli contains a large CspA family of nine members , CspA to CspI ( see Yamanaka et al. , 1998 for review ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Escherichia coli K-12 contains nine paralogs of CspA , CspA to CspI , collectively known as the CspA family of cold shock proteins ( CSPs ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21926233" target="_blank">21926233</a>]<br></li>
+<li>Summary Escherichia coli contains a large CspA family , CspA to CspI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Summary The CspA family of Escherichia coli comprises nine homologous proteins , CspA to CspI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>Five other members of the CspA family in E. coli have been reported so far ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>E. coli contains nine csp genes ( cspA to cspI ) , all encoding members of the CspA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>DISCUSSION CspD , initially discovered as a member of the CspA family of cold shock genes in E. coli ( 17 ) , has recently been shown to be involved in bioﬁlm development and persister cell formation ( 4 , 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>]<br></li>
+<li>The E. coli genome-sequencing project has revealed the ninth member of the CspA family , which we designated CspI ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_55">
+CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></label>
+<input id="evo_similarity_55", type="checkbox">
+<div class="EVO_similar">
+<li>[ 4 ] Wang , N. , Yamanaka , K. and Inouye , M. ( 1999 ) CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li>
+<li>Wang , N. , Yamanaka , K. , and Inouye , M. ( 1999 ) CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Wang N , Yamanaka K & Inouye M ( 1999 ) CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177308" target="_blank">18177308</a>]<br></li>
+<li>[ 37 ] N. Wang , K. Yamanaka , M. Inouye , CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock , J. Bacteriol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14527658" target="_blank">14527658</a>]<br></li>
+<li>[ PubMed : 2254251 ] Wang N , Yamanaka K , Inouye M. CspI , the ninth member of the CspA family of Escherichia coli , is induced upon cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22957931" target="_blank">22957931</a>]<br></li></div>
+<li>Interestingly , E. coli contains eight proteins ( CspB to CspI ) that are highly homologous to CspA ( Yamanaka et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>The cold-shock proteins ( Csp ) of the CspA protein family consist of nine homologous proteins ( CspA to CspI ) that help the cell acclimate to low temperature conditions ( Bae et al. , 1999 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22026739" target="_blank">22026739</a>]<br></li>
+<li>CspA , CspB , and CspG , which belong to a family of structurally related cold shock proteins , show the highest induction in response to cold shock ( 207 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>Sequence comparison of four cold shock-inducible members of the E. coli CspA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>Interestingly , although nine Csps have been identiﬁed as members of the CspA family , a well-characterized cold-shock protein family of small ( 7.4 kDa ) , mostly acidic proteins in E. coli ( Yamanaka et al. , 1998 ; Graumann and Marahiel , 1998 ) , only CspA , CspB and CspG are cold-inducible .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11873911" target="_blank">11873911</a>]<br></li>
+<li>) nCWTN ESRCrGri T P I DGSKDVTVHrSAIC TN H 3GR XT S I VICm-H Ul RGFGr11 P 3 DGSKDVFVBFSAIQ AD t ^ l ^ T S L nCVTH kD KQWGTX 5 P vjOGSKOVrVBT S A I ^ I D - - EK s I ncmrN KA KGWGTI cgE '' LE S KVXHTN 31KGFGrIEVZ -  § AT S I UTinrH U n C F G r IAQD Ri ^ fifl Ec MsmB ( CspC ) 40 Ec MsmC ( CspE ) 40 RTL ABGC N V E r 1 1 QD Q 2 KGP RTIA EGG RVEriirNSh KGP Ec CspA 41 Ec CspB 41 Ec CspD 38 Bs CspB 37 Sc SC7 .0 36 Hs YB1 96 HPRF B CspA CspB CspC CspD CspE CspA CspB CspC CspD CspE 83 % 59 % 59 % 66 % 79 % 73 % ^ \ 79 % 69 % 46 % 70 % 81 % 76 % 91 % 67 % 63 % 49 % 68 % 46 % 83 % 49 % Identity CspA CspB CspC CspD CspE 2 1 \ A 1 0 -1 • 2 50 50 50 5 Similarity of MsmB and MsmC proteins to a family of proteins with a cold-shock domain The MsmB ( CspC ) and MsmC proteins deduced from the nucleotide sequences are small , basic proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>Its gene product ( 70 amino acids ) is 73 and 77 % identical to CspA ( 70 amino acids ) and CspB ( 71 amino acids ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>The degrees of identity of between MsmB ( CspC ) and MsmC , and between CspA and CspB were extremely high ( 83 % and 79 % , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>Although the primary amino acid sequence of CspI shows high identity not only to CspG ( 79 % ) but also to CspA ( 70 % ) and CspB ( 70 % ) ( 33 ) , the region corresponding to the highly conserved 59-UTR of cspA , cspB , and cspG is less highly conserved in cspI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>The cspI gene is located at 35.2 min on the E. coli chromosome map , and CspI shows 70 , 70 , and 79 % identity to CspA , CspB , and CspG , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>CspI shows the highest identity to CspG ( 79 % ) ( Fig. 1A ) , and on the phylogenetic tree it belongs to the same group as CspA , CspB , and CspG , all of which are cold shock inducible as described previously ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by CspA</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>` RNAP ' stands for RNA polymerase Chromosome location Other Regulation Gene Function Reference regulatory proteins proU Osmolarity [ 29 ] 57 min ¬ Glycine betaine Tr , uispu , i Osmolafity/OJpH temp Autoregulated cold-shock Temperature Temperature Temperature 21/48 min 27 min PlasmidPiasmid OmpR/EnvZ FIS ; CspA CfaD Papl , PapB , CR VirF [ 77 ] Outer memb , - ~ ne porin Chromatin structure Pili Pili Activation of virulence genes [ 3-glucoside utilization PUi ompC/F hns tfa pap virB [ 13 , !	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7748941" target="_blank">7748941</a>]<br></li>
+<li>Results : Several proteins ( i.e. succinyl-CoA synthetase subunit alpha , periplasmic oligopeptide-binding protein , maltosebinding periplasmic protein , outer membrane porin protein , flavodoxin-1 , phosphoserine aminotransferase ) were up or down regulated during temperature cycling , in addition to CspA and CspB production .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>AE000252 ) , CspG ( AE000201 ) , CspB ( AE000252 ) , and CspA ( AE000433 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>This implies that expression of cspE is negatively regulated by CspA , CspB and CspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Effect of cspI 59-UTR overexpression on CspA , CspB , CspG , and CspI expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>CspA also acts as a transcription regulator protein [ 15,16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>CspA is an RNA chaperone and also negatively regulates its own gene-expression , thus it may also participate in the regulation of the stability of its own mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>CspA negatively regulates its own gene-expression and also downregulates the expression of cspB and cspG since the expression of these genes was found to be upregulated and prolonged after cold shock in the DcspA strain ( Bae et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Hillier , B.J. , Rodriguez , H.M. , and Gregoret , L.M. ( 1998 ) Coupling protein stability and protein function in Escheri-chia coli CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>Giuliodori AM , Di Pietro F , Marzi S , Masquida B , Wagner R , Romby P , Gualerzi CO , Pon CL : The cspA mRNA is a thermosensor that modulates translation of the cold-shock protein CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>R E S E A R C H A R T I C L E Open Access Cold shock CspA and CspB protein production during periodic temperature cycling in Escherichia coli Tina Ivancic1 , Polona Jamnik2 and David Stopar1 * Abstract Background : Temperature is an important environmental factor which can dramatically affect biochemical processes in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>During classical cold shock , CspA protein and its homologous proteins ( i.e. CspB , CspG , CspI ) are considered to have an essential role in adaptation to low temperatures [ 11,12 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_13">
+Etchegaray JP & Inouye M ( 1999 ) CspA , CspB , and CspG , major cold shock proteins of Escherichia coli , are induced at low temperature under conditions that completely block protein-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18318713" target="_blank">18318713</a>]<br></label>
+<input id="rp_similarity_13", type="checkbox">
+<div class="RP_similar">
+<li>[ 17 ] Etchegaray , J.P. and Inouye , M. ( 1999 ) CspA , CspB , and CspG , major cold shock proteins of Escherichia coli , are induced at low temperature under conditions that completely block protein-synthesis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li></div>
+<li>CspA , the major cold-shock-induced protein in E. coli , plays a role in stabilizing RNA ( Jiang et al. , 1997 ) and in transcription antitermination ( Bae et al. , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12904550" target="_blank">12904550</a>]<br></li>
+<li>Brandi A , Spurio R , Gualerzi CO , Pon CL : Massive presence of the Escherichia coli ` major cold-shock protein ' CspA under non-stress conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_17">
+CspA , the major cold-shock protein of Escherichia coli , negatively regulates its own gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></label>
+<input id="rp_similarity_17", type="checkbox">
+<div class="RP_similar">
+<li>References Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold shock protein of Escherichia coli , negatively regulates its own gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold shock protein of Escherichia coli , negatively regulates its own gene-expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_20">
+Jiang W , Hou Y , Inouye M. CspA , the major coldshock protein of Escherichia coli , is an RNA chaperone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></label>
+<input id="rp_similarity_20", type="checkbox">
+<div class="RP_similar">
+<li>Jiang W , Hou Y , Inouye M : CspA , the major cold-shock protein of Escherichia coli , is a RNA chaperone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li></div>
+<li>A major cold-shock protein , CS7 .4 ( CspA ) ( Goldstein et ai , 1990 ) , has been implicated in the transcriptional induction of the genes of cold-shock proteins such as hns ( La Teana et ai , 1991 ) and gyrA ( Jones et ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7984109" target="_blank">7984109</a>]<br></li>
+<li>As a step towards identi ® cation of the target genes of Csp proteins , we investigated the RNA Introduction CspA , the major cold shock-inducible protein of Escheri-chia coli , is involved in adaptive processes at low temperatures ( Goldstein et al. , 1990 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>DISCUSSION CspD , initially discovered as a member of the CspA family of cold shock genes in E. coli ( 17 ) , has recently been shown to be involved in bioﬁlm development and persister cell formation ( 4 , 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>]<br></li>
+<li>This factor may induce cold shock activators , including CspA , which in turn activate cold-inducible genes such as hscA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>Here we identiﬁed a gene that encodes a cold-shock-inducible analog of CspA and CspB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>H-NS , which is activated by CspA , likely acts as a cold shock transcriptional repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>The CspA family in Esche-richia coli : multiple gene duplication for stress adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_29">
+The CspA family in Escherichia coli : Multiple gene duplication for stress adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16606699" target="_blank">16606699</a>]<br></label>
+<input id="rp_similarity_29", type="checkbox">
+<div class="RP_similar">
+<li>The CspA family in Escherichia coli : multiple gene duplication for stress adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11873911" target="_blank">11873911</a>]<br></li></div>
+				<label class="RP_collapse_similarity" for="rp_similarity_31">
+[ 40 ] K. Yamanaka , L. Fang , M. Inouye , The CspA family in Escherichia coli : Multiple gene duplication for stress adaptation , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14527658" target="_blank">14527658</a>]<br></label>
+<input id="rp_similarity_31", type="checkbox">
+<div class="RP_similar">
+<li>Yamanaka K , Fang L , Inouye M : The CspA family in Escherichia coli : multiple gene duplication for stress adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>Yamanaka , K. , Fang , L. , and Inouye , M. ( 1998 ) The CspA family in Escherichia coli : multiple gene duplication for stress adaptation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li></div>
+<li>mRNA by rne-50 ( 12 ) , points to a role for RNase E in regulating the expression of CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>Our data suggest a model for the regulation of expression of CspA that rationalizes the roles of secondary structure and RNase E. MATERIALS AND METHODS Strains and plasmids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_36">
+Post-transcriptional regulation of CspA expression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17913632" target="_blank">17913632</a>]<br></label>
+<input id="rp_similarity_36", type="checkbox">
+<div class="RP_similar">
+<li>Post-transcrip-tional regulation of CspA expression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395466" target="_blank">11395466</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li></div>
+<li>Proc Natl Acad Sci USA 101 : Brandi A , Pietroni P , Gualerzi CO & Pon CL ( 1996 ) Posttranscriptional regulation of CspA expression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18177308" target="_blank">18177308</a>]<br></li>
+<li>[ 26 ] Brandi A. , Pietroni P. , Gualerzi C.O. , Pon C.L. , Posttranscriptional regulation of CspA expression in Escherichia coli , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_40">
+Brandi , A. , Pietroni , P. , Guarlerzi , C.O. , and Pon , C.L. ( 1996 ) Post-transcriptional regulation of CspA expression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14622421" target="_blank">14622421</a>]<br></label>
+<input id="rp_similarity_40", type="checkbox">
+<div class="RP_similar">
+<li>[ 7 ] A. Brandi , P. Pietroni , C.O. Gualerzi , C.L. Pon , Post-transcriptional regulation of CspA expression in Escherichia coli , Mol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14527658" target="_blank">14527658</a>]<br></li>
+<li>Brandi A , Pietroni P , Gualerzi CO , Pon CL : Post-transcriptional regulation of CspA expression in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li></div>
+<li>Phadtare S , Zhu L , Uemori T , Mukai H , Kato I , Inouye M. Applications of nucleic acid chaperone-activity of CspA and its homologues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></li>
+<li>CspA and some of its homologues share nucleic acid melting ability ( 25 ) and transcription antitermination activity ( 3 ) , two functions that are important for cold adaptation ( 35 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21926233" target="_blank">21926233</a>]<br></li>
+<li>This result suggests that S1 domains playing essential roles in translation and RNA-metabolisms share a common functional property with CspA homologues and that these proteins are probably evolutionarily related .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Indeed , various roles in RNA-metabolism have been attributed to CspA and other related cold shock proteins , including chaperoning RNAs ( 17 , 19 , 31 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17416651" target="_blank">17416651</a>]<br></li>
+<li>Taken together , CspA homologues play important roles in various RNA-related cellular-processes including translation , transcription and possibly mRNA-decay .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>A schematic representation of unwinding by CsdA ( and RNase R/CspA ) and metabolism of RNA at low temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21445001" target="_blank">21445001</a>]<br></li>
+<li>The results indicate that E. coli is highly protected from the cold-shock stress by inducing at least four functionally complementing CspA homolo-gues at low temperature , and that these CspA homologues play an essential role in cell-growth and division at low temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>PNPase S1 domain suppresses the cold sensitivity and cell-division defect of BX04 The above results indicate that the common basic RNA-binding activity of CspA homologues that becomes insufficient in the quadruple-deletion strain is essential for cell-growth and division at low temperature .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Genes transiently induced upon cold shock Wild-type 15 ° C / 37 ° C ratio at 5 h Mutant/wild-type ratio ( 15 ° C , 1 h ) Gene product and/or function Wild-type 15 ° C / 37 ° C ratio at 1 h Gene name and role Genes involved in membrane synthesis/function Aerotaxis receptor Short-chain fatty-acid-transporter aer atoE dctA fabB glnH malE , - F , - K , - M manY manZ nupC rbsA-D sanA trg xylF ybeJ 9.8 6.5 0.14 0.5 1.07 1.1 0.73 0.5 0.28 0.39 0.015 0.8 0.28 0.8 2.1 0.08 4.8 3 0.4 0.5 0.22 0.08 0.1 0 DctA protein 3-Oxoacyl - [ acyl-carrier protein ] synthase I Glutamine-binding protein precursor Maltose transport proteins Phosphotransferase system enzyme II PTS-system , mannose-speciﬁc IID component Nucleoside permease NupC Ribose transport proteins SanA protein Methyl-accepting chemotaxis protein III D-Xylose-binding periplasmic protein precursor Amino acid ABC transporter binding protein 7.8 13 6.1 9.0 -- 10 8.9 6.9 9.3 5.0 -- 10 4.3 9.2 20 6.8 1.75 2.6 1 0.5 -- 2.7 1.9 0.3 1.2 1.5 -- 2 2.1 4.1 3.5 1.8 0.6 0.35 0.1 0.1 0.2 0.01 0.09 0.2 0.5 0.6 0.4 0.5 0.03 -- 0.08 0.01 0.13 0.02 0.14 0.03 0.05 -- 0.09 0.02 0.24 0.03 Genes involved in cell metabolism Alcohol dehydrogenase Glucose-1-phosphatase precursor adhE agp aldA aphA aspA bfr carA cfa cpdB cysK deoA fpr fruB fruK fucU fumA gapA glpK lipA malP malQ malT manX mdh nrdD otsA otsB pgi poxB pykA rbsK srlA 18.8 16 15 16.2 20 5 8.5 8.2 10 7 21.8 4.5 7 6.5 6.3 9.3 13.5 12.8 4.2 20 6.3 12 11.4 3.2 15.2 4.3 2.7 6.1 3.6 7.4 5.1 9.3 0.48 2 1.5 0.44 3 1 0.15 1.16 2 1.27 1.02 0.45 0.16 0.75 0.87 0.79 1.2 0.55 0.02 2.5 0.46 0.72 0.7 0.3 1.58 0.12 0.19 0.15 0.6 0.14 0.34 1.3 3.2 2.9 0.45 0.3 0.01 26 0.8 0.1 0.1 0.9 0.15 0.025 0.33 0.31 0.2 0.2 0.22 0.08 0.3 0.02 0.25 0.75 0.075 0.22 0.03 0 0.22 0.29 0.15 0.15 0.02 0.16 0.37 0 0.21 0.15 0.12 0.13 0.06 0.01 0.005 0.005 Aldehyde dehydrogenase Acid phosphatase Aspartate ammonia-lyase Bacterioferritin Carbamoyl-phosphate synthase small chain Cyclopropane fatty acid synthase Cyclic nucleotide 2 ' phosphodiesterase Cysteine synthase Thymidine phosphorylase Ferredoxin-NADP reductase PTS-system , fructose-speciﬁc IIA/FPR component 1-Phosphofructokinase ( fructose 1-phosphate kinase ) Fucose operon FucU protein Fumarate hydratase Glyceraldehyde-3-phosphate dehydrogenase Glycerol kinase Lipoic acid synthetase ( lip-syn ) Maltodextrin phosphorylase 4-Alpha-glucanotransferase MalT regulatory protein Phosphotransferase system enzyme II Malate dehydrogenase Oxygen-sensitive ribonucleoside-triphosphate reductase Tehalose-6-phosphate synthase Trehalose-phosphatase Glucose-6-phosphate isomerase Pyruvate oxidase Pyruvate kinase Ribokinase Phosphoenolpyruvate-carbohydrate phosphotransferase system , glucitol/sorbitol-speci ﬁc IIBC component Phosphotransferase system enzyme II Sorbitol-6-phosphate 2-dehydrogenase Glucitol operon repressor Phosphotransferase system trehalose permease Trehalose-6-phosphate hydrolase Uridine phosphorylase Pyrimidine-speciﬁc nucleoside hydrolase 0.15 2.1 7.3 1 0.9 3.7 1.6 0.6 3.6 1.6 0.8 0.7 2.7 1 2.3 1 1.7 4 3 4.2 2.4 0.28 1.8 1 0.7 1.7 0.18 0.75 2.9 2.7 0.12 0.03 0.16 0.03 0.18 0.015 0.2 0.01 0.13 0.03 0.24 0.05 0.19 0.25 0.16 0.19 0.025 0.04 0 0.04 srlB srlD srlR treB treC udp ybeK 0.22 0.23 0.06 1 1.1 1.5 0.55 4.4 5.1 0.3 1.5 1.5 0.02 0.4 0.01 0.05 0.02 0.2 2.6 0.7 0.45 0.62 1.6 5.5 6 6 10 10.2 0.08 0 Genes encoding proteins with diverse functions 0.1 0.1 1 1 0.3 0.4 4 9 CspA CspB cspA cspB cspG cspl dps grxB hns hobH htpG kbl mdaA mlc mopA mopB ppiA rimJ sseA 0.07 0.05 0.015 0.06 0.5 0.35 0.4 0.2 0.9 0.67 0.21 0.02 0.24 0.03 0.15 0.8 0.7 0.9 1 2.4 2 1.6 1.8 4 2.5 1.3 0.9 1.7 2.7 1.8 0.5 0.03 1.3 0.4 0.8 2 0.5 0.24 0.06 0.29 0.88 1 0.51 0.74 1.2 6 2 10 4.7 4.8 10 4.5 4.8 11.6 6.8 9.3 8 4.6 6.5 7.6 CspG Cspl DNA-binding protein Dps Glutaredoxin 2 DNA-binding protein H-NS DNA binding protein , replication-origin speciﬁc Heat shock protein C62 .5 2-Amino-3-ketobutyrate coenzyme A ligase Modulator of drug activity A Making large colonies protein GroEL protein GroES protein Peptidyl-prolyl-cis-trans-isomerase A precursor Ribosomal-protein-alanine acetyltransferase Putative thiosulfate sulfurtransferase 0.05 0.01 0.5 0.1 0.15 0.07 0.27 0.005 0.13 0.01 0.18 0.04 0.22 0.06 TABLE 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></li>
+<li>Involved in accelerating the dephosphorylation of phosphorylated CheY ; involved in generating a regulating signal for bacterial ﬂagellar rotation ; increases at phosphonate growth 179 179 5.56 / 24,008.4 5.1 / 66,325.63 P13000 Dethiobiotin synthetase Q93SE0 Vitamin B12 transporter BtuB BioD BtuB 179 179 4.81 / 20,469.56 Vitamin B12 transport P06610 BtuE 179 periplasmic protein BtuE Carbamoyl-phosphate synthase small chain CarA 5.91 / 44,088 5.94 / 43,827 5.91 / 41,431.01 P0A6F1 5.88 / 42,128 ( DIGE 4.5 -- 6.5 ) 5.82 / 42,128 ( DIGE 4.5 -- 6.5 ) 5.79 / 41,417 ( DIGE 4.5 -- 6.5 ) 5.49 / 127,208 5.22 / 117,710.53 Carbamoyl-phosphate synthase large chain P00968 CarB 293 5.36 / 32,716 ( DIGE 4.5 -- 6.5 ) 5.42 / 31,539.87 Cytidine deaminase P0ABF6 Cdd 97 , 321 , 325 4.78 / 71,382.39 Chemotaxis protein P07363 CheA CheY 4.89 / 13,966.17 4.95 / 9,698 ( 4 -- 5 ) P0AE67 Chemotaxis protein 179 , 287 CheZ 4.44 / 23,976.03 4.51 / 28,668 P0A9H9 Chemotaxis protein 228 , 293 , 294 Continued on facing pag Participates in iron-transport ; induced by iron and cAMP and increases after benzoic acid treatment Part of a stress-induced multichaperone system ; involved in the recovery of the cell from heat-induced damage in cooperation with DnaK , DnaJ , and GrpE ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol and after benzoic acid treatment ; induced by heat shock , phosphate limitation , phosphonate growth , and other environmental stresses ; controlled by RpoH Cleaves peptides in various proteins in a process that requires ATP-hydrolysis ; has a chymotrypsin-like activity ; plays a major role in the degradation of misfolded proteins ; may play the role of a master protease which is attracted to different substrates by different speciﬁcity factors such as ClpA or ClpX ; induced by heat shock ; controlled by RpoH Involved in the modulation of the speciﬁcity of the ClpAPmediated ATP-dependent protein-degradation ATP-dependent speciﬁcity component of the Clp protease ; directs the protease to speciﬁc substrates ; may bind to the lambda O substrate protein and present it to the ClpP protease in a form that can be recognized and readily hydrolyzed by ClpP ; can perform chaperone functions in the absence of ClpP ; induced by heat shock Colicin I receptor 5.03 / 71,149.34 5.06 / 73,587 ( DIGE 4.5 -- 6.5 ) ClpB Chaperone P63284 71 , 179 , 228 , 249 , 287 , 293 , 294 , 321 5.37 / 95,585.02 5.30 / 88,421 5.38 / 73,900 5.33 / 88,745 ( DIGE 4.5 -- 6.5 ) 5.44 / 34,853 ( 5 -- 6 ) ClpP 5.52 / 23,186.65 5.60 / 24,224 ( 5 -- 6 ) P0A6G7 ATP-dependent Clp protease proteolytic subunit 179 , 249 , 287 4.94 / 12,179.06 5.40 / 10,645 ( 4.5 -- 5.5 ) P0A8Q6 ATP-dependent Clp protease adaptor protein ClpS 287 P0A6H1 ATP-dependent Clp protease ATP-binding subunit ClpX 179 5.24 / 46,224.82 179 179 5.56 / 24,746.34 7.04 / 43,306.95 P0A6I0 Cytidylate kinase Cmk CoaBC catalyzes two steps in the biosynthesis of CoA ; in the ﬁrst step , cysteine is conjugated to 4-phosphopantothenate to form 4-phosphopantothenoylcysteine ; in the second , compound is decarboxylated to form 4-phosphopantotheine Involved in CoA-biosynthesis ; catalyzes the phosphorylation of the 3 - hydroxyl group of dephospho-CoA to form CoA Catalyzes two consecutive reactions converting 2 ,3 - cyclic nucleotide to 3-nucleotide and then 3-nucleotide to nucleic acid and phosphate Cmk P0ABQ0 CoA-biosynthesis bifunctional protein CoaBC 79 5.77 / 22,621.71 Dephospho-CoA kinase CoaE P0A6I9 ( YacE ) 1 5.38 / 68,914.86 2 ,3 - Cyclic-nucleotide 2-phosphodiesterase CpdB 9 P08331 17 Continued on following pag The phosphoenolpyruvate-dependent-sugar-phosphotransferase-system ( PTS ) , a major carbohydrate active-transport system , catalyzes the phosphorylation of incoming sugar substrates concomitant with their translocation across the cell membrane ; involved in glucose-transport ; plays an important role not only in the transcriptional-control but also in the translational control of rpoS expression Induced by low temp ; cold shock protein Induced by low temp ; cold shock protein Induced during a stationary phase and starvation Inhibits DNA-replication at both initiation and elongation steps , most probably by binding to the opened , single-stranded regions at replication forks ; plays a regulatory role in chromosomal replication in nutrient-depleted cells ; induced by stationary phase and starvation 4.73 / 18,119.88 4.68 / 18,985 4.57 / 20,069 phosphotransferase enzyme IIA component 4.95 / 14,761 ( 4 -- 5 ) 4.86 / 14,800 ( 4 -- 5 ) 4.95 / 13,865 ( 4 -- 5 ) 4.95 / 18,479 ( 4.5 -- 5.5 ) P0A9X9 Cold shock protein CspA 5.57 / 7,272.09 133 , 163 6.54 / 7,716.72 P36995 Cold shock-like protein CspB 163 6.82 / 7,271.17 6.71 / 10,366 P0A9Y6 Cold shock-like protein CspC 54 , 163 , 228 , 293 , 294 163 , 320 5.81 / 7,968.97 P0A968 Cold shock-like protein CspD 8.06 / 7,332.26 5.64 / 7,780.73 P0A972 Cold shock-like protein P0A978 Cold shock-like protein CspE CspG 179 207 Induced by low temp ; cold shock protein Involved in cysteine-biosynthesis ; repressed by sulfate or cysteine ( protein induced by sulfate starvation ) ; induced by high pH CysK 5.83 / 34,358.46 5.81 / 36,027 P0ABK5 Cysteine synthase A 5.83 / 34,342 ( DIGE 4.5 -- 6.5 ) 4.95 / 24,032 ( 4 -- 5 ) 5.01 / 26,270 ( 4 -- 5 ) 4.95 / 25,586 ( 4 -- 5 ) 4.93 / 22,204 ( 4 -- 5 ) 5.06 / 29,410 ( 4.5 -- 5.5 ) 5.32 / 32,815 ( 4.5 -- 5.5 ) 5.04 / 28,256 ( 4.5 -- 5.5 ) 4.95 / 28,122 ( 4.5 -- 5.5 ) 5.78 / 42,978 ( 5 -- 6 ) 5.10 / 41,867 ( 5 -- 6 ) 5.47 / 31,383 ( 4.5 -- 5.5 ) Like a CysK , catalyzes the same reaction of cysteine-biosynthesis ; can also use thiosulfate in place of sulﬁde to give cysteine thiosulfonate as a product Part of the ABC transporter complex cysAWTP , involved in sulfate/thiosulfate import ; speciﬁcally binds thiosulfate and is involved in its transmembrane transport Could help control the pool of 3 - phosphoadenoside-5-phosphosulfate or its use in sulﬁte synthesis Removes C-terminal D-alanyl residues from sugar-peptide cell wall precursors Not involved in transpeptidation but in peptidoglycan-synthesis Involved in oxidative deamination of D-amino acids such as alanine-catabolism Involved in L-lysine-biosynthesis-via diaminopimelate-pathway : tetrahydrodipicolinate from L-aspartate ( third step ) ; sensitive to lysine inhibition 5.81 / 36,027 P0ABK5 Cysteine synthase A 5.83 / 34,342 ( DIGE 4.5 -- 6.5 ) 4.95 / 24,032 ( 4 -- 5 ) 5.01 / 26,270 ( 4 -- 5 ) 4.95 / 25,586 ( 4 -- 5 ) 4.93 / 22,204 ( 4 -- 5 ) 5.06 / 29,410 ( 4.5 -- 5.5 ) 5.32 / 32,815 ( 4.5 -- 5.5 ) 5.04 / 28,256 ( 4.5 -- 5.5 ) 4.95 / 28,122 ( 4.5 -- 5.5 ) 5.78 / 42,978 ( 5 -- 6 ) 5.10 / 41,867 ( 5 -- 6 ) 5.47 / 31,383 ( 4.5 -- 5.5 ) Cysteine synthase B P16703 CysM 5.42 / 32,664.16 287 6.43 / 35,057.44 6.58 / 39,151 ( 6 -- 11 ) Thiosulfate-binding protein P16700 CysP 5.59 / 27,175.86 CysQ protein CysQ 79 P22255 1 6.68 / 41,337.2 P0AEB2 Penicillin-binding protein 5 DacA 179 179 8.73 / 49,568.63 P24228 Penicillin-binding protein 4 DacB DadA 6.17 / 47,607.29 P0A6J5 D-Amino acid dehydrogenase small subunit 179 DapA P0A6L2 Dihydrodipicolinate synthase 5.98 / 31,269.97 6.10 / 32,361 5.94 / 32,916 179 , 228 , 286 , 294 Continued on facing pag See DapA : fourth step ; its activity is repressed by lysine ; it decreases after benzoic acid treatment Involved in L-lysine-biosynthesis-via diaminopimelate-pathway : dl-diaminopimelate from lldiaminopimelate See DapD Required for phage C1 adsorption ; increases after benzoic acid treatment Required for cell-wall-formation Reassigned CsdA ; plays a key role in optimal cell-growth at low temp and required for normal cell-division ; exclusively localized in the ribosomal fraction and becomes a major ribosomal-associated protein in cells grown at low temp ; decreases after benzoic acid treatment but induced by cold shock or acid condition Serine protease ; required at high temp and involved in the degradation of damaged proteins ; induced by heat shock Protease with a shared speciﬁcity with DegP ; induced by high pH during anaerobic growth Phosphotransfer between the C1 and C5 carbon atoms of pentose Involved in nucleotide and deoxyribonucleotide-catabolism ; increases during high-cell-density cultivation Cleaves guanosine or inosine to respective bases and sugar-1-phosphate molecules ; decreases after benzoic acid treatment Involved in glycerol utilization ; dihydroxyacetone-binding subunit of the dihydroxyacetone kinase , which is responsible for phosphorylating dihydroxyacetone ; binds covalently dihydroxyacetone in hemiaminal linkage ; acts also as a corepressor of DhaR by binding to its sensor domain in the absence of dihydroxyacetone ; induced by high pH during anaerobic growth Involved in glycerol utilization ; ADP-binding subunit of the dihydroxyacetone kinase , which is responsible for phosphorylating dihydroxyacetone ; DhaL-ADP receives a phosphoryl group from DhaM and transmits it to dihydroxyacetone ; DhaLADP acts also as a coactivator by binding to the sensor domain of dhaR ; DhaL-ATP is inactive ; induced by high pH during anaerobic growth TABLE 2 -- Continued Dihydrodipicolinate reductase 5.45 / 28,756.61 5.37 / 27,969 ( DIGE 5.11 / 37,922 ( 5 -- 6 ) 5.33 / 31,023 ( 5 -- 6 ) 4.5 -- 6.5 ) DapD 2,3,4,5-Tetrahydropyridine-2 ,6 - dicarboxylate Nsuccinyltransferase P0A9D8 5.56 / 29,892.10 5.51 / 31,680 179 , 228 , 294 , 321 5.49 / 32,476 ( DIGE 4.5 -- 6.5 ) Diaminopimelate epimerase Protein P0A6K1 P37620 DapF DcrB 179 5.86 / 30,208.56 4.76 / 17,786.96 179 , 321 4.50 / 18,143 ( DIGE 4.5 -- 6.5 ) DdlA DeaD P0A6J8 D-Alanine-D-alanine ligase A P0A9P6 Cold shock DEAD-box protein A 5.02 / 39,315.81 8.76 / 70,414.96 179 5.41 / 37,079 ( DIGE 4.5 -- 6.5 ) 132 , 274 , 321 DegP 7.87 / 46,829.14 8.01 / 66,440 ( 6 -- 11 ) P0C0V0 Protease Do 179 , 287 DegQ 5.39 / 44,445.75 5.34 / 46,509 Protease P39099 179 , 286 , 323 5.11 / 44,369.96 P0A6K6 Phosphopentomutase DeoB 179 P0A6L0 Deoxyribose-phosphate aldolase 5.50 / 27,733.80 5.52 / 33,657 ( 5 -- 6 ) DeoC 70 , 287 , 325 4.5 -- 6.5 ) 5.40 / 25,098 ( DIGE 5.42 / 25,818.72 Purine nucleoside phosphorylas DeoD P0ABP8 e 321 PTS-dependent DhaK P76015 ( YcgT ) 4.93 / 39,494.75 323 dihydroxyacetone kinase , dihydroxyacetone-binding subunit PTS-dependent DhaL P76014 ( YcgS ) 5.31 / 22,631.75 323 dihydroxyacetone kinase , ADP-binding subunit Continued on following pag DhaM P37349 ( YcgC ) PTS-dependent See DhaL ; serves as the 4.61 / 51,579.81 4.69 / 50,800 ( DIGE 4.5 -- 6.5 ) 179 , 321 , 323 dihydroxyacetone kinase , phosphotransferase subunit phosphoryl donor ; induced by high pH during anaerobic growth Dosage-dependent suppressor of a dnaK deletion mutation ; suppressed not only the temp-sensitive growth but also the ﬁlamentous phenotype of the dnaK deletion strain , while the defect of lambda growth is not suppressed ; induced by high pH Participates in initiation and elongation during chromosome replication ; exhibits DNA-dependent ATPase activity and contains distinct active sites for ATP binding , DNA binding , and interaction with DnaC protein , primase , and other prepriming proteins Interacts with DnaK and GrpE to disassemble a protein complex at the origins of replication of phage lambda and several plasmids ; participates actively in the response to hyperosmotic and heat shock by preventing the aggregation of stressdenatured proteins and by disaggregating proteins , also in an autonomous , DnaK-independent fashion ; induced by heat shock under the control of the htpR regulatory protein Involved in chromosomal DNA-replication , possibly through an analogous interaction with the DnaA protein , and participates actively in the response to hyperosmotic shock ; increases following exposure to the uncoupler of oxidative-phosphorylation 2,4-dinitrophenol and after benzoic acid treatment ; induced by temp , ethanol , nalidixic acid , puromycin , and overexpression of bioproducts DksA P0ABS1 DnaK suppressor protein 5.06 / 17,527.75 4.90 / 18,723 5.01 / 17,853 179 , 274 , 286 , 321 5.08 / 19,656 ( DIGE 4.5 -- 6.5 ) DnaB P0ACB0 Replicative DNA helicase 4.95 / 52,390.08 4.94 / 49,355 179 , 228 , 294 8.03 / 40,969.14 DnaJ 79 Chaperone protein P08622 1 DnaK 4.81 / 69,647 4.83 / 68,983.76 P0A6Y8 Chaperone protein 71 , 97 , 138 , 179 , 212 , 228 , 287 , 294 , 297 , 321 4.92 / 74,532 ( DIGE 4.5 -- 6.5 ) 4.94 / 73,587 ( DIGE 4.5 -- 6.5 ) 4.91 / 74,850 ( DIGE 4.5 -- 6.5 ) 4.95 / 60,559 ( 4 -- 5 ) 4.98 / 67,563 ( 4 -- 5 ) 4.98 / 66,075 ( 4 -- 5 ) 4.96 / 61,267 ( 4 -- 5 ) 4.97 / 61,125 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.48 / 59,582 ( 4 -- 5 ) 5.00 / 44,877 ( 4 -- 5 ) 4.93 / 52,435 ( 4 -- 5 ) 4.96 / 60,841 ( 4 -- 5 ) 4.96 / 60,234 ( 4.5 -- 5.5 ) 4.97 / 59,766 ( 4.5 -- 5.5 ) 4.95 / 53,032 ( 4.5 -- 5.5 ) 4.97 / 41,400 DNA polymerase III is a complex , multichain enzyme responsible for most of the replicative synthesis in bacteria ; exhibits 3 - to-5 exonuclease activity ; required for initiation of replication once it is clamped onto DNA See DnaN ; contains the editing function and is a proofreading 3 - to-5 exonuclease Dipeptide-binding protein of a transport system that can be subject to osmotic shock and is also required for peptide chemotaxis ; increases in the physiological short-term adaptation to glucose limitation P0A6Y8 Chaperone protein 71 , 97 , 138 , 179 , 212 , 228 , 287 , 294 , 297 , 321 4.92 / 74,532 ( DIGE 4.5 -- 6.5 ) 4.94 / 73,587 ( DIGE 4.5 -- 6.5 ) 4.91 / 74,850 ( DIGE 4.5 -- 6.5 ) 4.95 / 60,559 ( 4 -- 5 ) 4.98 / 67,563 ( 4 -- 5 ) 4.98 / 66,075 ( 4 -- 5 ) 4.96 / 61,267 ( 4 -- 5 ) 4.97 / 61,125 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.95 / 60,700 ( 4 -- 5 ) 4.48 / 59,582 ( 4 -- 5 ) 5.00 / 44,877 ( 4 -- 5 ) 4.93 / 52,435 ( 4 -- 5 ) 4.96 / 60,841 ( 4 -- 5 ) 4.96 / 60,234 ( 4.5 -- 5.5 ) 4.97 / 59,766 ( 4.5 -- 5.5 ) 4.95 / 53,032 ( 4.5 -- 5.5 ) 4.97 / 41,400 P0A988 DNA polymerase III beta subunit DnaN 294 5.25 / 40,586.60 DNA polymerase III epsilon subunit 5.54 / 27,098.93 5.65 / 26,832 P03007 DnaQ 228 , 294 DppA 5.47 / 52,481 5.69 / 52,170 5.75 / 57,407.06 Periplasmic dipeptide-transport protein P23847 179 , 286 , 287 , 311 5.71 / 52,000 ( 5 -- 6 ) 5.71 / 50,118 ( 5 -- 6 ) 5.81 / 52,000 ( 5.5 -- 6.7 ) Continued on facing pag Unspeciﬁcally binds and Dps P0ABT2 DNA-protection during starvation protein 5.72 / 18,564.11 5.53 / 18,722 ( DIGE 4.5 -- 6.5 ) 5.78 / 17,897 ( 5 -- 6 ) 5.27 / 16,787 ( 5 -- 6 ) 5.21 / 16,164 ( 5 -- 6 ) 5.94 / 17,273 ( 5.5 -- 6.7 ) protects DNA from oxidative damage mediated by hydrogen peroxide ; induced by prolonged starvation , stationary phase , and acetic acid accumulation ; controlled by ClpXP and ClpAP proteases , which affect logphase stability and stationary-phase synthesis of Dps , respectively Transfers its disulﬁde bond to other proteins and is reduced in the process and then reoxidized by DsbB ; induced by high pH during aerobic or anaerobic growth See DsbA ; required for disulﬁde bond formation in some periplasmic proteins Involved in de novo synthesis of thymidylate ; produces dUMP , the immediate precursor of thymidine nucleotides , and decreases the intracellular concn of dUTP so that uracil can not be incorporated into DNA General inhibitor of pancreatic serine proteases ; inhibits chymotrypsin , trypsin , elastases , factor X , and kallikrein as well as a variety of other proteases Key enzyme in the EntnerDoudoroff pathway and participates in the regulation of the intracellular level of glyoxylate ; induced at the stationary phase and in the presence of gluconate or hexuronic acids ; increases after benzoic acid treatment , phosphate limitation , and phosphonate growth Involved in peptide bond synthesis ; stimulates efﬁcient translation and peptide bond synthesis on native or reconstituted 70S ribosomes in vitro ; probably functions acceptors for peptidyl transferase May be involved in the early steps of isoprenoid-biosynthesis GTP-dependent nucleic acidbinding protein which may act as a translation factor Involved in the pathway of glycolysis ; also involved in the RNA degradosome , a multienzyme complex important in RNA-processing and mRNA-degradation ; increases during anaerobic growth 5.53 / 18,722 ( DIGE 4.5 -- 6.5 ) 5.78 / 17,897 ( 5 -- 6 ) 5.27 / 16,787 ( 5 -- 6 ) 5.21 / 16,164 ( 5 -- 6 ) 5.94 / 17,273 ( 5.5 -- 6.7 ) DsbA P0AEG4 Thiol : disulﬁde interchange protein 5.42 / 21,132.07 5.34 / 22,426 5.31 / 21,942 179 , 228 , 274 , 294 , 321 , 323 5.34 / 22,606 ( DIGE 4.5 -- 6.5 ) P0AEG6 Thiol : disulﬁde interchange protein 5.86 / 23,460 DsbC 179 Dut 5.03 / 16,155.47 Deoxyuridine 5 - triphosphate nucleotidohydrolase P06968 5.03 / 16,145 179 , 228 , 294 , 321 5.10 / 17,526 ( DIGE 4.5 -- 6.5 ) 5.94 / 16,099.52 Ecotin P23827 Eco 179 Eda P0A955 2-Keto-4-hydroxyglutarate / 2-keto-3-deoxy-6 - phosphogluconate aldolase 99 , 179 , 287 , 293 , 321 4.93 / 23,247 ( DIGE 4.5 -- 6.5 ) 5.43 / 27,937 ( 5 -- 6 ) 5.57 / 22,284.03 Efp 179 4.9 / 20,460.12 P0A6N4 Elongation factor P 179 , 287 ElbB P0ABU5 Enhancing lycopene biosynthesis 4.68 / 22,981.55 4.92 / 25,756 ( 4 -- 5 ) ( YhbL ) protein 2 5.03 / 42,217 ( DIGE 4.5 -- 6.5 ) 5.02 / 42,547 ( 4.5 -- 5.5 ) 4.87 / 39,536.13 EngD P0ABU2 GTP-dependent nucleic acidbinding protein 287 , 321 Eno 5.34 / 46,509 5.29 / 46,234 5.32 / 45,523.75 P0A6P9 Enolase 29 , 179 , 228 , 271 , 286 , 287 , 294 , 321 5.35 / 43,401 ( DIGE 4.5 -- 6.5 ) 4.74 / 22,872 ( 4 -- 5 ) 5.46 / 45,494 ( 4.5 -- 5.5 ) 5.20 / 40,116 ( 4.5 -- 5.5 ) 5.16 / 31,510 ( 4.5 -- 5.5 ) 5.29 / 51,580 ( 5 -- 6 ) 5.27 / 51,301 ( 5 -- 6 ) 5.16 / 51,319 ( 5 -- 6 ) 5.00 / 50,698 ( 5 -- 6 ) 5.02 / 50,647 ( 5 -- 6 ) 5.26 / 50,000 ( 5 -- 6 ) 6.95 / 24,005 ( 6 -- 11 ) 6.72 / 25,314 ( 6 -- 9 ) Continued on following pag 2,3-Dihydro-2 ,3 - EntA P15047 4.97 / 26,249.66 179 dihydroxybenzoate ( 2,3-DHB ) dehydrogenase Isochorismatase Involved in siderophore-biosynthesis and enterobactin-biosynthesis Required for production of 2,3-DHB and serves as an aryl carrier protein ; plays a role in enterobactin assembly : proteins EntB , EntD , EntE , and EntF form a multienzyme complex called enterobactin-synthetase Member of the two-component regulatory system EvgS/EvgA ; regulates the expression of emrKY operon and yfdX ; also seems to control expression of at least one other multidrug efﬂux operon Catalyzes the condensation reaction of fatty-acid-synthesis by the addition to an acyl acceptor of two carbons from malonyl-ACP Involved in fatty-acid-biosynthesis 4.97 / 26,249.66 179 P0ADI4 EntB 21 5.08 / 34,633 ( DIGE 4.5 -- 6.5 ) 5.05 / 32,554.34 3 EvgA 79 P0ACZ4 Positive transcription regulator 6.83 / 22,690.2 1 P0A953 3-Oxoacyl - acyl-carrier-protein 5.35 / 42,613.32 5.76 / 44,039 synthase I FabB 294 FabD 4.95 / 32,286.01 5.37 / 44,881 4.95 / 33,409 P0AAI9 Malonyl CoA-acyl carrier protein transacylase 179 , 228 , 287 , 294 , 321 5.03 / 33,449 ( DIGE 4.5 -- 6.5 ) 5.03 / 32,221 ( 4.5 -- 5.5 ) See FabB ; has a preference for short chain acid substrates and may function to supply the octanoic substrates for lipoic-acid-biosynthesis Involved in fatty-acid-biosynthesis pathway See FabB ; catalyzes the ﬁrst condensation reaction , which initiates fatty-acid-synthesis and may therefore play a role in governing the total rate of fatty acid production ; possesses both acetoacetyl-ACP synthase and acetyl transacylase activities Involved in second reduction step of fatty-acid-biosynthesis ; decreases after benzoic acid treatment Involved in saturated fatty-acid-biosynthesis Catalyzes the ﬁnal step of fatty-acid-oxidation in which acetyl-CoA is released and the CoA ester of a fatty acid two carbons shorter is formed ; involved in the aerobic and anaerobic degradation of long-chain-fatty-acids ; induced in the presence of fatty acids and is under the control of the fadR repressor Catalyzes the formation of a hydroxyacyl-CoA by addition of water on enoyl-CoA ; also exhibits 3-hydroxyacyl-CoA epimerase and 3-hydroxyacyl-CoA dehydrogenase activities ; involved in the aerobic and anaerobic degradation of long-chain-fatty-acids ; induced in the presence of fatty acids and is under the control of the fadR repressor Involved in translocation of long-chain-fatty-acids across the outer membrane ; induced in the presence of long-chain-fatty-acids and under the control of the fadR repressor 5.03 / 33,449 ( DIGE 4.5 -- 6.5 ) 5.03 / 32,221 ( 4.5 -- 5.5 ) 5.71 / 42,914.57 n i e t o r p FabF ¬ r e i r r a c acyl-II xoacylsynthase 3 - O 5 I A A 0 P 179 6.76 / 25,560.29 P0AEK2 3-Oxoacyl - acyl-carrier-protein reductase 3-Oxoacyl - acyl-carrier-protein synthase III FabG 179 5.08 / 33,515.12 P0A6R0 FabH 179 FabI 5.60 / 32,613 ( DIGE 4.5 -- 6.5 ) 5.40 / 32,959 ( DIGE 4.5 -- 6.5 ) 5.37 / 38,366 ( 5 -- 6 ) 5.33 / 37,266 ( 5 -- 6 ) 5.58 / 27,732.75 P0AEK4 Enoyl - acyl-carrier-protein reductase ( NADH ) 179 , 287 , 321 6.84 / 17,032.95 FabZ P0A6Q6 ( 3R ) - hydroxymyristoyl - acyl carrier protein dehydratase P21151 3-Ketoacyl-CoA thiolase 179 6.31 / 40,876.20 FadA 46 5.84 / 79,593.91 Fatty oxidation complex alpha subunit P21177 FadB 4 6 FadL 26 Long-chain fatty-acid-transport 4.91 / 45,906.47 protein P10384 Continued on facing pag Involved in the pathway of glycolysis ; increases in poly ( 3-hydroxybutyrate ) - accumulating cells FbaA P0AB71 Fructose-bisphosphate aldolase class II 5.52 / 39,016.07 5.55 / 40,651 5.43 / 39,776 5.49 / 39,104 ( DIGE 5.56 / 50,220 ( 5 -- 6 ) 5.56 / 49,421 ( 5 -- 6 ) 5.68 / 32,568 4.5 -- 6.5 ) Necessary for growth on Fbp P0A993 Fructose-1 ,6 - bisphosphatase 179 , 228 , 294 5.67 / 36,833.93 substances such as glycerol , succinate , and acetate ; inhibited by AMP , which affects the turnover of bound substrate and not the afﬁnity for substrate Outer membrane receptor protein in the Fe3 dicitrate-transport system ; for induction , the TonB and the ExbB proteins have to be active Involved in the initial step of iron uptake by binding ferrienterobactin , an iron chelatin siderophore that allows E. coli to extract iron from the environment ; acts as a receptor for colicins B and D ; increases after benzoic acid treatment Binds the ferrichrome-iron ligand ; interacts with the TonB protein , which is responsible for energy coupling of the ferrichromepromoted iron-transport system ; acts as a receptor for bacteriophage T5 as well as for T1 , phi80 , and colicin M ; can also transport the antibiotic albomycin Activates rRNA-transcription ; plays a direct role in upstream activation of rRNA promoters ; binds to a recombinational enhancer sequence that is required to stimulate Hinmediated DNA inversion ; prevents initiation of DNA-replication from OriC PPIases accelerate the folding of proteins ; catalyzes the cistrans isomerization of proline imidic peptide bonds in oligopeptides ; strongly inhibited by FK506 See FklB Iron ( III ) dicitrate-transport protein P13036 FecA 79 5.36 / 81,707.21 1 5.23 / 79,771.07 Ferrienterobactin receptor P05825 FepA 321 5.24 / 79,447 ( DIGE 4.5 -- 6.5 ) 5.13 / 78,742.19 Ferrichrome-iron receptor P06971 FhuA 179 9.34 / 11,239.93 P0A6R3 DNA-binding protein Fis 79 1 FklB 4.5 -- 6.5 ) 4.84 / 24,436 ( DIGE 4.85 / 22,085.00 P0A9L3 FKBP-type 22-kDa peptidylprolyl cis-trans isomerase 179 , 321 P45523 FKBP-type peptidyl-prolyl cis - 6.73 / 26,223.63 7.08 / 33,268 trans isomerase Flavodoxin 1 4.21 / 19,605.75 4.65 / 21,200 FkpA 179 , 286 Low-potential electron donor to a no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>E. coli genes repressed m ore than threefold ( P after 15 h at 37 ° C upon deleting ycfR Expression ratio 0.05 ) in an LB glu bioﬁlm Group and gene b no.a Description tRNA thrT b3979 b2402 b0746 tRNA tRNA tRNA 3.0 3.2 3.0 valX valZ Regulator cspB b1557 b0990 b2289 b1531 b1014 CspA family of cold shock protein Homolog of Salmonella cold shock protein 5.7 3.0 3.2 3.0 4.0 cspG lrhA marA putA NADH dehydrogenase transcriptional regulator , LysR family Regulator , drug/analog sensitivity Bifunctional enzyme , as well as a transcriptional repressor of the put ( proline utilization ) regulon Transport and metabolism atpB Membrane-bound ATP synthase , F0 sector , subunit A Membrane-bound ATP synthase , F0 sector , subunit C b3738 b3737 b3736 b3735 b3408 b2094 b2093 b2092 b2091 b0553 b1015 b3748 b3749 b3750 b2796 b1256 3.5 3.0 3.0 3.2 3.2 3.0 4.9 3.7 4.0 6.5 4.3 3.5 3.5 3.5 4.0 6.0 atpE atpF atpH feoA gatA gatB gatC gatD nmpC putP rbsD rbsA rbsC sdaC ompW ATP synthase , F0 complex , subunit B Membrane-bound ATP synthase , F1 sector , delta subunit Ferrous iron-transport protein A GatA , subunit of EIIGat , galactitol PTS permease Transport , transport of small molecules : carbohydrates , organic acids , alcohols Transport , transport of small molecules : carbohydrates , organic acids , alcohols Enzyme , degradation of small molecules : carbon compounds Outer membrane porin Sodium/proline symporter responsible for the uptake of proline D-Ribose high-afﬁnity transport system ; membrane-associated protein ATP-binding component of D-ribose high-afﬁnity transport system D-Ribose high-afﬁnity transport system Probable serine transporter Outer membrane protein W ; colicin S4 receptor ; putative transport protein Metabolism tnaA Tryptophanase b3708 b3707 b2579 4.6 4.9 4.3 Tryptophanase leader peptide Putative formate acetyltransferase tnaL ( tnaC ) yﬁD Unknown function yeeI b1976 Conserved hypothetical protein 3.2 a b no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17293424" target="_blank">17293424</a>]<br></li>
+<li>Description b0532 4 Putative outer membrane protein , export function ; sequence similarity suggests that it is a member of the ﬁmbrial usher protein family Hydrogenase 4 membrane subunit Curli production assembly/transport component , second curli operon 867 sfmD b2483 4 b1039 322 129 hyfC csgE 4 RNA related ybcJ ORF , hypothetical protein ; putative RNA-binding protein Putative transcriptional regulator Transcriptional repression of hyc and hyp operons ; involved in the formate hydrogenylase system Fimbrial Z protein ; probable signal transducer ; positive DNA-binding transcriptional regulator b0528 b3264 b2725 17.1 4.9 4 77 envR hycA 220 153 b0535 ﬁmZ 4 210 Phage related alpA b2624 b1140 b1557 b1157 Prophage CP4-57 regulatory protein AlpA Prophage e14 intergrase 6.5 4.6 4.6 4 70 375 71 179 intE cspB stfE Cold shock protein ; may affect transcription ; transcriptional regulator Putative tail ﬁber protein Cell processes ampC pphB ibpB b4150 b2734 b3686 - Lactamase ; penicillin resistance Protein phosphatase 2 Heat shock protein 4.3 4 4 ORFs with unknown function yjiP yghG yfjR 19.7 18.4 16 ORF , hypothetical protein ORF , hypothetical protein b4338 b2971 b2634 ORF , hypothetical protein ; putative transcriptional repressor , probably related to phage ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ; cold-induced member of CspA family Putative pectinase Putative oxidoreductase ORF , hypothetical protein ; LexA regulated ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ; conserved protein with phophatase-like domain ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ; gene is in an operon associated with acid resistance ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein ; putative membrane protein possibly involved in transport ORF , hypothetical protein ORF , hypothetical protein Putative oxidoreductase Putative enzyme ORF , hypothetical protein ; conserved hypothetical protein , related to 2Fe-2S ferredoxin ORF , hypothetical protein ORF , hypothetical protein ORF , hypothetical protein 12.1 11.3 11.3 8.6 7.5 7.5 7 6.1 6.1 5.3 4.9 4.9 4.9 4.6 4.6 4.6 4.6 4.3 120 70 65 b0690 b1058 b0248 b0519 b4026 b1742 b0689 b4249 b0685 b3948 b4047 b1470 b0844 b4185 b1877 b0787 b0309 b1500 ybfG yceO yafX ylbE yjbE ves ybfP yjgI ybfE yijI yjbL yddJ ybjI yjfM yecT ybhM b0309 b1500 91 4.3 4 4 4 b1228 b4205 b1796 b4257 b1228 ytfA yoaG yjgN 108 60 398 4 4 4 4 4 84 b4066 b3121 b2902 b2373 b2236 yjcF yhaC ygfF yfdU yfaE 4 yfaA b2230 yadS b0157 b0370 b0370 578 207 89 4 4 a CoA , coenzyme A. b FNT , formate and nitrate-transporter family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16385049" target="_blank">16385049</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">CspA binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>CspA could not bind to fragment A1 ( 32 nucleotides ) and A2 ( 56 nucleotides ) , which resulted from deleting 66 ( fragment A1 ) and 42 bases ( fragment A2 ) from the 39-end of fragment A ( lanes 1 and 2 and lanes 3 and 4 , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>However , this approach was unsuccessful , since CspA was still able to bind to the fragments with the randomized sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>A. Sequence alignment of CspA and PNPase S1 domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>SELEX method ( 23 ) was applied to screen the most preferable sequences for CspA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA has been proposed to bind to the ATTGG sequence in the promoter-proximal region of the gyrA gene ( Jones et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>The CspA homologue in Bacillussubtillis can bind to single-stranded DNA in a sequence specific manner ( SC : HINDELeItNal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8844142" target="_blank">8844142</a>]<br></li>
+<li>These results indicate that CspA is able to bind to both ssRNA and ssDNA with the same sequence specificity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>In this paper , we have demonstrated that CspA binds cooperatively to heat-denatured ssRNA as well as ssDNA with a low sequence specificity , while CspA can not bind to dsDNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>We propose that CspA functions at low temperatures as an RNA chaperone , which binds to mRNAs with a low sequence specificity to prevent the formation of secondary structures in mRNAs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA cooperatively binds to single-stranded RNAs with a low sequence speciﬁcity ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>This result indicates that there is a preferable CspA binding sequence located at the 39-end region of fragment A in addition to the length required for CspA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>FRGY2 , however , binds to a 95-base RNA having a specific 6-base sequence at a Kd value of 2 3 1028 M , 1000-fold lower than the concentration of CspA required for its binding to RNA ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA , the major cold shock protein , binds RNA with low sequence speci ® city and low binding af ® nity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li>
+<li>No specific RNA sequences for CspA binding were identified , indicating that it has a broad sequence spec-ificity for its binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>CspA binding to ssRNA displays a low sequence specificity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>At present , it is not known what accounts for the differences in RNA binding and sequence specificity between CspA and the FRGY2 CSD .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>Length and sequence requirements for CspA binding to RNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8995247" target="_blank">8995247</a>]<br></li>
+<li>S0300908401012330/FLA Mutagenesis of the downstream region of the Escherichia coli hns promoter M. Giangrossi , C.O. Gualerzi * , C.L. Pon Laboratory of Genetics , Department of Biology MCA , University of Camerino , 62032 Camerino ( MC ) , Italy ( Received 21 December 2000 ; accepted 15 January 2001 ) Abstract -- The promoter of hns , the structural gene for the abundant nucleoid-associated protein H-NS of Escherichia coli , contains , downstream of the initiation site , two four bp-long ` CG clamps ' , one of which overlaps the potential target sequence ( CCAAT ) of CspA , the cold-shock transcriptional enhancer of this gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>Also indicated are the sequences of the -- 10 and -- 35 promoter elements , of the stringent discriminator [ 11 ] which includes the upstream CG clamp , of the downstream clamp which overlaps the postulated CspA recognition sequence ( boxed ) [ 6 ] , the Shine-Dalgarno and the initiation triplet of hnsmRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>Results and discussion To understand the role of the CCCCAAT sequence downstream the transcriptional start site of hns , this sequence was altered so as to weaken the CG clamp ( hns02 and hns03 ) , to scramble ( hns04 ) or to invert ( hns03 ) the CCAAT sequence presumably recognized by CspA ; the effect of these mutations ( schematically shown in ﬁgure 2B ) was studied in comparison with the wt hns promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>The target of CspA is within a 110-bp fragment which contains the core elements of the promoter and a downstream sequence CCCCAAT which contains a CG clamp and the conserved CCAAT box which is the putative recognition/binding element of CspA [ 6 , 14 , 16 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>Overall , these results are in agreement with the model shown in ﬁgure 2A as far as the role of the downstream CG clamp is concerned but minimize the role of the CCAAT sequence as a recognition element for the interaction of the promoter with CspA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by CspA</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>It is , however , less likely that the same mechanism of induction would be in operation for CspB during temperature cycling as for CspA , because CspB is not located near the oriC [ 42 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>It is also known that cspA mRNA and its protein CspA are hardly detected in cells growing at a constant 37 ° C [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23815967" target="_blank">23815967</a>]<br></li>
+<li>The determined nucleotide and deduced amino acid sequences of cspG and comparison of its amino acid sequence with those of the CspA family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>Its gene product ( 70 amino acids ) is 73 and 77 % identical to CspA ( 70 amino acids ) and CspB ( 71 amino acids ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>This gene was thus named cspG , and its gene product comprising 70 amino acid residues is 73 and 77 % identical to CspA and CspB of E. coli , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8631696" target="_blank">8631696</a>]<br></li>
+<li>The control of uspA expression has been studied extensively , and it has been shown that it is regulated positively by ppGpp of the stringent response , RecA of the SOS modulon , and two members of the CspA family , CspC and CspE [ 9,14,36,37 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12071968" target="_blank">12071968</a>]<br></li>
+<li>These features of its temperature-respon-sive expression seem to be similar to those of some CspA family genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11873911" target="_blank">11873911</a>]<br></li>
+<li>E. coli contains nine csp genes ( cspA to cspI ) , all encoding members of the CspA family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>In this study , we demonstrated that expression of cspD , a gene encoding one of the CspA family members in E. coli , is dependent on growth phase but not on sS , a stationary-phase sigma factor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>Yamanaka , K. , and Inouye , M. ( 1997 ) Growth-phase-depen-dent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_11">
+Growth-phase-dependent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21926233" target="_blank">21926233</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24509317" target="_blank">24509317</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10368152" target="_blank">10368152</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15150239" target="_blank">15150239</a>]<br></label>
+<input id="tu_similarity_11", type="checkbox">
+<div class="TU_similar">
+<li>Growth-phase dependent expression of cspD , encoding a member of the CspA family in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12904550" target="_blank">12904550</a>]<br></li></div>
+<li>Effect of Cold Box Mutations on the Induction of a cspA-lacZ Fusion Reporter Gene -- Because CspA regulates its own gene expression and may act on the Cold Box region ( 6 , 14 , 16 ) , results obtained from mutations on the cspA gene may have been affected by its own gene product .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>At 37 ° C , only a metY transcript is mainly observed , whereas under cold shock , distal genes are expressed through a transcription antitermination mechanism that is mediated by cold shock-induced Csp proteins , such as CspA ( 3 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12730174" target="_blank">12730174</a>]<br></li>
+<li>The hns promoter is known to be activated by cold-shock via the CspA protein ( La Teana et aL , 1991 ; Brandi et aL , 1994 ) and by the histone-like protein FIS ( Falconi et al. , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8596450" target="_blank">8596450</a>]<br></li>
+<li>The one clear exception to this is under conditions of cold-shock , when hns expression is increased three - to fourfold as a result of transcriptional activation by the CspA protein ( La Teana et aL , 1991 ; Brandi et aL , 1994 ) with a corresponding increase in protein levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8596450" target="_blank">8596450</a>]<br></li>
+<li>The upstream clamp is part of the stringent discriminator [ 11 ] while the downstream clamp may regulate hns expression during cold shock accounting for the stimulation by CspA ( ﬁgure 2A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11278076" target="_blank">11278076</a>]<br></li>
+<li>This factor may induce cold shock activators , including CspA , which in turn activate cold-inducible genes such as hscA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Aug. 1997 , p. 5126 -- / 97 / $ 04.0010 Copyright © 1997 , American Society for Microbiology Growth-Phase-Dependent Expression of cspD , Encoding a Member of the CspA Family in Escherichia coli KUNITOSHI YAMANAKA AND MASAYORI INOUYE * Department of Biochemistry , Robert Wood Johnson Medical School , University of Medicine and Dentistry of New Jersey , Piscataway , New Jersey 08854 Received 12 February 1997/Accepted 7 June 1997 The cspD gene of Escherichia coli encodes a protein of high sequence similarity with the cold shock protein CspA , but cspD expression is not induced by cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9260955" target="_blank">9260955</a>]<br></li>
+<li>FEMS Microbiology Letters 176 ( 1999 ) 39 ^ 43 Transcription of cspA , the gene for the major cold-shock protein of Escherichia coli , is negatively regulated at 37 ³ C by the 5P-untranslated region of its mRNA Li Fang 1 , Bing Xia , Masayori Inouye * Department of Biochemistry , Robert Wood Johnson Medical School , 675 Hoes Lane , Piscataway , NJ 08854 , USA Received 8 April 1999 ; received in revised form 27 April 1999 ; accepted 28 April 1999 Abstract The gene for CspA , the major cold-shock protein in Escherichia coli , is tightly regulated at both optimal and low temperatures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10418129" target="_blank">10418129</a>]<br></li>
+<li>It is thus presumed that the practically absent CspA expression in mid - to late exponential phase is attributable to the extreme instability of its mRNA and that the posttranscriptional mRNA stabilization plays a major role in the induction of CspA after cold shock .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>The cspA gene encodes CspA or CS7 .4 , the major cold-inducible protein in E. coli ( 12 , 22 ) , which is induced severalfold following a shift from 37 to 108C ( 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>Such is the case with CspA ; it is optimally induced 1 h following cold shock and acts as a transcription activator inducing cold shock gene expression ( 3 , 21 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7665466" target="_blank">7665466</a>]<br></li>
+<li>CspA is an RNA chaperone and also negatively regulates its own gene expression , thus it may also participate in the regulation of the stability of its own mRNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11741997" target="_blank">11741997</a>]<br></li>
+<li>CspA negatively regulates its own gene expression and also downregulates the expression of cspB and cspG since the expression of these genes was found to be upregulated and prolonged after cold shock in the DcspA strain ( Bae et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_26">
+CspA , the major cold-shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></label>
+<input id="tu_similarity_26", type="checkbox">
+<div class="TU_similar">
+<li>References Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Bae , W. , Jones , P.G. , and Inouye , M. ( 1997 ) CspA , the major cold shock protein of Escherichia coli , negatively regulates its own gene expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10476034" target="_blank">10476034</a>]<br></li></div>
+<li>The deletion of four csps ( cspA , cspB , cspG , and cspE ) affected cold shock induction of mostly those genes that are transiently induced in the acclimation phase , emphasizing that CspA homologues are essential in the acclimation phase .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15466053" target="_blank">15466053</a>]<br></li>
+<li>This implies that expression of cspE is negatively regulated by CspA , CspB and CspG .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11298285" target="_blank">11298285</a>]<br></li>
+<li>Although the expression of cspA , cspB , cspG , and cspI is cold shock inducible and the primary amino acid sequence of CspI is highly homologous to those of CspA , CspB , and CspG , a putative 59-UTR sequence for cspI does not show high similarity to those for cspA , cspB , and cspG , suggesting that cspI might be regulated somewhat differently .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+<li>It has been reported that when the cspA 59-UTR was overproduced during cold shock treatment , CspA and CspB expression were no longer transient and a high level of CspA and CspB expression was still observed after the acclimation phase ( 6 , 14 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10049393" target="_blank">10049393</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

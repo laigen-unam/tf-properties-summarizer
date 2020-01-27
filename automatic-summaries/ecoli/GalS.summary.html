@@ -1,0 +1,665 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - GalS</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">GalS</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">GalS transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Crp , GalS MglAB Crp , RbsR RbsAB Crp , GalS MglA Crp , GntR GntK Crp , EbgR EbgA Crp , LacI LacZ Crp , RhaS RhaBD Crp , AraC AraBD Crp , FucR FucK Crp , YiaJ LyxK Crp , FucR FucA Crp , YiaJ SgbE RcsB WcaB CpxR LpxA RcsB WcaB CpxR LpxD RcsB B2060 PhoB PhnCKLN RcsB B2060 PhoB PstB RcsB B2060 PhoB PhoH MhpR MhpF Fur EntA FecI , Fur FecI UidR , UxuR UidR Crp , FucR FucR Crp , Fur Fur Homologous pairs of transcription factors with autoregulation IdnR PurR AsnC Lrp Fnr Crp Homologous triplets of transcription factors with autoregulation TorR PhoB CpxR EmrR PdhR ExuR Eight homologous transcription factors with autoregulation DsdC GcvA CynR Hcar IlvY LysR OxyR CysB Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12582243" target="_blank">12582243</a>]<br></li>
+<li>Additional whole-transcriptome studies with hydrogen peroxide stress using the most hydrogen peroxide-sensitive mutants , ygiW and ychH , identiﬁed that FliS , GalS , HcaR , MglA , SufE , SufS , Tap , TnaB , YhcN and YjaA are also involved in the stress response of E. coli to hydrogen peroxide , cadmium and acid , as well as are involved in bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>A second set of whole-transcriptome studies was performed to further study the effect of H2O2 on the two most H2O2-sensi-tive mutants ( ychH and ygiW ) , and ten additional proteins were identiﬁed ( FliS , HcaR , GalS , MglA , SufE , SufS , Tap , TnaB , YhcN and YjaA ) that are involved in the stress response associated with exposure to H2O2 , cadmium and acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>Although autoregulation of several transcriptional-regulators has been observed previously , e.g. CytR ( Pedersen et al. , 1992 ) , TyrR ( Pittard and Davidson , 1991 ) and GalS ( Weickert and Adhya , 1993 ) , in this case , the positive transcriptional-regulator of the maltose regulon , MalT , is subject to negative regulation by a second regulator , Mlc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9484893" target="_blank">9484893</a>]<br></li>
+<li>Both GaIR and GalS negatively regulate transcription of Pi and P2 ( reviewed in Adhya , 1987 ; Tokeson etai , 1991 ; Golding ef ai , 1991 ; Weiokert and Adhya , 1992a ; Choy and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>This phenomenon , termed ultrainduction , is another negativecontrol mechanism that operates at the level of transcription , and is mediated by the GalS ( Golding ef ai , 1991 ; Weiokert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>We observed that during logarithmic growth of MJW114 containing plasmid pVGS5a , GalS was overexpressed , even in the absence of IPTG ( isopropyl-b-D-thiogalactopyranoside ) , and that continuous growth to high density was not possible under fermentation conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>and quantified as a ratio of the GalS band WISUS a prominent , uninduced E. co/i protein band that migrated slightly slower than GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1619663" target="_blank">1619663</a>]<br></li>
+<li>Thus , although our in vitro results support the genetic results suggesting that the major function of GalS is to regulate mgl expression , the issue of the extent to which mgl regulation is shared by the two proteins has not been resolved by these experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Remarkably , GalS does not appear anywhere in this list , implying that its activity is overridden in any steady-state conditions that we tested in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>In addition , the GalS isorepressor was also found to-bind to that site and GalS also bound weakly to two other sites , nearer to the promoter ( labelled GalS1 and 2 , Fig. 2C and D , lanes 13 -- 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>The role of GalS , therefore , should lie in either more graded features of the response or a transient dynamics where a large pool of accumulated , but inactivated , GalS gets temporarily activated by a sudden depletion of galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Interaction Reference Galactose transport by GalP 1 2 Riordan and Kornberg ( 1977 ) Robbins et al. ( 1976 ) Geanacopoulos and Adhya ( 1997 ) Geanacopoulos and Adhya ( 1997 ) This work Geanacopoulos and Adhya ( 1997 ) Weickert and Adhya ( 1992 ) Geanacopoulos and Adhya ( 1997 ) Weickert and Adhya ( 1992 ) Majumdar and Adhya ( 1984 ) ; Majumdar et al. ( 1987 ) Weickert and Adhya ( 1993b ) Weickert and Adhya ( 1993b ) This work This work This work Polayes et al. ( 1988 ) Rice and Dahlberg ( 1982 ) Weickert and Adhya ( 1992 ) Aki et al. ( 1996 ) ; Choy and Adhya ( 1992 ) Choy and Adhya ( 1992 ) Aki et al. ( 1996 ) Choy and Adhya ( 1992 ; 1993 ) Choy and Adhya ( 1992 ; 1993 ) Adhya ( 2003 ) ; Ullmann et al. ( 1979 ) Adhya ( 2003 ) ; Ullmann et al. ( 1979 ) Hucho and Wallenfels ( 1971 ) Møller et al. ( 2002 ) Sherman and Adler ( 1963 ) Kurahashi and Sugimura ( 1960 ) ; Wong et al. ( 1977 ) Wilson and Hogness ( 1964 ) Weissborn et al. ( 1994 ) Joshi and Handler ( 1964 ) Hogema et al. ( 1997 ) Hogema et al. ( 1998 ) Galactose transport by the Mgl system cAMP -- CRP activates PgalP cAMP -- CRP activates PmglB GalS represses PgalP GalR represses PgalP GalS represses PmglB GalR represses PmglB D-galactose binding inactivates GalS D-galactose binding inactivates GalR 3 4 5 6 7 8 9 10 cAMP -- CRP activates PgalS GalS autorepression 11 12 13 14 15 16 17 18 19 GalS represses PgalR GalR represses PgalS GalR autorepression cAMP -- CRP represses spf transcription spf encodes Spot42 RNA GalS represses P1galE GalR represses P1galE by contact inhibition and DNA looping GalR binding to OE activates P2galE under non-looping conditions GalR represses P2galE by DNA looping 20 21 22 23 24 25 26 27 28 29 cAMP -- CRP activates P1galE cAMP -- CRP represses P2galE P1galE makes equimolar expression of the galETKM operon genes P2galE expresses primarily the promoter proximal galE gene ( natural polarity ) GalM catalyses the b-D-galactose ↔ a-D-galactose reaction Spot42 RNA inhibits translation of galK GalK catalyses the a-D-galactose + ATP ↔ galactose-1-phosphate + ADP reaction GalT catalyses the galactose-1-phosphate + UDP-glucose ↔ glucose 1-phosphate + UDP-galactose reaction GalE catalyses the UDP-galactose ↔ UDP-glucose reaction GalU catalyses the UDP-glucose ↔ glucose 1-phosphate reaction Pgm catalyses the glucose 1-phosphate ↔ glucose 6-phosphate reaction Glucose 6-phosphate decreases the cAMP -- CRP level Galactose transport is inhibited by inducer exclusion in the presence of glucose 6-phosphate 30 31 32 33 34 Numbering refers to interactions in Fig. 6A .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Ultrainduction , which occurs at the level of transcription , is mediated by GalS ( 9 , 32 ) , which can be titrated specifically by multiple copies of the same operators to which Gal repressor binds ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Since GalS apparently binds gal or gal-like operator sequences ( 27 , 32 ) , we believe that isorepressor ( GalS ) represses galS transcription by binding to O ( or 01 or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Unexpectedly , while GalS inhibited cAMP -- CRP-mediated P1galE activation , allowing low-level transcription of P1galE , it did not prevent P2galE repression caused by binding of the cAMP -- CRP complex in our assays ( Fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalS was more efficient in mglBAC repression , while it did not completely inhibit P1galE promoter activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>We assumed that mglBAC repression by GalS is incomplete because GalS expression requires some derepression of galS transcription , while GalS repressed its own promoter more efficiently than the PmglB promoter in our assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalR-Alexa 488 , at a constant concentration of 20 nM , was mixed with a saturating amount of non-labelled protein , GalS , GalR or NagC , in 20 mM Tris-HCl , pH 7.5 , 300 mM KCl , 2.5 mM MgCl2 , 0.5 mg ml-1 bovine serum albumin and the anisotropy was measured .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>GalS negatively regulates the promoter of its own gene , gatS ( Weickert and Adhya , 1993 ) and the mgl promoter ( Weickert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>GalS was found to have very low affinity for galPOE and no affinity for galPOI ( Weickert and Adhya , 1993a , b ; Geanacopoulos and Adhya , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>It is interesting to note that the three central operators , galOE2 , OE3 and OE4 , which have higher affinity for GalS than GalR , all have A/T at positions 8 of the operators ( Fig. 1B ) which is also the case for the mglB and galS operators ( Weickert and Adhya , 1993a , b ) which are preferentially regulated by GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>To determine whether another method of puriﬁcation and speciﬁcally whether omission of the low-salt precipitation step would increase the operator-binding activity of GalS , we developed an alternative puriﬁcation protocol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The same mechanism is presumed to mediate mgl induction , which is under the control of GalS ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>The mgl-operator binding activity of GalS prepared in this way was identical to that of GalS prepared by the original method .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>GalS showed some speciﬁc protection of OE of galP , but its afﬁnity was too low to be measured quantitatively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Both promoters are strongly repressed by GaIR but weakly by GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>The constitutivity of GaIR synthesis coupled with the inducibi-lity of GalS synthesis could result in a varying proportion of GaIR to GalS during changes in galactose concentration and metabolism ( through CRP-cAMP ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>This region was only weakly protected by GalS , but the mutation has produced a signiﬁcant increase in expression , which was further increased by growth on galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>In spite of the presence of several tryptophan residues , the tryptophan ﬂuorescence of GalS is not sensitive to galactose , and we did not measure galactose binding to GalS directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>GalS was identiﬁed because in strains in which galR was deleted , the gal operon could be further induced by galactose , a phenomenon called ultrainduction ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The negative regulators , GaIR and GalS , discriminate between utilization of the high-affinity ( regulated by GalS ) and low-affinity ( regulated by GaIR ) transport systems , and modulate the expression of genes for galactose metabolism in an overlapping fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Thus , galactose binding to GalS could permit induction of the high-afﬁnity galactose transporter at low levels of intracellular galactose before ga-lactose concentrations become high enough to require an increase in galactose-metabolizing enzymes or the low-afﬁnity galactose transporter , galactose permease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>GalS has even less afﬁnity for the external operator of galP , which codes for galactose permease , the major low-afﬁnity galactose transporter in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>If the primary role of GalS is to control the expression of the high-afﬁnity galactose transporter and GalR controls the low-afﬁnity permease , then it might be predicted that GalS would respond to lower concentrations of galactose than would GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The increased sensitivity of GalS to galactose relative to that of GalR permits the induction of the mgl operon coding for the high-afﬁnity galactose transporter at galactose concentrations lower than those that would signiﬁcantly induce the gal operon and the low-afﬁnity transporter , galactose permease , which our results indicate are largely under the control of GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Consistent with the fact that GalR is the exclusive regulator of the low-afﬁnity galactose transporter , galactose permease , and that the major role of GalS is in regulating expression of the high-afﬁnity galactose transporter encoded by the mgl operon , we found that the DNA binding of GalS is 15-fold more sensitive than that of GalR to galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The greatest difference in the DNA-binding afﬁnity of GalR and GalS was for OE of the galP gene coding for the low-afﬁnity galactose transporter , galactose permease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>They would be the mgl operon involved in highafﬁnity galactose transport as well as chemotaxis in response to galactose and GalS itself , which , unlike galR , controls its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In the absence of galactose , GalS concentration is low , and may facilitate induction of the mgl operon at lower galactose concentrations simply by its own scarcity or by a greater sensitivity to galactose than GaIR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>In vitro , GalS bound with highest afﬁnity to OE of mgl , the operon encoding the high-afﬁnity galactose transport system .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>It is possible that GalS levels could rise sufﬁciently high for it to function as a repressor in its galactose-bound form of the mgl operon , the expression of which in the presence of high galactose concentrations and galactose permease might be superﬂuous .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>For instance , as internal levels of galactose begin to rise , genes under the control of GalS would be induced ﬁrst .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>If so , we would expect that GalS will be induced at lower galactose concentrations than GalR , since the mgl operon is the more efficient transport system at low galactose concentrations , ( ii ) The galS gene is autoregulated and its expression is CRP cAMP dependent , while gaIR expression appears to be constitutive -LCB- Weickert and Adhya , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>At these D-galactose concentrations the level of active GalS would depend on both the cAMP -- CRP concentration and the active GalS level itself , which represses galS transcription ( Weickert and Adhya , 1993b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Quantitative studies are needed to determine the combinations of cAMP and D-galactose concentrations that would allow production of active GalS at sufficient levels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>It seems that GalS can also reduce , but not eliminate , mglBAC expression at certain combinations of steady-state D-galactose and cAMP concentrations , which would allow GalS expression and binding to the mgl operator at the same time .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalR ( like GalS ) is a dimer in solution but repression of galEP2 requires tetramerization of GalR , mediated by HU forming the complex called a repressosome ( Aki et al. , 1996 ; Lewis et al. , 1999 ; Geanacopoulos et al. , 2001 ; Kar and Adhya , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_49">
+Lanes : 1 , no additions ; 2 and 3 , 50 nM galR in the absence and presence of 10 mM galactose , respectively ; 4 and 5 , 50 nM GalS in the absence and presence of 10 mM galactose , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></label>
+<input id="act_similarity_49", type="checkbox">
+<div class="ACT_similar">
+<li>Lanes : 6 , no additions ; 7 and 8 , 1 nM GalR in the absence and presence of 10 mM galactose , respectively ; 9 and 10 , 200 nM GalS in the absence and presence of 10 mM galactose , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li></div>
+<li>Lanes : 11 , no additions ; 12 and 13 , 5 nM GalR in the absence and presence of 10 mM galactose , respectively ; and 14 and 15 , 100 nM GalS in the absence and presence of 10 mM galactose , respectively ( cAMP ) receptor protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Protection by low concentrations of GalR and GalS seems to be additive at galOE3 ( Fig. 3A , compare lanes 11 and 12 with lanes 3 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Moreover , the presence of NagC enhances protection of the galOE3 and OE5 operators by low concentrations of GalR and GalS ( Fig. 3A lanes 13 and 14 compared with lanes 11 and 12 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>When 4 concentrations of NagC , ChbR , GalR or GalS were tested on each DNA ( indicated by a wedge covering 4 lanes ) , the concentrations were 100 , 50 , 25 and 12.5 nM ( calculated for monomeric protein ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>The Gal11-Gal2 DNA fragment , labelled at either end , was mixed with NagC , GalR or GalS at the following concentrations : A. Lanes 2 -- 6 GalR 50 , 25 , 12.5 , 6.2 and 3.1 nM ; lanes 7 -- 10 , GalS 200 , 100 , 50 , 25 nM ; lane 11 , GalS 25 nM and GalR 25 nM ; lane 12 , GalS 25 nM and GalR 12.5 nM ; lanes 13 and 14 , as lanes 11 and 12 with NagC 25 nM ; Lane 15 NagC 25 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>B. Lanes 2 -- 6 NagC 50 , 25 , 12.5 , 6.2 and 3.1 nM , lanes 7 -- 11 GalR 50 , 25 , 12.5 , 6.2 and 3.1 nM ; lanes 12 -- 15 GalS 200 , 100 , 50 , 25 nM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>However , maintaining a constant concentration of GalR while carefully regulating the concentration of GalS would be an efficient mechanism of differentially modulating the members of the gal regulon to mediate cellular responses to physiological changes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>In addition , there is one negative feedback loop involving cAMP , as well as a positive feedback loop between GalR and GalS ( see Supplementary material for details of motif counting ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>We can not rule out the possibility that the GalR and GalS protein preparations used in the in vitro studies reported here differ in their activity , although two methods of GalS puriﬁcation produced protein preparations with the same mgl binding activity , and the DNA-binding activity of GalR in our preparations agrees closely with results reported previously ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Mutations in nagC , galR and galS increase expression from a galP-lacZ fusion : galR is epistatic to galS To investigate the relative contributions of NagC , GalR and GalS to galP repression , we tested the effect of mutations in nagC , galR and galS in trans on the fusions in the three media ( Fig. 3A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>As the mutation nagO2-2 , in the right hand half of the nagO2 site , had only a minor effect on galP expression ( 1.5-fold ) , we presume that the increase in galP-lacZ activity is mostly due to loss of binding of GalR and/or GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Interaction between GalR and GalS The epistatic behaviour of the galR mutation on galS could mean that GalS only binds to the galP operators in the presence of GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Mutations in galS produce partial derepression of galP but the fact that the galS mutation had no effect in the absence of GalR could mean that GalS is incapable of binding/repressing in the absence of GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>The cause of the weak repression of the gal operon by GalS is unknown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>The incomplete repression of P1galE by GalS may be because GalS dimers bound to the two galETKM operators do not interact with each other to bring about tight repression by forming a DNA loop in the way GalR does in the galETKM operon ( Geanacopoulos and Adhya , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Because repression of P1galE by GalS is incomplete , we assume that GalR plays the major role in the D-galactose-dependent regulation of the galETKM operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>In the first point , such a case has been reported in the galETK ( M ) operon concerning galactose utilization , which is regulated by GalR and GalS [ Weickert and Adhya , 1993a b ] , but its molecular mechanism is clearly different from that of the GntII gene regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Mgl-BAC is involved in the galactose transport , GalR and GalS negatively regulate MglBAC , and GalR and GalS are regulated by the global regulator CRP ( Semsey et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>Transcription of the gal regulon promoters is regulated in different ways by Gal repressor ( GalR ) and Gal isorepressor ( GalS ) and a global regulator , adenosine cyclic-3 ′ ,5 ′ - monophosphate ( cAMP ) receptor protein ( CRP ) , responding to two signals , D-galactose and cAMP respectively ( Weickert and Adhya , 1993a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>The affinity of galOE2 and OE4 for GalS is low and it is not sure whether these regions are true gal operators or part of a DNA structure which is remodelled by binding of GalR/S proteins forming a higher order complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>The location of its binding site , between galOE1 and nagO1 , raises the question of whether cAMP/CAP , via its DNA bending activity , could also participate in formation of the NagC / GalR/GalS repression complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>GalR bound more weakly to OE of mgl , with a Kd of 11 3 1029 M. GalS bound with similar afﬁnity to OE of mgl , with a Kd of 18 3 1029 M ; note that at a saturating concentration , GalS gave more complete protection of the operator site than GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Since GalR appeared in vitro to be the sole repressor of the expression of the low-afﬁnity galactose uptake system and since the primary function of GalS is in regulating highafﬁnity galactose transport , we assessed the sensitivity of DNA-bound complexes of these repressors to galactose and found that GalS was 15-fold more sensitive to galactose than was GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The apparent association constant , K4 , of galactose for the free repressor was ( 1.25 6 0.4 ) 3 106 M21 for GalS and ( 9.0 6 1.1 ) 3 104 M21 for GalR , indicating that free Gal binds galactose with 14-fold-higher afﬁnity than GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The reduction in DNA-binding afﬁnity indicated in the dissociation curves shown in Fig. 4 ( 11-fold for GalR and 9-fold for GalS ) would be misleading if a fraction of the DNA-bound repressor were inactive with respect to galactose binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Under these conditions , the dissociation of the repressors from the DNA in response to a given concentration of galactose is a function of the afﬁnity of GalS or GalR for galactose and the change in afﬁnity of the proteins for the operator which is caused by galactose binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Although the afﬁnity change that occurs upon galactose binding is similar for the two proteins , the midpoints of the dissociation curves are different ( 5 3 1026 M galactose for GalS and 100 3 1026 M galactose for GalR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The sensitivities of the GalS and GalR DNA complexes to the inducer , galactose , can be compared if the proteins are bound to operators at similar loading free energies and if the bound complexes were titrated with galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Based on these titrations , GalS was added to OE of mgl ( B ) and GalR was added to OE of galE ( D ) at concentrations at which approximately 85 % of the operators were bound in each case , and the repressor-operator complexes were titrated with increasing concentrations of D-galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>This seemed to imply another link between galactose and amino sugar metabolism as exempliﬁed by NagC participating with GalR and GalS in the repression of galP in E. coli ( El Qaidi et al. , 2009 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>We have found that NagC , binds to a single , high-affinity site overlapping the promoter of galP ( galactose permease ) gene and that expression of galP is repressed by a combination of NagC , GalR and GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>In order to obtain a better understanding of the roles of GalR and GalS in coordinating both galactose metabolism and uptake , we have puriﬁed GalS and studied the interaction of both of these repressors with the regulatory sequences in the regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>DISCUSSION In E. coli two regulatory proteins , GalR and GalS , regulate the uptake and metabolism of galactose by binding to conserved operator sequences in the gal regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Regulation of galP by three speciﬁc repressors , NagC , GalR and GalS is unusual in that it involves multiple , speciﬁc regulators from two different areas of metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>In summary , the order of afﬁnities of the two proteins is reversed : GalR binds most strongly to galP and most weakly to mgl ; the opposite is true for GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The relative afﬁnities of GalR and GalS for the operator sequences in gal , mgl , and galP were reﬂected in the effectiveness of the two repressors in inhibiting transcription of these genes in vitro ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>By this test there was strong interaction between GalR and GalS , similar to that between GalR with GalR or GalS with GalS ( Fig. 5A ) , implying the possible existence of heterodimers in the cell .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>GalS has a speciﬁc role , as it binds with higher affinity to one of the upstream operators but its effect in vivo is only observed in the presence of GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Our biochemical data conﬁrm the genetic results in that at pH 8.0 , GalR binds much more strongly than GalS to the gal operators OE and OI .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In turn , the intracellular concentrations of the small molecules cAMP and D-galactose control-the-activity of CRP , GalR and GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Because both GalR and GalS remove cAMP -- CRP-mediated activation , transcription of galS in wild-type cells depends on both cAMP and D-galactose ( AND gate ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Expression of GalP requires the presence of both cAMP and D-galactose , for transcriptional activation ( by cAMP -- CRP ) and inhibition of repression ( by GalR and GalS ) respectively ( AND function ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalR , GalS , and CRP-cAMP apparently do not play any role in gaiR regulation under the conditions we tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>GalS is itself autogenously regulated and CRP dependent , while the gene for GalR is constitutive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Transcription of both P1galE and P2galE can be regulated by GalR and cAMP -- CRP , while GalS affects only P1galE activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Because three of the promoters do not have detectable intrinsic activity , the effect of GalR and GalS in transcription reactions was studied in the presence of the cAMP -- CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Results show the combined effect of cAMP -- CRP and GalR ( A ) or GalS ( B ) binding on promoter activities ( right lanes ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Because cAMP -- CRP-mediated P1galE activation is strongly inhibited by GalS , it is unlikely that the differential effect of GalR and GalS on cAMP -- CRP action would be due to the different binding affinities of the two proteins towards the galETKM OE operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalR and GalS bind to the same operator sites in the cisregulatory regions of the P1galE , PmglB , PgalP and PgalS promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Both GalR and GalS inhibited CRP-mediated activation of the PgalP and PgalS promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>To obtain functional GalS , D-galactose concentration needs to be sufficient to remove GalR-mediated galS repression but leave a fraction of GalS unbound to galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Conversely , homologous repressors , like GalS and LacI , when provided with their cognate operators , can not replace GalR in bringing about HU binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11544184" target="_blank">11544184</a>]<br></li>
+<li>GalS is believed to repress transcription , although not efficiently , in a manner analogous to GalR ( Weickert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Therefore , unlike GalR , GalS represses P1galE transcription only by contact inhibition , not by DNA looping .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>This indicates that GalS acts as a repressor of its own synthesis and that GalR represses galS in a noninducible manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Indeed , the GalS isorepressor was discovered because , in the absence of GalR , there was some residual repression of the galE gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>GalR regulates transcription of the gal operon in the absence of GalS , and GalS regulates transcription of the mgl operon ( 32 ) and the galS gene in the absence of GaIR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>It is interesting to compare the NagC -- Mlc pair with the isorepressors , GalS and GalR , of the gal regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9484892" target="_blank">9484892</a>]<br></li>
+<li>B. Fluorescence anisotropy titration curves for Alexa 488 labelled GalR with GalS , GalR or NagC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Binding of NagC , ChbR , GalR and GalS to the regulatory regions of E. coli and Salmonella chiP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>Regions protected by NagC , ChbR , GalR and GalS are indicated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>( A and C ) The binding of GalS to OE of mgl and GalR to OE of galE , respectively , is shown .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Binding of GalS and GalR to galactose regulon operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Sensitivity of GalR and GalS operator complexes to galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>DNA binding by both GalR and GalS is inhibited in the presence of D-galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalR and GalS binding to all sites was sensitive to the inducer galactose as indicated in Fig. 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Alternatively , in vitro conditions could favor the binding of GalR over that of GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Repression of transcription by GalR and GalS in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Demonstration of an interaction between GalR and GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Regulation by GalR and GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>The estimated Kd for GalR -- GalS interaction was 400 nM , while the affinity GalR-GalR was 3 -- 4 times weaker .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Unlike GalR , GalS binds with similar affinity to galOE1 , 3 and 5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>The affinities of galOE1 , OE3 and OE5 for GalS were similar , albeit somewhat lower than GalR for galOE1 or OE5 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>This ﬁnding suggests that inducer-bound GalR or GalS may still partly repress transcription under conditions where inducer concentrations are high enough to saturate the repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Regulation by the iso-regulatory proteins of the gal regulon , GalR and GalS , was compared in in vitro transcription assays performed on the pRPGSM template in the presence of heat-unstable protein ( HU ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Like GalR , GalS selectively inhibited transcription from P1 , albeit more weakly , and caused a slight activation of transcription from P2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Our results also show that GalS , like its homolog , GalR , is a dimeric protein which in binding to the bipartite operators of the gal operon selectively represses its P1 promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Nevertheless , like GalR , GalS selectively represses the downstream promoter , P1 , of the gal operon and slightly activates the upstream promoter , P2 , in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Both GalR and GalS selectively repress the gal operon transcription from the P1 promoter , while transcription from P2 is activated slightly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Both GalR and GalS are known to respond to inducers , but the presence of saturating concentrations of inducer does not allow induction of the gal operon to the maximal level ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>GalR had an afﬁnity for this sequence that was 5 - to 10-fold higher than its afﬁnity for the operators of the gal operon , although we could not precisely determine the afﬁnity of GalS for this operator due to nonspeciﬁc binding at high protein concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">GalS protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In spite of the presence of several tryptophan residues , the tryptophan ﬂuorescence of GalS is not sensitive to galactose , and we did not measure galactose binding to GalS directly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>GalR and GalS were fused to the T25 domain of adenylate cyclase in pKT25 and the T18 domain in pUT18C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Both GalR and GalS lack the leucine-rich C-terminal domain involved in LacI tetramerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>We can not rule out the possibility that the GalR and GalS protein preparations used in the in vitro studies reported here differ in their activity , although two methods of GalS puriﬁcation produced protein preparations with the same mgl binding activity , and the DNA-binding activity of GalR in our preparations agrees closely with results reported previously ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>a substitu tion of a leucine in GalS for isoleucine in GalR at thr eighth position of the recognition helix ( amino acid 22 in the proteins ) along with two other differences in the first helix ( Fig. 4 ) may provide the necessar ) ' st , ruct ' ural differences t ' o confer an abilit ) y to discriminate between gal and my1 operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1619663" target="_blank">1619663</a>]<br></li>
+<li>GalR and GalS are iso-regulators because of the high similarity in their amino acid sequence , inducer-binding speciﬁcity and DNA-binding site recognition ( Weickert and Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">GalS evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>The binding of homologous GalS ( an isorepressor of GalR with 86 % amino acid similarities ) to OE and OI did not show the enhanced DNA cleavages by HU-nuclease .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9218807" target="_blank">9218807</a>]<br></li>
+<li>GaIR and GalS are over 53 % identical and 85 % similar and are members of a large family of related transcriptional regulatory proteins in bacteria , called the GalR-LacI family ( Weickert and Adhya , 1992b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>GalS and GalR belong to the GalR-LacI family of regulators ( 33 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>GalS is the third member of the GalR-LacI family of bacterial regulatory proteins for which negative autoregulation has been demonstrated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by GalS</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Additional whole-transcriptome studies with hydrogen peroxide stress using the most hydrogen peroxide-sensitive mutants , ygiW and ychH , identiﬁed that FliS , GalS , HcaR , MglA , SufE , SufS , Tap , TnaB , YhcN and YjaA are also involved in the stress response of E. coli to hydrogen peroxide , cadmium and acid , as well as are involved in bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>A second set of whole-transcriptome studies was performed to further study the effect of H2O2 on the two most H2O2-sensi-tive mutants ( ychH and ygiW ) , and ten additional proteins were identiﬁed ( FliS , HcaR , GalS , MglA , SufE , SufS , Tap , TnaB , YhcN and YjaA ) that are involved in the stress response associated with exposure to H2O2 , cadmium and acid .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>GalS negatively regulates the promoter of its own gene , gatS ( Weickert and Adhya , 1993 ) and the mgl promoter ( Weickert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>As observed for the MhpR regulator , CRP also regulates expression of other transcription factors in E. coli such as MelR ( Webster et al. , 1988 ) , MalT ( Chapon & Kolb , 1983 ) , RhaS ( Wickstrum et al. , 2005 ) , MaoB ( Yamashita et al. , 1996 ) , HcaR ( Turlin et al. , 2001 ) , GalS ( Weickert & Adhya , 1993 ) , RpoH ( Kallipolitis & Valentin-Hansen , 1998 ) , BlgG ( Gulati & Mahadevan , 2000 ) , PrpR ( Lee et al. , 2005 ) and Fis ( Nasser et al. , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20966094" target="_blank">20966094</a>]<br></li>
+<li>Operons which have been experimentally verified as being regulated by CRP Gene function Reference e ROMA Operon nam Other CRP sites regulators b Score KE/wt Position Sites a WT HL HL/wt KE 1.96 0.85 # bglG 1.73 -- 61.5 AACTGCGAGCATGGTCATATTT 11.2 Fis Positive regulation of bgl ( 49 ) operon Uptake of C4-dicarboxylic ( 50 ) acids D-ribose high-affinity ( 51 ) transport system Positive regulator for rhabad ( 52 ) operon Succinate dehydrogenase , ( 53 ) cytochrome b556 Tryptophanase leader peptide ( 54 ) PTS-system enzyme II , ( 55 ) trehalose specific Probable formate-transporter ( 43 ) Mgl repressor , galactose ( 56 ) operon inducer Sn-glycerol-3-phosphate ( 57 ) permease PTS-system , maltose and ( 58 ) glucose-specific II ABC Regulator of melibiose operon ( 59 ) Galactose-binding transport ( 56 ) protein PTS-system , glucose-specific ( 35 ) IIBC component PTS-system protein hpr ( 60 ) Orf , hypothetical protein ( 61 ) Aspartate ammonia-lyase ( 62 ) ( aspartase ) 2.44 1.09 # dctA 1.85 -- 81.5 TTGTGCGAGCCAGCTCAAACTT 14.1 DcuR , ArcA 3.80 0.89 # rbsDACBK R 4.10 -- 61.5 CGTTTCGAGGTTGATCACATTT 9.4 RbsR 1.46 0.86 # rhaSR 1.66 -- 113.5 TGATGTGATGCTCACCGCATTT 12.4 RhaR 2.71 1.11 # sdhCDAB 2.38 -- 83.5 TATCGTGACCTGGATCACTGTT 16.4 ArcA , FNR 1.98 0.95 # 3.09 1.35 # tnaLAB treBC 2.08 -- 4.73 -- 61.5 60.5 GATTGTGATTCGATTCACATTT 19.6 AATTGTGATCTTCGCTGCGTTT 8.8 1.39 # 1.09 # 3.90 1.59 # 2.49 1.22 # galS 41.5 41.5 AGATATGATCTATATCAATTTC 10.1 FNR TGCTGTGACTCGATTCACGAAG 10.4 GalR , GalS 2.21 # 4.51 0.89 # glpTQ ATGTGTGCGGCAATTCACATTT 17.2 GlpR 41.5 2.94 # 6.24 1.71 # malXY TTATGTGACAGATAAAACGTTT 11.2 49.5 1.17 # 1.78 # 2.29 1.20 # 6.78 1.49 # melR AACCGTGCTCCCACTCGCAGTC 5.5 MelR ATCTGTGAGTGATTTCACAGTA 16.6 41.5 41.5 mglBAC 1.13 # 2.11 1.14 # ptsG AAACGTGATAGCCGTCAAACAA 14.3 Mlc 40.5 1.56 # 1.10 # 2.65 # 2.95 1.01 # 1.88 0.97 # 6.29 2.50 # yhfA aspA TTTTATGATTTGGTTCAATTCT 9.5 TAATGTGACGTCCTTTGCATAC 11.7 42.5 44.5 90.5 AGCGGTGATCTATTTCACAAAT 15.5 FNR TAAAGTGATCCAGATTACGGTA 14.2 40.5 94.5 deoCABD TTATTTGAACCAGATCGCATTA 17.1 CytR , DeoR 2.37 -- 3.22 2.37 -- 2-Deoxyribose-5-phosphate ( 21 ) aldolase AATTGTGATGTGTATCGAAGTG 11.9 41.5 90.5 4.38 1.72 # AAATGTGAATTGCCGCACACAT 17.2 FNR , ArcA , ( 57 ) glpACB 3.31 -- Sn-glycerol-3-phosphate dehydrogenase FlhD , GlpR AATGACGCATGAAATCACGTTT 3.3 40.5 92.5 2.17 # 4.26 2.59 # manXYZ PTS enzyme IIAB , mannase-specific GAATGTGACAAGGATATTTTAC 2.4 Mlc , NagC ( 63,36 ) ATTACGGATCTTCATCACATAA 7.6 AAATGTATGACAGATCACTATT 12.6 CytR 40.5 89.5 1.39 # 3.25 1.17 # nupC Permease of transport system ( 64 ) for 3 nucleosides TAGTGTGTGTCAGATCTCGTTT 12.6 40.5 92.5 4.45 1.01 # nupG Transport of nucleosides , permease protein AAATGTTATCCACATCACAATT 20.4 CytR , DeoR 3.25 -- ( 65 ) TTATTTGCCACAGGTAACAAAA 10.6 ATTTCATCTCTATGTCACATTT 7.4 CytR 42.5 93.5 41.5 40.5 1.15 # rpoH Sigma ( 32 ) factor ( 22 ) 2.18 1.75 -- ACTTGTGGATAAAATCACGGTC 2.2 AACTGTGAAACGAAACATATTT 12.9 CytR 2.40 # 3.96 1.19 # tsx Receptor of phage T6 and ( 66 ) colicin K 74.5 AAACGTGAACGCAATCGATTAC 5.8 a The centre of an experimentally verified CRP-binding site relative to corresponding transcription start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15520470" target="_blank">15520470</a>]<br></li>
+<li>The known regulators of th regulon are gaIR , galS and Crp , which encode Gal repressor ( GaIR ) , Gal isorepressor ( GalS ) and cyclic AMP receptor protein ( CRP ) , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Transcription of the gal regulon promoters is regulated in different ways by Gal repressor ( GalR ) and Gal isorepressor ( GalS ) and a global regulator , adenosine cyclic-3 ′ ,5 ′ - monophosphate ( cAMP ) receptor protein ( CRP ) , responding to two signals , D-galactose and cAMP respectively ( Weickert and Adhya , 1993a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>In vitro DNase I protection experiments indicated that among operators of the gal regulon , GalS binds most strongly to the external operator of the mgl operon , which encodes the high-afﬁnity b-methylgalactoside galactose-transport system , and with less afﬁnity to the operators controlling expression of the gal operon , which codes for enzymes of galactose-metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In vivo genetic experiments have begun to clarify the functions of GalR and GalS in controlling expression of genes comprising the gal regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>They would be the mgl operon involved in highafﬁnity galactose-transport as well as chemotaxis in response to galactose and GalS itself , which , unlike galR , controls its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In Escherichia coli , the genes responsible for D-galactose-metabolism ( the galactose operon [ galETK ] ) and for high ¬ affinity transport of methylgalactosides , glucose , and galactose ( the mglBAC operon ) are controlled by a repressor , GalR ( 5 , 17 , 18 , 24 ) , and an isorepressor , GalS ( 9 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Regulation of galactose-transport and utilization by GalS and GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1619663" target="_blank">1619663</a>]<br></li>
+<li>Mgl-BAC is involved in the galactose-transport , GalR and GalS negatively regulate MglBAC , and GalR and GalS are regulated by the global regulator CRP ( Semsey et al. 2007 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19919618" target="_blank">19919618</a>]<br></li>
+<li>The negative regulators , GaIR and GalS , discriminate between utilization of the high-affinity ( regulated by GalS ) and low-affinity ( regulated by GaIR ) transport systems , and modulate the expression of genes for galactose-metabolism in an overlapping fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>The expression of the enzymes involved with the Leloir pathway and galactose-transport activities is regulated by two highly homologous , galac-tose-sensitive repressors , GalR and GalS , encoded by the genes galR and galS , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">GalS binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>The entire DNA sequence presented in Figure 2 derives from fragments isolated directly or subcloned from pKGalS , and therefore represents the nucleotide sequence of the gLIK gene as it occurs in the Xgal8 transducing phage .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3158881" target="_blank">3158881</a>]<br></li>
+<li>AT basepairs at positions 8 in operators which preferentially bind GalS are indicated by white letters on a black background .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>Binding of GalR and GalS proteins in the region upstream from the E. coli chiP promoter Interestingly , the region occupied by ChbR in Salmonella corresponds to a GalR consensus site in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24593230" target="_blank">24593230</a>]<br></li>
+<li>GalR and GalS bind to the same operator sites in the cisregulatory regions of the P1galE , PmglB , PgalP and PgalS promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>To test this hypothesis , GalR and GalS were added to operator sequences such that binding reached similar degrees of saturation and were then titrated with D-galactose .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>The length of the sequences protected from DNase I cleavage was similar at all sites for both GalS and GalR , suggesting that they bound as dimers ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Red and green sequences indicate GalR/GalS and CRP binding sites respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Red boxes represent GalR/GalS operators ; green boxes represent CRP binding sites ; and arrows represent transcription start points .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>These sequences are recognized by at least three regulators , Gal repressor ( GaIR ) , Gal isorepressor ( GalS ) and cAMP receptor protein ( CRP ) , which modulate transcription from these promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Since GalS apparently binds gal or gal-like operator sequences ( 27 , 32 ) , we believe that isorepressor ( GalS ) represses galS transcription by binding to O ( or 01 or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by GalS</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Both promoters are strongly repressed by GaIR but weakly by GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>It is interesting to note that the three central operators , galOE2 , OE3 and OE4 , which have higher affinity for GalS than GalR , all have A/T at positions 8 of the operators ( Fig. 1B ) which is also the case for the mglB and galS operators ( Weickert and Adhya , 1993a , b ) which are preferentially regulated by GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>We have found that NagC , binds to a single , high-affinity site overlapping the promoter of galP ( galactose permease ) gene and that expression of galP is repressed by a combination of NagC , GalR and GalS .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19007420" target="_blank">19007420</a>]<br></li>
+<li>We assumed that mglBAC repression by GalS is incomplete because GalS expression requires some derepression of galS transcription , while GalS repressed its own promoter more efficiently than the PmglB promoter in our assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Expression of P-galactosidase from the galR promoter was not significantly affected by the loss of GalR and/or GalS ( Fig. 6 ) , nor was it inducible by D-fucose or D-galactose ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>GalS negatively regulates the promoter of its own gene , gatS ( Weickert and Adhya , 1993 ) and the mgl promoter ( Weickert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>GalS is believed to repress transcription , although not efficiently , in a manner analogous to GalR ( Weickert and Adhya , 1992a ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>Since GalS apparently binds gal or gal-like operator sequences ( 27 , 32 ) , we believe that isorepressor ( GalS ) represses galS transcription by binding to O ( or 01 or both .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Therefore , unlike GalR , GalS represses P1galE transcription only by contact inhibition , not by DNA looping .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>This indicates that GalS acts as a repressor of its own synthesis and that GalR represses galS in a noninducible manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>Both GalR and GalS are known to respond to inducers , but the presence of saturating concentrations of inducer does not allow induction of the gal operon to the maximal level ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>The relative afﬁnities of GalR and GalS for the operator sequences in gal , mgl , and galP were reﬂected in the effectiveness of the two repressors in inhibiting transcription of these genes in vitro ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Repression of PgalR by both GalR and GalS in our in vitro assays ( Fig. 4 ) suggests that the galR gene also belongs to the gal regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>Repression of transcription by GalR and GalS in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Nevertheless , like GalR , GalS selectively represses the downstream promoter , P1 , of the gal operon and slightly activates the upstream promoter , P2 , in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>Both GalR and GalS selectively repress the gal operon transcription from the P1 promoter , while transcription from P2 is activated slightly .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>GalR regulates transcription of the gal operon in the absence of GalS , and GalS regulates transcription of the mgl operon ( 32 ) and the galS gene in the absence of GaIR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>We measured the binding of GalR and GalS to the operators of the gal operon as well as those of the mgl operon and the galP gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>For instance , as internal levels of galactose begin to rise , genes under the control of GalS would be induced ﬁrst .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In Escherichia coli , the genes responsible for D-galactose metabolism ( the galactose operon [ galETK ] ) and for high ¬ affinity transport of methylgalactosides , glucose , and galactose ( the mglBAC operon ) are controlled by a repressor , GalR ( 5 , 17 , 18 , 24 ) , and an isorepressor , GalS ( 9 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8416900" target="_blank">8416900</a>]<br></li>
+<li>In the first point , such a case has been reported in the galETK ( M ) operon concerning galactose utilization , which is regulated by GalR and GalS [ Weickert and Adhya , 1993a b ] , but its molecular mechanism is clearly different from that of the GntII gene regulation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Because repression of P1galE by GalS is incomplete , we assume that GalR plays the major role in the D-galactose-dependent regulation of the galETKM operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>It seems that GalS can also reduce , but not eliminate , mglBAC expression at certain combinations of steady-state D-galactose and cAMP concentrations , which would allow GalS expression and binding to the mgl operator at the same time .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>If so , we would expect that GalS will be induced at lower galactose concentrations than GalR , since the mgl operon is the more efficient transport system at low galactose concentrations , ( ii ) The galS gene is autoregulated and its expression is CRP cAMP dependent , while gaIR expression appears to be constitutive -LCB- Weickert and Adhya , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>At these D-galactose concentrations the level of active GalS would depend on both the cAMP -- CRP concentration and the active GalS level itself , which represses galS transcription ( Weickert and Adhya , 1993b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17630975" target="_blank">17630975</a>]<br></li>
+<li>GalS was identiﬁed because in strains in which galR was deleted , the gal operon could be further induced by galactose , a phenomenon called ultrainduction ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>In the absence of galactose , GalS concentration is low , and may facilitate induction of the mgl operon at lower galactose concentrations simply by its own scarcity or by a greater sensitivity to galactose than GaIR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7934815" target="_blank">7934815</a>]<br></li>
+<li>The increased sensitivity of GalS to galactose relative to that of GalR permits the induction of the mgl operon coding for the high-afﬁnity galactose transporter at galactose concentrations lower than those that would signiﬁcantly induce the gal operon and the low-afﬁnity transporter , galactose permease , which our results indicate are largely under the control of GalR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>They would be the mgl operon involved in highafﬁnity galactose transport as well as chemotaxis in response to galactose and GalS itself , which , unlike galR , controls its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+<li>It is possible that GalS levels could rise sufﬁciently high for it to function as a repressor in its galactose-bound form of the mgl operon , the expression of which in the presence of high galactose concentrations and galactose permease might be superﬂuous .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8982002" target="_blank">8982002</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

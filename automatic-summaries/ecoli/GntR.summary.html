@@ -1,0 +1,929 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - GntR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">GntR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">GntR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Crp , GalS MglAB Crp , RbsR RbsAB Crp , GalS MglA Crp , GntR GntK Crp , EbgR EbgA Crp , LacI LacZ Crp , RhaS RhaBD Crp , AraC AraBD Crp , FucR FucK Crp , YiaJ LyxK Crp , FucR FucA Crp , YiaJ SgbE RcsB WcaB CpxR LpxA RcsB WcaB CpxR LpxD RcsB B2060 PhoB PhnCKLN RcsB B2060 PhoB PstB RcsB B2060 PhoB PhoH MhpR MhpF Fur EntA FecI , Fur FecI UidR , UxuR UidR Crp , FucR FucR Crp , Fur Fur Homologous pairs of transcription factors with autoregulation IdnR PurR AsnC Lrp Fnr Crp Homologous triplets of transcription factors with autoregulation TorR PhoB CpxR EmrR PdhR ExuR Eight homologous transcription factors with autoregulation DsdC GcvA CynR Hcar IlvY LysR OxyR CysB Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12582243" target="_blank">12582243</a>]<br></li>
+<li>Subdivision of the Helix-Turn-Helix GntR Family of Bacterial Regulators in the FadR , HutC , MocR , and YtrA Subfamilies * Received for publication , November 15 , 2001 , and in revised form , December 20 , 2001 Published , JBC Papers in Press , December 27 , 2001 , DOI 10.1074 / jbc.M110968200 Sébastien Rigali ‡ , Adeline Derouaux , Fabrizio Giannotta , and Jean Dusart From the Centre d'Inge ́nierie des Protéines , Université de Liège , Institut de Chimie B6 , Sart-Tilman , B-4000 , Liège , Belgium Haydon and Guest ( Haydon , D. J , and Guest , J. R. ( 1991 ) FEMS Microbiol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_3">
+Rigali , S. , Derouaux , A. , Giannotta , F. , and Dusart , J. ( 2002 ) Subdivision of the helix-turn-helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></label>
+<input id="act_similarity_3", type="checkbox">
+<div class="ACT_similar">
+<li>Rigali , S. , Derouaux , A. , Giannotta , F. , and Dusart , J. ( 2002 ) Subdivision of the helix -- turn -- helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12890032" target="_blank">12890032</a>]<br></li></div>
+<li>mparative Genomic Analysis of the Hexuronate Metabolism G and Their Regulation in Gammaproteobacteria † Co enes Inna A. Suvorova ,1 Maria N. Tutukina ,2 Dmitry A. Ravcheev ,1,3 Dmitry A. Rodionov ,1,3 Olga N. Ozoline ,2 * and Mikhail S. Gelfand1 ,4 * Institute for Information Transmission Problems RAS ( The Kharkevich Institute ) , Moscow 127994 , Russia1 ; Institute of Cell Biophysics RAS , Pushchino , Moscow Region 142290 , Russia2 ; Sanford-Burnham Medical Research Institute , La Jolla , California 920373 ; and Faculty of Bioengineering and Bioinformatics , Moscow State University , Moscow 119991 , Russia4 Received 25 February 2011/Accepted 13 May 2011 The hexuronate metabolism in Escherichia coli is regulated by two related transcription factors from the FadR subfamily of the GntR family , UxuR and ExuR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Article pubs.acs.org/biochemistry McbR/YncC : Implications for the Mechanism of Ligand and DNA Binding by a Bacterial GntR Transcriptional Regulator Involved in Bioﬁlm Formation Dana M. Lord , † , ‡ Ayse Uzgoren Baran , § , ⊥ Valerie W. C. Soo , ∥ Thomas K. Wood , ∥ Wolfgang Peti , § and Rebecca Page * , † † Department of Molecular Biology , Cell Biology and Biochemistry , ‡ Graduate Program in Molecular Pharmacology and Physiology , and § Department of Molecular Pharmacology , Physiology and Biotechnology & Chemistry , Brown University , Providence , Rhode Island 02903 , United States ∥ Departments of Chemical Engineering & Biochemistry and Molecular Biology , Pennsylvania State University , University Park , Pennsylvania 16802 , United States * S Supporting Information ABSTRACT : MqsR-controlled colanic acid and bioﬁlm regulator ( McbR , also known as YncC ) is the protein product of a highly induced gene in early Escherichia coli bioﬁlm development and has been regarded as an attractive target for blocking bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>Since Eda is required for growth on hexonates and hexuronates , its induction by these sugar acids and inclusion of eda in both the GntR and KdgR regulons are easily understood .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>This dual control facilitates the induction of Eda only for growth on hexuronates , which is mediated by KdgR and does not require Edd , which is only necessary for converting 6-phosphoglu-conate to KDPG ; coordinate induction of Edd and Eda for growth on hexonates is controlled by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_9">
+Fineran , P. C. , Everson , L. , Slater , H. , and Salmond , G. P. ( 2005 ) A GntR family transcriptional-regulator ( PigT ) controls gluconate-mediated repression and defines a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22474332" target="_blank">22474332</a>]<br></label>
+<input id="act_similarity_9", type="checkbox">
+<div class="ACT_similar">
+<li>[ 84 ] P.C. Fineran , L. Everson , H. Slater , G.P. Salmond , A GntR family transcriptional-regulator ( PigT ) controls gluconate-mediated repression and deﬁnes a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia , Microbiology 151 ( 2005 ) 3833 -- 3845 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22985599" target="_blank">22985599</a>]<br></li></div>
+<li>Our working model for the gluconatemetabolismin E. coli considers that the involvement of either system depends firstly on the presence of both , the activity of the gntT gene product and regulatory products ( GntR , GntS ) with significant differences in their affinities for a common effector-molecule .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9151423" target="_blank">9151423</a>]<br></li>
+<li>Moreover , the proximal gene encodes a transcriptional-regulator ( GntR ) which represses gntRKPZ transcription in the absence of giuconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Key words : FarR ; P30 ; GntR family ; Fatty acid ; Fatty acyl-CoA ; Transcription regulation ; Escherichia coli 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7805834" target="_blank">7805834</a>]<br></li>
+<li>Transcription of the Escherichia coli genes for all three components of the PDH complex in the pdhR-aceEF-lpdA operon is repressed by the pyruvate-sensing PdhR , a GntR family transcription regulator , and derepressed by pyruvate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17513468" target="_blank">17513468</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Apr. 1998 , p. 1777 -- / 98 / $ 04.0010 Copyright © 1998 , American Society for Microbiology Positive and Negative Transcriptional Regulation of the Escherichia coli Gluconate Regulon Gene gntT by GntR and the Cyclic AMP ( cAMP ) - cAMP Receptor Protein Complex NORBERT PEEKHAUS * AND T. CONWAY Department of Microbiology , The Ohio State University , Columbus , Ohio 43210-1292 Received 1 December 1997/Accepted 26 January 1998 The gntT gene of Escherichia coli is speciﬁcally induced by gluconate and repressed via catabolite repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_16">
+Positive and negative transcriptional regulation of the Escher-ichia coli regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11441462" target="_blank">11441462</a>]<br></label>
+<input id="act_similarity_16", type="checkbox">
+<div class="ACT_similar">
+<li>Peekhaus , N. , and Conway , T. ( 1998 ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14731280" target="_blank">14731280</a>]<br></li>
+<li>Peekhaus , N. , and Conway , T. ( 1998b ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) ± cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>PEEKHAUS N , CONWAY T ( 1998 ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+<li>Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752906" target="_blank">22752906</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21840983" target="_blank">21840983</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11430650" target="_blank">11430650</a>]<br></li></div>
+<li>The CAT activities from the pGNTR-CAT11 and pGNTR-CAT27 were not repressed ( Table 4 ) , indicating that GntR is not involved in the expressional regulation of its own gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>However , it is possible that the closely related YjgS protein , which is 46 % identical to GntR , is involved in the positive regulation of gntT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>These results conﬁrm that regulation of the gntT gene by GntR is similar to other negatively regulated systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>To prove that GntR binds to the postulated operator sequences , we constructed mutants carrying base pair substitutions and insertions which were predicted to affect the binding of GntR to these sites ( Fig. 7 and unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Proof that GntR binds to the postulated operator sequences was obtained by using mutants which were predicted to affect the binding of GntR to these sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>, 1991 ) and the 11-meric GntR protein ( Miwa and Fujita , 1988 ) are apparently dimeric when bound to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>This , in turn , inhibits DNA binding .7 This limited understanding is due to the dearth of structural data available for the GntR superfamily , especially those of the FCD family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>FadR is predicted to be a helix -- turn -- helix DNA binding protein of the GntR family ( Haydon and Guest , 1991 ) , and thus probably binds DNA in a conventional manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>As was mentioned earlier , the typical distance between GT and AC in most FADR-subfamily TF-binding sites is 3 nt ( DgoR , ExuR , FadR , GlcC , LldR , PdhR etc ) , although in several orthologous groups it is 2 nt ( e.g. , GntR , HpxS , HypR , MdcY , PrpR , UxuR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>The complicated case of cross-talking UxuR and ExuR factors is preserved only in Y. pestis , but the latter has lost the GntR regulation of the ED pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>It includes all known and predicted members of the GntR , UxuR/ExuR , KdgR , UidR and IdnR regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The last column ( * ) represents experimental data about regulation : S , known binding sites ; R , known regulation , binding site not known.Regulons : a. GntR ; b. IdnR ; c. UxuR/ExuR ; d. ExuR ; e. UidR ; f. KdgR ; g. CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>DISCUSSION NanR belongs to the FadR/GntR family of transcriptional-regulators that includes activators , repressors , and molecules which both activate and repress a wide range of bacterial op-erons ( 17 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>Amino acid residues D74 and R75 have the same relative positions in GntR as do residues H65 and G66 in FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>This family includes GntR , HutC , KorA , and five regulatory proteins of E. coli : PdhR , FadR , LctR , PhnF , and MngR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645248" target="_blank">14645248</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates , such as pyruvate ( PdhR ) , gluconate ( GntR ) , glycolate ( GlcC ) , and L-lactate ( LldR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Lanes A and F , molecular weight standards ; lanes B and E , cell extracts of strains M15 ( pNP-41 ) and M15 ( pNP-52 ) after IPTG induction ; lanes C and D , puriﬁed GntR and CRP , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Alternatively , the intermolecular interaction between GntR proteins bound at HRI and HRIII may form a DNA loop , as proposed in the negative regulation of the araC and araBAD operon [ Lobell and Schleif , 1990 ] , which may hamper the interaction of RNA polymerase molecules with promoter sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Repression and activation of the gntV and idnD expression by GntR derived from a multi-copy plasmid , pGNTR18 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>An increased level of GntR , as in the introduction of pGNTR18 , causes GntR to occupy all 3 elements of HRI -- HRIII to strongly repress the expression of gntV and idnDO-gntWH operon ( fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The activities from pGNTK-CAT1 and pGNTKU-CAT7 were reduced nine and 44-fold , respectively , by GntR in the pre-sence of cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>On the other hand , the activity from pGNTRKp-CAT25 was reduced by GntR under non-induced conditions , but the activity from the control plasmid , pHPTp-CAT26 , was not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>The activity from pGNTK-LAC was strongly reduced by GntR and moderately reduced by GntH derived from the plasmid pGNTR1 and pGNTH , respectively , in the absence of gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>- Galactosidase activities from pGNTK-LACMR1 and pGNTK-LACMR12 were moderately and were slightly reduced by cloned GntR and GntH , respectively , under the tested conditions without gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>On the other hand , the activity from pGNTK-LACMR2 was reduced by cloned GntR and moderately reduced by cloned GntH under the conditions without gluconate as in pGNTKLAC , but its derepression ratio by gluconate was higher than that in pGNTK-LAC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Such a reduction by GntR and an increase by gluconate were also observed in the primer extension experiments in the cases of pGNTTLAC4 and - LAC2 ( Fig. 4A and B , and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>However , no such reduction of bGal activity by GntR was observed in pGNTT-LAC5 bearing P2 and P3 ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>Primer extension analysis showed a reduction in density of both bands for P2 and P3 in the presence of GntR in pGNTT-LAC4 ( Fig. 4A ) , but the corresponding bands at the same position in pGNTT-LAC were not reduced by the presence of GntR , and no other band in addition to those for P2 and P3 was detected in pGNTT-LAC5 under the induced and non-induced conditions ( Fig. 4C and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>Besides the free DNA ( F ) , three DNA bands with reduced mobility , FC , FCR1 , and FCR2 , corresponding to DNA bound to one CRP , one CRP and one GntR , and one CRP and two GntR molecules , respectively , were formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Two and three shifted bands were observed in the presence of GntR in the gntT and gntK DNA fragments , respectively ( Fig. 7A , lanes 3 and 4 , and Fig. 7B , lanes 2 to 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The intensities of the three bands in pGNTT-LAC4 were reduced by the presence of pGNTR2 bearing the gntR gene ( Fig. 4A ) , suggesting that the promoters are negatively regulated by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>The similarity of GntR to other repressor proteins , together with previous genetic studies indicating that gluconate utilization by the GntI system of E. coli is negatively regulated by the gntR product in response to induction by gluconate , argues strongly in favor of the conclusion that GntR fulﬁlls a regulatory role similar to that of LacI for the lac operon ( 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>These operons and that of the ENTNER DOUDOROFF pathway ( edd-eda ) are negatively controlled by GntR whose encoding gene is located immediately upstream of gntK ( DE REKARTE et al. 1994 , TONG et al. 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>GntR negatively controls the GntI genes , as well as edd and eda of the EntnerDoudoroff pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>Expression of the GntR regulon , that is , GntI together with the edd-eda operon , is negatively controlled by the gntR * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>As stated earlier , the GntR transcription factors are typically regulated by ligands that are metabolic substrates/products/cofactors of the genes that they regulate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>Thus , the GntR regulon in Y. pestis seems to consist only of gntK and gntU .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Read-through transcription from the gntR promoter into gntK was decreased in the presence of GntR , although GntR did not repress its own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>It appeared that the transcription from the gntK promoter is negatively regulated by GntR as shown in Figure 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Abreviations : 5KG , 5-keto-D-gluconate ; GntT and GntU , GntI permeases ; GntK and GntV , GntI and GntII gluconate kinases respectively ; IdnT idonate and gluconate permeases ; IdnD , idonate dehydrogenase ; IdnO , 5KG reductase ; IdnR , idnR regulon regulator ; GntR , gntR regulon regulator ; Edd , Entner-Doudoroff dehydratase ; Eda , Entner-Doudoroff aldolase [ GBTB ( Istúriz , et al. , 1986 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+<li>Mutational analysis suggested that GntH as well as GntR bind to 2 partially overlapping sequences , 5 ) - AATGTTACCGATAACAGT-3 ) and 5 ) - ACAGTTACC-CGTAACATT-3 ) , overlapping with or close to the -- 10 sequence of the gntK promoter [ Tsunedomi et al. , 2003 ] , and that GntR binds to 2 separately located sequences , 5 ) - GATGTTACCCGTATCATT-3 ) and 5 ) - GACGTTA-CCCATAACAAA-3 ) , occurring upstream and downstream of the mRNA initiation site of the gntT gene [ Peekhaus and Conway , 1998 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>CRP regulation There are experimental data showing that the expression of gntKU and gntT from the GntR regulon and uxuAB from the UxuR/ExuR regulon is under catabolite repression by CRP ( Izu et al. , 1997 ; Peekhaus and Conway , 1998b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The operon consisting of the gntR , gntK , gntP , and gntZ genes , is under negative regulation by GntR and catabolite repression via the CcpA and Hpr ( ser-P ) complex ( Fujita & Fujita , 1987 ; Miwa et al. , 1994 ; Hueck & Hillen , 1995 ; Saier , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Gluconate is an inducer for releasing the repression of GntI genes by GntR [ Izu et al. , 1997b ; Peekhaus and Conway , 1998 ; Tsunedomi et al. , 2003 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The negative regulation by GntR was not observed in the presence of gluconate presumably because the affinity of GntR for DNA molecules was decreased by forming a complex with gluconate as in the case of its regulation for GntI genes [ Peekhaus and Conway , 1998 ; Tsunedomi et al. , 2003 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The dual regulation by GntR and GntH in addition to that by cAMP-CRP is proposed to be important for expressional control of the GntII genes and also for switching of the GntI to GntII systems along with cell growth as demonstrated [ Tsunedomi et al. , 2003 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Research Article J Mol Microbiol Biotechnol 2003 ; 6:41 -- 56 DOI : 10.1159 / 000073407 Dual Control by Regulators , GntH and GntR , of the GntII Genes for Gluconate Metabolism in Escherichia coli Ryouichi Tsunedomi Hanae Izu Takuya Kawai Mamoru Yamada Key Words Gluconate metabolism W Gntll W gntR W gntH W Divergent promoter W Expressional regulation Abstract Department of Biological Chemistry , Faculty of Agriculture , Yamaguchi University , Yamaguchi , Japan Escherichia coli possesses two systems , GntI and GntII , for gluconate uptake and catabolism , whose genes are regulated by GntR as a repressor and GntH as an activator , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Similarly , elevation in expression by GntR of the GntII genes was observed in gntH-disrupted strains , YU573 and YU574 , even though the ratio of the elevation was low compared to that in YU508 and YU509 cells bearing the intact gntH gene ( table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>These observations led us to conclude that GntH might bind to GntR elements and might repress the GntI genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Even in the situation when GntI genes become derepressed following detachment of GntR , GntR molecules bound to the 3 sites HRI , HRII and HRIII would be stable due to the conformation probably with low affinity for gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>As the action of GntI proceeds , gluconate is accumulated to some level , which promotes the detachment of GntR from HRI and HRIII and then the GntII genes become induced by GntR bound to HRII followed by GntH as described above .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>This partial increase may be due to the intracellular conversion of 5-ketogluconate to gluconate , which induces expression of the GntI genes by interacting with GntR and releasing it from the operator ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>In the model , gluconate is ﬁrst imported by gluconate permease , GntP , as demonstrated ( 15 ) , and interacts with the GntR molecule to induce the GntI system genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The production of GntH may repress the GntI genes by forming a complex with 5-ketogluconate or idonate and further induce GntII genes , whereas GntR molecules are being released from the operators in the state of interacting with gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>However , the GntI genes were not induced by gluconate in the presence of enhanced amounts of GntH , whereas repression by GntR was relieved by gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>In contrast to the case for GntR , the GntI genes in the presence of cloned GntH were negligibly induced by gluconate ( Table 3 ; Fig. 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>At the low level of gluconate , GntR participates in the repression of all GntI and GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>We postulate that GntH is responsible for repression of the GntI genes when GntR was released from the operator by interaction with gluconate , and for induction of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>This stimulates us to examine the possibility that GntR is also involved in the expressional regulation of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>In the present study , we have shown not only the positive regulation by GntH , but also a negative and positive regulation by GntR , a repressor for the GntI system , of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Positive Effect of GntR in the Expression of the GntII Genes In addition to the negative effect of GntR , the evidence suggesting the positive regulation by GntR of the GntII genes was obtained by expression analysis in minimum medium containing gluconate ( table 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The results presented allow us to speculate that GntR initiates expression of the GntII genes , followed by their large induction by GntH when cells were grown in gluconate minimum medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Therefore , it is suggested that GntR acts as an activator for the GntII genes to some extent , especially under growth conditions in minimum medium containing gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>These results suggest that GntR negatively regulates the expression of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>A similar low-level expression in the gntR-disrupted background was seen in LB medium supplemented with 5-ketogluconate , suggesting that GntR is also partially required for the induction of the GntII genes under this condition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Additionally , GntR may also activate the expression of GntII genes when gluco-nate is present in minimum medium ( table 2 and fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Under the condition where GntR molecules are limited and the intracellular cAMP level is low , GntR binds only to HRII by the highest affinity because of the mostly conserved sequence among the 3 elements ( table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>HRII may be a target site for both GntR and GntH , and its mutation may decrease the affinity for GntR and increase the affinity for GntH , with a resulting increase in activity of the lacZ fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>It is possible that GntR and/or GntH binds as a tetramer to the two partially overlapping elements .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>GntH was tested up to 1.7 M , about twice as high as the highest concentration of GntR in Fig. 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The position of the putative IdnR binding site is interesting because this location is atypical of negative control , despite the fact that IdnR and GntR belong to the GalR-LacI family of negative regulators ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>This regulation and the control by GntH were examined by using single-copy lacZ operon fusions and by RT-PCR , suggesting positive and negative regulation by GntR and positive regulation by GntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Similar negative effects by GntR were observed under the conditions in minimum medium .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>In summary , these results indicate that transcription of eda from the P1 promoter is under negative control by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>We obtained evidence that P1 is under negative control of GntR , P2 is under negative control of KdgR , and P4 is under negative control of PhoB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>The gntR gene is constitutively expressed , whereas the gntKU genes are positively regulated by the cAMP -- CRP complex and negatively by GntR , and gntU expression is further repressed by attenuation , which occurs after gntK ( Izu et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>CAT fusion analysis revealed that the operon has a promoter for gntR and another for gntKU , and that the gntR gene is constitutively expressed , while that of gntKU is regulated positively by the cAMP-CRP complex and negatively by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>The PK promoter is regulated positively by cAMP-CRP complex and negatively by GntR , and the PR promoter is constitutively expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>These genes for the GntI system have been extensively characterized and shown to be regulated negatively by GntR and positively by the cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) complex [ Tong et al. , 1996 ; Izu et al. , 1997a , b ; Porco et al. , 1997 ; Peekhaus and Conway , 1998 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Both gntT and gntKU are regulated positively by the cyclic AMP ( cAMP ) - cAMP receptor protein ( CRP ) complex and negatively by GntR ; one GntR-binding element for gntK has been proposed ( 12 , 34 ) , and two GntR-binding elements for gntT were experimentally deﬁned ( 26 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Overexpression and puriﬁcation of GntR and CRP , demonstrated by SDS-PAGE of the puriﬁed His-tagged proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Isolation of GntR and CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Puriﬁcation of GntR and CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Experiments with primer extension and operon fusions suggested that the major promoter , P1 , of the gene is repressed by GntR and the repression is relieved by the addition of gluconate , and that cAMP-CRP functions as a positive regulator for the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>The binding of the cAMP-CRP complex is essential for full induction of gntT , and this binding is neither cooperative nor inhibited by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The cAMP-CRP-depen-dent shift was inhibited by the addition of GntR , and the inhibition was prevented by the presence of gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The gntT promoter fragment was incubated with different amounts of CRP and GntR in the presence of 5 mM cAMP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The addition of cAMP increased the intensities of all three bands in the presence and absence of GntR , suggesting that cAMP-CRP acts as a positive regulator of gntT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>When the gntT promoter fragment was incubated with both GntR and CRP-cAMP , a ternary complex consisting of one GntR molecule and one cAMP-CRP complex bound or two GntR molecules and one cAMP-CRP complex bound was formed ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Moreover , the positive controls by GntH and GntR may be dependent on the cAMP-CRP complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Although GntR , GntH and cAMP-CRP complex bind as a dimer to each element , they are depicted as a single molecule for simplification .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Binding of GntR molecules to HRI or HRIII sequences could prevent the cAMP-CRP complex from interacting with cCI or cCII sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The repression by GntR may be established as the result of inhibiting the access of the cAMP-CRP complex to cCI and cCII sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>At the beginning of the addition of gluconate , a relatively weakly bound GntR at HRI or HRIII may be released as a complex with gluconate , and it is replaced by the cAMP-CRP complex as cAMP is accumulated , which in turn interacts with GntR bound at HRII ( the GntR may still be free from gluconate ) and activates transcriptions to some extent from the gntV and idnD promoters to produce some amount of GntII proteins including IdnD , IdnO and GntH proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>This and the finding that expression of gntV-lacZ fusion was relatively high even in the absence of cAMP ( table 4 ) may suggest that binding of GntR to all 3 sites slightly activates gntV expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>A In the absence of gluco-nate , GntR molecules bind to all of 3 binding sites ( HRI , HRII and HRIII ) and obstruct binding of cAMP-CRP complexes to its binding sites ( cCI and cCII ) , resulting in repression of the gntV and idnD expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The identities to GntR are expressed as percentages , and identical residues to GntR are indicated by asterisks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The activation by GntR was largely enhanced by the presence of GntH , which is assumed to be due to production of coactivator for GntH by in vivo conversion of gluco-nate to 5-ketogluconate or idonate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The mutation also caused reduction of the activity in gluconate medium in the presence of pACYC177 , which may be due to reduction of GntR-directed activation by a decrease in the affinity for GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The activity in the presence of GntR in each strain is expressed as a percentage of that in the absence of GntR and shown in brackets .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>CRP was found to-bind , under in vitro conditions in the presence of cAMP , to the binding site at 271 ( Fig. 6B and 8 ) but not to the putative site at 213 , which was postulated to be a hybrid of GntR and CRP binding sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Transcription from the PR promoter seems to be terminated by the presence of GntR around the GntR-binding site overlapping the PK promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>In the presence of GntR , two GntRoperator complexes ( R1 and R2 ) were formed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Gluconate is a true inducer of GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Gluconate kinase activity from pGNTKU-CAT7 similarly changed in the presence of GntR under the same conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>P1 drives cotranscription of edd and eda and is induced by growth on gluconate ( 7 ) ; P1 appears to be controlled by GntR ( 20 , 21 , 24 ) , although binding of GntR to the P1 regulatory region was not established prior to this work .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>GntR regulates eda by binding to GntR binding sites in the P1 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>Furthermore , when the operators were destroyed by digestion with MaeIII , no binding of GntR was detected .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>It is interesting to speculate that this is the element responsible for binding GntR and repression of gntKU expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>These results suggest that both GntR-binding sequences , R1 and R2 , are responsible for the repression of gntKU expression , although the afﬁnity of GntR or GntH for R1 seems to be different from that for R2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Total repression of gntT was suggested to be achieved by DNA looping through interaction between the two GntR molecules ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>In summary , the results clearly demonstrate that both operators are required for repression of gntT by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In summary , these results demonstrate that GntR binds to two operator sites at gntT and that these protein-DNA interactions are highly speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Binding of GntR to the gntT operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In the absence of an inducer , the GntR repressor binds to the two operator sites , resulting in repression of the gntT gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In E. coli , GntR binds to two operator sites to negatively regulate the transcription of the gntT gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>To test the binding of GntR to the operators of gntT and the effects of potential inducers on such binding , we studied GntR-operator complex formation with the puriﬁed GntR protein by gel electrophoretic mobility assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Gel shift analysis of the binding of GntR to the gntT and gntKU operators and effects of mutations in the GntR-binding elements of gntKU on its binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>During the course of this work , it became apparent that GntR might affect gntT expression by a mechanism that is independent of negative control by operator binding as well as activation by cAMP-CRP .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In this study , we show for the ﬁrst time that the operator sequence is indeed the binding site for the negative regulator GntR and that gluconate is the true inducer of gntT , by inactivation of GntR binding to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>GntR thus seems to function as a negative regulator of gntT by binding to the putative sequence ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>In contrast , the gntH-disrupted strain , YU564 , did not show a decrease until early stationary phase , and the subsequent decrease in expression was assumed to be caused by GntR owing to the low level of intracellular gluconate during that period .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Since read-through transcription from the gntR promoter was signi ® cant under de-repressed conditions ( no gntR on the plasmid ) , it would be signi ® cant for the expression of gntK or gntU in the presence of gluconate or its derivative , which may induce the removal of GntR from the binding site but only when the intracellular cAMP concentration is low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>One possibility is that GntR is essential for the expression of an activator , which acts positively on the transcription of gntT in the presence of gluconate , and that this activation is lost in the gntR mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Interestingly , when gntR de-letion strains are grown in the presence of gluconate , there is a twofold decrease in gntT expression which is independent of catabolite repression and binding of GntR to the operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Thus , it appears that the twofold decrease in expression of the gntT : : lacZ fusion in the gntR mutant when grown in the presence of gluconate is independent of catabolite repression , as well as GntR binding to the operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The increased expression seems to result from activation by GntR rather than release from its negative regulation , since all these strains tested were cultured in the presence of gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>In the wild-type strain , there was no induction of b-galactosidase activity in the absence of gluconate , regardless of the presence of cAMP , which again indicates that the repression by GntR is cAMP independent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In the absence of GntR on the plasmid , 600 and 1900 nt RNA bands were detected in the presence of cAMP or cAMP an gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Effects of cAMP on gntT expression bGal activities from pGNTT-LAC2 and - LAC4 in the Dcya background were increased three - and fourfold , respectively , by the addition of cAMP in the presence of GntR and gluconate ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>In the absence of GntR and gluconate , bGal activities from pGNTTLAC2 and - LAC4 in the absence of cAMP were about 70 % of those in the presence of cAMP , indicating that gntT expression is not highly dependent on cAMP in the absence of GntR , whereas gntKU expression is completely dependent on cAMP ( Izu et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>Thus , gluconate acts both as an inducer , releasing the repressor GntR from the operator site , and as a repressor , lowering the CR and cAMP pools .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>As shown in Fig. 5 , gluconate reduced the formation of the binary complex in proportion to its concentration , probably by reducing the binding afﬁnity of GntR to the operator sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The inducer , gluconate ( or 6-phos-phogluconate ) , acts to eliminate binding by GntR , probably by reducing the DNA binding afﬁnity of GntR to the operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>To determine if the gluconate repressor protein GntR regulates Eda induction , Eda synthesis by the gntR mutant strain E. coli HT216 was monitored .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>This is in contrast to GntR encoded by pGNTR18 , with which a significant induction of the fusions was detected with gluconate or 5-ketogluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>This is because the repression pattern by GntH of the wild-type and mutant fusions was similar to that by GntR when gluconate was absent .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Alternatively , it could be that D-gluconate is itself the inducer of the idn genes but that IdnR requires a higher concentration of D-gluconate for induction than does GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>P1 controls eda induction on gluconate and is regulated by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>We show that P1 is induced by growth on gluconate , which is mediated by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">GntR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In McbR , the wHTH domains also interact , extending the dimerization interface beyond that typically observed in the FCD subfamily of GntR regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>In contrast , the GntR transcription regulators lack the conserved catalytic residues of the chorismate lyases , and have so far been detected only in bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>In contrast to the chorismate lyases , the UTRA-domains associated with the GntR wHTH domains are present only in bacteria , and predominantly in those with a complex metabolism .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>As shown in Fig. 3 , the HTH of GntH has quite high similarity to that of GntR compared with those of other members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Also in panel a , the underlined residue indicates mutations that affect gluconate binding ability in GntR ( 60 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>PROTEIN STRUCTURE REPORT R Results and Discussion Our goal was to functionally and structurally characterize the input domain of the HutC subfamily of GntR regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Amino acid residues D74 and R75 have the same relative positions in GntR as do residues H65 and G66 in FadR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>Taken together , these ® ndings for FadR and GntR indicate that amino acids required for DNA-binding are not limited to the 20 amino acids that make up the putative H ± T ± H domain but include amino acid residues more amino terminal ( e.g. , A9 in FadR ) and more C-terminal ( e.g. , residues D74 and R75 in GntR and residues H65 and G66 in FadR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>Further , we identify some of the NanR amino acid residues and operator nucleotides critical for NanR-operator interactions ﬁrmly placing NanR in the GntR superfamily ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>GntR is predicted to consist of 331 amino acid residues with a molecular mass of 36,422 Da .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Notably , the corresponding six residues are completely conserved between GntH and GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>This could bias the distribution of preferred residues so as to exclude some members of the GntR fanfily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2060763" target="_blank">2060763</a>]<br></li>
+<li>AraR is a hybrid protein that is able to bind operator sites ( AaACTTGT/A/T / ACAAGTaT ) ( 50 ) that presents the typical GntR signature , and its C-terminal domain binds to a carbohydrate effector molecule ( L-arabinose ) as do most of the members of the LacI/GalR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>YncC belongs to the GntR subfamily of FadR ( pfam007729 ) , which binds-as-a-dimer-to-its-operator site via its winged helix domains ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>When this result is considered together with the genetic and biochemical characterization of the repressor , it appears that full induction of nan occurs when the inducer ( Neu5Ac ) destabilizes NanR oligomers upon binding to the C-terminal domain , which is the common domain for regulation of all characterized members of the GntR superfamily ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The GntR and FadR binding sites within the respective promoters contain a region of dyad symmetry , which is located very close to the transcription initiation sites ( 71 -- 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9748275" target="_blank">9748275</a>]<br></li>
+<li>The DNA-binding site of GntR has a palindromic core motif ( TTGTATACAA ) which closely resembles that of HutC ( TTGTALAMc ) , a related regulator in Pseudomonas putida ( Hu etai , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Our comparative study first focused on the C-terminal E-b/O domains and next on DNA-binding domains and palindromic operator sequences , has classified the GntR members into four subfamilies that we called FadR , HutC , MocR , and YtrA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>The N-terminal region contains a conserved helix-turn-helix DNA-binding domain shared by several bacterial transcription factors , including protein A ( a hypothetical transcription factor ) , P30 ( a 30-kDa hypothetical transcription factor ) , FadR ( a regulator for fatty acid metabolism ) , and PhnF ( a hypothetical transcription factor ) of E. coli ; HutC ( histidine utilization repressor ) of K aerogenes and P. putida ; and GntR ( a repressor protein ) of B. subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407843" target="_blank">8407843</a>]<br></li>
+<li>The GntR protein binds to a sequence that overlaps the - 1 0 and +1 sites in the gntR promoter , and it also shares a significant degree of W-terminal amino acid sequence similarity with PdhR , particularly in the predicted helix-tum-helix motif of the putative DNA-binding domain ( Haydon and Guest , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>The PaaX repressor is a 316-amino acid protein with a stretch of 25 amino acids ( residues 39 -- 64 ) that shares signiﬁcant similarity with the helix-turn-helix motif for DNA-recognition and binding of transcriptional regulators from the GntR-family such as FadR ( DiRusso et al. , 1992 ) and GntR ( Haydon and Guest , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24983528" target="_blank">24983528</a>]<br></li>
+<li>The PaaX protein ( 316-amino acid length ) contains a stretch of 25 residues at amino acids 39 -- 64 that shares similarity with the helix-turn-helix motif predicted to be important for DNA rec-ognition and binding in other transcriptional repressors such as GntR ( 71 ) and FadR ( 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9748275" target="_blank">9748275</a>]<br></li>
+<li>The PaaX repressor is a 316-amino acid protein that shows 41.4 % amino acid sequence identity with its ortholog PhaN ( recently renamed as PaaN ( 4 ) ) from the PA degradation pathway of P. putida U ( 1 ) and contains a stretch of 25 residues at amino acids 39 -- 64 that shares similarity with the helix-turn-helix motif for DNA-recognition and binding of transcriptional repressors from the GntR-family such as FadR ( 5 ) and GntR ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>Variation in form and function : the helix-turn-helix regulators of the GntR superfamily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The helix-turn-helix residues of the two regulators GntR and GntH exhibit extensive homologies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>An analysis of the C-terminal domain of DcuR using the MOTIF program ( http://www.genome.ad.jp/SIT/SIT.html ) revealed a probable DNA-binding helix-turn-helix motif ( res-idues 177 to 218 ) resembling that of the GntR and DeoR families of bacterial gene regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>GntR belongs to the GalR-LacI family of regulators and possesses an N-terminal helix-turn-helix DNA-binding motif , suggesting that GntR ful-ﬁlls a regulatory role similar to that of LacI for the lac operon ( 45 , 46 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>A comparison of the GntR primar structure with those of the repressors in the CytR family revealed that GntR also has a helix-turn-helix motif at its N terminus , which may be responsible for DNA-binding and it may also have domains related to dimerization and inducer-binding at its C terminus ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>By comparison with characterized GntR regulators , the C-PhnF domain is expected to bind an effector molecule and transfer this signal to the DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>The remaining 20 mutants were not investigated further , because the results described below are consistent with defects in the N-terminal DNA-recognition domain common to the GntR superfamily .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The C-terminal domain of NanR has predicted secondary structure most similar to FadR , placing it in the FadR subfamily of the GntR superfamily ( 6 , 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>The predicted secondary structure of the NanR DNA-binding domain ( Fig. 5B ) provides scant evidence for a structure , while the three N-terminal - helices typical of GntR superfamily regulators ( 17 ) are clearly present .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Detailed bioinformatics studies have led to the deﬁnition of at least 7 families ( AraR , DevA , FCD , HutC , MocR , PlmA , and YtrA ) , which are classiﬁed by the effector-binding domain topology and secondary structure ( Figure 1A ) .7 The majority of GntR regulators belong to the FadR C-terminal domain family ( FCD , Pfam PF07729 ; Figure 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>The secondary structure elements and topology of the C-terminal domain places McbR in the FadR C-terminal domain ( FCD ) family of GntR transcriptional regulators ( Figure 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>On the basis of its predicted structural similarity with the FadR N terminus ( 6 , 7 ) and overall similarity to the GntR superfamily ( 6 , 17 ) , the G65L mutant is expected to disrupt the tertiary structure of the predicted recognition helix ( 3 ) shown in Fig. 5B .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>This helix was shown to be within contact distance of the DNA-binding site in the FadR-DNA cocrystal ( 33 ) , as well as being predicted to be the recognition domain for the entire GntR superfamily ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Escherichia coli FadR and Bacillus subtitlis GntR have been placed together in a helix-turn-helix DNA-binding domain subfamily ( Prosites PS00043 [ 17 ] and ProDom 13918 [ 124 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>We have recently sequenced a 4.5 kbp region of the Salmonella chromosome between y s M and crr and have identified an ORF which encodes a protein that possesses an identifiab!e N-terminal helix-turn-helix motif hom-ologous to those of members of the B. subtilis gluconate repressor ( GntR ) family ( Titgemeyer etal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7773398" target="_blank">7773398</a>]<br></li>
+<li>This is interesting because the substitutions in GntR proteins of a random set of mutant organisms lacking operator-binding activity were located exclusively in the helix-turn-helix motif ( Yoshida and Fujita , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">GntR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>McbR/ASU a , c ( Å ) Data Collection wavelength ( Å ) 0.9793 unique reﬂections 28120 resolution ( Å ) a 50.0 − 2.1 ( 2.14 − 2.10 ) mean I / σ 18.1 ( 3.0 ) completeness ( % ) 100.0 ( 100.0 ) redundancy 9.8 ( 10.0 ) R c merge ( % ) 8.3 ( 55.8 ) Reﬁnement a = 107.6 , c = 72.7 0.9300 50871 50.0 − 2.15 ( 2.19 − 2.15 ) 18.4 ( 2.5 ) 99.3 ( 98.7 ) 5.1 ( 5.2 ) 6.1 ( 45.4 ) Rwork ( % ) Rfree ( % ) b 16.8 20.8 3214 163 43.6 43.4 0.008 1.003 ■ RESULTS AND DISCUSSION McbR Is a Member of the VanR Subfamily of GntR Transcriptional Regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>Other common regulator families are ArsR ( 175 ) , AsnC ( 140 ) , Crp ( 233 ) , DeoR ( 17 ) , GntR ( 29 , 104 , 213 ) , IclR ( 214 ) , LacI ( 253 ) , LuxR/UphA ( 112 ) , LysR ( 111 ) , MarR ( 56 ) , MerR ( 107 ) , NtrC ( 189 ) , TetR ( 198 ) , YedF/YeeD/YhhP ( 14 ) , and YhdG/YjbN/YohI ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>OPEN ACCESS Citation : Suvorova IA , Korostelev YD , Gelfand MS ( 2015 ) GntR Family of Bacterial Transcription Factors and Their DNA Binding Motifs : Structure , Positioning and Co-Evolution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>Some of the largest such families ( Perez-Rueda et al. 2004 ) are the LysR ( Henikoff et al. 1988 ) , TetR ( Ramos et al. 2005 ) , IclR ( Nasser et al. 1994 ) , GntR ( Haydon and Guest 1991 ) , and AraC ( Gallegos et al. 1997 ) superfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Subdivision of the Helix-Turn-Helix GntR Family of Bacterial Regulators in the FadR , HutC , MocR , and YtrA Subfamilies * Received for publication , November 15 , 2001 , and in revised form , December 20 , 2001 Published , JBC Papers in Press , December 27 , 2001 , DOI 10.1074 / jbc.M110968200 Sébastien Rigali ‡ , Adeline Derouaux , Fabrizio Giannotta , and Jean Dusart From the Centre d'Inge ́nierie des Protéines , Université de Liège , Institut de Chimie B6 , Sart-Tilman , B-4000 , Liège , Belgium Haydon and Guest ( Haydon , D. J , and Guest , J. R. ( 1991 ) FEMS Microbiol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>IdnK is 45 % identical to GntK ( 33 ) ; IdnD is 31 % identical to mammalian sorbitol dehydrogenase ( 14 ) ; IdnO is 56 % identical to Gno from G. oxydans ( 15 ) ; IdnT is 61 % identical to GntT ( 25 ) , a match which was the highest among a total of seven gluco-nate permease orthologs in E. coli ( 23 ) ; and the helix-turn-helix protein IdnR is 46 % identical to GntR , strongly suggesting that IdnR is involved in regulation of idnK and the idnDOTR operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>The regulatory protein IdnR encoded by the idnDOTR operon is closely homologous to GntR ( 53 % identity ) and , thus , the appearance of the GntR boxes upstream of idnDOTR can reflect the similarity of signals recognized by these two transcription factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The homology search also identi ® ed a protein , encoded by a gene ( yjgS in SWISS-PROT ) at 96 minutes , with 46.1 % identity to GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>We also found a protein , encoded by yjgT , with 36 % identity to GntU , and its gene is located near gntH encoding the GntR homolog and close to gntV encoding the GntK homolog .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>A comparison of GntR with CcpA , the catabolite control protein from Bacillus subtilis ( 22 ) , shows that 30.3 % of the residues ar identical and that 47 % are chemically conserved , and a comparison of GntR with LacI from E. coli ( 15 ) shows that 24.4 % of the residues are identical and that 44.4 % are chemically conserved ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>However , it is possible that the closely related YjgS protein , which is 46 % identical to GntR , is involved in the positive regulation of gntT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The identities to GntR are expressed as percentages , and identical residues to GntR are indicated by asterisks .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>GntH has 42 % similarity to GntR in the entire primary sequence [ Izu et al. , 1997a ] and , especially , 70 % identity to GntR in the DNA-binding motif [ Tsunedomi et al. , 2003 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>GntH , with 42 % similarity to GntR ( 12 ) , has been suggested ( 3 ) or shown ( unpublished data ) to be an activator for the GntII genes , and 5-ketogluconate or idonate has been proposed as a coactivator ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>As shown in Fig. 3 , the HTH of GntH has quite high similarity to that of GntR compared with those of other members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>This polypeptide did not show homology with other binding proteins as AraF , MalE , HisJ , LivK and MglA ; interestingly , its C-terminus showed 20.5 % homology with the same region of GntR , the repressor of the gntT and the gntKU operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>Members Group function Ec1 So2 Bs3 Group function LuxR/UhpA or OmpR family transcriptional response regulator of two-component regulatory system LysR family transcriptional regulator GntR or DeoR family transcriptional regulator sensory histidine kinase in two-component regulatory system sigma54 activator protein , enhancer binding protein AraC/XylS family transcriptional regulator ROK family transcriptional regulator/sugar kinase IclR family transcriptional regulator methyl-accepting chemotaxis protein MerR family transcriptional regulator DNA-binding regulatory protein AraC/XylS family transcriptional regulator MarR family transcriptional reguator AsnC family transcriptional regulator 46 20 18 18 13 13 11 10 9 18 14 13 13 11 16 13 8 1 oxidoreductase , Fe-S-binding 31 10 11 13 6 oxidoreductase , NAD ( P ) - binding oxidoreductase4 , NAD ( P ) - binding aldehyde dehydrogenase , NAD ( P ) - binding oxidoreductase , FAD/NAD ( P ) - binding sugar kinase respiratory reductase , alpha subunit aldo-keto reductase , NAD ( P ) - binding phosphatase nucleoside diphosphate ( Nudix ) hydrolase 43 30 22 5 14 14 7 8 8 7 5 8 8 2 7 5 1No .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15757509" target="_blank">15757509</a>]<br></li>
+<li>There are currently 8,500 members of the GntR superfamily , which is composed of seven subfamilies , but with additional subfamilies likely to be identiﬁed ( 17 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_19">
+Fineran , P. C. , Everson , L. , Slater , H. , and Salmond , G. P. ( 2005 ) A GntR family transcriptional regulator ( PigT ) controls gluconate-mediated repression and defines a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22474332" target="_blank">22474332</a>]<br></label>
+<input id="evo_similarity_19", type="checkbox">
+<div class="EVO_similar">
+<li>[ 84 ] P.C. Fineran , L. Everson , H. Slater , G.P. Salmond , A GntR family transcriptional regulator ( PigT ) controls gluconate-mediated repression and deﬁnes a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia , Microbiology 151 ( 2005 ) 3833 -- 3845 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22985599" target="_blank">22985599</a>]<br></li></div>
+<li>In E. coli , gene array studies coupled with electrophoretic mobility shift assays ( EMSAs ) showed that McbR binds the ybiM promoter , a gene encoding a putative periplasmic protein whose function is currently unknown .4 A subsequent study using DNA footprinting experiments showed that McbR from Salmonella typhimurium and E. coli binds the yciG promoters from both species .6 The GntR superfamily ( Pfam PF00392 ) , to which McbR belongs , is one of the largest families of transcriptional 7 regulators , with more than 8500 members ( Figure 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>such as LysR ( 53 ) , LuxR ( 54 ) , TetR ( 55 ) , and GntR ( 56 ) , account - Using the founding member of the IclR family as a test case , we explored the possibility of screening a small molecule library using a high throughput protein stability assay as a general strategy to identify putative ligands for such families ' representatives .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17426033" target="_blank">17426033</a>]<br></li>
+<li>Thus , eda is con-ﬁrmed to be a member of the GntR regulon ( 20 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>The 56 proteins discussed and presented in this paper are listed in Table I. Secondary Structure Predictions -- To identify homologous C-termi-nal sequences within the HTH GntR family , we started our comparative study from the level of the secondary structures , in which conservation is known to be less eroded during evolution .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Due to properties of the bioﬁlm , these bacterial communities are extremely tolerant to antibiotics and are often able to evade host defenses .1 Furthermore , it is estimated that 60 − 80 % of human infections are caused by bioﬁlms , explaining why much research is focused on elucidating the genetic basis of bioﬁlm formation and proliferation .2,3 One regulator of bioﬁlm formation is McbR/YncC ( hereafter referred to as McbR ) , a transcription factor predicted to belong to the GntR family of DNA binding proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>elongation factor G ( EF-G ) EFG-MICLU Micrococcus luteus elongation factor G ( EF-G ) EFG-THETH 7hermus aquaticus elongation factor G ( EF-G ) EFG-ECOLI Escherichia coli elongation factor G ( FusA ) Enterococcus faecalis tetracycline resistance protein TetM Ureaplasma urealyticum tetracycline resistance protein TetM PS00043 : [ GntR family of transcriptional regulators ] matches all but position 11 of the pattern ; has K instead of N , S , or T P30-ECOLI Escherichia coli hypoth .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8346018" target="_blank">8346018</a>]<br></li>
+<li>This paper is available on line at http://www.jbc.org 12507 EXPERIMENTAL PROCEDURES Selection of GntR-like Members -- Members of the GntR family were identified from the SWISS-PROT/TrEMBL/GenBankTM sequence data bases ( last update , June 2001 ) by a keywords search on the ExPASy molecular Biology server and NCBI server .2 All sequences proposed by the data bases as belonging to the GntR family were used as query sequences for a BLAST search to verify their N-terminal DNA-binding domain homology to other GntR-like regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>LldR belongs to the ﬁrst subfamily , called FadR , which groups 40 % of the GntR regulators ( 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>YncC belongs to the GntR subfamily of FadR ( pfam007729 ) , which binds as a dimer to its operator site via its winged helix domains ( 10 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>Its hyphenated dyad symmetry resembles that of the binding sites for other regulators with helix-turn-helix motifs ( e.g , CRP and FNR ) but it differs from the known sites for other members of the GntR family which exhibit uninterrupted dyad symmetry , i.e. GntR -LCB- ATACnGTATACAAGTAT : Fujita and Miwa , 1989 ) and HutCpp -LCB- TTGJAATAtAc ; Hu et ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The C-PhnF fold showed no similarity with the FadR structure confirming divergence between the FadR and HutC subfamilies of GntR regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>63 , 291 -- 295 ) first described the helix-turn-helix GntR family of bacterial regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_33">
+Rigali , S. , Derouaux , A. , Giannotta , F. , and Dusart , J. ( 2002 ) Subdivision of the helix-turn-helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17238917" target="_blank">17238917</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></label>
+<input id="evo_similarity_33", type="checkbox">
+<div class="EVO_similar">
+<li>[ 8 ] Rigali , S. , Derouaux , A. , Giannotta , F. and Dusart , J. ( 2002 ) Subdivision of the helix-turn-helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>Rigali , S. , Derouaux , A. , Giannotta , F. , and Dusart , J. ( 2002 ) Subdivision of the helix -- turn -- helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12890032" target="_blank">12890032</a>]<br></li>
+<li>of the helix-turn-helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>Subdivision of the helix-turn-helix GntR family of bacterial regulators in the FadR , HutC , MocR , and YtrA subfamilies .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li></div>
+<li>A PSI-BLAST search of the NCBI non-re-dundant protein database , seeded with the C-terminal region of Pseudomonas HutC protein [ 23 ] , and iterated to convergence , recovered the homologous C-terminal regions of numerous GntR family proteins , such as FarR , TreR , PhnF , as well as UbiC-like chorismate lyases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>The yjjN/yjjML gene cluster encodes L-galactonate oxidoreductase ( YjjN converts its substrate to D-tagaturonate ) ( 23 ) , a GntR family TF ( YjjM ) , and a putative L-galactonate transporter ( YjjL ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>The gene , designated ptsj , which when mutated gave rise to expression of this novel Enzyme I appears to encode a transcriptional regulatory protein within the GntR family ( Reizer e t al. , 1991a ; Titgemeyer e t al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7773398" target="_blank">7773398</a>]<br></li>
+<li>LctR and PdhR are unique amongst known members of the GntR family because their similarity is sustained throughout the amino aoid sequence ( 35 % identity and 62 % similarity overail ) rather than being confined to an A / - terminal segment ( Haydon and Guest .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Whereas PaaX is a member of the GntR family of regulators , PaaR is usually a TetR-like repressor ( Hamlin et al. , 2009 ) , although a PaaR regulator of the AraC family has been also proposed in Rhodococcus jostii RHA1 ( Navarro-Llorens et al. , 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24983528" target="_blank">24983528</a>]<br></li>
+<li>An analysis of the C-terminal domain of DcuR using the MOTIF program ( http://www.genome.ad.jp/SIT/SIT.html ) revealed a probable DNA-binding helix-turn-helix motif ( res-idues 177 to 218 ) resembling that of the GntR and DeoR families of bacterial gene regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9973351" target="_blank">9973351</a>]<br></li>
+<li>We have recently sequenced a 4.5 kbp region of the Salmonella chromosome between y s M and crr and have identified an ORF which encodes a protein that possesses an identifiab!e N-terminal helix-turn-helix motif hom-ologous to those of members of the B. subtilis gluconate repressor ( GntR ) family ( Titgemeyer etal .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7773398" target="_blank">7773398</a>]<br></li>
+<li>The dyad symmetry of the PaaX-binding site and the probability that the repressor-DNA interaction is mediated by a putative helix-turn-helix motif , amino acid residues 39 -- 64 of PaaX ( 2 ) , that shares similarity to that of transcriptional repressors of the GntR family ( 5 , 6 ) suggest that the regulator is in an oligomeric form when bound to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>The PaaX repressor is a 316-amino acid protein with a stretch of 25 amino acids ( residues 39 -- 64 ) that shares signiﬁcant similarity with the helix-turn-helix motif for DNA recognition and binding of transcriptional regulators from the GntR family such as FadR ( DiRusso et al. , 1992 ) and GntR ( Haydon and Guest , 1991 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24983528" target="_blank">24983528</a>]<br></li>
+<li>The PaaX protein ( 316-amino acid length ) contains a stretch of 25 residues at amino acids 39 -- 64 that shares similarity with the helix-turn-helix motif predicted to be important for DNA rec-ognition and binding in other transcriptional repressors such as GntR ( 71 ) and FadR ( 72 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9748275" target="_blank">9748275</a>]<br></li>
+<li>The PaaX repressor is a 316-amino acid protein that shows 41.4 % amino acid sequence identity with its ortholog PhaN ( recently renamed as PaaN ( 4 ) ) from the PA degradation pathway of P. putida U ( 1 ) and contains a stretch of 25 residues at amino acids 39 -- 64 that shares similarity with the helix-turn-helix motif for DNA recognition and binding of transcriptional repressors from the GntR family such as FadR ( 5 ) and GntR ( 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>A comparison of the GntR primar structure with those of the repressors in the CytR family revealed that GntR also has a helix-turn-helix motif at its N-terminus , which may be responsible for DNA binding and it may also have domains related to dimerization and inducer binding at its C-terminus ( Weickert & Adhya , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>GntR belongs to the GalR-LacI family of regulators and possesses an N-terminal helix-turn-helix DNA-binding motif , suggesting that GntR ful-ﬁlls a regulatory role similar to that of LacI for the lac operon ( 45 , 46 , 47 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>FadR is predicted to be a helix -- turn -- helix DNA binding protein of the GntR family ( Haydon and Guest , 1991 ) , and thus probably binds DNA in a conventional manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9767562" target="_blank">9767562</a>]<br></li>
+<li>This family , named after the repressor of the Bacillus subtilis gluconate GntR operon , includes about 270 members , which are distributed among the most diverse bacterial groups and regulate various biological processes ( 7 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The GntR family , named after the repressor of the gluoonate operon ( gntRKPZ ) of Bacillus subtilis , aiso includes the HutC regulators of histidine utiii-zation in Pseudomonas putida and Klebsieila aei'ogeties .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The results described above extend this observation to all other known gluconate-inducible genes regulated by GntR , a member of the GalR-LacI family of repressor proteins ( 5 ) ; nearly identical operator sequences were found in the gntT and edd regulatory regions ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+<li>AraR is a hybrid protein that is able to bind operator sites ( AaACTTGT/A/T / ACAAGTaT ) ( 50 ) that presents the typical GntR signature , and its C-terminal domain binds to a carbohydrate effector molecule ( L-arabinose ) as do most of the members of the LacI/GalR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>The position of the putative IdnR binding site is interesting because this location is atypical of negative control , despite the fact that IdnR and GntR belong to the GalR-LacI family of negative regulators ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>Like GntR , GntH appears to belong to the GalR-LacI family of bacterial regulators ( 36 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Sequence comparison of the HTH of GntR with that of GntH and with those of the GalR-LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>A 20-amino-acid sequence of the HTH of GntR was compared with that of GntH and those of the members of GalR-LacI family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>McbR , like other members of the GntR family , consists of an N-terminal wHTH domain ( residues 10 − 76 ; residues 38 − 46 in the second subunit were not modeled due to a lack of clear electron density ) and a C-terminal all α-helical effector binding domain ( residues 77 − 219 ; Figure 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>RESULTS As mentioned by Haydon and Guest ( 1 ) , members of the GntR family of bacterial regulators share similar N-terminal DNA-binding domains , but high heterogeneity has been observed among the various C-terminal effector-binding and oli-gomerization domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>The dimer is an expected minimal functional unit for full-length PhnF , as this is a common feature among regulators with wHTH DNA-binding domains in general and characterized GntR family members in particular ( Miwa and Fujita 1988 ; van Aalten et al. 2000 ; Kalivoda et al. 2003 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>The DNA-binding Domain -- As shown in Fig. 3 , structural predictions revealed that the DNA-binding ( D-b ) domain topology of the whole GntR family is rather well conserved and all of the secondary structure elements are in similar relative positions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Thus , evidences of a common DNA-binding domain ancestor for the whole GntR family are highlighted by the conserved structural topology rather than by amino acids conservation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Members of the FadR/GntR family of `` winged '' HTH pro teins consists of two domains , a highly conserved N-terminal DNA binding domain containing the HTH motif ( 17 ) and a more divergent C-terminal domain involved in dimerization and effector binding ( 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In contrast to the wHTH domain , which is structurally conserved in the GntR family , the C-terminal domain is highly variable .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>The GntR family has several distinct groups within it , all of which share a characteristic version of the wHTH domain [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>A second version of the UTRA domain fused with a wHTH DNA-binding domain of the GntR family in the bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>The proteins in the GntR family share a characteristic version of the N-terminal winged helix-turn-helix ( wHTH ) DNA-binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Unrooted tree of the proteins of the GntR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>1994 ) , PdhR ( formerly GenA ) is a member ot the GntR family of regulatoiy proteins sharing sequence similarities in their / vf-terminal DNA-binding domain ( Haydon and Guest , 1991 ; Dong el ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>The DNA , binding domains of such regulators are generally attached to effector , binding domains , which are approximately the same siZe as the dissimilar 170 , reSidue C'terminal segments in the GntR family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2060763" target="_blank">2060763</a>]<br></li>
+<li>The GntR family proteins share amino acid sequence similarities in a 69-residue N-terminal region that determines the DNA binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_75">
+Structure-based sequence alignment of the C-terminal domains of proteins of the GntR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></label>
+<input id="evo_similarity_75", type="checkbox">
+<div class="EVO_similar">
+<li>Structure-based sequence alignment of the N-terminal DNA-binding domain of proteins of the GntR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li></div>
+<li>The HutC subfamily represents more then 30 % of all GntR members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Multiple sequence alignments of the selected HutC and GntR family members ( Rigali et al. 2002 ) , coupled with a secondary structure prediction , was used to define the domain borders in Escherichia coli PhnF ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>We note that the consensus for sequences contained within regions 1 and 2 is similar to one proposed recently for FadR-like members of the GntR family of transcriptional regulators ( Rigali et al. , 2002 ) and , hence , the D2 region may contain at least three elements that interact with one or more FadR-like proteins to control ﬁmB expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12890032" target="_blank">12890032</a>]<br></li>
+<li>This is true for the GntR family of transcriptional regulators , which gathers close to 2000 members in both bacterial and archael genomes ( Haydon and Guest 1991 ; Rigali et al. 2002 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>The hexuronate metabolism in E. coli is regulated by two related transcription factors ( TFs ) from the FadR subfamily of the GntR family , UxuR and ExuR , whose amino acid sequences are 46 % identical .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Di ¡ erent from the FadR-like subfamily , the GntR family includes a major subfamily with proteins such as the fatty acid regulon regulator , FarR , the histidine utilization operon regulator , HutC , and the trehalose regulon regulator , TreR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>FadR shares amino acid identities in this region with the GntR family subclass of H ± T ± H proteins [ 121 ] ( PROSITES domain PDOC00042 [ 122 , 123 ] and ProDom domain number ID 586/ProDom36 [ 121 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>FarR is a member of the FadR/GntR family of H ± T ± H proteins and shares amino acid identities and similarities with FadR and other members of this protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10396600" target="_blank">10396600</a>]<br></li>
+<li>The HutC/FarR-like transcription factors of the GntR family are one of the largest groups of transcription factors in the proteomes of most free-living bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>HutC/FarR-like bacterial transcription factors of the GntR family contain a small molecule-binding domain of the chorismate lyase fold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>However , other major groups within the GntR family di ¡ er from FadR other than in their C-terminal domains [ 8 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>As FadR is the prototype of a major group in the GntR family , this structure threw light on several features speci cents c to this group , as well as some generic features of GntR transcription factors [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>FadR , which belongs to the GntR family of transcription factors , acts as an activator of fabA and fabB where it acts as a repressor of the β-oxidation ( fad ) regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21276098" target="_blank">21276098</a>]<br></li>
+<li>© 1997 Elsevier Science B.V. Keywords : GntR ; cAMP-CRP ; GntP family 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>Detailed bioinformatics studies have led to the deﬁnition of at least 7 families ( AraR , DevA , FCD , HutC , MocR , PlmA , and YtrA ) , which are classiﬁed by the effector binding domain topology and secondary structure ( Figure 1A ) .7 The majority of GntR regulators belong to the FadR C-terminal domain family ( FCD , Pfam PF07729 ; Figure 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>The structure reveals McbR to be a member of the FadR C-terminal domain ( FCD ) family of the GntR superfamily of transcriptional regulators ( this family was named after the ﬁrst identiﬁed member , GntR , a transcriptional repressor of the gluconate operon of Bacillus subtilis ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>The secondary structure elements and topology of the C-terminal domain places McbR in the FadR C-terminal domain ( FCD ) family of GntR transcriptional regulators ( Figure 1A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>In addition , the PhnF protein may be a member of a new family of regulatory proteins together with the FadR , GntR , HutC , KorA , GenA , and P30 proteins ( 9 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8388873" target="_blank">8388873</a>]<br></li>
+<li>DISCUSSION The similarities in sequence , molecular size , and predicted secondary structure , combined with the known regulatory functions of the GntR , FadR , HutC and KorA proteins suggest that the eight proteins represent a family of transcriptional regulators , the GntR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2060763" target="_blank">2060763</a>]<br></li>
+<li>We are grateful to Pierre Dehoux ( PF4 , Institut Pasteur ) for sequence comparisons between YncC and regulators of the GntR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20713450" target="_blank">20713450</a>]<br></li>
+<li>DISCUSSION NanR belongs to the FadR/GntR family of transcriptional regulators that includes activators , repressors , and molecules which both activate and repress a wide range of bacterial op-erons ( 17 , 29 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>GabC is a member of the FadR subfamily of the GntR family of bacterial regulators , which are generally repressors ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>]<br></li>
+<li>GabC is in the FadR subfamily of the GntR family of transcriptional regulators ( 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12446648" target="_blank">12446648</a>]<br></li>
+<li>a member of the GntR family ot regulators -LCB- IctR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7783622" target="_blank">7783622</a>]<br></li>
+<li>Introduction FarR is an uncharacterised member of the GntR family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7805834" target="_blank">7805834</a>]<br></li>
+<li>Judged from its sequence , MngR is a member of the GntR family of transcriptional regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14645248" target="_blank">14645248</a>]<br></li>
+<li>The operon encodes an L-lactate-speciﬁc permease ( LctP ) and ﬂa-vin adenine dinucleotide-dependent dehydrogenase ( LctD ) , and also a putative transcriptional regulator ( LctR ) of the GntR family of helix-turn-helix proteins ( 12 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8892825" target="_blank">8892825</a>]<br></li>
+<li>Keywords : effector binding domain ; transcriptional regulator ; HutC ; PhnF ; chorismate lyase fold ; GntR family A protein containing a sensor input domain and a functional output domain is described as a one-component system ( Ulrich et al. 2005 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+<li>Gene ydcR that belongs to one of the transcriptional regulator family GntR is also repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23472115" target="_blank">23472115</a>]<br></li>
+<li>The LldR protein belongs to the GntR regulator family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>The PhnF protein belongs to the HutC subfamily of the large GntR transcriptional regulator family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16672238" target="_blank">16672238</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by GntR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Haine V , Sinon A , Van Steen F , Rousseau S , Dozot M , Lestrate P , Lambert C , Letesson JJ & De Bolle X ( 2005 ) Systematic targeted mutagenesis of Brucella melitensis -16 M reveals a major role for GntR regulators in the control of virulence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16451192" target="_blank">16451192</a>]<br></li>
+<li>Gene product OD 4a NaClb pH 5c Metabolism ( 26 ) adhP b1478 b1927 b3012 b2097 b2661 b1619 b2720 b0186 b1469 b1467 b0871 b4051 b2464 b1519 b2465 b3449 b0485 Alcohol dehydrogenase , propanol preferring Cytoplasmic alpha-amylase 5.38 12.21 4.37 8.00 4.81 2.71 10.67 3.76 2.75 5.24 17.67 2.39 6.79 2.76 14.08 2.30 14.05 9.19 11.02 6.33 9.61 4.08 6.97 24.06 3.72 3.62 5.70 45.89 2.73 13.08 8.68 35.87 3.69 9.46 3.43 10.57 2.37 9.33 2.89 2.43 9.11 3.88 2.07 4.57 29.60 2.64 13.83 3.53 10.76 2.01 2.70 amyA dkgV fbaB gabD hdhA hycF IdcC narU narY poxB qor talA tam tktB ugp ybaS ybaY ycaC yfcF ygjG yhfW yjcS yjgB yncG 2,5-Diketo-D-gluconate reductase A Fructose-bisphosphate aldolase class I Succinate-semialdehyde dehydrogenase NADP dependent alpha-hydroxysteroid dehydrogenase , NAD dependent Hydrogenase 3 , putative quinone oxidoreductase , FeS related Lysine decarboxylase 2 , constitutive Nitrate extrusion protein Nitrate reductase 2 , beta-subunit Pyruvate dehydrogenase/oxidase : FAD and thiamine PPi-binding Quinone oxidoreductase , NADPH dependent Transaldolase A Trans-aconitate methyltransferase Transketolase 2 , thiamin binding , isozyme Glycerophosphodiester phosphodiesterase , cytosolic Putative glutaminase/carboxypeptidase with beta-lactamase/D-Ala-carboxypeptidase domain Glycoprotein/polysaccharide-metabolism Putative enzyme with cysteine hydrolase domain Putative glutathione S-transferase enzyme with thioredoxin-like domain Putrescine :2 - oxoglutaric acid aminotransferase Putative phosphopentomutase , alkaline phosphatase-like domain Putative enzyme with 2 metallohydrolase/oxidoreductase domains Putative alcohol dehydrogenase with NAD ( P ) - binding and GroES domains Putative glutathione S-transferase with thioredoxin-like and glutathione Stransferases , C-terminal domain Putative dienelactone hydrolase b0453 b0897 b2301 b3073 b3380 b4083 b4269 b1454 6.15 13.34 2.55 8.93 4.00 10.73 6.98 3.42 8.67 5.92 2.44 16.90 6.67 10.38 10.80 13.77 6.09 5.88 2.40 7.45 4.46 4.71 7.40 3.64 ysgA b3830 2.69 2.27 3.68 Regulation ( 11 ) bolA b0435 b1217 b2664 b3515 Transcriptional activator of morphogenic pathway ( BolA family ) , important in general stress response Cation-transport regulator Putative transcriptional repressor with DNA-binding winged helix domain ( GntR family ) Transcriptional regulator for GadX ( regulatory protein ) , glutamic acid decarboxylase ( GadA , - B ) , and glutamate transport protein ( GadC ) ( AraC-XylS family ) Transcriptional regulator for glutamic acid decarboylase and transporter ( GadA , GadBC ) ( AraC/XylS family ) RNase II modulator with PYP-like sensor domain Transcriptional repressor for pyruvate dehydrogenase complex ( GntR family ) Response regulator involved in protein turnover , controls stability of RpoS Flavodoxin-like protein , trp repressor-binding protein Putative transcriptional regulator with DNA-binding domain Putative regulator with homeodomain-like DNA-binding domain ( TetR/AcrR family ) 4.77 3.38 4.30 3.09 4.74 3.36 4.84 6.12 8.47 5.54 10.09 5.98 chaB csiR gadW gadX gem pdhR rssB wrbA yiaG yjdC b3516 b1285 b0113 b1235 b1004 b3555 b4135 6.09 6.78 5.01 4.68 9.38 8.40 2.49 7.45 3.83 3.42 7.19 6.83 9.20 2.34 3.14 6.94 2.86 4.08 14.77 4.08 2.46 Transport and membrane ( 20 ) artM artP blc eutH gabP mscL potF rssA ugpB b0861 b0864 b4149 b2452 b2663 b3291 b0854 b1234 b3453 2.61 4.71 8.10 2.59 2.83 2.59 2.24 2.26 3.29 2.79 4.56 8.99 3.06 4.70 2.31 4.25 3.19 5.55 2.20 3.50 4.77 3.11 4.06 2.94 2.76 2.50 3.29 Arginine transport protein ( ABC superfamily , membrane ) Arginine transport protein ( ABC superfamily , ATP-binding subunit ) Outer membrane lipoprotein ( lipocalin ) Putative transport protein , ethanolamine utilization Gamma-aminobutyrate transport protein Mechanosensitive channel Putrescine transport protein ( ABC superfamily , periplasmic binding protein ) Putative transmembrane protein Sn-Glycerol 3-phosphate-transport protein ( ABC superfamily , periplasmic binding protein ) Sn-Glycerol 3-phosphate-transport protein ( ABC superfamily , ATP-binding subunit ) Putative transport protein , integral membrane location Putative transmembrane protein ( N terminal ) ; putative phosphatase ( C terminal ) Putative transport protein ( ABC superfamily , periplasmic binding protein ) Putative multidrug-resistance membrane protein Putative membrane protein Putative membrane protein Putative permease ( PerM family ) Putative membrane protein Putative transmembrane protein Putative transport protein ( YqaE family ) ugpC ybiO ybiP ydcS ydhJ yeaY yebS yhhT yhiD yphA yqaE 2.39 8.49 7.73 21.66 2.21 2.43 2.08 2.30 4.11 2.35 2.42 b3450 b0808 b0815 b1440 b1644 b1806 b1833 b3474 b3522 b2543 b2666 2.44 2.02 2.43 4.36 2.22 4.06 2.48 2.92 7.24 2.53 3.16 2.50 4.51 5.89 4.83 4.29 3.21 2.50 3.89 5.93 3.38 4.78 Continued on following pag TABLE 1 -- Continued Ratio Function ( reference ) and gene b no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15716429" target="_blank">15716429</a>]<br></li>
+<li>Gene Module Start End Gty1 Module Function thrA 1 461 e thrA 464 820 e aspartokinase I , threonine sensitive homoserine dehydrogenase I , threonine sensitive ribD 1 143 e ribD 147 366 e diaminohydroxyphosphoribosylaminopyrimidine deaminase 5-amino-6 - ( 5-phosphoribosylamino ) uracil reductase putA 1 569 e putA 618 1320 e bifunctional : transcriptional repressor ( N-terminal ) ; proline dehydrogenase , FAD-binding ( C-terminal ) pyrroline-5-carboxylate dehydrogenase acetaldehyde-CoA dehydrogenase iron-dependent alcohol dehydrogenase adhE 1 400 e adhE 449 891 e thiP thiP thiamin-transport protein ( ABC superfamily , membrane ) thiamin-transport protein ( ABC superfamily , membrane ) 1 274 t 285 536 t putative transport protein , multidrug-resistance-like ( ABC superfamily , membrane ) putative transport protein , multidrug-resistance-like ( ABC superfamily , ) mdlA 1 310 pt mdlA 314 590 pt molybdenum transport protein ( ABC superfamily , ) molybdenum transport protein ( ABC superfamily , ) modF 1 260 t modF 261 490 t PTS family enzyme IIA , induction of ompC PTS family enzyme IIB , induction of ompC PTS family enzyme IIC , induction of ompC hrsA 1 178 t hrsA 186 454 t hrsA 456 628 t response regulator atoC 1 125 r atoC 145 461 r sigma54 interaction module of response regulator ( EBP family ) histidine kinase of hybrid sensory kinase evgS 1 935 e evgS 953 1197 r response regulator of hybrid sensory histidine kinase response regulator , two-component regulator with GlnL , nitrogen regulation sigma54 interaction module of response regulator ( EBP family ) glnG 1 120 r glnG 139 469 r unknown function module of mechanosensitive channel mechanosensitive channel ( MscS family ) kefA 1 779 o kefA 780 1120 t acetylglutamate kinase homolog ( inactive ) argA 1 293 o argA 298 442 e N-alpha-acetylglutamate synthase ( amino acid acetyltransferase ) putative transcriptional regulator ( GntR family ) putative amino transferase ydcR 1 117 pr ydcR 118 468 pe Fe-S binding module of electron transport protein unknown function module of electron transport protein rnfC 1 448 pc rnfC 450 740 o No .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15757509" target="_blank">15757509</a>]<br></li>
+<li>Gene NaSal-activated 2.3 2.3 b4014 b1276 b1241 b2252 b0864 b0485 b0881 b1112 b1164 b1165 b1200 b1450 b1452 b1643 b1795 b2174 b2266 b2672 b3004 b3024 b3238 b3242 b1661 b3806 b2414 b4382 b4383 b0014 b0812 b0593 b3289 b1611 b3517 b1493 b1779 b2094 b2093 b2092 b2091 b2090 b2095 b0720 b3212 b2947 b3510 b3509 b2237 b1732 b3604 b3603 b4129 b1817 b1818 b1531 b1532 b1530 b3028 b3601 b0578 b1482 b4376 b1897 b0932 b0903 b1014 b3506 b3284 b3908 b2703 aceB acnA Malate synthase A Aconitase A 2.2 3.8 2.5 2.7 2.1 9.0 3.4 3.2 5.9 2.3 3.0 2.1 2.9 2.4 2.9 2.6 2.5 2.3 27.6 6.9 3.7 2.4 2.4 2.4 2.1 2.6 7.0 2.2 2.4 8.4 2.7 2.7 2.6 5.3 5.2 2.5 3.8 2.3 2.8 2.6 2.8 3.0 9.9 9.2 3.9 2.1 4.9 2.7 2.1 2.3 2.4 11.3 9.0 20.7 2.2 2.5 3.4 4.4 2.9 2.2 2.1 2.1 3.2 2.1 2.1 2.3 2.7 adhE ais artP b0485 b0881 b1112 b1164 b1165 b1200 b1450 b1452 b1643 b1795 b2174 b2266 b2672 b3004 b3024 b3238 b3242 cfa cyaA cysK deoA deoB dnaK dps entC fmu fumC gadA gadB gapA gatA gatB gatC gatD gatZ gltA gltB gshB hdeA hdeB inaA katE lctR lldP lysU manX manY marA marB marR mdaB mtlR nfnB osmC osmY otsB pepN pﬂB putA slp smg sodA Acetaldehyde-coenzyme A dehydrogenase Aluminum-inducible protein ; function unknown Arg periplasmic transport system Putative glutaminase Function unknown Function unknown Function unknown Function unknown Putative dihydroxyacetone kinase Putative transcriptional regulator ( GntR family ) Function unknown Function unknown Function unknown Putative permease Function unknown Function unknown Function unknown Function unknown Function unknown Function unknown Cyclopropane fatty acid synthase Adenylate cyclase Cysteine synthase Thymidine phosphorylase Deoxyribouratase , phosphopentomutase HSP-70-type molecular chaperone Stress response DNA-binding protein Isochorismate synthetase 16S rRNA m5C967 methyltransferase , S-adenosyl-L-methionine dependent Fumarase C , aerobic ; member of soxRS regulon Glutamate decarboxylase Glutamate decarboxylase GAPDH A Galactitol-speciﬁc enzyme IIA of PTSb Galactitol-speciﬁc enzyme IIB of PTS Galactitol-speciﬁc enzyme IIC of PTS Galactitol-1-phosphate dehydrogenase Split transcriptional repressor of galactitol utilization , fragment 2 ( DeoR family ) Tagatose 6-phosphate aldolase 2 , subunit with GatY Citrate synthase Glutamate synthase , large subunit Glutathione synthetase Periplasmic , unknown function , has sigma S-dependent promoter Periplasmic , unknown function , has sigma S-dependent promoter Function unknown Catalase hydroperoxidase III Regulatory gene for lld operon L-Lactate permease Lysyl tRNA synthetase , inducible PTS family , mannose-speciﬁc enzyme IIA component Mannose PTS , EIIC component Transcription activator of multiple-antibiotic-resistance system Regulatory gene for mar Repressor of mar operon Modulator of drug activity Mannitol repressor Resistance to nitrofurantoin ; a nitroreductase Osmotically inducible protein C ; nonessential gene Periplasmic , sigma S-dependent protein ( stationary phase ) Trehalose phosphate phosphatase Aminopeptidase N Pyruvate formate lyase I ; induced anaerobically Proline dehydrogenase C starvation and stationary phase-inducible ; outer membrane lipoprotein Function unknown Member of soxRS regulon ; superoxide dismutase , Mn PTS family , glucitol/sorbitol-speci ﬁc enzyme IIB component Continued on following page TABLE 2 -- Ratio 2.9 2.1 2.1 2.2 2.7 2.6 2.3 3.4 2.0 2.9 2.3 3.3 3.9 2.2 2.8 Continued Gene type No .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11395452" target="_blank">11395452</a>]<br></li>
+<li>Catabolite response Deoxirribose assimilation D 87 135 Crp w 27 Pérez - Rueda and Collado-Vides ( 2000 ) 220 -- R 235 10 DeoR DicA 35 w Pérez - Rueda and Collado-Vides ( 2000 ) -- n/d 0 -- -- n/d HLH R 4 DicC DnaA 0 Transcription and replication regulation Positive regulator of cytochrome c552 77 0 -- Pérez - Rueda and Collado-Vides ( 2000 ) 41 -- n/d DniR 0 Kajie et al. ( 1991 ) 209 8 215 -- A Ebp FhlC 77 m Pérez - Rueda and Collado-Vides ( 2000 ) Pérez - Rueda and Collado-Vides ( 2000 ) n/d 0 -- 7 -- Pérez - Rueda and Collado-Vides ( 2000 ) Schnetz ( 2002 ) n/d R FhlD FrvR 0 -- Phosphoenolpyruvate sugar phosphotransferase system operon regulation Iron assimilation 8 0 -- -- 128a Fur R w Achenbach and Yang ( 1997 ) 107 460 35 Carbon sources assimilation Nguyen and Saier ( 1995 ) ; Weickert and Adhya ( 1992 ) 388 GalR/LacI 55 R c -- 13 GcvR GntR Rigali et al. ( 2002 ) Glycine cleavage operon repression 0 R 735 775 Ghrist and Stauffer ( 1998 ) 96 R w Yamada and Saier ( 1988 ) Activator of the glucitol operon in E. coli High-frequency persistence of the lethal effects of inhibition of either DNA or peptidoglycan-synthesis regulation ( HipAB ) -- 8 GutM 0 A -- Black et al. ( 1991 ) -- 1 HipA 1 0 n/d -- n/d HipB HtgA Black et al. ( 1991 ) Missiakas et al. ( 1993 ) 87 0 -- -- -- n/d 7 Heat shock regulation 0 -- HycA HypF 6 -- n/d ZnF A 0 -- 0 Bouhouche et al. ( 2000 ) Gui et al. ( 1996 ) 27 -- Glyoxylate bypass operon Integration host factor 31 106 161 w R -- IclR Ihf -- 15 8 Pérez - Rueda and Collado-Vides ( 2000 ) Campoy et al. ( 2002 ) -- D 43 -- DNA-repair 54 LexA R w 102 279 Miller and Bassler ( 2001 ) Schell ( 1993 541 LuxR/UhpA m A Quorum sensing 1548 LysR 1271 Amino acid biosynthesis regulation D w 3.3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>An increased level of GntR , as in the introduction of pGNTR18 , causes GntR to occupy all 3 elements of HRI -- HRIII to strongly repress the expression of gntV and idnDO-gntWH operon ( fig. 6A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Sugar acid regulons on the E. coli genome Location ( kb ) Gene Function Regulon Operon Reference GntR gntR 65 20 3575.9 1931.7 1930.6 3544.8 3574.9 3574.2 4488.2 4492.5 4491.8 gntR edd eda gntT gntK gntU idnR idnK idnD Repressor : gluconate induction 6-Phosphogluconate dehydratase KDPG aldolase High-afﬁnity gluconate-transport Gluconate kinase Low-afﬁnity gluconate-transport Regulator : L-idonate induction Gluconate kinase L-Idonate 5-dehydrogenase edd-eda 20 52 65 65 8 , 9 8 , 9 8 , 9 gntT gntKU IdnR idnDOTR idnK ( gntV ) idnDOTR ( yjgVUTS ) 8 , 9 8 , 9 57 57 39 20 36 46 35 35 35 Gluconate 5-dehydrogenase L-Idonate transport 4490.6 4489.3 1908.2 3676.4 4099.8 1930.6 3244.7 3243.5 3241.7 3240.3 1608.0 idnO idnT kdgR kdgK kdgT eda exuR exuT uxaC uxaA uxaB KdgR kdgR kdgK Repressor : KDG induction KDG kinase KDG transport KDPG aldolase Repressor : hexuronate induction Glucuronate/galacturonate transport Glucuronate/galacturonate isomerase Altronate dehydratase ( galacturonate ) Altronate oxidoreductase ( galacturonate ) Repressor : glucuronate induction Mannonate dehydratase ( glucuronate ) Mannonate oxidoreductase ( glucuronate ) Hexonate/hexuronate-transport ?	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>To argue for the existence of a link between regions involved in the regulating process , we analyzed the HTH GntR family of bacterial regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>A. succinogenes has an additional D-glucuronate utilization locus containing paralogs of the uxuAB , kdgK , eda , and uxuPQM genes and a gene encoding a different GntR family TF that is related but not orthologous to UxuR ( , named uxuR * in Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>There is also an additional GntR family TF in Salmonella enterica serovar Typhimurium strain LT2 , related to UxuR and ExuR , but not close enough to be considered an orthologous repressor ( STM3084.S , named uxuR * in Fig. 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21622752" target="_blank">21622752</a>]<br></li>
+<li>Article pubs.acs.org/biochemistry McbR/YncC : Implications for the Mechanism of Ligand and DNA Binding by a Bacterial GntR Transcriptional Regulator Involved in Bioﬁlm Formation Dana M. Lord , † , ‡ Ayse Uzgoren Baran , § , ⊥ Valerie W. C. Soo , ∥ Thomas K. Wood , ∥ Wolfgang Peti , § and Rebecca Page * , † † Department of Molecular Biology , Cell Biology and Biochemistry , ‡ Graduate Program in Molecular Pharmacology and Physiology , and § Department of Molecular Pharmacology , Physiology and Biotechnology & Chemistry , Brown University , Providence , Rhode Island 02903 , United States ∥ Departments of Chemical Engineering & Biochemistry and Molecular Biology , Pennsylvania State University , University Park , Pennsylvania 16802 , United States * S Supporting Information ABSTRACT : MqsR-controlled colanic acid and bioﬁlm regulator ( McbR , also known as YncC ) is the protein product of a highly induced gene in early Escherichia coli bioﬁlm development and has been regarded as an attractive target for blocking bioﬁlm formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates , such as pyruvate ( PdhR ) , gluconate ( GntR ) , glycolate ( GlcC ) , and L-lactate ( LldR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Most of the FadR-like proteins are involved in the regulation of oxidized substrates related to amino acids metabolism or at the crossroads of various metabolic pathways such as aspartate ( AnsR ) , pyruvate ( PdhR ) , glycolate ( GlcC ) , galactonate ( DgoR ) , lactate ( LldR ) , malonate ( MatR ) , or gluconate ( GntR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11756427" target="_blank">11756427</a>]<br></li>
+<li>Most FADR-subfamily proteins are involved in the regulation of oxidized substrates related to amino acids or emerging from the central metabolism , or at the crossroads of various metabolic pathways , such as glycolate ( GlcC ) , galactonate ( DgoR ) , pyruvate ( PdhR ) , lactate ( LldR ) , or gluconate ( GntR ) [ 18 , 20 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26151451" target="_blank">26151451</a>]<br></li>
+<li>DISCUSSION Transcriptional control of metabolic pathways for carbohydrate utilization in bacteria is mediated by a variety of TFs from different protein families ( e.g. AraC , LacI , GntR , DeoR , and ROK ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21849503" target="_blank">21849503</a>]<br></li>
+<li>Abreviations : 5KG , 5-keto-D-gluconate ; GntT and GntU , GntI permeases ; GntK and GntV , GntI and GntII gluconate kinases respectively ; IdnT idonate and gluconate permeases ; IdnD , idonate dehydrogenase ; IdnO , 5KG reductase ; IdnR , idnR regulon regulator ; GntR , gntR regulon regulator ; Edd , Entner-Doudoroff dehydratase ; Eda , Entner-Doudoroff aldolase [ GBTB ( Istúriz , et al. , 1986 ) ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+<li>Additionally , GntR may also activate the expression of GntII genes when gluco-nate is present in minimum medium ( table 2 and fig. 4B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>These results suggest that GntR negatively regulates the expression of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>As expected , GntR was shown to give the negative effect on the expression of GntII genes under the condition without gluconate ( tables 1 and 2 , fig. 4A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>GntR was also genetically shown to be involved in the control of expression of gntT and of some genes participating in the Entner -- Doudoroff pathway ( Nagel de Zwaig et al. , 1973 ; Zwaig et al. , 1973 ; Egan et al. , 1992 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>This stimulates us to examine the possibility that GntR is also involved in the expressional regulation of the GntII genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>The dual regulation by GntR and GntH in addition to that by cAMP-CRP is proposed to be important for expressional control of the GntII genes and also for switching of the GntI to GntII systems along with cell-growth as demonstrated [ Tsunedomi et al. , 2003 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>GntR also acts as a repressor for edd ( encoding 6-phosphogluconate dehydratase ) and eda ( encoding 2-keto-3-deoxy-6-phosphogluconate aldo-lase ) ( 10 , 39 ) , which are constituents of the Entner-Doudoroff pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Expression of the GntR regulon , that is , GntI together with the edd-eda operon , is negatively controlled by the gntR * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>V. cholerae has only the GntR regulon , which consists of the transporter , the gluconate kinase and the two genes of the ED pathway , edd and eda .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>In Y. pestis , the genes of the ED pathway , edd and eda , are in different operons that have no candidate GntR boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>GntR negatively controls the GntI genes , as well as edd and eda of the EntnerDoudoroff pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>The operon encodes an L-lactate-speciﬁc permease ( LctP ) and ﬂa-vin adenine dinucleotide-dependent dehydrogenase ( LctD ) , and also a putative transcriptional regulator ( LctR ) of the GntR family of helix-turn-helix proteins ( 12 , 41 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8892825" target="_blank">8892825</a>]<br></li>
+<li>FadR , which belongs to the GntR family of transcription factors , acts as an activator of fabA and fabB where it acts as a repressor of the β-oxidation ( fad ) regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21276098" target="_blank">21276098</a>]<br></li>
+<li>Di ¡ erent from the FadR-like subfamily , the GntR family includes a major subfamily with proteins such as the fatty acid regulon regulator , FarR , the histidine utilization operon regulator , HutC , and the trehalose regulon regulator , TreR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12757941" target="_blank">12757941</a>]<br></li>
+<li>The N-terminal region contains a conserved helix-turn-helix DNA binding domain shared by several bacterial transcription factors , including protein A ( a hypothetical transcription factor ) , P30 ( a 30-kDa hypothetical transcription factor ) , FadR ( a regulator for fatty-acid-metabolism ) , and PhnF ( a hypothetical transcription factor ) of E. coli ; HutC ( histidine utilization repressor ) of K aerogenes and P. putida ; and GntR ( a repressor protein ) of B. subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8407843" target="_blank">8407843</a>]<br></li>
+<li>The family contains the repressor of the Bacillus subtills gluconate operon ( GntR ) , the regulators for histidine utilization in Pseudomonas putida ( HutCep ) and Klebsiella aerogenes ( HutCKa ) , the repressor ( FadR ) of fatty-acid-degradation in Escherichia toll , a regulator involved in the conjugal transfer of the broad host range plasmid pIJ101 ( KorA ) , and three proteins of unidentified function in E. coli ( GenA , P30 and PhnF ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2060763" target="_blank">2060763</a>]<br></li>
+<li>We obtained evidence that P1 is under negative control of GntR , P2 is under negative control of KdgR , and P4 is under negative control of PhoB .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_34">
+Fineran , P. C. , Everson , L. , Slater , H. , and Salmond , G. P. ( 2005 ) A GntR family transcriptional regulator ( PigT ) controls gluconate-mediated repression and defines a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22474332" target="_blank">22474332</a>]<br></label>
+<input id="rp_similarity_34", type="checkbox">
+<div class="RP_similar">
+<li>[ 84 ] P.C. Fineran , L. Everson , H. Slater , G.P. Salmond , A GntR family transcriptional regulator ( PigT ) controls gluconate-mediated repression and deﬁnes a new , independent pathway for regulation of the tripyrrole antibiotic , prodigiosin , in Serratia , Microbiology 151 ( 2005 ) 3833 -- 3845 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22985599" target="_blank">22985599</a>]<br></li></div>
+<li>Tel. : ; Fax : ; e-mail : yamada@agr.yamaguchi-u.ac.jp Abbreviations : aa , amino acid ( s ) ; bp , base pair ( s ) ; bGal , b-galactosi-dase ; FITC , ﬂuorescein isothiocyanate ; gntK , gene encoding gluconate kinase in GntI ; GntK , gene product of gntK ; GntI , major gluconate uptake and catabolism system ; gntP , gene encoding additional highafinity gluconate permease ; GntP , gene product of gntP ; gntR , gene encoding negative regulator of genes in GntI ; GntR , gene product of gntR ; gntS , gene encoding gluconate permease in GntII ; gntT , gene encoding high-afinity gluconate permease in GntI ; GntT , gene product of gntT ; GntII , subsidiary gluconate uptake and catabolism system ; gntU , gene encoding low-afinity gluconate permease in GntI ; GntU , gene product of gntU ; kb , kilobase ( s ) or 1000 bp ; lacZ , gene encoding b-galactosidase ; malQ , gene encoding amylomaltase ; REP sequence , repetitive extragenic palindromic sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>The gntT : : lacZ fusion was constitutively expressed in multicopy , as is expecte for a gene under negative control , e.g. , GntR of the GalR-LacI family ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+<li>In a gntR deletion mutant , the expression of a chromosomal gntT : : lacZ fusion is both high and constitutive , conﬁrming that GntR is the negative regulator of gntT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>To investigate the role of GntR in repression of the gntT gene , the expression of a single-copy chromosomal gntT : : lacZ fusion was measured in a gntR mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Q 2000 Blackwell Science Lt Results and discussion GntR regulon The catabolism of gluconate via the Entner ± Doudoroff ( ED ) pathway in E. coli is controlled by the transcription factor GntR ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>Many of the open questions regarding the multiple systems for gluconate-transport and phosphorylation will be answered below Catabolism of gluconate via the ED pathway in E. coli is controlled by the GntR regulon ( Table 2 ; Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>However , upstream and divergently transcribed is the yidP gene , encoding a putative transcriptional regulator of the operon , homologous to GntR and TreR of B. subtilis and to FavR and PhnF of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11361063" target="_blank">11361063</a>]<br></li>
+<li>Moreover , the proximal gene encodes a transcriptional regulator ( GntR ) which represses gntRKPZ transcription in the absence of giuconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>Key words : FarR ; P30 ; GntR family ; Fatty acid ; Fatty acyl-CoA ; Transcription regulation ; Escherichia coli 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7805834" target="_blank">7805834</a>]<br></li>
+<li>However , it is possible that the closely related YjgS protein , which is 46 % identical to GntR , is involved in the positive regulation of gntT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Positive and negative transcriptional regulation of the Escher-ichia coli regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11441462" target="_blank">11441462</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_47">
+PEEKHAUS N , CONWAY T ( 1998 ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></label>
+<input id="rp_similarity_47", type="checkbox">
+<div class="RP_similar">
+<li>Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22752906" target="_blank">22752906</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21840983" target="_blank">21840983</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15516583" target="_blank">15516583</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11430650" target="_blank">11430650</a>]<br></li>
+<li>Peekhaus , N. , and Conway , T. ( 1998 ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14731280" target="_blank">14731280</a>]<br></li>
+<li>Peekhaus , N. , and Conway , T. ( 1998b ) Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) ± cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li></div>
+<li>Control of the Escherichia coli Sialoregulon by Transcriptional Repressor NanR Kathryn A. Kalivoda , * Susan M. Steenbergen , Eric R. Vimr University of Illinois at Urbana-Champaign , Urbana , Illinois , USA NanR , one of > 8,500 GntR superfamily helix-turn-helix transcriptional regulators , controls expression of the genes required for catabolism of sialic acids in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Research Article J Mol Microbiol Biotechnol 2003 ; 6:41 -- 56 DOI : 10.1159 / 000073407 Dual Control by Regulators , GntH and GntR , of the GntII Genes for Gluconate Metabolism in Escherichia coli Ryouichi Tsunedomi Hanae Izu Takuya Kawai Mamoru Yamada Key Words Gluconate metabolism W Gntll W gntR W gntH W Divergent promoter W Expressional regulation Abstract Department of Biological Chemistry , Faculty of Agriculture , Yamaguchi University , Yamaguchi , Japan Escherichia coli possesses two systems , GntI and GntII , for gluconate uptake and catabolism , whose genes are regulated by GntR as a repressor and GntH as an activator , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>TSUNEDOMI R , IZU H , KAWAI T , YAMADA M ( 2003 b ) Dual control by regulators , GntH and GntR , of the GntII genes for gluconate metabolism in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">GntR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Operons Position Score Binding site ( s ) * A. GntR regulon E. coli gntKU R a 2211 11 2116 5.84 5.3 5.69 4.42 6 4.65 4.82 cAATGTTACCGaTAACAgTT AAcaGTTACCcGTAACATTT AgATGTTACCcGTAtCATTc TgAcGTTACCcaTAACAaaT TtATtTTACCGGTAACATgA AAtTGTTACgcGTAACAaaT TcAcGTTAtgcGTAACATag S a S a R a gntT edd-eda R b idnDOTR/gntV S. typhi gntKU 2213 9 5.84 4.62 5.78 4.36 5.94 4.48 cAATGTTACCGaTAACAgTT AAcaGTTACCcGTAACAaaT AtATGTTACCcGTAtCATTc TgAcGTTACCcaTAACAaag gtATtTTACCGGTAACATgA AttTGTTACgcGTAACAcag gntT edd-eda Y. pestis gntT/gntK 6.05 5.48 4.39 5.72 ccATGTTACCGGTAtCATgA TcATGaTACCGGTAACAaaT AtATaTTAtCGcTAtCAggA TcAcGTTACCGGTAACATgT idnO-gntV sdsX V. cholerae gntU-eda / gntK-edd 5.8 ± 81 TcATGTTAtgGGTAACATgT 5.57 267 AcATGTTACCGGTAACtTcA saATGTTACCGGTAACATtw Consensus B. UxuR/ExuR regulon E. coli exuR uxaB uxuAB/gntP R c R c R d 5.26 5.24 5.24 4.5 5.06 4.28 3.82 5.19 4.14 261 AAAgTGGTATAaCAAaTa AAtgTGtTcTACCAcTTT gAtgTGGTtaACCAATTT AAATTGGTcaACCAtTgT tAtTTGGTtgACCAgTTT AAAgTtGTATgaCAAgTT AatTTttTtaACtAcgTT ctATTGGTtaACCAATTT gAATTGGTtaACtAATca R d R c uxuR exuT/uxaCA uidR uidAB R , R e c S. typhi exuT/uxuABC AAATTGGctagCCAAaTc tgATTGGTcaACCAATTT ttgTTGGTtgACCAgTTT AtATTGGTAaACCAATaT 4.42 5.07 4.57 5.25 uxuR Y. pestis uxuB uxuA uxuR exuR gntP AAAcTGGTcTAaCAAcTT AAATcGGTATAaCAAcaT AAgTTGtTtgACCAcaTg tAAgTGGTATAaCAAaTc AAcTTGGTtaACCAATac cAtTTGGTtatCCAcTTa AAcTTGtcATACagATTT 4.99 4.44 4.66 4.93 4.78 4.54 3.72 uxaCBA/exuT H. influenzae uxuRA AAATTGGaATACCAATTT tttTTGGaATACCAAaTa AAATTGGTATACCAATTT 5.47 4.39 223 273 Consensus C. KdgR regulon E. chrysanthemi ogl f AAATGAAAgAATGTTTtATaa AAATGAAACgTTGTTTCtaca AAATaAAACATTaTTTCATTT AAtcaAAACAATGTTTCtaTT AAATaAAACATcGTTTCATcg AAAaGAAACATTGTTTCATTT tAATGAAACggTGTTTtATTa AttTaAAACATcGTTTCATTa tAATGAAAtggcaTTTCAaTT tAATGAAAttAcGTTTCAacT AgATGAAAtggTaTTTCgTTT S S S R S S S S S S S 5.15 5.63 6.05 5.42 5.64 6.07 5.83 5.52 5.72 5.44 5.59 f f kduID pelW kdgK kdgT outT pelA pelB pelC pelE f f f f f f f f Table 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>B Following the initiation of gluconate utili-zation by the GntI system , GntR molecules are released from HRI and HRIII by forming a complex with gluconate , but it still binds to HRII due to highly conserved sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Currently , E. coli FadR is the only member of the GntR family whose DNA-bound structure has been determined ,8,9 revealing that FadR binds the short palindromic consensus sequence 5 ′ - TGGNNNNNCCA-3 ′ .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25376905" target="_blank">25376905</a>]<br></li>
+<li>Nucleotides above the box indicate overlapping repeats of the GntR superfamily consensus sequence , where lowercase letters signify deviations from the consensus and `` n '' denotes any nucleotide .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Thus , NanR polydispersity and disorganization in the presence of sialic acid ( Fig. 3 ) , an overlapping DNA binding site consisting of three weak consensus GntR superfamily palindromes ( 6 , 7 , 17 , 33 ) ( Fig. 7A ) , and unusual binding stoichi-ometry likely contributed to our inability to crystallize otherwise exceptionally pure native NanR ( see Fig .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>In contrast , induction of the tightly regulated nan operon depends on freeing multiple overlapping sites composed of three copies of the loose palindrome recognized by members of the GntR superfamily , with the ﬁrst site conforming almost exactly to the superfamily consensus sequence and to that of the FadR subfamily ( Fig. 7A ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23935044" target="_blank">23935044</a>]<br></li>
+<li>Mutational analysis suggested that GntH as well as GntR bind to 2 partially overlapping sequences , 5 ) - AATGTTACCGATAACAGT-3 ) and 5 ) - ACAGTTACC-CGTAACATT-3 ) , overlapping with or close to the -- 10 sequence of the gntK promoter [ Tsunedomi et al. , 2003 ] , and that GntR binds to 2 separately located sequences , 5 ) - GATGTTACCCGTATCATT-3 ) and 5 ) - GACGTTA-CCCATAACAAA-3 ) , occurring upstream and downstream of the mRNA initiation site of the gntT gene [ Peekhaus and Conway , 1998 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Signiﬁcant primary sequence homology between GntR and GntH , especially in their HTH motifs for DNA binding , led us to hypothesize that GntH , an activator for the GntII genes , represses the GntI genes via GntR-binding elements .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The DNA-binding site of GntR has a palindromic core motif ( TTGTATACAA ) which closely resembles that of HutC ( TTGTALAMc ) , a related regulator in Pseudomonas putida ( Hu etai , 1989 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8057842" target="_blank">8057842</a>]<br></li>
+<li>The sequence of this putative gnt operator is quite similar to that of the lac operator ( 5 ) and the ccpA box ( 20 ) , which bind repressors with signiﬁcant similarity to GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>Putative GntR - ( positions 1568 to 1585 ) and cAMP-CRP binding sequences ( positions 1496 to 1516 ) are represented by bold characters and an underline , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Whereas the LH region of the PaaX binding motif is rather conserved in the operator sequences of other bacterial regulators such as GntR ( 6 ) and PdhR ( 27 ) ( which belong to the GntR family ) and , surprisingly , CRP ( 23 , 25 ) and LacI ( 26 ) ( which belong to the GalR-LacI family ) , the RH region differs from that of other operators ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>Alignment was done with the nucleotide sequences of the binding sites for the PaaX repressor in Pa ( PaaX ( Pa ) ) and Pz ( PaaX ( Pz ) ) promoters , the CRP activator in lac promoter ( CRP - ( Plac ) ) ( 25 ) , the LacI repressor ( 26 ) , the GntR repressor ( 6 ) , and the PdhR repressor ( 27 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10766858" target="_blank">10766858</a>]<br></li>
+<li>These exist in microbial genomes as transcriptional factors .17 ) The binding consensus sequence of the GntR family reported to be tnGTnnnACna .18 ) The results of our gel shift assay showed that the sequence from 65 to 50 was directly recognized by YdfH , and this region C B Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22972332" target="_blank">22972332</a>]<br></li>
+<li>The developing model for gluconate induction suggests that gluconate binds to GntR , displaces it from operator sites at glu-conate-regulated promoters , and allows transcription to occur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>GntR thus seems to function as a negative regulator of gntT by binding to the putative sequence ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>Overlapping the -- 1 position , a putative operator sequence GGCTTCGGCCATATCA for GntR was identified ; likewise , a possible catabolite gene activator protein ( CAP ) binding site ( AAATGGCTTTATCAGGTGCCTG ) is positioned at -- 221 with respect to the translation initiation site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>In fact , the stem-loop structure following the gntY gene and the presence of controlling elements ( a s70 promoter-like sequence , a canonical CAP binding site and a putative operator site for GntR ) upstream of gntX allude to these two genes as components of the same transcriptional unit .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>In addition , there are two binding sites for cAMP-CRP complex and another for GntR or IdnR ( Izu et al. , 1997 , Tsunedomi et al. , 2003b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+<li>The substitution of two , three , or four base pairs within the left or right half of the internal or the external operator site and the insertion of two base pairs into the spacer sequences prevented the binding of GntR in gel retardation assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>If the binding of GntR to the operator sites of gntT is speciﬁc , unlabeled DNA carrying these binding sites should compete for binding , whereas nonspeciﬁc DNA should not .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>In summary , these results demonstrate that GntR binds to two operator sites at gntT and that these protein-DNA interactions are highly speciﬁc .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>To prove that GntR binds to the postulated operator sequences , we constructed mutants carrying base pair substitutions and insertions which were predicted to affect the binding of GntR to these sites ( Fig. 7 and unpublished data ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Proof that GntR binds to the postulated operator sequences was obtained by using mutants which were predicted to affect the binding of GntR to these sites .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>To check whether the postulated gnt operator sites within the gntT promoter region are in fact binding sites for the GntR protein , the effects of mutations within these sequences were measured .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>This region includes promoter-operator sequences for the gntV gene and the idnDOTR operon , each with a binding element for GntR or IdnR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22688914" target="_blank">22688914</a>]<br></li>
+<li>The GntR and FadR binding sites within the respective promoters contain a region of dyad symmetry , which is located very close to the transcription initiation sites ( 71 -- 73 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9748275" target="_blank">9748275</a>]<br></li>
+<li>There is also the possibility that the GntR regulon cross-talks with the IdnR regulon by way of two highly conserved GntR binding sites located within the divergent promoter region of the L-idonate regulon ( 52 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>The presence of a highly conserved GntR binding site within the idnK-idnD intragenic region supports the hypothesis of cross talk from the gnt regulon ( 24 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>The constructed palindromic profile with consensus sequence AAATGTTACCGGTAACATTA assigns a high Z-score to the known GntR binding sites upstream of the gntT gene in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>GntR binding to these sites is inactivated by gluconate , and a single base change anywhere within the consensus operator sequence signiﬁcantly affects GntR binding ( 51 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9657988" target="_blank">9657988</a>]<br></li>
+<li>Indeed , GntR binds to two consensus gnt operator sites ; one overlaps the 210 region of the gntT promoter , and the other is centered at 1120 with respect to the transcriptional start site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>The eda P1 promoter region contains two putative GntR binding sites ( Fig. 1 ) , which have a consensus sequence of ATGTTACCGGTA ACAT ( 21 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>GntR regulates eda by binding to GntR binding sites in the P1 regulatory region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>The regulatory region also contains a single putative IdnR/GntR binding site centered between the two promoters , a CRP binding site upstream of idnD , and an UP element upstream of idnK .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>A putative IdnR operator site ( ATGTTA-CGCA-TAACGT ) with homology to the GntR consensus binding sequence ( ATGTTA - [ N4 ] - TAACAT ) ( 21 ) is centered between the two promoters , 78.5 and 83.5 , with respect to the idnK and idnD transcription start sites , respectively , suggesting that this site may function as a regulatory element for both promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by GntR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>Primer extension analysis showed a reduction in density of both bands for P2 and P3 in the presence of GntR in pGNTT-LAC4 ( Fig. 4A ) , but the corresponding bands at the same position in pGNTT-LAC were not reduced by the presence of GntR , and no other band in addition to those for P2 and P3 was detected in pGNTT-LAC5 under the induced and non-induced conditions ( Fig. 4C and data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>This polypeptide did not show homology with other binding proteins as AraF , MalE , HisJ , LivK and MglA ; interestingly , its C-terminus showed 20.5 % homology with the same region of GntR , the repressor of the gntT and the gntKU operons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>JOURNAL OF BACTERIOLOGY , Apr. 1998 , p. 1777 -- / 98 / $ 04.0010 Copyright © 1998 , American Society for Microbiology Positive and Negative Transcriptional Regulation of the Escherichia coli Gluconate Regulon Gene gntT by GntR and the Cyclic AMP ( cAMP ) - cAMP Receptor Protein Complex NORBERT PEEKHAUS * AND T. CONWAY Department of Microbiology , The Ohio State University , Columbus , Ohio 43210-1292 Received 1 December 1997/Accepted 26 January 1998 The gntT gene of Escherichia coli is speciﬁcally induced by gluconate and repressed via catabolite repression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>Repression by means of DNA looping was shown in the regulation of many other operons in E. coli , such as the ara , gal , lac , and deo operons ( 14 ) , and it was also proposed for other members of the GntR family ( 21 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18263722" target="_blank">18263722</a>]<br></li>
+<li>Gene ydcR that belongs to one of the transcriptional regulator family GntR is also repressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=23472115" target="_blank">23472115</a>]<br></li>
+<li>We also found a protein , encoded by yjgT , with 36 % identity to GntU , and its gene is located near gntH encoding the GntR homolog and close to gntV encoding the GntK homolog .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>A gntR and gntH double-disrupted mutant of NK7049 was constructed , based on the fact that YU506 bearing a single-copy gntK-lacZ operon fusion on the chromosome catabolizes lactose only very poorly because the gntK expression was repressed by GntR in the absence of gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>Effects of GntR on gntT expression We examined the effect of GntR on gntT expression using the operon fusions , where pGNTR2 bearing gntR was added in trans ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>This regulation and the control by GntH were examined by using single-copy lacZ operon fusions and by RT-PCR , suggesting positive and negative regulation by GntR and positive regulation by GntH .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>Effect of GntR on the expression of the GntII genes was also analyzed with single-copy lacZ operon fusions on the genome and by RT-PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>In Y. pestis , the genes of the ED pathway , edd and eda , are in different operons that have no candidate GntR boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>GntR negatively controls the GntI genes , as well as edd and eda of the EntnerDoudoroff pathway .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14973046" target="_blank">14973046</a>]<br></li>
+<li>Expression of the GntR regulon , that is , GntI together with the edd-eda operon , is negatively controlled by the gntR * Corresponding author .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9658018" target="_blank">9658018</a>]<br></li>
+<li>P1 controls eda induction on gluconate and is regulated by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>In summary , these results indicate that transcription of eda from the P1 promoter is under negative control by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15659677" target="_blank">15659677</a>]<br></li>
+<li>It is interesting to speculate that this is the element responsible for binding GntR and repression of gntKU expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8655507" target="_blank">8655507</a>]<br></li>
+<li>This partial increase may be due to the intracellular conversion of 5-ketogluconate to gluconate , which induces expression of the GntI genes by interacting with GntR and releasing it from the operator ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The study also indicated that GntR , a negative regulator for GntI genes , and GntH share the same binding elements at least in the gntKU operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=14593252" target="_blank">14593252</a>]<br></li>
+<li>However , the GntI genes were not induced by gluconate in the presence of enhanced amounts of GntH , whereas repression by GntR was relieved by gluconate .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>GntR and GntH were expressed and puriﬁed as speciﬁed by the manufacturer of the glutathione S-transferase ( GST ) gene fusion system ( Amersham Pharmacia Biotech ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The CAT activities from the pGNTR-CAT11 and pGNTR-CAT27 were not repressed ( Table 4 ) , indicating that GntR is not involved in the expressional regulation of its own gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_22">
+Positive and negative transcriptional regulation of the Escherichia coli gluconate regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></label>
+<input id="tu_similarity_22", type="checkbox">
+<div class="TU_similar">
+<li>Positive and negative transcriptional regulation of the Escher-ichia coli regulon gene gntT by GntR and the cyclic AMP ( cAMP ) - cAMP receptor protein complex .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11441462" target="_blank">11441462</a>]<br></li></div>
+<li>These results conﬁrm that regulation of the gntT gene by GntR is similar to other negatively regulated systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9537375" target="_blank">9537375</a>]<br></li>
+<li>As expected , negative control of gntK and gntT gene expression by cloned GntR was observed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12618441" target="_blank">12618441</a>]<br></li>
+<li>The gntT : : lacZ fusion was constitutively expressed in multicopy , as is expecte for a gene under negative control , e.g. , GntR of the GalR-LacI family ( results not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9045817" target="_blank">9045817</a>]<br></li>
+<li>GntS functions as a positive regulator In E. coli , the expression of the GntI system encoding operons , located at the bioH-asd region ( 76.4 -- 77 min ) , in addition to be catabolite repressed , is negatively regulated by GntR , whose encoding gene is located at the same region .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11441462" target="_blank">11441462</a>]<br></li>
+<li>Such activities compose the GntI ( main ) system whose expression together with those of the EDP is negatively controlled by GntR , whose encoding gene is locate just upstream of gntK ( DE REKARTE et al. 1994 , TONG et al. 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11441462" target="_blank">11441462</a>]<br></li>
+<li>These operons and that of the ENTNER DOUDOROFF pathway ( edd-eda ) are negatively controlled by GntR whose encoding gene is located immediately upstream of gntK ( DE REKARTE et al. 1994 , TONG et al. 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9871335" target="_blank">9871335</a>]<br></li>
+<li>However , upstream and divergently transcribed is the yidP gene , encoding a putative transcriptional regulator of the operon , homologous to GntR and TreR of B. subtilis and to FavR and PhnF of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11361063" target="_blank">11361063</a>]<br></li>
+<li>The gene nanR , located immediately upstream of the operon , encodes a protein of the FadR/GntR family that represses nan expression in trans .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12897000" target="_blank">12897000</a>]<br></li>
+<li>In S. typhi , the corresponding operon is interrupted by an integrase gene , and there are no upstream GntR boxes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11115104" target="_blank">11115104</a>]<br></li>
+<li>The operon consisting of the gntR , gntK , gntP , and gntZ genes , is under negative regulation by GntR and catabolite repression via the CcpA and Hpr ( ser-P ) complex ( Fujita & Fujita , 1987 ; Miwa et al. , 1994 ; Hueck & Hillen , 1995 ; Saier , 1996 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>The intensities of the three bands in pGNTT-LAC4 were reduced by the presence of pGNTR2 bearing the gntR gene ( Fig. 4A ) , suggesting that the promoters are negatively regulated by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>The gntR gene is constitutively expressed , whereas the gntKU genes are positively regulated by the cAMP -- CRP complex and negatively by GntR , and gntU expression is further repressed by attenuation , which occurs after gntK ( Izu et al. , 1997 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9358057" target="_blank">9358057</a>]<br></li>
+<li>CAT fusion analysis revealed that the operon has a promoter for gntR and another for gntKU , and that the gntR gene is constitutively expressed , while that of gntKU is regulated positively by the cAMP-CRP complex and negatively by GntR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Since read-through transcription from the gntR promoter was signi ® cant under de-repressed conditions ( no gntR on the plasmid ) , it would be signi ® cant for the expression of gntK or gntU in the presence of gluconate or its derivative , which may induce the removal of GntR from the binding site but only when the intracellular cAMP concentration is low .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>Read-through transcription from the gntR promoter into gntK was decreased in the presence of GntR , although GntR did not repress its own promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+<li>It appeared that the transcription from the gntK promoter is negatively regulated by GntR as shown in Figure 7 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9135111" target="_blank">9135111</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

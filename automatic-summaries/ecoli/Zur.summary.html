@@ -1,0 +1,849 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - Zur</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">Zur</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">Zur transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>In Escherichiu coli and Salmonella typhimurium : Cellular and MoZecuZur Biology ( Neidhardt , F. C. , Ingraham , J. , Magmanik , B. , Low , K. B. , Schaecter , M. & Umbarger , H. E. , eds ) , vol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=3050131" target="_blank">3050131</a>]<br></li>
+<li>The presence of WTZur in vivo , under growth in rich media ( where zinc is present in moderate to high concentrations ) leads to significant repression at the pliG promoter ( PpliG ) relative to the Dzur strain Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The phosphoryl group from PEP is transferred to the phosphoryl carrier protein HPr by enzyme I ( PtsI ) ; phosphoHPr then transfers it to the permease ( enzymes II/III ) ; HPr is common to all PTS ; regulated by the cAMP-CRP complex and also by growth-on-glucose ; induced by low pH and phosphonate growth See PtsH ; decreases after benzoic acid treatment but increases at phosphonate growth Plays an important role in de novo pathway of purine nucleotide biosynthesis : AMP biosynthesis ; increases after benzoic acid treatment Involved in IMP biosynthesis : 5-amino-1 - ( 5-phospho-D-ribosyl ) imidazole-4 - carboxamide from N ( 2 ) - formyl-N ( 1 ) - ( 5-phospho - dribosyl ) glycinamide ( step 5 ) See PurB : step 4 ; increases after benzoic acid treatment See PurB : step 2 ; increases after benzoic acid treatment See PurB : step 3 PstS P0AG82 Phosphate-binding periplasmic 6.92 / 34,421.76 6.85 / 45,258 ( 6 -- 11 ) protein Pta P0A9M8 Phosphate acetyltransferase 5.28 / 77,040.90 5.29 / 85,417 179 , 228 , 274 , 293 , 294 PtrA 179 Protease III P05458 5.66 / 105,113.29 5.65 / 9,119.37 5.65 / 10,366 P0AA04 Phosphocarrier protein HPr PtsH 27 , 228 , 293 , 294 PtsI 4.78 / 59,810 Phosphoenolpyruvate-protein phosphotransferase P08839 56 , 179 , 228 , 293 , 294 , 321 4.78 / 63,561.84 4.91 / 63,671 ( DIGE 4.5 -- 6.5 ) PurA P0A7D4 Adenylosuccinate synthetase 179 , 321 5.30 / 44,524 ( DIGE 4.5 -- 6.5 ) 5.30 / 43,494 ( DIGE 4.5 -- 6.5 ) 5.32 / 47,213.76 PurB 179 5.68 / 51,542.81 P0AB89 Adenylosuccinate lyase PurC 5.09 / 26,148 ( DIGE 4.5 -- 6.5 ) 5.07 / 26,995.00 P0A7D7 Phosphoribosylaminoimidazolesuccinocarboxamide synthase Phosphoribosylamine-glycine ligase Phosphoribosylaminoimidazole carboxylase catalytic subunit Bifunctional purine biosynthesis protein Phosphoribosylaminoimidazole carboxylase ATPase subunit 179 , 321 PurD 179 , 321 5.06 / 47,667 ( DIGE 4.5 -- 6.5 ) 4.96 / 45,940.36 P15640 PurE 179 , 321 6.05 / 18,899 ( DIGE 4.5 -- 6.5 ) 6.03 / 17,649.13 P0AG18 See PurB : ﬁnal step ; increases after benzoic acid treatment See PurB : step 3 ; possesses an ATPase activity that is dependent on the presence of AIR ( aminoimidazole ribonucleotide ) ; the association of PurK and PurE produces an enzyme complex capable of converting AIR to CAIR efﬁciently under physiological condition See PurB : step 2 PurH 179 , 321 5.50 / 57,000 ( DIGE 4.5 -- 6.5 ) 5.53 / 57,329.21 P15639 5.75 / 28,100 ( 5 -- 6 ) 5.60 / 39,461.12 P09029 PurK 287 179 P08178 Phosphoribosylformylgly-cinamidine cyclo-ligase HTH-type transcriptional-repressor 4.83 / 36,722.85 PurM Repressor that binds to the purF operator and coregulates other genes for de novo purine nucleotide synthesis ; involved in regulation of purB , purC , purEK , purHD , purL , purMN , and guaBA expression ; binds hypoxanthine and guanine as inducers 4.83 / 36,722.85 PurM P0ACP7 6.3 / 38,043.62 PurR 179 Oxidizes proline to glutamate for use as a carbon and nitrogen source and also functions as a transcriptional-repressor of the put operon ; induced by proline Involved in ﬁnal step of glycolysis Involved in UMP biosynthesis : UMP from HCO3 ( step 2 ) See PyrB : step 3 See PyrB : step 4 See PyrB : step 6 ( ﬁnal ) Bifunctional protein 5.69 / 143,815.16 PykF Pyruvate kinase I P0AD61 5.77 / 50,729.42 5.65 / 56,143 ( DIGE 4.5 -- 6.5 ) 179 , 321 PyrB Aspartate carbamoyltransferase catalytic chain Dihydroorotase Dihydroorotate dehydrogenase Orotidine 5 -- phosphate decarboxylase CTP synthase P0A786 6.13 / 34,296.17 5.70 / 93,664 6.13 / 35,321 179 , 212 , 228 , 294 P05020 P0A7E1 P08244 PyrC 5.77 / 38,696.19 7.66 / 36,774.52 5.81 / 26,350.24 179 179 , 287 PyrD PyrF 7.28 / 47,786 ( 6 -- 11 ) 5.76 / 56,695 179 , 228 , 294 , 321 5.83 / 24,964 ( DIGE 4.5 -- 6.5 ) 5.61 / 58,475 ( DIGE 4.5 -- 6.5 ) Catalyzes the ATP-dependent amination of UTP to CTP with either L-glutamine or ammonia as the source of nitrogen ; allosterically activated by GTP when glutamine is the substrate and also activated by magnesium but inhibited by CTP and by divalent metal ions such as copper and zinc Catalyzes the phosphorylation of UMP to UDP , with ATP as the preferred donor Involved in allosteric regulation of aspartate carbamoyltransferase Essential for efﬁcient processing of 16S rRNA ; has afﬁnity for free ribosomal 30S subunits but not for 70S ribosomes ; cold-shock protein essential for E. coli cells to adapt to low temp PyrG P0A7E5 5.63 / 60,242.96 179 , 321 7.07 / 25,839.07 P0A7E9 Uridylate kinase PyrH PyrI P0A7F3 Aspartate carbamoyltransferase 6.84 / 16,989.44 6.85 / 17,023 regulatory chain 7.01 / 17,642 ( 6 -- 11 ) 179 , 212 , 228 , 287 , 294 RbfA P0A7G2 Ribosome-binding factor A 5.96 / 15,023.29 5.79 / 17,433 6.00 / 15,635 286 , 319 Involved in the high-afﬁnity D-ribose membrane transport system and also serves as the primary chemoreceptor for chemotaxis ; repressed in the presence of glucose but induced in the physiological short-term adaptation to glucose limitation Involved in ribose metabolism Catalyzes the hydrolysis of ATP in the presence of single-stranded DNA , the ATP-dependent uptake of single-stranded DNA by duplex DNA , and the ATP-dependent hybridization of homologous single-stranded DNAs ; interacts with LexA , causing its activation and leading to its autocatalytic cleavage ; induced by low temp at 10 ° C as well as by cadmium chloride , hydrogen peroxide , and ACDQ Counteracts the effect of relE by means of direct proteinprotein interaction , enabling the reversion of translation inhibition ; acts as an autorepressor of relBE transcription ; increased transcription rate of relBE and activation of relE is consistent with a lower level of relB in starved cells due to degradation of relB by protease lon ; induced by amino acid starvation RbfA P0A7G2 Ribosome-binding factor A 5.96 / 15,023.29 5.79 / 17,433 6.00 / 15,635 286 , 319 RbsB P02925 6.85 / 30,900 5.99 / 28,474.47 D-Ribose-binding periplasmic protein 99 , 179 , 311 , 321 E 4.5 -- 6.5 ) IG 5.92 / 29,066 ( D 4.99 / 32,290.52 P0A9J6 Ribokinase P0A7G6 Protein RecA RbsK RecA 179 5.09 / 37,842.18 5.08 / 41,137 133 , 179 , 228 , 294 , 297 4.81 / 9,071.48 4.81 / 9,100 Antitoxin P0C079 RelB 99 Continued on facing pag Catalyzes the interconversion between ADP-D-glycero-beta-D-manno-heptose and ADP-L-glycero-beta-D-manno-heptose via an epimerization at carbon 6 of the heptose ; completely inhibited by ADP and ADP-glucose and partially inhibited by ATP and NADH ; induced by heat-shock Involved in carbohydrate biosynthesis and dTDP-L-rhamnose biosynthesis See RfbB RfaD P67910 ADP-L-glycero-D-manno-heptose-6-epimerase 4.80 / 34,893.17 4.85 / 36,820 4.94 / 36,106 ( DIGE 4.5 -- 6.5 ) 4.98 / 35,245 ( 4 -- 5 ) P37759 RfbB 179 dTDP-glucose 4,6-dehydratase 5.47 / 40,558.33 RfbC P37745 dTDP-4-dehydrorhamnose 3,5 - 5.48 / 21,270.11 epimerase P0AG30 Transcription termination factor 6.75 / 47,004.21 179 Facilitates transcription Rho termination by a mechanism that involves rho binding to the nascent RNA , activation of rho 's RNA-dependent ATPase activity , and release of the mRNA from the DNA template Involved in riboﬂavin biosynthesis ; repressed by heat-shock but induced by low pH Involved in ﬁnal steps of riboﬂavin synthesis ; riboﬂavin synthase is a bifunctional enzyme complex catalyzing the formation of riboﬂavin from 5-amino-6 - ( 1 - D ) - ribityl-amino-2 ,4 ( 1H ,3 H ) - pyrimidinedione and L-3 ,4 - dihydrohy-2-butanone-4 - phosphate via 6,7-dimethyl-8-lumazine ; the alpha subunit catalyzes the dismutation of 6,7-dimethyl-8-lumazine to riboﬂavin and 5-amino-6 - ( 1-D ) - ribityl-amino-2 ,4 ( 1H ,3 H ) - pyrimidinedione See RibE ; decreases after benzoic acid treatment Acetylates the N-terminal serine of ribosomal protein L7/L12 ; increases during phosphate limitation and phosphonate growth Essential for efﬁcient processing of 16S rRNA ; probably part of the 30S subunit prior to or during the ﬁnal step in the processing of 16S free 30S ribosomal subunits ; could be some accessory protein needed for efﬁcient assembly of the 30S subunit ; needed in a step prior to RbfA during the maturation of 16S rRNA ; has afﬁnity for free ribosomal 30S subunits but not for 70S ribosomes ; decreases after benzoic acid treatment P0A7J0 3,4-Dihydroxy-2-butanone 4-phosphate synthase 4.90 / 23,353.47 RibB 274 RibE P0AFU8 Riboﬂavin synthase alpha chain 5.64 / 23,444.90 5.67 / 26,821 ( 5 -- 6 ) 5.73 / 25,731 ( 5.5 -- 6.7 ) 179 , 287 RibH 5.15 / 16,000 ( DIGE 4.5 -- 6.5 ) 5.19 / 12,875 ( 4.5 -- 5.5 ) 5.42 / 40,651 5.15 / 16,156.51 P61714 6,7-Dimethyl-8-ribityllumazine synthase Ribosomal protein-serine acetyltransferase 179 , 287 , 321 5.86 / 20,680.55 P13857 RimL 228 , 293 , 294 4.68 / 24,436 ( DIGE 4.5 -- 6.5 ) 4.61 / 20,605.43 P0A7X6 16S rRNA-processing protein RimM 321 179 321 5.09 / 35,712.71 5.39 / 32,693.56 Rare lipoprotein A Glucose-1-phosphate thymidylyltransferase 1 P10100 P37744 RlpA Catalyzes the formation of dTDP-glucose from dTTP and glucose-1-phosphate as well as its pyrophosphorolysis ; decreases after benzoic acid treatment Digests double-stranded RNA ; involved in the processing of rRNA precursors and of some mRNAs Rare lipoprotein A Glucose-1-phosphate thymidylyltransferase 1 P10100 P37744 RlpA 5.41 / 32,544 ( DIGE 4.5 -- 6.5 ) RmlA1 6.4 / 25,550.04 P0A7Y0 RNase III Rnc 179 Matures 5S rRNA from its precursors from all the rRNA genes ; cleaves RNA I , a molecule that controls the replication of colE1 plasmid DNA ; the major endoribonuclease participating in mRNA turnover in E. coli May be part of a membrane complex involved in electron transport Responsible for the end turnover of tRNA : speciﬁcally removes the terminal AMP residue from uncharged tRNA ( tRNA-C-C-A ) ; involved in tRNA biosynthesis , especially in strains lacking other exoribonucleases P21513 Rne RNase E 5.48 / 118,196.73 Electron transport complex protein P77285 RnfG 179 6.59 / 21,911.91 RNase T P30014 Rnt 179 5.19 / 23,522.7 5.13 / 24,554.25 Ribulose-phosphate 3-epimerase Ribose-5-phosphate isomerase A P0AG07 Rpe 179 Involved in nonoxidative branch of the pentose phosphate pathway ; base-induced protein One of the primary rRNA-binding proteins ; binds very close to the 3 end of the 23S rRNA and forms part of the L1 stalk ; translational repressor protein ; controls the translation of the L11 operon by binding to its mRNA See RplA ; increases at phosphonate growth RpiA 5.20 / 22,860.40 5.06 / 25,943 P0A7Z0 179 , 274 , 286 RplA 50S ribosomal protein 9.64 / 24,598.44 8.24 / 25,577 ( 6 -- 11 ) L1 P0A7L0 179 , 287 RplI 6.20 / 19,831 6.17 / 15,769 6.17 / 15,769.06 50S ribosomal protein L9 P0A7R1 29 , 179 , 228 , 286 , 287 , 293 , 294 6.71 / 10,366 5.10 / 8,830 ( 4.5 -- 5.5 ) 6.36 / 15,124 ( 6 -- 11 ) 9.04 / 17,580.4 Translational repressor protein ; controls the translation of the rplJL-rpoBC operon by binding to its mRNA Seems to be the binding site for several of the factors involved in protein synthesis and appears to be essential for accurate translation ; decreases during phosphate limitation Binds the 5S rRNA ; required for the late stages of subunit assembly Binds to 23S rRNA in the presence of protein L20 One of the proteins that binds to the 5S RNA in the ribosome , where it forms part of the central protuberance ; binds to the 5S rRNA independently of L5 and L18 ; not required for binding of the 5S rRNA/L5/L18 subcomplex to 23S rRNA May be induced under zinc-limiting conditions ; may be repressed in that case by the zinc uptake regulation protein Zur DNA-dependent RNA polymerase catalyzes the transcription of DNA into RNA using the four ribonucleoside triphosphates as substrates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>Regulated expression of 21 small proteins Comparison of growth under the two indicated conditions Minimal glucose vs minimal glycerol Proteina M b ap c LB vs Aerobic vs Mock treatment vs pH 7.5 vs 30 ° C vs 37 ° C vs Mock Mock low oxygen SDS EDTA pH 5.5 45 ° C 10 ° C treatment treatment vs vs H2O2 diamide RegulonDB minimal glucose YpfM YccB Monocistronic None d appAB-yccB - 38 , 70 , AppY , appC ArcA Monocistronic None Monocistronic None cydAB-ybgTE 70 , ArcA , Fnr , FruR , HNS ykgMO 70 , Zur yqgB-speAB None Monocistronic None yjhBC-ythA None Monocistronic NL yqeKL None Monocistronic NL Monocistronic NL ilvXGMEDA 70 , Lrp , IHF yeaP-yoaKJ None Monocistronic NL yeaP-yoaKJ None yoeI-yeeF None Monocistronic None In IsrB sRNA NL yobF-cspC None YncL YneM - - e YbgT - ¬ YkgO YqgB YnhF YthA YobI YqeL YohP YkgR IlvX YoaJ YpdK YoaK YoeI YbhT AzuC YobF - - - - - ¬ - ¬ - ¬ - - - ¬ - - ¬ - - - ¬ - ¬ - -- ¬ -- - ¬ - ¬ - ¬ - - ¬ a All small proteins that had at least a 4-fold change in protein levels in at least one experiment are listed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Sequences of the Fur proteins of Staphylococcus epidermis , Campylobacter jejuni , C. uppsaliensis , Neisseria men-ingitidis , N. gonorrhoeae , Bordetella pertussis , Ralstonia eutropha , Pseudomonas putida , P. aeruginosa , Legionella pneumophila , Klebsiella pneumoniae , Escherichia coli , Yersinia pestis , Vibrio anguillarum , V. cholerae , V. vulnificus , V. parahaemolyticus , Haemophilus ducreyi , Helicobacter pylori , Rhizobium leguminosarum , Synechococcus PCC7942 , and Bacillus subtilis , the Zur and PerR proteins of B. subtilis , are compared with the sequence of E. coli NikR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648098" target="_blank">10648098</a>]<br></li>
+<li>Biochemistry 2001 , 40 , 10417-10423 10417 Characterization of the Metal Receptor Sites in Escherichia coli Zur , an Ultrasensitive Zinc ( II ) Metalloregulatory Protein † Caryn E. Outten , ‡ Daniel A. Tobin , § James E. Penner-Hahn , § and Thomas V. O'Halloran * , ‡ ,  Department of Chemistry and Department of Biochemistry , Molecular Biology , and Cell Biology , Northwestern UniVersity , EVanston , Illinois 60208 , and Department of Chemistry , UniVersity of Michigan , Ann Arbor , Michigan 48109 ReceiVed May 14 , 2001 ; ReVised Manuscript ReceiVed July 23 , 2001 ABSTRACT : The Escherichia coli Zur protein is a Fur homologue that regulates expression of Zn ( II ) uptake systems .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Structural and Mechanistic Basis of Zinc Regulation Across the E. coli Zur Regulon Benjamin A. Gilston , Suning Wang , Mason D. Marcus , Mónica A. Canalizo-Herna ́ndez , 1 1 1 1 Elden P. Swindell , Yi Xue , Alfonso Mondragón * , Thomas V. O'Halloran * 2 1 3 1,3 1 Department of Chemistry and The Chemistry of Life Processes Institute , Northwestern University , Evanston , Illinois , United States of America , 2 Department of Chemical and Biological Engineering , Northwestern University , Evanston , Illinois , United States of America , 3 Department of Molecular Biosciences , Northwestern University , Evanston , Illinois , United States of America Abstract Commensal microbes , whether they are beneficial or pathogenic , are sensitive to host processes that starve or swamp the prokaryote with large fluctuations in local zinc concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The Zinc-responsive Regulator Zur and Its Control of the znu Gene Cluster Encoding the ZnuABC Zinc Uptake System in Escherichia coli * Received for publication , March 3 , 2000 , and in revised form , May 8 , 2000 Published , JBC Papers in Press , May 17 , 2000 , DOI 10.1074 / jbc.M001775200 Silke I. Patzer ‡ and Klaus Hantke From Lehrstuhl Mikrobiologie/Membranphysiologie , Universität Tübingen , Auf der M 72076 Tübingen , Germany orgenstelle 28 , The synthesis of the Escherichia coli zinc transporter , encoded by the znuACB gene cluster , is regulated in response to the intracellular zinc concentration by the zur gene product .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>FIGURE 1 : SDS-PAGE gel from Zur purification procedures : std , molecular mass standards ; lane 1 , uninduced cells ; lane 2 , induced cells ; lane 3 , urea extract ; lane 4 , 15 µg of purified Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Lanes 1 , uninduced whole cells ; lanes 2 , induced whole cells ; lanes 3 , soluble fraction of cell lysate after induction ; lanes 4 , Zur purified by imidazole elution from a Ni21-iminodiacetic acid-immobilized metal affinity chromatography column .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_11">
+Characteristics of Zur in Comparison to Fur Zur just as Fur seems to be widespread among bacteria , even in gram-positive bacteria and cyanobacteria , as indicated by sequence similarity searches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_11", type="checkbox">
+<div class="ACT_similar">
+<li>Zur , like Fur , seems to be widespread among bacteria , even in gram-positive bacteria and cyanobacteria , as indicated by sequence similarity searches .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Here , the profile is explained by a combination of the two regulators ' profiles ( shown in Fig. 5 ) : for zinT , the initial decrease is given by Zur repression , while the final decline is given by the effect of Fur ( which activates zinT ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>With the exceptions of Fur ( Fig. 5d ) and SoxS ( Fig. 5e ) , the regulators exhibit a monotonic change from a low level of activity to a high level of activity or vice versa , which is compatible with their physiological role ( e.g. the activity of Zur is predicted to increase as Zn concentration increases ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Details are shown in Supplementary Table S2 , but briefly this consisted of 184 genes that could be divided into the following categories : repressed by Fur , 63 ; activated by Fur , 15 ; repressed by CpxR , 21 ; activated by CpxR , 37 ; repressed by SoxS , 1 ; activated by SoxS , 23 ; repressed by OxyR , 2 ; activated by OxyR , 16 ; activated by CusR , 6 ; activated by BaeR , 9 ; repressed by Zur , 4 ; repressed by ArsR , 3 ; activated by ZraR , 3 ; activated by ZntR , 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_16">
+Statistical modelling of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators ; ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></label>
+<input id="act_similarity_16", type="checkbox">
+<div class="ACT_similar">
+<li>The analysis of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators : ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li></div>
+<li>While the profiles of the ` monotonic ' regulators BaeR , CpxR , Zur and CusR are compatible with the predicted profile from the dynamic time-course dataset , neither Fur nor SoxS exhibits the transient behaviour predicted from the dynamic data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Inferred activity profiles of regulators BaeR , CpxR , CusR , Fur , SoxS and Zur during adaptation from Zn deprivation to Zn excess : TFinfer software predictions on the temporally resolved data collected upon addition of 200 mM Zn to Zn-depleted continuous cultures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Inferred activity profiles of regulators BaeR , CpxR , CusR , Fur , SoxS and Zur at steady states with different Zn concentrations .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Abbreviations : 31mer2bpOH , DNA with a core of 31 bps and a 2 bp overhang ; DtxR , diphtheria toxin repressor ; EcZur , E. coli Zur ; EMSA , electron mobility shift assay ; Fur , ferric uptake regulator ; HTH , helix-turn-helix ; Kd-app , macroscopic dissociation constant ; PerR , peroxide repressor ; pliG , periplasmic lysozyme inhibitor ; RT-PCR , reverse transcription PCR ; WT , wild-type ; WTZur , wild-type Zur ; Zur , zinc uptake regulator ; aH , Hill coefficient .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Therefore , the binding of E. coli Zur and DNA can be described as a two-step mechanism shown in scheme 1a and 1b : Zur2 - DNA ' Zur z DNA 2 ( 1a ) Kd1 ðZur2Þ2 - DNA ' Zur2z Zur2 - DNA ( 1b ) Kd2 ðZur2Þ2 - DNA ' 2 Zur2z DNA Kd-app ( 1c ) Given the highly cooperative binding of two dimers to the operator , it is not possible to determine microscopic site constants Kd1 and Kd2 for each dimer ( reactions 1a and 1b or Equation 2a ) ; however , the apparent macroscopic dissociation constant ( Kd-app ) for reaction 1c is readily determined by fitting the fraction of DNA bound as a function of total Zur dimer concentration using Equation 2b [ 55 ] ( Scheme S1 ) : Equation 2b is identical to the derived thermodynamic expression used to model a highly cooperative two-to-one equilibrium [ 56 ] such as the binding of diphtheria toxin repressor ( DtxR ) to DNA [ 29 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Bode , C.H. , Goebell , H. , and St & hler , E. ( 1968 ) Zur Eliminierung von Tr0bungsfehlern bei der EiweiSbestimmung mit der Biuretmethode .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8801422" target="_blank">8801422</a>]<br></li>
+<li>References Bode , C H , , Goebell , H , , and Stahler , E. ( 1968 ) Zur Elimmierung von Trubungsfehlern bei der Eiwett ^ bestimrnung rnit der Biurelmethode .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=2181237" target="_blank">2181237</a>]<br></li>
+<li>To investigate the presence of diverse COG0523 subfamilies , we combined literature analysis ( Table 2 and Additional File 1 ) with predictions of Zur and B12 regulation ( see below ) and phylogenetic and gene neighborhood analyses .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>For example , Cupriavidus metallidurans has a Zur-regulated gene cluster encoding YciC , FolE2 , and paralogs of CysS , QueD , Cam , and PyrC , whereas the Zur regulon in Pseudomonas fluorescens includes two COG0523 proteins , FolE2 , and paralogs of AmiA , DksA , HisI , Cam , and PyrC ( Figure 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>In vitro transcription studies ( Outten and O'Halloran , 2001 ) revealed that halfmaximal Zur repression occurs at ﬁvefold lower Zn2 + ion concentrations than the half-maximal value of ZntR activation so that gene transcription occurs for either one of Department of Biochemistry and Molecular Biophysics , Washington University School of Medicine , St Louis , MO , 63110 , USA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+<li>In vitro , the cysteine residues of Zur are easily oxidized to disulfides , as judged by the slower migration on SDS-polyacryl-amide gels under reducing conditions compared with nonreducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_29">
+In vitro , the cysteine residues of Zur are easily oxidised to dis-ulﬁdes , as judged by the slower migration in SDS-polyacrylamide gels under reducing conditions compared to non-reducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_29", type="checkbox">
+<div class="ACT_similar">
+<li>In vitro , the cysteine residues of Zur are easily oxidized to disulﬁdes , as judged by the slower migration in SDS-polyacrylamide gels under reducing conditions compared to non-reducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Zur was concentrated to 1-2 mL and showed one band on overloaded SDS-PAGE gels .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Under these conditions , Zur was in the oxidized form as judged by SDS-PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>As shown in Figure 3 , the presence or absence of Zur does not affect the expression of ACIAD1025 and ACIAD1614 under the conditions tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Zur migrated more slowly under reducing conditions than under nonreducing conditions , which indicates that the isolated Zur protein was in the oxidized form with at least one intramolecular disulfide bridge even when the protein isolation and purification procedures were carried out in the presence of 10 mM 2-mercaptoethanol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Complementation occurred even without induction of T7 RNA polymerase or when the inserts were in the direction opposite to that of the T7 RNA polymerase promoter ( pSP100/34 , long form on pT7-7 ; pSP100/21 , short form on pT7-7 ; and pSP100/4 , native form on pT7-5 ) , indicating that minimal amounts of Zur protein are sufficient for repression of the znu gene cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>We had observed induction of YkgO-SPA in minimal medium in our previous study and hypothesized that this effect was due to the regulation of the ykgM-ykgO operon by the Zur repressor ( 22 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>The minimal medium used in our experiments does not contain added zinc , and we also observed strong induction of YkgO-SPA when cells were treated with EDTA , consistent with our prediction that the high levels of YkgO-SPA in cells grown in minimal medium might be due to Zur derepression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Furthermore , the relative number and affinity of competitive pseudosites in these AT-rich binding sites can decrease the binding free energy for the functional complex [ 81 ] , and this may provide another basis for the gradation in affinities among the family of Zur regulated promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>With the ZnuC-coding strand ( Fig. 5A ) , signals for Zur19 ( trace 2 ) were identical to those for in vitro methylated pSP97/47 in the absence of Zur ( negative control , trace 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>The repressing activity of the Zur protein is Zn2 + speciﬁc since addition of Cd2 + , Hg2 + , Pb2 + , Mn2 + , Fe2 + , and Cu2 + led to a derepression of the Znu transport system in vivo ( Patzer & Hantke 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>In Vivo Footprinting Assays -- In DNase I footprinting assays , wild-type Zur and all the mutant Zur proteins except Zur31 and ZurD46 -- 91 bound to the znu operator , although the mutant Zur proteins were not able to repress the znuA9-lacZ fusion in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>This limitation is also documented by the binding of most of the mutant Zur proteins to the znu operator in vitro in DNase I footprinting assays , but not in vivo , as was indicated by depression of the znu - lacZ fusion in the zur mutants and 9 the lack of protection of the znu operator by at least Zur19 in in vivo footprinting experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Although most of the mutant Zur proteins bound to the znu operator in vitro , no protection was observed in in vivo footprinting experiments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_44">
+Footprinting experiments indicated that although most of the mutant Zur proteins bound to the znu promoter in vitro , no protection was observed in vivo ( Patzer and Hantke , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_44", type="checkbox">
+<div class="ACT_similar">
+<li>Footprinting experiments have indicated that although most of the mutant Zur proteins bind to the znu promoter in vitro , no protection is observed in vivo ( Patzer & Hantke 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Zur Binds to the znu Operator -- The data obtained by in vivo titration assays did not rule out the possibility that regulation via Zur is indirect , mediated by other factors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>This table demonstrates that both in vivo and in vitro data support the Zur hierarchy of affinity as follows : PL31P and PzinT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Central Purines Are Key to Dimer-Dimer Binding in Zur Regulon Promoters In order to elucidate the relative importance of specific Zur / DNA contacts in the Zur-znuABC structure , every base involved in hydrogen-bond interactions with Zur was mutated and the affinity of each individual mutant operator DNA was analyzed by titration with WT protein ( Figure 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The Amplitude of In Vivo Zur Repression Correlates with Protein-DNA Binding Thermodynamics We next addressed whether the degree of repression at each promoter PznuABC , PzinT , PL31p , and PpliG correlates with the affinity of Zur for the operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>An additional structural challenge is present when two regulatory proteins that control opposing functional pathways must respond to the same metal ion , but at different concentrations , such as the zinc-responsive regulatory proteins Zur and ZntR5 that control influx and efflux pathways , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18505253" target="_blank">18505253</a>]<br></li>
+<li>Deconvolution of these factors is important for understanding how Zur and related nutrient-responsive regulons operate in pathogens that survive major shifts in local zinc concentrations induced by the host .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Under nonreducing conditions , protein bands with lower intensity were observed at '38 and '57 kDa and at '29 and '43 kDa for wild-type Zur and ZurD46 -- 91 , respectively ; these two bands probably represent the dimer and trimer formed by intermolecular disulfide bridges .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Due to the high ionic strength ( 300 mM NaCl ) of the buffer , it was ruled out that Zur was strongly retained because of its negative charge at this pH. Thus , wild-type Zur exists as a dimer under these conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>The degree of Zur repression observed in vivo by comparison of transcript copy number in wild-type and Dzur strains parallels this trend spanning a 100-fold difference .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>When negative complementation occurred , the repression of the znuA9-lacZ fusion by wild-type Zur was abolished , resulting in red instead of white colonies on MacConkey lactose agar plates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>This effect was greater with increased expression of wild-type Zur ( trace 3b ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Negative complementation by an excess of the mutant Zur protein can be explained by competition for the corepressor Zn21 or by formation of less active heterodimers with wild-type Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Upon Zn2 depletion , the ykgM-encoded L31 protein is expressed ( probably de-repressed by Zur ) and becomes preferentially bound to the ribosome ( the exact mechanism is unclear ) , allowing Zn2 within the rpmE-encoded L31 to be recycled .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_59">
+It remains to be seen if one of these zinc ions is bound to the same site in Zur as it was found in Fur at the conserved cysteines ( positions 92 and 95 , see Figure 1 ; Jacquamet et al. , 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_59", type="checkbox">
+<div class="ACT_similar">
+<li>It remains to be seen whether one of these Zn2 + ions is bound to the same site in Zur as was found in Fur at the conserved cysteines ( positions 92 and 95 ; Jacquamet et al. 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Given that a single dimer of Zur can bind to the pliG operator and the precedence for single dimer Fur repression [ 64 ] , it is possible that future studies will identify additional Zur operators , including those that contain only a single dimer binding site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>To date , the structures of several Fur family members , including the zinc response-regulator , Zur , are known in the absence of DNA and the nature of the core DNA element recognized by these proteins remains unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>It is possible that other proteins designated as Fur homologues will turn out to be Zur proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>As argued for E. coli ZntR and Zur , this makes it unlikely that these metal sensor proteins function under thermodynamic control , where the metal binding a ⁄ nity of the sensor protein is appropriately tuned to 1 / [ metal ] free such that a successful stress response can be mounted [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>As shown in the alignment in Fig. 6 , Zur lacks the cluster of histidines around amino acid 90 that is conserved in Fur and that is assumed to be involved in 21 Fe binding of Fur ( 31 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Remarkably , a cluster of histidines in Fur around positions 86 -- 90 , which is thought to be involved in metal sensing , is conserved in E. coli NikR and in B. subtilis Zur and PerR ( but not in E. coli Zur which has not been aligned ; Patzer and Hantke 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648098" target="_blank">10648098</a>]<br></li>
+<li>Of the nine cysteines present in E. coli Zur , Cys17 , Cys113 , Cys152 , Cys158 , and possibly Cys88 are probably not involved in Zn21 binding because they are not conserved in at least one or even all Zur proteins from other bacterial genera ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>These cysteines are perfectly conserved in all Zur proteins proposed ( Fig. 6 ) and may therefore serve as Zn21 ligands also in Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Overnight cultures of ADP1 and zur : kanR cultured in Luria Broth was used to inoculate 5 ml culture of Luria Broth supplemented with 50 M ZnSO4 to ensure repression of transcription by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Inactivation of the zur gene demonstrated that Zur acts as a repressor when binding Zn21 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_71">
+By inactivation of the zur gene , it was demonstrated that Zur acts as a repressor and not as an activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_71", type="checkbox">
+<div class="ACT_similar">
+<li>By inactivation of the zur gene , it has been demonstrated that Zur acts as a repressor and not as an activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>We find a clear hierarchy : Zur exhibits between 980 - to 560-fold repression on zinT and L31p expression , and 7 - and 8-fold repression on the znuC and pliG promoters , respectively ( Table 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Monitoring expression from ( PzinT-lacZ ) in a strain lacking zur showed constitutive de-repression , regardless of extracellular Zn2 concentration , confirming that Zur is involved in the regulation of zinT ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>Previous microarray studies had demonstrated that pliG expression was affected by changes in Zn2 + concentration , however Zur regulation had not been hypothesized [ 34,63 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>We demonstrate here for the first time that one such gene , zinT , is up-regulated in response to extreme Zn2 deprivation by Zur and that ZinT has a high affinity for Zn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>Second , mutation of ycdH alters the regulation of both the yciC ( a gene regulated by Zn2 + and the repressor Zur ) and ycdH operons such that much higher levels of exogenous Zn2 + are required for repression ( Gaballa & Helmann 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Zur Forms a Dimer -- To confirm that Zur forms dimers , to determine the dimer/monomer ratio under various conditions , and to see whether the mutant Zur proteins differ , the purified proteins were analyzed by gel filtration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Supporting Information mutant Zur proteins analyzed by EMSA gel shifts of the znuABC operator in the presence of 50 mM ZnSO4 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Zur acquired zinc either in the cell or during purification ; the zinc/protein ratio in the sample of purified Zur was 1:5 as determined by atom absorp ¬ FIG. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Since all mutant Zur proteins could be purified in large amounts , it can be ruled out that the Zur phenotype is the result of low protein expression or of an unstable Zur protein that is quickly degraded by cellular proteases .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Residues protected from DMS modification upon Zur binding are indicated by downward-pointing arrows ; signals that increased are indicated by upward-pointing arrows .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Purified Zur bound Fe21 far less efficiently than Zn21 , and Fe21 did not considerably hinder binding of the corepressor Zn21 to Zur , at least under the in vitro conditions and concentrations tested , thereby providing no hint for a direct interaction of iron with Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>This can be explained either by direct binding of these divalent cations to Zur , thereby changing the conformation into an inactive form that no longer represses znuACB , or by these metal ions exerting their derepressing effect indirectly by lowering the intracellular zinc level .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_85">
+Zur occupies its binding site only in the presence of Zn2 + or other divalent metal cations at low concentrations , as shown by DNase I footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></label>
+<input id="act_similarity_85", type="checkbox">
+<div class="ACT_similar">
+<li>Zur 2 + occupied its binding site only in the presence of zinc or other divalent metal cations at low concentrations , as shown by the DNase I footprinting data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>Zur occupied its binding site only in the presence of zinc or other divalent metal cations at low concentrations , as shown by the DNase I footprinting data .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li></div>
+<li>Zinc chelators completely inhibit DNA binding of Zur , and addition of Zn2 + in low concentrations enhances binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_89">
+Zinc chelators completely inhibited DNA binding of Zur , and addition of Zn in low concentrations enhanced binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_89", type="checkbox">
+<div class="ACT_similar">
+<li>Zinc chelators completely inhibited and Zn21 in low concentrations enhanced DNA binding of Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li></div>
+<li>The metal elements ( Na , Mn , Ni , Cu , Zn , Fe , and Mo ) are directly recognized by the DNA-binding TFs ( NhaR , MntR , NikR , CueR , ZntR/Zur , Fur , and ModE , respectively ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=26010043" target="_blank">26010043</a>]<br></li>
+<li>In the putative promoter ( 200 bp upstream of the pitA start codon ) , no DNA-binding sites for the following transcription factors are evident : MerR , CueR , ZntR ( all MerR family ) , Zur , NikR , CusR , ZraR , CpxR and ModE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19054109" target="_blank">19054109</a>]<br></li>
+<li>This intrinsic variation , as well as the variability in the degree of cooperativity and in the number of repressor molecules binding to DNA , may contribute to the heterotropic cooperativity and differential responses in the Zur regulons of other organisms .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>To exclude the possibility that the observed DNA protection was due to impurities in the purified Zur fraction , footprinting assays with the same column fraction recovered accordingly , but without overproduction of Zur , were performed as a negative control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Since the individual components Zur25 and wild-type Zur bind to DNA , it is surprising that the heterodimer seems to-bind less efficiently or not at all .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>A surplus of ZurD46 -- 91 ( 10-fold ) or Zur25 , but not Zur27 , over wild-type Zur was able to abolish binding of wild-type Zur to the DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>In contrast to Zur27 , Zur25 inhibited DNA binding of wild-type Zur in DNase I footprinting experiments and showed negative complementation , both of which can be accounted for by the prevalence of Zur25 dimer formation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Footprinting experiments in that study were conducted with Zn1Zur , although the exact form of the protein binding the DNA can not be known since Zur can bind exogenous Zn ( II ) in the footprinting buffer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>DNase I footprinting assays with purified wild-type Zur protein were used to determine whether Zur directly binds to this DNA region and to verify the DNA-binding site on the znu operator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Zur protein was shown to-bind directly and specifically to DNA with this sequence using three independent assays of DNA binding : in vivo titration , DNase I footprinting , and in vivo footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Protein-DNA Complex Crystallization and Data Collection Zur protein and the designed DNA were mixed together to a final concentration of [ Zur ] = 117 mM , [ DNA ] = 108 mM , with [ DTT ] = 5 mM and [ ZnSO4 ] = 150 mM .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Thus , Zur appears to-bind to the DNA as a dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Zur bound to DNA only in the presence of a reducing agent such as DTT .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>( B ) Graphical representation of the percentage of bound DNA versus the concentration of Zur protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>A molar excess of ,15 Zur dimers/DNA molecule was sufficient for protection under optimized conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Addition of 5 mM Zn21 or Mn21 enhanced DNA protection by this partially Zn21-saturated Zur preparation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Structures identified in the closed conformation ( Streptomyces coelicolor Zur [ 40 ] , B. subtilis PerR-Zn-Mn [ 47 ] , S. coelicoler Nur [ 48 ] , E. coli Fur [ 49 ] , Vibrio cholera Fur [ 50 ] , and Figure 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>( XLSX ) Figure S6 E. coli Zur binds to wide major and narrow Data S4 Raw data from Figure 6 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Regulation of High Afﬁnity Zinc Uptake by Zur The high-afﬁnity Zn uptake was repressed by growth 65 2 + in the presence of 10 mM Zn2 + .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>Zn2 - bound Zur represses transcription of znuABC , whereas the addition of the metal chelator TPEN3 de-represses expression from a promoterless lacZ gene inserted into znuA , znuB , and znuC ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>The induction of zntA transcription requires the ZntR transcription activator , while znuC transcription is repressed by the Zur transcription repressor ( 3 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16159766" target="_blank">16159766</a>]<br></li>
+<li>The znuACB operon is repressed by the Zur repressor protein , which binds to the intragenic region in times of sufﬁcient Zn concentrations and slows transcription of the operon ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22210763" target="_blank">22210763</a>]<br></li>
+<li>When Zn ( II ) levels in the media fall to a critical point , Zur is proposed to de-repress transcription of the znuABC operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10608803" target="_blank">10608803</a>]<br></li>
+<li>Zn-bound Zur represses transcription of znuABC ( Patzer & Hantke , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>In vitro studies of the Zur protein indicate that it binds DNA and represses transcription in vitro in a Zn ( II ) - responsive manner .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Here we look at how the bacterium E. coli does this , by examining the structure and function of Zur , a transcriptional-repressor that is exquisitely sensitive to 2 + Zn concentration .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Recent in vitro data indicate that the transcriptional activity of Zur is half-maximal when free Zn ( II ) concentrations are in the sub-femtomolar range , making it the most sensitive Zn ( II ) metalloregulatory protein reported to date .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Although the structures of related Zur proteins on their own are known , here we show how E. coli protein binds to DNA and explain its extreme sensitivity and specificity ( it responds to Zn concentrations in the 2 + femtomolar range ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Zn ( II ) uptake by this system is regulated by Zur , a Zn ( II ) - responsive homologue of the Received 29 April , 1998 ; revised 25 October , 1998 ; accepted 27 October , 1998 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10048032" target="_blank">10048032</a>]<br></li>
+<li>Fur and Zur are 27 % identical in amino acid sequence , and it is not clear why they both bind Zn ( II ) since they respond to different metal ions in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>On the basis of these arguments , it is possible that site B in Fur functions to recognize Fe ( II ) , while in Zur it specifically favors Zn ( II ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Under conditions of Zn ( II ) su $ ciency , expression of the pump is repressed by Zur , a Fur homologue [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10802061" target="_blank">10802061</a>]<br></li>
+<li>If the second Zn site had all low-Z ligands , then the average structure for Zn Zur would be ZnS N ; the 2 1.5 2.5 presence of a single thiolate bound to the second Zn would give an average structure of ZnS2N2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Zur senses subfemtomolar concentrations of cytosolic Zn , implying that cellular Zn starvation commences at exceptionally low Zn concentrations ( Outten & O'Halloran , 2001 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>Recently , zinT was shown to be induced by Zur in response to Zn starvation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>In E. coli , three regulators -- ZntR , ZraS/R , and Zur -- are known to respond to Zn2 + .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Zur represses transcription of ZnuABC , an ABC-like Zn2 + - uptake protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+<li>Zn2 + ABC transporters are regulated by Zur repressors , which belong to the Fur protein family of iron regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>' Tyr45 is not conserved across all Fur homologs , but is unique to gram negative Zur protein-DNA recognition , and likely provides discrimination between Zur - and Fur-regulated promoters ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>All Known Promoters in the E. coli Zur Regulon Use a Purine-N-N-N-Pyrimidine Sequence In the absence of Zur-DNA structures , several groups have compared Zur regulated promoters seeking consensus protein-DNA recognition patterns that could be used to define Zur regulons .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Our structure determination of the E. coli Zur protein bound to the znuABC operator combined with thermodynamic and cooperativity analyses of Zur-binding at all of the known Zur-regulated promoters lead to a comprehensive view of differential expression patterns in this regulon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Search programs , like SignalX , correctly identified three of the E. coli Zur regulated promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Here the repressor-DNA affinity strongly correlates with the fold repression across the four known Zur regulated promoters in E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Data also includes the raw data from the in vivo repression data of the four E. coli Zur regulated operators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Of the three COG0523 genes in Acinetobacter baylyi ADP1 , only one is regulated by Zur To test the predictive power of our COG0523 phylogenomic analysis , the regulation of the three COG0523 genes from Acinetobacter baylyi ADP1 was analyzed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>To test whether pliG was in fact regulated by Zur , pliG transcripts were measured by reverse transcription ( RT ) - PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>This approach has been quite successful in c and b-proteobacteria organisms , identifying as many as 23 Zur regulated genes in the case of C. Anabaena [ 25,78,79 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>For instance , although adjacent to folE2 , yciC is usually regulated by Zur independently ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Given that 2 + E. coli accrue zinc and iron to similar levels under most growth conditions , the small number of Zur regulated genes stands in contrast to the copious number of genes regulated by E. coli Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The expression of yciC is controlled by the Zn-dependent Zur repressor and is thus up-regulated under Zn-limiting conditions [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Zn-independent proteins are negatively regulated by Zur and expressed under Zn-limiting conditions to replace the Zn-dependent proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>The second group contains genes such as zinT which are regulated both by Fur and by another regulator ( Zur in the case of zinT ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>The third , ACIAD1741 [ Genbank : ACIAD1741 , 49530869 ] , is predicted to be regulated by Zur ( subfamily 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Another , larger subgroup , is suggested to play a predominant role in the response to zinc limitation based on the presence of the corresponding COG0523-encoding genes downstream from putative Zur binding sites in many bacterial genomes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>This ultrasensitivity of Zur to changes in zinc concentration suggests that bacteria are intolerant of free zinc in the cytosol under normal growth conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Zur binds at least 2 zinc ions/dimer specifically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>u lator Zur of E. coli DISCUSSION Native Zur is a dimer , even in the absence of zinc or other metal ions , as indicated by gel filtration experiments in the presence of chelators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Similar to PyrC ' , the zinc-bind-ing residues are not conserved in the PyrC paralog whose gene we predict to be regulated by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>DNA binding by Zur requires zinc ; under zinc-depleted conditions , Zur is released from the DNA , allowing transcription of repressed genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>The zinc-loaded form of Zur is proposed to-bind DNA and repress transcription of the znuABC genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Zur , a transcription factor found in many species of bacteria , regulates gene expression in response to zinc levels ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Two species of cytosolic transcription factor , ZntR and Zur , are involved in transcription regulation of the zinc response genes ( 3 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16159766" target="_blank">16159766</a>]<br></li>
+<li>However , we also identiﬁed novel regulation , such as Zur repression of ykgMO , cyclic AMP response protein ( CRP ) repression of azuC , and CRP activation of ykgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>We found that transcription of the ykgMO operon is repressed by Zur and that azuC and ykgR transcription is repressed and activated by CRP , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Jung , H. , and Jung , K. ( 1988 ) Zur Charakterisierung und Regulation derL ( - ) - Camitinmetabolisierung in Escherichia coti .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7815937" target="_blank">7815937</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_156">
+No evidence for autoregulation of Zur or for the inﬂuence of other regulators on Zur was found .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_156", type="checkbox">
+<div class="ACT_similar">
+<li>No evidence for autoregulation of Zur was found .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li></div>
+<li>This may indicate that Zn is mainly bound by some of the 9 2 + cysteines found in Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>This might indicate that Zn2 + is mainly bound by some of the nine cysteines found in Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>These systems are active at rich non-toxic concentrations of Zn2 + when znuABC is repressed by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Wild-type Zur and Zur 46 -- 91 form homo - and heterodimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_162">
+Zur is only active in the reduced form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="act_similarity_162", type="checkbox">
+<div class="ACT_similar">
+<li>Zur is active only in the reduced form .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Affinity determination of WT Zur titrations of PznuABC by EMSA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>These data conﬁrm the predicted Zur repression of the ykgM-ykgO operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>ykgM-ykgO is repressed by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Zur repression of ykgO .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Zur Cloning and Purification .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Zur Kentniss des Sussmandelemulsins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=5335893" target="_blank">5335893</a>]<br></li>
+<li>The region responsible for the Zur regulation was narrowed down by subcloning as depicted in Fig. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>The Bradford assay was found to overestimate the Zur concentration by 2.33 in comparison to the extinction coefficient .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>The high concentration of EDDS necessary for Zur inactivation demonstrates the strong affinity of reduced Zur for Zn21 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">Zur protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In vitro , the cysteine residues of Zur are easily oxidized to disulfides , as judged by the slower migration on SDS-polyacryl-amide gels under reducing conditions compared with nonreducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_2">
+In vitro , the cysteine residues of Zur are easily oxidised to dis-ulﬁdes , as judged by the slower migration in SDS-polyacrylamide gels under reducing conditions compared to non-reducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="dom_similarity_2", type="checkbox">
+<div class="DOM_similar">
+<li>In vitro , the cysteine residues of Zur are easily oxidized to disulﬁdes , as judged by the slower migration in SDS-polyacrylamide gels under reducing conditions compared to non-reducing conditions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>2 + Thus DNA-binding activity of EcZur is severely limited when either of the zinc-binding sites is compromised .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Each EcZur monomer includes two domains : an N-terminal DNA-binding domain and a C-terminal dimerization domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>When compared to EcZur bound to DNA , both the open and closed conformations show good agreement across the C-terminal dimerization domains , but differ significantly in the relative positioning of the N-terminal-DNA-binding-domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>All images from the Zur crystal structure were rendered using PYMOL [ 89 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>In Mycobacterium tuberculosis , a COG0523-like gene , RV0106 , ( shown also to be repressed by Zur [ 65 ] ) is up-regulated during human macrophage infection [ 66 ] ( although RV0106 shows homology to COG0523 , it is missing both GTPase motifs , and the second cysteine of the CXCC motif is not conserved ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>As expected , HemB1 contains the zinc chelating cysteine ligands while those cysteines are not conserved in the protein , HemB2 , encoded by the gene putatively regulated by Zur in Pseudomonas putida ( Additional File 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>As argued for E. coli ZntR and Zur , this makes it unlikely that these metal sensor proteins function under thermodynamic control , where the metal-binding a ⁄ nity of the sensor protein is appropriately tuned to 1 / [ metal ] free such that a successful stress response can be mounted [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>DAR carried out the analysis of putative Zur and ZntR binding sites and B12 riboswitches , analysis of putative back-up enzyme paralogs , and assisted in drafting the paper .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>The proteins of three other families downstream of putative Zur binding sites are missing the conserved zinc-binding residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>In addition , the DksA paralogs downstream of putative Zur binding sites are missing the canonical C4-zinc-finger motifs ( Additional File 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Amino acid residues of Zur contacting the DNA are colored by dimer , green for dimer 1 and purple for dimer 2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>These experiments demonstrate that site A residues are critical for Zur dimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Structure based alignments of the Zur dimers in this EcZur protein-DNA complex with several Fur-family members provide strong support for a mechanism wherein metal-induced allosteric changes stimulate conversion of the wing-helix DNA-binding domain from an `` open '' to a `` closed '' conformation that is capable of binding DNA with high affinity [ 38,40 -- 51 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Moreover , this region is highly conserved in all Zur sequences and corresponds to the second helix in the proposed helix-turn-helix motif in Fur that has previously been suggested to mediate interactions with DNA ( 30 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>As shown in the alignment in Fig. 6 , Zur lacks the cluster of histidines around amino acid 90 that is conserved in Fur and that is assumed to be involved in 21 Fe binding of Fur ( 31 , 32 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>The two Zn ( II ) binding cysteine residues of Fur that are conserved in Zur are shown in bold .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>In E. coli Fur , there are only four cysteines , all of which are conserved in Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Structure-based alignment of E. coli Zur with sequences of structurally characterized Fur-family proteins shows some conservation of zinc-binding residues .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>( C ) Structure based alignment highlighting the zinc-coordinating amino acid side chains in known Zur and Fur structures .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>A comparison of the metal-binding sites in Zur with its Fe ( II ) - sensing homologue Fur provides clues as to why these two proteins with similar structures respond to two very different metal ions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>A comparison of the amino acid sequences and metal-binding sites of Fur and Zur highlights a few similarities and some important differences between the two proteins ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Conservation of Arg65 among both Zur and Fur-family members along with previous mutational analysis suggested that this amino acid is critical for binding to DNA by many proteins of the Fur-family [ 53 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Our structural characterization and DNA-binding assays indicate that the critical contact sites are the adenines on the opposite strand , not the thymines , in the E. coli Zur and Fur proteins ( Figure S2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Alignment and dendrogram of selected members of the Zur protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>Interestingly , the amino acid residues that form this pair of salt bridges are highly conserved within the gramnegative subset of Zur proteins ( Table S1 ) , but not in other members of the Fur-family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>This pair of acidic and basic residues is a highly conserved motif in Zur family members , but is not conserved in the Fur-family overall ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The structural and thermodynamic data allow identification of the specific-sequence recognition elements that give rise to differential DNA-recognition within the Zur family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>This indicates that crucial DNA contacts made by the Zur protein are located in the region around residue 65 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_32">
+Analysis of the mutant Zur proteins suggested an amino-terminal DNA contact domain around residue 65 and a dimerization and Zn21-binding domain toward the carboxyl-terminal end .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></label>
+<input id="dom_similarity_32", type="checkbox">
+<div class="DOM_similar">
+<li>Analysis of the mutant Zur proteins suggested an amino-terminal DNA contact domain around residue 65 and a carboxy-terminal dimerization and Zn - binding 2 + domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>Analysis of the mutant Zur proteins suggested an amino-terminal DNA contact domain around residue 65 and a carboxy-terminal dimerization and Zn2 + - binding domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>Wild-type and mutant Zur proteins were overproduced and purified , and the interaction with metal ions and with operator DNA both in vitro and in vivo was examined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Mutant forms of Zur where the salt bridge is removed ( D49A or R52A ) retain both zinc-binding ( 2 mol zinc per mol Zur monomer ) and tight DNA-binding activity , but do not exhibit the highly cooperative binding observed for the WT protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Intriguingly , in the case of the three known Zur operators the DNA-binding occurs in a highly cooperative fashion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Comparison of in vitro and in vivo DNA-binding experiments for all four Zur promoters .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>In general , both DNA-binding and salt-bridge linkers are conserved amongst gram-negative Zur proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>All three plasmids , including the one coding for the short Zur protein ( pSP100/22 ) , expressed physiological active proteins that complemented a zur mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>This difference may reflect the ratio of cysteines vs histidines in each protein : Fur has 12 histidines and only 4 cysteines out of 148 amino acids , while Zur has 9 cysteines and 9 histidines out of 171 amino acids .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>This suggests that the amino acids altered in the mutant Zur proteins are important for the structure and/or function of native Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>To test whether zinc occupancy in these two sites is important for repressor function of EcZur , we mutated a conserved residue in each site to serine and compared the ability of these variants to compliment Zur activity in the zur-null strain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>To independently evaluate the two metal sites in Zur , a mixed metal sample was made using zinc and cobalt [ Co ( II ) , - Zn-Zur ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>After removal of unbound metal , the protein contained 0.8 mol of Zn ( II ) and 0.9 mol of Co ( II ) per Zur monomer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>In other words , this indicates that the zinc in Co ( II ) , Zn-Zur resides solely in one metal-binding site and that this site is the same as that found in Zn1Zur FIGURE 3 : Fourier transforms and k3-weighted Zn and Co EXAFS for all three Zur protein samples .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>In this study , we further defined the role of Zur in metalloregulation of the znu gene cluster .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>In Zur , the central nucleotides play a critical role in recognition , not the outer bases as in DtxR ( Figure 6C ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>In addition to these base specific interactions , the backbone shape or indirect readout is also observed between each Zur monomer and the dozens of electrostatic and hydrophobic contacts with the DNA backbone .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The three dimensional model of the complex shows the central portion of the operator DNA surrounded by four Zur monomers forming a dimer of dimers .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Interestingly , each of the four monomers of E. coli Zur makes two hydrogen bond contacts to specific purine DNA bases for a total of eight direct interactions with the PznuABC operator ( Figure 1B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Using the crystallographic and biochemical data we find that the simplest motif to represent the E. coli Zur recognition elements involves precise purine-N-N-N-pyrimidine elements , where the monomer contacts the 59 purine in these double strand elements .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_53">
+At least two to three zinc ions per dimer bind speciﬁcally to Zur ( Patzer and Hantke , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="dom_similarity_53", type="checkbox">
+<div class="DOM_similar">
+<li>At least two to three Zn2 + ions per dimer bind speciﬁcally to Zur ( Patzer & Hantke 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>In each promoter we find two purine-N-N-N-pyrimidine motifs separated by three residues to give RNNNYxxxRNNNY , which serves as the core recognition element for one Zur dimer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Our structure and biochemical data reveal that each Zur dimer recognizes this palindromic element with a three base spacer ( RNNNYxxxRNNNY ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">Zur evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>Only ~ 30 % of COG0523 members analyzed are linked to the zinc homeostasis either through putative Zur sites ( ~ 8 % ) or co-localization with genes involved in the response to zinc starvation ( ~ 20 % ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Nine families of Zn-dependent enzymes whose paralogs belong to Zur regulons in - , and - proteobacteria ( Figure 5 ) were found .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>At least nine protein families that are homologs or isozymes of known Zn-dependent proteins were identified as candidate members of the reconstructed Zur regulons in - and - proteobacteria , suggesting their up-regulation during zinc limitation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Members of the Fur Protein Family Regulate Iron and Zinc Transport in E. coli and Characteristics of the Fur-Regulated FhuF Protein Abstract be Zur , a zinc dependent repressor ( see below ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>The structural and thermodynamic data allow identification of the specific-sequence recognition elements that give rise to differential DNA recognition within the Zur family of proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>( C ) Structure based alignment of EcZur and the known structures of the Fur family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>To date , the structures of several Fur family members , including the zinc response regulator , Zur , are known in the absence of DNA and the nature of the core DNA element recognized by these proteins remains unclear .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Superposition of E. coli Zur with known structures of Fur family members .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Conservation of Arg65 among both Zur and Fur family members along with previous mutational analysis suggested that this amino acid is critical for binding to DNA by many proteins of the Fur family [ 53 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>While Arg65 is highly conserved across many members of the Fur family of proteins , even Mur and Nur ( alignment not shown ) , there is little to no conservation of the cooperativity linkers found in their Zur counterparts .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Interestingly , the amino acid residues that form this pair of salt bridges are highly conserved within the gramnegative subset of Zur proteins ( Table S1 ) , but not in other members of the Fur family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>This pair of acidic and basic residues is a highly conserved motif in Zur family members , but is not conserved in the Fur family overall ( Table S1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>According to sequence similarities , Zur is considered to be a member of the Fur family of metalloregulatory proteins , which include the Fur ( ferric iron uptake regulator ) proteins of E. coli and other bacteria involved in iron regulation ( 10 ) as well as PerR of B. subtilis , which controls the peroxide stress response ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Alignment and dendrogram of selected members of the Zur protein family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>The Zur protein shows 27 % identity to the Fur protein of E. coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_16">
+The Zur protein showed 27 % sequence identity with the iron regulator Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="evo_similarity_16", type="checkbox">
+<div class="EVO_similar">
+<li>The Zur protein shows 27 % sequence identity with the iron regulator Fur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>The protein examined in this study , Zur , is a member of the Fur family of bacterial metal-responsive regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Zn2 + ABC transporters are regulated by Zur repressors , which belong to the Fur protein family of iron regulators .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by Zur</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>The phosphoryl group from PEP is transferred to the phosphoryl carrier protein HPr by enzyme I ( PtsI ) ; phosphoHPr then transfers it to the permease ( enzymes II/III ) ; HPr is common to all PTS ; regulated by the cAMP-CRP complex and also by growth on glucose ; induced by low pH and phosphonate growth See PtsH ; decreases after benzoic acid treatment but increases at phosphonate growth Plays an important role in de novo pathway of purine-nucleotide-biosynthesis : AMP-biosynthesis ; increases after benzoic acid treatment Involved in IMP-biosynthesis : 5-amino-1 - ( 5-phospho-D-ribosyl ) imidazole-4 - carboxamide from N ( 2 ) - formyl-N ( 1 ) - ( 5-phospho - dribosyl ) glycinamide ( step 5 ) See PurB : step 4 ; increases after benzoic acid treatment See PurB : step 2 ; increases after benzoic acid treatment See PurB : step 3 PstS P0AG82 Phosphate-binding periplasmic 6.92 / 34,421.76 6.85 / 45,258 ( 6 -- 11 ) protein Pta P0A9M8 Phosphate acetyltransferase 5.28 / 77,040.90 5.29 / 85,417 179 , 228 , 274 , 293 , 294 PtrA 179 Protease III P05458 5.66 / 105,113.29 5.65 / 9,119.37 5.65 / 10,366 P0AA04 Phosphocarrier protein HPr PtsH 27 , 228 , 293 , 294 PtsI 4.78 / 59,810 Phosphoenolpyruvate-protein phosphotransferase P08839 56 , 179 , 228 , 293 , 294 , 321 4.78 / 63,561.84 4.91 / 63,671 ( DIGE 4.5 -- 6.5 ) PurA P0A7D4 Adenylosuccinate synthetase 179 , 321 5.30 / 44,524 ( DIGE 4.5 -- 6.5 ) 5.30 / 43,494 ( DIGE 4.5 -- 6.5 ) 5.32 / 47,213.76 PurB 179 5.68 / 51,542.81 P0AB89 Adenylosuccinate lyase PurC 5.09 / 26,148 ( DIGE 4.5 -- 6.5 ) 5.07 / 26,995.00 P0A7D7 Phosphoribosylaminoimidazolesuccinocarboxamide synthase Phosphoribosylamine-glycine ligase Phosphoribosylaminoimidazole carboxylase catalytic subunit Bifunctional purine biosynthesis protein Phosphoribosylaminoimidazole carboxylase ATPase subunit 179 , 321 PurD 179 , 321 5.06 / 47,667 ( DIGE 4.5 -- 6.5 ) 4.96 / 45,940.36 P15640 PurE 179 , 321 6.05 / 18,899 ( DIGE 4.5 -- 6.5 ) 6.03 / 17,649.13 P0AG18 See PurB : ﬁnal step ; increases after benzoic acid treatment See PurB : step 3 ; possesses an ATPase activity that is dependent on the presence of AIR ( aminoimidazole ribonucleotide ) ; the association of PurK and PurE produces an enzyme complex capable of converting AIR to CAIR efﬁciently under physiological condition See PurB : step 2 PurH 179 , 321 5.50 / 57,000 ( DIGE 4.5 -- 6.5 ) 5.53 / 57,329.21 P15639 5.75 / 28,100 ( 5 -- 6 ) 5.60 / 39,461.12 P09029 PurK 287 179 P08178 Phosphoribosylformylgly-cinamidine cyclo-ligase HTH-type transcriptional repressor 4.83 / 36,722.85 PurM Repressor that binds to the purF operator and coregulates other genes for de novo purine-nucleotide-synthesis ; involved in regulation of purB , purC , purEK , purHD , purL , purMN , and guaBA expression ; binds hypoxanthine and guanine as inducers 4.83 / 36,722.85 PurM P0ACP7 6.3 / 38,043.62 PurR 179 Oxidizes proline to glutamate for use as a carbon and nitrogen source and also functions as a transcriptional repressor of the put operon ; induced by proline Involved in ﬁnal step of glycolysis Involved in UMP-biosynthesis : UMP from HCO3 ( step 2 ) See PyrB : step 3 See PyrB : step 4 See PyrB : step 6 ( ﬁnal ) Bifunctional protein 5.69 / 143,815.16 PykF Pyruvate kinase I P0AD61 5.77 / 50,729.42 5.65 / 56,143 ( DIGE 4.5 -- 6.5 ) 179 , 321 PyrB Aspartate carbamoyltransferase catalytic chain Dihydroorotase Dihydroorotate dehydrogenase Orotidine 5 -- phosphate decarboxylase CTP synthase P0A786 6.13 / 34,296.17 5.70 / 93,664 6.13 / 35,321 179 , 212 , 228 , 294 P05020 P0A7E1 P08244 PyrC 5.77 / 38,696.19 7.66 / 36,774.52 5.81 / 26,350.24 179 179 , 287 PyrD PyrF 7.28 / 47,786 ( 6 -- 11 ) 5.76 / 56,695 179 , 228 , 294 , 321 5.83 / 24,964 ( DIGE 4.5 -- 6.5 ) 5.61 / 58,475 ( DIGE 4.5 -- 6.5 ) Catalyzes the ATP-dependent amination of UTP to CTP with either L-glutamine or ammonia as the source of nitrogen ; allosterically activated by GTP when glutamine is the substrate and also activated by magnesium but inhibited by CTP and by divalent metal ions such as copper and zinc Catalyzes the phosphorylation of UMP to UDP , with ATP as the preferred donor Involved in allosteric regulation of aspartate carbamoyltransferase Essential for efﬁcient processing of 16S rRNA ; has afﬁnity for free ribosomal 30S subunits but not for 70S ribosomes ; cold shock protein essential for E. coli cells to adapt to low temp PyrG P0A7E5 5.63 / 60,242.96 179 , 321 7.07 / 25,839.07 P0A7E9 Uridylate kinase PyrH PyrI P0A7F3 Aspartate carbamoyltransferase 6.84 / 16,989.44 6.85 / 17,023 regulatory chain 7.01 / 17,642 ( 6 -- 11 ) 179 , 212 , 228 , 287 , 294 RbfA P0A7G2 Ribosome-binding factor A 5.96 / 15,023.29 5.79 / 17,433 6.00 / 15,635 286 , 319 Involved in the high-afﬁnity D-ribose membrane transport system and also serves as the primary chemoreceptor for chemotaxis ; repressed in the presence of glucose but induced in the physiological short-term adaptation to glucose limitation Involved in ribose metabolism Catalyzes the hydrolysis of ATP in the presence of single-stranded DNA , the ATP-dependent uptake of single-stranded DNA by duplex DNA , and the ATP-dependent hybridization of homologous single-stranded DNAs ; interacts with LexA , causing its activation and leading to its autocatalytic cleavage ; induced by low temp at 10 ° C as well as by cadmium chloride , hydrogen peroxide , and ACDQ Counteracts the effect of relE by means of direct proteinprotein interaction , enabling the reversion of translation inhibition ; acts as an autorepressor of relBE transcription ; increased transcription rate of relBE and activation of relE is consistent with a lower level of relB in starved cells due to degradation of relB by protease lon ; induced by amino acid starvation RbfA P0A7G2 Ribosome-binding factor A 5.96 / 15,023.29 5.79 / 17,433 6.00 / 15,635 286 , 319 RbsB P02925 6.85 / 30,900 5.99 / 28,474.47 D-Ribose-binding periplasmic protein 99 , 179 , 311 , 321 E 4.5 -- 6.5 ) IG 5.92 / 29,066 ( D 4.99 / 32,290.52 P0A9J6 Ribokinase P0A7G6 Protein RecA RbsK RecA 179 5.09 / 37,842.18 5.08 / 41,137 133 , 179 , 228 , 294 , 297 4.81 / 9,071.48 4.81 / 9,100 Antitoxin P0C079 RelB 99 Continued on facing pag Catalyzes the interconversion between ADP-D-glycero-beta-D-manno-heptose and ADP-L-glycero-beta-D-manno-heptose via an epimerization at carbon 6 of the heptose ; completely inhibited by ADP and ADP-glucose and partially inhibited by ATP and NADH ; induced by heat shock Involved in carbohydrate-biosynthesis and dTDP-L-rhamnose-biosynthesis See RfbB RfaD P67910 ADP-L-glycero-D-manno-heptose-6-epimerase 4.80 / 34,893.17 4.85 / 36,820 4.94 / 36,106 ( DIGE 4.5 -- 6.5 ) 4.98 / 35,245 ( 4 -- 5 ) P37759 RfbB 179 dTDP-glucose 4,6-dehydratase 5.47 / 40,558.33 RfbC P37745 dTDP-4-dehydrorhamnose 3,5 - 5.48 / 21,270.11 epimerase P0AG30 Transcription termination factor 6.75 / 47,004.21 179 Facilitates transcription Rho termination by a mechanism that involves rho binding to the nascent RNA , activation of rho 's RNA-dependent ATPase activity , and release of the mRNA from the DNA template Involved in riboﬂavin biosynthesis ; repressed by heat shock but induced by low pH Involved in ﬁnal steps of riboﬂavin synthesis ; riboﬂavin synthase is a bifunctional enzyme complex catalyzing the formation of riboﬂavin from 5-amino-6 - ( 1 - D ) - ribityl-amino-2 ,4 ( 1H ,3 H ) - pyrimidinedione and L-3 ,4 - dihydrohy-2-butanone-4 - phosphate via 6,7-dimethyl-8-lumazine ; the alpha subunit catalyzes the dismutation of 6,7-dimethyl-8-lumazine to riboﬂavin and 5-amino-6 - ( 1-D ) - ribityl-amino-2 ,4 ( 1H ,3 H ) - pyrimidinedione See RibE ; decreases after benzoic acid treatment Acetylates the N-terminal serine of ribosomal protein L7/L12 ; increases during phosphate limitation and phosphonate growth Essential for efﬁcient processing of 16S rRNA ; probably part of the 30S subunit prior to or during the ﬁnal step in the processing of 16S free 30S ribosomal subunits ; could be some accessory protein needed for efﬁcient assembly of the 30S subunit ; needed in a step prior to RbfA during the maturation of 16S rRNA ; has afﬁnity for free ribosomal 30S subunits but not for 70S ribosomes ; decreases after benzoic acid treatment P0A7J0 3,4-Dihydroxy-2-butanone 4-phosphate synthase 4.90 / 23,353.47 RibB 274 RibE P0AFU8 Riboﬂavin synthase alpha chain 5.64 / 23,444.90 5.67 / 26,821 ( 5 -- 6 ) 5.73 / 25,731 ( 5.5 -- 6.7 ) 179 , 287 RibH 5.15 / 16,000 ( DIGE 4.5 -- 6.5 ) 5.19 / 12,875 ( 4.5 -- 5.5 ) 5.42 / 40,651 5.15 / 16,156.51 P61714 6,7-Dimethyl-8-ribityllumazine synthase Ribosomal protein-serine acetyltransferase 179 , 287 , 321 5.86 / 20,680.55 P13857 RimL 228 , 293 , 294 4.68 / 24,436 ( DIGE 4.5 -- 6.5 ) 4.61 / 20,605.43 P0A7X6 16S rRNA-processing protein RimM 321 179 321 5.09 / 35,712.71 5.39 / 32,693.56 Rare lipoprotein A Glucose-1-phosphate thymidylyltransferase 1 P10100 P37744 RlpA Catalyzes the formation of dTDP-glucose from dTTP and glucose-1-phosphate as well as its pyrophosphorolysis ; decreases after benzoic acid treatment Digests double-stranded RNA ; involved in the processing of rRNA precursors and of some mRNAs Rare lipoprotein A Glucose-1-phosphate thymidylyltransferase 1 P10100 P37744 RlpA 5.41 / 32,544 ( DIGE 4.5 -- 6.5 ) RmlA1 6.4 / 25,550.04 P0A7Y0 RNase III Rnc 179 Matures 5S rRNA from its precursors from all the rRNA genes ; cleaves RNA I , a molecule that controls the replication of colE1 plasmid DNA ; the major endoribonuclease participating in mRNA turnover in E. coli May be part of a membrane complex involved in electron transport Responsible for the end turnover of tRNA : speciﬁcally removes the terminal AMP residue from uncharged tRNA ( tRNA-C-C-A ) ; involved in tRNA-biosynthesis , especially in strains lacking other exoribonucleases P21513 Rne RNase E 5.48 / 118,196.73 Electron transport complex protein P77285 RnfG 179 6.59 / 21,911.91 RNase T P30014 Rnt 179 5.19 / 23,522.7 5.13 / 24,554.25 Ribulose-phosphate 3-epimerase Ribose-5-phosphate isomerase A P0AG07 Rpe 179 Involved in nonoxidative branch of the pentose-phosphate-pathway ; base-induced protein One of the primary rRNA-binding proteins ; binds very close to the 3 end of the 23S rRNA and forms part of the L1 stalk ; translational repressor protein ; controls the translation of the L11 operon by binding to its mRNA See RplA ; increases at phosphonate growth RpiA 5.20 / 22,860.40 5.06 / 25,943 P0A7Z0 179 , 274 , 286 RplA 50S ribosomal protein 9.64 / 24,598.44 8.24 / 25,577 ( 6 -- 11 ) L1 P0A7L0 179 , 287 RplI 6.20 / 19,831 6.17 / 15,769 6.17 / 15,769.06 50S ribosomal protein L9 P0A7R1 29 , 179 , 228 , 286 , 287 , 293 , 294 6.71 / 10,366 5.10 / 8,830 ( 4.5 -- 5.5 ) 6.36 / 15,124 ( 6 -- 11 ) 9.04 / 17,580.4 Translational repressor protein ; controls the translation of the rplJL-rpoBC operon by binding to its mRNA Seems to be the binding site for several of the factors involved in protein-synthesis and appears to be essential for accurate translation ; decreases during phosphate limitation Binds the 5S rRNA ; required for the late stages of subunit assembly Binds to 23S rRNA in the presence of protein L20 One of the proteins that binds to the 5S RNA in the ribosome , where it forms part of the central protuberance ; binds to the 5S rRNA independently of L5 and L18 ; not required for binding of the 5S rRNA/L5/L18 subcomplex to 23S rRNA May be induced under zinc-limiting conditions ; may be repressed in that case by the zinc uptake regulation protein Zur DNA-dependent RNA polymerase catalyzes the transcription of DNA into RNA using the four ribonucleoside triphosphates as substrates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16760308" target="_blank">16760308</a>]<br></li>
+<li>( C ) Analytical gel filtration chromatograms of WT Zur , site A mutant C103S , and site B mutant C88S .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Monitoring expression from ( PzinT-lacZ ) in a strain lacking zur showed constitutive de-repression , regardless of extracellular Zn2 concentration , confirming that Zur is involved in the regulation of zinT ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>For example , Cupriavidus metallidurans has a Zur-regulated gene cluster encoding YciC , FolE2 , and paralogs of CysS , QueD , Cam , and PyrC , whereas the Zur regulon in Pseudomonas fluorescens includes two COG0523 proteins , FolE2 , and paralogs of AmiA , DksA , HisI , Cam , and PyrC ( Figure 4 and 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>All three plasmids , including the one coding for the short Zur protein ( pSP100/22 ) , expressed physiological active proteins that complemented a zur mutant .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Several metal-responsive transcription factors from different protein families are known , including the bacterial proteins CopR ( Cu ) 15 , Zur ( Zn ) 16 and DtxR ( Fe ) 17 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12524532" target="_blank">12524532</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_7">
+Functional deﬁnition and global regulation of Zur , a zinc uptake regulator in a Streptococcus suis serotype 2 strain causing streptococcal toxic shock syndrome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=20622065" target="_blank">20622065</a>]<br></label>
+<input id="rp_similarity_7", type="checkbox">
+<div class="RP_similar">
+<li>Functional definition and global regulation of Zur , a zinc uptake regulator in a Streptococcus suis serotype 2 strain causing streptococcal toxic shock syndrome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=21276098" target="_blank">21276098</a>]<br></li></div>
+<li>Dewar , S.J. , Kagan-Zur , K.J. , Begg , K.J. , and Donachie , W.J. ( 1989 ) Transcriptional regulation-of-cell-division genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9791185" target="_blank">9791185</a>]<br></li>
+<li>According to sequence similarities , Zur is considered to be a member of the Fur family of metalloregulatory proteins , which include the Fur ( ferric iron uptake regulator ) proteins of E. coli and other bacteria involved in iron regulation ( 10 ) as well as PerR of B. subtilis , which controls the peroxide stress response ( 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>B. subtilis PerR regulates the peroxide stress response ( Bsat et al. 1998 ) , while B. subtilis Zur and E. coli Zur control the transcription of zinc uptake operons ( Gaballa and Helmann 1998 ; Patzer and Hantke 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648098" target="_blank">10648098</a>]<br></li>
+<li>The Zinc-responsive Regulator Zur and Its Control of the znu Gene Cluster Encoding the ZnuABC Zinc Uptake System in Escherichia coli * Received for publication , March 3 , 2000 , and in revised form , May 8 , 2000 Published , JBC Papers in Press , May 17 , 2000 , DOI 10.1074 / jbc.M001775200 Silke I. Patzer ‡ and Klaus Hantke From Lehrstuhl Mikrobiologie/Membranphysiologie , Universität Tübingen , Auf der M 72076 Tübingen , Germany orgenstelle 28 , The synthesis of the Escherichia coli zinc-transporter , encoded by the znuACB gene cluster , is regulated in response to the intracellular zinc concentration by the zur gene product .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>To understand how microorganisms coordinate a dynamic response to changes in zinc availability at the molecular level , we evaluated the molecular mechanism of the zinc-sensing zinc uptake regulator ( Zur ) protein at each of the known Zur-regulated genes in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>In E. coli K-12 , the Zur regulon includes the znuABC zinc uptake gene cluster in addition to genes encoding a pair of ribosomal proteins ( L31p and L36p ) as well as a periplasmic zinc trafficking protein ( zinT ) [ 23 -- 25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_15">
+Patzer SI , Hantke K. 2000 The zinc-responsive regulator Zur and its control of the znu gene cluster encoding the ZnuABC zinc uptake system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></label>
+<input id="rp_similarity_15", type="checkbox">
+<div class="RP_similar">
+<li>The zinc-responsive regulator Zur and its control of the znu gene cluster encoding the ZnuABC zinc uptake system in Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22210763" target="_blank">22210763</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li></div>
+<li>Zur represses transcription of ZnuABC , an ABC-like Zn2 + - uptake protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></li>
+<li>Zur is a regulator of several high-afﬁnity Zn2 + uptake systems Low-afﬁnity Zn2 + uptake systems Little is known about low-afﬁnity uptake systems for Zn2 + in E. coli or other bacteria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>However , we also identiﬁed novel regulation , such as Zur repression of ykgMO , cyclic AMP response protein ( CRP ) repression of azuC , and CRP activation of ykgR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>For instance , the response-to-copper includes at least four different transcription factors , CueR , CusSR , CpxAR and YedVW , while at least four different transcription factors , Zur , ZraSR , ZntR and NhaR have been identiﬁed for zinc response ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=17884222" target="_blank">17884222</a>]<br></li>
+<li>Zur , a transcription factor found in many species of bacteria , regulates gene-expression in response to zinc levels ( 34 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>Two species of cytosolic transcription factor , ZntR and Zur , are involved in transcription regulation of the zinc response genes ( 3 , 24 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16159766" target="_blank">16159766</a>]<br></li>
+<li>Like Fur , Zur proteins regulate the expression of a number of genes that play a role in virulence of a pathogenic organism , including the ATP-dependent ZnuABC zinc-transport proteins in the commensal gram-negative human pathogen Neisseria meningitides [ 22 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>J Biol Chem 273:235 -- 241 Gaballa A , Helmann JD ( 1998 ) Identification of a zinc-specific metalloregulatory protein , Zur , controlling zinc-transport operons in Bacillus subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10648098" target="_blank">10648098</a>]<br></li>
+				<label class="RP_collapse_similarity" for="rp_similarity_25">
+1998 Identiﬁcation of a zinc-speciﬁc metalloregulatory protein , Zur , controlling zinc-transport operons in Bacillus subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></label>
+<input id="rp_similarity_25", type="checkbox">
+<div class="RP_similar">
+<li>Identiﬁcation of a zinc-speciﬁc metalloregulatory protein , Zur , controlling zinc-transport operons in Bacillus subtilis .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11466284" target="_blank">11466284</a>]<br></li></div>
+<li>Our results reveal how the Zur protein switches on and off a bank of bacterial genes that control zinc physiology .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Amongst the Zur sub-family members C88 is the most conserved residue in the B site ( note : MtFurB is a Zur protein that controls regulation of zinc uptake genes [ 38 ] ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">Zur binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>In vitro studies show that Zn-Zur binds specifically to a 30 bp region located between the divergently transcribed znuCB and znuA genes and represses transcription of this operon ( 5 , 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Zur binds at least 2 zinc ions/dimer specifically .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Potential 70 10 and 35 sequences are indicated in bold , and the predicted Zur binding site is boxed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>The boxed region indicates the nucleotides protected from DNase I digestion by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>A single region comprising a nearly perfect palindrome was protected , which indicated direct binding of Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>Zur directly binds to a single region comprising a nearly perfect palindrome .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>When this structure based E. coli Zur box is compared with the Zur box from other organisms it is clear that the central portion of the sequence is key to the recognition of E. coli Zur [ 19,20,40,61 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Alignment of the promoter sequence of the pliG gene to the other three known promoters showed favorable agreement with the structure-based Zur recognition profile .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Zur protein was shown to bind directly and specifically to DNA with this sequence using three independent assays of DNA binding : in vivo titration , DNase I footprinting , and in vivo footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>For the gram positive B. subtilis , DNA binding experiments estimated that in order for Zur to repress a promoter sequence there needed to be agreement with a similar inverted-repeat 9-1-9 Zur box [ 80 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Unexpectedly we find that each monomer uses Tyr45 in addition to Arg65 in direct readout of the DNA sequence element or ` Zur box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The core symmetry of a Zur box is best considered as having two distinct but overlapping binding sites within the overall DNA element .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>This plasmid had previously been used to generate the 340 bp sequence for Zur footprinting experiments [ 26 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>The two groups of Zur proteins were aligned seperately and their consensus sequence is given in between the alignments .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></li>
+<li>This inner TATA sequence is unique to E. coli Zur and not present in the consensus E. coli Fur box [ 60 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Previously the `` E. coli Zur box '' was characterized as a 23 base pair pseudo-palindromic sequence that made up the proteobacteria ( gram negative ) Zur regulon GAAATGTTATA-N-TATAACATTTC [ 25 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Comparison of these three sequences allows us to test the elements necessary for establishing an energetically validated Zur box .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Our structure and biochemical data reveal that each Zur dimer recognizes this palindromic element with a three base spacer ( RNNNYxxxRNNNY ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Analyzed genomes encoding both an ortholog of Zur regulator and COG0523 proteins were scanned with the constructed taxon-specific Zur motif profiles ( see Additional File 9 for sequence logo motifs ) using the Genome Explorer software and the identified genes with candidate Zur-binding sites were analyzed by the consistency check comparative procedure as previously described [ 78 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>A study of the metal binding sites in Zur and comparison of Zur to Fur are useful for establishing how metal sensors selectively recognize their target metals .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by Zur</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>The numbering of the nucleotides reflects the position in E. coli genome section 368 ( Zur is encoded by nt 842 to 327 ) , and the numbering of the amino acid residues reflects the position in the E. coli wild-type Zur protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Also highlighted are the alignments of the dimer-dimer salt-bridge amino acids ( Asp49/Arg52 ) in gramnegative and positive Zur and Fur protein sequences .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Bode , C.H. , Goebell , H. , and St & hler , E. ( 1968 ) Zur Eliminierung von Tr0bungsfehlern bei der EiweiSbestimmung mit der Biuretmethode .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8801422" target="_blank">8801422</a>]<br></li>
+<li>Zur Kenntnis der 5-keto-1-galaktonsaure ( d-tagaturonsaure ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7007313" target="_blank">7007313</a>]<br></li>
+<li>In Mycobacterium tuberculosis , a COG0523-like gene , RV0106 , ( shown also to be repressed by Zur [ 65 ] ) is up-regulated during human macrophage infection [ 66 ] ( although RV0106 shows homology to COG0523 , it is missing both GTPase motifs , and the second cysteine of the CXCC motif is not conserved ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>For instance , although adjacent to folE2 , yciC is usually regulated by Zur independently ( Figure 5 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Second , mutation of ycdH alters the regulation of both the yciC ( a gene regulated by Zn2 + and the repressor Zur ) and ycdH operons such that much higher levels of exogenous Zn2 + are required for repression ( Gaballa & Helmann 1998 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Previous microarray studies had demonstrated that pliG expression was affected by changes in Zn2 + concentration , however Zur regulation had not been hypothesized [ 34,63 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+				<label class="TU_collapse_similarity" for="tu_similarity_9">
+By inactivation of the zur gene , it was demonstrated that Zur acts as a repressor and not as an activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11931550" target="_blank">11931550</a>]<br></label>
+<input id="tu_similarity_9", type="checkbox">
+<div class="TU_similar">
+<li>By inactivation of the zur gene , it has been demonstrated that Zur acts as a repressor and not as an activator .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li></div>
+<li>These groupings suggest that the expression of only the ACIAD1741-encoding gene should be under Zur control .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Plasmids pSP97/61 and pSP97/63 ( pBCSK1 with the zur operator region in the two orientations ) were inactive in the in vivo titration assay , which indicates that Zur does not interact with its own operator to autoregulate the expression of its gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>As shown in Figure 3 , the presence or absence of Zur does not affect the expression of ACIAD1025 and ACIAD1614 under the conditions tested .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>The expression of yciC is controlled by the Zn-dependent Zur repressor and is thus up-regulated under Zn-limiting conditions [ 17 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Zn-independent proteins are negatively regulated by Zur and expressed under Zn-limiting conditions to replace the Zn-dependent proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19822009" target="_blank">19822009</a>]<br></li>
+<li>Under these conditions , Zur was in the oxidized form as judged by SDS-PAGE .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>Under conditions of Zn ( II ) su $ ciency , expression of the pump is repressed by Zur , a Fur homologue [ 4 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10802061" target="_blank">10802061</a>]<br></li>
+<li>The second group contains genes such as zinT which are regulated both by Fur and by another regulator ( Zur in the case of zinT ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>We demonstrate here for the first time that one such gene , zinT , is up-regulated in response to extreme Zn2 deprivation by Zur and that ZinT has a high affinity for Zn2 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>Recently , zinT was shown to be induced by Zur in response to Zn starvation .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>( D ) In vivo complementation assay measurement of L31p and zinT expression demonstrate that mutating either site A or site B removes the ability of Zur to repress transcription .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>Finally , the ykgMO operon was predicted to be regulated by the Zur transcription factor ( 34 ) , a prediction that was substantiated by the observed effects of zinc and a zur deletion .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>To test whether pliG was in fact regulated by Zur , pliG transcripts were measured by reverse transcription ( RT ) - PCR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=25369000" target="_blank">25369000</a>]<br></li>
+<li>In vitro studies show that Zn-Zur binds specifically to a 30 bp region located between the divergently transcribed znuCB and znuA genes and represses transcription of this operon ( 5 , 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>Transcription of the divergently transcribed znuA and znuBC genes is repressed by Zur when external zinc-ions are high , leading to shutoff of zinc uptake .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16159766" target="_blank">16159766</a>]<br></li>
+<li>Zn2 - bound Zur represses transcription of znuABC , whereas the addition of the metal chelator TPEN3 de-represses expression from a promoterless lacZ gene inserted into znuA , znuB , and znuC ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19377097" target="_blank">19377097</a>]<br></li>
+<li>Zn-bound Zur represses transcription of znuABC ( Patzer & Hantke , 2000 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+<li>ykgM-ykgO is repressed by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>These systems are active at rich non-toxic concentrations of Zn2 + when znuABC is repressed by Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>DNA binding by Zur requires zinc ; under zinc-depleted conditions , Zur is released from the DNA , allowing transcription of repressed genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>The zinc-loaded form of Zur is proposed to bind DNA and repress transcription of the znuABC genes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11523983" target="_blank">11523983</a>]<br></li>
+<li>We found that transcription of the ykgMO operon is repressed by Zur and that azuC and ykgR transcription is repressed and activated by CRP , respectively .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19734316" target="_blank">19734316</a>]<br></li>
+<li>The induction of zntA transcription requires the ZntR transcription activator , while znuC transcription is repressed by the Zur transcription repressor ( 3 , 25 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16159766" target="_blank">16159766</a>]<br></li>
+<li>The znuACB operon is repressed by the Zur repressor protein , which binds to the intragenic region in times of sufﬁcient Zn concentrations and slows transcription of the operon ( 37 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22210763" target="_blank">22210763</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>

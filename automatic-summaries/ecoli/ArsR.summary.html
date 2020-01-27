@@ -1,0 +1,657 @@
+<!doctype html>
+<style>
+@charset "utf-8";
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.banner {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 65px;
+	background: gray;
+	line-height: 65px;
+}
+.spacer {
+	height: 10px;
+}
+
+.main-content {
+	padding: 5%;
+}
+
+.collapse_ACT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B4045F;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_ACT + input{
+	display: none;
+}
+.collapse_ACT + input + div{
+	display: none;
+}
+.collapse_ACT + input:checked + div{
+	display: block;
+}
+.ACT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B4045F;
+	padding-left: 5px;
+}
+.ACT_collapse_similarity:hover{
+	background: #e5d3dc;
+}
+.ACT_collapse_similarity + input {
+	display: none;
+}
+.ACT_collapse_similarity + input + div{
+	display: none;
+}
+.ACT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.ACT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.ACT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B4045F;
+}
+.ACT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_DOM {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-style: none solid none none;
+	border-color: #B404AE;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_DOM + input{
+	display: none;
+}
+.collapse_DOM + input + div{
+	display: none;
+}
+.collapse_DOM + input:checked + div{
+	display: block;
+}
+.DOM {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.DOM_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #B404AE;
+	padding-left: 5px;
+}
+.DOM_collapse_similarity:hover{
+	background: #e8d7e7;
+}
+.DOM_collapse_similarity + input {
+	display: none;
+}
+.DOM_collapse_similarity + input + div{
+	display: none;
+}
+.DOM_collapse_similarity + input:checked + div{
+	display: block;
+}
+.DOM_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}.DOM_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #B404AE;
+}
+.DOM_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_EVO {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #7401DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_EVO + input{
+	display: none;
+}
+.collapse_EVO + input + div{
+	display: none;
+}
+.collapse_EVO + input:checked + div{
+	display: block;
+}
+.EVO {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.EVO_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #7401DF;
+	padding-left: 5px;
+}
+.EVO_collapse_similarity:hover{
+	background: #e2d7ed;
+}
+.EVO_collapse_similarity + input {
+	display: none;
+}
+.EVO_collapse_similarity + input + div{
+	display: none;
+}
+.EVO_collapse_similarity + input:checked + div{
+	display: block;
+}
+.EVO_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.EVO_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #7401DF;
+}
+.EVO_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_RP {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0174DF;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_RP + input{
+	display: none;
+}
+.collapse_RP + input + div{
+	display: none;
+}
+.collapse_RP + input:checked + div{
+	display: block;
+}
+.RP {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.RP_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0174DF;
+	padding-left: 5px;
+}
+.RP_collapse_similarity:hover{
+	background: #c9d7e2;
+}
+.RP_collapse_similarity + input {
+	display: none;
+}
+.RP_collapse_similarity + input + div{
+	display: none;
+}
+.RP_collapse_similarity + input:checked + div{
+	display: block;
+}
+.RP_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.RP_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0174DF;
+}
+.RP_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_SIT {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #0489B1;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_SIT + input{
+	display: none;
+}
+.collapse_SIT + input + div{
+	display: none;
+}
+.collapse_SIT + input:checked + div{
+	display: block;
+}
+.SIT {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.SIT_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #0489B1;
+	padding-left: 5px;
+}
+.SIT_collapse_similarity:hover{
+	background: #d0dfe2;
+}
+.SIT_collapse_similarity + input {
+	display: none;
+}
+.SIT_collapse_similarity + input + div{
+	display: none;
+}
+.SIT_collapse_similarity + input:checked + div{
+	display: block;
+}
+.SIT_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.SIT_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #0489B1;
+}
+.SIT_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+.collapse_TU {
+	cursor: pointer;
+	display: block;
+	color: black;
+	height: 30px;
+	line-height: 30px;
+	border-color: #04B486;
+	border-style: none solid none none;
+	border-width: thick;
+	background: #DCDCDC;
+}
+.collapse_TU + input{
+	display: none;
+}
+.collapse_TU + input + div{
+	display: none;
+}
+.collapse_TU + input:checked + div{
+	display: block;
+}
+.TU {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.TU_collapse_similarity {
+	cursor: pointer;
+	display: block;
+	color: black;
+	background: white;
+	border-style: none none none solid;
+	border-color: #04B486;
+	padding-left: 5px;
+}
+.TU_collapse_similarity:hover{
+	background: #d0e2de;
+}
+.TU_collapse_similarity + input {
+	display: none;
+}
+.TU_collapse_similarity + input + div{
+	display: none;
+}
+.TU_collapse_similarity + input:checked + div{
+	display: block;
+}
+.TU_collapse_similarity > a {
+	text-decoration: none;
+	color: gray;
+}
+.TU_similar {
+	padding-left: 2%;
+	text-align: justify;
+	text-justify: inter-word;
+	border-style: none none none solid;
+	border-color: #04B486;
+}
+.TU_similar > a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul { 
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li > a {
+	text-decoration: none;
+	color: gray;
+}
+ul li:hover, ul li:focus {
+	background: #F0F0F0;
+}
+
+ul li:first-child span {
+  border-left:none;  
+}
+
+</style>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TF properties - ArsR</title>
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="banner">
+		<center><font color="white" size="16px" face="arial">ArsR</font></center>
+	</div>
+	<div align="center" class="main-content">
+		<div class="spacer">
+	</div><br>			<label class="collapse_ACT" for="_1"><font size="5px">ArsR transcriptional activity</font></label>
+				<input id="_1" type="checkbox">
+				<div class="ACT"><br><ul><li>Details are shown in Supplementary Table S2 , but briefly this consisted of 184 genes that could be divided into the following categories : repressed by Fur , 63 ; activated by Fur , 15 ; repressed by CpxR , 21 ; activated by CpxR , 37 ; repressed by SoxS , 1 ; activated by SoxS , 23 ; repressed by OxyR , 2 ; activated by OxyR , 16 ; activated by CusR , 6 ; activated by BaeR , 9 ; repressed by Zur , 4 ; repressed by ArsR , 3 ; activated by ZraR , 3 ; activated by ZntR , 1 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li>
+				<label class="ACT_collapse_similarity" for="act_similarity_2">
+Statistical modelling of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators ; ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></label>
+<input id="act_similarity_2", type="checkbox">
+<div class="ACT_similar">
+<li>The analysis of the transcriptomic data generated from the Zn shift focused on the role of ten key regulators : ArsR , BaeR , CpxR , CusR , Fur , OxyR , SoxS , ZntR , ZraR and Zur .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=22016571" target="_blank">22016571</a>]<br></li></div>
+<li>Dimerization Is Essential for DNA Binding and Repression by the ArsR Metalloregulatory Protein of Escherichia coli * ( Received for publication , March 17 , 1997 , and in revised form , April 21 , 1997 ) Chun Xu and Barry P. Rosen ‡ From the Department of Biochemistry and Molecular Biology , Wayne State University School of Medicine , Detroit , Michigan 48201 Arsenical resistance ( ars ) operons produce resistance to trivalent and pentavalent salts of the metalloids arsenic and antimony in cells of Escherichia coli .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The Role of Arsenic-Thiol Interactions in Metalloregulation of the ars Operon * ( Received for publication , January 4 , 1996 , and in revised form , February 6 , 1996 ) Weiping Shi ‡ , Jun Dong § , Robert A. Scott § , Marina Y. Ksenzenko ‡ , and Barry P. Rosen ‡ ¶ From the ‡ Department of Biochemistry and Molecular Biology , Wayne State University , School of Medicine , Detroit , Michigan 48201 and the § Center for Metalloenzyme Studies , University of Georgia , Athens , Georgia 30602-2556 The ars operon of the Escherichia coli plasmid R773 that confers arsenical and antimonial resistance is negatively regulated by the ArsR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>We identiﬁed a high proportion of TFs belonging to the AsnC , ArsR , MarR , TetR/AcrR , BirA , AraC/XylS , Fur , LysR , and PhoU families in bacteria and archaea .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>For instance , proteins classiﬁed in the Fur and PhoU families regulate iron and phosphate metabolism , the AsnC and MarR families belong to the earliest repressor super-group ( Pérez - Rueda and Collado-Vides , 2001 ) , while the ArsR family contains the shortest repressor proteins described so far ( Pérez - Rueda and Collado-Vides , 2000 ; Sato and Kobayashi , 1998 ) , very close in length to the proposed hypothetical ancestor of TFs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>Early reports on ArsR corroborated this hypothesis since substitution of one or both cysteines with non-met-al-liganding residues in the 30ELCVCD35 motif inhibited the ability of arsenate salts to dissociate ArsR from the ars O/P [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Chimeras in which the fusion sites were at residues 20 , 69 , 74 , and 79 of the ArsR proteins were produced in both arsenite-induced and uninduced cells , indicating that these chimeric proteins were constitutively expressed .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Surprisingly , Cys61 of SmtB was previously found not to be essential for Zn ( II ) sensing in vivo , in contrast to Cys32 of ArsR [ 46,47 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Negative regulation of repressor ^ O/P binding by inducing metals The direct binding of metal ions to the regulatory ( K3N / K3 or K5/K5C ) sites of individual SmtB/ArsR repressors ( Fig. 6 ) results in strong inhibition or negative allosteric regulation of speci cents c O/P DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>The O/P binding properties of other members of the SmtB/ArsR family , including the K5C sensor NmtR and the K3N sensor CadC , are also strongly negatively regulated by metal binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Thus , it is likely that the chromosomal ars operon is organized as a single transcription unit that is regulated by the arsenic - and antimony-inducible ArsR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7721697" target="_blank">7721697</a>]<br></li>
+<li>The arsR gene product , the ArsR repressor , was expressed and purified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>plasmid-borne ars operons , transcription was controlled by the ArsR repressor , the product of the first gene of each operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Tc determine the function of the ArsR protein , a genetic analysis of its role in regulation of ars expression was undertaken using fusions of the btaM gene to the arsR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>There was no trans effect of a wild-type arsR gene on expression of the fusions in pCBR92 and pCBR104 , in which the chimeric ArsR proteins still functioned as repressors ( Fig. 3B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Detailed investigation of the kinetics of metal binding and metal-induced dissociation of O/P-bound sensor proteins in the presence and absence of low molecular mass thiolates will be required to gain more insight into the mechanism of transcriptional control by SmtB/ArsR sensor proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>If dimerization is required for the metalloregulatory activity of ArsR , then there should be a correlation between the aggregation state of the protein and its ability to repress in the absence of inducer and derepress in the presence of inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>Expression of the gene for His6-tagged ArsR repressed lacZ expression in the absence of inducer and induced in the presence of sodium arsenite .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>It can be concluded , therefore , that arsfl expression is autoregulated : expression is repressed by ArsR in the absence of arsenical inducers and is induced in their presence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>ther alone , suggesting that bindingof endogenous amounts of A positiveselection was used to select formutants unrespon - ArsR protein prevents full induction from the lac promoter sive to inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8051064" target="_blank">8051064</a>]<br></li>
+<li>Since PAO can form only two arsenic -- thiol bonds with ArsR , dicoordinate binding must be sufficient for induction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Since a third coordination is not possible with PAO , induction must require only two bonds between inducer and ligands in ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>The mutations changed codon 32 from In Vitro Analysis of Inducer Interaction-The ars operator-TGC to TAC , codon 32 from TGC to TTC , and codon 34 from ArsR protein complex is dissociated by the additionof inducer TGT to TAT , producing amino acid changes C32Y , C32F , and ( 7 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8051064" target="_blank">8051064</a>]<br></li>
+<li>Using a novel selection for arsR mutants that encoded active repressors that were unable to be induced by arsenicals or antimonials , we previously isolated three hydroxylamine mutants in the codons for Cys-32 and Cys-34 , resulting in ArsR proteins C32Y , C32F , and C34Y ( Shi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Thus , while the Cys-37 thiolate is able to form a bond with As ( III ) , binding to the sulfurs of only Cys-32 and Cys-34 is required to produce the conformational change in ArsR that results in dissociation from the operator DNA and transcriptional derepression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Binding of ArsR Proteins to Immobilized Phenylarsine Oxide -- Although the effects of mutation of arsR indicated that Cys-32 and Cys-34 are required for induction , they do not eliminate the possibility that other residues interact with As ( III ) without producing the conformational change that results in dissociation from DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Metal Binding Properties of ArsR Repressors -- ArsR binds arsenite , antimonite , or the organoarsenical phenylarsine oxide through the cysteine thiolates of Cys-32 and Cys-34 ( 16 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>ArsR residues Cys-32 and Cys-34 were previously identified as involved in induction by arsenite and antimonite , suggesting coordination between As ( III ) and the two cysteine thiolates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Using PAO affinity chromatography as an assay for arsenic-ArsR interaction , Cys-32 , Cys-34 , and Cys-37 were each found to be required for ArsR binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>However , ArsR proteins in which either Cys-32 or Cys-34 was altered to glycine still bound strongly to the PAO resin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>ArsR proteins containing any two of the three cysteine residues Cys-32 , Cys-34 , and Cys-37 bound to the resin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>In addition to Cys-32 and Cys-34 , there are three other cysteine residues in the ArsR protein : Cys-37 , Cys-108 , and Cys-116 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>In fact , several repressor proteins in this family do utilize ligands from this ` box ' including ArsR and CadC proteins ; however , it is now known that this parallel can not be made to all other members of the family [ 39,45,46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>To exclude the possibility that the phenotype of these ArsR derivatives resulted from the substitution of the bulky aromatic groups of tyrosine or phenylalanine for the two cysteine thiolates , these two cysteine residues in ArsR were changed to glycine residues , individually or together , by site-directed mutagenesis , producing three altered ArsR proteins : C32G , C34G , and C32G/C34G .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>These results indicate that the single and double glycine substitutions did not affect the ability of ArsR to repress its own synthesis , but did prevent these proteins from responding to inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Weaker , though still signiﬁcantly homologous , are the plasmid-encoded ArsR , ArsB , and ArsC proteins of both S. aureus and S. xylosus ( Fig. 2B ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7721697" target="_blank">7721697</a>]<br></li>
+<li>All three altered ArsR proteins still bound specifically to the ars operator , but inducers were considerably less effective in dissociating in vitro ArsR-DNA complexes .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Wild-type and altered ArsR proteins were applied to the column , which was washed extensively to remove unbound proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>ArsR proteins with C32G , C34G , and C32G/C34G substitutions were active repressors , but were not inducible in vivo .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Autoregulation of ArsR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Transcriptional activation of lacZ reporter indicated that dimerization of the ArsR is stable in yeast .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>In in vitro gel mobility shift assays , PAO dissociated the wild-type ArsR repressor at concentrations as low as 0.5 mM FIG. 3 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Wild-type ArsR bound to the PAO resin with extremely high affinity , characteristic of a protein with a vicinal thiol pair .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>In Vitro DNA Binding Properties of Altered ArsR Proteins -- ArsR binds to a sequence immediately upstream of the ars promoter and can be dissociated with either As ( III ) or Sb ( III ) ( Wu and Rosen , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Similar results were obtained for C-terminal chimeras of R773 ArsR ( Wu and Rosen , 1991 ) , and those chimeras were shown to be bind to the promoter DNA as dimers ( Wu and Rosen , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Similar chimeras in R773 ArsR were unable to-bind to DNA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Alteration of Ser-43 to alanine or proline had no effect on ArsR function in vivo or in vitro , while alteration of Ser-48 resulted in constitutivity in vivo and decreased affinity of DNA in vitro .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>PAO is not only an effective inducer in vivo ; in in vitro DNA binding assays , ArsR exhibited 10 -- 100-fold higher affinity for this organic arsenical than for inorganic arsenite or antimonite .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>When the mature form of b-lactamase was fused to the ArsR protein at residue 92 , 101 , 104 , or 114 , expression of the chimeric protein was still inducible , indicating that residues 92 to the C terminus are not required for ArsR function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>ZntR , a member of the ArsR family , regulates the expression of zntA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>Determination of arsenic ligands in ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>p-lactamase activity of ArsR fusions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>The 117-residue ArsR repressor purifies as a dimer ( 2 ) , and the dimeric form binds to DNA ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The ArsR Protein Is a DNA Binding Protein -- Gel mobility shift assays were used to examine the DNA binding activity of ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The ArsR , ArsB , and ArsC protein products are indicated by the arrowheads on the right side of the figure .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>In this study truncated ArsR proteins were produced with the objective of investigating the relationship between dimerization and function of the ArsR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>Dimerization of ArsR was investigated using the yeast two-hybrid system in which the ArsR protein was fused to the Saccharomyces cerevisiae GAL4 DNA-binding domain and GAL4 activation domain to produce chimeric proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>In each panel , lanes 1 and 2 contain the A and C reactions from nucleotide sequencing of the same fragment ; lanes 3 -- 8 contain DNase I-treated DNA ; lanes 3 and 8 , no ArsR protein ; lane 4 , 0.5 mg of ArsR ; lane 5 , 2 mg of ArsR ; lane 6 , 4 mg of ArsR ; lane 7 , 8 mg of ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>From analysis of the fusions , residues between 83 and 102 of the ArsR protein are perhaps involved in DNA binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>In vitro effect of inducer on DNA and ArsR altered protein interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>ArsR protein-DNA interactions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>ArsR protein-DNA interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_DOM" for="_2"><font size="5px">ArsR protein domains</font></label>
+				<input id="_2" type="checkbox">
+				<div class="DOM"><br><ul><li>In essentially all cases examined , amino acid substitutions placed into the cents rst coordination shell of metal li-gands in any SmtB/ArsR repressor give rise to a repressor that maintains high a ⁄ nity for the O/P in the absence of metal ions in vitro and in vivo , but is totally or partially insensitive to negative regulation of DNA-binding by metal ions [ 24,27,28,39,45 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Stoichiometry of SmtB/ArsR repressor ^ O/P binding Equilibrium analytical ultracentrifugation studies reveal that SmtB/ArsR repressors are weakly dissociable homo-dimers , in both the metal-bound and metal-free states ( Kdimer , Fig. 6 ) [ 23,32,39,55 ] , with the monomer ^ dimer equilibrium linked to site-speci cents c DNA-binding equilibria .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>A detailed multiple sequence alignment , carried out in the context of the high resolution structures of one or more apo - and metallated SmtB/ArsR repressors , using for example an evolutionary trace method , will reveal not only those residues that are common to all family members ( these presumably play a role in maintaining tertiary or quaternary structure or are conserved as part of the KR DNA-recognition helix ) , but other key residues outside those that are required to bind metal that co-vary with the evolution of new metal-binding or functional speci cents cities , e.g. , K3N vs. K5 sensors ( cf. Fig. 1 ) [ 59,60 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Moreover , the fact that both the putative metal-binding motif ELCVCDL and the critical His-50 residue in the putativeDNA-bindinghelix - turn-helix motif identified in the R773-encoded ArsR protein ( Shi et al. 1994 ) are also conserved in the chromosomal ars homolog implies similar DNA - and metalloid-binding properties of the chromosomal arsR gene product .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>X-ray absorption spectroscopy of As ( III ) - ArsR revealed that As ( III ) was coordinated via three cysteine thiolate ligands within the putative K3 helix ( Fig. 5 ) , two of which were clearly derived from the 30ELCVCD35 motif [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Note that the ligands associated with the putative K5 helices are not conserved in any ArsR ( cf. Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Early reports on ArsR corroborated this hypothesis since substitution of one or both cysteines with non-met-al-liganding residues in the 30ELCVCD35 motif inhibited the ability of arsenate salts to dissociate ArsR from the ars O/P [ 46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Transcriptional activation of lacZ reporter indicated that dimerization of the ArsR is stable in yeast .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>Finally , the ArsR repressors are most likely functional homodimers , which indicates the existence of a dimerization domain .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Plasmid pETRN41 , expressing amino-terminal ArsR truncation of residues 1 -- 40 , was constructed by cloning a PCR fragment produced using oligonucleotide P4 as the forward primer and P13 as the reverse primer into vector pET28a .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>Ultimately , only experimental determination of the three dimensional structure of the ArsR protein will verify these predictions .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8051064" target="_blank">8051064</a>]<br></li>
+<li>Six translational fusions were obtained , with the fusion sites from the 10th to 105th amino acyl residue of the 117-residue ArsR protein ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>Thus the p-lactamase fusion analysis establishes that ArsR protein Is located in the cytosol .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>Additionally , the possible participation of the hydroxyl oxygens of Ser-43 and Ser-48 , residues conserved in the five known ArsR proteins , was investigated .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Dimerization of ArsR was investigated using the yeast two-hybrid system in which the ArsR protein was fused to the Saccharomyces cerevisiae GAL4 DNA-binding domain and GAL4 activation domain to produce chimeric proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The putative ArsR HTH is underlined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245262" target="_blank">18245262</a>]<br></li>
+<li>This is consistent with the results of the present study that demonstrate that a core sequence of approximately 80 residues is sufficient for all of the regulatory properties of the ArsR repressor : dimerization , DNA-binding , and metal recognition .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The ArsR sequence ELC32VC34DL has been proposed to form a portion of the metal-binding domain , and a putative helix-turn-helix DNA-binding motif from residues 38 to 54 has been identified in ArsR ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The DNA-binding properties of the altered ArsR proteins and their interaction with inducer were determined .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>The effect of PAO on the DNA-binding properties of ArsR proteins with substitutions of cysteine residues was determined ( Fig. 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>In contrast , removal of the first 11 or 40 residues of ArsR abolished interaction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>To determine residues in ArsR involved in coordination with As ( III ) , interaction with PAO was measured using PAO immobilized on a matrix .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>PAO-ArsR interaction chromatography .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>When the mature form of b-lactamase was fused to the ArsR protein at residue 92 , 101 , 104 , or 114 , expression of the chimeric protein was still inducible , indicating that residues 92 to the C terminus are not required for ArsR function .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>From analysis of the fusions , residues between 83 and 102 of the ArsR protein are perhaps involved in DNA-binding .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>However , the possiblity that the ArsR-p-iactamase chimera with 102 residues of ArsR might have repressor activity that a truncated protein with only 102 residues of ArsR does not exhibit can not be exduded .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>Fusions containing less than 102 residues of the 117-residue ArsR protein were constitutive .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>It was found that chimeric proteins with p-lactamase fused near the Cterminal end ( residues 102 or 105 of 117 ) of the ArsR protein retained regulatory activity .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>Thus , removal of ArsR residues 1 -- 8 or 90 -- 117 does not prevent metal recognition nor the ability of metal to dissociate the repressor from the promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The results of deletion analysis of the arsR gene using the yeast two-hybrid system show that the amino-terminal 8 residues and carboxyl-terminal 28 residues are not required for dimerization of ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The results indicated that residues 1 -- 8 and 90 -- 117 are not required for ArsR dimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>These results suggest that amino-terminal residues 1 -- 8 and carboxyl-terminal residues 90 -- 117 of ArsR are not required for dimerization .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>Chimeras with [ i-lacta-mase fused closer to the W-terminus ( residues 10-83 of ArsR ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>The smallest is ArsR of the archebacterium Methanococcus jannaschii , with only 89 residues ( 18 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>That homolog aligns with residues 2 -- 90 of the E. coli ArsR , with all of the identities between ArsR residues 9 and 89 ( Fig. 6 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>In R773 ArsR , there are 5 cysteine , 10 serine , and 2 threonine residues ( Fig. 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>To exclude the possibility that the phenotype of these ArsR derivatives resulted from the substitution of the bulky aromatic groups of tyrosine or phenylalanine for the two cysteine thiolates , these two cysteine residues in ArsR were changed to glycine residues , individually or together , by site-directed mutagenesis , producing three altered ArsR proteins : C32G , C34G , and C32G/C34G .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Second , we have shown that Cys-32 and Cys-34 of R773 ArsR are part of a metal-binding domain involved in induction ( Shi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>ArsR residues Cys-32 and Cys-34 were previously identified as involved in induction by arsenite and antimonite , suggesting coordination between As ( III ) and the two cysteine thiolates .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>ArsR proteins containing any two of the three cysteine residues Cys-32 , Cys-34 , and Cys-37 bound to the resin .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+				<label class="DOM_collapse_similarity" for="dom_similarity_41">
+In addition to Cys-32 and Cys-34 , ArsR contains three other cysteine resi-dues , Cys-37 , Cys-108 , and Cys-116 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></label>
+<input id="dom_similarity_41", type="checkbox">
+<div class="DOM_similar">
+<li>In addition to Cys-32 and Cys-34 , there are three other cysteine residues in the ArsR protein : Cys-37 , Cys-108 , and Cys-116 .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li></div>
+				</div></ul><br>
+			<label class="collapse_EVO" for="_3"><font size="5px">ArsR evolution</font></label>
+				<input id="_3" type="checkbox">
+				<div class="EVO"><br><ul><li>reguaor000y proteinso , ArsB fooily signature ] ( 00 % match .4 Simoilarto oeoorol AtsR proteins :0 ARSRBECOLI ( SW ) 117 E046he48ch00 .401 ) ArsR , transcriptionl regolator 77.0 % ARSR-STAAU ( SW ) 104 Sta.phy1ococcus aureus Ars.tra , nscriptonaol activatoo 41.0 % ABSRBSTAXY ( SW ) 104 Staphylococcus xvosuoo ArsR .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8041620" target="_blank">8041620</a>]<br></li>
+<li>Given the high degree of sequence similarity ( 25 ^ 50 % identity ) and the lack of a need to introduce signi cents cant gaps in a multiple sequence alignment ( Fig. 1 ) , threading of the amino acid sequence of E. coli R773 ArsR [ 44 ] , S. aureus pI258 CadC [ 40 ] and M. tuberculosis NmtR [ 27 ] through the structure of apo-SmtB [ 41 ] has allowed the generation of robust , albeit low resolution , models of these homodimeric repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>The E. coli chromosomal arsR gene encodes a 13-kDa protein , ArsR , in which 75 % of the residues ( 88 of 117 ) are identical to those of the plasmid R773 repressor in primary amino acid sequence but only 26 % ( 34 of 117 ) are identical to the staphylococcal plasmids pI258 or pSX267 ArsR proteins ( Carlin et al. , 1995 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The only protein to which the ArsR protein shows similarity is the CadC protein of the plasmid-encoded cadmium resist-ance determinant ( Nucifora et ai .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>The sequence alignment of YgaV , using ClustalW ( 6 ) , with other small regulatory proteins also bearing an ArsR helix-turn-helix ( HTH ) motif ( Fig. 2 ) , shows that YgaV has greater identity ( 30 % ) with HlyU ( 18 ) of Vibrio cholerae , NolR ( 13 ) of Rhizobium meliloti , PagR ( 10 ) of Bacillus anthracis , and SoxR ( 2 , 14 ) of Pseudaminobacter salicylatoxidans than with the SmtB/ArsR regulatory proteins ( 4 ) ( SmtB , ZiaR , ArsR1 , ArsR2 , ArsR , and CadC ; 17 % identities ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245262" target="_blank">18245262</a>]<br></li>
+<li>Structural studies of SmtB/ArsR family members Q resolution X-ray crystallographic structure of dimeric , apo-SmtB revealed that SmtB is an elongated dimer with a two-fold axis of symmetry consisting of cents ve K-helices and two L-strands arranged into an K1-K2-K3-KR-L1-L2-K5-fold [ 41 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>This DNA binding domain , particularly the sequence of the proposed DNA recognition K-helix ( KR ) , is also highly conserved throughout the SmtB / ArsR family and is one of the distinguishing characteristics that de cents ne membership ( cf. Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>His-50 is in the second helix of the predicted helix-turn-helix DNA binding motif and isconserved in othermembers of the ArsR family except for the SmtBprotein ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8051064" target="_blank">8051064</a>]<br></li>
+<li>The other founding member of this family is the plasmid - or chromosomally encoded ArsR that acts as the arsenic/antimony-responsive repressor of the ars operon in E. coli [ 33 ] , and other bacteria ( Fig. 2 ) [ 34 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>However , in the ArsR family of transcriptional repressors , both arsenic/antimony and cadmium/zinc responsive repressors have this cysteine pair .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>This 13-kDa protein belongs to the ArsR family of metalloregulatory proteins that respond to a variety of metals including As ( III ) , Sb ( III ) , Cd ( II ) , and Zn ( II ) ( 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>ZntR , a member of the ArsR family , regulates the expression of zntA .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=11831459" target="_blank">11831459</a>]<br></li>
+<li>The closest homologue of zntA , cadA from Staphylococcus aureus ( Nucifora et al. , 1989 ) , is regulated by a repressor CadC ( Endo and Silver , 1995 ) , a member of the ArsR family of transcriptional regulators ( Shi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10048032" target="_blank">10048032</a>]<br></li>
+<li>The chromosomal ArsR is a member of the ArsR family of metalloregulatory proteins ( 3 , 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The protein is the best characterized member of the ArsR family of metalloregulatory proteins ( Shi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>These are all members of the ArsR family of regulatory proteins ( Shi et al. , 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Other members of the ArsR family include Cd21/Zn21 regulatory proteins ( Yoon et al. , 1991 ; Ivey et al. , 1992 ; Morby et al. , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>In fact , several repressor proteins in this family do utilize ligands from this ` box ' including ArsR and CadC proteins ; however , it is now known that this parallel can not be made to all other members of the family [ 39,45,46 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>We have postulated that members of the ArsR family of repressor proteins should have at least three domains , a metal binding domain , a DNA-binding domain , and a dimerization domain ( 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>We would propose that all members of the ArsR family of metalloregulatory proteins contain at least four domains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>This interaction is negatively affected by Ni ( II ) or Co ( II ) binding , a pattern functionally similar to that of the structurally distinct SmtB/ArsR family of transcription factors ( reviewed in 11 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18505253" target="_blank">18505253</a>]<br></li>
+<li>SmtB binds zinc and other heavy metals and belongs to the ArsR family of metallorepressors , which control mainly prokaryotic metal resistance operons ( 8 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=10816566" target="_blank">10816566</a>]<br></li>
+<li>The SmtB / ArsR proteins , perhaps distantly related to the MerR family , function exclusively as transcriptional repressors and include Synechococcus sp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+				<label class="EVO_collapse_similarity" for="evo_similarity_24">
+Busenlehner , L.S. , Pennella , M.A. , and Giedroc , D.P. ( 2003 ) The SmtB/ArsR family of metalloregulatory transcriptional repressors : structural insights into prokaryotic metal resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=16956381" target="_blank">16956381</a>]<br></label>
+<input id="evo_similarity_24", type="checkbox">
+<div class="EVO_similar">
+<li>The SmtB/ArsR family of metalloregulatory transcriptional repressors : structural insights into prokaryotic metal resistance .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245262" target="_blank">18245262</a>]<br></li></div>
+<li>Overview of the SmtB/ArsR family Individual members of the SmtB/ArsR family clearly derive from a common evolutionary origin , with members that exhibit known or postulated metal selectivities clustering on a rooted , phylogenetic tree ( Fig. 1 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>These studies suggest that a similar tertiary and quaternary structural fold characterizes individual members of the entire SmtB/ArsR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Amino acid sequence alignment of the SmtB/ArsR family .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Overview of the SmtB/ArsR family ... .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Structural studies of SmtB/ArsR family members ... .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Identi cents cation of two distinct metal-sensing sites within a conserved structural sca ¡ old A highly conserved ELCV ( C/G ) D motif termed the ` metal binding box ' was initially identi cents ed in members of the SmtB/ArsR family ( Fig. 5 ) [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>It is notable that the M. tuberculosis ge-nome encodes 10 putative SmtB/ArsR family members [ 27 ] , most of which do not precisely cents t the K3N and K5 metal binding site signatures documented here .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Other common regulator families are ArsR ( 175 ) , AsnC ( 140 ) , Crp ( 233 ) , DeoR ( 17 ) , GntR ( 29 , 104 , 213 ) , IclR ( 214 ) , LacI ( 253 ) , LuxR/UphA ( 112 ) , LysR ( 111 ) , MarR ( 56 ) , MerR ( 107 ) , NtrC ( 189 ) , TetR ( 198 ) , YedF/YeeD/YhhP ( 14 ) , and YhdG/YjbN/YohI ( 15 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9409145" target="_blank">9409145</a>]<br></li>
+<li>We identiﬁed a high proportion of TFs belonging to the AsnC , ArsR , MarR , TetR/AcrR , BirA , AraC/XylS , Fur , LysR , and PhoU families in bacteria and archaea .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>For instance , proteins classiﬁed in the Fur and PhoU families regulate iron and phosphate metabolism , the AsnC and MarR families belong to the earliest repressor super-group ( Pérez - Rueda and Collado-Vides , 2001 ) , while the ArsR family contains the shortest repressor proteins described so far ( Pérez - Rueda and Collado-Vides , 2000 ; Sato and Kobayashi , 1998 ) , very close in length to the proposed hypothetical ancestor of TFs .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_RP" for="_4"><font size="5px">Processes regulated by ArsR</font></label>
+				<input id="_4" type="checkbox">
+				<div class="RP"><br><ul><li>Expression and Purification of ArsR Proteins -- Vector plasmids pET28a and pET28b ( Novagen ) were used to construct recombinant plasmids for expression of arsR deletions and genes with six histidine codon tags ( His6-tag ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>The SmtB / ArsR proteins , perhaps distantly related to the MerR family , function exclusively as transcriptional repressors and include Synechococcus sp .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>SmtB , E. coli ArsR , and Sta-phylococcus aureus pI258 CadC .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Table 1 TFs identiﬁed in complete genomes Family DBD Role PFAM Annotations Total 1 16 Function AlpA C n/d -- Lipopolysaccharide adhesion to human gastric tissue Tatusova et al. ( 1999 ) ; Odenbreit et al. ( 2002 ) AraC/XylS A M 733 124 813 Carbon metabolism , cell-wall-synthesis , stress responses , and pathogenesis regulation Arginine biosynthesis regulation Tobes and Ramos ( 2002 ) R 56 ArgR ArsR W 14 60 Campoy et al. ( 2002 ) 335 R W 50 313 Pérez - Rueda and Collado-Vides ( 2000 ) ; Sato and Kobayashi ( 1998 ) ; Diorio et al. ( 1995 ) Arsenic resistance regulation -- AslB n/d AsnC D 87 -- 39 72 -- w 277 Leucine repressor protein Biosynthesis of biotin Napoli et al. ( 1999 ) ; Leonard et al. ( 2001 ) Wilson et al. ( 1992 ) -- -- 24 0 BirA R CaiF n/d w 75 6 Co-activator of the carnitine operon Low temperature adaptation Buchet et al. ( 1998 ) Obokata et al. ( 1991 ) 201 -- 198 8 Cold shock CSD A Crl -- R 0 0 Schnetz ( 2002 ) Global regulator protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=15556475" target="_blank">15556475</a>]<br></li>
+<li>While ArsR is a trans-acting inducerresponsive repressor , ArsD is an inducer-independent protein controlling basal and upper-level expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=19484295" target="_blank">19484295</a>]<br></li>
+<li>It encodes an arsenic-inducibletrans-acting repressor ( ArsR ) , controlling the basal level of expression of the operon ( San Francisco et al. 1990 ; Wu and Rosen 1991 , 1993 ~ ) a ; negative regulator ( ArsD ) that independently controls the upper level of expression of the operon ( Wu and Rosen 1993b ) ; an arsenite - and antimonite-stimulatedATPase ( ArsA ) ( Rosen et al. 1988 ; Mei-Hsu et al. 1991 ) ; a membrane pump for efflux of arsenite and antimonite ions ( ArsB ) ( Wu et al. 1992 ; Dey and Rosen 1995 ) ; and an arsenate reductase ( ArsC ) ( Rosen et al. 1991 ; Gladysheva et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>The product of the first gene of the operon , the 117-residue ArsR protein , has been shown to be a trans-acting repressor that senses environmental As ( III ) and Sb ( III ) ( 2 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>These codes for a regulatory protein ( ArsR ) arsenite ( As ( III ) ) - responsive repressor of transcription and an arsenate permease ( ArsB ) regulates for an arsenite speciﬁc transmembrane pump .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=24464705" target="_blank">24464705</a>]<br></li>
+				</div></ul><br>
+			<label class="collapse_SIT" for="_5"><font size="5px">ArsR binding site</font></label>
+				<input id="_5" type="checkbox">
+				<div class="SIT"><br><ul><li>Proposed K3N and K5 metal binding sites for functionally characterized SmtB/ArsR proteins .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>Identi cents cation of two distinct metal-sensing sites within a conserved structural sca ¡ old A highly conserved ELCV ( C/G ) D motif termed the ` metal binding box ' was initially identi cents ed in members of the SmtB/ArsR family ( Fig. 5 ) [ 9 ] .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=12829264" target="_blank">12829264</a>]<br></li>
+<li>However , since the sequences of both operons are not fully identical in the putative operator regions , it is possible that only a few base pairs in this region are critical for the ArsR protein to bind .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>Multiple sequence alignments of YgaV with other small regulatory proteins bearing an ArsR DNA binding motif : , SoxR of Rhodovulum sulﬁdophilum ( UniProtKB accession no .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=18245262" target="_blank">18245262</a>]<br></li>
+<li>The inverted-repeats that may represent the ArsR binding sites are indicated by arrows on the top of the sequence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>Thus the sequence TCAT-NNNNNNNTTTG appears to represent a consensus binding site for the two ArsR repressors .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The shaded sequence indicates the binding site for ArsR as defined by DNase I footprinting .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>DNase I Footprint Analysis of the Binding Site for the ArsR Repressor in the Chromosomal ars Regulatory Region -- Using purified chromosomal ArsR , the site of binding to the chromosomal ars regulatory region was analyzed by DNase I protection assays .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>From DNase I footprint analysis , the ArsR binding site was found to span nucleotides 264 to 231 of the chromosomal operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The region of the DNA protected from DNase I digestion by ArsR overlaps with the putative 235 element of the chromosomal ars promoter and covers the region from nucleotides 264 to 231 ( Figs. 2 and 4 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Although the overall sequences of the two promoters and the location of the protected sequences are different between the two ars operons , higher resolution analysis of the R773 ArsR binding site revealed that only two small regions of 4 bp each ( TCAT and TTTG of the coding strand ) are protected separated by 7 bp ( Wu and Rosen , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Since the chromosomal ars sequence that was protected from DNase I by chromosomal ArsR also contained the TCAT and TTTG elements separated by 7 bp , it was possible that the two repressors could bind to the each other 's promoter .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>This potential arsR operator sequence is conserved as an inverted-repeat of 5 ' - NCNTA-3 ' , separatedby 12 bp ( from bp -59 to -64 ) , in the plasmid R773 ars operon , and suggests that the R773 ArsR protein may regulate chromosomal ars operon expression through action at this potential operator site .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>In Vitro DNA Binding Properties of Altered ArsR Proteins -- ArsR binds to a sequence immediately upstream of the ars promoter and can be dissociated with either As ( III ) or Sb ( III ) ( Wu and Rosen , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>The ArsR protein is a metalloregulated repressor , acting by binding to an operator sequence in the ars regulatory region ( Wu and Rosen 1993a ; Shi et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>The plasmid R773 ArsR repressor has been shown to bind to the R773 ars promoter at a region of imperfect dyad symmetry just upstream of the 235 site ( Wu and Rosen , 1993 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The operator sequence of the plasmid R773 ars operon is located from -64 to -40 with respect to the transcriptional initiation site , in a region of imperfect dyad symmetry , and believed to be bound by an ArsR dimer ( Wu and Rosen 1993 ~ ) C .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+				</ul></div><br>
+			<label class="collapse_TU" for="_6"><font size="5px">Transcription unit regulated by ArsR</font></label>
+				<input id="_6" type="checkbox">
+				<div class="TU"><br><ul><li>These results indicate that the single and double glycine substitutions did not affect the ability of ArsR to repress its own synthesis , but did prevent these proteins from responding to inducer .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>It encodes an arsenic-inducibletrans-acting repressor ( ArsR ) , controlling the basal level of expression of the operon ( San Francisco et al. 1990 ; Wu and Rosen 1991 , 1993 ~ ) a ; negative regulator ( ArsD ) that independently controls the upper level of expression of the operon ( Wu and Rosen 1993b ) ; an arsenite - and antimonite-stimulatedATPase ( ArsA ) ( Rosen et al. 1988 ; Mei-Hsu et al. 1991 ) ; a membrane pump for efflux of arsenite and antimonite ions ( ArsB ) ( Wu et al. 1992 ; Dey and Rosen 1995 ) ; and an arsenate reductase ( ArsC ) ( Rosen et al. 1991 ; Gladysheva et al. 1994 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>Inductionof arsR genes was detected by immunoblot analysis of the ArsR proteins ( Fig. 3 ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8051064" target="_blank">8051064</a>]<br></li>
+<li>It is clear that expression of chimeric proteins in which [ i-lactamase was fused to the C-terminal region of ArsR ( pBLR102 and pBLR105 ) were inducibie both by arsenite ( Fig. 3 ) and arsenate ( data not shown ) .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>Whileexpression of the arsB gene is inducedby sublethaldoses of arsenite in the presence of a functional arsR gene product , the role of the arsR gene product can be deducedfrom its strong homology with the ArsR protein encoded by the R773 ars operon , and examined using the arsR : : luxAB fusion strains .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8764681" target="_blank">8764681</a>]<br></li>
+<li>Tc determine the function of the ArsR protein , a genetic analysis of its role in regulation of ars expression was undertaken using fusions of the btaM gene to the arsR gene .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>By construction and expression of a series of in-frame fusions between truncated arsR genes and the coding region for the mature form of b-lactamase ( blaM * ) , it was shown that ArsR is a trans-acting repressor that regulates expression of the chromosomal ars operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The arsR gene product , the ArsR repressor , was expressed and purified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Expression and Purification of ArsR Protein -- The arsR gene was isolated from the E. coli chromosomal ars operon by PCR , and ArsR was substantially purified .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>plasmid-borne ars operons , transcription was controlled by the ArsR repressor , the product of the first gene of each operon .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>Transcription of the ars operon is regulated by a substrate-responsive repressor , the ArsR protein .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8621591" target="_blank">8621591</a>]<br></li>
+<li>Thus , it is likely that the chromosomal ars operon is organized as a single transcription unit that is regulated by the arsenic - and antimony-inducible ArsR repressor .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=7721697" target="_blank">7721697</a>]<br></li>
+<li>Expression of the gene for His6-tagged ArsR repressed lacZ expression in the absence of inducer and induced in the presence of sodium arsenite .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=9188467" target="_blank">9188467</a>]<br></li>
+<li>It can be concluded , therefore , that arsfl expression is autoregulated : expression is repressed by ArsR in the absence of arsenical inducers and is induced in their presence .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+<li>When the culture reached an A600 of 0.8 , expression of the arsR gene was induced by addition of 0.5 mM isopropyl-1-thio-b-D-galactopyranoside for an additional 3 h. Under these growth conditions , the majority of ArsR was found as a soluble protein in the cytosolic fraction .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=8576202" target="_blank">8576202</a>]<br></li>
+<li>The resuits demonstrate that the ArsR protein is a frans-acting regulatory protein which controls its own expression .	[<a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=1838573" target="_blank">1838573</a>]<br></li>
+				</div></ul></div><br>
+	</div>
+</body>
+</html>
