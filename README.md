@@ -103,7 +103,7 @@ Once all prerequisites have been fulfilled and
 every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
 ```
-$ make -f summarizer.mak All
+$ make -f tf_properties_summarizer.mak All
 ```
 
 You should indicate following data:
@@ -111,19 +111,19 @@ You should indicate following data:
 - `TF_LIST`: TFs you want to retrieve information from. 
 - `ARTICLES_PATH`: input articles directory (default 'Articles').
 - `PREPROCESSED_PATH`: preprocessing directory (default 'Preprocessed'). 
-- `ERMS_PATH`: term list directory  (default 'Terminological_resources'). 
+- `TERMS_PATH`: term list directory  (default 'Terminological_resources'). 
 - `STANFORD_POSTAGGER_PATH`: Stanford POS Tagger directory. 
 - `BIO_LEMMATIZER_PATH`: BioLemmatizer directory. 
 
 For further information, you can run the command: 
 ```
-$ make -f summarizer.mak -Help
+$ make -f tf_properties_summarizer.mak -Help
 ```
 	
 For more details about the parameters needed to run this pipeline, 
 you can run the command:
 ```
-$ make -f summarizer.mak -Parameters
+$ make -f tf_properties_summarizer.mak -Parameters
 ```
 
 Alternatevely, any step can be run by invoking the corresponding make task: 
@@ -134,20 +134,20 @@ Alternatevely, any step can be run by invoking the corresponding make task:
 ### Run examples
 With mandatory arguments only:
 ```
-$ make -f summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
+$ make -f tf_properties_summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
 ```
 	
 With an additional (optional) argument:
 ```
-$ make -f summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
+$ make -f tf_properties_summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
 ```	
 
 ## Developers
 
-* **Carlos Francisco Méndez Cruz**
 * **Juan Antonio Blanchet Villezcas**
 * **Alan Vladimir Godínez Plascencia**
 * **Cristian Jesús González Colín**
+* **Carlos Francisco Méndez Cruz**
 
 ## Contact 
 Carlos Méndez: cmendezc at ccg.una.mx
