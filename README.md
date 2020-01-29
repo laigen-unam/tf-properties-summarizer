@@ -103,7 +103,7 @@ Once all prerequisites have been fulfilled and
 every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
 ```
-$ make -f tf_properties_summarizer.mak All
+$ make -f summarizer.mak All
 ```
 
 You should indicate following data:
@@ -117,13 +117,13 @@ You should indicate following data:
 
 For further information, you can run the command: 
 ```
-$ make -f tf_properties_summarizer.mak -Help
+$ make -f summarizer.mak -Help
 ```
 	
 For more details about the parameters needed to run this pipeline, 
 you can run the command:
 ```
-$ make -f tf_properties_summarizer.mak -Parameters
+$ make -f summarizer.mak -Parameters
 ```
 
 Alternatevely, any step can be run by invoking the corresponding make task: 
@@ -134,12 +134,12 @@ Alternatevely, any step can be run by invoking the corresponding make task:
 ### Run examples
 With mandatory arguments only:
 ```
-$ make -f tf_properties_summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
+$ make -f summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
 ```
 	
 With an additional (optional) argument:
 ```
-$ make -f tf_properties_summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
+$ make -f summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
 ```	
 
 ## Developers
