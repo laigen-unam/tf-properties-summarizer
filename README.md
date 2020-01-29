@@ -14,11 +14,10 @@ contained into manual summaries (obtained from RegulonDB)
 describing properties of 177 TFs of 
 *Escherichia coli* K-12 by processing 5961 scientific articles. 
 Furthermore, training a predictive model with manual summaries of *E. coli*, 
-we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
+we generated summaries for 305 TFs of *Salmonella typhimurium* from 3498 articles. 
 
 ```
 automatic-summaries
-│
 └───ecoli
 └───salmonella
 ```
@@ -39,19 +38,19 @@ processes. *Database*, Oxford University Press (https://academic.oup.com/databas
 We employed manual summaries from RegulonDB (http://regulondb.ccg.unam.mx/) 
 as training data to train an automatic summarizer. 
 We manually classified the sentences of 177 manual summaries 
-of TFs of RegulonDB in one or more of the six TF properties. 
+in one or more of the six TF properties. 
 To classify the sentences, we tagged specific relevant information associated 
-to each TF property using XML tags.
-We obtained a training data set with 2244 sentences in total 
-formed by six subsets of sentences from all summaries, 
-one per TF property. 
-Positive examples were those pertaining to the TF property, 
-while negative examples were all the remaining sentences. 
+to each TF property using XML tags (see supplementary Table S1 and 
+supplementary Figure S1).
 
+```
+manual-summaries
+└───xml-tagged
+└───salmonella
+```
 
  
-(see a description of this information in supplementary Table S1, 
-and an example of a tagged manual summary in supplementary Figure S1). 
+
 
 
 The automatic summaries are created by the concatenation of the automatically 
