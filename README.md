@@ -60,45 +60,50 @@ However, only the 65% of sentences were classified in the correct property.
 ```
 /salmonella-manual-evaluation
 ```
-
  
 ## Transcription factors summarizer
 
 ### Input
-You must place input files of the article collection within a subdirectory of your Working Directory (WD). 
+You must place input files of the article collection within a subdirectory 
+of your Working Directory (WD). 
 We suggest naming it 'Articles' (as that would be the default value taken by 
 the pipeline). Input files must be raw text files. 
 Extension '.txt' is mandatory for these files.
 
-# NLP preprocessing pipeline
+### NLP preprocessing pipeline
 The first step is preprocessing the input files. This step must be performed 
 only once for the same article collection.
 
-## Preprocessing directory
+#### Prerequisites
+You must have installed Stanford POS Tagger and BioLemmatizer in your computer. 
+They are not included within this repository, have a look at the following 
+references for instructions on the download and installation of these programs:
+- Toutanova, K., Klein, D., Manning, C. and Singer, Y. (2003) 
+Feature-rich part-of-speech tagging with a cyclic dependency network. 
+In Proceedings of the HLT-NAACL, pp. 252-259 
+(https://nlp.stanford.edu/software/tagger.shtml).
+- Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) 
+BioLemmatizer: a lemmatization tool for morphological processing of 
+biomedical text. J. Biomed. Semantics, 3, 1-29 
+(https://sourceforge.net/projects/biolemmatizer/).
+
+#### Preprocessing directory
 Our pipeline utilizes the 'Preprocessed' directory to save temporary files 
 for each preprocessing task. We suggest to remove this directory and 
 the files contained in it once the pipeline has been run successfully.
 
-## Term list directory
+#### Term list directory
 Several term lists are employed. These lists are JSON files that must be located 
 on the term list directory (a subdirectory of the WD). 
 We suggest naming it 'Terminological_resources' (as that would be the default 
 value taken by the pipeline).
 
-## Prerequisites
-You must have installed Stanford POS Tagger and BioLemmatizer in your computer. 
-They are not included within this repository, have a look at the following 
-references for instructions on the download and installation of these programs:
-- Toutanova, K., Klein, D., Manning, C. and Singer, Y. (2003) Feature-rich part-of-speech tagging with a cyclic dependency network. In Proceedings of the HLT-NAACL, pp. 252-259.
-- https://nlp.stanford.edu/software/tagger.shtml
-- Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) BioLemmatizer: a lemmatization tool for morphological processing of biomedical text. J. Biomed. Semantics, 3, 1-29.
-- https://sourceforge.net/projects/biolemmatizer/
-
-
 ### Configure the makefile
 Once all prerequisites have been fulfilled and every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
-	make -f summarizer.mak All
+```
+$ make -f summarizer.mak All
+```
 
 You should indicate the TFs you want to retrieve information from:`TF_LIST`, your 
 working directory: `GEN_PATH`, the path for the input articles directory (it is obligatory if your directory is not named 'Articles') `ARTICLES_PATH`, the preprocessing directory (it is obligatory if your directory is not named 'Preprocessed'): `PREPROCESSED_PATH`, the term list directory it is obligatory if your directory is not named 'Terminological_resources'): `ERMS_PATH`, the Stanford POS Tagger directory (`STANFORD_POSTAGGER_PATH`), the BioLemmatizer directory (`BIO_LEMMATIZER_PATH`). For further information, you can run the command: 
