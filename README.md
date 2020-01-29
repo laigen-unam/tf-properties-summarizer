@@ -99,31 +99,48 @@ We suggest naming it 'Terminological_resources' (as that would be the default
 value taken by the pipeline).
 
 ### Configure the makefile
-Once all prerequisites have been fulfilled and every dependency has been installed, 
+Once all prerequisites have been fulfilled and 
+every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
 ```
 $ make -f summarizer.mak All
 ```
 
-You should indicate the TFs you want to retrieve information from:`TF_LIST`, your 
-working directory: `GEN_PATH`, the path for the input articles directory (it is obligatory if your directory is not named 'Articles') `ARTICLES_PATH`, the preprocessing directory (it is obligatory if your directory is not named 'Preprocessed'): `PREPROCESSED_PATH`, the term list directory it is obligatory if your directory is not named 'Terminological_resources'): `ERMS_PATH`, the Stanford POS Tagger directory (`STANFORD_POSTAGGER_PATH`), the BioLemmatizer directory (`BIO_LEMMATIZER_PATH`). For further information, you can run the command: 
-	make -f summarizer.mak -Help
-For more details about the parameters needed to run this pipeline, you can run the 
-command:
-	make -f summarizer.mak -Parameters
+You should indicate following data:
+- `GEN_PATH`: working directory. 
+- `TF_LIST`: TFs you want to retrieve information from. 
+- `ARTICLES_PATH`: input articles directory (default 'Articles').
+- `PREPROCESSED_PATH`: preprocessing directory (default 'Preprocessed'). 
+- `ERMS_PATH`: term list directory  (default 'Terminological_resources'). 
+- `STANFORD_POSTAGGER_PATH`: Stanford POS Tagger directory. 
+- `BIO_LEMMATIZER_PATH`: BioLemmatizer directory. 
 
+For further information, you can run the command: 
+```
+$ make -f summarizer.mak -Help
+```
+	
+For more details about the parameters needed to run this pipeline, 
+you can run the command:
+```
+$ make -f summarizer.mak -Parameters
+```
 
-Alternatevely, any subprocess can be run by invoking the corresponding make task: 
+Alternatevely, any step can be run by invoking the corresponding make task: 
 'Help', 'Preprocessing', 'POS_Tagging', 'Entity_tagging','Transforming',
 'Feature_extraction', 'Sentence_classification' and 'Summary_generation'.
 
 
-#### Examples:
-	Ex. given with mandatory arguments only:
-	make -f summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
-	Ex. given with an additional (optional) argument (detailed documentation on optional and mandatory arguments available running the commands: 'make -f summarizer.mak -Help' and 'make -f summarizer.mak -Parameters'):
-	make -f summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
-
+### Run examples
+With mandatory arguments only:
+```
+$ make -f summarizer.mak All GEN_PATH="/users/user1/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP,ArgR,PhoP,FadR,ArcA,UhpA,AlsR,PhoB,NemR,NadR,GutM,MqsA,ArsR,FhlA" STANFORD_POSTAGGER_PATH="/users/user1/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE"
+```
+	
+With an additional (optional) argument:
+```
+$ make -f summarizer.mak All GEN_PATH="/users/user2/automatic-summarization-transcription-factors" TF_LIST="DinJ-YafQ,ZraR,CRP" STANFORD_POSTAGGER_PATH="/users/user2/stanford/stanford-postagger-2015-12-09" BIO_LEMMATIZER_PATH="/users/user1/biolemmatizer/BIO_LEMMATIZE" ARTICLES_PATH="/users/data/articles/ecoli"
+```	
 
 ## Developers
 
