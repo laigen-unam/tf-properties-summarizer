@@ -49,9 +49,6 @@ manual-summaries
 │
 └───original-no-tagged
 └───xml-tagged
-supplementary-material
-/
-└───supplementary-material.pdf
 ```
 
 ## Transcription factors summarizer
@@ -65,7 +62,8 @@ references for instructions on the download and installation of these programs:
 - Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) BioLemmatizer: a lemmatization tool for morphological processing of biomedical text. J. Biomed. Semantics, 3, 1-29.
 - https://sourceforge.net/projects/biolemmatizer/
 
-In addition, following libraries are requiered: 
+Our summarizer was tested using Python 3.6.8 on Ubuntu.
+Following Python 3.x libraries are required. 
 ```
 optparse
 re
@@ -93,6 +91,12 @@ You must place article collection within a directory of your Working Directory (
 We suggest naming it 'Articles' (as that would be the default value taken by 
 the pipeline). Input files must be raw text files. 
 Extension '.txt' is mandatory for these files.
+
+```
+summarizer
+/
+└───Articles
+```
 
 We do not include the complete article collections employed in our study to take care of 
 article access rights. Instead, we offer a toy set of articles of *Salmonella* 
@@ -124,13 +128,24 @@ Part-of-speech tagging ('POS_Tagging'),
 dictionary-based named entity recognition ('Entity_tagging'),
 generate internal representation of sentences ('Transforming'),
 obtain sentence representations for automatic clasification ('Feature_extraction')
-and classify sentences in TF properties ('Sentence_classification').
+and classify sentences in TF properties ('Sentence_classification'). 
+Following directories are created in runtime. 
+
+```
+summarizer
+/
+└───Classified
+└───Entities
+└───Features
+└───Lemmatized
+└───POS_tagged
+└───Preprocessed
+``` 
 
 ### Generate automatic summaries
 First, we sort sentences by cosine similarity ('Sort_summaries').
 Then, we generate automatic summaries in text (complete) and html format ('Summary_generation').
-After running the complete pipeline, you can obtain the automatic summaries in following directories 
-(created in runtime).
+Automatic summaries are in following directories created in runtime.
 
 ```
 summarizer
