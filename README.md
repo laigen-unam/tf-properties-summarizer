@@ -14,7 +14,7 @@ contained into manual summaries (obtained from RegulonDB)
 describing properties of 177 TFs of 
 *Escherichia coli* K-12 by processing 5961 scientific articles. 
 Furthermore, training a predictive model with manual summaries of *E. coli*, 
-we generated summaries for 185 TFs of *Salmonella typhimurium* from 3498 articles. 
+we generated summaries for 305 TFs of *Salmonella typhimurium* from 3498 articles. 
 All summaries are available in html format:  
 
 ```
@@ -45,13 +45,13 @@ To classify the sentences, we tagged specific relevant information associated
 to each TF property using XML tags (see supplementary Table S1 and Figure S1).
 
 ```
-supplementary-material
-/
-└───supplementary-material.pdf
 manual-summaries
 │
 └───original-no-tagged
 └───xml-tagged
+supplementary-material
+/
+└───supplementary-material.pdf
 ```
 
 ## Transcription factors summarizer
@@ -65,6 +65,29 @@ references for instructions on the download and installation of these programs:
 - Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) BioLemmatizer: a lemmatization tool for morphological processing of biomedical text. J. Biomed. Semantics, 3, 1-29.
 - https://sourceforge.net/projects/biolemmatizer/
 
+In addition, following libraries are requiered: 
+```
+optparse
+re
+os
+sys
+time
+subprocess
+json
+nltk
+nltk.corpus
+scipy.sparse
+scipy.stats
+sklearn
+sklearn.externals
+sklearn.svm
+sklearn.feature_extraction.text
+sklearn.metrics.pairwise
+pandas
+seaborn
+matplotlib.pyplot
+```
+
 ### Input
 You must place article collection within a directory of your Working Directory (WD). 
 We suggest naming it 'Articles' (as that would be the default value taken by 
@@ -76,13 +99,6 @@ article access rights. Instead, we offer a toy set of articles of *Salmonella*
 with open access rights to generate summaries of EcnR, YdcI, RhaR and DeoR.
 
 	TF_LIST=EcnR,YdcI,RhaR,DeoR  
-
-### NLP preprocessing
-The first step is preprocessing the input files. This step must be performed 
-only once for the same article collection. Our pipeline utilizes 
-the 'Preprocessed' directory to save temporary files 
-for each preprocessing task. We suggest to remove this directory and 
-the files contained in it once the pipeline has been run successfully.
 
 ### Term list directory
 Several term lists are employed. These lists are JSON files that must be located 
@@ -96,22 +112,59 @@ summarizer
 └───Terminological_resources_salmonella
 ```
 
+### NLP preprocessing
+The first step is preprocessing the input files. This step must be performed 
+only once for the same article collection. Our pipeline utilizes 
+the 'Preprocessed' directory to save temporary files 
+for each preprocessing task. We suggest to remove this directory and 
+the files contained in it once the pipeline has been run successfully.
+
+Preprocessing step includes cleaning articles (Preprocessing), 
+Part-of-speech tagging ('POS_Tagging'), 
+dictionary-based named entity recognition ('Entity_tagging'),
+generate internal representation of sentences ('Transforming'),
+obtain sentence representations for automatic clasification ('Feature_extraction')
+and classify sentences in TF properties ('Sentence_classification').
+
+### Generate automatic summaries
+First, we sort sentences by cosine similarity ('Sort_summaries').
+Then, we generate automatic summaries in text (complete) and html format ('Summary_generation').
+After running the complete pipeline, you can obtain the automatic summaries in following directories 
+(created in runtime).
+
+```
+summarizer
+/
+└───Summaries
+    └───complete
+    └───html
+```
+
 ### Configure the makefile
 Once all prerequisites have been fulfilled and every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
 	make -f summarizer.mak All
 
 You should indicate the TFs you want to retrieve information from:`TF_LIST`, your 
-working directory: `GEN_PATH`, the path for the input articles directory (it is obligatory if your directory is not named 'Articles') `ARTICLES_PATH`, the preprocessing directory (it is obligatory if your directory is not named 'Preprocessed'): `PREPROCESSED_PATH`, the term list directory it is obligatory if your directory is not named 'Terminological_resources'): `ERMS_PATH`, the Stanford POS Tagger directory (`STANFORD_POSTAGGER_PATH`), the BioLemmatizer directory (`BIO_LEMMATIZER_PATH`). For further information, you can run the command: 
+working directory: `GEN_PATH`, 
+the path for the input articles directory 
+(it is obligatory if your directory is not named 'Articles') `ARTICLES_PATH`, 
+the preprocessing directory 
+(it is obligatory if your directory is not named 'Preprocessed'): `PREPROCESSED_PATH`, 
+the term list directory it is obligatory if your directory is not named 'Terminological_resources'): `ERMS_PATH`, 
+the Stanford POS Tagger directory (`STANFORD_POSTAGGER_PATH`), 
+the BioLemmatizer directory (`BIO_LEMMATIZER_PATH`). 
+For further information, you can run the command: 
 	make -f summarizer.mak -Help
-For more details about the parameters needed to run this pipeline, you can run the 
+For more details about the parameters needed to run this pipeline, 
+you can run the 
 command:
 	make -f summarizer.mak -Parameters
 
 
 Alternatevely, any subprocess can be run by invoking the corresponding make task: 
 'Help', 'Preprocessing', 'POS_Tagging', 'Entity_tagging','Transforming',
-'Feature_extraction', 'Sentence_classification' and 'Summary_generation'.
+'Feature_extraction', 'Sentence_classification', 'Sort_summaries' and 'Summary_generation'.
 
 
 #### Examples:
