@@ -51,7 +51,7 @@ manual-summaries
 └───xml-tagged
 ```
 
-## Transcription factors summarizer
+## Transcription factor properties summarizer
 
 ### Prerequisites
 You must have installed Stanford POS Tagger and BioLemmatizer in your computer. 
@@ -94,7 +94,7 @@ Extension '.txt' is mandatory for these files.
 
 ```
 summarizer
-/
+│
 └───Articles
 ```
 
@@ -104,6 +104,24 @@ with open access rights to generate summaries of EcnR, YdcI, RhaR and DeoR.
 
 	TF_LIST=EcnR,YdcI,RhaR,DeoR  
 
+### Trained models, vectorizers and dimensionality reductions
+We give the best models to classify sentences in TF properties. 
+In addition, we include trained models for vectorization and dimensionality reduction.   
+```
+summarizer
+│
+└───Models_vectorizers
+    └───ACT
+        └───models
+        └───reductions
+        └───vectorizers
+    └───DOM
+    └───EVO
+    └───RP
+    └───SIT
+    └───TU
+```
+
 ### Term list directory
 Several term lists are employed. These lists are JSON files that must be located 
 on the term list directory (a subdirectory of the WD). 
@@ -111,7 +129,7 @@ We suggest naming it 'Terminological_resources' (as that would be the default
 value taken by the pipeline). We included terminological resources for *E. coli* and *Salmonella*.
 ```
 summarizer
-/
+│
 └───Terminological_resources_ecoli
 └───Terminological_resources_salmonella
 ```
@@ -133,7 +151,7 @@ Following directories are created in runtime.
 
 ```
 summarizer
-/
+│
 └───Classified
 └───Entities
 └───Features
@@ -149,13 +167,13 @@ Automatic summaries are in following directories created in runtime.
 
 ```
 summarizer
-/
+│
 └───Summaries
     └───complete
     └───html
 ```
 
-### Configure the makefile
+### Run the summarizer (use the makefile)
 Once all prerequisites have been fulfilled and every dependency has been installed, 
 the whole pipeline can be executed with a single make command:
 	make -f summarizer.mak All
@@ -170,12 +188,15 @@ the term list directory it is obligatory if your directory is not named 'Termino
 the Stanford POS Tagger directory (`STANFORD_POSTAGGER_PATH`), 
 the BioLemmatizer directory (`BIO_LEMMATIZER_PATH`). 
 For further information, you can run the command: 
-	make -f summarizer.mak -Help
+```
+make -f summarizer.mak -Help
+```
 For more details about the parameters needed to run this pipeline, 
 you can run the 
 command:
-	make -f summarizer.mak -Parameters
-
+```
+make -f summarizer.mak -Parameters
+```
 
 Alternatevely, any subprocess can be run by invoking the corresponding make task: 
 'Help', 'Preprocessing', 'POS_Tagging', 'Entity_tagging','Transforming',
