@@ -54,17 +54,16 @@ manual-summaries
 └───xml-tagged
 ```
 
-<!-- At the Computational Genomics Program (Center for Genome Sciences, UNAM), 
-we conducted research on Biomedical natural language processing and Text mining 
-to assist curation for  
-This database contains a set of descriptions (summaries) of several properties of 
-transcription factors (TFs). 
-These summaries are manually written by curators employing several 
-scientific articles. This activity takes significant time and effort due to the 
-overwhelming amount of biomedical literature that keeps increasing every day. 
--->
-
 ## Transcription factors summarizer
+
+### Prerequisites
+You must have installed Stanford POS Tagger and BioLemmatizer in your computer. 
+They are not included within this repository, have a look at the following 
+references for instructions on the download and installation of these programs:
+- Toutanova, K., Klein, D., Manning, C. and Singer, Y. (2003) Feature-rich part-of-speech tagging with a cyclic dependency network. In Proceedings of the HLT-NAACL, pp. 252-259.
+- https://nlp.stanford.edu/software/tagger.shtml
+- Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) BioLemmatizer: a lemmatization tool for morphological processing of biomedical text. J. Biomed. Semantics, 3, 1-29.
+- https://sourceforge.net/projects/biolemmatizer/
 
 ### Input
 You must place article collection within a directory of your Working Directory (WD). 
@@ -74,34 +73,28 @@ Extension '.txt' is mandatory for these files.
 
 We do not include the complete article collections employed in our study to take care of 
 article access rights. Instead, we offer a toy set of articles of *Salmonella* 
-to generate summaries of EcnR, YdcI, RhaR and DeoR.
+with open access rights to generate summaries of EcnR, YdcI, RhaR and DeoR.
 
 	TF_LIST=EcnR,YdcI,RhaR,DeoR  
 
-# NLP preprocessing pipeline
+### NLP preprocessing
 The first step is preprocessing the input files. This step must be performed 
-only once for the same article collection.
-
-## Preprocessing directory
-Our pipeline utilizes the 'Preprocessed' directory to save temporary files 
+only once for the same article collection. Our pipeline utilizes 
+the 'Preprocessed' directory to save temporary files 
 for each preprocessing task. We suggest to remove this directory and 
 the files contained in it once the pipeline has been run successfully.
 
-## Term list directory
+### Term list directory
 Several term lists are employed. These lists are JSON files that must be located 
 on the term list directory (a subdirectory of the WD). 
 We suggest naming it 'Terminological_resources' (as that would be the default 
-value taken by the pipeline).
-
-## Prerequisites
-You must have installed Stanford POS Tagger and BioLemmatizer in your computer. 
-They are not included within this repository, have a look at the following 
-references for instructions on the download and installation of these programs:
-- Toutanova, K., Klein, D., Manning, C. and Singer, Y. (2003) Feature-rich part-of-speech tagging with a cyclic dependency network. In Proceedings of the HLT-NAACL, pp. 252-259.
-- https://nlp.stanford.edu/software/tagger.shtml
-- Liu, H., Christiansen, T., Baumgartner, W. A., Jr., and Verspoor, K. (2012) BioLemmatizer: a lemmatization tool for morphological processing of biomedical text. J. Biomed. Semantics, 3, 1-29.
-- https://sourceforge.net/projects/biolemmatizer/
-
+value taken by the pipeline). We included terminological resources for *E. coli* and *Salmonella*.
+```
+summarizer
+/
+└───Terminological_resources_ecoli
+└───Terminological_resources_salmonella
+```
 
 ### Configure the makefile
 Once all prerequisites have been fulfilled and every dependency has been installed, 
