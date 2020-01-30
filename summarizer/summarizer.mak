@@ -27,7 +27,7 @@ TF_LIST=EcnR,YdcI,RhaR,DeoR
 ## --- Set these variables to your paths --- ##
 
 #General working directory path.
-GEN_PATH=/home/cmendezc/github_repositories/tf-properties-summarizer/tf-properties-summarizer
+GEN_PATH=/home/cmendezc/github_repositories/tf-properties-summarizer/summarizer
 
 #Directory path containing tf articles.
 ARTICLES_PATH=${GEN_PATH}/Articles
@@ -83,13 +83,10 @@ STANFORD_POSTAGGER_PATH=/home/cmendezc/STANFORD_POSTAGGER/stanford-postagger-201
 BIO_LEMMATIZER_PATH=/home/cmendezc/BIO_LEMMATIZER
 
 #All pipeline
-All: Help Parameters Preprocessing POS_tagging Lemmatizing Entity_tagging Transforming Feature_extraction Sentence_classification
+All: Help Parameters Preprocessing POS_tagging Lemmatizing Entity_tagging Transforming Feature_extraction Sentence_classification Sort_summaries Summary_generation
 
-#### SE ESCRIBIRÁN MÁS CUANDO SE REALIZE EL PIPELINE 'AUTOMATIC SUMMARIZATION'####
-NLP_preprocess: Parameters Preprocessing POS_tagging Lemmatizing Entity_recognition Transforming Feature_extraction
-#### SE ESCRIBIRÁN MÁS CUANDO SE REALIZE EL PIPELINE 'AUTOMATIC SUMMARIZATION'####
-### Summarization: Parameters ###
-
+#Only generate all summaries in text and html format
+Generate_summaries: Sort_summaries Summary_generation
 
 ###--------------------------------------------------------------- PRINT HELP ABOUT THIS FILE -------------------------------------------------------------###
 Help:
@@ -103,38 +100,38 @@ Help:
 	@echo "Transforming               Generate the internal representation of the sentences: WORD|LEMMA|POS."
 	@echo "Feature_extraction         Generate the different sentence representations: lemma_lemma_tag_tag, lemma_lemma_pos_pos, etc."
 	@echo "Sentence_classification    Classify the newly-generated sentences."
+	@echo "Sort_summaries             Sort automatic summaries by similarities."
 	@echo "Summary_generation         Generate automatic summaries in text and html format."
 	@echo "All:                       Run all pipeline."
-
-    ### SE ESCRIBIRÁN MÁS CUANDO SE REALIZE EL PIPELINE 'AUTOMATIC SUMMARIZATION'###
-	#@echo "NLP_preprocess     Run all tasks from the 'NLP preprocessing pipeline.'"
-	#@echo "Summarization      Run all tasks from the 'automatic summarization pipeline'."
+	@echo "Generate_summaries         Run all tasks from automatic summarization: Sort_summaries Summary_generation."
 
 
 ###------------------------------------------------------------------- PRINT PARAMETERS -------------------------------------------------------------------###
 Parameters:
 	@echo "###------------------------------------------------ DESCRIPTION ------------------------------------------------###"
-	@echo "This makefile holds the commands needed to run our pipeline for automatic summarization of transcription factor (TF) properties.
+	@echo "This makefile holds the commands needed to run our pipeline for automatic summarization of transcription factor (TF) properties."
 	@echo "###------------------------------------------------ PARAMETERS ------------------------------------------------###"
-	@echo "General pathway: ${GEN_PATH}"
-	@echo "Articles pathway: ${ARTICLES_PATH}"
-	@echo "Terminological resources pathway(term dictionaries and json files): ${TERMS_PATH}"
-	@echo "Preprocessed files pathway: ${PREPROCESSED_PATH}"
-	@echo "POS tagged files pathway: ${POS_PATH}"
-	@echo "Files after lemmatizing pathway: ${LEMMATIZED_PATH}"
-	@echo "Entity tagged files pathway: ${ENTITY_PATH}"
-	@echo "Transformed files pathway: ${TRANSFORMED_PATH}"
-	@echo "Output files (after feature extraction) pathway: ${FEATURE_PATH}"
-	@echo "Classified sentences pathway: ${CLASSIFY_PATH}" 
-	#### SE ESCRIBIRÁN MÁS CUANDO SE REALIZE EL PIPELINE 'AUTOMATIC SUMMARIZATION'####
-	@echo "For additional information about the files you are working with, have a look at our repository: (link del git)."
+	@echo "General path: ${GEN_PATH}"
+	@echo "Articles path: ${ARTICLES_PATH}"
+	@echo "Terminological resources path(term dictionaries and json files): ${TERMS_PATH}"
+	@echo "Preprocessed files path: ${PREPROCESSED_PATH}"
+	@echo "POS tagged files path: ${POS_PATH}"
+	@echo "Files after lemmatizing path: ${LEMMATIZED_PATH}"
+	@echo "Entity tagged files path: ${ENTITY_PATH}"
+	@echo "Transformed files path: ${TRANSFORMED_PATH}"
+	@echo "Output files (after feature extraction) path: ${FEATURE_PATH}"
+	@echo "Classified sentences path: ${CLASSIFY_PATH}"
+	@echo "Automatic summaries path: ${SUMMARY_PATH}"
+	 
+	### SE ESCRIBIRÁN MÁS CUANDO SE REALIZE EL PIPELINE 'AUTOMATIC SUMMARIZATION'####
+	### @echo "For additional information about the files you are working with, have a look at our repository: (link del git)."
 
 
 ###----------------------------------------------------------------- ARTICLE PREPROCESSING ----------------------------------------------------------------###
 Preprocessing:
 	@echo "###----------------------------------------------------------------- ARTICLE PREPROCESSING ----------------------------------------------------------------###"
 	@echo "'Clean' the articles to be summarized and detect entities within them"
-	@echo "Generating preprocessed articles pathway and subdirectories..."
+	@echo "Generating preprocessed articles path and subdirectories..."
 
 	@mkdir -p ${PREPROCESSED_PATH} 
 	@mkdir -p ${PREPROCESSED_PATH}/ACT && mkdir -p ${PREPROCESSED_PATH}/DOM && mkdir -p ${PREPROCESSED_PATH}/EVO && mkdir -p ${PREPROCESSED_PATH}/RP && mkdir -p ${PREPROCESSED_PATH}/SIT && mkdir -p ${PREPROCESSED_PATH}/TU
@@ -157,7 +154,7 @@ Preprocessing:
 POS_tagging:
 	@echo "###----------------------- PART OF SPEECH TAGGING -----------------------###"
 	@echo "Assign a tag to each word within the given files based on its part-of-speech category."
-	@echo "Generating POS-processed files pathway and subdirectories..."
+	@echo "Generating POS-processed files path and subdirectories..."
 
 	@mkdir -p ${POS_PATH}
 	@mkdir -p ${POS_PATH}/ACT && mkdir -p ${POS_PATH}/DOM && mkdir -p ${POS_PATH}/EVO && mkdir -p ${POS_PATH}/RP && mkdir -p ${POS_PATH}/SIT && mkdir -p ${POS_PATH}/TU 
@@ -180,7 +177,7 @@ POS_tagging:
 Lemmatizing:
 	@echo "###-------------------------------------------------- SENTENCE LEMMATIZING --------------------------------------------------###"
 	@echo "Assign the lemma that corresponds to each word within the given files."
-	@echo "Generating lemmatized files, pathway and subdirectories..."
+	@echo "Generating lemmatized files, path and subdirectories..."
 
 	@mkdir -p ${LEMMATIZED_PATH}
 	@mkdir -p ${LEMMATIZED_PATH}/ACT && mkdir -p ${LEMMATIZED_PATH}/DOM && mkdir -p ${LEMMATIZED_PATH}/EVO && mkdir -p ${LEMMATIZED_PATH}/RP && mkdir -p ${LEMMATIZED_PATH}/SIT && mkdir -p ${LEMMATIZED_PATH}/TU
@@ -203,7 +200,7 @@ Lemmatizing:
 Entity_tagging: 
 	@echo "###--------------------- RECOGNIZED ENTITIES TAGGING --------------------###"
 	@echo "Assign a tag to each 'entity' within the given files based on entity recognition"
-	@echo "Generating lemmatized files, pathway and subdirectories..."
+	@echo "Generating lemmatized files, path and subdirectories..."
 
 	@mkdir -p ${ENTITY_PATH}
 	@mkdir -p ${ENTITY_PATH}/ACT && mkdir -p ${ENTITY_PATH}/DOM && mkdir -p ${ENTITY_PATH}/EVO && mkdir -p ${ENTITY_PATH}/RP && mkdir -p ${ENTITY_PATH}/SIT && mkdir -p ${ENTITY_PATH}/TU
@@ -226,7 +223,7 @@ Entity_tagging:
 Transforming: 
 	@echo "###----------------------- SENTENCE TRANSFORMATION ----------------------###"
 	@echo 'Generate the internal representation of the sentences: WORD|LEMMA|POS'
-	@echo "Generating transformed files, pathway and subdirectories..."
+	@echo "Generating transformed files, path and subdirectories..."
 
 	@mkdir -p ${TRANSFORMED_PATH} && mkdir -p ${TRANSFORMED_TEXT_PATH}
 	@mkdir -p ${TRANSFORMED_PATH}/ACT && mkdir -p ${TRANSFORMED_PATH}/DOM && mkdir -p ${TRANSFORMED_PATH}/EVO && mkdir -p ${TRANSFORMED_PATH}/RP && mkdir -p ${TRANSFORMED_PATH}/SIT && mkdir -p ${TRANSFORMED_PATH}/TU
@@ -250,7 +247,7 @@ Transforming:
 Feature_extraction: 
 	@echo "###------------------------- FEATURE EXTRACTION -------------------------###"
 	@echo "Generate the different sentence representations: lemma_lemma_tag_tag, lemma_lemma_pos_pos, etc."
-	@echo "Generating the final files of the 'nlp preprocessing pipeline', pathway and subdirectories..."
+	@echo "Generating the final files of the 'nlp preprocessing pipeline', path and subdirectories..."
 
 	@mkdir -p ${FEATURE_PATH} && mkdir -p ${WORD_PATH}
 	@mkdir -p ${FEATURE_PATH}/ACT && mkdir -p ${FEATURE_PATH}/DOM && mkdir -p ${FEATURE_PATH}/EVO && mkdir -p ${FEATURE_PATH}/RP && mkdir -p ${FEATURE_PATH}/SIT && mkdir -p ${FEATURE_PATH}/TU
@@ -275,7 +272,7 @@ Feature_extraction:
 Sentence_classification: 
 	@echo "###----------------------- SENTENCE CLASSIFICATION ----------------------###"
 	@echo 'Sentence classification:'
-	@echo "Generating transformed files, pathway and subdirectories..."
+	@echo "Generating transformed files, path and subdirectories..."
 
 	# @mkdir -p ${CLASSIFY_PATH}
 	# @mkdir -p ${CLASSIFY_PATH}/ACT && mkdir -p ${CLASSIFY_PATH}/DOM && mkdir -p ${CLASSIFY_PATH}/EVO && mkdir -p ${CLASSIFY_PATH}/RP && mkdir -p ${CLASSIFY_PATH}/SIT && mkdir -p ${CLASSIFY_PATH}/TU
@@ -297,9 +294,21 @@ Sentence_classification:
 	
 	
 ###----------------------------------------------------- Summary generation ---------------------------------------------------------###
-Summary_generation: 
-	@echo "###----------------------- SUMMARY GENERATION ----------------------###"
-	@echo "Retrieving txt formatted summaries..."
+Sort_summaries:
+	@echo "###----------------------- SORT SUMMARIES PER SIMILARITY ----------------------###"
+	@echo "Generating path and subdirectories..."
+
+	@tfs="${TF_LIST}" ; \
+	IFS=',' read -r -a TF_Array <<< "$$tfs" ; \
+	echo $${#TF_Array[*]}; \
+	for tf in $${TF_Array[@]}; \
+	do \
+                mkdir -p ${SUMMARY_PATH}/ACT/$$tf && mkdir -p ${SUMMARY_PATH}/DOM/$$tf && mkdir -p ${SUMMARY_PATH}/EVO/$$tf && mkdir -p ${SUMMARY_PATH}/RP/$$tf && mkdir -p ${SUMMARY_PATH}/SIT/$$tf && mkdir -p ${SUMMARY_PATH}/TU/$$tf && mkdir -p ${SUMMARY_PATH}/complete/$$tf; \
+	done
+
+	@echo "Done!"
+
+	@echo "Sort summaries per similarity..."
 
 	@python3 getSummaries_bySimilarity.py --classifiedPath ${CLASSIFY_PATH}/ACT --wordPath ${WORD_PATH}/ACT --sumPath ${SUMMARY_PATH}/ACT --feature lemma_lemma_tag_tag --tfList ${TF_LIST} --similarity 0.8
 	@python3 getSummaries_bySimilarity.py --classifiedPath ${CLASSIFY_PATH}/DOM --wordPath ${WORD_PATH}/DOM --sumPath ${SUMMARY_PATH}/DOM --feature lemma_lemma_tag_tag --tfList ${TF_LIST} --similarity 0.8
@@ -310,7 +319,15 @@ Summary_generation:
 
 	@echo "Done!"
 
-	@echo "Retrieving HTML formatted summaries..."
+Summary_generation:
+	@echo "###----------------------- SUMMARY GENERATION ----------------------###"
+	@echo "Generating path and subdirectories..."
+
+	@mkdir -p ${SUMMARY_PATH}/html
+
+	@echo "Done!"
+
+	@echo "Generate HTML summaries..."
 
 	@python3 getCompleteSummaries.py --path ${SUMMARY_PATH} --tfList ${TF_LIST}
 	@python3 htmlMaker.py --inputPath ${SUMMARY_PATH}/complete --htmlPath ${SUMMARY_PATH}/html
@@ -319,4 +336,4 @@ Summary_generation:
 
 ############################################################################################################################################################
 
-	@echo "All generated files can be accesed at: '${GEN_PATH}'"
+	@echo "All generated files can be accesed at: '${GEN_PATH}/${SUMMARY_PATH}'"
